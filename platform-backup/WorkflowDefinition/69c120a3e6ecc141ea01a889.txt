@@ -4,14 +4,14 @@
 	],
 	"createdTime":1774264483713,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1774264849620,
+		"deployedAt":1774265051165,
 		"deployedBy":39,
-		"deployedDefinitionId":"69c122115e066e5302074513",
+		"deployedDefinitionId":"69c122da1ef5bb4a8e413884",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":2
+		"version":2,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"69c120a3e6ecc141ea01a889",
 	"lastModifiedBy":39,
 	"lcName":"verifyotp",
-	"modifiedTime":1774265047110,
+	"modifiedTime":1774265972027,
 	"name":"verifyOTP",
 	"nodes":[
 		{
@@ -35,7 +35,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_NSNIY-1",
 			"id":"n_uUgGV",
@@ -45,12 +45,27 @@
 					"type":"object",
 					"additionalProperties":false,
 					"required":[
-						"authenticated"
+						"authenticated",
+						"additionalAttributes"
 					],
 					"properties":{
 						"authenticated":{
 							"type":"boolean",
 							"title":"Authenticated"
+						},
+						"additionalAttributes":{
+							"type":"object",
+							"properties":{
+								"status":{
+									"type":"string",
+									"title":"Status"
+								}
+							},
+							"additionalProperties":false,
+							"title":"Additional Attributes",
+							"required":[
+								"status"
+							]
 						}
 					}
 				}
@@ -71,14 +86,17 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_NSNIY-1",
 			"id":"n_deT1A",
 			"index":2,
 			"inputs":{
 				"result":{
-					"authenticated":true
+					"authenticated":true,
+					"additionalAttributes":{
+						"status":"200"
+					}
 				}
 			},
 			"skip":false,
@@ -104,5 +122,5 @@
 	"tags":[
 		
 	],
-	"version":3
+	"version":4
 }
