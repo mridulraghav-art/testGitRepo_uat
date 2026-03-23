@@ -4,18 +4,41 @@
 	],
 	"createdTime":1774264483713,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1774265051165,
+		"deployedAt":1774265975827,
 		"deployedBy":39,
-		"deployedDefinitionId":"69c122da1ef5bb4a8e413884",
+		"deployedDefinitionId":"69c126771795cf2cf6594b7e",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":3
+		"version":3,
+		"workflowVersion":4
 	},
 	"edges":[
 		{
 			"fromNodeId":"n_uUgGV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IQBwk",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IQBwk",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_MNOhY",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_MNOhY",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_deT1A",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IQBwk",
+			"name":"no",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_deT1A",
@@ -25,7 +48,7 @@
 	"id":"69c120a3e6ecc141ea01a889",
 	"lastModifiedBy":39,
 	"lcName":"verifyotp",
-	"modifiedTime":1774265972027,
+	"modifiedTime":1774267038461,
 	"name":"verifyOTP",
 	"nodes":[
 		{
@@ -68,6 +91,19 @@
 							]
 						}
 					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"code"
+					],
+					"properties":{
+						"code":{
+							"type":"string",
+							"title":"Code"
+						}
+					}
 				}
 			},
 			"skip":false,
@@ -77,6 +113,62 @@
 				"type":"CALLABLE"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceVersion":55,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_NSNIY-1",
+			"id":"n_IQBwk",
+			"index":2,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_uUgGV.outputs.code }}",
+						"filter":{
+							"operator":"NOT_EQUAL",
+							"value":"111111"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1755,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_IQBwk@_NSNIY-1@y",
+			"id":"n_MNOhY",
+			"index":3,
+			"inputs":{
+				"result":{
+					"authenticated":false,
+					"additionalAttributes":{
+						"status":"400"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		},
 		{
 			"context":{
@@ -90,7 +182,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_NSNIY-1",
 			"id":"n_deT1A",
-			"index":2,
+			"index":4,
 			"inputs":{
 				"result":{
 					"authenticated":true,
@@ -122,5 +214,5 @@
 	"tags":[
 		
 	],
-	"version":4
+	"version":5
 }
