@@ -4,14 +4,14 @@
 	],
 	"createdTime":1774264472533,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1774264814984,
+		"deployedAt":1774265462790,
 		"deployedBy":39,
-		"deployedDefinitionId":"69c121ee5e066e53020742eb",
+		"deployedDefinitionId":"69c1247687b8dd7e4cf1bccf",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":2
+		"version":2,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"69c12098e6ecc141ea01a858",
 	"lastModifiedBy":39,
 	"lcName":"sendotp",
-	"modifiedTime":1774265461159,
+	"modifiedTime":1774265539235,
 	"name":"sendOTP",
 	"nodes":[
 		{
@@ -47,7 +47,8 @@
 					"required":[
 						"code",
 						"additionalAttributes",
-						"referenceId"
+						"referenceId",
+						"returnTo"
 					],
 					"properties":{
 						"code":{
@@ -71,6 +72,10 @@
 						"referenceId":{
 							"type":"string",
 							"title":"Reference Id"
+						},
+						"returnTo":{
+							"type":"string",
+							"title":"Return To"
 						}
 					}
 				}
@@ -102,7 +107,8 @@
 					"additionalAttributes":{
 						"status":"200"
 					},
-					"referenceId":"1234"
+					"referenceId":"1234",
+					"returnTo":"/"
 				}
 			},
 			"skip":false,
@@ -128,5 +134,5 @@
 	"tags":[
 		
 	],
-	"version":3
+	"version":4
 }
