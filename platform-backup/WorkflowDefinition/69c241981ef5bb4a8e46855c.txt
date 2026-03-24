@@ -11,12 +11,19 @@
 			"skip":false,
 			"toNodeId":"n_GcAwl",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GcAwl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_JaWre",
+			"type":"next"
 		}
 	],
 	"id":"69c241981ef5bb4a8e46855c",
 	"lastModifiedBy":39,
 	"lcName":"fdsa",
-	"modifiedTime":1774343927860,
+	"modifiedTime":1774343939699,
 	"name":"fdsa",
 	"nodes":[
 		{
@@ -64,6 +71,25 @@
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create 3D variable",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":101,
+				"resourceName":"variable_by_unifyapps_update_3d_variable",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_e13J7-1",
+			"id":"n_JaWre",
+			"index":3,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update 3D variable",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -76,5 +102,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
