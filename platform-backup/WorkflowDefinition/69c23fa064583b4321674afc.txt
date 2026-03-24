@@ -6,7 +6,7 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_p7ddK",
+			"fromNodeId":"n_Rfzph",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_rpWj9",
@@ -16,20 +16,33 @@
 	"id":"69c23fa064583b4321674afc",
 	"lastModifiedBy":39,
 	"lcName":"fdsa",
-	"modifiedTime":1774338174961,
+	"modifiedTime":1774338191112,
 	"name":"fdsa",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1773,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_p7ddK-1",
-			"id":"_p7ddK",
+			"id":"n_Rfzph",
 			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
@@ -71,5 +84,5 @@
 	"tags":[
 		
 	],
-	"version":1
+	"version":2
 }
