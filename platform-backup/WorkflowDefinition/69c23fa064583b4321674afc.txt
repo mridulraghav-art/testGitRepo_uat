@@ -6,7 +6,7 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"n_Rfzph",
+			"fromNodeId":"n_7WURp",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_rpWj9",
@@ -16,33 +16,32 @@
 	"id":"69c23fa064583b4321674afc",
 	"lastModifiedBy":39,
 	"lcName":"fdsa",
-	"modifiedTime":1774338191112,
+	"modifiedTime":1774338204031,
 	"name":"fdsa",
 	"nodes":[
 		{
 			"context":{
-				"appName":"callables",
-				"resourceVersion":1773,
-				"resourceName":"callables_from_api"
+				"appName":"schedule",
+				"resourceVersion":52,
+				"resourceName":"schedule_default"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_p7ddK-1",
-			"id":"n_Rfzph",
+			"id":"n_7WURp",
 			"index":1,
 			"inputs":{
-				"request":{
-					"contentType":"application/json"
-				},
-				"endpointType":"REST",
-				"streamingResponse":false
+				"cron":"INTERVAL",
+				"sequential":false,
+				"interval":15,
+				"frequency":"MINUTES"
 			},
 			"skip":false,
-			"subTitle":"Callable",
-			"title":"Trigger via API",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"CALLABLE"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
@@ -84,5 +83,5 @@
 	"tags":[
 		
 	],
-	"version":2
+	"version":3
 }
