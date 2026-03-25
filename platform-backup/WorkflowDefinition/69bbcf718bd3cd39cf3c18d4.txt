@@ -56,7 +56,7 @@
 	"id":"69bbcf718bd3cd39cf3c18d4",
 	"lastModifiedBy":39,
 	"lcName":"new",
-	"modifiedTime":1774434196180,
+	"modifiedTime":1774434250751,
 	"name":"new",
 	"nodes":[
 		{
@@ -104,8 +104,10 @@
 				"includeCurrentUserPermissions":false,
 				"translationsOption":"DEFAULT",
 				"page":{
-					"paginateBy":"CURSOR",
-					"limit":2
+					"paginateBy":"OFFSET",
+					"limit":2,
+					"cursor":"0",
+					"offset":0
 				},
 				"numberOfRecordsToFetch":"MULTIPLE",
 				"readThroughSessionVariables":false,
@@ -189,5 +191,5 @@
 	"tags":[
 		
 	],
-	"version":9
+	"version":10
 }
