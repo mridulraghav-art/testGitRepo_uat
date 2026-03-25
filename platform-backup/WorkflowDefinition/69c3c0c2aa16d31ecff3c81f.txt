@@ -177,7 +177,7 @@
 	"id":"69c3c0c2aa16d31ecff3c81f",
 	"lastModifiedBy":39,
 	"lcName":"testbrachexec",
-	"modifiedTime":1774438376415,
+	"modifiedTime":1774438400768,
 	"name":"testBrachExec",
 	"nodes":[
 		{
@@ -648,7 +648,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_JqW5p@_X1UWo-1@l",
 			"id":"n_rlqcy",
@@ -656,13 +656,11 @@
 			"inputs":{
 				"useRawPayload":false,
 				"writeThroughSessionVariables":false,
-				"object_type":"save_executions_data",
+				"object_type":"bhavesh",
 				"skipIfBlank":false,
 				"record":{
-					"execId":"{{ __RUN__.outputs.executionId }}",
-					"currentId":"{{ __RUN__.outputs.parentExecutionId }}",
-					"workflowId":"{{ __RUN__.outputs.workflowId }}",
-					"currentTime":"{{ n_xoKx5.outputs.result.time }}"
+					"name":"{{ n_JqW5p.outputs.item.properties.name }}",
+					"age":"{{ n_JqW5p.outputs.item.properties.age }}"
 				}
 			},
 			"skip":false,
@@ -703,5 +701,5 @@
 	"tags":[
 		
 	],
-	"version":3
+	"version":4
 }
