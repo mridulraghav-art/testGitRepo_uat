@@ -1,0 +1,63 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1774436546270,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_X1UWo",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_VHnSV",
+			"type":"next"
+		}
+	],
+	"id":"69c3c0c2aa16d31ecff3c81f",
+	"lastModifiedBy":39,
+	"lcName":"testbrachexec",
+	"modifiedTime":1774436546270,
+	"name":"testBrachExec",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_X1UWo-1",
+			"id":"_X1UWo",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_X1UWo-1",
+			"id":"_VHnSV",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":0
+}
