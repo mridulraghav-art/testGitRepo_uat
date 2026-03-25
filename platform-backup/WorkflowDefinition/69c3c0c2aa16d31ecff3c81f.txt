@@ -177,7 +177,7 @@
 	"id":"69c3c0c2aa16d31ecff3c81f",
 	"lastModifiedBy":39,
 	"lcName":"testbrachexec",
-	"modifiedTime":1774438339406,
+	"modifiedTime":1774438376415,
 	"name":"testBrachExec",
 	"nodes":[
 		{
@@ -187,7 +187,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_X1UWo-1",
 			"id":"n_CRpWQ",
@@ -220,7 +220,7 @@
 			"index":2,
 			"inputs":{
 				"shouldSearchInAnalyticsStore":false,
-				"object_type":"gong_call_detail",
+				"object_type":"bhavesh",
 				"includeRoleMappings":false,
 				"includeCurrentUserPermissions":false,
 				"translationsOption":"DEFAULT",
@@ -251,6 +251,8 @@
 			"id":"n_JqW5p",
 			"index":3,
 			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_i5v4R.outputs.objects }}",
 				"captureIterations":false
 			},
 			"skip":false,
@@ -266,7 +268,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_JqW5p@_X1UWo-1@l",
 			"id":"n_E1DYV",
@@ -319,7 +321,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_JqW5p@_X1UWo-1@l",
 			"id":"n_fWBsB",
@@ -374,7 +376,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_fWBsB@n_JqW5p@_X1UWo-1@l@1",
 			"id":"n_fWBsB@1",
@@ -394,7 +396,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_fWBsB@n_JqW5p@_X1UWo-1@l@1",
 			"id":"n_EAPHs",
@@ -420,7 +422,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_fWBsB@n_JqW5p@_X1UWo-1@l@2",
 			"id":"n_fWBsB@2",
@@ -440,7 +442,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_fWBsB@n_JqW5p@_X1UWo-1@l@2",
 			"id":"n_WcJxV",
@@ -466,7 +468,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_fWBsB@n_JqW5p@_X1UWo-1@l@3",
 			"id":"n_fWBsB@3",
@@ -486,7 +488,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_fWBsB@n_JqW5p@_X1UWo-1@l@3",
 			"id":"n_IVmcS",
@@ -512,7 +514,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_fWBsB@n_JqW5p@_X1UWo-1@l@4",
 			"id":"n_fWBsB@4",
@@ -532,7 +534,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_fWBsB@n_JqW5p@_X1UWo-1@l@4",
 			"id":"n_NN9sO",
@@ -558,7 +560,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_fWBsB@n_JqW5p@_X1UWo-1@l@5",
 			"id":"n_fWBsB@5",
@@ -578,7 +580,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_fWBsB@n_JqW5p@_X1UWo-1@l@5",
 			"id":"n_fc0Mu",
@@ -604,7 +606,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_JqW5p@_X1UWo-1@l",
 			"id":"n_xoKx5",
@@ -646,7 +648,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_JqW5p@_X1UWo-1@l",
 			"id":"n_rlqcy",
@@ -673,7 +675,7 @@
 				"appName":"stop"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_X1UWo-1",
 			"id":"n_YPVmg",
@@ -701,5 +703,5 @@
 	"tags":[
 		
 	],
-	"version":2
+	"version":3
 }
