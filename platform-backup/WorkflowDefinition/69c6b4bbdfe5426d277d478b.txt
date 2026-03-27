@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1774630075355,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_Iloic",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_r8ZaG",
+			"type":"next"
+		}
+	],
+	"id":"69c6b4bbdfe5426d277d478b",
+	"lastModifiedBy":39,
+	"lcName":"throw_exception_used_mismatch_delimiter_217746300686460",
+	"modifiedTime":1774630075355,
+	"name":"THROW_EXCEPTION_USED_MISMATCH_DELIMITER_217746300686460",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Iloic-1",
+			"id":"_Iloic",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Iloic-1",
+			"id":"_r8ZaG",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
