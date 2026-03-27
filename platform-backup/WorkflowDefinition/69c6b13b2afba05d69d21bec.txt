@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1774629179820,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_F86XF",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_tidmg",
+			"type":"next"
+		}
+	],
+	"id":"69c6b13b2afba05d69d21bec",
+	"lastModifiedBy":39,
+	"lcName":"trueheaderrow_csvreaderbyunifyapps_217746291732960",
+	"modifiedTime":1774629179820,
+	"name":"TrueHeaderRow_CSVReaderByUnifyApps_217746291732960",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_F86XF-1",
+			"id":"_F86XF",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_F86XF-1",
+			"id":"_tidmg",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
