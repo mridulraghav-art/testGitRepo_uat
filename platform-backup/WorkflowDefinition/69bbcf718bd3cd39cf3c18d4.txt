@@ -56,7 +56,7 @@
 	"id":"69bbcf718bd3cd39cf3c18d4",
 	"lastModifiedBy":39,
 	"lcName":"new",
-	"modifiedTime":1774690358432,
+	"modifiedTime":1774691145053,
 	"name":"new",
 	"nodes":[
 		{
@@ -92,7 +92,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_kwDBh-1",
 			"id":"n_VF7X9",
@@ -110,6 +110,67 @@
 				"numberOfRecordsToFetch":"MULTIPLE",
 				"readThroughSessionVariables":false,
 				"includeTotalCount":false
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false,
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":true,
+					"logPolicies":[
+						{
+							"level":"INFO",
+							"maskedFields":[
+								"n_VF7X9.inputs.object_type"
+							],
+							"message":"{{ n_VF7X9.inputs.object_type }}",
+							"onlyOnFailure":false
+						}
+					]
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"enabled":false
+				},
+				"stepError":"STOP",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"enabled":false
+				}
 			},
 			"skip":false,
 			"subTitle":"Storage by UnifyApps",
@@ -191,5 +252,5 @@
 	"tags":[
 		
 	],
-	"version":13
+	"version":14
 }
