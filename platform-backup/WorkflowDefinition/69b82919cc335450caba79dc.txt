@@ -6,7 +6,7 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_ieKJ3",
+			"fromNodeId":"n_ODDsT",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_XTSyE",
@@ -16,20 +16,27 @@
 	"id":"69b82919cc335450caba79dc",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1774773150818,
+	"modifiedTime":1774773162115,
 	"name":"test",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1810,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ieKJ3-1",
-			"id":"_ieKJ3",
+			"id":"n_ODDsT",
 			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
@@ -307,5 +314,5 @@
 	"tags":[
 		
 	],
-	"version":2
+	"version":3
 }
