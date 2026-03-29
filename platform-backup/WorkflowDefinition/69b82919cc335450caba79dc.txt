@@ -16,7 +16,7 @@
 	"id":"69b82919cc335450caba79dc",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1774773178122,
+	"modifiedTime":1774773186052,
 	"name":"test",
 	"nodes":[
 		{
@@ -31,7 +31,29 @@
 			"groupId":"_ieKJ3-1",
 			"id":"n_ODDsT",
 			"index":1,
-			"inputs":{},
+			"inputs":{
+				"result":{
+					"type":"object",
+					"required":[],
+					"properties":{
+						"name":{
+							"type":"string",
+							"title":"Name"
+						}
+					}
+				},
+				"callableInterfaceId":"66842a83f7df24538474d50f",
+				"setup":{
+					"type":"object",
+					"required":[],
+					"properties":{
+						"name":{
+							"type":"string",
+							"title":"Name"
+						}
+					}
+				}
+			},
 			"skip":false,
 			"subTitle":"Callable",
 			"title":"Trigger interface",
@@ -314,5 +336,5 @@
 	"tags":[
 		
 	],
-	"version":4
+	"version":5
 }
