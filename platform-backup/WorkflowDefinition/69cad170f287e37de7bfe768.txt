@@ -7,46 +7,150 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_6sk7d",
+			"fromNodeId":"n_wyCH8",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_5WmgS",
+			"toNodeId":"n_SJhPZ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SJhPZ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GxnXW",
 			"type":"next"
 		}
 	],
 	"id":"69cad170f287e37de7bfe768",
 	"lastModifiedBy":39,
 	"lcName":"standard_entities_with_create_new_user_217748995621440",
-	"modifiedTime":1774899574054,
+	"modifiedTime":1774899584977,
 	"name":"Standard_Entities_With_Create_New_User_217748995621440",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_6sk7d-1",
-			"id":"_6sk7d",
-			"index":0,
+			"id":"n_wyCH8",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_6sk7d-1",
-			"id":"_5WmgS",
-			"index":0,
+			"id":"n_SJhPZ",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"profile":{
+							"type":"object",
+							"properties":{
+								"name":{
+									"type":"string",
+									"title":"name"
+								}
+							},
+							"title":"profile",
+							"additionalProperties":false
+						}
+					}
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"profile":{
+							"type":"object",
+							"properties":{
+								"name":{
+									"type":"string",
+									"title":"name"
+								}
+							},
+							"title":"profile",
+							"additionalProperties":false
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":4615,
+				"resourceName":"standard_entities_create_user",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_6sk7d-1",
+			"id":"n_GxnXW",
+			"index":3,
+			"inputs":{
+				"loginType":"PASSWORD",
+				"user":{
+					"name":"TestingUser_217748995621440",
+					"username":"TestingUser_217748995621440",
+					"password":"UynifyApps@1029",
+					"contactDetails":{
+						"email":"jahnavi.balimidi@unifyapps.com",
+						"phoneNumber":"9999999999"
+					},
+					"state":"LOCKED",
+					"locale":"en-US"
+				},
+				"needToResetPassword":true
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Create User",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":false,
@@ -61,5 +165,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
