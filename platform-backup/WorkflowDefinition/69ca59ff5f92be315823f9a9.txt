@@ -23,7 +23,7 @@
 	"id":"69ca59ff5f92be315823f9a9",
 	"lastModifiedBy":39,
 	"lcName":"dnt_custom_http_endpoint_error_response_rest_api",
-	"modifiedTime":1774869222608,
+	"modifiedTime":1774869556745,
 	"name":"Dnt_Custom_Http_EndPoint_Error_Response_Rest_Api",
 	"nodes":[
 		{
@@ -40,7 +40,20 @@
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json"
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"Response":{
+								"type":"string",
+								"title":"Response"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"Response"
+						]
+					}
 				},
 				"endpointType":"REST",
 				"streamingResponse":false
@@ -67,17 +80,58 @@
 			"id":"n_QLNmC",
 			"index":2,
 			"inputs":{
-				"httpVersion":"HTTP_2",
-				"responseContentType":"application/json",
-				"followRedirects":"NORMAL",
 				"isAsync":false,
 				"enableProxy":false,
 				"requestTimeoutInSecs":-1,
+				"httpMethod":"DELETE",
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"path":"/api-endpoint/CUSTOM-HTTP-NODE-TESTING-DND/Dnt-Custom-Http-EndPoint-Error-Response-Rest-Api",
+				"baseUrl":"https://uat-automation.uat.unifyapps.com",
+				"httpVersion":"HTTP_2",
+				"queryParamsList":[
+					{
+						"key":"ErrorResponseFor",
+						"value":"400"
+					}
+				],
+				"responseContentType":"application/json",
+				"followRedirects":"NORMAL",
+				"errorResponseSchemas":[
+					{
+						"name":"400_BadRequest",
+						"status":400,
+						"headers":[
+							"HTTP_Response_Header_String",
+							"HTTP_Response_Header_String1"
+						],
+						"body":{
+							"type":"object",
+							"additionalProperties":false,
+							"properties":{
+								"Request_Body_String":{
+									"type":"string",
+									"title":"Request_Body_String"
+								},
+								"Request_Body_Number":{
+									"type":"string",
+									"title":"Request_Body_Number"
+								},
+								"Request_Body_Integer":{
+									"type":"string",
+									"title":"Request_Body_Integer"
+								},
+								"Request_Body_Boolean":{
+									"type":"boolean",
+									"title":"Request_Body_Boolean"
+								}
+							}
+						}
+					}
+				],
 				"authType":"CUSTOM",
 				"requestContentType":"application/json",
-				"ignoreTrailingSlashes":false,
-				"connectionType":"DIRECT",
-				"sslVerify":false
+				"ignoreTrailingSlashes":false
 			},
 			"skip":false,
 			"subTitle":"Custom HTTP Endpoint",
@@ -120,5 +174,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
