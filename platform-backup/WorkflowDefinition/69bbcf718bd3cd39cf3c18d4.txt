@@ -25,6 +25,20 @@
 			"fromNodeId":"n_VF7X9",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_Gp7N7",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Gp7N7",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_B3a21",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_B3a21",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_lM9FM",
 			"type":"next"
 		}
@@ -56,7 +70,7 @@
 	"id":"69bbcf718bd3cd39cf3c18d4",
 	"lastModifiedBy":39,
 	"lcName":"new",
-	"modifiedTime":1774692510420,
+	"modifiedTime":1774867008888,
 	"name":"new",
 	"nodes":[
 		{
@@ -179,6 +193,56 @@
 		},
 		{
 			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":1640,
+				"resourceName":"files_by_unifyapps_create_temp_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_kwDBh-1",
+			"id":"n_Gp7N7",
+			"index":3,
+			"inputs":{
+				"isTmp":false,
+				"folderPath":"fewe",
+				"fileName":"fewew",
+				"initialContentType":"plainText",
+				"uploadToCloudStorage":true,
+				"initialContent":"fewewew",
+				"type":"SINGLE",
+				"fileType":"txt"
+			},
+			"skip":false,
+			"subTitle":"Files by UnifyApps",
+			"title":"Create a file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":2777,
+				"resourceName":"utility_by_unifyapps_generate_public_url",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_kwDBh-1",
+			"id":"n_B3a21",
+			"index":4,
+			"inputs":{
+				"file":"{{ n_Gp7N7.outputs.fileDetails }}",
+				"expiryTime":1
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Generate public file URL",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"variable_by_unifyapps",
 				"resourceVersion":1640,
 				"resourceName":"variable_by_unifyapps_create_variables",
@@ -189,7 +253,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_kwDBh-1",
 			"id":"n_lM9FM",
-			"index":3,
+			"index":5,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -252,5 +316,5 @@
 	"tags":[
 		
 	],
-	"version":17
+	"version":18
 }
