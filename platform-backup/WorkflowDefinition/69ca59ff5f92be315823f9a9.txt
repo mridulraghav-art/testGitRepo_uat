@@ -23,7 +23,7 @@
 	"id":"69ca59ff5f92be315823f9a9",
 	"lastModifiedBy":39,
 	"lcName":"dnt_custom_http_endpoint_error_response_rest_api",
-	"modifiedTime":1774869556745,
+	"modifiedTime":1774870090519,
 	"name":"Dnt_Custom_Http_EndPoint_Error_Response_Rest_Api",
 	"nodes":[
 		{
@@ -40,22 +40,29 @@
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json",
-					"body":{
-						"type":"object",
-						"properties":{
-							"Response":{
-								"type":"string",
-								"title":"Response"
-							}
-						},
-						"additionalProperties":false,
-						"required":[
-							"Response"
-						]
-					}
+					"contentType":"application/json"
 				},
 				"endpointType":"REST",
+				"response":[
+					{
+						"status":400,
+						"headers":{
+							"type":"object",
+							"additionalProperties":false,
+							"required":[],
+							"properties":{
+								"Response":{
+									"type":"string",
+									"title":"Response"
+								}
+							}
+						},
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					}
+				],
 				"streamingResponse":false
 			},
 			"skip":false,
@@ -152,7 +159,12 @@
 			"id":"n_EwWNk",
 			"index":3,
 			"inputs":{
-				"streamingCompleted":true
+				"headers":{
+					"Response":"{{ n_QLNmC.outputs.result }}"
+				},
+				"streamingCompleted":true,
+				"responseName":"400_undefined",
+				"status":400
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -174,5 +186,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
