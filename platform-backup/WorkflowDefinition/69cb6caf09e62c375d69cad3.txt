@@ -25,7 +25,7 @@
 	"id":"69cb6caf09e62c375d69cad3",
 	"lastModifiedBy":39,
 	"lcName":"retry-http",
-	"modifiedTime":1774949407877,
+	"modifiedTime":1774949414600,
 	"name":"retry-http",
 	"nodes":[
 		{
@@ -54,11 +54,6 @@
 			"type":"START"
 		},
 		{
-			"additional":{
-				"xsdSchemaConfig":{
-					"root":{}
-				}
-			},
 			"context":{
 				"appName":"custom_http_application",
 				"resourceVersion":2757,
@@ -76,34 +71,13 @@
 				"isAsync":false,
 				"requestTimeoutInSecs":-1,
 				"httpMethod":"POST",
-				"body":{
-					"input":"cool"
-				},
 				"sslVerify":true,
 				"path":"/api-endpoint/retryworkflow-group/retryworkflow-api",
 				"baseUrl":"https://uat-automation.uat.unifyapps.com",
 				"password":"__UNIFYAPPS_GARBAGE_CONSTANT__Z29vZCBsdWNrIQ==",
 				"httpVersion":"HTTP_2",
-				"bodySchema":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"input"
-					],
-					"properties":{
-						"input":{
-							"type":"string",
-							"title":"Input"
-						}
-					}
-				},
 				"responseContentType":"application/json",
-				"headersList":[
-					{
-						"key":"api-token",
-						"value":"101/69cb9398d94dd56874e91f16"
-					}
-				],
+				"headersList":[],
 				"authType":"BASIC_AUTH",
 				"requestContentType":"application/json",
 				"username":"multipart"
@@ -183,5 +157,5 @@
 		}
 	},
 	"standard":false,
-	"version":11
+	"version":12
 }
