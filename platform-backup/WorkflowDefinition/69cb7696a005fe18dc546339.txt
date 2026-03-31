@@ -23,7 +23,7 @@
 	"id":"69cb7696a005fe18dc546339",
 	"lastModifiedBy":39,
 	"lcName":"checking_headerbased",
-	"modifiedTime":1774980832663,
+	"modifiedTime":1774980892861,
 	"name":"checking_headerbased",
 	"nodes":[
 		{
@@ -105,6 +105,9 @@
 				},
 				"baseUrl":"https://uat-automation.uat.unifyapps.com",
 				"password":"Headerbased",
+				"responseHeaders":[
+					"Content type"
+				],
 				"httpVersion":"HTTP_2",
 				"bodySchema":{
 					"type":"object",
@@ -224,5 +227,5 @@
 		}
 	},
 	"standard":false,
-	"version":25
+	"version":26
 }
