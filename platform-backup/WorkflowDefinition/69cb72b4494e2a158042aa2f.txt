@@ -25,7 +25,7 @@
 	"id":"69cb72b4494e2a158042aa2f",
 	"lastModifiedBy":39,
 	"lcName":"header-based",
-	"modifiedTime":1774947912820,
+	"modifiedTime":1774948933769,
 	"name":"header-based",
 	"nodes":[
 		{
@@ -35,20 +35,44 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IEVkG-1",
 			"id":"n_gjk2A",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json"
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"Input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
 				},
 				"endpointType":"REST",
 				"response":[
 					{
 						"name":"200",
 						"status":200,
+						"headers":{
+							"type":"object",
+							"additionalProperties":false,
+							"required":[],
+							"properties":{
+								"content-type":{
+									"type":"string",
+									"title":"Content Type"
+								}
+							}
+						},
 						"contentType":"application/json",
 						"textBody":{
 							"type":"string"
@@ -56,14 +80,14 @@
 						"body":{
 							"type":"object",
 							"properties":{
-								"content-type":{
+								"output":{
 									"type":"string",
-									"title":"Content Type"
+									"title":"Output"
 								}
 							},
 							"additionalProperties":false,
 							"required":[
-								"content-type"
+								"output"
 							]
 						}
 					}
@@ -92,10 +116,13 @@
 			"id":"n_IYaRv",
 			"index":2,
 			"inputs":{
+				"headers":{
+					"content-type":"application/json"
+				},
 				"streamingCompleted":true,
 				"responseName":"200_200",
 				"body":{
-					"content-type":"{\"id\": 1,\"name\": \"File1\",\"type\": \"pdf\"}"
+					"output":"{{ n_gjk2A.outputs.body.input }}"
 				},
 				"status":200
 			},
@@ -119,5 +146,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
