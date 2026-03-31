@@ -32,7 +32,7 @@
 	"id":"69cb7157f287e37de7c15a1e",
 	"lastModifiedBy":39,
 	"lcName":"test_retryonerror",
-	"modifiedTime":1774949944358,
+	"modifiedTime":1774973892761,
 	"name":"test_retryonerror",
 	"nodes":[
 		{
@@ -42,7 +42,7 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_s0zXa-1",
 			"id":"n_ShCif",
@@ -55,13 +55,10 @@
 						"properties":{
 							"input":{
 								"type":"string",
-								"title":"Input"
+								"title":"input"
 							}
 						},
-						"additionalProperties":false,
-						"required":[
-							"input"
-						]
+						"additionalProperties":false
 					}
 				},
 				"endpointType":"REST",
@@ -107,7 +104,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_s0zXa-1",
 			"id":"n_Mnlav",
@@ -136,9 +133,6 @@
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"200_200",
-				"body":{
-					"output":"{{ n_ShCif.outputs.body.input }}"
-				},
 				"status":200
 			},
 			"skip":false,
@@ -161,5 +155,5 @@
 		}
 	},
 	"standard":false,
-	"version":10
+	"version":11
 }
