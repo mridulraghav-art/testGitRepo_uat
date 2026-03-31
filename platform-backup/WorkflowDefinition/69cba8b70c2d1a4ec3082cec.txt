@@ -1,52 +1,121 @@
 {
 	"appsUsed":[
-		
+		"custom_http_application"
 	],
 	"createdTime":1774954679511,
 	"deleted":false,
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_KPV9l",
+			"fromNodeId":"n_vA6hy",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_YrwzM",
+			"toNodeId":"n_Q5C2w",
 			"type":"next"
 		}
 	],
 	"id":"69cba8b70c2d1a4ec3082cec",
 	"lastModifiedBy":39,
 	"lcName":"customhttpworkflow1_0_217749546337600",
-	"modifiedTime":1774954683500,
+	"modifiedTime":1774954690434,
 	"name":"customHTTPWorkflow1_0_217749546337600",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KPV9l-1",
-			"id":"_KPV9l",
-			"index":0,
+			"id":"n_vA6hy",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_application",
+				"resourceVersion":2759,
+				"connectionId":"6878d77aae286a785bd91456",
+				"resourceName":"custom_http_application_execute",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KPV9l-1",
-			"id":"_YrwzM",
-			"index":0,
+			"id":"n_Q5C2w",
+			"index":2,
+			"inputs":{
+				"isAsync":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"PUT",
+				"body":{
+					"input":"random"
+				},
+				"sslVerify":true,
+				"path":"/api-endpoint/aj69olo/a527bv",
+				"responseSchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output"
+					],
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"output"
+						}
+					}
+				},
+				"baseUrl":"https://uat-automation.uat.unifyapps.com",
+				"httpVersion":"HTTP_2",
+				"bodySchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input"
+					],
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"input"
+						}
+					}
+				},
+				"responseContentType":"application/json",
+				"headersList":[
+					{
+						"key":"api-token",
+						"value":"101/69cba8b2fbd5be3199ff4592"
+					}
+				],
+				"authType":"CUSTOM",
+				"requestContentType":"application/json"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Custom HTTP Application",
+			"title":"Execute REST Request",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":false,
@@ -61,5 +130,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
