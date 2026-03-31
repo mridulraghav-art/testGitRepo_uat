@@ -23,7 +23,7 @@
 	"id":"69cb7696a005fe18dc546339",
 	"lastModifiedBy":39,
 	"lcName":"checking_headerbased",
-	"modifiedTime":1774947894350,
+	"modifiedTime":1774947963502,
 	"name":"checking_headerbased",
 	"nodes":[
 		{
@@ -81,7 +81,7 @@
 				"httpMethod":"GET",
 				"connectionType":"DIRECT",
 				"sslVerify":false,
-				"path":"/api-endpoint/header-based-api/header-",
+				"path":"/api-endpoint/header-based-api/header-api",
 				"baseUrl":"https://uat-automation.uat.unifyapps.com",
 				"password":"Headerbased",
 				"httpVersion":"HTTP_2",
@@ -134,8 +134,7 @@
 				"retryConfig":{
 					"backOffFactor":null,
 					"captureRetries":false,
-					"count":3,
-					"enabled":true
+					"enabled":false
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -191,5 +190,5 @@
 		}
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
