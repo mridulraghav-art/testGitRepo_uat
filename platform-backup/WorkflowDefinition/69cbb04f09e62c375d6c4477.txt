@@ -4,6 +4,15 @@
 	],
 	"createdTime":1774956623966,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1774956639170,
+		"deployedBy":39,
+		"deployedDefinitionId":"69cbb05e739a2b4f80c4425f",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_XmZki",
@@ -11,19 +20,12 @@
 			"skip":false,
 			"toNodeId":"n_a2acy",
 			"type":"next"
-		},
-		{
-			"fromNodeId":"n_a2acy",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_OXH5y",
-			"type":"next"
 		}
 	],
 	"id":"69cbb04f09e62c375d6c4477",
 	"lastModifiedBy":39,
 	"lcName":"activitylogginglocal0374979877",
-	"modifiedTime":1774956637499,
+	"modifiedTime":1774956639717,
 	"name":"activityLoggingLocal0374979877",
 	"nodes":[
 		{
@@ -122,32 +124,6 @@
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create variables",
 			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"variable_by_unifyapps",
-				"resourceVersion":1643,
-				"resourceName":"variable_by_unifyapps_update_variables",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_NATpy-1",
-			"id":"n_OXH5y",
-			"index":3,
-			"inputs":{
-				"variables":[
-					{
-						"source":"{{ n_a2acy.outputs.input_number }}",
-						"value":10
-					}
-				]
-			},
-			"skip":false,
-			"subTitle":"Variable by UnifyApps",
-			"title":"Update variables",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -164,5 +140,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
