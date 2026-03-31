@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1774939311040,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_jML8c",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_6lpsH",
+			"type":"next"
+		}
+	],
+	"id":"69cb6caf09e62c375d69cad3",
+	"lastModifiedBy":39,
+	"lcName":"retry-http",
+	"modifiedTime":1774939311040,
+	"name":"retry-http",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_jML8c-1",
+			"id":"_jML8c",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_jML8c-1",
+			"id":"_6lpsH",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
