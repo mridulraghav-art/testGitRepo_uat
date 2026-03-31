@@ -4,43 +4,94 @@
 	],
 	"createdTime":1774939311040,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1774939910174,
+		"deployedBy":39,
+		"deployedDefinitionId":"69cb6f05a005fe18dc542120",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
-			"fromNodeId":"n_XFDw3",
+			"fromNodeId":"n_5ACS6",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_C21gl",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_C21gl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ix9xE",
 			"type":"next"
 		}
 	],
 	"id":"69cb6caf09e62c375d69cad3",
 	"lastModifiedBy":39,
 	"lcName":"retry-http",
-	"modifiedTime":1774939906464,
+	"modifiedTime":1774940488567,
 	"name":"retry-http",
 	"nodes":[
 		{
 			"context":{
-				"appName":"webhooks",
-				"resourceVersion":53,
-				"resourceName":"webhooks_default"
+				"appName":"callables",
+				"resourceVersion":1811,
+				"resourceName":"callables_from_api"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_jML8c-1",
-			"id":"n_XFDw3",
+			"id":"n_5ACS6",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json"
-				}
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"dfv":{
+								"type":"string",
+								"title":"Dfv"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"dfv"
+						]
+					}
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"status":200,
+						"headers":{
+							"type":"object",
+							"additionalProperties":false,
+							"required":[],
+							"properties":{
+								"content-type":{
+									"type":"string",
+									"title":"Content Type"
+								}
+							}
+						},
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					}
+				],
+				"streamingResponse":false
 			},
 			"skip":false,
-			"subTitle":"Webhook",
-			"title":"New event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"WEBHOOK"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
@@ -166,6 +217,32 @@
 			"subTitle":"Custom HTTP Application",
 			"title":"Execute REST Request",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1812,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_jML8c-1",
+			"id":"n_ix9xE",
+			"index":3,
+			"inputs":{
+				"headers":{
+					"content-type":"{{ n_5ACS6.outputs.body.dfv }}"
+				},
+				"streamingCompleted":true,
+				"responseName":"200_undefined",
+				"status":200
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -182,5 +259,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
