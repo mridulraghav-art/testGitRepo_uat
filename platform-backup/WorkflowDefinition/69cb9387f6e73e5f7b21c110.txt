@@ -6,46 +6,184 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_5eIC5",
+			"fromNodeId":"n_USjzX",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_P4umh",
+			"toNodeId":"n_rBP68",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_rBP68",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_yQ2cP",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_yQ2cP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_HAJUk",
 			"type":"next"
 		}
 	],
 	"id":"69cb9387f6e73e5f7b21c110",
 	"lastModifiedBy":39,
 	"lcName":"activitylogginglocal5195660365",
-	"modifiedTime":1774949255257,
+	"modifiedTime":1774949272361,
 	"name":"activityLoggingLocal5195660365",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_5eIC5-1",
-			"id":"_5eIC5",
-			"index":0,
+			"id":"n_USjzX",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input1":{
+								"type":"string",
+								"title":"input1"
+							},
+							"input2":{
+								"type":"string",
+								"title":"input2"
+							}
+						},
+						"additionalProperties":false
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_5eIC5-1",
-			"id":"_P4umh",
-			"index":0,
+			"id":"n_rBP68",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"input_number":{
+							"type":"integer",
+							"title":"input_number"
+						},
+						"input_string":{
+							"type":"string",
+							"title":"input_string"
+						}
+					}
+				}
+			},
+			"inputs":{
+				"input_string":"UnifyApps",
+				"input_number":0
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"input_number":{
+							"type":"integer",
+							"title":"input_number"
+						},
+						"input_string":{
+							"type":"string",
+							"title":"input_string"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":1534,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_5eIC5-1",
+			"id":"n_yQ2cP",
+			"index":3,
+			"inputs":{
+				"field1":"Testing Scope",
+				"field2":true
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_5eIC5-1",
+			"id":"n_HAJUk",
+			"index":4,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_rBP68.outputs.input_number }}",
+						"value":10
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update variables",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +194,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
