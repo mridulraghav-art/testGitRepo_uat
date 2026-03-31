@@ -11,12 +11,19 @@
 			"skip":false,
 			"toNodeId":"n_hozuJ",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_hozuJ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_xTOgN",
+			"type":"next"
 		}
 	],
 	"id":"69cbaf94a005fe18dc55e926",
 	"lastModifiedBy":39,
 	"lcName":"activitylogginglocal5170266304",
-	"modifiedTime":1774956447079,
+	"modifiedTime":1774956450126,
 	"name":"activityLoggingLocal5170266304",
 	"nodes":[
 		{
@@ -182,6 +189,64 @@
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_e2VNj-1",
+			"id":"n_xTOgN",
+			"index":3,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"input_number":{
+							"type":"integer",
+							"title":"input_number"
+						},
+						"input_string":{
+							"type":"string",
+							"title":"input_string"
+						}
+					}
+				}
+			},
+			"inputs":{
+				"input_string":"UnifyApps",
+				"input_number":0
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"input_number":{
+							"type":"integer",
+							"title":"input_number"
+						},
+						"input_string":{
+							"type":"string",
+							"title":"input_string"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -198,5 +263,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
