@@ -23,7 +23,7 @@
 	"id":"69cbb12b739a2b4f80c44bb0",
 	"lastModifiedBy":39,
 	"lcName":"activitylogginglocal2436855947",
-	"modifiedTime":1774956856571,
+	"modifiedTime":1774956857152,
 	"name":"activityLoggingLocal2436855947",
 	"nodes":[
 		{
@@ -104,27 +104,10 @@
 											"grade":{
 												"type":"string",
 												"title":"grade"
-											},
-											"name":{
-												"type":"string",
-												"title":"name"
-											},
-											"subjects":{
-												"type":"object",
-												"properties":{
-													"subject":{
-														"type":"array",
-														"items":{
-															"type":"string"
-														},
-														"title":"subject"
-													}
-												},
-												"title":"subjects",
-												"additionalProperties":false
 											}
 										},
-										"additionalProperties":false
+										"additionalProperties":false,
+										"required":[]
 									},
 									"title":"student"
 								}
@@ -157,27 +140,10 @@
 											"grade":{
 												"type":"string",
 												"title":"grade"
-											},
-											"name":{
-												"type":"string",
-												"title":"name"
-											},
-											"subjects":{
-												"type":"object",
-												"properties":{
-													"subject":{
-														"type":"array",
-														"items":{
-															"type":"string"
-														},
-														"title":"subject"
-													}
-												},
-												"title":"subjects",
-												"additionalProperties":false
 											}
 										},
-										"additionalProperties":false
+										"additionalProperties":false,
+										"required":[]
 									},
 									"title":"student"
 								}
@@ -231,5 +197,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
