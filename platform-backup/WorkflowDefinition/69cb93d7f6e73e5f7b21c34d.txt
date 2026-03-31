@@ -23,7 +23,7 @@
 	"id":"69cb93d7f6e73e5f7b21c34d",
 	"lastModifiedBy":39,
 	"lcName":"activitylogginglocal1343812184",
-	"modifiedTime":1774949348572,
+	"modifiedTime":1774949349755,
 	"name":"activityLoggingLocal1343812184",
 	"nodes":[
 		{
@@ -118,10 +118,17 @@
 															"type":"string"
 														},
 														"title":"subject"
+													},
+													"state":{
+														"type":"string",
+														"title":"state"
 													}
 												},
 												"title":"subjects",
-												"additionalProperties":false
+												"additionalProperties":false,
+												"required":[
+													"state"
+												]
 											}
 										},
 										"additionalProperties":false
@@ -171,10 +178,17 @@
 															"type":"string"
 														},
 														"title":"subject"
+													},
+													"state":{
+														"type":"string",
+														"title":"state"
 													}
 												},
 												"title":"subjects",
-												"additionalProperties":false
+												"additionalProperties":false,
+												"required":[
+													"state"
+												]
 											}
 										},
 										"additionalProperties":false
@@ -231,5 +245,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
