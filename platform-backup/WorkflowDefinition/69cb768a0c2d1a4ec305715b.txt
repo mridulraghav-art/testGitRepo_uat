@@ -4,14 +4,14 @@
 	],
 	"createdTime":1774941834810,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1774942616864,
+		"deployedAt":1774946649793,
 		"deployedBy":39,
-		"deployedDefinitionId":"69cb7998a005fe18dc54781a",
+		"deployedDefinitionId":"69cb8959494e2a1580433d92",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":3
+		"version":2,
+		"workflowVersion":6
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"69cb768a0c2d1a4ec305715b",
 	"lastModifiedBy":39,
 	"lcName":"customhttp_retry",
-	"modifiedTime":1774946647473,
+	"modifiedTime":1774946855267,
 	"name":"Customhttp_retry",
 	"nodes":[
 		{
@@ -127,7 +127,7 @@
 					"backOffFactor":null,
 					"captureRetries":false,
 					"count":2,
-					"enabled":true
+					"enabled":false
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -160,5 +160,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
