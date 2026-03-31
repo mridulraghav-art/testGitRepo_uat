@@ -25,7 +25,7 @@
 	"id":"69cb768a0c2d1a4ec305715b",
 	"lastModifiedBy":39,
 	"lcName":"customhttp_retry",
-	"modifiedTime":1774948066769,
+	"modifiedTime":1774948247304,
 	"name":"Customhttp_retry",
 	"nodes":[
 		{
@@ -35,7 +35,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TWXnu-1",
 			"id":"n_tPCSX",
@@ -62,28 +62,44 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TWXnu-1",
 			"id":"n_25CfO",
 			"index":2,
 			"inputs":{
+				"isAsync":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"POST",
+				"body":{
+					"input":"cool"
+				},
+				"sslVerify":true,
 				"path":"/api-endpoint/retry-group/retry-Api",
 				"baseUrl":"https://uat-automation.uat.unifyapps.com",
 				"httpVersion":"HTTP_2",
+				"bodySchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input"
+					],
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"Input"
+						}
+					}
+				},
 				"responseContentType":"application/json",
-				"isAsync":false,
 				"headersList":[
 					{
 						"key":"api-token",
 						"value":"101/69cb7a06fbd5be3199fe3fac"
 					}
 				],
-				"requestTimeoutInSecs":-1,
 				"authType":"CUSTOM",
-				"httpMethod":"POST",
-				"requestContentType":"application/json",
-				"sslVerify":true
+				"requestContentType":"application/json"
 			},
 			"options":{
 				"bulkheadConfig":{
@@ -160,5 +176,5 @@
 		}
 	},
 	"standard":false,
-	"version":11
+	"version":12
 }
