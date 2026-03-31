@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1774956623966,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_NATpy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_vEKQb",
+			"type":"next"
+		}
+	],
+	"id":"69cbb04f09e62c375d6c4477",
+	"lastModifiedBy":39,
+	"lcName":"activitylogginglocal0374979877",
+	"modifiedTime":1774956623966,
+	"name":"activityLoggingLocal0374979877",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_NATpy-1",
+			"id":"_NATpy",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_NATpy-1",
+			"id":"_vEKQb",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
