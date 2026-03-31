@@ -4,6 +4,15 @@
 	],
 	"createdTime":1774949800274,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1774949818106,
+		"deployedBy":39,
+		"deployedDefinitionId":"69cb95ba09e62c375d6ae0c5",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_kWQjZ",
@@ -23,7 +32,7 @@
 	"id":"69cb95a8f287e37de7c272e2",
 	"lastModifiedBy":39,
 	"lcName":"activitylogginglocal7283859382",
-	"modifiedTime":1774949817325,
+	"modifiedTime":1774949819456,
 	"name":"activityLoggingLocal7283859382",
 	"nodes":[
 		{
@@ -68,27 +77,10 @@
 											"grade":{
 												"type":"string",
 												"title":"grade"
-											},
-											"name":{
-												"type":"string",
-												"title":"name"
-											},
-											"subjects":{
-												"type":"object",
-												"properties":{
-													"subject":{
-														"type":"array",
-														"items":{
-															"type":"string"
-														},
-														"title":"subject"
-													}
-												},
-												"title":"subjects",
-												"additionalProperties":false
 											}
 										},
-										"additionalProperties":false
+										"additionalProperties":false,
+										"required":[]
 									},
 									"title":"student"
 								}
@@ -203,5 +195,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
