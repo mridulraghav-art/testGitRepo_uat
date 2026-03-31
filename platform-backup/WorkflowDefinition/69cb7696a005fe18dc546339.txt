@@ -23,7 +23,7 @@
 	"id":"69cb7696a005fe18dc546339",
 	"lastModifiedBy":39,
 	"lcName":"checking_headerbased",
-	"modifiedTime":1774950240488,
+	"modifiedTime":1774979218223,
 	"name":"checking_headerbased",
 	"nodes":[
 		{
@@ -33,7 +33,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Ij2EC-1",
 			"id":"n_rxqCt",
@@ -62,6 +62,11 @@
 			"type":"START"
 		},
 		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{}
+				}
+			},
 			"context":{
 				"appName":"custom_http_endpoint",
 				"resourceVersion":1557,
@@ -101,19 +106,6 @@
 				"baseUrl":"https://uat-automation.uat.unifyapps.com",
 				"password":"Headerbased",
 				"httpVersion":"HTTP_2",
-				"bodySchema":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"input"
-					],
-					"properties":{
-						"input":{
-							"type":"string",
-							"title":"Input"
-						}
-					}
-				},
 				"responseContentType":"HEADER_BASED",
 				"followRedirects":"NORMAL",
 				"authType":"BASIC_AUTH",
@@ -189,7 +181,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Ij2EC-1",
 			"id":"n_70rUC",
@@ -219,5 +211,5 @@
 		}
 	},
 	"standard":false,
-	"version":13
+	"version":14
 }
