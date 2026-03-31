@@ -4,6 +4,15 @@
 	],
 	"createdTime":1774939143251,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1774939194670,
+		"deployedBy":39,
+		"deployedDefinitionId":"69cb6c3aa005fe18dc54108e",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_OxsR7",
@@ -23,7 +32,7 @@
 	"id":"69cb6c07b99b9c186639bfa5",
 	"lastModifiedBy":39,
 	"lcName":"retryworkflow",
-	"modifiedTime":1774939192825,
+	"modifiedTime":1774947361368,
 	"name":"retryworkflow",
 	"nodes":[
 		{
@@ -33,7 +42,7 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_Uxkbz-1",
 			"id":"n_OxsR7",
@@ -98,7 +107,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_Uxkbz-1",
 			"id":"n_j2N3f",
@@ -152,5 +161,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
