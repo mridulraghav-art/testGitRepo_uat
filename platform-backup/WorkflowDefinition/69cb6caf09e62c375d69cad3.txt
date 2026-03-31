@@ -15,83 +15,41 @@
 	},
 	"edges":[
 		{
-			"fromNodeId":"n_5ACS6",
+			"fromNodeId":"n_wlVrc",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_C21gl",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_C21gl",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_ix9xE",
+			"toNodeId":"n_Gq2gy",
 			"type":"next"
 		}
 	],
 	"id":"69cb6caf09e62c375d69cad3",
 	"lastModifiedBy":39,
 	"lcName":"retry-http",
-	"modifiedTime":1774940488567,
+	"modifiedTime":1774946691256,
 	"name":"retry-http",
 	"nodes":[
 		{
 			"context":{
-				"appName":"callables",
-				"resourceVersion":1811,
-				"resourceName":"callables_from_api"
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_jML8c-1",
-			"id":"n_5ACS6",
+			"id":"n_wlVrc",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json",
-					"body":{
-						"type":"object",
-						"properties":{
-							"dfv":{
-								"type":"string",
-								"title":"Dfv"
-							}
-						},
-						"additionalProperties":false,
-						"required":[
-							"dfv"
-						]
-					}
-				},
-				"endpointType":"REST",
-				"response":[
-					{
-						"status":200,
-						"headers":{
-							"type":"object",
-							"additionalProperties":false,
-							"required":[],
-							"properties":{
-								"content-type":{
-									"type":"string",
-									"title":"Content Type"
-								}
-							}
-						},
-						"contentType":"application/json",
-						"textBody":{
-							"type":"string"
-						}
-					}
-				],
-				"streamingResponse":false
+					"contentType":"application/json"
+				}
 			},
 			"skip":false,
-			"subTitle":"Callable",
-			"title":"Trigger via API",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"CALLABLE"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
@@ -99,7 +57,7 @@
 			"context":{
 				"appName":"custom_http_application",
 				"resourceVersion":2757,
-				"connectionId":"69cb6e6ee4439b520241d22f",
+				"connectionId":"68f90b056e9fdc786ec25fd2",
 				"resourceName":"custom_http_application_execute",
 				"type":"APPLICATION"
 			},
@@ -107,54 +65,22 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_jML8c-1",
-			"id":"n_C21gl",
+			"id":"n_Gq2gy",
 			"index":2,
 			"inputs":{
 				"isAsync":false,
 				"requestTimeoutInSecs":-1,
 				"httpMethod":"POST",
-				"body":{
-					"input":"cool"
-				},
 				"sslVerify":true,
 				"path":"/api-endpoint/retryworkflow-group/retryworkflow-api",
-				"responseSchema":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"output"
-					],
-					"properties":{
-						"output":{
-							"type":"string",
-							"title":"Output"
-						}
-					}
-				},
 				"baseUrl":"https://uat-automation.uat.unifyapps.com",
+				"password":"__UNIFYAPPS_GARBAGE_CONSTANT__Z29vZCBsdWNrIQ==",
 				"httpVersion":"HTTP_2",
-				"bodySchema":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"input"
-					],
-					"properties":{
-						"input":{
-							"type":"string",
-							"title":"Input"
-						}
-					}
-				},
 				"responseContentType":"application/json",
-				"headersList":[
-					{
-						"key":"api-token",
-						"value":"101/69cb6c8bfbd5be3199fd81ee"
-					}
-				],
-				"authType":"CUSTOM",
-				"requestContentType":"application/json"
+				"headersList":[],
+				"authType":"BASIC_AUTH",
+				"requestContentType":"application/json",
+				"username":"multipart"
 			},
 			"options":{
 				"bulkheadConfig":{
@@ -195,12 +121,9 @@
 					"waitForNextWindow":false
 				},
 				"retryConfig":{
-					"backOffFactor":2.0,
+					"backOffFactor":null,
 					"captureRetries":false,
-					"count":2,
-					"enabled":true,
-					"initialDelay":1000,
-					"maxDelay":3000
+					"enabled":false
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -208,41 +131,12 @@
 					"metricConfigs":[
 						
 					]
-				},
-				"timeoutConfig":{
-					"enabled":false
 				}
 			},
 			"skip":false,
 			"subTitle":"Custom HTTP Application",
 			"title":"Execute REST Request",
 			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"callables",
-				"resourceVersion":1812,
-				"resourceName":"callables_return_response_to_api",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_jML8c-1",
-			"id":"n_ix9xE",
-			"index":3,
-			"inputs":{
-				"headers":{
-					"content-type":"{{ n_5ACS6.outputs.body.dfv }}"
-				},
-				"streamingCompleted":true,
-				"responseName":"200_undefined",
-				"status":200
-			},
-			"skip":false,
-			"subTitle":"Callable",
-			"title":"Respond to API request",
-			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -259,5 +153,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
