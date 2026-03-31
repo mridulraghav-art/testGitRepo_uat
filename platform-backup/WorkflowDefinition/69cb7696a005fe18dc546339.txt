@@ -23,7 +23,7 @@
 	"id":"69cb7696a005fe18dc546339",
 	"lastModifiedBy":39,
 	"lcName":"checking_headerbased",
-	"modifiedTime":1774947963502,
+	"modifiedTime":1774948998442,
 	"name":"checking_headerbased",
 	"nodes":[
 		{
@@ -33,7 +33,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Ij2EC-1",
 			"id":"n_rxqCt",
@@ -79,13 +79,42 @@
 				"enableProxy":false,
 				"requestTimeoutInSecs":-1,
 				"httpMethod":"GET",
+				"body":{
+					"input":"cool"
+				},
 				"connectionType":"DIRECT",
 				"sslVerify":false,
 				"path":"/api-endpoint/header-based-api/header-api",
+				"responseSchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output"
+					],
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"Output"
+						}
+					}
+				},
 				"baseUrl":"https://uat-automation.uat.unifyapps.com",
 				"password":"Headerbased",
 				"httpVersion":"HTTP_2",
-				"responseContentType":"application/json",
+				"bodySchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input"
+					],
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"Input"
+						}
+					}
+				},
+				"responseContentType":"HEADER_BASED",
 				"followRedirects":"NORMAL",
 				"authType":"BASIC_AUTH",
 				"requestContentType":"application/json",
@@ -160,7 +189,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Ij2EC-1",
 			"id":"n_70rUC",
@@ -190,5 +219,5 @@
 		}
 	},
 	"standard":false,
-	"version":9
+	"version":10
 }
