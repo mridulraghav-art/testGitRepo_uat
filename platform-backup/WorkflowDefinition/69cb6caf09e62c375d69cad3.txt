@@ -25,7 +25,7 @@
 	"id":"69cb6caf09e62c375d69cad3",
 	"lastModifiedBy":39,
 	"lcName":"retry-http",
-	"modifiedTime":1774949335044,
+	"modifiedTime":1774949407877,
 	"name":"retry-http",
 	"nodes":[
 		{
@@ -149,7 +149,8 @@
 				"retryConfig":{
 					"backOffFactor":null,
 					"captureRetries":false,
-					"enabled":false
+					"count":2,
+					"enabled":true
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -157,6 +158,9 @@
 					"metricConfigs":[
 						
 					]
+				},
+				"timeoutConfig":{
+					"enabled":false
 				}
 			},
 			"skip":false,
@@ -179,5 +183,5 @@
 		}
 	},
 	"standard":false,
-	"version":10
+	"version":11
 }
