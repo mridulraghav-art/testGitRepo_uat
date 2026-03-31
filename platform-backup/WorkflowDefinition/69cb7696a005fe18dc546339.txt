@@ -6,46 +6,126 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_Ij2EC",
+			"fromNodeId":"n_rxqCt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_F6J44",
+			"toNodeId":"n_NixBE",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_NixBE",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_70rUC",
 			"type":"next"
 		}
 	],
 	"id":"69cb7696a005fe18dc546339",
 	"lastModifiedBy":39,
 	"lcName":"checking_headerbased",
-	"modifiedTime":1774941846635,
+	"modifiedTime":1774942047801,
 	"name":"checking_headerbased",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1810,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Ij2EC-1",
-			"id":"_Ij2EC",
-			"index":0,
+			"id":"n_rxqCt",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output"
+					],
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"Output"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":1557,
+				"resourceName":"custom_http_endpoint_execute",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Ij2EC-1",
-			"id":"_F6J44",
-			"index":0,
+			"id":"n_NixBE",
+			"index":2,
+			"inputs":{
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"GET",
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"path":"/api-endpoint/header-based-api/header-api",
+				"baseUrl":"https://uat-automation.uat.unifyapps.com",
+				"password":"Headerbased",
+				"httpVersion":"HTTP_2",
+				"responseContentType":"HEADER_BASED",
+				"followRedirects":"NORMAL",
+				"authType":"BASIC_AUTH",
+				"requestContentType":"application/json",
+				"ignoreTrailingSlashes":false,
+				"certificateType":"CERT_STRING",
+				"username":"Headerbased"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"Execute REST request",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1811,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Ij2EC-1",
+			"id":"n_70rUC",
+			"index":3,
+			"inputs":{
+				"result":{
+					"output":"{{ n_NixBE.outputs.result }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +136,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
