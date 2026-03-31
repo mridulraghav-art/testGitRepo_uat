@@ -25,7 +25,7 @@
 	"id":"69cb768a0c2d1a4ec305715b",
 	"lastModifiedBy":39,
 	"lcName":"customhttp_retry",
-	"modifiedTime":1774948847803,
+	"modifiedTime":1774948891935,
 	"name":"Customhttp_retry",
 	"nodes":[
 		{
@@ -143,7 +143,9 @@
 					"backOffFactor":null,
 					"captureRetries":false,
 					"count":2,
-					"enabled":true
+					"enabled":true,
+					"initialDelay":1000,
+					"maxDelay":3000
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -176,5 +178,5 @@
 		}
 	},
 	"standard":false,
-	"version":14
+	"version":15
 }
