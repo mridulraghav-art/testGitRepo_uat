@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1774950231594,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_TgGem",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_NZeCv",
+			"type":"next"
+		}
+	],
+	"id":"69cb9757f6e73e5f7b21e27e",
+	"lastModifiedBy":39,
+	"lcName":"activitylogginglocal0443738681",
+	"modifiedTime":1774950231594,
+	"name":"activityLoggingLocal0443738681",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_TgGem-1",
+			"id":"_TgGem",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_TgGem-1",
+			"id":"_NZeCv",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
