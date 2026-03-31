@@ -6,46 +6,154 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_TgGem",
+			"fromNodeId":"n_KY4n7",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_NZeCv",
+			"toNodeId":"n_vNVVX",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_vNVVX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LBA27",
 			"type":"next"
 		}
 	],
 	"id":"69cb9757f6e73e5f7b21e27e",
 	"lastModifiedBy":39,
 	"lcName":"activitylogginglocal0443738681",
-	"modifiedTime":1774950231594,
+	"modifiedTime":1774950244509,
 	"name":"activityLoggingLocal0443738681",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TgGem-1",
-			"id":"_TgGem",
-			"index":0,
+			"id":"n_KY4n7",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input1":{
+								"type":"string",
+								"title":"input1"
+							},
+							"input2":{
+								"type":"string",
+								"title":"input2"
+							}
+						},
+						"additionalProperties":false
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TgGem-1",
-			"id":"_NZeCv",
-			"index":0,
+			"id":"n_vNVVX",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"input_number":{
+							"type":"integer",
+							"title":"input_number"
+						},
+						"input_string":{
+							"type":"string",
+							"title":"input_string"
+						}
+					}
+				}
+			},
+			"inputs":{
+				"input_string":"UnifyApps",
+				"input_number":0
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"input_number":{
+							"type":"integer",
+							"title":"input_number"
+						},
+						"input_string":{
+							"type":"string",
+							"title":"input_string"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_TgGem-1",
+			"id":"n_LBA27",
+			"index":3,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_vNVVX.outputs.input_number }}",
+						"value":10
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update variables",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +164,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
