@@ -1,51 +1,146 @@
 {
 	"appsUsed":[
-		
+		"custom_http_application"
 	],
 	"createdTime":1774941834810,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_TWXnu",
+			"fromNodeId":"n_tPCSX",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_uaKBj",
+			"toNodeId":"n_25CfO",
 			"type":"next"
 		}
 	],
 	"id":"69cb768a0c2d1a4ec305715b",
 	"lastModifiedBy":39,
 	"lcName":"customhttp_retry",
-	"modifiedTime":1774941834810,
+	"modifiedTime":1774942424896,
 	"name":"Customhttp_retry",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TWXnu-1",
-			"id":"_TWXnu",
-			"index":0,
+			"id":"n_tPCSX",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_application",
+				"resourceVersion":2757,
+				"connectionId":"69cb6e6ee4439b520241d22f",
+				"resourceName":"custom_http_application_execute",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TWXnu-1",
-			"id":"_uaKBj",
-			"index":0,
+			"id":"n_25CfO",
+			"index":2,
+			"inputs":{
+				"path":"/api-endpoint/retry-group/retry-Api",
+				"baseUrl":"https://uat-automation.uat.unifyapps.com",
+				"httpVersion":"HTTP_2",
+				"responseContentType":"application/json",
+				"isAsync":false,
+				"headersList":[
+					{
+						"key":"api-token",
+						"value":"101/69cb789ed94dd56874e8b07e"
+					}
+				],
+				"requestTimeoutInSecs":-1,
+				"authType":"CUSTOM",
+				"httpMethod":"GET",
+				"requestContentType":"application/json",
+				"sslVerify":true
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false,
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"count":2,
+					"enabled":true
+				},
+				"stepError":"STOP",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"enabled":false
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Custom HTTP Application",
+			"title":"Execute REST Request",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +151,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
