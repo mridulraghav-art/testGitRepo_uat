@@ -6,17 +6,17 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"n_l3EZ6",
+			"fromNodeId":"n_52Mk5",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_pgS2e",
+			"toNodeId":"n_x4VAe",
 			"type":"next"
 		}
 	],
 	"id":"69ccb5e6a005fe18dc5ded48",
 	"lastModifiedBy":39,
 	"lcName":"example",
-	"modifiedTime":1775023786649,
+	"modifiedTime":1775025260867,
 	"name":"example",
 	"nodes":[
 		{
@@ -29,7 +29,7 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Up0lu-1",
-			"id":"n_l3EZ6",
+			"id":"n_52Mk5",
 			"index":1,
 			"inputs":{
 				"request":{
@@ -43,6 +43,19 @@
 						"contentType":"application/json",
 						"textBody":{
 							"type":"string"
+						},
+						"body":{
+							"type":"object",
+							"properties":{
+								"out":{
+									"type":"string",
+									"title":"Out"
+								}
+							},
+							"additionalProperties":false,
+							"required":[
+								"out"
+							]
 						}
 					}
 				],
@@ -67,7 +80,7 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Up0lu-1",
-			"id":"n_pgS2e",
+			"id":"n_x4VAe",
 			"index":2,
 			"inputs":{
 				"streamingCompleted":true,
@@ -94,5 +107,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
