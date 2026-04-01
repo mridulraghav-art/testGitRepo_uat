@@ -4,6 +4,15 @@
 	],
 	"createdTime":1775023590299,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1775025268939,
+		"deployedBy":39,
+		"deployedDefinitionId":"69ccbc7409e62c375d724a32",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":3
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_52Mk5",
@@ -16,10 +25,19 @@
 	"id":"69ccb5e6a005fe18dc5ded48",
 	"lastModifiedBy":39,
 	"lcName":"example",
-	"modifiedTime":1775025267169,
+	"modifiedTime":1775025277157,
 	"name":"example",
 	"nodes":[
 		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{
+						"response":[
+							{}
+						]
+					}
+				}
+			},
 			"context":{
 				"appName":"callables",
 				"resourceVersion":1813,
@@ -43,19 +61,6 @@
 						"contentType":"application/json",
 						"textBody":{
 							"type":"string"
-						},
-						"body":{
-							"type":"object",
-							"properties":{
-								"out":{
-									"type":"string",
-									"title":"Out"
-								}
-							},
-							"additionalProperties":false,
-							"required":[
-								"out"
-							]
 						}
 					}
 				],
@@ -85,9 +90,6 @@
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"200_200",
-				"body":{
-					"out":"h"
-				},
 				"status":200
 			},
 			"skip":false,
@@ -110,5 +112,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
