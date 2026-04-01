@@ -4,14 +4,14 @@
 	],
 	"createdTime":1774940852962,
 	"deleted":false,
-	"deployedVersion":20,
+	"deployedVersion":21,
 	"deploymentState":{
-		"deployedAt":1775029413107,
+		"deployedAt":1775029498893,
 		"deployedBy":39,
-		"deployedDefinitionId":"69cccca49b03ae23e8a0a059",
+		"deployedDefinitionId":"69ccccfa739a2b4f80f50cdf",
 		"status":"DEPLOYED",
-		"version":20,
-		"workflowVersion":37
+		"version":21,
+		"workflowVersion":38
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"69cb72b4494e2a158042aa2f",
 	"lastModifiedBy":39,
 	"lcName":"header-based",
-	"modifiedTime":1775029494671,
+	"modifiedTime":1775029580267,
 	"name":"header-based",
 	"nodes":[
 		{
@@ -86,7 +86,7 @@
 						"textBody":{
 							"type":"string"
 						},
-						"xmlBody":{
+						"body":{
 							"type":"object",
 							"properties":{
 								"output":{
@@ -129,10 +129,10 @@
 					"content-type":"application/json"
 				},
 				"streamingCompleted":true,
-				"xmlBody":{
+				"responseName":"200_200",
+				"body":{
 					"output":"{{ n_gjk2A.outputs.body.input }}"
 				},
-				"responseName":"200_200",
 				"status":200
 			},
 			"skip":false,
@@ -155,5 +155,5 @@
 		}
 	},
 	"standard":false,
-	"version":38
+	"version":39
 }
