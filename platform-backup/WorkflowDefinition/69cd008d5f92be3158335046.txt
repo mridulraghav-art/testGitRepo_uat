@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775042701473,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_wZVHb",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_YfMFm",
+			"type":"next"
+		}
+	],
+	"id":"69cd008d5f92be3158335046",
+	"lastModifiedBy":39,
+	"lcName":"customhttpapplicationlocalimamhsheth",
+	"modifiedTime":1775042701473,
+	"name":"CustomHttpApplicationLocalImamhshEth",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_wZVHb-1",
+			"id":"_wZVHb",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_wZVHb-1",
+			"id":"_YfMFm",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
