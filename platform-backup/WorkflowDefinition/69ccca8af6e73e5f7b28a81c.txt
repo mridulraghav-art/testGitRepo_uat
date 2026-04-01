@@ -1,6 +1,6 @@
 {
 	"appsUsed":[
-		"custom_http_application"
+		
 	],
 	"createdTime":1775028874255,
 	"deleted":false,
@@ -9,11 +9,11 @@
 			"fromNodeId":"n_1LQX2",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_Cnu3F",
+			"toNodeId":"n_idBEF",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_Cnu3F",
+			"fromNodeId":"n_idBEF",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_sP6RG",
@@ -23,14 +23,14 @@
 	"id":"69ccca8af6e73e5f7b28a81c",
 	"lastModifiedBy":39,
 	"lcName":"testing",
-	"modifiedTime":1775029162454,
+	"modifiedTime":1775029894784,
 	"name":"testing",
 	"nodes":[
 		{
 			"context":{
 				"appName":"callables",
-				"resourceVersion":1818,
-				"resourceName":"callables_from_automation"
+				"resourceVersion":1822,
+				"resourceName":"callables_from_api"
 			},
 			"debug":false,
 			"dirty":true,
@@ -38,10 +38,39 @@
 			"groupId":"_Z0ubD-1",
 			"id":"n_1LQX2",
 			"index":1,
-			"inputs":{},
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"Input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"200",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
 			"subTitle":"Callable",
-			"title":"Trigger via automation",
+			"title":"Trigger via API",
 			"trigger":{
 				"type":"CALLABLE"
 			},
@@ -49,95 +78,24 @@
 		},
 		{
 			"context":{
-				"appName":"custom_http_application",
-				"resourceVersion":2766,
-				"connectionId":"68f9139e6e9fdc786ec316d7",
-				"resourceName":"custom_http_application_execute_soap",
+				"appName":"test_http",
+				"resourceVersion":1545,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Z0ubD-1",
-			"id":"n_Cnu3F",
+			"id":"n_idBEF",
 			"index":2,
 			"inputs":{
-				"path":"/api-endpoint/CUSTOM-HTTP-NODE-TESTING-DND/customHttpEndpointWithSoap",
-				"baseUrl":"https://uat-automation.uat.unifyapps.com",
-				"responseContentType":"application/soap+xml",
-				"soapHeadersList":[],
-				"headersList":[
-					{
-						"value":"200"
-					}
-				],
-				"requestTimeoutInSecs":-1,
-				"authType":"CUSTOM",
-				"httpMethod":"POST",
-				"requestContentType":"application/soap+xml",
-				"version":"v1.2",
-				"sslVerify":true,
-				"namespaces":[]
-			},
-			"options":{
-				"bulkheadConfig":{
-					"enabled":false,
-					"maxLeaseTimeUnit":"SECONDS",
-					"maxWaitDurationUnit":"SECONDS"
-				},
-				"businessHoursConfig":{
-					"enabled":false,
-					"waitForNextWindow":false
-				},
-				"cacheConfig":{
-					"enabled":false,
-					"usagePolicy":"ALWAYS"
-				},
-				"circuitBreakerConfig":{
-					"enabled":false
-				},
-				"disableLogging":false,
-				"enabledForReExecution":false,
-				"hookConfig":{
-					"enabled":false,
-					"postHooks":[
-						
-					],
-					"preHooks":[
-						
-					]
-				},
-				"logConfig":{
-					"enabled":false,
-					"logPolicies":[
-						
-					]
-				},
-				"rateLimitConfig":{
-					"enabled":false,
-					"waitForNextWindow":false
-				},
-				"retryConfig":{
-					"backOffFactor":null,
-					"captureRetries":false,
-					"enabled":false
-				},
-				"stepError":"STOP",
-				"telemetryConfig":{
-					"enableTelemetry":false,
-					"metricConfigs":[
-						
-					]
-				},
-				"timeoutConfig":{
-					"duration":"10",
-					"enabled":true,
-					"unit":"SECONDS"
-				}
+				"field2":false
 			},
 			"skip":false,
-			"subTitle":"Custom HTTP Application",
-			"title":"Execute SOAP Request",
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
 			"type":"ACTION"
 		},
 		{
@@ -154,7 +112,7 @@
 			"id":"n_sP6RG",
 			"index":3,
 			"inputs":{
-				"result":"{{ n_Cnu3F.outputs }}"
+				"result":"{{ n_idBEF.outputs }}"
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -176,5 +134,5 @@
 		}
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
