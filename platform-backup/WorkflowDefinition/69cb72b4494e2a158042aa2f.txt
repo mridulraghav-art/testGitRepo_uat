@@ -18,51 +18,58 @@
 			"fromNodeId":"n_gjk2A",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_zswXy",
+			"toNodeId":"n_IYaRv",
 			"type":"next"
 		}
 	],
 	"id":"69cb72b4494e2a158042aa2f",
 	"lastModifiedBy":39,
 	"lcName":"header-based",
-	"modifiedTime":1775025425516,
+	"modifiedTime":1775025666931,
 	"name":"header-based",
 	"nodes":[
 		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{
+						"response":[
+							{}
+						]
+					}
+				}
+			},
 			"context":{
 				"appName":"callables",
 				"resourceVersion":1811,
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IEVkG-1",
 			"id":"n_gjk2A",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json",
-					"body":{
-						"type":"object",
-						"properties":{
-							"input":{
-								"type":"string",
-								"title":"Input"
-							}
-						},
-						"additionalProperties":false,
-						"required":[
-							"input"
-						]
-					}
+					"contentType":"application/json"
 				},
 				"endpointType":"REST",
 				"response":[
 					{
 						"name":"200",
 						"status":200,
-						"contentType":"application/xml",
+						"headers":{
+							"type":"object",
+							"additionalProperties":false,
+							"required":[],
+							"properties":{
+								"content-type":{
+									"type":"string",
+									"title":"Content Type"
+								}
+							}
+						},
+						"contentType":"application/json",
 						"textBody":{
 							"type":"string"
 						},
@@ -94,7 +101,7 @@
 		{
 			"context":{
 				"appName":"callables",
-				"resourceVersion":1814,
+				"resourceVersion":1812,
 				"resourceName":"callables_return_response_to_api",
 				"type":"APPLICATION"
 			},
@@ -102,14 +109,11 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IEVkG-1",
-			"id":"n_zswXy",
+			"id":"n_IYaRv",
 			"index":2,
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"200_200",
-				"body":{
-					"output":"sdkja"
-				},
 				"status":200
 			},
 			"skip":false,
@@ -132,5 +136,5 @@
 		}
 	},
 	"standard":false,
-	"version":31
+	"version":32
 }
