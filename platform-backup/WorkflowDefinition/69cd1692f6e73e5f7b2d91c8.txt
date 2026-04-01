@@ -1,51 +1,208 @@
 {
 	"appsUsed":[
-		
+		"custom_http_application"
 	],
 	"createdTime":1775048338153,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_QcTBd",
+			"fromNodeId":"n_W5IVZ",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Fj1sI",
+			"toNodeId":"n_6Ovtm",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_6Ovtm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_7f0Bf",
 			"type":"next"
 		}
 	],
 	"id":"69cd1692f6e73e5f7b2d91c8",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocalspmtttuvpc",
-	"modifiedTime":1775048338153,
+	"modifiedTime":1775048395270,
 	"name":"CustomHttpApplicationLocalspMTTtuvPc",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1832,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QcTBd-1",
-			"id":"_QcTBd",
-			"index":0,
+			"id":"n_W5IVZ",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Path":{
+							"type":"string",
+							"title":"Path"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_application",
+				"resourceVersion":2779,
+				"connectionId":"69cc985516fe142bffbc94e3",
+				"resourceName":"custom_http_application_execute",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QcTBd-1",
-			"id":"_Fj1sI",
-			"index":0,
+			"id":"n_6Ovtm",
+			"index":2,
+			"inputs":{
+				"isAsync":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"POST",
+				"body":{
+					"input":"cool"
+				},
+				"sslVerify":true,
+				"path":"{{ n_W5IVZ.outputs.Path }}",
+				"baseUrl":"https://uat-automation.uat.unifyapps.com",
+				"httpVersion":"HTTP_2",
+				"bodySchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"input"
+						}
+					}
+				},
+				"responseContentType":"application/json",
+				"headersList":[
+					{
+						"key":"api-token",
+						"value":"101/69cd1688d94dd56874ed8e30"
+					}
+				],
+				"authType":"CUSTOM",
+				"requestContentType":"application/json"
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false,
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":3.0,
+					"captureRetries":true,
+					"count":2,
+					"enabled":true,
+					"initialDelay":1000,
+					"maxDelay":3000
+				},
+				"stepError":"STOP",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"enabled":false
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Custom HTTP Application",
+			"title":"Execute REST Request",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1833,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_QcTBd-1",
+			"id":"n_7f0Bf",
+			"index":3,
+			"inputs":{
+				"result":{
+					"r":"{{ n_6Ovtm.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +213,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
