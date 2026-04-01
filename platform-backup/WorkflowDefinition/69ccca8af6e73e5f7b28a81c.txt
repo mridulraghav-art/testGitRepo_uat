@@ -1,51 +1,144 @@
 {
 	"appsUsed":[
-		
+		"custom_http_application"
 	],
 	"createdTime":1775028874255,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_Z0ubD",
+			"fromNodeId":"n_1LQX2",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_0IBZK",
+			"toNodeId":"n_Cnu3F",
 			"type":"next"
 		}
 	],
 	"id":"69ccca8af6e73e5f7b28a81c",
 	"lastModifiedBy":39,
 	"lcName":"testing",
-	"modifiedTime":1775028874255,
+	"modifiedTime":1775028928373,
 	"name":"testing",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1818,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Z0ubD-1",
-			"id":"_Z0ubD",
-			"index":0,
+			"id":"n_1LQX2",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_application",
+				"resourceVersion":2766,
+				"connectionId":"68f9139e6e9fdc786ec316d7",
+				"resourceName":"custom_http_application_execute_soap",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Z0ubD-1",
-			"id":"_0IBZK",
-			"index":0,
+			"id":"n_Cnu3F",
+			"index":2,
+			"inputs":{
+				"path":"/api-endpoint/CUSTOM-HTTP-NODE-TESTING-DND/customHttpEndpointWithSoap",
+				"baseUrl":"https://uat-automation.uat.unifyapps.com",
+				"responseContentType":"application/soap+xml",
+				"soapHeadersList":[],
+				"headersList":[
+					{
+						"key":"Status",
+						"value":"200"
+					}
+				],
+				"requestTimeoutInSecs":-1,
+				"authType":"CUSTOM",
+				"httpMethod":"POST",
+				"requestContentType":"application/soap+xml",
+				"version":"v1.2",
+				"sslVerify":true,
+				"namespaces":[]
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false,
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"enabled":false
+				},
+				"stepError":"STOP",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"duration":"1",
+					"enabled":true,
+					"unit":"SECONDS"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Custom HTTP Application",
+			"title":"Execute SOAP Request",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +149,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
