@@ -16,7 +16,7 @@
 	"id":"69cce0c1494e2a15804e0db0",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocalkqavrhhdfx",
-	"modifiedTime":1775036032281,
+	"modifiedTime":1775037972017,
 	"name":"CustomHttpApplicationLocalKQaVRhHdfX",
 	"nodes":[
 		{
@@ -53,7 +53,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_OKmbE-1",
 			"id":"n_q4DAN",
@@ -128,7 +128,7 @@
 					"waitForNextWindow":false
 				},
 				"retryConfig":{
-					"backOffFactor":null,
+					"backOffFactor":2.0,
 					"captureRetries":false,
 					"count":2,
 					"enabled":true,
@@ -166,5 +166,5 @@
 		}
 	},
 	"standard":false,
-	"version":7
+	"version":8
 }
