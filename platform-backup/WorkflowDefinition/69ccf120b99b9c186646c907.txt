@@ -16,24 +16,44 @@
 	"id":"69ccf120b99b9c186646c907",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocalapxhgmnlci",
-	"modifiedTime":1775050039472,
+	"modifiedTime":1775065583162,
 	"name":"CustomHttpApplicationLocalAPXhGMnLCI",
 	"nodes":[
 		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{
+						"request":{}
+					}
+				}
+			},
 			"context":{
 				"appName":"webhooks",
 				"resourceVersion":53,
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_HkcDM-1",
 			"id":"n_Ovzo2",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json"
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"Input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
 				}
 			},
 			"skip":false,
@@ -132,6 +152,18 @@
 					"captureRetries":true,
 					"count":2,
 					"enabled":true,
+					"filter":{
+						"filters":[
+							{
+								"filter":{
+									"operator":"EQUAL",
+									"value":"pass"
+								},
+								"property":"{{ n_Ovzo2.outputs.body.input }}"
+							}
+						],
+						"operator":"AND"
+					},
 					"initialDelay":10000,
 					"maxDelay":3000
 				},
@@ -166,5 +198,5 @@
 		}
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
