@@ -6,46 +6,170 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_XZ2rm",
+			"fromNodeId":"n_5PaJ5",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_wFmRf",
+			"toNodeId":"n_I5GQh",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_I5GQh",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_j24wf",
 			"type":"next"
 		}
 	],
 	"id":"69cca7e6f6e73e5f7b27a333",
 	"lastModifiedBy":39,
 	"lcName":"excelfilelocalcgymlyagol",
-	"modifiedTime":1775020006289,
+	"modifiedTime":1775020025947,
 	"name":"ExcelFileLocalcGymLyaGol",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1812,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_XZ2rm-1",
-			"id":"_XZ2rm",
-			"index":0,
+			"id":"n_5PaJ5",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"files":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"name":{
+										"type":"string",
+										"title":"name"
+									},
+									"department":{
+										"type":"string",
+										"title":"department"
+									},
+									"age":{
+										"type":"integer",
+										"title":"age"
+									}
+								},
+								"additionalProperties":false
+							},
+							"title":"files"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.dropDownDetails.items.beginRow",
+					"root.dropDownDetails.items.endRow",
+					"root.dropDownDetails.items.beginColumn",
+					"root.dropDownDetails.items.endColumn",
+					"root.dropDownDetails.items.options.items",
+					"root.columnWidths.items.columnIndex",
+					"root.columnWidths.items.headerName",
+					"root.columnWidths.items.width",
+					"root.headerFormatMapping.items.headerName",
+					"root.headerFormatMapping.items.formatType"
+				]
+			},
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":1772,
+				"resourceName":"excel_by_unifyapps_list_to_excel_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_XZ2rm-1",
-			"id":"_wFmRf",
-			"index":0,
+			"id":"n_I5GQh",
+			"index":2,
+			"inputs":{
+				"fileName":"file",
+				"staticHeaders":[
+					{
+						"key":"1",
+						"value":"{{ n_5PaJ5.outputs.files[0].name }}"
+					},
+					{
+						"key":"2",
+						"value":"{{ n_5PaJ5.outputs.files[0].department }}"
+					},
+					{
+						"key":"3",
+						"value":"{{ n_5PaJ5.outputs.files[0].age }}"
+					}
+				],
+				"skipHeaderRow":false,
+				"headerType":"STATIC",
+				"keepExactFileName":false,
+				"dataSource":"{{ n_5PaJ5.outputs.files }}",
+				"fileType":"xlsx",
+				"append":false,
+				"autoSizeColumns":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Excel by UnifyApps",
+			"title":"Write data to New Excel file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1813,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_XZ2rm-1",
+			"id":"n_j24wf",
+			"index":3,
+			"inputs":{
+				"result":{
+					"r":"{{ n_I5GQh.outputs.fileDetails }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +180,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
