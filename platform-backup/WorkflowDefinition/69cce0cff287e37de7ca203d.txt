@@ -7,46 +7,82 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_5Vg3A",
+			"fromNodeId":"n_bhiC7",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_qbkm0",
+			"toNodeId":"n_8WfWM",
 			"type":"next"
 		}
 	],
 	"id":"69cce0cff287e37de7ca203d",
 	"lastModifiedBy":39,
 	"lcName":"validate_scroll_217750345665230",
-	"modifiedTime":1775034579832,
+	"modifiedTime":1775034585846,
 	"name":"validate_scroll_217750345665230",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1821,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_5Vg3A-1",
-			"id":"_5Vg3A",
-			"index":0,
+			"id":"n_bhiC7",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output"
+					],
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"output"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1822,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_5Vg3A-1",
-			"id":"_qbkm0",
-			"index":0,
+			"id":"n_8WfWM",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output":"cool"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":false,
@@ -61,5 +97,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
