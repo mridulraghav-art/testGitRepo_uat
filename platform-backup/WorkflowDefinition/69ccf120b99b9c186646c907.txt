@@ -16,7 +16,7 @@
 	"id":"69ccf120b99b9c186646c907",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocalapxhgmnlci",
-	"modifiedTime":1775038824582,
+	"modifiedTime":1775039013911,
 	"name":"CustomHttpApplicationLocalAPXhGMnLCI",
 	"nodes":[
 		{
@@ -26,7 +26,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_HkcDM-1",
 			"id":"n_Ovzo2",
@@ -128,10 +128,12 @@
 					"waitForNextWindow":false
 				},
 				"retryConfig":{
-					"backOffFactor":null,
+					"backOffFactor":2.0,
 					"captureRetries":false,
 					"count":2,
-					"enabled":true
+					"enabled":true,
+					"initialDelay":60000,
+					"maxDelay":120000
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -164,5 +166,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
