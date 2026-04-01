@@ -1,0 +1,62 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775055901001,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		
+	],
+	"id":"69cd341db99b9c18664be76c",
+	"lastModifiedBy":39,
+	"lcName":"rbac-create_automation 21775055881129",
+	"modifiedTime":1775055912181,
+	"name":"rbac-create_automation 21775055881129",
+	"nodes":[
+		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_xEHMW-1",
+			"id":"n_OsrV0",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
+			"skip":false,
+			"subTitle":"Webhook",
+			"title":"New event",
+			"trigger":{
+				"type":"WEBHOOK"
+			},
+			"type":"START"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":false,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"headerValueTierMap":{},
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":2
+}
