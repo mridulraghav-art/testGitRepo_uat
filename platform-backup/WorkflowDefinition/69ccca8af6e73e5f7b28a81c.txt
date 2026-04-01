@@ -11,12 +11,19 @@
 			"skip":false,
 			"toNodeId":"n_Cnu3F",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Cnu3F",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_sP6RG",
+			"type":"next"
 		}
 	],
 	"id":"69ccca8af6e73e5f7b28a81c",
 	"lastModifiedBy":39,
 	"lcName":"testing",
-	"modifiedTime":1775028928373,
+	"modifiedTime":1775028942654,
 	"name":"testing",
 	"nodes":[
 		{
@@ -133,6 +140,27 @@
 			"subTitle":"Custom HTTP Application",
 			"title":"Execute SOAP Request",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1819,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Z0ubD-1",
+			"id":"n_sP6RG",
+			"index":3,
+			"inputs":{
+				"result":"{{ n_Cnu3F.outputs }}"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -149,5 +177,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
