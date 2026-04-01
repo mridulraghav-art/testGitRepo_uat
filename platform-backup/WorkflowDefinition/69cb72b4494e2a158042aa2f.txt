@@ -4,14 +4,14 @@
 	],
 	"createdTime":1774940852962,
 	"deleted":false,
-	"deployedVersion":22,
+	"deployedVersion":23,
 	"deploymentState":{
-		"deployedAt":1775029585459,
+		"deployedAt":1775029696634,
 		"deployedBy":39,
-		"deployedDefinitionId":"69cccd510c2d1a4ec30ef129",
+		"deployedDefinitionId":"69cccdc0b99b9c18664604d3",
 		"status":"DEPLOYED",
-		"version":22,
-		"workflowVersion":39
+		"version":23,
+		"workflowVersion":40
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"69cb72b4494e2a158042aa2f",
 	"lastModifiedBy":39,
 	"lcName":"header-based",
-	"modifiedTime":1775029692524,
+	"modifiedTime":1775035888098,
 	"name":"header-based",
 	"nodes":[
 		{
@@ -126,7 +126,7 @@
 			"index":2,
 			"inputs":{
 				"headers":{
-					"content-type":"application/xml"
+					"content-type":"application/json"
 				},
 				"streamingCompleted":true,
 				"responseName":"200_200",
@@ -155,5 +155,5 @@
 		}
 	},
 	"standard":false,
-	"version":40
+	"version":41
 }
