@@ -6,12 +6,18 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		
+		{
+			"fromNodeId":"n_CXWOq",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_v4INB",
+			"type":"next"
+		}
 	],
 	"id":"69ccf9fff287e37de7cade8f",
 	"lastModifiedBy":39,
 	"lcName":"error_correction_217750410180710",
-	"modifiedTime":1775041042854,
+	"modifiedTime":1775041058590,
 	"name":"Error_Correction_217750410180710",
 	"nodes":[
 		{
@@ -53,6 +59,72 @@
 				"type":"CALLABLE"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":1658,
+				"resourceName":"code_by_unifyapps_python",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_yUHpR-1",
+			"id":"n_v4INB",
+			"index":2,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"result"
+					],
+					"properties":{
+						"result":{
+							"type":"integer",
+							"title":"result"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"x",
+						"y",
+						"z"
+					],
+					"properties":{
+						"x":{
+							"type":"integer",
+							"title":"x"
+						},
+						"y":{
+							"type":"integer",
+							"title":"y"
+						},
+						"z":{
+							"type":"integer",
+							"title":"z"
+						}
+					}
+				},
+				"configurationMode":"DEFAULT",
+				"isAsync":false,
+				"python_version":"3.12",
+				"outputFilesGlob":"*",
+				"captureStdOutput":false,
+				"parameters":{
+					"x":"=SUM({{ n_CXWOq.outputs.num1 }},{{ n_CXWOq.outputs.num2 }},{{ n_CXWOq.outputs.num3 }})",
+					"y":0,
+					"z":0
+				}
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Python script",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -73,5 +145,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
