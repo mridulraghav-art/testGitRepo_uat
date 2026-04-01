@@ -23,7 +23,7 @@
 	"id":"69cb7696a005fe18dc546339",
 	"lastModifiedBy":39,
 	"lcName":"checking_headerbased",
-	"modifiedTime":1775029705193,
+	"modifiedTime":1775034136487,
 	"name":"checking_headerbased",
 	"nodes":[
 		{
@@ -33,7 +33,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Ij2EC-1",
 			"id":"n_rxqCt",
@@ -74,7 +74,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Ij2EC-1",
 			"id":"n_NixBE",
@@ -93,13 +93,10 @@
 				"responseSchema":{
 					"type":"object",
 					"additionalProperties":false,
-					"required":[
-						"output"
-					],
 					"properties":{
 						"output":{
 							"type":"string",
-							"title":"Output"
+							"title":"output"
 						}
 					}
 				},
@@ -195,7 +192,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Ij2EC-1",
 			"id":"n_70rUC",
@@ -225,5 +222,5 @@
 		}
 	},
 	"standard":false,
-	"version":45
+	"version":46
 }
