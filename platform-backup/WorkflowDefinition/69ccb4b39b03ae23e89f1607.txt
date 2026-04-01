@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775023283568,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_Vpaxr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_UTRaH",
+			"type":"next"
+		}
+	],
+	"id":"69ccb4b39b03ae23e89f1607",
+	"lastModifiedBy":39,
+	"lcName":"playgroundplcbfkahan",
+	"modifiedTime":1775023283568,
+	"name":"PLAYGROUNDPlCBfKAhAn",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Vpaxr-1",
+			"id":"_Vpaxr",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Vpaxr-1",
+			"id":"_UTRaH",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
