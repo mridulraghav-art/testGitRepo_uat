@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775021545188,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_n5q4g",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_vrGzm",
+			"type":"next"
+		}
+	],
+	"id":"69ccade9739a2b4f80f3aefb",
+	"lastModifiedBy":39,
+	"lcName":"customhttpapplicationlocalnuyascnqll",
+	"modifiedTime":1775021545188,
+	"name":"CustomHttpApplicationLocalNUyascNqLL",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_n5q4g-1",
+			"id":"_n5q4g",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_n5q4g-1",
+			"id":"_vrGzm",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
