@@ -6,46 +6,113 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_6EUuW",
+			"fromNodeId":"n_UuDol",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_OfBIK",
+			"toNodeId":"n_LDMK1",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LDMK1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_gfMZt",
 			"type":"next"
 		}
 	],
 	"id":"69ccb47aa005fe18dc5de05d",
 	"lastModifiedBy":39,
 	"lcName":"playgroundicjjuzqgbg",
-	"modifiedTime":1775023226939,
+	"modifiedTime":1775023240439,
 	"name":"PLAYGROUNDIcJJuZQGbG",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1813,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_6EUuW-1",
-			"id":"_6EUuW",
-			"index":0,
+			"id":"n_UuDol",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":1536,
+				"connectionId":"666af62af2d2113ade83c908",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_6EUuW-1",
-			"id":"_OfBIK",
-			"index":0,
+			"id":"n_LDMK1",
+			"index":2,
+			"inputs":{
+				"field1":"retry_exits",
+				"field2":true
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1814,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_6EUuW-1",
+			"id":"n_gfMZt",
+			"index":3,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_undefined",
+				"status":200
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +123,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
