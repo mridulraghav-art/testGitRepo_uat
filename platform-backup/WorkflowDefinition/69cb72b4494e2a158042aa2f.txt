@@ -18,14 +18,14 @@
 			"fromNodeId":"n_gjk2A",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_IYaRv",
+			"toNodeId":"n_zswXy",
 			"type":"next"
 		}
 	],
 	"id":"69cb72b4494e2a158042aa2f",
 	"lastModifiedBy":39,
 	"lcName":"header-based",
-	"modifiedTime":1775017488251,
+	"modifiedTime":1775022165919,
 	"name":"header-based",
 	"nodes":[
 		{
@@ -105,7 +105,7 @@
 		{
 			"context":{
 				"appName":"callables",
-				"resourceVersion":1812,
+				"resourceVersion":1814,
 				"resourceName":"callables_return_response_to_api",
 				"type":"APPLICATION"
 			},
@@ -113,7 +113,7 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IEVkG-1",
-			"id":"n_IYaRv",
+			"id":"n_zswXy",
 			"index":2,
 			"inputs":{
 				"headers":{
@@ -122,7 +122,7 @@
 				"streamingCompleted":true,
 				"responseName":"200_200",
 				"body":{
-					"output":"{{ n_gjk2A.outputs.body.input }}"
+					"output":"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<bookstore>\n    <book category=\"fiction\">\n        <title>The Great Adventure</title>\n        <author>Jane Smith</author>\n        <year>2023</year>\n        <price currency=\"USD\">19.99</price>\n    </book>\n    \n    <book category=\"technology\">\n        <title>Learning XML</title>\n        <author>John Doe</author>\n        <year>2022</year>\n        <price currency=\"USD\">29.99</price>\n    </book>\n</bookstore>"
 				},
 				"status":200
 			},
@@ -146,5 +146,5 @@
 		}
 	},
 	"standard":false,
-	"version":24
+	"version":25
 }
