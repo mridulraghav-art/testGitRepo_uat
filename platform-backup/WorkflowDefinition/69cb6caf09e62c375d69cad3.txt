@@ -25,7 +25,7 @@
 	"id":"69cb6caf09e62c375d69cad3",
 	"lastModifiedBy":39,
 	"lcName":"retry-http",
-	"modifiedTime":1774951525283,
+	"modifiedTime":1775026368952,
 	"name":"retry-http",
 	"nodes":[
 		{
@@ -35,14 +35,27 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_jML8c-1",
 			"id":"n_wlVrc",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json"
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"erf":{
+								"type":"string",
+								"title":"Erf"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"erf"
+						]
+					}
 				}
 			},
 			"skip":false,
@@ -67,7 +80,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_jML8c-1",
 			"id":"n_Gq2gy",
@@ -179,5 +192,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":14
+	"version":15
 }
