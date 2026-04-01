@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775046944951,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_ZAMB0",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Wffag",
+			"type":"next"
+		}
+	],
+	"id":"69cd1120f287e37de7cba6d0",
+	"lastModifiedBy":39,
+	"lcName":"customhttpapplicationlocalbvhreeegaz",
+	"modifiedTime":1775046944951,
+	"name":"CustomHttpApplicationLocalBvhreeegaz",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ZAMB0-1",
+			"id":"_ZAMB0",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ZAMB0-1",
+			"id":"_Wffag",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
