@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775028606659,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_ykkG3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_ARW7W",
+			"type":"next"
+		}
+	],
+	"id":"69ccc97eb99b9c186645d180",
+	"lastModifiedBy":39,
+	"lcName":"rbac_sharautomation 21775028591540",
+	"modifiedTime":1775028606659,
+	"name":"rbac_sharAutomation 21775028591540",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ykkG3-1",
+			"id":"_ykkG3",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ykkG3-1",
+			"id":"_ARW7W",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
