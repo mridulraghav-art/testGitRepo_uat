@@ -6,47 +6,44 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_ORwEp",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_g1P8w",
-			"type":"next"
-		}
+		
 	],
 	"id":"69cccc809b03ae23e8a09f5d",
 	"lastModifiedBy":39,
 	"lcName":"rbac_sharautomation 21775029358321",
-	"modifiedTime":1775029380900,
+	"modifiedTime":1775029383848,
 	"name":"rbac_sharAutomation 21775029358321",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ORwEp-1",
-			"id":"_ORwEp",
-			"index":0,
+			"id":"n_zr9QA",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_ORwEp-1",
-			"id":"_g1P8w",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":false,
@@ -61,5 +58,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
