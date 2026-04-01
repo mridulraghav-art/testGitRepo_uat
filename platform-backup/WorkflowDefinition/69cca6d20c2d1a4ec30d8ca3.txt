@@ -6,46 +6,139 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_Zmirc",
+			"fromNodeId":"n_2fCJU",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_uRwGZ",
+			"toNodeId":"n_3uKXN",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_3uKXN",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GhvIP",
 			"type":"next"
 		}
 	],
 	"id":"69cca6d20c2d1a4ec30d8ca3",
 	"lastModifiedBy":39,
 	"lcName":"exportpagesoredvlmzob",
-	"modifiedTime":1775019730719,
+	"modifiedTime":1775019747672,
 	"name":"exportpagesorEDvLMZOB",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1812,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Zmirc-1",
-			"id":"_Zmirc",
-			"index":0,
+			"id":"n_2fCJU",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"output"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"a":{
+							"type":"string",
+							"title":"a"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.pdfPages.items.fileName",
+					"root.page.margin.top",
+					"root.page.margin.right",
+					"root.page.margin.bottom",
+					"root.page.margin.left"
+				]
+			},
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":2779,
+				"resourceName":"utility_by_unifyapps_export_unifyapps_pages_to_pdf",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Zmirc-1",
-			"id":"_uRwGZ",
-			"index":0,
+			"id":"n_3uKXN",
+			"index":2,
+			"inputs":{
+				"pdfPages":[
+					{
+						"url":"https://www.example.com",
+						"fileName":"file1",
+						"externalPage":true
+					}
+				],
+				"exportType":"PDF",
+				"page":{
+					"format":"letter",
+					"layout":"landscape",
+					"scale":1,
+					"timeout":1000
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Utility by UnifyApps",
+			"title":"Export UnifyApps pages to PDF",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1813,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Zmirc-1",
+			"id":"n_GhvIP",
+			"index":3,
+			"inputs":{
+				"result":{
+					"output":"{{ n_3uKXN.outputs.file[0] }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +149,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
