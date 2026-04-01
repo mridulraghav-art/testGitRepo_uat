@@ -6,7 +6,7 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"n_OnswA",
+			"fromNodeId":"n_5lJtZ",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_LtZM9",
@@ -16,46 +16,31 @@
 	"id":"69ccdbe1494e2a15804df9fa",
 	"lastModifiedBy":39,
 	"lcName":"working",
-	"modifiedTime":1775033444662,
+	"modifiedTime":1775033465261,
 	"name":"working",
 	"nodes":[
 		{
 			"context":{
-				"appName":"callables",
-				"resourceVersion":1822,
-				"resourceName":"callables_from_api"
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_96oNs-1",
-			"id":"n_OnswA",
+			"id":"n_5lJtZ",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json",
-					"body":{
-						"type":"object",
-						"properties":{
-							"input":{
-								"type":"string",
-								"title":"Input"
-							}
-						},
-						"additionalProperties":false,
-						"required":[
-							"input"
-						]
-					}
-				},
-				"endpointType":"REST",
-				"streamingResponse":false
+					"contentType":"application/json"
+				}
 			},
 			"skip":false,
-			"subTitle":"Callable",
-			"title":"Trigger via API",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"CALLABLE"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
@@ -160,5 +145,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
