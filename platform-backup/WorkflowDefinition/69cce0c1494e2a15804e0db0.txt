@@ -16,7 +16,7 @@
 	"id":"69cce0c1494e2a15804e0db0",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocalkqavrhhdfx",
-	"modifiedTime":1775035011827,
+	"modifiedTime":1775035158258,
 	"name":"CustomHttpApplicationLocalKQaVRhHdfX",
 	"nodes":[
 		{
@@ -132,7 +132,8 @@
 					"captureRetries":false,
 					"count":2,
 					"enabled":true,
-					"initialDelay":120000
+					"initialDelay":120000,
+					"maxDelay":600000
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -165,5 +166,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
