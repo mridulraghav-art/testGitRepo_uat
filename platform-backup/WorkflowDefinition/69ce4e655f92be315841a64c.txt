@@ -1,51 +1,161 @@
 {
 	"appsUsed":[
-		
+		"custom_http_application"
 	],
 	"createdTime":1775128165878,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_a2Np5",
+			"fromNodeId":"n_Ojdh2",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_vGIBP",
+			"toNodeId":"n_Uzzjh",
 			"type":"next"
 		}
 	],
 	"id":"69ce4e655f92be315841a64c",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocaldmxjdzcxrv",
-	"modifiedTime":1775128165878,
+	"modifiedTime":1775128236094,
 	"name":"CustomHttpApplicationLocalDMxJdzCxrV",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_a2Np5-1",
-			"id":"_a2Np5",
-			"index":0,
+			"id":"n_Ojdh2",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_application",
+				"resourceVersion":2791,
+				"connectionId":"69cc985516fe142bffbc94e3",
+				"resourceName":"custom_http_application_execute",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_a2Np5-1",
-			"id":"_vGIBP",
-			"index":0,
+			"id":"n_Uzzjh",
+			"index":2,
+			"inputs":{
+				"isAsync":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"POST",
+				"body":{
+					"input":"cool"
+				},
+				"sslVerify":true,
+				"path":"/api-endpoint/uZJebtakyJ/NfSgJB",
+				"baseUrl":"https://uat-automation.uat.unifyapps.com",
+				"httpVersion":"HTTP_2",
+				"bodySchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"input"
+						}
+					}
+				},
+				"responseContentType":"application/json",
+				"headersList":[
+					{
+						"key":"api-token",
+						"value":"101/69ce4e5fd94dd56874f0a6d4"
+					}
+				],
+				"authType":"CUSTOM",
+				"requestContentType":"application/json"
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false,
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"count":2,
+					"enabled":true,
+					"initialDelay":80000,
+					"maxDelay":120000
+				},
+				"stepError":"STOP",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"enabled":false
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Custom HTTP Application",
+			"title":"Execute REST Request",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +166,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
