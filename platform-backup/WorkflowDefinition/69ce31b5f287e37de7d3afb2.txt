@@ -16,7 +16,7 @@
 	"id":"69ce31b5f287e37de7d3afb2",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocaljwjnvibigx",
-	"modifiedTime":1775121205367,
+	"modifiedTime":1775121357058,
 	"name":"CustomHttpApplicationLocalJwJNVIbigX",
 	"nodes":[
 		{
@@ -132,7 +132,8 @@
 					"captureRetries":false,
 					"count":2,
 					"enabled":true,
-					"initialDelay":60000
+					"initialDelay":72000,
+					"maxDelay":120000
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -165,5 +166,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
