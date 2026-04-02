@@ -16,7 +16,7 @@
 	"id":"69ce08fcf287e37de7d23bc2",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocaluguoatrjyn",
-	"modifiedTime":1775110467872,
+	"modifiedTime":1775110601474,
 	"name":"CustomHttpApplicationLocalUGUOATRjYN",
 	"nodes":[
 		{
@@ -26,7 +26,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_82sTD-1",
 			"id":"n_MyjFy",
@@ -131,7 +131,9 @@
 					"backOffFactor":null,
 					"captureRetries":false,
 					"count":2,
-					"enabled":true
+					"enabled":true,
+					"initialDelay":120000,
+					"maxDelay":600000
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -164,5 +166,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
