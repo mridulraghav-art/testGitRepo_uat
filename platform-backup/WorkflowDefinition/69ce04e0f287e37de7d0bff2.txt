@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775109344073,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_MNG5f",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_XeJhO",
+			"type":"next"
+		}
+	],
+	"id":"69ce04e0f287e37de7d0bff2",
+	"lastModifiedBy":39,
+	"lcName":"create_staging_records",
+	"modifiedTime":1775109344073,
+	"name":"create_staging_records",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_MNG5f-1",
+			"id":"_MNG5f",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_MNG5f-1",
+			"id":"_XeJhO",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
