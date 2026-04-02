@@ -4,6 +4,15 @@
 	],
 	"createdTime":1775124976355,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1775124991575,
+		"deployedBy":39,
+		"deployedDefinitionId":"69ce41fef287e37de7d41fd9",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_pftmh",
@@ -16,7 +25,7 @@
 	"id":"69ce41f00c2d1a4ec328997d",
 	"lastModifiedBy":39,
 	"lcName":"customhttpendpointlocalvtzeimmrqv",
-	"modifiedTime":1775124989075,
+	"modifiedTime":1775125037773,
 	"name":"CustomHttpEndPointLocalVtZEIMMrqV",
 	"nodes":[
 		{
@@ -26,7 +35,7 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_hUSWk-1",
 			"id":"n_pftmh",
@@ -102,6 +111,9 @@
 			"id":"n_z1y3o",
 			"index":2,
 			"inputs":{
+				"headers":{
+					"content-type":"application/json"
+				},
 				"streamingCompleted":true,
 				"responseName":"200_200",
 				"body":{
@@ -129,5 +141,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
