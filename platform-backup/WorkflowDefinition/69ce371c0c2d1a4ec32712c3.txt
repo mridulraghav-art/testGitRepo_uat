@@ -16,7 +16,7 @@
 	"id":"69ce371c0c2d1a4ec32712c3",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocalnieiztyary",
-	"modifiedTime":1775122275156,
+	"modifiedTime":1775122408444,
 	"name":"CustomHttpApplicationLocalniEIZtyAry",
 	"nodes":[
 		{
@@ -26,7 +26,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_S2jbM-1",
 			"id":"n_FUQHP",
@@ -131,7 +131,9 @@
 					"backOffFactor":null,
 					"captureRetries":false,
 					"count":2,
-					"enabled":true
+					"enabled":true,
+					"initialDelay":90000,
+					"maxDelay":120000
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -164,5 +166,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
