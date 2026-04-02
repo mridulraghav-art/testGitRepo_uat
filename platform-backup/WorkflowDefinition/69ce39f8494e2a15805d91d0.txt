@@ -11,12 +11,19 @@
 			"skip":false,
 			"toNodeId":"n_97quy",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_97quy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_FlJaB",
+			"type":"next"
 		}
 	],
 	"id":"69ce39f8494e2a15805d91d0",
 	"lastModifiedBy":39,
 	"lcName":"hello",
-	"modifiedTime":1775122991738,
+	"modifiedTime":1775123003083,
 	"name":"hello",
 	"nodes":[
 		{
@@ -152,6 +159,27 @@
 			"subTitle":"Custom HTTP Application",
 			"title":"Execute SOAP Request",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_iRrQK-1",
+			"id":"n_FlJaB",
+			"index":3,
+			"inputs":{
+				"result":"{{ n_97quy.outputs }}"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -168,5 +196,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
