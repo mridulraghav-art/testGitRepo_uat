@@ -16,7 +16,7 @@
 	"id":"69ce31b5f287e37de7d3afb2",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocaljwjnvibigx",
-	"modifiedTime":1775121051079,
+	"modifiedTime":1775121205367,
 	"name":"CustomHttpApplicationLocalJwJNVIbigX",
 	"nodes":[
 		{
@@ -53,7 +53,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_VDpek-1",
 			"id":"n_vQkvY",
@@ -131,7 +131,8 @@
 					"backOffFactor":null,
 					"captureRetries":false,
 					"count":2,
-					"enabled":true
+					"enabled":true,
+					"initialDelay":60000
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -164,5 +165,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
