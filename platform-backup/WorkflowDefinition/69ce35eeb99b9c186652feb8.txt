@@ -1,51 +1,199 @@
 {
 	"appsUsed":[
-		
+		"custom_http_application"
 	],
 	"createdTime":1775121902166,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_Gv0az",
+			"fromNodeId":"n_Tr3ER",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_rLZvv",
+			"toNodeId":"n_otPxV",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_otPxV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_T2zpM",
 			"type":"next"
 		}
 	],
 	"id":"69ce35eeb99b9c186652feb8",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocalwxiirshyep",
-	"modifiedTime":1775121902166,
+	"modifiedTime":1775121958545,
 	"name":"CustomHttpApplicationLocalwxiIRShYep",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1844,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Gv0az-1",
-			"id":"_Gv0az",
-			"index":0,
+			"id":"n_Tr3ER",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"path":{
+							"type":"string",
+							"title":"path"
+						},
+						"version":{
+							"type":"string",
+							"title":"version"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_application",
+				"resourceVersion":2792,
+				"connectionId":"68f9139e6e9fdc786ec316d7",
+				"resourceName":"custom_http_application_execute_soap",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Gv0az-1",
-			"id":"_rLZvv",
-			"index":0,
+			"id":"n_otPxV",
+			"index":2,
+			"inputs":{
+				"path":"{{ n_Tr3ER.outputs.path }}",
+				"baseUrl":"https://uat-automation.uat.unifyapps.com",
+				"responseContentType":"application/soap+xml",
+				"soapHeadersList":[],
+				"headersList":[
+					{
+						"key":"Status",
+						"value":"200"
+					}
+				],
+				"requestTimeoutInSecs":-1,
+				"authType":"CUSTOM",
+				"httpMethod":"POST",
+				"requestContentType":"application/soap+xml",
+				"version":"v1.2{{ n_Tr3ER.outputs.version }}",
+				"sslVerify":true,
+				"namespaces":[]
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"cacheKey":"{{ n_Tr3ER.outputs.path }}",
+					"enabled":true,
+					"timeToLive":"30",
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"enabled":false
+				},
+				"stepError":"STOP",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"enabled":false
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Custom HTTP Application",
+			"title":"Execute SOAP Request",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Gv0az-1",
+			"id":"n_T2zpM",
+			"index":3,
+			"inputs":{
+				"result":{
+					"r":"{{ n_otPxV.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +204,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
