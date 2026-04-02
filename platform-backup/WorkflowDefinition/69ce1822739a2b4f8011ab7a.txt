@@ -16,7 +16,7 @@
 	"id":"69ce1822739a2b4f8011ab7a",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocalvjjufsvabh",
-	"modifiedTime":1775114523379,
+	"modifiedTime":1775114953154,
 	"name":"CustomHttpApplicationLocalvJjufsvabh",
 	"nodes":[
 		{
@@ -128,10 +128,12 @@
 					"waitForNextWindow":false
 				},
 				"retryConfig":{
-					"backOffFactor":null,
+					"backOffFactor":3.0,
 					"captureRetries":true,
 					"count":2,
-					"enabled":true
+					"enabled":true,
+					"initialDelay":1000,
+					"maxDelay":3000
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -164,5 +166,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
