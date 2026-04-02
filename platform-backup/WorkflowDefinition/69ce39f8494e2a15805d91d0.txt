@@ -1,51 +1,163 @@
 {
 	"appsUsed":[
-		
+		"custom_http_application"
 	],
 	"createdTime":1775122936680,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_iRrQK",
+			"fromNodeId":"n_48KwO",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_ROM6H",
+			"toNodeId":"n_97quy",
 			"type":"next"
 		}
 	],
 	"id":"69ce39f8494e2a15805d91d0",
 	"lastModifiedBy":39,
 	"lcName":"hello",
-	"modifiedTime":1775122936680,
+	"modifiedTime":1775122991738,
 	"name":"hello",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1844,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_iRrQK-1",
-			"id":"_iRrQK",
-			"index":0,
+			"id":"n_48KwO",
+			"index":1,
+			"inputs":{
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"path",
+						"version"
+					],
+					"properties":{
+						"path":{
+							"type":"string",
+							"title":"Path"
+						},
+						"version":{
+							"type":"string",
+							"title":"Version"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_application",
+				"resourceVersion":2792,
+				"connectionId":"68f9139e6e9fdc786ec316d7",
+				"resourceName":"custom_http_application_execute_soap",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_iRrQK-1",
-			"id":"_ROM6H",
-			"index":0,
+			"id":"n_97quy",
+			"index":2,
+			"inputs":{
+				"path":"{{ n_48KwO.outputs.path }}",
+				"baseUrl":"https://uat-automation.uat.unifyapps.com",
+				"responseContentType":"application/soap+xml",
+				"soapHeadersList":[],
+				"headersList":[
+					{
+						"key":"Status",
+						"value":"200"
+					}
+				],
+				"requestTimeoutInSecs":-1,
+				"authType":"CUSTOM",
+				"httpMethod":"POST",
+				"requestContentType":"application/soap+xml",
+				"version":"{{ n_48KwO.outputs.version }}v1.2",
+				"sslVerify":true,
+				"namespaces":[]
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"cacheKey":"{{ n_48KwO.outputs.path }}",
+					"enabled":true,
+					"timeToLive":"300",
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"enabled":false
+				},
+				"stepError":"STOP",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"enabled":false
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Custom HTTP Application",
+			"title":"Execute SOAP Request",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +168,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
