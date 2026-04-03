@@ -16,7 +16,7 @@
 	"id":"69cf9f2dd00005097f1b87b8",
 	"lastModifiedBy":39,
 	"lcName":"customhttpapplicationlocalovdywnexfc",
-	"modifiedTime":1775214451929,
+	"modifiedTime":1775215540140,
 	"name":"CustomHttpApplicationLocalOvdYWNexfC",
 	"nodes":[
 		{
@@ -26,7 +26,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_GpIQS-1",
 			"id":"n_eZeft",
@@ -132,7 +132,8 @@
 					"captureRetries":false,
 					"count":2,
 					"enabled":true,
-					"initialDelay":90000
+					"initialDelay":90000,
+					"maxDelay":120000
 				},
 				"stepError":"STOP",
 				"telemetryConfig":{
@@ -165,5 +166,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
