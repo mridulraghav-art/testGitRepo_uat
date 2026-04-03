@@ -6,46 +6,74 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_p7ccc",
+			"fromNodeId":"n_Upyyc",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_9hzy7",
+			"toNodeId":"n_bOwPz",
 			"type":"next"
 		}
 	],
 	"id":"69cfd2814d89651e8f4c3629",
 	"lastModifiedBy":39,
 	"lcName":"dewdwe",
-	"modifiedTime":1775227521645,
+	"modifiedTime":1775227564329,
 	"name":"dewdwe",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_p7ccc-1",
-			"id":"_p7ccc",
-			"index":0,
+			"id":"n_Upyyc",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"decision_table_by_unifyapps",
+				"resourceVersion":1590,
+				"resourceName":"decision_table_by_unifyapps_execute_table",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_p7ccc-1",
-			"id":"_9hzy7",
-			"index":0,
+			"id":"n_bOwPz",
+			"index":2,
+			"inputs":{
+				"responseType":"FINAL_MATCH",
+				"data":{
+					"a":"cecew"
+				},
+				"entityId":"e_67d29f01afb85020a34d3f58"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Decision Table by UnifyApps",
+			"title":"Execute a Decision Table",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +84,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
