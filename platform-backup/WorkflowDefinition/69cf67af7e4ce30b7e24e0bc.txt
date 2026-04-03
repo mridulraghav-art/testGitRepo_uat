@@ -23,12 +23,14 @@
 	"id":"69cf67af7e4ce30b7e24e0bc",
 	"lastModifiedBy":39,
 	"lcName":"cwewewe",
-	"modifiedTime":1775209955888,
+	"modifiedTime":1775209963944,
 	"name":"cwewewe",
 	"nodes":[
 		{
 			"context":{
-				"appName":"webhooks"
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
 			},
 			"debug":false,
 			"dirty":true,
@@ -36,9 +38,14 @@
 			"groupId":"_UzsWf-1",
 			"id":"n_ieXhI",
 			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
 			"subTitle":"Webhook",
-			"title":"Select a trigger event",
+			"title":"New event",
 			"trigger":{
 				"type":"WEBHOOK"
 			},
@@ -113,5 +120,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
