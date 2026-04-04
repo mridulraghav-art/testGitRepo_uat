@@ -23,7 +23,7 @@
 	"id":"69d0a218d247e763b2b79830",
 	"lastModifiedBy":39,
 	"lcName":"testing_customendpoint",
-	"modifiedTime":1775280986608,
+	"modifiedTime":1775281091864,
 	"name":"Testing_CustomEndpoint",
 	"nodes":[
 		{
@@ -123,7 +123,7 @@
 					"cacheKey":"{{ n_Z7lKH.outputs.path }}",
 					"enabled":true,
 					"timeToLive":"300",
-					"usagePolicy":"ON_ERROR"
+					"usagePolicy":"ALWAYS"
 				},
 				"circuitBreakerConfig":{
 					"enabled":false
@@ -208,5 +208,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
