@@ -9,14 +9,14 @@
 			"fromNodeId":"n_VlTTo",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_rgpCT",
+			"toNodeId":"n_EVfwE",
 			"type":"next"
 		}
 	],
 	"id":"69d0b300d8bff446a09843e8",
 	"lastModifiedBy":39,
 	"lcName":"example_http",
-	"modifiedTime":1775285073483,
+	"modifiedTime":1775285086976,
 	"name":"example_http",
 	"nodes":[
 		{
@@ -47,15 +47,25 @@
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1846,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QuCxu-1",
-			"id":"_rgpCT",
+			"id":"n_EVfwE",
 			"index":2,
+			"inputs":{
+				"streamingCompleted":true
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -72,5 +82,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
