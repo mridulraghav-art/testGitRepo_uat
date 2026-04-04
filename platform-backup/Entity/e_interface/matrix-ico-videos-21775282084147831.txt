@@ -1,6 +1,12 @@
 {
 	"createdTime":1775284383377,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775284418575,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-ico-videos-21775282084147831",
 	"lastModifiedBy":39,
-	"modifiedTime":1775284384783,
+	"modifiedTime":1775284434688,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +236,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0b0a0d3050c7f1e4c06c9":"homepage"
+			"e_69d0b0a0d3050c7f1e4c06c9":"homepage",
+			"e_global_matrix-ico-videos-21775282084147831":"global-page-of-matrix-ico-videos-21775282084147831"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +259,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_matrix-ico-videos-21775282084147831":{
+				"slug":"global-page-of-matrix-ico-videos-21775282084147831",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":7
 }
