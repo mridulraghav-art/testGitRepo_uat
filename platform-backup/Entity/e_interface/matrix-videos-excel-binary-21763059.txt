@@ -1,6 +1,12 @@
 {
 	"createdTime":1775283718557,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775283748159,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-videos-excel-binary-21763059",
 	"lastModifiedBy":39,
-	"modifiedTime":1775283719973,
+	"modifiedTime":1775283764297,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +236,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0ae07d3050c7f1e4c0149":"homepage"
+			"e_69d0ae07d3050c7f1e4c0149":"homepage",
+			"e_global_matrix-videos-excel-binary-21763059":"global-page-of-matrix-videos-excel-binary-21763059"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +259,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_matrix-videos-excel-binary-21763059":{
+				"slug":"global-page-of-matrix-videos-excel-binary-21763059",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":7
 }
