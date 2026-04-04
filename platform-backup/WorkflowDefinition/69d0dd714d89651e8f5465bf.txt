@@ -6,46 +6,182 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_KnpJj",
+			"fromNodeId":"n_HoUPC",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_x9Ls2",
+			"toNodeId":"n_FOeae",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_FOeae",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_HMaot",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_HMaot",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_FY9zG",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_FY9zG",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_429jo",
 			"type":"next"
 		}
 	],
 	"id":"69d0dd714d89651e8f5465bf",
 	"lastModifiedBy":39,
 	"lcName":"excelfilelocalhqebrzjxwv",
-	"modifiedTime":1775295857544,
+	"modifiedTime":1775295957036,
 	"name":"ExcelFileLocalHqEBRZjXwV",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1844,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KnpJj-1",
-			"id":"_KnpJj",
-			"index":0,
+			"id":"n_HoUPC",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"a":{
+							"type":"string",
+							"title":"a"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":1673,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KnpJj-1",
-			"id":"_x9Ls2",
-			"index":0,
+			"id":"n_FOeae",
+			"index":2,
+			"inputs":{
+				"fileName":"test.xlsx",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845749830/file_example_XLSX_10.xlsx",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":2810,
+				"resourceName":"utility_by_unifyapps_zip_list_of_files",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_KnpJj-1",
+			"id":"n_HMaot",
+			"index":3,
+			"inputs":{
+				"filesDetails":[
+					"{{ n_FOeae.outputs.fileDetails }}",
+					"{{ n_FOeae.outputs.fileDetails }}"
+				],
+				"skipEmpty":false,
+				"format":"zip",
+				"includeDirectoryPath":false,
+				"skipMissing":false
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Zip list of files",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":2813,
+				"resourceName":"utility_by_unifyapps_unzip_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_KnpJj-1",
+			"id":"n_FY9zG",
+			"index":4,
+			"inputs":{
+				"fileDetails":"{{ n_HMaot.outputs.compressedFileDetails }}"
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Unzip file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_KnpJj-1",
+			"id":"n_429jo",
+			"index":5,
+			"inputs":{
+				"result":{
+					"r":"{{ n_FY9zG.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +192,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
