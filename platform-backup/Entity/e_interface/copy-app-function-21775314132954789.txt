@@ -24,7 +24,7 @@
 	},
 	"id":"copy-app-function-21775314132954789",
 	"lastModifiedBy":39,
-	"modifiedTime":1775314157400,
+	"modifiedTime":1775314163622,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,7 +39,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":1,
+				"_pageCount":2,
 				"_moduleCount":0,
 				"_functionCounter":1
 			}
@@ -52,6 +52,10 @@
 					"primary":[
 						{
 							"id":"nav_0rtHF",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_PjPMs",
 							"hiddenInOverflow":false
 						}
 					],
@@ -90,6 +94,10 @@
 					"primary":[
 						{
 							"id":"nav_0rtHF",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_PjPMs",
 							"hiddenInOverflow":false
 						}
 					],
@@ -135,6 +143,10 @@
 						{
 							"id":"nav_0rtHF",
 							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_PjPMs",
+							"hiddenInOverflow":false
 						}
 					],
 					"navigationItem":{
@@ -178,6 +190,10 @@
 					"primary":[
 						{
 							"id":"nav_0rtHF",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_PjPMs",
 							"hiddenInOverflow":false
 						}
 					],
@@ -228,6 +244,15 @@
 					"type":"PAGE",
 					"pageId":"e_69d124e1710a896fd0cd4482",
 					"slug":"homepage"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_PjPMs",
+					"type":"PAGE",
+					"pageId":"e_69d124f3d3050c7f1e4cc225",
+					"slug":"page-2"
 				}
 			]
 		},
@@ -236,7 +261,8 @@
 		},
 		"interfacePageIdVsSlugMap":{
 			"e_global_copy-app-function-21775314132954789":"global-page-of-copy-app-function-21775314132954789",
-			"e_69d124e1710a896fd0cd4482":"homepage"
+			"e_69d124e1710a896fd0cd4482":"homepage",
+			"e_69d124f3d3050c7f1e4cc225":"page-2"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -259,6 +285,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_69d124f3d3050c7f1e4cc225":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -266,5 +297,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":6
+	"version":8
 }
