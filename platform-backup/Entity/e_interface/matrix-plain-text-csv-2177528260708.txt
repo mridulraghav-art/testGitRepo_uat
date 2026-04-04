@@ -24,7 +24,7 @@
 	},
 	"id":"matrix-plain-text-csv-2177528260708",
 	"lastModifiedBy":39,
-	"modifiedTime":1775282748889,
+	"modifiedTime":1775282781960,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PRIVATE"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0aa3c76870a619e330b43":"homepage"
+			"e_69d0aa3c76870a619e330b43":"homepage",
+			"e_global_matrix-plain-text-csv-2177528260708":"global-page-of-matrix-plain-text-csv-2177528260708"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_matrix-plain-text-csv-2177528260708":{
+				"slug":"global-page-of-matrix-plain-text-csv-2177528260708",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":6
 }
