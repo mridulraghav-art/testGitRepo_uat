@@ -24,7 +24,7 @@
 	},
 	"id":"properties-phone-217752946995477908",
 	"lastModifiedBy":39,
-	"modifiedTime":1775294728878,
+	"modifiedTime":1775294744613,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -38,9 +38,10 @@
 				"favicon":"/favicon.png"
 			},
 			"_counter":{
-				"_moduleCount":0,
 				"_mqttTopicCounter":0,
-				"_pageCount":1
+				"_dataSourceCounter":1,
+				"_pageCount":1,
+				"_moduleCount":0
 			}
 		},
 		"navigation":{
@@ -230,7 +231,11 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
+			"e_global_properties-phone-217752946995477908":"global-page-of-properties-phone-217752946995477908",
 			"e_69d0d90876870a619e3344e0":"homepage"
 		},
 		"manifest":{
@@ -245,6 +250,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_global_properties-phone-217752946995477908":{
+				"slug":"global-page-of-properties-phone-217752946995477908",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_69d0d90876870a619e3344e0":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -256,5 +266,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":8
 }
