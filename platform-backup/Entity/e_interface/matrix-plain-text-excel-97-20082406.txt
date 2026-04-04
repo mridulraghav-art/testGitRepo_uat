@@ -1,6 +1,12 @@
 {
 	"createdTime":1775282764952,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775282796033,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-plain-text-excel-97-20082406",
 	"lastModifiedBy":39,
-	"modifiedTime":1775282766311,
+	"modifiedTime":1775282812929,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +236,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0aa4ed3050c7f1e4bfda4":"homepage"
+			"e_69d0aa4ed3050c7f1e4bfda4":"homepage",
+			"e_global_matrix-plain-text-excel-97-20082406":"global-page-of-matrix-plain-text-excel-97-20082406"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +259,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_matrix-plain-text-excel-97-20082406":{
+				"slug":"global-page-of-matrix-plain-text-excel-97-20082406",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":7
 }
