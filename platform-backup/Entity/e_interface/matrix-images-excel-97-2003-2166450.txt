@@ -1,6 +1,12 @@
 {
 	"createdTime":1775283219898,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775283250281,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-images-excel-97-2003-2166450",
 	"lastModifiedBy":39,
-	"modifiedTime":1775283221309,
+	"modifiedTime":1775283266698,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +236,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0ac1576870a619e330d61":"homepage"
+			"e_69d0ac1576870a619e330d61":"homepage",
+			"e_global_matrix-images-excel-97-2003-2166450":"global-page-of-matrix-images-excel-97-2003-2166450"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +259,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_matrix-images-excel-97-2003-2166450":{
+				"slug":"global-page-of-matrix-images-excel-97-2003-2166450",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":7
 }
