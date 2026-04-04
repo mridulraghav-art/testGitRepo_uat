@@ -1,6 +1,12 @@
 {
 	"createdTime":1775285806098,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775285837259,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-json-mime-type-pdf-217750887",
 	"lastModifiedBy":39,
-	"modifiedTime":1775285807664,
+	"modifiedTime":1775285853439,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,7 +236,11 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
+			"e_global_matrix-json-mime-type-pdf-217750887":"global-page-of-matrix-json-mime-type-pdf-217750887",
 			"e_69d0b62fd3050c7f1e4c0c7e":"homepage"
 		},
 		"manifest":{
@@ -245,6 +255,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_global_matrix-json-mime-type-pdf-217750887":{
+				"slug":"global-page-of-matrix-json-mime-type-pdf-217750887",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_69d0b62fd3050c7f1e4c0c7e":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -256,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":7
 }
