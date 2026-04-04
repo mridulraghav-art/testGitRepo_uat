@@ -25,7 +25,7 @@
 	"id":"69d0b3aaacf0067bc3b38cd1",
 	"lastModifiedBy":39,
 	"lcName":"test_dnd",
-	"modifiedTime":1775285923740,
+	"modifiedTime":1775286159730,
 	"name":"test_DND",
 	"nodes":[
 		{
@@ -44,11 +44,12 @@
 				"request":{
 					"contentType":"application/json"
 				},
-				"endpointType":"SOAP",
+				"endpointType":"REST",
 				"response":[
 					{
 						"name":"400",
 						"status":400,
+						"contentType":"application/json",
 						"body":{
 							"type":"object",
 							"additionalProperties":false,
@@ -60,7 +61,6 @@
 								}
 							}
 						},
-						"contentType":"application/json",
 						"textBody":{
 							"type":"string"
 						}
@@ -119,5 +119,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
