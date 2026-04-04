@@ -23,7 +23,7 @@
 	"id":"69d0da247f6e24549c5a7375",
 	"lastModifiedBy":39,
 	"lcName":"example_http",
-	"modifiedTime":1775298029289,
+	"modifiedTime":1775298247539,
 	"name":"example_http",
 	"nodes":[
 		{
@@ -38,7 +38,26 @@
 			"groupId":"_XMbVa-1",
 			"id":"n_VMQy8",
 			"index":1,
-			"inputs":{},
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"gdfhj",
+						"gfdh"
+					],
+					"properties":{
+						"gdfhj":{
+							"type":"integer",
+							"title":"Gdfhj"
+						},
+						"gfdh":{
+							"type":"number",
+							"title":"Gfdh"
+						}
+					}
+				}
+			},
 			"skip":false,
 			"subTitle":"Callable",
 			"title":"Trigger via automation",
@@ -63,7 +82,7 @@
 			"inputs":{
 				"tagKeyword":"DND",
 				"page":{
-					"limit":-1,
+					"limit":-3,
 					"offset":-1
 				},
 				"includeTotalCount":false
@@ -109,5 +128,5 @@
 		}
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
