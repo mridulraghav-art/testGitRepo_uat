@@ -24,7 +24,7 @@
 	},
 	"id":"set-ss-message-error-public-2178960",
 	"lastModifiedBy":39,
-	"modifiedTime":1775293293869,
+	"modifiedTime":1775293298726,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0d36dd3050c7f1e4c304f":"homepage"
+			"e_69d0d36dd3050c7f1e4c304f":"homepage",
+			"e_global_set-ss-message-error-public-2178960":"global-page-of-set-ss-message-error-public-2178960"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_set-ss-message-error-public-2178960":{
+				"slug":"global-page-of-set-ss-message-error-public-2178960",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
