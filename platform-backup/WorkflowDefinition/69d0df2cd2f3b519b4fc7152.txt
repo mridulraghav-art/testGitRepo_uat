@@ -6,46 +6,186 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_nFXh8",
+			"fromNodeId":"n_tC9DH",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_qUmEe",
+			"toNodeId":"n_67oYl",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_67oYl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_EWhK5",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_EWhK5",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_OoA1z",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_OoA1z",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CW3ug",
 			"type":"next"
 		}
 	],
 	"id":"69d0df2cd2f3b519b4fc7152",
 	"lastModifiedBy":39,
 	"lcName":"excelfilelocalvsqtaojxun",
-	"modifiedTime":1775296300439,
+	"modifiedTime":1775296405540,
 	"name":"ExcelFileLocalVsqTaojXun",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1844,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_nFXh8-1",
-			"id":"_nFXh8",
-			"index":0,
+			"id":"n_tC9DH",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"a":{
+							"type":"string",
+							"title":"a"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":1673,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_nFXh8-1",
-			"id":"_qUmEe",
-			"index":0,
+			"id":"n_67oYl",
+			"index":2,
+			"inputs":{
+				"fileName":"test.txt",
+				"url":"https://www.w3.org/TR/2003/REC-PNG-20031110/iso_8859-1.txt",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":2810,
+				"resourceName":"utility_by_unifyapps_zip_list_of_files",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_nFXh8-1",
+			"id":"n_EWhK5",
+			"index":3,
+			"inputs":{
+				"filesDetails":[
+					"{{ n_67oYl.outputs.fileDetails }}",
+					"{{ n_67oYl.outputs.fileDetails }}",
+					"{{ n_67oYl.outputs.fileDetails }}",
+					"{{ n_67oYl.outputs.fileDetails }}",
+					"{{ n_67oYl.outputs.fileDetails }}",
+					"{{ n_67oYl.outputs.fileDetails }}"
+				],
+				"skipEmpty":false,
+				"format":"zip",
+				"includeDirectoryPath":false,
+				"skipMissing":false
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Zip list of files",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":2813,
+				"resourceName":"utility_by_unifyapps_unzip_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_nFXh8-1",
+			"id":"n_OoA1z",
+			"index":4,
+			"inputs":{
+				"fileDetails":"{{ n_EWhK5.outputs.compressedFileDetails }}"
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Unzip file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_nFXh8-1",
+			"id":"n_CW3ug",
+			"index":5,
+			"inputs":{
+				"result":{
+					"r":"{{ n_OoA1z.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +196,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
