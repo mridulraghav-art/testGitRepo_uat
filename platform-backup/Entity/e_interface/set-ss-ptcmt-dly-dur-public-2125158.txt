@@ -24,7 +24,7 @@
 	},
 	"id":"set-ss-ptcmt-dly-dur-public-2125158",
 	"lastModifiedBy":39,
-	"modifiedTime":1775293398884,
+	"modifiedTime":1775293407820,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -38,9 +38,10 @@
 				"favicon":"/favicon.png"
 			},
 			"_counter":{
-				"_moduleCount":0,
 				"_mqttTopicCounter":0,
-				"_pageCount":1
+				"_pageCount":1,
+				"_moduleCount":0,
+				"_variableCounter":1
 			}
 		},
 		"navigation":{
@@ -230,8 +231,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0d3d676870a619e333df2":"homepage"
+			"e_69d0d3d676870a619e333df2":"homepage",
+			"e_global_set-ss-ptcmt-dly-dur-public-2125158":"global-page-of-set-ss-ptcmt-dly-dur-public-2125158"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +254,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_set-ss-ptcmt-dly-dur-public-2125158":{
+				"slug":"global-page-of-set-ss-ptcmt-dly-dur-public-2125158",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +266,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":6
 }
