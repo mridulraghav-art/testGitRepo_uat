@@ -1,6 +1,12 @@
 {
 	"createdTime":1775282485565,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775282515676,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-excel-binary-zip-21775296244",
 	"lastModifiedBy":39,
-	"modifiedTime":1775282487119,
+	"modifiedTime":1775282532919,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +236,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0a93776870a619e330a5f":"homepage"
+			"e_69d0a93776870a619e330a5f":"homepage",
+			"e_global_matrix-excel-binary-zip-21775296244":"global-page-of-matrix-excel-binary-zip-21775296244"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +259,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_matrix-excel-binary-zip-21775296244":{
+				"slug":"global-page-of-matrix-excel-binary-zip-21775296244",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":7
 }
