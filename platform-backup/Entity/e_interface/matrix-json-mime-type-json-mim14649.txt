@@ -1,6 +1,12 @@
 {
 	"createdTime":1775286024358,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775286053473,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-json-mime-type-json-mim14649",
 	"lastModifiedBy":39,
-	"modifiedTime":1775286026678,
+	"modifiedTime":1775286069529,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,6 +236,9 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
 			"e_global_matrix-json-mime-type-json-mim14649":"global-page-of-matrix-json-mime-type-json-mim14649",
 			"e_69d0b70967955254a7854060":"homepage"
@@ -262,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":3
+	"version":7
 }
