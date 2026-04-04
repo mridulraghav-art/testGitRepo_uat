@@ -6,46 +6,184 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_ALPi0",
+			"fromNodeId":"n_Bmjyt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_PXdg8",
+			"toNodeId":"n_gBUoH",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_gBUoH",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SttbF",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SttbF",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_m40x6",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_m40x6",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_gOhUn",
 			"type":"next"
 		}
 	],
 	"id":"69d0de4dd2f3b519b4fc6bcf",
 	"lastModifiedBy":39,
 	"lcName":"excelfilelocaltqihktpbjz",
-	"modifiedTime":1775296077583,
+	"modifiedTime":1775296179948,
 	"name":"ExcelFileLocalTqIhKtpbJz",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1844,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ALPi0-1",
-			"id":"_ALPi0",
-			"index":0,
+			"id":"n_Bmjyt",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"a":{
+							"type":"string",
+							"title":"a"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":1673,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ALPi0-1",
-			"id":"_PXdg8",
-			"index":0,
+			"id":"n_gBUoH",
+			"index":2,
+			"inputs":{
+				"fileName":"test.pdf",
+				"url":"https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":2810,
+				"resourceName":"utility_by_unifyapps_zip_list_of_files",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_ALPi0-1",
+			"id":"n_SttbF",
+			"index":3,
+			"inputs":{
+				"filesDetails":[
+					"{{ n_gBUoH.outputs.fileDetails }}",
+					"{{ n_gBUoH.outputs.fileDetails }}",
+					"{{ n_gBUoH.outputs.fileDetails }}",
+					"{{ n_gBUoH.outputs.fileDetails }}"
+				],
+				"skipEmpty":false,
+				"format":"zip",
+				"includeDirectoryPath":false,
+				"skipMissing":false
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Zip list of files",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":2813,
+				"resourceName":"utility_by_unifyapps_unzip_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_ALPi0-1",
+			"id":"n_m40x6",
+			"index":4,
+			"inputs":{
+				"fileDetails":"{{ n_SttbF.outputs.compressedFileDetails }}"
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Unzip file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_ALPi0-1",
+			"id":"n_gOhUn",
+			"index":5,
+			"inputs":{
+				"result":{
+					"r":"{{ n_m40x6.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +194,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
