@@ -1,6 +1,12 @@
 {
 	"createdTime":1775285320513,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775285351639,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-documents-images-21775266141",
 	"lastModifiedBy":39,
-	"modifiedTime":1775285322801,
+	"modifiedTime":1775285367739,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,6 +236,9 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
 			"e_69d0b44a291a3e43dc3632c0":"homepage",
 			"e_global_matrix-documents-images-21775266141":"global-page-of-matrix-documents-images-21775266141"
@@ -262,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":3
+	"version":7
 }
