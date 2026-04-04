@@ -1,6 +1,12 @@
 {
 	"createdTime":1775285091683,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775285121950,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-audio-plain-text-21775263525",
 	"lastModifiedBy":39,
-	"modifiedTime":1775285093054,
+	"modifiedTime":1775285138023,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,7 +236,11 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
+			"e_global_matrix-audio-plain-text-21775263525":"global-page-of-matrix-audio-plain-text-21775263525",
 			"e_69d0b365d3050c7f1e4c0955":"homepage"
 		},
 		"manifest":{
@@ -245,6 +255,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_global_matrix-audio-plain-text-21775263525":{
+				"slug":"global-page-of-matrix-audio-plain-text-21775263525",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_69d0b365d3050c7f1e4c0955":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -256,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":7
 }
