@@ -6,7 +6,7 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_QuCxu",
+			"fromNodeId":"n_VlTTo",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"_rgpCT",
@@ -16,20 +16,33 @@
 	"id":"69d0b300d8bff446a09843e8",
 	"lastModifiedBy":39,
 	"lcName":"example_http",
-	"modifiedTime":1775284992632,
+	"modifiedTime":1775285073483,
 	"name":"example_http",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QuCxu-1",
-			"id":"_QuCxu",
-			"index":0,
+			"id":"n_VlTTo",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
@@ -39,13 +52,16 @@
 			"fallbackMode":"STOP",
 			"groupId":"_QuCxu-1",
 			"id":"_rgpCT",
-			"index":0,
+			"index":2,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +72,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
