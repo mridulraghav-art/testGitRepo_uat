@@ -7,46 +7,81 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_DTjMs",
+			"fromNodeId":"n_gBN06",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_7MA7A",
+			"toNodeId":"n_zRt66",
 			"type":"next"
 		}
 	],
 	"id":"69d0e25ed2f3b519b4fc7e79",
 	"lastModifiedBy":39,
 	"lcName":"without_automation_nodelevel217752971132590",
-	"modifiedTime":1775297122838,
+	"modifiedTime":1775297128835,
 	"name":"without_automation_nodeLevel217752971132590",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_DTjMs-1",
-			"id":"_DTjMs",
-			"index":0,
+			"id":"n_gBN06",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1846,
+				"resourceName":"callables_schedule_a_callable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_DTjMs-1",
-			"id":"_7MA7A",
-			"index":0,
+			"id":"n_zRt66",
+			"index":2,
+			"inputs":{
+				"schedule_method":{
+					"schedule_type":"ONE_TIME",
+					"setup_config":{
+						"start_time":"2026-04-04T10:05:27.790Z",
+						"timezone":"Asia/Calcutta",
+						"unit":"MINUTES",
+						"expression":"0 0 * * *"
+					}
+				},
+				"runtimeConnections":{},
+				"cancel_existing":true,
+				"version":"-1"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Schedule callable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":false,
@@ -61,5 +96,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
