@@ -24,7 +24,7 @@
 	},
 	"id":"media-multi-21775282326259086995",
 	"lastModifiedBy":39,
-	"modifiedTime":1775282334082,
+	"modifiedTime":1775282404174,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PRIVATE"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0a89ed3050c7f1e4bfb28":"homepage"
+			"e_69d0a89ed3050c7f1e4bfb28":"homepage",
+			"e_global_media-multi-21775282326259086995":"global-page-of-media-multi-21775282326259086995"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_media-multi-21775282326259086995":{
+				"slug":"global-page-of-media-multi-21775282326259086995",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":6
 }
