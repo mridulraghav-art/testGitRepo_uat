@@ -24,7 +24,7 @@
 	},
 	"id":"pg-app-map-function-217753141356798",
 	"lastModifiedBy":39,
-	"modifiedTime":1775314181522,
+	"modifiedTime":1775314199205,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -38,9 +38,10 @@
 				"favicon":"/favicon.png"
 			},
 			"_counter":{
-				"_moduleCount":0,
 				"_mqttTopicCounter":0,
-				"_pageCount":1
+				"_pageCount":3,
+				"_moduleCount":0,
+				"_functionCounter":1
 			}
 		},
 		"navigation":{
@@ -51,6 +52,14 @@
 					"primary":[
 						{
 							"id":"nav_Lya6D",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_g7bhU",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_OmpBJ",
 							"hiddenInOverflow":false
 						}
 					],
@@ -89,6 +98,14 @@
 					"primary":[
 						{
 							"id":"nav_Lya6D",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_g7bhU",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_OmpBJ",
 							"hiddenInOverflow":false
 						}
 					],
@@ -134,6 +151,14 @@
 						{
 							"id":"nav_Lya6D",
 							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_g7bhU",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_OmpBJ",
+							"hiddenInOverflow":false
 						}
 					],
 					"navigationItem":{
@@ -177,6 +202,14 @@
 					"primary":[
 						{
 							"id":"nav_Lya6D",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_g7bhU",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_OmpBJ",
 							"hiddenInOverflow":false
 						}
 					],
@@ -227,6 +260,24 @@
 					"type":"PAGE",
 					"pageId":"e_69d124fed3050c7f1e4cc27b",
 					"slug":"homepage"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_g7bhU",
+					"type":"PAGE",
+					"pageId":"e_69d1251367955254a786039c",
+					"slug":"page-2"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 3",
+					"icon":"Zap",
+					"id":"nav_OmpBJ",
+					"type":"PAGE",
+					"pageId":"e_69d12517d3050c7f1e4cc38b",
+					"slug":"page-3"
 				}
 			]
 		},
@@ -235,7 +286,9 @@
 		},
 		"interfacePageIdVsSlugMap":{
 			"e_global_pg-app-map-function-217753141356798":"global-page-of-pg-app-map-function-217753141356798",
-			"e_69d124fed3050c7f1e4cc27b":"homepage"
+			"e_69d1251367955254a786039c":"page-2",
+			"e_69d124fed3050c7f1e4cc27b":"homepage",
+			"e_69d12517d3050c7f1e4cc38b":"page-3"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -254,8 +307,18 @@
 				"isPublic":false,
 				"type":"PAGE"
 			},
+			"e_69d1251367955254a786039c":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_69d124fed3050c7f1e4cc27b":{
 				"slug":"homepage",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_69d12517d3050c7f1e4cc38b":{
+				"slug":"page-3",
 				"isPublic":false,
 				"type":"PAGE"
 			}
@@ -265,5 +328,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":5
+	"version":10
 }
