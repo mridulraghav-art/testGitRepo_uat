@@ -24,7 +24,7 @@
 	},
 	"id":"default-value-radio-group-217767812",
 	"lastModifiedBy":39,
-	"modifiedTime":1775300313829,
+	"modifiedTime":1775300318748,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0eed9d3050c7f1e4c5ff9":"homepage"
+			"e_69d0eed9d3050c7f1e4c5ff9":"homepage",
+			"e_global_default-value-radio-group-217767812":"global-page-of-default-value-radio-group-217767812"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_default-value-radio-group-217767812":{
+				"slug":"global-page-of-default-value-radio-group-217767812",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
