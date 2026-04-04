@@ -4,14 +4,14 @@
 	],
 	"createdTime":1775285162207,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1775285195662,
+		"deployedAt":1775285433961,
 		"deployedBy":39,
-		"deployedDefinitionId":"69d0b3cb4d89651e8f533a0f",
+		"deployedDefinitionId":"69d0b4b9d2f3b519b4fb2db7",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":1
+		"version":2,
+		"workflowVersion":2
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"69d0b3aaacf0067bc3b38cd1",
 	"lastModifiedBy":39,
 	"lcName":"test_dnd",
-	"modifiedTime":1775285429424,
+	"modifiedTime":1775285923740,
 	"name":"test_DND",
 	"nodes":[
 		{
@@ -44,17 +44,29 @@
 				"request":{
 					"contentType":"application/json"
 				},
-				"endpointType":"REST",
+				"endpointType":"SOAP",
 				"response":[
 					{
-						"name":"200",
-						"status":200,
+						"name":"400",
+						"status":400,
+						"body":{
+							"type":"object",
+							"additionalProperties":false,
+							"required":[],
+							"properties":{
+								"BadRequest400":{
+									"type":"string",
+									"title":"Bad Request 400"
+								}
+							}
+						},
 						"contentType":"application/json",
 						"textBody":{
 							"type":"string"
 						}
 					}
 				],
+				"soapVersion":"v1.2",
 				"streamingResponse":false
 			},
 			"skip":false,
@@ -80,8 +92,11 @@
 			"index":2,
 			"inputs":{
 				"streamingCompleted":true,
-				"responseName":"200_200",
-				"status":200
+				"responseName":"400_400",
+				"body":{
+					"BadRequest400":"400BadRequest"
+				},
+				"status":400
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -104,5 +119,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
