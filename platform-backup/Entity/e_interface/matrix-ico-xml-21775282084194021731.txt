@@ -1,6 +1,12 @@
 {
 	"createdTime":1775284413620,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775284443785,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-ico-xml-21775282084194021731",
 	"lastModifiedBy":39,
-	"modifiedTime":1775284415050,
+	"modifiedTime":1775284459887,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +236,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0b0bf76870a619e331495":"homepage"
+			"e_69d0b0bf76870a619e331495":"homepage",
+			"e_global_matrix-ico-xml-21775282084194021731":"global-page-of-matrix-ico-xml-21775282084194021731"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +259,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_matrix-ico-xml-21775282084194021731":{
+				"slug":"global-page-of-matrix-ico-xml-21775282084194021731",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":7
 }
