@@ -24,7 +24,7 @@
 	},
 	"id":"matrix-jpg-xsd-21775282084194044656",
 	"lastModifiedBy":39,
-	"modifiedTime":1775283779302,
+	"modifiedTime":1775283806499,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PRIVATE"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0ae4376870a619e330ff5":"homepage"
+			"e_69d0ae4376870a619e330ff5":"homepage",
+			"e_global_matrix-jpg-xsd-21775282084194044656":"global-page-of-matrix-jpg-xsd-21775282084194044656"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_matrix-jpg-xsd-21775282084194044656":{
+				"slug":"global-page-of-matrix-jpg-xsd-21775282084194044656",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":6
 }
