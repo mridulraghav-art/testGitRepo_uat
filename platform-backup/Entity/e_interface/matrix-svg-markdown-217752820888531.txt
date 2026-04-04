@@ -1,6 +1,12 @@
 {
 	"createdTime":1775285643972,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775285674576,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-svg-markdown-217752820888531",
 	"lastModifiedBy":39,
-	"modifiedTime":1775285645524,
+	"modifiedTime":1775285691543,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,7 +236,11 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
+			"e_global_matrix-svg-markdown-217752820888531":"global-page-of-matrix-svg-markdown-217752820888531",
 			"e_69d0b58d76870a619e331a76":"homepage"
 		},
 		"manifest":{
@@ -245,6 +255,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_global_matrix-svg-markdown-217752820888531":{
+				"slug":"global-page-of-matrix-svg-markdown-217752820888531",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_69d0b58d76870a619e331a76":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -256,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":7
 }
