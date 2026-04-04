@@ -1,6 +1,12 @@
 {
 	"createdTime":1775285331210,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775285362076,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-documents-videos-21775238447",
 	"lastModifiedBy":39,
-	"modifiedTime":1775285333960,
+	"modifiedTime":1775285378614,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,6 +236,9 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
 			"e_global_matrix-documents-videos-21775238447":"global-page-of-matrix-documents-videos-21775238447",
 			"e_69d0b455291a3e43dc3632cc":"homepage"
@@ -262,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":3
+	"version":7
 }
