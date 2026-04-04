@@ -1,6 +1,12 @@
 {
 	"createdTime":1775286177943,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775286207317,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-pdf-any-file-217752820741453",
 	"lastModifiedBy":39,
-	"modifiedTime":1775286180109,
+	"modifiedTime":1775286223336,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,6 +236,9 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
 			"e_global_matrix-pdf-any-file-217752820741453":"global-page-of-matrix-pdf-any-file-217752820741453",
 			"e_69d0b7a3710a896fd0cc8d23":"homepage"
@@ -262,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":3
+	"version":7
 }
