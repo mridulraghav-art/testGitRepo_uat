@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775294296924,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_29vmu",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_67DCt",
+			"type":"next"
+		}
+	],
+	"id":"69d0d758d00005097f298bbd",
+	"lastModifiedBy":39,
+	"lcName":"child_workflow_recurring_weeks_mapvalue_nodetest_errortest217752942923470",
+	"modifiedTime":1775294296924,
+	"name":"child_workflow_recurring_weeks_mapvalue_nodetest_errorTest217752942923470",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_29vmu-1",
+			"id":"_29vmu",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_29vmu-1",
+			"id":"_67DCt",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
