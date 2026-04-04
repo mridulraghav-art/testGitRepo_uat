@@ -1,6 +1,12 @@
 {
 	"createdTime":1775283153465,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1775283183919,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"matrix-images-word-document-2163199",
 	"lastModifiedBy":39,
-	"modifiedTime":1775283154820,
+	"modifiedTime":1775283200357,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +236,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d0abd276870a619e330ce9":"homepage"
+			"e_69d0abd276870a619e330ce9":"homepage",
+			"e_global_matrix-images-word-document-2163199":"global-page-of-matrix-images-word-document-2163199"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +259,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_matrix-images-word-document-2163199":{
+				"slug":"global-page-of-matrix-images-word-document-2163199",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +271,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":7
 }
