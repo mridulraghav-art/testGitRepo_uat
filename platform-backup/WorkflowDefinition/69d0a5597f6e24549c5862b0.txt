@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775281497344,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_QMQuo",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_pcqkb",
+			"type":"next"
+		}
+	],
+	"id":"69d0a5597f6e24549c5862b0",
+	"lastModifiedBy":39,
+	"lcName":"customhttpendpointlocaluczinolcdj",
+	"modifiedTime":1775281497344,
+	"name":"CustomHttpEndPointLocalUczinoLcDj",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_QMQuo-1",
+			"id":"_QMQuo",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_QMQuo-1",
+			"id":"_pcqkb",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
