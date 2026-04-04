@@ -16,7 +16,7 @@
 	"id":"69d0b300d8bff446a09843e8",
 	"lastModifiedBy":39,
 	"lcName":"example_http",
-	"modifiedTime":1775285086976,
+	"modifiedTime":1775285098726,
 	"name":"example_http",
 	"nodes":[
 		{
@@ -36,6 +36,16 @@
 					"contentType":"application/json"
 				},
 				"endpointType":"REST",
+				"response":[
+					{
+						"name":"200",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					}
+				],
 				"streamingResponse":false
 			},
 			"skip":false,
@@ -82,5 +92,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
