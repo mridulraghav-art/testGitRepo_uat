@@ -2,9 +2,29 @@
 	"createdTime":1775327532051,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"colourcode",
 	"lastModifiedBy":39,
-	"modifiedTime":1775327535624,
+	"modifiedTime":1775327536056,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -181,6 +201,7 @@
 			"primary":[]
 		},
 		"interfacePageIdVsSlugMap":{
+			"e_global_colourcode":"global-page-of-colourcode",
 			"e_69d1592fd3050c7f1e4d6817":"homepage"
 		},
 		"manifest":{
@@ -195,6 +216,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_global_colourcode":{
+				"slug":"global-page-of-colourcode",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_69d1592fd3050c7f1e4d6817":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -206,5 +232,5 @@
 	"tags":[
 		
 	],
-	"version":1
+	"version":3
 }
