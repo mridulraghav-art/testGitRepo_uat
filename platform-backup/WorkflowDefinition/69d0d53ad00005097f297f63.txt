@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775293754038,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_3b8wq",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_LgoGp",
+			"type":"next"
+		}
+	],
+	"id":"69d0d53ad00005097f297f63",
+	"lastModifiedBy":39,
+	"lcName":"encryptionbyunifyappslocalkhtqupsdkb",
+	"modifiedTime":1775293754038,
+	"name":"EncryptionByUnifyAppsLocalKhTQuPsdkb",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_3b8wq-1",
+			"id":"_3b8wq",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_3b8wq-1",
+			"id":"_LgoGp",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
