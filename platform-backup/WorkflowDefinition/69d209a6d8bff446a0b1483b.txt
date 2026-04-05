@@ -1,51 +1,122 @@
 {
 	"appsUsed":[
-		
+		"slack"
 	],
 	"createdTime":1775372710167,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_FzOGQ",
+			"fromNodeId":"n_Ss9hJ",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_AyP9c",
+			"toNodeId":"n_asfQp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_asfQp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_iwv3S",
 			"type":"next"
 		}
 	],
 	"id":"69d209a6d8bff446a0b1483b",
 	"lastModifiedBy":39,
 	"lcName":"slack post",
-	"modifiedTime":1775372710167,
+	"modifiedTime":1775372843842,
 	"name":"slack post",
 	"nodes":[
 		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":54,
+				"resourceName":"schedule_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FzOGQ-1",
-			"id":"_FzOGQ",
-			"index":0,
+			"id":"n_Ss9hJ",
+			"index":1,
+			"inputs":{
+				"cron":"INTERVAL",
+				"sequential":false,
+				"interval":15,
+				"frequency":"MINUTES"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":1676,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FzOGQ-1",
-			"id":"_AyP9c",
-			"index":0,
+			"id":"n_asfQp",
+			"index":2,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"s":{
+							"type":"string",
+							"title":"S"
+						}
+					}
+				},
+				"code":"def sp = \"AGENT COST ALERT | 2026-04-03 To 2026-04-04\\n\\n`sonnet-4-6`\\n```\\nPROD-INDIA\\n\\n(tool - Customer 90)\\n1. Frontend Engineer - Agent e_6937e99ae871e45f8f71d702: 1,078,705,320 (executions: 5635)\\n2. Enterprise Architect - Agent e_699d8ad26ebe3a05fbb28405: 246,966,640 (executions: 1307)\\n3. Architecture Orchestrator - Agent e_69b2600eabe9ae711619f45a: 2,710,904 (executions: 49)\\n4. IPL Assistant - Agent e_69bf1beb3ab63011bcc285ec: 1,477,872 (executions: 14)\\n5. Artifact Generator Agent - Agent e_69b265deabe9ae71161a07c9: 557,434 (executions: 25)\\n6. Requirement Analyst - Agent e_69a5dd15925f136d9c9c62f3: 476,004 (executions: 18)\\n7. Backend Engineer - Agent e_696a1af31a90755b00438ebb: 101,344 (executions: 3)\\n8. UI UX Prompt Optimiser - Agent e_69b267fdf5802d6128082085: 30,022 (executions: 2)\\n9. UI UX Designer - Agent e_69b267ec5725553d7a82c3ed: 30,006 (executions: 1)\\n10. Automation Debugging Agent - Agent e_696ccc4545a4281102eec43e: 11,554 (executions: 1)\\n11. testModel - Agent e_69d10874cd60e56d57aa505c: 2,316 (executions: 2)\\n12. UI UX Editor - Agent e_69c6a72f36087f520e1f4868: 0 (executions: 1)\\n\\n(Boat - Customer 1)\\n1. Ask BoAt AI - Agent e_690c6b14ccfd5f4955cb7f3a: 15,570,264 (executions: 86)\\n\\n(Virtusa - Customer 210)\\n1. UI UX Designer - Agent e_69b267ec5725553d7a82c3ed: 87,826,542 (executions: 569)\\n2. Navigation UI UX Designer - Agent e_69b3ffc11adff145d2fb5fbd: 12,524,654 (executions: 97)\\n3. Application Builder - Agent e_69a84345925f136d9c9e437e: 7,918,124 (executions: 56)\\n4. UI UX Prompt Optimiser - Agent e_69b267fdf5802d6128082085: 1,084,486 (executions: 39)\\n\\n```\\n```\\nStowers\\n\\n1. Email Assistant Agent - Agent e_69bbec00050fdc2a5a19f04e: 2,306,795 (executions: 155)\\n2. Stowers Research Assistant - Agent e_68c5a46207737f70ac1f3bd0: 220,783 (executions: 10)\\n3. test-knowledge - Agent e_69b7fff8b7f87d1b056db4e8: 151,198 (executions: 7)\\n4. Agent unknown: 91,145 (executions: 452)\\n5. Stowers Research Assistant (test) - Agent e_69aeb105805dc8498c5d9b17: 82,259 (executions: 3)\\n\\n```\\n\\n`sonnet-4-5`\\n```\\nPROD-INDIA\\n\\n(tool - Customer 90)\\n1. Agent null: 187,760 (executions: 3)\\n2. TEST | Automation Documentation Generator - Agent e_69cf54634582405e07d93ae9: 47,770 (executions: 1)\\n\\n(VI - Customer 126)\\n1. VI Gmail Agent - Agent e_6909059b8f67986959eafc21: 9,942,340 (executions: 373)\\n2. Agent null: 1,279,298 (executions: 850)\\n3. deep-research-agent - Agent e_69b980c9f6ffd963df2468c1: 133,372 (executions: 46)\\n4. test - Agent e_69cf4e5e3cefc132ff96be27: 56,000 (executions: 5)\\n5. RAG Agent - Gdrive - Agent e_69b93c0136087f520ef592be: 53,614 (executions: 16)\\n\\n(3SC - Customer 142)\\n1. Smart ETA Calculator - Agent e_69b27b79abe9ae71161c8b86: 5,825,106 (executions: 412)\\n\\n```\\n\\n`sonnet-4`\\n```\\nPROD-INDIA\\n\\n(tool - Customer 90)\\n1. Frontend Engineer - Agent e_6937e99ae871e45f8f71d702: 2,225,730 (executions: 17)\\n\\n```\\n\\n\"\n\nreturn [\n  s:sp\n]",
+				"compile_static":false,
+				"captureStdOutput":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"resourceVersion":3988,
+				"connectionId":"664b36e267fe826a855d480d",
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_FzOGQ-1",
+			"id":"n_iwv3S",
+			"index":3,
+			"inputs":{
+				"link_names":true,
+				"messageType":"text",
+				"channel":"C0AEE3G002G",
+				"text":"{{ n_asfQp.outputs.result.s }}",
+				"mrkdwn":true
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Post message",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +127,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
