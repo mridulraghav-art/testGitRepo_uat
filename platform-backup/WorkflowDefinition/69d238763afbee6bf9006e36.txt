@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775384694803,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_qqgMq",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_vgBVp",
+			"type":"next"
+		}
+	],
+	"id":"69d238763afbee6bf9006e36",
+	"lastModifiedBy":39,
+	"lcName":"helo",
+	"modifiedTime":1775384694803,
+	"name":"helo",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_qqgMq-1",
+			"id":"_qqgMq",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_qqgMq-1",
+			"id":"_vgBVp",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
