@@ -6,46 +6,155 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_J5GMu",
+			"fromNodeId":"n_bNtGK",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_81bOP",
+			"toNodeId":"n_EHdal",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_EHdal",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_EwhS2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_EwhS2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_vzHON",
 			"type":"next"
 		}
 	],
 	"id":"69d3417bb9bb90435fc01b4b",
 	"lastModifiedBy":39,
 	"lcName":"new",
-	"modifiedTime":1775452539656,
+	"modifiedTime":1775452900631,
 	"name":"new",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1844,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_J5GMu-1",
-			"id":"_J5GMu",
-			"index":0,
+			"id":"n_bNtGK",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"r"
+					],
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"R"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1624,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_J5GMu-1",
-			"id":"_81bOP",
-			"index":0,
+			"id":"n_EHdal",
+			"index":2,
+			"inputs":{
+				"query":"Update Entity_dnd_update_query_test SET _pr_Age=20 where _pr_Name='Murali';",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":3552,
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_J5GMu-1",
+			"id":"n_EwhS2",
+			"index":3,
+			"inputs":{
+				"shouldSearchInAnalyticsStore":false,
+				"object_type":"dnd_update_query_test2",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"sortBy":[
+					{
+						"order":"ASC"
+					}
+				],
+				"translationsOption":"DEFAULT",
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":20
+				},
+				"numberOfRecordsToFetch":"SINGLE",
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch records",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_J5GMu-1",
+			"id":"n_vzHON",
+			"index":4,
+			"inputs":{
+				"result":{
+					"r":"{{ n_EwhS2.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +165,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
