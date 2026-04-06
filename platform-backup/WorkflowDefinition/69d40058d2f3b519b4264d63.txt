@@ -7,46 +7,145 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_AdL0v",
+			"fromNodeId":"n_WE4OX",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_2VwLw",
+			"toNodeId":"n_U8Vz7",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_U8Vz7",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_wtxCj",
 			"type":"next"
 		}
 	],
 	"id":"69d40058d2f3b519b4264d63",
 	"lastModifiedBy":39,
 	"lcName":"callable_interface_nodetest_validateerror217755013932630",
-	"modifiedTime":1775501400566,
+	"modifiedTime":1775501408966,
 	"name":"callable_interface_NodeTest_validateError217755013932630",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_AdL0v-1",
-			"id":"_AdL0v",
-			"index":0,
+			"id":"n_WE4OX",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_AdL0v-1",
-			"id":"_2VwLw",
-			"index":0,
+			"id":"n_U8Vz7",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"inputField":{
+							"type":"string",
+							"title":"inputField"
+						}
+					},
+					"required":[
+						"inputField"
+					]
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"inputField":{
+							"type":"string",
+							"title":"inputField"
+						}
+					},
+					"required":[
+						"inputField"
+					]
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_call_interface",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_AdL0v-1",
+			"id":"n_wtxCj",
+			"index":3,
+			"inputs":{
+				"callableInterfaceId":"678de69d15129f707a42237b",
+				"runtimeConnections":{},
+				"synchronous":true
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call interface",
+			"type":"CALL_WORKFLOW"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +159,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
