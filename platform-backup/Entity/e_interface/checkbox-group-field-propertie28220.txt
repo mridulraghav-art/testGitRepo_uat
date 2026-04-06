@@ -24,7 +24,7 @@
 	},
 	"id":"checkbox-group-field-propertie28220",
 	"lastModifiedBy":39,
-	"modifiedTime":1775461126768,
+	"modifiedTime":1775461131602,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d3630676870a619e3f2e68":"homepage"
+			"e_69d3630676870a619e3f2e68":"homepage",
+			"e_global_checkbox-group-field-propertie28220":"global-page-of-checkbox-group-field-propertie28220"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_checkbox-group-field-propertie28220":{
+				"slug":"global-page-of-checkbox-group-field-propertie28220",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
