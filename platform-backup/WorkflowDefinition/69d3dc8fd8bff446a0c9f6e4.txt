@@ -4,14 +4,14 @@
 	],
 	"createdTime":1775492239208,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1775495686584,
+		"deployedAt":1775496544063,
 		"deployedBy":39,
-		"deployedDefinitionId":"69d3ea0646ab711125195e58",
+		"deployedDefinitionId":"69d3ed5fd8bff446a0ca1fdd",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":4
+		"version":3,
+		"workflowVersion":6
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"69d3dc8fd8bff446a0c9f6e4",
 	"lastModifiedBy":39,
 	"lcName":"fwefweew",
-	"modifiedTime":1775496542353,
+	"modifiedTime":1775499392596,
 	"name":"fwefweew",
 	"nodes":[
 		{
@@ -74,7 +74,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pubvL-1",
 			"id":"n_LLDDu",
@@ -99,7 +99,7 @@
 				},
 				"code":"import java.net.URI\nimport java.net.http.HttpClient\nimport java.net.http.HttpRequest\nimport java.net.http.HttpResponse\nimport org.json.JSONObject\n\nimport javax.net.ssl.*\nimport java.security.KeyStore\n\ndef RETRYABLE_ERROR_PATTERNS = [\n    \"certificate_unknown\", \"PKIX path building failed\"\n]\n\ndef SSL_ERROR_PATTERN = [\n    \"certificate_unknown\", \"PKIX path building failed\"\n]\n\ndef refreshAndSetDefaultSSLContext(int sessionTimeout) {\n    try {\n        if (sessionTimeout == -1) {\n            println(\"Default SSL Context not refreshed!\")\n            return\n        }\n\n        SSLContext sslContext = SSLContext.getInstance(\"TLS\")\n        TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm())\n        tmf.init((KeyStore) null)\n\n        sslContext.init(null, tmf.getTrustManagers(), new java.security.SecureRandom())\n        sslContext.getClientSessionContext().setSessionTimeout(sessionTimeout)\n\n        SSLContext.setDefault(sslContext)\n\n        println(\"Refreshed SSL context!\")\n\n    } catch (Exception eX) {\n        println(\"Failed to initialize SSL context: ${eX.message}\")\n    }\n}\n\ndef shouldRetry(Exception e, int sessionTimeout) {\n\n    def message = e.getMessage()\n\n    if (message != null) {\n\n        // SSL error → refresh context\n        for (String pattern : SSL_ERROR_PATTERN) {\n            if (message.contains(pattern)) {\n                refreshAndSetDefaultSSLContext(sessionTimeout)\n                break\n            }\n        }\n\n        // Retryable errors\n        for (String pattern : RETRYABLE_ERROR_PATTERNS) {\n            if (message.contains(pattern)) {\n                println \"Retryable error detected: ${pattern}\"\n                return true\n            }\n        }\n    }\n\n    // Check cause chain\n    def cause = e.getCause()\n    while (cause != null) {\n\n        def causeMessage = cause.getMessage()\n\n        if (causeMessage != null) {\n\n            for (String pattern : SSL_ERROR_PATTERN) {\n                if (causeMessage.contains(pattern)) {\n                    refreshAndSetDefaultSSLContext(sessionTimeout)\n                    break\n                }\n            }\n\n            for (String pattern : RETRYABLE_ERROR_PATTERNS) {\n                if (causeMessage.contains(pattern)) {\n                    println \"Retryable error detected in cause: ${pattern}\"\n                    return true\n                }\n            }\n        }\n\n        cause = cause.getCause()\n    }\n\n    return false\n}\n\n\ndef sendRequest(String url, String method, payload=null, Map headers=null){\n\n    method = method.toUpperCase()\n\n    println \"Request URL: ${url}\"\n    println \"HTTP Method: ${method}\"\n\n    def allowedHeaders = [\n        \"authorization\",\n        \"effective-of\",\n        \"metadata-context\",\n        \"rest-framework-version\",\n        \"api-token\"\n    ]\n\n    Map requestHeaders = [:]\n\n    if(headers){\n        headers.each { k,v ->\n            def key = k.toLowerCase()\n\n            if(allowedHeaders.contains(key)){\n                requestHeaders[k] = (v instanceof List) ? v[0] : v\n            }\n        }\n    }\n\n    requestHeaders[\"Content-Type\"] = \"application/json\"\n    requestHeaders[\"Accept\"] = \"application/json\"\n\n    println \"Filtered Headers: ${requestHeaders}\"\n\n    int maxRetries = 3\n    int sessionTimeout = 300  // same idea as AppProperties\n\n    Exception lastException = null\n\n    for (int attempt = 1; attempt <= maxRetries; attempt++) {\n\n        try {\n\n            println \"Attempt: ${attempt}\"\n\n            HttpClient client = HttpClient.newBuilder().build()\n\n            HttpRequest.Builder builder = HttpRequest.newBuilder()\n                    .uri(URI.create(url))\n\n            requestHeaders.each { k,v ->\n                builder.header(k, v.toString())\n            }\n\n            if([\"POST\",\"PUT\",\"PATCH\"].contains(method) && payload != null){\n\n                def jsonBody = new JSONObject(payload).toString()\n\n                println \"Preparing request body\"\n                println \"Request Body: ${jsonBody}\"\n\n                builder.method(method,\n                        HttpRequest.BodyPublishers.ofString(jsonBody))\n\n            } else {\n                builder.method(method, HttpRequest.BodyPublishers.noBody())\n            }\n\n            HttpRequest request = builder.build()\n\n            HttpResponse<String> response =\n                    client.send(request, HttpResponse.BodyHandlers.ofString())\n\n            println \"Response Code: ${response.statusCode()}\"\n            println \"Response Body: ${response.body()}\"\n\n            return [\n                status: response.statusCode(),\n                body: response.body()\n            ]\n\n        } catch(Exception e){\n\n            println \"Error on attempt ${attempt}: ${e.message}\"\n            lastException = e\n\n            if (attempt < maxRetries && shouldRetry(e, sessionTimeout)) {\n                println \"Retrying...\"\n                continue\n            } else {\n                break\n            }\n        }\n    }\n\n    return [\n        status: 500,\n        body: lastException?.message\n    ]\n}\n\n\ndef url = path\ndef method = inp?.triggerHttpMethod?.toString()\ndef payload = inp?.body\ndef headers = inp?.headers\n\ndef result = sendRequest(url, method, payload, headers)\n\nreturn result",
 				"compile_static":false,
-				"captureStdOutput":false,
+				"captureStdOutput":true,
 				"parameters":{
 					"path":"https://ecgy-dev2.fa.ap2.oraclecloud.com/hcmRestApi/resources/11.13.18.05/workers",
 					"inp":"{{ n_dbil8.outputs.body.inp }}"
@@ -125,5 +125,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
