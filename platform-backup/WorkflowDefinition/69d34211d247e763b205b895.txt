@@ -6,46 +6,111 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_fkakM",
+			"fromNodeId":"n_YQgze",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_WfBFj",
+			"toNodeId":"n_YR2Og",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_YR2Og",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_oDmgF",
 			"type":"next"
 		}
 	],
 	"id":"69d34211d247e763b205b895",
 	"lastModifiedBy":39,
 	"lcName":"new1",
-	"modifiedTime":1775452689245,
+	"modifiedTime":1775453710242,
 	"name":"new1",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1844,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_fkakM-1",
-			"id":"_fkakM",
-			"index":0,
+			"id":"n_YQgze",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"r"
+					],
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"R"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1624,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_fkakM-1",
-			"id":"_WfBFj",
-			"index":0,
+			"id":"n_YR2Og",
+			"index":2,
+			"inputs":{
+				"query":"Update ENTITY_dnd_update SET _pr_Age='20' Where _pr_Name='Murali';",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_fkakM-1",
+			"id":"n_oDmgF",
+			"index":3,
+			"inputs":{
+				"result":{
+					"r":"{{ n_YR2Og.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +121,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
