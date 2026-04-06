@@ -7,46 +7,325 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_GIk8K",
+			"fromNodeId":"n_hsHID",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_nMR5h",
+			"toNodeId":"n_IDrkw",
 			"type":"next"
 		}
 	],
 	"id":"69d3db2ad247e763b20ae0d1",
 	"lastModifiedBy":39,
 	"lcName":"callable_interface_different_condition_217754918493090",
-	"modifiedTime":1775491882220,
+	"modifiedTime":1775491936026,
 	"name":"callable_interface_different_condition_217754918493090",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1844,
+				"resourceName":"callables_from_interface"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_GIk8K-1",
-			"id":"_GIk8K",
-			"index":0,
+			"id":"n_hsHID",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"ua:modal":{
+						"field_type":"STRING",
+						"is_optional":true
+					},
+					"properties":{
+						"product":{
+							"type":"object",
+							"properties":{
+								"status":{
+									"type":"string",
+									"title":"Status"
+								},
+								"productOffering":{
+									"type":"object",
+									"properties":{
+										"id":{
+											"type":"string",
+											"title":"Id"
+										},
+										"name":{
+											"type":"string",
+											"title":"Name"
+										}
+									},
+									"title":"Product Offering"
+								},
+								"productCharacteristics":{
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"name":{
+												"type":"string",
+												"title":"Name"
+											},
+											"value":{
+												"type":"string",
+												"title":"Value"
+											}
+										}
+									},
+									"title":"Product Characteristics"
+								},
+								"customer":{
+									"type":"object",
+									"properties":{
+										"id":{
+											"type":"string",
+											"title":"Id"
+										}
+									},
+									"title":"Customer"
+								},
+								"agreements":{
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"id":{
+												"type":"string",
+												"title":"Id"
+											},
+											"status":{
+												"type":"object",
+												"properties":{
+													"string":{
+														"type":"string",
+														"title":"String"
+													}
+												},
+												"title":"Status"
+											},
+											"initialDate":{
+												"type":"string",
+												"title":"Initial Date"
+											},
+											"completionDate":{
+												"type":"object",
+												"properties":{
+													"long":{
+														"type":"string",
+														"title":"Long"
+													}
+												},
+												"title":"Completion Date"
+											},
+											"agreementPeriod":{
+												"type":"object",
+												"properties":{
+													"startDateTime":{
+														"type":"string",
+														"title":"Start Date Time"
+													},
+													"endDateTime":{
+														"type":"string",
+														"title":"End Date Time"
+													}
+												},
+												"title":"Agreement Period"
+											},
+											"attachments":{
+												"type":"array",
+												"items":{
+													"type":"object",
+													"properties":{
+														"id":{
+															"type":"string",
+															"title":"Id"
+														},
+														"name":{
+															"type":"string",
+															"title":"Name"
+														},
+														"type":{
+															"type":"string",
+															"title":"Type"
+														},
+														"mimeType":{
+															"type":"string",
+															"title":"Mime Type"
+														}
+													}
+												},
+												"title":"Attachments"
+											},
+											"agreementItems":{
+												"type":"array",
+												"items":{
+													"type":"object",
+													"properties":{
+														"id":{
+															"type":"string",
+															"title":"Id"
+														},
+														"validFor":{
+															"type":"object",
+															"properties":{
+																"startDateTime":{
+																	"type":"string",
+																	"title":"Start Date Time"
+																},
+																"endDateTime":{
+																	"type":"string",
+																	"title":"End Date Time"
+																}
+															},
+															"title":"Valid For"
+														},
+														"name":{
+															"type":"string",
+															"title":"Name"
+														},
+														"termType":{
+															"type":"string",
+															"title":"Term Type"
+														}
+													}
+												},
+												"title":"Agreement Items"
+											}
+										}
+									},
+									"title":"Agreements"
+								},
+								"orderRefs":{
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"id":{
+												"type":"string",
+												"title":"Id"
+											},
+											"orderItemId":{
+												"type":"object",
+												"properties":{
+													"string":{
+														"type":"string",
+														"title":"String"
+													}
+												},
+												"title":"Order Item Id"
+											},
+											"orderItemAction":{
+												"type":"object",
+												"properties":{
+													"string":{
+														"type":"string",
+														"title":"String"
+													}
+												},
+												"title":"Order Item Action"
+											}
+										}
+									},
+									"title":"Order Refs"
+								},
+								"productId":{
+									"type":"string",
+									"title":"productId"
+								}
+							},
+							"title":"Product"
+						}
+					}
+				},
+				"callableInterfaceId":"660e879f46475738a429301e",
+				"setup":{
+					"type":"object",
+					"ua:modal":{
+						"field_type":"STRING",
+						"is_optional":true
+					},
+					"properties":{
+						"productId":{
+							"type":"string",
+							"title":"Product Id"
+						},
+						"customerNo":{
+							"type":"string",
+							"title":"Customer No"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger interface",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_call_interface",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_GIk8K-1",
-			"id":"_nMR5h",
-			"index":0,
+			"id":"n_IDrkw",
+			"index":2,
+			"inputs":{
+				"callableInterfaceId":"660e879f46475738a429301e",
+				"runtimeConnections":{},
+				"synchronous":true,
+				"callableInterfaces":[
+					{
+						"workflowId":"69d3db13d2f3b519b423d9e0",
+						"filter":{
+							"filters":[
+								{
+									"property":"{{ n_hsHID.outputs.productId }}",
+									"filter":{
+										"operator":"EXISTS"
+									}
+								}
+							],
+							"operator":"AND"
+						}
+					},
+					{
+						"workflowId":"69d3db1fb9bb90435fc6be9c",
+						"filter":{
+							"filters":[
+								{
+									"property":"{{ n_hsHID.outputs.productId }}",
+									"filter":{
+										"operator":"MISSING"
+									}
+								}
+							],
+							"operator":"AND"
+						}
+					}
+				]
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Call interface",
+			"type":"CALL_WORKFLOW"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +339,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
