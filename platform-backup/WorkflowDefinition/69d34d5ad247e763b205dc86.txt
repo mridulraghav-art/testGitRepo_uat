@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775455578935,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_kjNKQ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_IiWdf",
+			"type":"next"
+		}
+	],
+	"id":"69d34d5ad247e763b205dc86",
+	"lastModifiedBy":39,
+	"lcName":"testing_pdf",
+	"modifiedTime":1775455578935,
+	"name":"testing_PDF",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_kjNKQ-1",
+			"id":"_kjNKQ",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_kjNKQ-1",
+			"id":"_IiWdf",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
