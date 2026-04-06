@@ -1,51 +1,76 @@
 {
 	"appsUsed":[
-		
+		"gdrive"
 	],
 	"createdTime":1775472172158,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_UsmV4",
+			"fromNodeId":"n_yFneH",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Al1e9",
+			"toNodeId":"n_BXw3D",
 			"type":"next"
 		}
 	],
 	"id":"69d38e2c4d89651e8f6ab5c1",
 	"lastModifiedBy":39,
 	"lcName":"testerr",
-	"modifiedTime":1775472172158,
+	"modifiedTime":1775472220186,
 	"name":"testerr",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UsmV4-1",
-			"id":"_UsmV4",
-			"index":0,
+			"id":"n_yFneH",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"gdrive",
+				"resourceVersion":3706,
+				"connectionId":"67435f240be24a3cb216cf60",
+				"resourceName":"gdrive_get_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UsmV4-1",
-			"id":"_Al1e9",
-			"index":0,
+			"id":"n_BXw3D",
+			"index":2,
+			"inputs":{
+				"fileId":"1X6biOzQ9bag6fLfQBaHRk3jdpdMO90Sh"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Google Drive",
+			"title":"Get file",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +81,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
