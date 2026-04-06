@@ -9,14 +9,21 @@
 			"fromNodeId":"n_yFneH",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_BXw3D",
+			"toNodeId":"n_xF0fc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_xF0fc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_10R3g",
 			"type":"next"
 		}
 	],
 	"id":"69d38e2c4d89651e8f6ab5c1",
 	"lastModifiedBy":39,
 	"lcName":"testerr",
-	"modifiedTime":1775472220186,
+	"modifiedTime":1775474145603,
 	"name":"testerr",
 	"nodes":[
 		{
@@ -26,7 +33,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_UsmV4-1",
 			"id":"n_yFneH",
@@ -48,7 +55,7 @@
 			"context":{
 				"appName":"gdrive",
 				"resourceVersion":3706,
-				"connectionId":"67435f240be24a3cb216cf60",
+				"connectionId":"673dc9020d75ca22852a15ea",
 				"resourceName":"gdrive_get_file",
 				"type":"APPLICATION"
 			},
@@ -56,14 +63,41 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UsmV4-1",
-			"id":"n_BXw3D",
+			"id":"n_xF0fc",
 			"index":2,
 			"inputs":{
-				"fileId":"1X6biOzQ9bag6fLfQBaHRk3jdpdMO90Sh"
+				"fileId":"1dggRcc2UkjbxJQ_cKmyMHj2cqcjL61Jt"
 			},
 			"skip":false,
 			"subTitle":"Google Drive",
 			"title":"Get file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"pdf_by_unifyapps",
+				"resourceVersion":280,
+				"resourceName":"pdf_by_unifyapps_add_signature",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_UsmV4-1",
+			"id":"n_10R3g",
+			"index":3,
+			"inputs":{
+				"file":"https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf",
+				"signaturePosition":{
+					"x":0,
+					"y":0
+				},
+				"transparentSignature":false,
+				"signature":"{{ n_xF0fc.outputs.file }}"
+			},
+			"skip":false,
+			"subTitle":"PDF by UnifyApps",
+			"title":"Add Signature to PDF",
 			"type":"ACTION"
 		}
 	],
@@ -81,5 +115,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
