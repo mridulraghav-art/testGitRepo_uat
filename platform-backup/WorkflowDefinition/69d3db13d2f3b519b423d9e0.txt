@@ -6,47 +6,42 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_HBECV",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_jHJgL",
-			"type":"next"
-		}
+		
 	],
 	"id":"69d3db13d2f3b519b423d9e0",
 	"lastModifiedBy":39,
 	"lcName":"callable_interface_condition_1_217754918493090",
-	"modifiedTime":1775491859399,
+	"modifiedTime":1775491861975,
 	"name":"Callable_Interface_Condition_1_217754918493090",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1844,
+				"resourceName":"callables_from_interface"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_HBECV-1",
-			"id":"_HBECV",
-			"index":0,
+			"id":"n_lFzEY",
+			"index":1,
+			"inputs":{
+				"callableInterfaceId":"660e879f46475738a429301e"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger interface",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_HBECV-1",
-			"id":"_jHJgL",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +55,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
