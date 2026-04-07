@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775591120413,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_WXvOP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_bXoxM",
+			"type":"next"
+		}
+	],
+	"id":"69d55ed0b7bf263956bc57b1",
+	"lastModifiedBy":39,
+	"lcName":"childworkflow_cancelschedule_mapfillinput_schedulecallablerun217755911138200",
+	"modifiedTime":1775591120413,
+	"name":"childWorkflow_cancelSchedule_mapFillInput_scheduleCallableRun217755911138200",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_WXvOP-1",
+			"id":"_WXvOP",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_WXvOP-1",
+			"id":"_bXoxM",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
