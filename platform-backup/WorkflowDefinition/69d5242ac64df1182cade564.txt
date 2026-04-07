@@ -6,46 +6,64 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_nF6JH",
+			"fromNodeId":"n_7f6r5",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_6hFm4",
+			"toNodeId":"n_qoN7y",
 			"type":"next"
 		}
 	],
 	"id":"69d5242ac64df1182cade564",
 	"lastModifiedBy":39,
 	"lcName":"testassetpermission",
-	"modifiedTime":1775576106125,
+	"modifiedTime":1775576112181,
 	"name":"testAssetPermission",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_nF6JH-1",
-			"id":"_nF6JH",
-			"index":0,
+			"id":"n_7f6r5",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"stop"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_nF6JH-1",
-			"id":"_6hFm4",
-			"index":0,
+			"id":"n_qoN7y",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +74,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
