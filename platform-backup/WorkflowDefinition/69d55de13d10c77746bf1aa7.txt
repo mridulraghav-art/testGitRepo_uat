@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775590881792,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_dHylV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_MddT8",
+			"type":"next"
+		}
+	],
+	"id":"69d55de13d10c77746bf1aa7",
+	"lastModifiedBy":39,
+	"lcName":"cancelschedulecallable_mapinput217755908634290",
+	"modifiedTime":1775590881792,
+	"name":"cancelScheduleCallable_mapInput217755908634290",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_dHylV-1",
+			"id":"_dHylV",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_dHylV-1",
+			"id":"_MddT8",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
