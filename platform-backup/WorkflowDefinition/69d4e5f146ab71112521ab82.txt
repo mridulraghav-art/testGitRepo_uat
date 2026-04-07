@@ -4,6 +4,15 @@
 	],
 	"createdTime":1775560177378,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1775561088588,
+		"deployedBy":39,
+		"deployedDefinitionId":"69d4e980d8bff446a0fece7f",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_vfTQv",
@@ -16,7 +25,7 @@
 	"id":"69d4e5f146ab71112521ab82",
 	"lastModifiedBy":39,
 	"lcName":"edf",
-	"modifiedTime":1775561085586,
+	"modifiedTime":1775561449197,
 	"name":"edf",
 	"nodes":[
 		{
@@ -26,7 +35,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_tp5zD-1",
 			"id":"n_vfTQv",
@@ -59,7 +68,7 @@
 			"id":"n_Bh5SH",
 			"index":2,
 			"inputs":{
-				"field2":true
+				"field2":false
 			},
 			"skip":false,
 			"subTitle":"Test HTTP API",
@@ -81,5 +90,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
