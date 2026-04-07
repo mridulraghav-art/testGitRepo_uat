@@ -45,7 +45,7 @@
 	"id":"69d4af29d00005097f5c640b",
 	"lastModifiedBy":39,
 	"lcName":"playground-form-_7fsxq",
-	"modifiedTime":1775546153135,
+	"modifiedTime":1775546447173,
 	"name":"playground-form-_7fSxQ",
 	"nodes":[
 		{
@@ -360,22 +360,31 @@
 			"context":{
 				"appName":"csv_by_unifyapps",
 				"connectionId":"",
-				"resourceName":"csv_by_unifyapps_extract_headers",
+				"resourceName":"csv_by_unifyapps_for_each_row_or_rows",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_OEbzE-1",
 			"id":"_p4GNL",
 			"index":0,
 			"inputs":{
-				"fileDetails":"https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv",
-				"delimiter":","
+				"startFromRow":1,
+				"file":"https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv",
+				"headerRow":true,
+				"columns":[
+					"user",
+					"id"
+				],
+				"delimiter":",",
+				"batch":false,
+				"encoding":"UTF-8",
+				"batchSize":100
 			},
 			"skip":false,
-			"subTitle":"CSV by UnifyApps",
-			"title":"Extract headers from CSV file",
+			"subTitle":"csv_by_unifyapps",
+			"title":"Split PDF file",
 			"type":"LOOP"
 		},
 		{
@@ -448,5 +457,5 @@
 	"tags":[
 		
 	],
-	"version":14
+	"version":15
 }
