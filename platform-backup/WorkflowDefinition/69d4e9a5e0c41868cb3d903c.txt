@@ -5,47 +5,44 @@
 	"createdTime":1775561125013,
 	"deleted":false,
 	"edges":[
-		{
-			"fromNodeId":"_prXCv",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_6oNo2",
-			"type":"next"
-		}
+		
 	],
 	"id":"69d4e9a5e0c41868cb3d903c",
 	"lastModifiedBy":39,
 	"lcName":"fwedwedwe",
-	"modifiedTime":1775561125013,
+	"modifiedTime":1775561132604,
 	"name":"fwedwedwe",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_prXCv-1",
-			"id":"_prXCv",
-			"index":0,
+			"id":"n_srsKk",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_prXCv-1",
-			"id":"_6oNo2",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +53,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
