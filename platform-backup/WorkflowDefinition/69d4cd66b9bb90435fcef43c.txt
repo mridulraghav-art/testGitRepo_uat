@@ -6,46 +6,154 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_13Zio",
+			"fromNodeId":"n_aYveX",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_9ba3y",
+			"toNodeId":"n_w8ZVy",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_w8ZVy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_P3wbW",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_P3wbW",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_lDOKB",
 			"type":"next"
 		}
 	],
 	"id":"69d4cd66b9bb90435fcef43c",
 	"lastModifiedBy":39,
 	"lcName":"encryptionbyunifyappslocalvnfkggejqi",
-	"modifiedTime":1775553894543,
+	"modifiedTime":1775553952482,
 	"name":"EncryptionByUnifyAppsLocalvnfKggeJQi",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1844,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_13Zio-1",
-			"id":"_13Zio",
-			"index":0,
+			"id":"n_aYveX",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"EncryptedData":{
+							"type":"string",
+							"title":"EncryptedData"
+						},
+						"DecryptedData":{
+							"type":"string",
+							"title":"DecryptedData"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"EncryptString":{
+							"type":"string",
+							"title":"EncryptString"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"encryption_tools_by_unifyapps",
+				"resourceVersion":1508,
+				"connectionId":"68381e6adac4a12e912c6f8b",
+				"resourceName":"encryption_tools_by_unifyapps_encrypt_data",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_13Zio-1",
-			"id":"_9ba3y",
-			"index":0,
+			"id":"n_w8ZVy",
+			"index":2,
+			"inputs":{
+				"data":"测试テスト",
+				"dataType":"STRING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Encryption Tools by UnifyApps",
+			"title":"Encrypt data",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"encryption_tools_by_unifyapps",
+				"resourceVersion":1509,
+				"connectionId":"68381e6adac4a12e912c6f8b",
+				"resourceName":"encryption_tools_by_unifyapps_decrypt_data",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_13Zio-1",
+			"id":"n_P3wbW",
+			"index":3,
+			"inputs":{
+				"data":"{{ n_w8ZVy.outputs.encryptedData }}",
+				"dataType":"STRING"
+			},
+			"skip":false,
+			"subTitle":"Encryption Tools by UnifyApps",
+			"title":"Decrypt data",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_13Zio-1",
+			"id":"n_lDOKB",
+			"index":4,
+			"inputs":{
+				"result":{
+					"EncryptedData":"{{ n_w8ZVy.outputs.encryptedData }}",
+					"DecryptedData":"{{ n_P3wbW.outputs.decryptedData }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +164,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
