@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775536726649,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_7I7Q4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_NBRWD",
+			"type":"next"
+		}
+	],
+	"id":"69d48a56d8bff446a0fb4b17",
+	"lastModifiedBy":39,
+	"lcName":"b vcx",
+	"modifiedTime":1775536726649,
+	"name":"b vcx",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_7I7Q4-1",
+			"id":"_7I7Q4",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_7I7Q4-1",
+			"id":"_NBRWD",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
