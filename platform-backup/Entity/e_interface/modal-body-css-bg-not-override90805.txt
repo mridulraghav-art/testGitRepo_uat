@@ -24,7 +24,7 @@
 	},
 	"id":"modal-body-css-bg-not-override90805",
 	"lastModifiedBy":39,
-	"modifiedTime":1775544062581,
+	"modifiedTime":1775544073039,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d4a6fed3050c7f1e60e2fc":"homepage"
+			"e_69d4a6fed3050c7f1e60e2fc":"homepage",
+			"e_global_modal-body-css-bg-not-override90805":"global-page-of-modal-body-css-bg-not-override90805"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_modal-body-css-bg-not-override90805":{
+				"slug":"global-page-of-modal-body-css-bg-not-override90805",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
