@@ -2,9 +2,29 @@
 	"createdTime":1775547469867,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"rescom-modal-21775547420699077283",
 	"lastModifiedBy":39,
-	"modifiedTime":1775547469867,
+	"modifiedTime":1775547472493,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -20,15 +40,20 @@
 			"_counter":{
 				"_moduleCount":0,
 				"_mqttTopicCounter":0,
-				"_pageCount":0
+				"_pageCount":1
 			}
 		},
 		"navigation":{
 			"secondary":[],
-			"defaultPageId":"",
+			"defaultPageId":"e_69d4b44f291a3e43dc45edb4",
 			"appearance":{
 				"SM":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_oqYON",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -57,10 +82,16 @@
 						"padding":{
 							"all":"p-0"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"LG":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_oqYON",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -95,10 +126,16 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"XL":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_oqYON",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"expandable"
@@ -133,10 +170,16 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"MD":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_oqYON",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -171,10 +214,25 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				}
 			},
-			"primary":[]
+			"primary":[
+				{
+					"activeIcon":"Zap",
+					"name":"Homepage",
+					"icon":"Zap",
+					"id":"nav_oqYON",
+					"type":"PAGE",
+					"pageId":"e_69d4b44f291a3e43dc45edb4",
+					"slug":"homepage"
+				}
+			]
+		},
+		"interfacePageIdVsSlugMap":{
+			"e_69d4b44f291a3e43dc45edb4":"homepage",
+			"e_global_rescom-modal-21775547420699077283":"global-page-of-rescom-modal-21775547420699077283"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -186,11 +244,23 @@
 		"type":"application",
 		"locale":{
 			"defaultLocale":"en-US"
+		},
+		"entityDetailsMap":{
+			"e_69d4b44f291a3e43dc45edb4":{
+				"slug":"homepage",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_global_rescom-modal-21775547420699077283":{
+				"slug":"global-page-of-rescom-modal-21775547420699077283",
+				"isPublic":false,
+				"type":"PAGE"
+			}
 		}
 	},
 	"standard":false,
 	"tags":[
 		"dnt-application"
 	],
-	"version":0
+	"version":3
 }
