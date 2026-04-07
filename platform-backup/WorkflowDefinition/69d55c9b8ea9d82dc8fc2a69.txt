@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775590555540,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_RMkIv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_ItcpM",
+			"type":"next"
+		}
+	],
+	"id":"69d55c9b8ea9d82dc8fc2a69",
+	"lastModifiedBy":39,
+	"lcName":"cancelschedulecallable_nodetest217755905365090",
+	"modifiedTime":1775590555540,
+	"name":"cancelScheduleCallable_nodeTest217755905365090",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_RMkIv-1",
+			"id":"_RMkIv",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_RMkIv-1",
+			"id":"_ItcpM",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
