@@ -23,7 +23,7 @@
 	"id":"69d0da247f6e24549c5a7375",
 	"lastModifiedBy":39,
 	"lcName":"example_http",
-	"modifiedTime":1775552147507,
+	"modifiedTime":1775554014700,
 	"name":"example_http",
 	"nodes":[
 		{
@@ -50,8 +50,8 @@
 		{
 			"context":{
 				"appName":"standard_entities",
-				"resourceVersion":4647,
-				"resourceName":"standard_entities_cancel_workflow",
+				"resourceVersion":4637,
+				"resourceName":"standard_entities_manage_project_collaborators",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -61,12 +61,11 @@
 			"id":"n_2uPNy",
 			"index":2,
 			"inputs":{
-				"async":true,
-				"workflowRunTimeType":"DEFAULT"
+				"userIds":[]
 			},
 			"skip":false,
 			"subTitle":"Standard entities by UnifyApps",
-			"title":"Cancel workflow",
+			"title":"Add project collaborators",
 			"type":"ACTION"
 		},
 		{
@@ -105,5 +104,5 @@
 		}
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
