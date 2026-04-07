@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775589477748,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_LVLYP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_5OVky",
+			"type":"next"
+		}
+	],
+	"id":"69d558652da7334198540f0f",
+	"lastModifiedBy":39,
+	"lcName":"childworkflow_cancelscheduleinvalidname217755894726900",
+	"modifiedTime":1775589477748,
+	"name":"childWorkflow_cancelScheduleInvalidName217755894726900",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_LVLYP-1",
+			"id":"_LVLYP",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_LVLYP-1",
+			"id":"_5OVky",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
