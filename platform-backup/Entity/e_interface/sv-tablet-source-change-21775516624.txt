@@ -24,7 +24,7 @@
 	},
 	"id":"sv-tablet-source-change-21775516624",
 	"lastModifiedBy":39,
-	"modifiedTime":1775554801345,
+	"modifiedTime":1775554820533,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d4d0f176870a619e44a4b4":"homepage"
+			"e_69d4d0f176870a619e44a4b4":"homepage",
+			"e_global_sv-tablet-source-change-21775516624":"global-page-of-sv-tablet-source-change-21775516624"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_sv-tablet-source-change-21775516624":{
+				"slug":"global-page-of-sv-tablet-source-change-21775516624",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
