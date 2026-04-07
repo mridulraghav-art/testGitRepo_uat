@@ -23,7 +23,7 @@
 	"id":"69d0da247f6e24549c5a7375",
 	"lastModifiedBy":39,
 	"lcName":"example_http",
-	"modifiedTime":1775299082303,
+	"modifiedTime":1775552147507,
 	"name":"example_http",
 	"nodes":[
 		{
@@ -33,7 +33,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_XMbVa-1",
 			"id":"n_VMQy8",
@@ -50,8 +50,8 @@
 		{
 			"context":{
 				"appName":"standard_entities",
-				"resourceVersion":4631,
-				"resourceName":"standard_entities_list_tags",
+				"resourceVersion":4647,
+				"resourceName":"standard_entities_cancel_workflow",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -61,16 +61,12 @@
 			"id":"n_2uPNy",
 			"index":2,
 			"inputs":{
-				"tagKeyword":"DND",
-				"page":{
-					"limit":2,
-					"offset":0
-				},
-				"includeTotalCount":true
+				"async":true,
+				"workflowRunTimeType":"DEFAULT"
 			},
 			"skip":false,
 			"subTitle":"Standard entities by UnifyApps",
-			"title":"List tags",
+			"title":"Cancel workflow",
 			"type":"ACTION"
 		},
 		{
@@ -81,7 +77,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_XMbVa-1",
 			"id":"n_i7L8s",
@@ -109,5 +105,5 @@
 		}
 	},
 	"standard":false,
-	"version":7
+	"version":8
 }
