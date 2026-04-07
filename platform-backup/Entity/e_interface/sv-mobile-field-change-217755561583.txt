@@ -24,7 +24,7 @@
 	},
 	"id":"sv-mobile-field-change-217755561583",
 	"lastModifiedBy":39,
-	"modifiedTime":1775559889147,
+	"modifiedTime":1775559894315,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69d4e4d176870a619e460623":"homepage"
+			"e_69d4e4d176870a619e460623":"homepage",
+			"e_global_sv-mobile-field-change-217755561583":"global-page-of-sv-mobile-field-change-217755561583"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_sv-mobile-field-change-217755561583":{
+				"slug":"global-page-of-sv-mobile-field-change-217755561583",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
