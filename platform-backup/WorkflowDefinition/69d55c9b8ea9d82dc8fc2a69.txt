@@ -7,46 +7,70 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_RMkIv",
+			"fromNodeId":"n_yShRa",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_ItcpM",
+			"toNodeId":"n_WdpS7",
 			"type":"next"
 		}
 	],
 	"id":"69d55c9b8ea9d82dc8fc2a69",
 	"lastModifiedBy":39,
 	"lcName":"cancelschedulecallable_nodetest217755905365090",
-	"modifiedTime":1775590555540,
+	"modifiedTime":1775590559578,
 	"name":"cancelScheduleCallable_nodeTest217755905365090",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_RMkIv-1",
-			"id":"_RMkIv",
-			"index":0,
+			"id":"n_yShRa",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1846,
+				"resourceName":"callables_cancel_scheduled_callable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_RMkIv-1",
-			"id":"_ItcpM",
-			"index":0,
+			"id":"n_WdpS7",
+			"index":2,
+			"inputs":{
+				"schedule_name":"Schedule_test_example"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Cancel scheduled callable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +84,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
