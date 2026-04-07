@@ -4,6 +4,15 @@
 	],
 	"createdTime":1775555389145,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1775555437053,
+		"deployedBy":39,
+		"deployedDefinitionId":"69d4d36cb9bb90435fcf1e09",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_AEb2t",
@@ -16,43 +25,21 @@
 			"fromNodeId":"n_EDEcu",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_3jHrY",
+			"toNodeId":"n_afIQD",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_3jHrY",
+			"fromNodeId":"n_afIQD",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_Gv8Np",
-			"type":"loop"
-		},
-		{
-			"fromNodeId":"n_Gv8Np",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_P9qhq",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_P9qhq",
-			"name":"loopback",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_3jHrY",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_3jHrY",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_VUa7J",
+			"toNodeId":"n_pEkWx",
 			"type":"next"
 		}
 	],
 	"id":"69d4d33d46ab711125211b1d",
 	"lastModifiedBy":39,
 	"lcName":"testparentautomation",
-	"modifiedTime":1775555435034,
+	"modifiedTime":1775555647672,
 	"name":"testParentAutomation",
 	"nodes":[
 		{
@@ -62,7 +49,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_3lVeG-1",
 			"id":"n_AEb2t",
@@ -119,30 +106,6 @@
 		},
 		{
 			"context":{
-				"appName":"loop",
-				"resourceVersion":9,
-				"resourceName":"loop_for_each",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_3lVeG-1",
-			"id":"n_3jHrY",
-			"index":3,
-			"inputs":{
-				"repeatMode":"BATCH",
-				"listSource":"{{ n_EDEcu.outputs.result.name }}",
-				"captureIterations":true,
-				"batchSize":1
-			},
-			"skip":false,
-			"subTitle":"Loop",
-			"title":"For each loop",
-			"type":"LOOP"
-		},
-		{
-			"context":{
 				"appName":"callables",
 				"resourceVersion":173,
 				"resourceName":"callables_call_automation_batch",
@@ -151,9 +114,9 @@
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
-			"groupId":"n_3jHrY@_3lVeG-1@l",
-			"id":"n_Gv8Np",
-			"index":4,
+			"groupId":"_3lVeG-1",
+			"id":"n_afIQD",
+			"index":3,
 			"inputs":{
 				"automationId":"69d4b15c75c9140159d17615",
 				"runtimeConnections":{},
@@ -238,28 +201,13 @@
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
-			"groupId":"n_3jHrY@_3lVeG-1@l",
-			"id":"n_P9qhq",
-			"index":5,
+			"groupId":"_3lVeG-1",
+			"id":"n_pEkWx",
+			"index":4,
 			"skip":false,
 			"subTitle":"Variable by Sirion",
 			"title":"Create variables",
 			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"stop"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_3lVeG-1",
-			"id":"n_VUa7J",
-			"index":6,
-			"skip":false,
-			"subTitle":"Stop",
-			"title":"Stop",
-			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -276,5 +224,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
