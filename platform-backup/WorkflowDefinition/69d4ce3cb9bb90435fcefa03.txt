@@ -6,46 +6,98 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_WouLo",
+			"fromNodeId":"n_F5BRQ",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_B0wIS",
+			"toNodeId":"n_j5HfF",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_j5HfF",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_cD1Rs",
 			"type":"next"
 		}
 	],
 	"id":"69d4ce3cb9bb90435fcefa03",
 	"lastModifiedBy":39,
 	"lcName":"standardentitieslocalvzcjyqxzcs",
-	"modifiedTime":1775554108350,
+	"modifiedTime":1775554140261,
 	"name":"standardEntitiesLocalvZcJyqxzCS",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_WouLo-1",
-			"id":"_WouLo",
-			"index":0,
+			"id":"n_F5BRQ",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":4638,
+				"resourceName":"standard_entities_manage_project_collaborators",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_WouLo-1",
-			"id":"_B0wIS",
-			"index":0,
+			"id":"n_j5HfF",
+			"index":2,
+			"inputs":{
+				"roleId":"69d4ce1569c40561fd190bf1",
+				"userIds":[
+					"92633"
+				],
+				"projectId":"60"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Add project collaborators",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1846,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_WouLo-1",
+			"id":"n_cD1Rs",
+			"index":3,
+			"inputs":{
+				"result":"{{ n_j5HfF.outputs }}"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +108,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
