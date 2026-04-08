@@ -23,11 +23,11 @@
 			"fromNodeId":"n_TZ7I8",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_noMbZ",
+			"toNodeId":"n_kuVOW",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_noMbZ",
+			"fromNodeId":"n_kuVOW",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_9lUkJ",
@@ -37,7 +37,7 @@
 	"id":"69d5f11f42fdb435dcf61967",
 	"lastModifiedBy":39,
 	"lcName":"checked",
-	"modifiedTime":1775632998198,
+	"modifiedTime":1775633089266,
 	"name":"checked",
 	"nodes":[
 		{
@@ -139,24 +139,24 @@
 		},
 		{
 			"context":{
-				"appName":"files_by_unifyapps",
-				"resourceVersion":1672,
-				"resourceName":"files_by_unifyapps_get_file",
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":1807,
+				"resourceName":"excel_by_unifyapps_list_sheet_names",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
-			"id":"n_noMbZ",
+			"id":"n_kuVOW",
 			"index":4,
 			"inputs":{
-				"getFromCloudStorage":true,
-				"localFilePath":"{{ n_TZ7I8.outputs }}"
+				"fileDetails":"{{ n_TZ7I8.outputs.fileDetails }}",
+				"fileType":"XLSX"
 			},
 			"skip":false,
-			"subTitle":"Files by UnifyApps",
-			"title":"Get File",
+			"subTitle":"Excel by UnifyApps",
+			"title":"List sheet names in an Excel file",
 			"type":"ACTION"
 		},
 		{
@@ -174,7 +174,7 @@
 			"index":5,
 			"inputs":{
 				"result":{
-					"r":"{{ n_noMbZ.outputs.file }}"
+					"r":"{{ n_kuVOW.outputs }}"
 				}
 			},
 			"skip":false,
@@ -197,5 +197,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
