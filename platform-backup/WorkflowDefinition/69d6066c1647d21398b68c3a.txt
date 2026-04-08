@@ -6,30 +6,81 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_ezJ3t",
+			"fromNodeId":"n_dCH5F",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"_4e8Fv",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_4e8Fv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Paevt",
 			"type":"next"
 		}
 	],
 	"id":"69d6066c1647d21398b68c3a",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1775634028213,
+	"modifiedTime":1775634081749,
 	"name":"test",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ezJ3t-1",
-			"id":"_ezJ3t",
-			"index":0,
+			"id":"n_dCH5F",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"testout",
+						"boolout"
+					],
+					"properties":{
+						"testout":{
+							"type":"string",
+							"title":"Testout"
+						},
+						"boolout":{
+							"type":"boolean",
+							"title":"Boolout"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"test",
+						"bool"
+					],
+					"properties":{
+						"test":{
+							"type":"string",
+							"title":"Test"
+						},
+						"bool":{
+							"type":"boolean",
+							"title":"Bool"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
@@ -39,13 +90,40 @@
 			"fallbackMode":"STOP",
 			"groupId":"_ezJ3t-1",
 			"id":"_4e8Fv",
-			"index":0,
+			"index":2,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1846,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_ezJ3t-1",
+			"id":"n_Paevt",
+			"index":3,
+			"inputs":{
+				"result":{
+					"testout":"{{ n_dCH5F.outputs.test }}qa",
+					"boolout":false
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +134,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
