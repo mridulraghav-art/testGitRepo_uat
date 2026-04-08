@@ -6,46 +6,95 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_to7eW",
+			"fromNodeId":"n_7CsET",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Ox3AC",
+			"toNodeId":"n_ycGr5",
 			"type":"next"
 		}
 	],
 	"id":"69d6a5ca798555540057d7cc",
 	"lastModifiedBy":39,
 	"lcName":"ghj",
-	"modifiedTime":1775674826657,
+	"modifiedTime":1775675107236,
 	"name":"ghj",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_to7eW-1",
-			"id":"_to7eW",
-			"index":0,
+			"id":"n_7CsET",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1627,
+				"resourceName":"analytics_by_unifyapps_export",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_to7eW-1",
-			"id":"_Ox3AC",
-			"index":0,
+			"id":"n_ycGr5",
+			"index":2,
+			"inputs":{
+				"projections":{
+					"items":{
+						"name":"ENTITY_analytics_node_testcases_imp=::=name",
+						"aggregationFunction":"COUNT",
+						"alias":"name"
+					},
+					"ua:type":"mappedArray"
+				},
+				"filter":{
+					"filters":[
+						{
+							"property":"ENTITY_analytics_node_testcases_imp=::=age",
+							"filter":{
+								"operator":"GTE",
+								"value":"20"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"fileName":"file",
+				"entityType":"ENTITY_analytics_node_testcases_imp",
+				"batchSize":1000,
+				"keepExactFileName":true,
+				"fileType":"CSV",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Export Reports",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +105,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
