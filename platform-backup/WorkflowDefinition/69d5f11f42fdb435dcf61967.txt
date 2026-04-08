@@ -23,6 +23,13 @@
 			"fromNodeId":"n_TZ7I8",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_RKOcb",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_RKOcb",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_VHVVc",
 			"type":"next"
 		},
@@ -37,7 +44,7 @@
 	"id":"69d5f11f42fdb435dcf61967",
 	"lastModifiedBy":39,
 	"lcName":"checked",
-	"modifiedTime":1775660400221,
+	"modifiedTime":1775660489498,
 	"name":"checked",
 	"nodes":[
 		{
@@ -137,6 +144,29 @@
 		{
 			"context":{
 				"appName":"excel_by_unifyapps",
+				"resourceVersion":84,
+				"resourceName":"excel_by_unifyapps_decrypt_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_FjqQ5-1",
+			"id":"n_RKOcb",
+			"index":4,
+			"inputs":{
+				"password":"Test@123",
+				"fileDetails":"{{ n_TZ7I8.outputs.fileDetails }}",
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Decrypt Excel file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
 				"resourceVersion":1805,
 				"resourceName":"excel_by_unifyapps_extract_headers",
 				"type":"APPLICATION"
@@ -146,9 +176,9 @@
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
 			"id":"n_VHVVc",
-			"index":4,
+			"index":5,
 			"inputs":{
-				"fileDetails":"{{ n_TZ7I8.outputs.fileDetails }}",
+				"fileDetails":"{{ n_RKOcb.outputs.fileDetails }}",
 				"fileType":"XLSX"
 			},
 			"skip":false,
@@ -168,7 +198,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
 			"id":"n_9lUkJ",
-			"index":5,
+			"index":6,
 			"inputs":{
 				"result":{
 					"r":"{{ n_VHVVc.outputs.headers }}"
@@ -194,5 +224,5 @@
 		}
 	},
 	"standard":false,
-	"version":14
+	"version":15
 }
