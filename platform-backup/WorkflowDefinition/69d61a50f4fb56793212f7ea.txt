@@ -7,46 +7,125 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_rLahi",
+			"fromNodeId":"n_g81wQ",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_owiWp",
+			"toNodeId":"n_BsI9E",
 			"type":"next"
 		}
 	],
 	"id":"69d61a50f4fb56793212f7ea",
 	"lastModifiedBy":39,
 	"lcName":"requestschema_emptyvalue217756391145390",
-	"modifiedTime":1775639137543,
+	"modifiedTime":1775639148135,
 	"name":"requestSchema_emptyValue217756391145390",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1846,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_rLahi-1",
-			"id":"_rLahi",
-			"index":0,
+			"id":"n_g81wQ",
+			"index":1,
+			"inputs":{
+				"request":{
+					"body":{
+						"type":"object",
+						"additionalProperties":false,
+						"required":[
+							"request_schema"
+						],
+						"properties":{
+							"request_schema":{
+								"type":"array",
+								"items":{
+									"type":"object",
+									"properties":{
+										"nested_field":{
+											"type":"string",
+											"title":"nested_field"
+										}
+									},
+									"additionalProperties":false,
+									"required":[
+										"nested_field"
+									]
+								},
+								"title":"request_schema"
+							}
+						}
+					},
+					"contentType":"application/json"
+				},
+				"endpointType":"SOAP",
+				"response":[
+					{
+						"name":"res",
+						"status":200,
+						"body":{
+							"type":"object",
+							"additionalProperties":false,
+							"required":[
+								"response_schema"
+							],
+							"properties":{
+								"response_schema":{
+									"type":"object",
+									"properties":{},
+									"additionalProperties":false,
+									"title":"response_schema"
+								}
+							}
+						}
+					}
+				],
+				"soapVersion":"v1.2",
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1847,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_rLahi-1",
-			"id":"_owiWp",
-			"index":0,
+			"id":"n_BsI9E",
+			"index":2,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_res",
+				"body":{
+					"response_schema":"{{ n_g81wQ.outputs.body.request_schema }}"
+				},
+				"status":200
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -61,5 +140,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
