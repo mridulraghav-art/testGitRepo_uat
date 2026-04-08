@@ -6,46 +6,158 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_FjqQ5",
+			"fromNodeId":"n_yxOup",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_5tnBG",
+			"toNodeId":"n_Fw5Q6",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Fw5Q6",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_TZ7I8",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_TZ7I8",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_9lUkJ",
 			"type":"next"
 		}
 	],
 	"id":"69d5f11f42fdb435dcf61967",
 	"lastModifiedBy":39,
 	"lcName":"checked",
-	"modifiedTime":1775628575010,
+	"modifiedTime":1775628699493,
 	"name":"checked",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
-			"id":"_FjqQ5",
-			"index":0,
+			"id":"n_yxOup",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"r"
+					],
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"a"
+					],
+					"properties":{
+						"a":{
+							"type":"string",
+							"title":"a"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":1674,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
-			"id":"_5tnBG",
-			"index":0,
+			"id":"n_Fw5Q6",
+			"index":2,
+			"inputs":{
+				"fileName":"test.xlsx",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845749830/file_example_XLSX_10.xlsx",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":240,
+				"resourceName":"excel_by_unifyapps_add_sheet",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_FjqQ5-1",
+			"id":"n_TZ7I8",
+			"index":3,
+			"inputs":{
+				"replaceOriginal":false,
+				"fileDetails":"{{ n_Fw5Q6.outputs.fileDetails }}",
+				"deleteOtherSheets":false,
+				"newSheetName":"testing",
+				"duplicateFromSheet":false,
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Add sheet to Excel file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1846,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_FjqQ5-1",
+			"id":"n_9lUkJ",
+			"index":4,
+			"inputs":{
+				"result":{
+					"r":"{{ n_TZ7I8.outputs.fileDetails }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +168,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
