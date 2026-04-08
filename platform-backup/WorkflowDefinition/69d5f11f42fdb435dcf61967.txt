@@ -37,7 +37,7 @@
 	"id":"69d5f11f42fdb435dcf61967",
 	"lastModifiedBy":39,
 	"lcName":"checked",
-	"modifiedTime":1775658855748,
+	"modifiedTime":1775659532291,
 	"name":"checked",
 	"nodes":[
 		{
@@ -114,8 +114,8 @@
 		{
 			"context":{
 				"appName":"excel_by_unifyapps",
-				"resourceVersion":240,
-				"resourceName":"excel_by_unifyapps_add_sheet",
+				"resourceVersion":1645,
+				"resourceName":"excel_by_unifyapps_append_files",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -125,15 +125,20 @@
 			"id":"n_TZ7I8",
 			"index":3,
 			"inputs":{
-				"replaceOriginal":false,
-				"fileDetails":"{{ n_Fw5Q6.outputs.fileDetails }}",
-				"deleteOtherSheets":false,
-				"duplicateFromSheet":false,
+				"fileName":"MergedFile.xlsx",
+				"skipFirstFileHeader":false,
+				"includeHeaders":true,
+				"outputSheetName":"Combined",
+				"keepExactFileName":false,
+				"fileList":[
+					"{{ n_Fw5Q6.outputs.fileDetails }}",
+					"{{ n_Fw5Q6.outputs.fileDetails }}"
+				],
 				"fileType":"xlsx"
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
-			"title":"Add sheet to Excel file",
+			"title":"Append multiple excel files into one sheet",
 			"type":"ACTION"
 		},
 		{
@@ -144,7 +149,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
 			"id":"n_kuVOW",
@@ -153,7 +158,7 @@
 				"fileDetails":"{{ n_TZ7I8.outputs.fileDetails }}",
 				"fileType":"XLSX"
 			},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Excel by UnifyApps",
 			"title":"List sheet names in an Excel file",
 			"type":"ACTION"
@@ -173,7 +178,7 @@
 			"index":5,
 			"inputs":{
 				"result":{
-					"r":"{{ n_kuVOW.outputs }}"
+					"r":"{{ n_TZ7I8.outputs }}"
 				}
 			},
 			"skip":false,
@@ -196,5 +201,5 @@
 		}
 	},
 	"standard":false,
-	"version":9
+	"version":10
 }
