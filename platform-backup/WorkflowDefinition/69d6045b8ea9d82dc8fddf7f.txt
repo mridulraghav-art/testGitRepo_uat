@@ -9,6 +9,13 @@
 			"fromNodeId":"n_cGJiA",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_3WFy7",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_3WFy7",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_KSM4S",
 			"type":"next"
 		}
@@ -16,7 +23,7 @@
 	"id":"69d6045b8ea9d82dc8fddf7f",
 	"lastModifiedBy":39,
 	"lcName":"test_exportresults",
-	"modifiedTime":1775633538306,
+	"modifiedTime":1775633654083,
 	"name":"test_ExportResults",
 	"nodes":[
 		{
@@ -56,6 +63,52 @@
 		},
 		{
 			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1627,
+				"resourceName":"analytics_by_unifyapps_export",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Zr3on-1",
+			"id":"n_3WFy7",
+			"index":2,
+			"inputs":{
+				"projections":{
+					"items":{
+						"name":"ENTITY_analytics_node_testcases_imp=::=name",
+						"aggregationFunction":"GROUP",
+						"alias":"name"
+					},
+					"ua:type":"mappedArray"
+				},
+				"filter":{
+					"filters":[
+						{
+							"property":"ENTITY_analytics_node_testcases_imp=::=age",
+							"filter":{
+								"operator":"GT",
+								"value":"20"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"fileName":"file",
+				"entityType":"ENTITY_analytics_node_testcases_imp",
+				"batchSize":2,
+				"keepExactFileName":true,
+				"fileType":"CSV",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Export Reports",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"callables",
 				"resourceVersion":1846,
 				"resourceName":"callables_return_to_automation",
@@ -66,7 +119,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_Zr3on-1",
 			"id":"n_KSM4S",
-			"index":2,
+			"index":3,
 			"inputs":{
 				"result":{
 					"r":"cool"
@@ -92,5 +145,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
