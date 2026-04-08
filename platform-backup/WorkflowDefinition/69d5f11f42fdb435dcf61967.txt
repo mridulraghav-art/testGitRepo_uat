@@ -37,7 +37,7 @@
 	"id":"69d5f11f42fdb435dcf61967",
 	"lastModifiedBy":39,
 	"lcName":"checked",
-	"modifiedTime":1775658782795,
+	"modifiedTime":1775658855748,
 	"name":"checked",
 	"nodes":[
 		{
@@ -166,14 +166,14 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
 			"id":"n_9lUkJ",
 			"index":5,
 			"inputs":{
 				"result":{
-					"r":"{{ n_kuVOW.outputs.sheetNames }}"
+					"r":"{{ n_kuVOW.outputs }}"
 				}
 			},
 			"skip":false,
@@ -196,5 +196,5 @@
 		}
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
