@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775641904114,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_Z4SOy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_8T5SX",
+			"type":"next"
+		}
+	],
+	"id":"69d62530c0e0063fd815c84e",
+	"lastModifiedBy":39,
+	"lcName":"duplicatewebhookworkflow_217756418818990",
+	"modifiedTime":1775641904114,
+	"name":"duplicateWebhookWorkflow_217756418818990",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Z4SOy-1",
+			"id":"_Z4SOy",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Z4SOy-1",
+			"id":"_8T5SX",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
