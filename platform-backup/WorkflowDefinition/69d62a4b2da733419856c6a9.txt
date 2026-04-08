@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775643211783,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_5YIHl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_AZzLz",
+			"type":"next"
+		}
+	],
+	"id":"69d62a4b2da733419856c6a9",
+	"lastModifiedBy":39,
+	"lcName":"frceds",
+	"modifiedTime":1775643211783,
+	"name":"frceds",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_5YIHl-1",
+			"id":"_5YIHl",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_5YIHl-1",
+			"id":"_AZzLz",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
