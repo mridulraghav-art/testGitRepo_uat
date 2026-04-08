@@ -9,13 +9,6 @@
 			"fromNodeId":"_4OPyA",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_LExI8",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_LExI8",
-			"priority":0,
-			"skip":false,
 			"toNodeId":"n_vyU2s",
 			"type":"next"
 		},
@@ -37,7 +30,7 @@
 	"id":"69d4cf35d8bff446a0fc6474",
 	"lastModifiedBy":39,
 	"lcName":"new",
-	"modifiedTime":1775661677790,
+	"modifiedTime":1775661683471,
 	"name":"new",
 	"nodes":[
 		{
@@ -56,39 +49,6 @@
 		},
 		{
 			"context":{
-				"appName":"callables",
-				"resourceVersion":1847,
-				"resourceName":"callables_schedule_a_callable",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_4OPyA-1",
-			"id":"n_LExI8",
-			"index":2,
-			"inputs":{
-				"automation_id":"679dc2665e42ab3e6a617664",
-				"schedule_method":{
-					"schedule_type":"ONE_TIME",
-					"setup_config":{
-						"start_time":"2026-04-07T18:49:55.873Z",
-						"timezone":"Asia/Calcutta",
-						"unit":"MINUTES",
-						"expression":"0 0 * * *"
-					}
-				},
-				"runtimeConnections":{},
-				"cancel_existing":true,
-				"version":"-1"
-			},
-			"skip":false,
-			"subTitle":"Callable",
-			"title":"Schedule callable",
-			"type":"ACTION"
-		},
-		{
-			"context":{
 				"appName":"custom_http_endpoint",
 				"resourceVersion":1592,
 				"resourceName":"custom_http_endpoint_execute",
@@ -99,7 +59,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_4OPyA-1",
 			"id":"n_vyU2s",
-			"index":3,
+			"index":2,
 			"inputs":{
 				"httpVersion":"HTTP_2",
 				"responseContentType":"HEADER_BASED",
@@ -131,7 +91,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_4OPyA-1",
 			"id":"n_anbAc",
-			"index":4,
+			"index":3,
 			"inputs":{
 				"projections":[
 					{
@@ -189,7 +149,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_4OPyA-1",
 			"id":"n_okWl0",
-			"index":5,
+			"index":4,
 			"inputs":{
 				"code":"import com.unifyapps.infra.utils.EnvUtils;\n\nreturn [\"pod\": EnvUtils.getHostName()];",
 				"compile_static":false,
@@ -215,5 +175,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
