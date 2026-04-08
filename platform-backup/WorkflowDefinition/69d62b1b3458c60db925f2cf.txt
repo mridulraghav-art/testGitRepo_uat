@@ -6,46 +6,115 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_ZfimO",
+			"fromNodeId":"n_3kE9y",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_CLtCQ",
+			"toNodeId":"n_UtrND",
 			"type":"next"
 		}
 	],
 	"id":"69d62b1b3458c60db925f2cf",
 	"lastModifiedBy":39,
 	"lcName":"edsxz",
-	"modifiedTime":1775643419538,
+	"modifiedTime":1775643436482,
 	"name":"edsxz",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ZfimO-1",
-			"id":"_ZfimO",
-			"index":0,
+			"id":"n_3kE9y",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"dcsxz":{
+								"type":"string",
+								"title":"Dcsxz"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"dcsxz"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ZfimO-1",
-			"id":"_CLtCQ",
-			"index":0,
+			"id":"n_UtrND",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"fvdc":{
+							"type":"string",
+							"title":"Fvdc"
+						}
+					},
+					"required":[
+						"fvdc"
+					]
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"fvdc":{
+							"type":"string",
+							"title":"Fvdc"
+						}
+					},
+					"required":[
+						"fvdc"
+					]
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +125,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
