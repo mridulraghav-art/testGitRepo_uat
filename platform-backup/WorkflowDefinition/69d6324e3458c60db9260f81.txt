@@ -6,46 +6,66 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_OaCCi",
+			"fromNodeId":"n_3nJWY",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Y4BBH",
+			"toNodeId":"n_FEN31",
 			"type":"next"
 		}
 	],
 	"id":"69d6324e3458c60db9260f81",
 	"lastModifiedBy":39,
 	"lcName":"tr",
-	"modifiedTime":1775645262928,
+	"modifiedTime":1775645277581,
 	"name":"tr",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_OaCCi-1",
-			"id":"_OaCCi",
-			"index":0,
+			"id":"n_3nJWY",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1846,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_OaCCi-1",
-			"id":"_Y4BBH",
-			"index":0,
+			"id":"n_FEN31",
+			"index":2,
+			"inputs":{
+				"result":"{{ n_3nJWY.outputs }}"
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +76,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
