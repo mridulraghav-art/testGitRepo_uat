@@ -9,14 +9,35 @@
 			"fromNodeId":"_4OPyA",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_D3GcI",
+			"toNodeId":"n_LExI8",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LExI8",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_vyU2s",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_vyU2s",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_anbAc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_anbAc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_okWl0",
 			"type":"next"
 		}
 	],
 	"id":"69d4cf35d8bff446a0fc6474",
 	"lastModifiedBy":39,
 	"lcName":"new",
-	"modifiedTime":1775554357798,
+	"modifiedTime":1775661677790,
 	"name":"new",
 	"nodes":[
 		{
@@ -25,7 +46,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_4OPyA-1",
 			"id":"_4OPyA",
-			"index":0,
+			"index":1,
 			"skip":false,
 			"title":"Select a trigger event",
 			"trigger":{
@@ -34,18 +55,156 @@
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1847,
+				"resourceName":"callables_schedule_a_callable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_4OPyA-1",
-			"id":"_D3GcI",
-			"index":0,
+			"id":"n_LExI8",
+			"index":2,
+			"inputs":{
+				"automation_id":"679dc2665e42ab3e6a617664",
+				"schedule_method":{
+					"schedule_type":"ONE_TIME",
+					"setup_config":{
+						"start_time":"2026-04-07T18:49:55.873Z",
+						"timezone":"Asia/Calcutta",
+						"unit":"MINUTES",
+						"expression":"0 0 * * *"
+					}
+				},
+				"runtimeConnections":{},
+				"cancel_existing":true,
+				"version":"-1"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Schedule callable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":1592,
+				"resourceName":"custom_http_endpoint_execute",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_4OPyA-1",
+			"id":"n_vyU2s",
+			"index":3,
+			"inputs":{
+				"httpVersion":"HTTP_2",
+				"responseContentType":"HEADER_BASED",
+				"followRedirects":"NORMAL",
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"authType":"CUSTOM",
+				"requestContentType":"application/json",
+				"ignoreTrailingSlashes":false,
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"certificateType":"CERT_STRING"
+			},
+			"skip":false,
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"Execute REST request",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1625,
+				"resourceName":"analytics_by_unifyapps_query_reports",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_4OPyA-1",
+			"id":"n_anbAc",
+			"index":4,
+			"inputs":{
+				"projections":[
+					{
+						"name":"CONNECTION_ID",
+						"aggregationFunction":"GROUP",
+						"includePercentageChange":false
+					},
+					{
+						"name":"EXECUTION_INSTANCE_ID",
+						"aggregationFunction":"GROUP",
+						"includePercentageChange":false
+					},
+					{
+						"name":"WORKFLOW_ID",
+						"aggregationFunction":"GROUP",
+						"includePercentageChange":false
+					}
+				],
+				"filter":{
+					"filters":[
+						{
+							"property":"WORKFLOW_ID",
+							"filter":{
+								"operator":"NOT_EQUAL",
+								"value":"683d3a7b89b9777522e8b456"
+							}
+						},
+						{
+							"property":"EXECUTION_INSTANCE_ID",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"69d559603d10c77746bf0eb2"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"entityType":"CONNECTION",
+				"group":"PLATFORM"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Analytics Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":1677,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_4OPyA-1",
+			"id":"n_okWl0",
+			"index":5,
+			"inputs":{
+				"code":"import com.unifyapps.infra.utils.EnvUtils;\n\nreturn [\"pod\": EnvUtils.getHostName()];",
+				"compile_static":false,
+				"captureStdOutput":false
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +215,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
