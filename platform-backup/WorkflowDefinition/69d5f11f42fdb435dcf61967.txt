@@ -23,6 +23,13 @@
 			"fromNodeId":"n_TZ7I8",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_noMbZ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_noMbZ",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_9lUkJ",
 			"type":"next"
 		}
@@ -30,7 +37,7 @@
 	"id":"69d5f11f42fdb435dcf61967",
 	"lastModifiedBy":39,
 	"lcName":"checked",
-	"modifiedTime":1775628699493,
+	"modifiedTime":1775632892296,
 	"name":"checked",
 	"nodes":[
 		{
@@ -40,7 +47,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
 			"id":"n_yxOup",
@@ -89,7 +96,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
 			"id":"n_Fw5Q6",
@@ -112,7 +119,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
 			"id":"n_TZ7I8",
@@ -132,6 +139,28 @@
 		},
 		{
 			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":1672,
+				"resourceName":"files_by_unifyapps_get_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_FjqQ5-1",
+			"id":"n_noMbZ",
+			"index":4,
+			"inputs":{
+				"getFromCloudStorage":true,
+				"localFilePath":"{{ n_TZ7I8.outputs.fileDetails }}"
+			},
+			"skip":false,
+			"subTitle":"Files by UnifyApps",
+			"title":"Get File",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"callables",
 				"resourceVersion":1846,
 				"resourceName":"callables_return_to_automation",
@@ -142,10 +171,10 @@
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
 			"id":"n_9lUkJ",
-			"index":4,
+			"index":5,
 			"inputs":{
 				"result":{
-					"r":"{{ n_TZ7I8.outputs.fileDetails }}"
+					"r":"{{ n_noMbZ.outputs.file }}"
 				}
 			},
 			"skip":false,
@@ -168,5 +197,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
