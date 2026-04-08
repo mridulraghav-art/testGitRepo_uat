@@ -4,6 +4,15 @@
 	],
 	"createdTime":1775646518517,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1775646930926,
+		"deployedBy":39,
+		"deployedDefinitionId":"69d638d2da1bf320fb2d5504",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_y1qHm",
@@ -37,7 +46,7 @@
 	"id":"69d63736a47ca31af5fd60df",
 	"lastModifiedBy":39,
 	"lcName":"excelfilelocalzvhkfufifr",
-	"modifiedTime":1775646929027,
+	"modifiedTime":1775647082434,
 	"name":"ExcelFileLocalzVHkfUfiFR",
 	"nodes":[
 		{
@@ -122,7 +131,7 @@
 				"replaceOriginal":false,
 				"fileDetails":"{{ n_q8BTR.outputs.fileDetails }}",
 				"deleteOtherSheets":false,
-				"newSheetName":"testing",
+				"newSheetName":"testing.xlsx",
 				"duplicateFromSheet":false,
 				"fileType":"xlsx"
 			},
@@ -191,5 +200,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
