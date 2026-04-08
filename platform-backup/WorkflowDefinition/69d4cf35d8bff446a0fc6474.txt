@@ -6,7 +6,7 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_4OPyA",
+			"fromNodeId":"n_FaKCW",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_vyU2s",
@@ -30,20 +30,31 @@
 	"id":"69d4cf35d8bff446a0fc6474",
 	"lastModifiedBy":39,
 	"lcName":"new",
-	"modifiedTime":1775661683471,
+	"modifiedTime":1775661691702,
 	"name":"new",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_4OPyA-1",
-			"id":"_4OPyA",
+			"id":"n_FaKCW",
 			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
@@ -55,7 +66,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_4OPyA-1",
 			"id":"n_vyU2s",
@@ -87,7 +98,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_4OPyA-1",
 			"id":"n_anbAc",
@@ -145,7 +156,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_4OPyA-1",
 			"id":"n_okWl0",
@@ -175,5 +186,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
