@@ -6,46 +6,181 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_UohYi",
+			"fromNodeId":"n_vgn7j",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_ALXjE",
+			"toNodeId":"n_gE4HC",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_gE4HC",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_X0iC3",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_X0iC3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_zwSdM",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_zwSdM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_qJAsv",
 			"type":"next"
 		}
 	],
 	"id":"69d63579798555540057347b",
 	"lastModifiedBy":39,
 	"lcName":"excelfilelocalnnytasxwph",
-	"modifiedTime":1775646073767,
+	"modifiedTime":1775646222097,
 	"name":"ExcelFileLocalnnytaSXwPh",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1845,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UohYi-1",
-			"id":"_UohYi",
-			"index":0,
+			"id":"n_vgn7j",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"a":{
+							"type":"string",
+							"title":"a"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":1674,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UohYi-1",
-			"id":"_ALXjE",
-			"index":0,
+			"id":"n_gE4HC",
+			"index":2,
+			"inputs":{
+				"fileName":"test.xlsx",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845749830/file_example_XLSX_10.xlsx",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":240,
+				"resourceName":"excel_by_unifyapps_add_sheet",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_UohYi-1",
+			"id":"n_X0iC3",
+			"index":3,
+			"inputs":{
+				"replaceOriginal":false,
+				"fileDetails":"{{ n_gE4HC.outputs.fileDetails }}",
+				"deleteOtherSheets":false,
+				"newSheetName":"test.xlsx",
+				"duplicateFromSheet":false,
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Add sheet to Excel file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":1807,
+				"resourceName":"excel_by_unifyapps_list_sheet_names",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_UohYi-1",
+			"id":"n_zwSdM",
+			"index":4,
+			"inputs":{
+				"fileDetails":"{{ n_X0iC3.outputs.fileDetails }}",
+				"fileType":"XLSX"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"List sheet names in an Excel file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1846,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_UohYi-1",
+			"id":"n_qJAsv",
+			"index":5,
+			"inputs":{
+				"result":{
+					"r":"{{ n_zwSdM.outputs.sheetNames }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +191,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
