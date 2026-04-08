@@ -5,47 +5,44 @@
 	"createdTime":1775629009350,
 	"deleted":false,
 	"edges":[
-		{
-			"fromNodeId":"_bWb7r",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_8LNHI",
-			"type":"next"
-		}
+		
 	],
 	"id":"69d5f2d11647d21398b6504d",
 	"lastModifiedBy":39,
 	"lcName":"fdsxz",
-	"modifiedTime":1775629009350,
+	"modifiedTime":1775629013613,
 	"name":"fdsxz",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_bWb7r-1",
-			"id":"_bWb7r",
-			"index":0,
+			"id":"n_Bmn3J",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_bWb7r-1",
-			"id":"_8LNHI",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +53,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
