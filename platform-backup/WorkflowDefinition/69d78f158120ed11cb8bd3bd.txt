@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775734549868,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_t5L3V",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_zwdsh",
+			"type":"next"
+		}
+	],
+	"id":"69d78f158120ed11cb8bd3bd",
+	"lastModifiedBy":39,
+	"lcName":"check-123",
+	"modifiedTime":1775734549868,
+	"name":"check-123",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_t5L3V-1",
+			"id":"_t5L3V",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_t5L3V-1",
+			"id":"_zwdsh",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
