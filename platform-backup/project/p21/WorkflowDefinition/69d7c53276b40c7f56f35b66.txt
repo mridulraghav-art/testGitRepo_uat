@@ -11,12 +11,14 @@
 	"id":"69d7c53276b40c7f56f35b66",
 	"lastModifiedBy":39,
 	"lcName":"workspace_breadcrumb_217757483967380",
-	"modifiedTime":1775748404426,
+	"modifiedTime":1775748422615,
 	"name":"workspace_breadcrumb_217757483967380",
 	"nodes":[
 		{
 			"context":{
-				"appName":"webhooks"
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
 			},
 			"debug":false,
 			"dirty":true,
@@ -24,9 +26,14 @@
 			"groupId":"_XCnoD-1",
 			"id":"n_12Era",
 			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
 			"subTitle":"Webhook",
-			"title":"Select a trigger event",
+			"title":"New event",
 			"trigger":{
 				"type":"WEBHOOK"
 			},
@@ -51,5 +58,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
