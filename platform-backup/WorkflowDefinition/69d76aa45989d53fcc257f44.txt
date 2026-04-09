@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775725220436,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_3Cn5W",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Wfuwt",
+			"type":"next"
+		}
+	],
+	"id":"69d76aa45989d53fcc257f44",
+	"lastModifiedBy":39,
+	"lcName":"stagind records",
+	"modifiedTime":1775725220436,
+	"name":"STAGIND RECORDS",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_3Cn5W-1",
+			"id":"_3Cn5W",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_3Cn5W-1",
+			"id":"_Wfuwt",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
