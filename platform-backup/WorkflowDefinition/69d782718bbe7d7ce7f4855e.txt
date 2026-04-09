@@ -16,7 +16,7 @@
 	"id":"69d782718bbe7d7ce7f4855e",
 	"lastModifiedBy":39,
 	"lcName":"vfcd",
-	"modifiedTime":1775731338329,
+	"modifiedTime":1775731392351,
 	"name":"vfcd",
 	"nodes":[
 		{
@@ -54,9 +54,17 @@
 					"properties":{
 						"reds":{
 							"type":"object",
-							"properties":{},
+							"properties":{
+								"edxs":{
+									"type":"string",
+									"title":"Edxs"
+								}
+							},
 							"additionalProperties":false,
-							"title":"Reds"
+							"title":"Reds",
+							"required":[
+								"edxs"
+							]
 						}
 					}
 				}
@@ -107,5 +115,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
