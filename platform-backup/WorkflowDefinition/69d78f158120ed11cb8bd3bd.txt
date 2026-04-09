@@ -6,46 +6,81 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_t5L3V",
+			"fromNodeId":"n_roLDi",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_zwdsh",
+			"toNodeId":"n_mYNeg",
 			"type":"next"
 		}
 	],
 	"id":"69d78f158120ed11cb8bd3bd",
 	"lastModifiedBy":39,
 	"lcName":"check-123",
-	"modifiedTime":1775734549868,
+	"modifiedTime":1775734666955,
 	"name":"check-123",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_t5L3V-1",
-			"id":"_t5L3V",
-			"index":0,
+			"id":"n_roLDi",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":3556,
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_t5L3V-1",
-			"id":"_zwdsh",
-			"index":0,
+			"id":"n_mYNeg",
+			"index":2,
+			"inputs":{
+				"shouldSearchInAnalyticsStore":false,
+				"object_type":"test_check",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":20
+				},
+				"numberOfRecordsToFetch":"MULTIPLE",
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch records",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +91,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
