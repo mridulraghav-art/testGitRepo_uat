@@ -44,7 +44,7 @@
 	"id":"69d5f11f42fdb435dcf61967",
 	"lastModifiedBy":39,
 	"lcName":"checked",
-	"modifiedTime":1775720069239,
+	"modifiedTime":1775720076158,
 	"name":"checked",
 	"nodes":[
 		{
@@ -198,7 +198,11 @@
 			"groupId":"_FjqQ5-1",
 			"id":"n_9lUkJ",
 			"index":6,
-			"inputs":{},
+			"inputs":{
+				"result":{
+					"r":"{{ n_VHVVc.outputs.headers }}"
+				}
+			},
 			"skip":false,
 			"subTitle":"Callable",
 			"title":"Respond to automation",
@@ -219,5 +223,5 @@
 		}
 	},
 	"standard":false,
-	"version":20
+	"version":21
 }
