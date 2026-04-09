@@ -44,7 +44,7 @@
 	"id":"69d5f11f42fdb435dcf61967",
 	"lastModifiedBy":39,
 	"lcName":"checked",
-	"modifiedTime":1775718147878,
+	"modifiedTime":1775720069239,
 	"name":"checked",
 	"nodes":[
 		{
@@ -132,7 +132,6 @@
 			"id":"n_TZ7I8",
 			"index":3,
 			"inputs":{
-				"password":"Test@123",
 				"fileDetails":"{{ n_Fw5Q6.outputs.fileDetails }}",
 				"fileType":"xlsx"
 			},
@@ -159,7 +158,7 @@
 				"fileDetails":"{{ n_TZ7I8.outputs.fileDetails }}",
 				"fileType":"xlsx"
 			},
-			"skip":true,
+			"skip":false,
 			"subTitle":"Excel by UnifyApps",
 			"title":"Decrypt Excel file",
 			"type":"ACTION"
@@ -194,16 +193,12 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FjqQ5-1",
 			"id":"n_9lUkJ",
 			"index":6,
-			"inputs":{
-				"result":{
-					"r":"{{ n_VHVVc.outputs.headers }}"
-				}
-			},
+			"inputs":{},
 			"skip":false,
 			"subTitle":"Callable",
 			"title":"Respond to automation",
@@ -224,5 +219,5 @@
 		}
 	},
 	"standard":false,
-	"version":19
+	"version":20
 }
