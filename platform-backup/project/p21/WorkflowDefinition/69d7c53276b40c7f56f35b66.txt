@@ -6,48 +6,38 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_XCnoD",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_0pCaq",
-			"type":"next"
-		}
+		
 	],
 	"id":"69d7c53276b40c7f56f35b66",
 	"lastModifiedBy":39,
 	"lcName":"workspace_breadcrumb_217757483967380",
-	"modifiedTime":1775748402870,
+	"modifiedTime":1775748404426,
 	"name":"workspace_breadcrumb_217757483967380",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_XCnoD-1",
-			"id":"_XCnoD",
-			"index":0,
+			"id":"n_12Era",
+			"index":1,
 			"skip":false,
+			"subTitle":"Webhook",
 			"title":"Select a trigger event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_XCnoD-1",
-			"id":"_0pCaq",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
 	"projectId":21,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -61,5 +51,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
