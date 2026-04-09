@@ -1,6 +1,6 @@
 {
 	"appsUsed":[
-		
+		"slack"
 	],
 	"createdTime":1775734549868,
 	"deleted":false,
@@ -9,14 +9,14 @@
 			"fromNodeId":"n_roLDi",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_mYNeg",
+			"toNodeId":"n_oaovn",
 			"type":"next"
 		}
 	],
 	"id":"69d78f158120ed11cb8bd3bd",
 	"lastModifiedBy":39,
 	"lcName":"check-123",
-	"modifiedTime":1775734666955,
+	"modifiedTime":1775736031436,
 	"name":"check-123",
 	"nodes":[
 		{
@@ -26,7 +26,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_t5L3V-1",
 			"id":"n_roLDi",
@@ -46,34 +46,26 @@
 		},
 		{
 			"context":{
-				"appName":"storage_by_unifyapps",
-				"resourceVersion":3556,
-				"resourceName":"storage_by_unifyapps_fetch_records",
+				"appName":"slack",
+				"resourceVersion":3991,
+				"connectionId":"662f8ddb91d8ba4394d0cce6",
+				"resourceName":"slack_post_message_in_channel",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_t5L3V-1",
-			"id":"n_mYNeg",
+			"id":"n_oaovn",
 			"index":2,
 			"inputs":{
-				"shouldSearchInAnalyticsStore":false,
-				"object_type":"test_check",
-				"includeRoleMappings":false,
-				"includeCurrentUserPermissions":false,
-				"translationsOption":"DEFAULT",
-				"page":{
-					"paginateBy":"OFFSET",
-					"limit":20
-				},
-				"numberOfRecordsToFetch":"MULTIPLE",
-				"readThroughSessionVariables":false,
-				"includeTotalCount":false
+				"link_names":true,
+				"channel":"C07AKEPN1U3",
+				"mrkdwn":true
 			},
 			"skip":false,
-			"subTitle":"Storage by UnifyApps",
-			"title":"Fetch records",
+			"subTitle":"Slack",
+			"title":"Post message",
 			"type":"ACTION"
 		}
 	],
@@ -91,5 +83,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
