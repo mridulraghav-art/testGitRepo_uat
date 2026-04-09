@@ -6,46 +6,98 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_3Cn5W",
+			"fromNodeId":"n_BJ1jr",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Wfuwt",
+			"toNodeId":"n_rvjxk",
 			"type":"next"
 		}
 	],
 	"id":"69d76aa45989d53fcc257f44",
 	"lastModifiedBy":39,
 	"lcName":"stagind records",
-	"modifiedTime":1775725220436,
+	"modifiedTime":1775727328338,
 	"name":"STAGIND RECORDS",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_3Cn5W-1",
-			"id":"_3Cn5W",
-			"index":0,
+			"id":"n_BJ1jr",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.records.items.amount",
+					"root.records.items.is_active",
+					"root.records.items._ua_ID",
+					"root.records.items.join_date",
+					"root.records.items.NAME"
+				]
+			},
+			"context":{
+				"appName":"mdm_by_unifyapps",
+				"resourceVersion":2028,
+				"resourceName":"mdm_by_unifyapps_create_staging_records",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_3Cn5W-1",
-			"id":"_Wfuwt",
-			"index":0,
+			"id":"n_rvjxk",
+			"index":2,
+			"inputs":{
+				"sourceId":"668ea67ee28e36532056bec0",
+				"recordEventType":"INSERT",
+				"modelId":"69d769a2cc5309520692fd34",
+				"records":[
+					{
+						"amount":12.34,
+						"is_active":true,
+						"_ua_ID":1,
+						"join_date":1775725340000,
+						"NAME":"Neeraj"
+					},
+					{
+						"amount":23.45,
+						"is_active":false,
+						"_ua_ID":3,
+						"join_date":1775725340000,
+						"NAME":"Neeraj 2"
+					}
+				],
+				"unifiedEntityId":"dnd_testqa_analytics"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Ontology by UnifyApps",
+			"title":"Create Staging Records",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +108,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
