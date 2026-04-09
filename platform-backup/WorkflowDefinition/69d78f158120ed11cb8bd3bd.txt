@@ -4,6 +4,15 @@
 	],
 	"createdTime":1775734549868,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1775736033775,
+		"deployedBy":39,
+		"deployedDefinitionId":"69d794e1e50a0928a0d86ea9",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_roLDi",
@@ -16,7 +25,7 @@
 	"id":"69d78f158120ed11cb8bd3bd",
 	"lastModifiedBy":39,
 	"lcName":"check-123",
-	"modifiedTime":1775736031436,
+	"modifiedTime":1775750630507,
 	"name":"check-123",
 	"nodes":[
 		{
@@ -63,7 +72,7 @@
 				"channel":"C07AKEPN1U3",
 				"mrkdwn":true
 			},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Slack",
 			"title":"Post message",
 			"type":"ACTION"
@@ -83,5 +92,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
