@@ -6,46 +6,95 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_8HMDq",
+			"fromNodeId":"n_gw2Z0",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_gv1OQ",
+			"toNodeId":"n_xqPXG",
 			"type":"next"
 		}
 	],
 	"id":"69d89821d485d231af96a0f0",
 	"lastModifiedBy":39,
 	"lcName":"practice2",
-	"modifiedTime":1775802401269,
+	"modifiedTime":1775802901657,
 	"name":"Practice2",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1940,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8HMDq-1",
-			"id":"_8HMDq",
-			"index":0,
+			"id":"n_gw2Z0",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output"
+					],
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"Output"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"name"
+					],
+					"properties":{
+						"name":{
+							"type":"string",
+							"title":"Name"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1941,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8HMDq-1",
-			"id":"_gv1OQ",
-			"index":0,
+			"id":"n_xqPXG",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output":"Geeta"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +105,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
