@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775837578636,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_8LdZs",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_5VZzI",
+			"type":"next"
+		}
+	],
+	"id":"69d9218af19b5439a6bea55a",
+	"lastModifiedBy":39,
+	"lcName":"scraper",
+	"modifiedTime":1775837578636,
+	"name":"scraper",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_8LdZs-1",
+			"id":"_8LdZs",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_8LdZs-1",
+			"id":"_5VZzI",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
