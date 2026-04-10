@@ -4,6 +4,15 @@
 	],
 	"createdTime":1775802401269,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1775802924308,
+		"deployedBy":39,
+		"deployedDefinitionId":"69d89a2b7d88964b745c5106",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_gw2Z0",
@@ -16,7 +25,7 @@
 	"id":"69d89821d485d231af96a0f0",
 	"lastModifiedBy":39,
 	"lcName":"practice2",
-	"modifiedTime":1775802901657,
+	"modifiedTime":1775803012394,
 	"name":"Practice2",
 	"nodes":[
 		{
@@ -26,7 +35,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_8HMDq-1",
 			"id":"n_gw2Z0",
@@ -82,7 +91,7 @@
 			"index":2,
 			"inputs":{
 				"result":{
-					"output":"Geeta"
+					"output":"{{ n_gw2Z0.outputs.name }}"
 				}
 			},
 			"skip":false,
@@ -105,5 +114,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
