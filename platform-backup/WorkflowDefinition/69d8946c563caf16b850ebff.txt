@@ -18,12 +18,19 @@
 			"skip":false,
 			"toNodeId":"n_LKNQj",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LKNQj",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_3eiXp",
+			"type":"next"
 		}
 	],
 	"id":"69d8946c563caf16b850ebff",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1775802259365,
+	"modifiedTime":1775802431665,
 	"name":"test",
 	"nodes":[
 		{
@@ -33,7 +40,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_t1CCP-1",
 			"id":"n_K9eUf",
@@ -59,7 +66,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_t1CCP-1",
 			"id":"n_ANb7B",
@@ -82,7 +89,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_t1CCP-1",
 			"id":"n_LKNQj",
@@ -95,6 +102,29 @@
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
 			"title":"Encrypt Excel file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":179,
+				"resourceName":"excel_by_unifyapps_decrypt_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_t1CCP-1",
+			"id":"n_3eiXp",
+			"index":4,
+			"inputs":{
+				"password":"1234",
+				"fileDetails":"{{ n_LKNQj.outputs.fileDetails }}",
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Decrypt Excel file",
 			"type":"ACTION"
 		}
 	],
@@ -112,5 +142,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
