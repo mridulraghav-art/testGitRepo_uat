@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775801660983,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_259Of",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_FGaHQ",
+			"type":"next"
+		}
+	],
+	"id":"69d8953c563caf16b850fe01",
+	"lastModifiedBy":39,
+	"lcName":"testnewautomation",
+	"modifiedTime":1775801660983,
+	"name":"TESTNEWAUTOMATION",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_259Of-1",
+			"id":"_259Of",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_259Of-1",
+			"id":"_FGaHQ",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
