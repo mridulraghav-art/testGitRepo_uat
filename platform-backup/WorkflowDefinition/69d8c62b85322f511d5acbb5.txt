@@ -1,51 +1,87 @@
 {
 	"appsUsed":[
-		
+		"slack"
 	],
 	"createdTime":1775814187082,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_6Qxc9",
+			"fromNodeId":"n_4ZZRm",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_5VHHz",
+			"toNodeId":"n_USNz3",
 			"type":"next"
 		}
 	],
 	"id":"69d8c62b85322f511d5acbb5",
 	"lastModifiedBy":39,
 	"lcName":"practice4",
-	"modifiedTime":1775814187082,
+	"modifiedTime":1775814363370,
 	"name":"Practice4",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_6Qxc9-1",
-			"id":"_6Qxc9",
-			"index":0,
+			"id":"n_4ZZRm",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"queryParams":{
+						"type":"object",
+						"additionalProperties":false,
+						"required":[],
+						"properties":{
+							"name":{
+								"type":"string",
+								"title":"Name"
+							},
+							"age":{
+								"type":"integer",
+								"title":"age"
+							}
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"slack",
+				"resourceVersion":4084,
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_6Qxc9-1",
-			"id":"_5VHHz",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
+			"id":"n_USNz3",
+			"index":2,
+			"skip":true,
+			"subTitle":"Slack",
+			"title":"Post message",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +92,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
