@@ -30,7 +30,7 @@
 	"id":"69d8946c563caf16b850ebff",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1775802431665,
+	"modifiedTime":1775802547229,
 	"name":"test",
 	"nodes":[
 		{
@@ -84,24 +84,27 @@
 		{
 			"context":{
 				"appName":"excel_by_unifyapps",
-				"resourceVersion":181,
-				"resourceName":"excel_by_unifyapps_encrypt_file",
+				"resourceVersion":335,
+				"resourceName":"excel_by_unifyapps_add_sheet",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_t1CCP-1",
 			"id":"n_LKNQj",
 			"index":3,
 			"inputs":{
-				"password":"1234",
+				"replaceOriginal":false,
 				"fileDetails":"{{ n_ANb7B.outputs.fileDetails }}",
+				"deleteOtherSheets":false,
+				"newSheetName":"newsheet",
+				"duplicateFromSheet":false,
 				"fileType":"xlsx"
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
-			"title":"Encrypt Excel file",
+			"title":"Add sheet to Excel file",
 			"type":"ACTION"
 		},
 		{
@@ -112,7 +115,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_t1CCP-1",
 			"id":"n_3eiXp",
@@ -142,5 +145,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
