@@ -6,46 +6,146 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_9ZKBz",
+			"fromNodeId":"n_0NMTt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_oUSB3",
+			"toNodeId":"n_iJGtV",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_iJGtV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_FAXkE",
 			"type":"next"
 		}
 	],
 	"id":"69d8ae4385322f511d5a37d4",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocalsmvoqbglct",
-	"modifiedTime":1775808067453,
+	"modifiedTime":1775808085576,
 	"name":"AnalyticsByUnifyAppsLocalSmVoqbGlCT",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1940,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9ZKBz-1",
-			"id":"_9ZKBz",
-			"index":0,
+			"id":"n_0NMTt",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"output"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1721,
+				"resourceName":"analytics_by_unifyapps_filter_to_sql_condition",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9ZKBz-1",
-			"id":"_oUSB3",
-			"index":0,
+			"id":"n_iJGtV",
+			"index":2,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"APPLICATION_ID",
+							"filter":{
+								"operator":"IN",
+								"value":"APP-1001"
+							}
+						},
+						{
+							"property":"APP_NAME",
+							"filter":{
+								"operator":"CONTAINS",
+								"value":"Payment"
+							}
+						},
+						{
+							"filters":[
+								{
+									"property":"RESOURCE_NAME",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"QA"
+									}
+								},
+								{
+									"property":"TOTAL_TIME_TAKEN",
+									"filter":{
+										"operator":"LT",
+										"value":"9"
+									}
+								}
+							],
+							"operator":"AND"
+						}
+					],
+					"operator":"OR"
+				},
+				"entityType":"CONNECTION",
+				"group":"PLATFORM"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Converts filter to SQL condition",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1941,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_9ZKBz-1",
+			"id":"n_FAXkE",
+			"index":3,
+			"inputs":{
+				"result":{
+					"output":"{{ n_iJGtV.outputs.condition }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +156,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
