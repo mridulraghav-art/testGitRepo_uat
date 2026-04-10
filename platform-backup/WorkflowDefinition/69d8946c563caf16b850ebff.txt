@@ -6,46 +6,102 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_t1CCP",
+			"fromNodeId":"n_K9eUf",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_kukSl",
+			"toNodeId":"n_ANb7B",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_ANb7B",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LKNQj",
 			"type":"next"
 		}
 	],
 	"id":"69d8946c563caf16b850ebff",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1775801452617,
+	"modifiedTime":1775802259365,
 	"name":"test",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_t1CCP-1",
-			"id":"_t1CCP",
-			"index":0,
+			"id":"n_K9eUf",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":1769,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_t1CCP-1",
-			"id":"_kukSl",
-			"index":0,
+			"id":"n_ANb7B",
+			"index":2,
+			"inputs":{
+				"fileName":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845749830/file_example_XLSX_10.xlsx",
+				"url":"automation",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":181,
+				"resourceName":"excel_by_unifyapps_encrypt_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_t1CCP-1",
+			"id":"n_LKNQj",
+			"index":3,
+			"inputs":{
+				"password":"1234",
+				"fileDetails":"{{ n_ANb7B.outputs.fileDetails }}",
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Encrypt Excel file",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +112,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
