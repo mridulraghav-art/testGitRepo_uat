@@ -6,46 +6,181 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_IKTyO",
+			"fromNodeId":"n_loKIR",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_VtF3m",
+			"toNodeId":"n_xXuwB",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_xXuwB",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ftzWi",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_ftzWi",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_DRraf",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_DRraf",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Hm4oT",
 			"type":"next"
 		}
 	],
 	"id":"69d8e7b4d2fad45debd438e3",
 	"lastModifiedBy":39,
 	"lcName":"excelfilelocalcdrbdydadq",
-	"modifiedTime":1775822772547,
+	"modifiedTime":1775822910933,
 	"name":"ExcelFileLocalcdRbdYDaDq",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1940,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IKTyO-1",
-			"id":"_IKTyO",
-			"index":0,
+			"id":"n_loKIR",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"a":{
+							"type":"string",
+							"title":"a"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":1769,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IKTyO-1",
-			"id":"_VtF3m",
-			"index":0,
+			"id":"n_xXuwB",
+			"index":2,
+			"inputs":{
+				"fileName":"test.xlsx",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845749830/file_example_XLSX_10.xlsx",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":1902,
+				"resourceName":"excel_by_unifyapps_merge_files",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_IKTyO-1",
+			"id":"n_ftzWi",
+			"index":3,
+			"inputs":{
+				"fileName":"CombinedFile.xlsx",
+				"keepExactFileName":false,
+				"fileList":[
+					"{{ n_xXuwB.outputs.fileDetails }}"
+				],
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Combine sheets from multiple Excel files into one workbook",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":1902,
+				"resourceName":"excel_by_unifyapps_list_sheet_names",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_IKTyO-1",
+			"id":"n_DRraf",
+			"index":4,
+			"inputs":{
+				"fileDetails":"{{ n_ftzWi.outputs.fileDetails }}",
+				"fileType":"XLSX"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"List sheet names in an Excel file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1941,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_IKTyO-1",
+			"id":"n_Hm4oT",
+			"index":5,
+			"inputs":{
+				"result":{
+					"r":"{{ n_DRraf.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +191,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
