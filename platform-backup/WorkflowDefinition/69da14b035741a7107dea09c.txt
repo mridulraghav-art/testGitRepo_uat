@@ -6,46 +6,84 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_cJP91",
+			"fromNodeId":"n_XbaV6",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_58X5w",
+			"toNodeId":"n_q7WcM",
 			"type":"next"
 		}
 	],
 	"id":"69da14b035741a7107dea09c",
 	"lastModifiedBy":39,
 	"lcName":"rbaclocalall permissions client automation3010348855",
-	"modifiedTime":1775899824721,
+	"modifiedTime":1775899831615,
 	"name":"rbacLocalall permissions client automation3010348855",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1955,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_cJP91-1",
-			"id":"_cJP91",
-			"index":0,
+			"id":"n_XbaV6",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"cool",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1956,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_cJP91-1",
-			"id":"_58X5w",
-			"index":0,
+			"id":"n_q7WcM",
+			"index":2,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_cool",
+				"status":200
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +94,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
