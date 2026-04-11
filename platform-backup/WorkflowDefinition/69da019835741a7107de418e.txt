@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1775894936627,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_PyFBu",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_ux1ox",
+			"type":"next"
+		}
+	],
+	"id":"69da019835741a7107de418e",
+	"lastModifiedBy":39,
+	"lcName":"rbaclocalcreate client automation0669839274",
+	"modifiedTime":1775894936627,
+	"name":"rbacLocalcreate client automation0669839274",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_PyFBu-1",
+			"id":"_PyFBu",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_PyFBu-1",
+			"id":"_ux1ox",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
