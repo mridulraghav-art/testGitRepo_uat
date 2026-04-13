@@ -6,46 +6,89 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_INspW",
+			"fromNodeId":"n_CMWqG",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_BfQs6",
+			"toNodeId":"n_1QcJa",
 			"type":"next"
 		}
 	],
 	"id":"69dcbdaa256b1677b8f9c660",
 	"lastModifiedBy":39,
 	"lcName":"rbacuatdeleteautomation1455398527",
-	"modifiedTime":1776074154374,
+	"modifiedTime":1776074178012,
 	"name":"rbacUATDeleteAutomation1455398527",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1996,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_INspW-1",
-			"id":"_INspW",
-			"index":0,
+			"id":"n_CMWqG",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"output"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"input"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1998,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_INspW-1",
-			"id":"_BfQs6",
-			"index":0,
+			"id":"n_1QcJa",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output":"cool"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +99,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
