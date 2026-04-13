@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776093679856,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_fibJf",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_TEXfY",
+			"type":"next"
+		}
+	],
+	"id":"69dd09ef256b1677b8010764",
+	"lastModifiedBy":39,
+	"lcName":"rbacuatcreate client automation1335040953",
+	"modifiedTime":1776093679856,
+	"name":"rbacUATcreate client automation1335040953",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_fibJf-1",
+			"id":"_fibJf",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_fibJf-1",
+			"id":"_TEXfY",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
