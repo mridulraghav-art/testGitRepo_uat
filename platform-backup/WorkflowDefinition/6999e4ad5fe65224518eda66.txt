@@ -30,7 +30,7 @@
 	"id":"6999e4ad5fe65224518eda66",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1776070577765,
+	"modifiedTime":1776071519483,
 	"name":"test",
 	"nodes":[
 		{
@@ -40,7 +40,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_Knp3r-1",
 			"id":"n_7jkEu",
@@ -96,7 +96,7 @@
 			"index":2,
 			"inputs":{
 				"configurationMode":"DEFAULT",
-				"code":"def int_to_str():\n  s1 = str(input_number)\n  return s1",
+				"code":"def int_to_str():\n  s1 = str(input_number)\n  return s1\n\nresult = int_to_str()",
 				"isAsync":false,
 				"python_version":"3.12",
 				"outputFilesGlob":"*",
@@ -120,7 +120,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_Knp3r-1",
 			"id":"n_oXiIP",
@@ -175,7 +175,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_Knp3r-1",
 			"id":"n_E1Xxg",
@@ -208,5 +208,5 @@
 	"tags":[
 		
 	],
-	"version":8
+	"version":9
 }
