@@ -6,46 +6,84 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_Z3vR3",
+			"fromNodeId":"n_dcDew",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_3D5xO",
+			"toNodeId":"n_JFWhZ",
 			"type":"next"
 		}
 	],
 	"id":"69dd1c347b4a9f6961f8a4b4",
 	"lastModifiedBy":39,
 	"lcName":"rbacuatshare client automation8724883339",
-	"modifiedTime":1776098356648,
+	"modifiedTime":1776098379817,
 	"name":"rbacUATshare client automation8724883339",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2109,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Z3vR3-1",
-			"id":"_Z3vR3",
-			"index":0,
+			"id":"n_dcDew",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"cool",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2111,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Z3vR3-1",
-			"id":"_3D5xO",
-			"index":0,
+			"id":"n_JFWhZ",
+			"index":2,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_cool",
+				"status":200
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +94,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
