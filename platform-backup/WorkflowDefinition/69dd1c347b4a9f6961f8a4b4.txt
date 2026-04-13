@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776098356648,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_Z3vR3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_3D5xO",
+			"type":"next"
+		}
+	],
+	"id":"69dd1c347b4a9f6961f8a4b4",
+	"lastModifiedBy":39,
+	"lcName":"rbacuatshare client automation8724883339",
+	"modifiedTime":1776098356648,
+	"name":"rbacUATshare client automation8724883339",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Z3vR3-1",
+			"id":"_Z3vR3",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Z3vR3-1",
+			"id":"_3D5xO",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
