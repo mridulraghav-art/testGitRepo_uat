@@ -6,46 +6,143 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_NSlYM",
+			"fromNodeId":"n_F7Ocr",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_RHL3w",
+			"toNodeId":"n_jOlUC",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_jOlUC",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Mo8a2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Mo8a2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_x1te0",
 			"type":"next"
 		}
 	],
 	"id":"69dc7e611dce9b2850c54715",
 	"lastModifiedBy":39,
 	"lcName":"utilitybyunifyappslocalkmojjnabtl",
-	"modifiedTime":1776057953820,
+	"modifiedTime":1776057970857,
 	"name":"UtilityByUnifyAppsLocalKmojJNABtL",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1958,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_NSlYM-1",
-			"id":"_NSlYM",
-			"index":0,
+			"id":"n_F7Ocr",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"TotalPages":{
+							"type":"string",
+							"title":"TotalPages"
+						},
+						"Dimensions":{
+							"type":"string",
+							"title":"Dimensions"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":1787,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_NSlYM-1",
-			"id":"_RHL3w",
-			"index":0,
+			"id":"n_jOlUC",
+			"index":2,
+			"inputs":{
+				"fileName":"File",
+				"url":"https://sample-files.com/downloads/documents/docx/sample-files.com-basic-text.docx",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":780,
+				"resourceName":"utility_by_unifyapps_get_pdf_dimensions",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_NSlYM-1",
+			"id":"n_Mo8a2",
+			"index":3,
+			"inputs":{
+				"fileDetails":"{{ n_jOlUC.outputs.fileDetails }}",
+				"cropped":false
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Get PDF Dimensions",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1959,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_NSlYM-1",
+			"id":"n_x1te0",
+			"index":4,
+			"inputs":{
+				"result":{
+					"TotalPages":"{{ n_Mo8a2.outputs.numberOfPages }}",
+					"Dimensions":"{{ n_Mo8a2.outputs.pages }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +153,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
