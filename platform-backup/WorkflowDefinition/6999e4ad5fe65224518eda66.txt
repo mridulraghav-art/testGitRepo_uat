@@ -9,6 +9,13 @@
 			"fromNodeId":"n_7jkEu",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_B3cPF",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_B3cPF",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_RBFiJ",
 			"type":"next"
 		},
@@ -30,7 +37,7 @@
 	"id":"6999e4ad5fe65224518eda66",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1776071519483,
+	"modifiedTime":1776071791384,
 	"name":"test",
 	"nodes":[
 		{
@@ -40,7 +47,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Knp3r-1",
 			"id":"n_7jkEu",
@@ -83,6 +90,63 @@
 		},
 		{
 			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Knp3r-1",
+			"id":"n_B3cPF",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"val":{
+							"type":"integer",
+							"title":"Val",
+							"default":"332"
+						}
+					},
+					"required":[
+						"val"
+					]
+				}
+			},
+			"inputs":{
+				"val":"332"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"val":{
+							"type":"integer",
+							"title":"Val",
+							"default":"332"
+						}
+					},
+					"required":[
+						"val"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"code_by_unifyapps",
 				"resourceVersion":1795,
 				"resourceName":"code_by_unifyapps_python",
@@ -93,18 +157,29 @@
 			"fallbackMode":"STOP",
 			"groupId":"_Knp3r-1",
 			"id":"n_RBFiJ",
-			"index":2,
+			"index":3,
 			"inputs":{
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input_number"
+					],
+					"properties":{
+						"input_number":{
+							"type":"integer",
+							"title":"Input Number"
+						}
+					}
+				},
 				"configurationMode":"DEFAULT",
-				"code":"def int_to_str():\n  s1 = str(input_number)\n  return s1\n\nresult = int_to_str()",
+				"code":"def int_to_str(input_number):\n  s1 = str(input_number)\n  return s1\n\nresult = int_to_str(input_number)",
 				"isAsync":false,
 				"python_version":"3.12",
 				"outputFilesGlob":"*",
 				"captureStdOutput":false,
 				"parameters":{
-					"discount":"10",
-					"quantity":"3",
-					"price":"100"
+					"input_number":"{{ n_7jkEu.outputs.input_number }}"
 				}
 			},
 			"skip":false,
@@ -120,11 +195,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Knp3r-1",
 			"id":"n_oXiIP",
-			"index":3,
+			"index":4,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -175,11 +250,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Knp3r-1",
 			"id":"n_E1Xxg",
-			"index":4,
+			"index":5,
 			"inputs":{
 				"result":{
 					"result":"{{ n_oXiIP.outputs.test }}"
@@ -208,5 +283,5 @@
 	"tags":[
 		
 	],
-	"version":9
+	"version":10
 }
