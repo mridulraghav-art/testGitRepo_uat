@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776099126115,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_LteFH",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_vk7yV",
+			"type":"next"
+		}
+	],
+	"id":"69dd1f36bf04a52a9c5353da",
+	"lastModifiedBy":39,
+	"lcName":"rbacuatexport as template automation0103601474",
+	"modifiedTime":1776099126115,
+	"name":"rbacUATExport as Template Automation0103601474",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_LteFH-1",
+			"id":"_LteFH",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_LteFH-1",
+			"id":"_vk7yV",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
