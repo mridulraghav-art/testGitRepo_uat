@@ -6,46 +6,89 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_4OtN5",
+			"fromNodeId":"n_tdV0P",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_CVKlA",
+			"toNodeId":"n_9XPuJ",
 			"type":"next"
 		}
 	],
 	"id":"69dcbc9448e24d1966af8964",
 	"lastModifiedBy":39,
 	"lcName":"rbacuatallautomationpermissions0304436219",
-	"modifiedTime":1776073876603,
+	"modifiedTime":1776073902088,
 	"name":"rbacUATAllAutomationPermissions0304436219",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1989,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_4OtN5-1",
-			"id":"_4OtN5",
-			"index":0,
+			"id":"n_tdV0P",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"output"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"input"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":1991,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_4OtN5-1",
-			"id":"_CVKlA",
-			"index":0,
+			"id":"n_9XPuJ",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output":"cool"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +99,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
