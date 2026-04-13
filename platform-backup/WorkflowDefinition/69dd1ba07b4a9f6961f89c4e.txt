@@ -6,46 +6,84 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_jy8m0",
+			"fromNodeId":"n_NujSH",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_W0fqq",
+			"toNodeId":"n_GO9t3",
 			"type":"next"
 		}
 	],
 	"id":"69dd1ba07b4a9f6961f89c4e",
 	"lastModifiedBy":39,
 	"lcName":"rbacuatall permissions client automation3078404604",
-	"modifiedTime":1776098208669,
+	"modifiedTime":1776098232491,
 	"name":"rbacUATall permissions client automation3078404604",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2107,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_jy8m0-1",
-			"id":"_jy8m0",
-			"index":0,
+			"id":"n_NujSH",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"cool",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2108,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_jy8m0-1",
-			"id":"_W0fqq",
-			"index":0,
+			"id":"n_GO9t3",
+			"index":2,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_cool",
+				"status":200
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +94,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
