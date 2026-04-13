@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776073709119,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_UJ3Cm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_4NuSi",
+			"type":"next"
+		}
+	],
+	"id":"69dcbbed0022b535a27052d8",
+	"lastModifiedBy":39,
+	"lcName":"rbacuatdelete client automation0820447368",
+	"modifiedTime":1776073709119,
+	"name":"rbacUATdelete client automation0820447368",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_UJ3Cm-1",
+			"id":"_UJ3Cm",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_UJ3Cm-1",
+			"id":"_4NuSi",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
