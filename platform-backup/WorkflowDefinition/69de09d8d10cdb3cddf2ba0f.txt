@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776159192031,
 	"deleted":false,
-	"deployedVersion":10,
+	"deployedVersion":11,
 	"deploymentState":{
-		"deployedAt":1776165891874,
+		"deployedAt":1776166239831,
 		"deployedBy":39,
-		"deployedDefinitionId":"69de240316c58d06f692f604",
+		"deployedDefinitionId":"69de255fd10cdb3cddf339c1",
 		"status":"DEPLOYED",
-		"version":10,
-		"workflowVersion":10
+		"version":11,
+		"workflowVersion":12
 	},
 	"edges":[
 		{
@@ -48,11 +48,18 @@
 			"fromNodeId":"n_PlW56",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_7YriH",
+			"toNodeId":"n_JoNIN",
 			"type":"next"
 		},
 		{
 			"fromNodeId":"n_RU3hK",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_JoNIN",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_JoNIN",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_7YriH",
@@ -62,7 +69,7 @@
 	"id":"69de09d8d10cdb3cddf2ba0f",
 	"lastModifiedBy":39,
 	"lcName":"test_practiceapi_01",
-	"modifiedTime":1776166235646,
+	"modifiedTime":1776166630161,
 	"name":"Test_PracticeApi_01",
 	"nodes":[
 		{
@@ -72,7 +79,7 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_9EVRK-1",
 			"id":"n_OrDWP",
@@ -168,7 +175,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_9EVRK-1",
 			"id":"n_JlKLz",
@@ -217,7 +224,7 @@
 				],
 				"operator":"AND"
 			},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Condition",
 			"title":"Condition",
 			"type":"IF_ELSE"
@@ -230,7 +237,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_F174P@_9EVRK-1@y",
 			"id":"n_PlW56",
@@ -276,6 +283,32 @@
 		},
 		{
 			"context":{
+				"appName":"callables",
+				"resourceVersion":2205,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_9EVRK-1",
+			"id":"n_JoNIN",
+			"index":6,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_success",
+				"body":{
+					"output":"{{ n_RU3hK.outputs.body.output }}"
+				},
+				"status":200
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
+		},
+		{
+			"context":{
 				"appName":"stop"
 			},
 			"debug":false,
@@ -283,7 +316,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_9EVRK-1",
 			"id":"n_7YriH",
-			"index":6,
+			"index":7,
 			"skip":false,
 			"subTitle":"Stop",
 			"title":"Stop",
@@ -304,5 +337,5 @@
 		}
 	},
 	"standard":false,
-	"version":12
+	"version":13
 }
