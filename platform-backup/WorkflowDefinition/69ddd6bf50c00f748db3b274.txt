@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776146111449,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_uExcH",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_kU7fP",
+			"type":"next"
+		}
+	],
+	"id":"69ddd6bf50c00f748db3b274",
+	"lastModifiedBy":39,
+	"lcName":"apiautomation1",
+	"modifiedTime":1776146111449,
+	"name":"APIAutomation1",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_uExcH-1",
+			"id":"_uExcH",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_uExcH-1",
+			"id":"_kU7fP",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
