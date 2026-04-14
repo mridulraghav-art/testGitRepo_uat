@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776159192031,
 	"deleted":false,
-	"deployedVersion":4,
+	"deployedVersion":5,
 	"deploymentState":{
-		"deployedAt":1776163864881,
+		"deployedAt":1776163920963,
 		"deployedBy":39,
-		"deployedDefinitionId":"69de1c18f639075435b36622",
+		"deployedDefinitionId":"69de1c50987ef932308ce220",
 		"status":"DEPLOYED",
-		"version":4,
-		"workflowVersion":4
+		"version":5,
+		"workflowVersion":5
 	},
 	"edges":[
 		{
@@ -62,7 +62,7 @@
 	"id":"69de09d8d10cdb3cddf2ba0f",
 	"lastModifiedBy":39,
 	"lcName":"test_practiceapi_01",
-	"modifiedTime":1776163918473,
+	"modifiedTime":1776164146357,
 	"name":"Test_PracticeApi_01",
 	"nodes":[
 		{
@@ -72,13 +72,24 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9EVRK-1",
 			"id":"n_OrDWP",
 			"index":1,
 			"inputs":{
 				"request":{
+					"queryParams":{
+						"type":"object",
+						"additionalProperties":false,
+						"required":[],
+						"properties":{
+							"input":{
+								"type":"number",
+								"title":"Input"
+							}
+						}
+					},
 					"contentType":"application/json",
 					"body":{
 						"type":"object",
@@ -201,7 +212,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_F174P@_9EVRK-1@y",
 			"id":"n_PlW56",
@@ -224,7 +235,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_F174P@_9EVRK-1@n",
 			"id":"n_RU3hK",
@@ -269,5 +280,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
