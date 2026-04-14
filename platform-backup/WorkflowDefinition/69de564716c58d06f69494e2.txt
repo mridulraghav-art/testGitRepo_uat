@@ -6,46 +6,220 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_BweHq",
+			"fromNodeId":"n_hLBp9",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_SBU0i",
+			"toNodeId":"n_CbXTp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CbXTp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_mDnt4",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_mDnt4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_WxaNs",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_WxaNs",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CLxGr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CLxGr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_qoX4s",
 			"type":"next"
 		}
 	],
 	"id":"69de564716c58d06f69494e2",
 	"lastModifiedBy":39,
 	"lcName":"excelfilelocaladpriyadhz",
-	"modifiedTime":1776178759668,
+	"modifiedTime":1776179040792,
 	"name":"ExcelFileLocaladprIyadhz",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_BweHq-1",
-			"id":"_BweHq",
-			"index":0,
+			"id":"n_hLBp9",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"a":{
+							"type":"string",
+							"title":"a"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":2032,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_BweHq-1",
-			"id":"_SBU0i",
-			"index":0,
+			"id":"n_CbXTp",
+			"index":2,
+			"inputs":{
+				"fileName":"test1.xlsx",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845749830/file_example_XLSX_10.xlsx",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":2032,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_BweHq-1",
+			"id":"n_mDnt4",
+			"index":3,
+			"inputs":{
+				"fileName":"test2.xlsx",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845749830/file_example_XLSX_10.xlsx",
+				"option":"url"
+			},
+			"skip":false,
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":2003,
+				"resourceName":"excel_by_unifyapps_append_files",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_BweHq-1",
+			"id":"n_WxaNs",
+			"index":4,
+			"inputs":{
+				"fileName":"CombinedFile.xlsx",
+				"skipFirstFileHeader":false,
+				"includeHeaders":true,
+				"outputSheetName":"Combined",
+				"keepExactFileName":false,
+				"fileList":[
+					"{{ n_CbXTp.outputs.fileDetails }}",
+					"{{ n_mDnt4.outputs.fileDetails }}"
+				],
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Append multiple excel files into one sheet",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":1664,
+				"resourceName":"excel_by_unifyapps_extract_data",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_BweHq-1",
+			"id":"n_CLxGr",
+			"index":5,
+			"inputs":{
+				"flattenMergedCells":false,
+				"endColumn":2,
+				"fileDetails":"{{ n_WxaNs.outputs.fileDetails }}",
+				"startRow":1,
+				"startColumn":1,
+				"endRow":14,
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Extract Excel Data",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_BweHq-1",
+			"id":"n_qoX4s",
+			"index":6,
+			"inputs":{
+				"result":{
+					"r":"{{ n_CLxGr.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +230,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
