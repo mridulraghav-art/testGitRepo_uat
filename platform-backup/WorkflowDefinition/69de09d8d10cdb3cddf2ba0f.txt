@@ -62,7 +62,7 @@
 	"id":"69de09d8d10cdb3cddf2ba0f",
 	"lastModifiedBy":39,
 	"lcName":"test_practiceapi_01",
-	"modifiedTime":1776166203851,
+	"modifiedTime":1776166235646,
 	"name":"Test_PracticeApi_01",
 	"nodes":[
 		{
@@ -238,6 +238,9 @@
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"200_success",
+				"body":{
+					"output":"{{ n_F174P.outputs.result }}"
+				},
 				"status":200
 			},
 			"skip":false,
@@ -261,6 +264,9 @@
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"400_error",
+				"body":{
+					"output":"{{ n_F174P.outputs.result }}"
+				},
 				"status":400
 			},
 			"skip":false,
@@ -298,5 +304,5 @@
 		}
 	},
 	"standard":false,
-	"version":11
+	"version":12
 }
