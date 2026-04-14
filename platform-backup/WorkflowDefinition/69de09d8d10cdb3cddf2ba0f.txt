@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776159192031,
 	"deleted":false,
-	"deployedVersion":5,
+	"deployedVersion":6,
 	"deploymentState":{
-		"deployedAt":1776163920963,
+		"deployedAt":1776164148431,
 		"deployedBy":39,
-		"deployedDefinitionId":"69de1c50987ef932308ce220",
+		"deployedDefinitionId":"69de1d340e9f573811e79cf3",
 		"status":"DEPLOYED",
-		"version":5,
-		"workflowVersion":5
+		"version":6,
+		"workflowVersion":6
 	},
 	"edges":[
 		{
@@ -23,6 +23,13 @@
 		},
 		{
 			"fromNodeId":"n_JlKLz",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_rFKVN",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_rFKVN",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_F174P",
@@ -62,7 +69,7 @@
 	"id":"69de09d8d10cdb3cddf2ba0f",
 	"lastModifiedBy":39,
 	"lcName":"test_practiceapi_01",
-	"modifiedTime":1776164146357,
+	"modifiedTime":1776164415218,
 	"name":"Test_PracticeApi_01",
 	"nodes":[
 		{
@@ -176,6 +183,29 @@
 		},
 		{
 			"context":{
+				"appName":"callables",
+				"resourceVersion":2205,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_9EVRK-1",
+			"id":"n_rFKVN",
+			"index":3,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_success",
+				"status":200
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
+		},
+		{
+			"context":{
 				"appName":"if_else",
 				"resourceVersion":58,
 				"resourceName":"if_else_condition",
@@ -186,7 +216,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_9EVRK-1",
 			"id":"n_F174P",
-			"index":3,
+			"index":4,
 			"inputs":{
 				"filters":[
 					{
@@ -216,7 +246,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_F174P@_9EVRK-1@y",
 			"id":"n_PlW56",
-			"index":4,
+			"index":5,
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"200_success",
@@ -239,7 +269,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_F174P@_9EVRK-1@n",
 			"id":"n_RU3hK",
-			"index":5,
+			"index":6,
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"400_error",
@@ -259,7 +289,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_9EVRK-1",
 			"id":"n_7YriH",
-			"index":6,
+			"index":7,
 			"skip":false,
 			"subTitle":"Stop",
 			"title":"Stop",
@@ -280,5 +310,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
