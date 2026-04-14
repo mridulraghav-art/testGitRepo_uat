@@ -6,7 +6,7 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_uExcH",
+			"fromNodeId":"n_aMbvZ",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"_kU7fP",
@@ -16,20 +16,63 @@
 	"id":"69ddd6bf50c00f748db3b274",
 	"lastModifiedBy":39,
 	"lcName":"apiautomation1",
-	"modifiedTime":1776146111449,
+	"modifiedTime":1776146427835,
 	"name":"APIAutomation1",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2197,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_uExcH-1",
-			"id":"_uExcH",
-			"index":0,
+			"id":"n_aMbvZ",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"Success",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						},
+						"body":{
+							"type":"object",
+							"properties":{
+								"output":{
+									"type":"string",
+									"title":"Output"
+								}
+							},
+							"additionalProperties":false,
+							"required":[
+								"output"
+							]
+						}
+					},
+					{
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
@@ -39,13 +82,16 @@
 			"fallbackMode":"STOP",
 			"groupId":"_uExcH-1",
 			"id":"_kU7fP",
-			"index":0,
+			"index":2,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +102,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
