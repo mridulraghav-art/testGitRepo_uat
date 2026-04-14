@@ -25,14 +25,14 @@
 			"name":"no",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_e2D50",
+			"toNodeId":"n_HHlBz",
 			"type":"next"
 		}
 	],
 	"id":"69ddd6bf50c00f748db3b274",
 	"lastModifiedBy":39,
 	"lcName":"apiautomation1",
-	"modifiedTime":1776146848894,
+	"modifiedTime":1776147135300,
 	"name":"APIAutomation1",
 	"nodes":[
 		{
@@ -139,7 +139,18 @@
 			"groupId":"_uExcH-1",
 			"id":"n_aZtYf",
 			"index":2,
-			"inputs":{},
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_aMbvZ.outputs.body.input }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":"geeta"
+						}
+					}
+				],
+				"operator":"AND"
+			},
 			"skip":false,
 			"subTitle":"Condition",
 			"title":"Condition",
@@ -161,6 +172,9 @@
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"200_Success",
+				"body":{
+					"output":"{{ n_aMbvZ.outputs.body.input }}"
+				},
 				"status":200
 			},
 			"skip":false,
@@ -169,15 +183,30 @@
 			"type":"STOP"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2201,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_aZtYf@_uExcH-1@n",
-			"id":"n_e2D50",
+			"id":"n_HHlBz",
 			"index":4,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"400_Error",
+				"body":{
+					"output":"{{ n_aMbvZ.outputs.body.input }}"
+				},
+				"status":400
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -194,5 +223,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
