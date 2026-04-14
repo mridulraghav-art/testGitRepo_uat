@@ -6,46 +6,65 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_akArU",
+			"fromNodeId":"n_l4MJT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_WbpJw",
+			"toNodeId":"n_zL0Rn",
 			"type":"next"
 		}
 	],
 	"id":"69ddd79716c58d06f690dbb6",
 	"lastModifiedBy":39,
 	"lcName":"example",
-	"modifiedTime":1776146327950,
+	"modifiedTime":1776146373857,
 	"name":"example",
 	"nodes":[
 		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":5000,
+				"resourceName":"standard_entities_on_platform_event"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_akArU-1",
-			"id":"_akArU",
-			"index":0,
+			"id":"n_l4MJT",
+			"index":1,
+			"inputs":{
+				"changeType":"CREATED",
+				"entityTypes":[
+					"ROLE_DEFINITION"
+				]
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"On platform event",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"stop"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_akArU-1",
-			"id":"_WbpJw",
-			"index":0,
+			"id":"n_zL0Rn",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +75,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
