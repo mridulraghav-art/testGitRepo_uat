@@ -6,46 +6,244 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_9EVRK",
+			"fromNodeId":"n_OrDWP",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_c6UIt",
+			"toNodeId":"n_JlKLz",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_JlKLz",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_F174P",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_F174P",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_PlW56",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_F174P",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_RU3hK",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_PlW56",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_7YriH",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_RU3hK",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_7YriH",
 			"type":"next"
 		}
 	],
 	"id":"69de09d8d10cdb3cddf2ba0f",
 	"lastModifiedBy":39,
 	"lcName":"test_practiceapi_01",
-	"modifiedTime":1776159192031,
+	"modifiedTime":1776160458379,
 	"name":"Test_PracticeApi_01",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9EVRK-1",
-			"id":"_9EVRK",
-			"index":0,
+			"id":"n_OrDWP",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"number",
+								"title":"Input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"success",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					},
+					{
+						"name":"error",
+						"status":400,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					},
+					{
+						"name":"No data",
+						"status":204,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":3911,
+				"resourceName":"storage_by_unifyapps_get_record_by_id",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9EVRK-1",
-			"id":"_c6UIt",
-			"index":0,
+			"id":"n_JlKLz",
+			"index":2,
+			"inputs":{
+				"object_type":"basic_details",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"id":"{{ n_OrDWP.outputs.body.input }}",
+				"readThroughSessionVariables":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch record by ID",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceVersion":58,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_9EVRK-1",
+			"id":"n_F174P",
+			"index":3,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_JlKLz.outputs.id }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":"77963"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2205,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_F174P@_9EVRK-1@y",
+			"id":"n_PlW56",
+			"index":4,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_success",
+				"status":200
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2205,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_F174P@_9EVRK-1@n",
+			"id":"n_RU3hK",
+			"index":5,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"400_error",
+				"status":400
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_9EVRK-1",
+			"id":"n_7YriH",
+			"index":6,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +254,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
