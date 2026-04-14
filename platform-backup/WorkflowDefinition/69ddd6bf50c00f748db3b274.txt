@@ -27,12 +27,26 @@
 			"skip":false,
 			"toNodeId":"n_HHlBz",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_daNSM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_uFH3t",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_HHlBz",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_uFH3t",
+			"type":"next"
 		}
 	],
 	"id":"69ddd6bf50c00f748db3b274",
 	"lastModifiedBy":39,
 	"lcName":"apiautomation1",
-	"modifiedTime":1776147135300,
+	"modifiedTime":1776147231242,
 	"name":"APIAutomation1",
 	"nodes":[
 		{
@@ -207,6 +221,21 @@
 			"subTitle":"Callable",
 			"title":"Respond to API request",
 			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_uExcH-1",
+			"id":"n_uFH3t",
+			"index":5,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -223,5 +252,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
