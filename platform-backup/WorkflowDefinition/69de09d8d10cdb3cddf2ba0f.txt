@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776159192031,
 	"deleted":false,
-	"deployedVersion":13,
+	"deployedVersion":14,
 	"deploymentState":{
-		"deployedAt":1776166699164,
+		"deployedAt":1776166778369,
 		"deployedBy":39,
-		"deployedDefinitionId":"69de272bd10cdb3cddf33fc7",
+		"deployedDefinitionId":"69de277a6fd9b808d458d292",
 		"status":"DEPLOYED",
-		"version":13,
-		"workflowVersion":14
+		"version":14,
+		"workflowVersion":15
 	},
 	"edges":[
 		{
@@ -69,7 +69,7 @@
 	"id":"69de09d8d10cdb3cddf2ba0f",
 	"lastModifiedBy":39,
 	"lcName":"test_practiceapi_01",
-	"modifiedTime":1776166767130,
+	"modifiedTime":1776166959193,
 	"name":"Test_PracticeApi_01",
 	"nodes":[
 		{
@@ -216,7 +216,7 @@
 				"streamingCompleted":true,
 				"responseName":"200_success",
 				"body":{
-					"output":"{{ n_JlKLz.outputs.objects[0].id }}"
+					"output":"{{ n_JlKLz.outputs.objects[0].id }}{{ n_JlKLz.outputs.objects[0].properties.name }}{{ n_JlKLz.outputs.objects[0].properties.mdmRecordMetadata.modelId }}{{ n_JlKLz.outputs.objects[0].properties.age }}"
 				},
 				"status":200
 			},
@@ -337,5 +337,5 @@
 		}
 	},
 	"standard":false,
-	"version":15
+	"version":16
 }
