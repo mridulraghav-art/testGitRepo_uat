@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776159192031,
 	"deleted":false,
-	"deployedVersion":9,
+	"deployedVersion":10,
 	"deploymentState":{
-		"deployedAt":1776165405809,
+		"deployedAt":1776165891874,
 		"deployedBy":39,
-		"deployedDefinitionId":"69de220ff639075435b37fed",
+		"deployedDefinitionId":"69de240316c58d06f692f604",
 		"status":"DEPLOYED",
-		"version":9,
-		"workflowVersion":9
+		"version":10,
+		"workflowVersion":10
 	},
 	"edges":[
 		{
@@ -62,7 +62,7 @@
 	"id":"69de09d8d10cdb3cddf2ba0f",
 	"lastModifiedBy":39,
 	"lcName":"test_practiceapi_01",
-	"modifiedTime":1776165889925,
+	"modifiedTime":1776166203851,
 	"name":"Test_PracticeApi_01",
 	"nodes":[
 		{
@@ -113,6 +113,19 @@
 						"contentType":"application/json",
 						"textBody":{
 							"type":"string"
+						},
+						"body":{
+							"type":"object",
+							"properties":{
+								"output":{
+									"type":"string",
+									"title":"Output"
+								}
+							},
+							"additionalProperties":false,
+							"required":[
+								"output"
+							]
 						}
 					},
 					{
@@ -121,14 +134,19 @@
 						"contentType":"application/json",
 						"textBody":{
 							"type":"string"
-						}
-					},
-					{
-						"name":"No data",
-						"status":204,
-						"contentType":"application/json",
-						"textBody":{
-							"type":"string"
+						},
+						"body":{
+							"type":"object",
+							"properties":{
+								"output":{
+									"type":"string",
+									"title":"Output"
+								}
+							},
+							"additionalProperties":false,
+							"required":[
+								"output"
+							]
 						}
 					}
 				],
@@ -280,5 +298,5 @@
 		}
 	},
 	"standard":false,
-	"version":10
+	"version":11
 }
