@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776159192031,
 	"deleted":false,
-	"deployedVersion":12,
+	"deployedVersion":13,
 	"deploymentState":{
-		"deployedAt":1776166633055,
+		"deployedAt":1776166699164,
 		"deployedBy":39,
-		"deployedDefinitionId":"69de26e90e9f573811e7cd47",
+		"deployedDefinitionId":"69de272bd10cdb3cddf33fc7",
 		"status":"DEPLOYED",
-		"version":12,
-		"workflowVersion":13
+		"version":13,
+		"workflowVersion":14
 	},
 	"edges":[
 		{
@@ -23,6 +23,13 @@
 		},
 		{
 			"fromNodeId":"n_JlKLz",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_9OVkh",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_9OVkh",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_F174P",
@@ -48,18 +55,11 @@
 			"fromNodeId":"n_PlW56",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_JoNIN",
+			"toNodeId":"n_7YriH",
 			"type":"next"
 		},
 		{
 			"fromNodeId":"n_RU3hK",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_JoNIN",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_JoNIN",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_7YriH",
@@ -69,7 +69,7 @@
 	"id":"69de09d8d10cdb3cddf2ba0f",
 	"lastModifiedBy":39,
 	"lcName":"test_practiceapi_01",
-	"modifiedTime":1776166696297,
+	"modifiedTime":1776166767130,
 	"name":"Test_PracticeApi_01",
 	"nodes":[
 		{
@@ -201,6 +201,32 @@
 		},
 		{
 			"context":{
+				"appName":"callables",
+				"resourceVersion":2205,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_9EVRK-1",
+			"id":"n_9OVkh",
+			"index":3,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_success",
+				"body":{
+					"output":"{{ n_JlKLz.outputs.objects[0].id }}"
+				},
+				"status":200
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
+		},
+		{
+			"context":{
 				"appName":"if_else",
 				"resourceVersion":58,
 				"resourceName":"if_else_condition",
@@ -211,7 +237,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_9EVRK-1",
 			"id":"n_F174P",
-			"index":3,
+			"index":4,
 			"inputs":{
 				"filters":[
 					{
@@ -241,7 +267,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_F174P@_9EVRK-1@y",
 			"id":"n_PlW56",
-			"index":4,
+			"index":5,
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"200_success",
@@ -267,7 +293,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_F174P@_9EVRK-1@n",
 			"id":"n_RU3hK",
-			"index":5,
+			"index":6,
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"400_error",
@@ -275,32 +301,6 @@
 					"output":"{{ n_F174P.outputs.result }}"
 				},
 				"status":400
-			},
-			"skip":false,
-			"subTitle":"Callable",
-			"title":"Respond to API request",
-			"type":"STOP"
-		},
-		{
-			"context":{
-				"appName":"callables",
-				"resourceVersion":2205,
-				"resourceName":"callables_return_response_to_api",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_9EVRK-1",
-			"id":"n_JoNIN",
-			"index":6,
-			"inputs":{
-				"streamingCompleted":true,
-				"responseName":"200_success",
-				"body":{
-					"output":"{{ n_JlKLz.outputs.objects[0].id }}"
-				},
-				"status":200
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -337,5 +337,5 @@
 		}
 	},
 	"standard":false,
-	"version":14
+	"version":15
 }
