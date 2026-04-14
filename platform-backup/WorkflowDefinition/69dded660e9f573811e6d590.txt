@@ -4,6 +4,15 @@
 	],
 	"createdTime":1776151910905,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1776152808867,
+		"deployedBy":39,
+		"deployedDefinitionId":"69ddf0e8ce3fdf72fd0577a3",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_U8yt9",
@@ -28,6 +37,13 @@
 		},
 		{
 			"fromNodeId":"n_wgv4w",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_XL2PL",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_XL2PL",
 			"name":"loopback",
 			"priority":0,
 			"skip":false,
@@ -45,7 +61,7 @@
 	"id":"69dded660e9f573811e6d590",
 	"lastModifiedBy":39,
 	"lcName":"test_loops",
-	"modifiedTime":1776152803317,
+	"modifiedTime":1776153369320,
 	"name":"Test_loops",
 	"nodes":[
 		{
@@ -55,7 +71,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_zkqZM-1",
 			"id":"n_U8yt9",
@@ -97,7 +113,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_zkqZM-1",
 			"id":"n_Gl8Su",
@@ -152,7 +168,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_zkqZM-1",
 			"id":"n_zlzAi",
@@ -174,7 +190,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_zlzAi@_zkqZM-1@l",
 			"id":"n_wgv4w",
@@ -194,14 +210,69 @@
 		},
 		{
 			"context":{
-				"appName":"stop"
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
+			"groupId":"n_zlzAi@_zkqZM-1@l",
+			"id":"n_XL2PL",
+			"index":5,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"Input"
+						}
+					},
+					"required":[
+						"input"
+					]
+				}
+			},
+			"inputs":{
+				"input":"{{ n_Gl8Su.outputs.i }}"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"Input"
+						}
+					},
+					"required":[
+						"input"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
 			"groupId":"_zkqZM-1",
 			"id":"n_3Q9jb",
-			"index":5,
+			"index":6,
 			"skip":false,
 			"subTitle":"Stop",
 			"title":"Stop",
@@ -222,5 +293,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
