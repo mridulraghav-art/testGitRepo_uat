@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776144959657,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_bFPDo",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_zGCZt",
+			"type":"next"
+		}
+	],
+	"id":"69ddd23f6fd9b808d456a793",
+	"lastModifiedBy":39,
+	"lcName":"efrdc",
+	"modifiedTime":1776144959657,
+	"name":"efrdc",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_bFPDo-1",
+			"id":"_bFPDo",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_bFPDo-1",
+			"id":"_zGCZt",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
