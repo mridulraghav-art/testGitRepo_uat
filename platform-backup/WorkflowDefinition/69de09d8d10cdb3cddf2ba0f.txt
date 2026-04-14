@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776159192031,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1776161055267,
+		"deployedAt":1776163179695,
 		"deployedBy":39,
-		"deployedDefinitionId":"69de111ff639075435b32d68",
+		"deployedDefinitionId":"69de196b16c58d06f692bc66",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":2
+		"version":3,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
@@ -62,7 +62,7 @@
 	"id":"69de09d8d10cdb3cddf2ba0f",
 	"lastModifiedBy":39,
 	"lcName":"test_practiceapi_01",
-	"modifiedTime":1776163175659,
+	"modifiedTime":1776163368325,
 	"name":"Test_PracticeApi_01",
 	"nodes":[
 		{
@@ -171,7 +171,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9EVRK-1",
 			"id":"n_F174P",
@@ -182,7 +182,7 @@
 						"property":"{{ n_JlKLz.outputs.id }}",
 						"filter":{
 							"operator":"EQUAL",
-							"value":"77963"
+							"value":"{{ n_JlKLz.outputs.objects[0].id }}"
 						}
 					}
 				],
@@ -269,5 +269,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
