@@ -6,46 +6,189 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_wispg",
+			"fromNodeId":"n_DzZls",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_hCk04",
+			"toNodeId":"n_1U2eS",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_1U2eS",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_fnG3t",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_fnG3t",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_uIe1Y",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_uIe1Y",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_YbQYi",
 			"type":"next"
 		}
 	],
 	"id":"69de472b16c58d06f6943710",
 	"lastModifiedBy":39,
 	"lcName":"excelfilelocalkrytvlutga",
-	"modifiedTime":1776174891557,
+	"modifiedTime":1776175108485,
 	"name":"ExcelFileLocalKrYTVlUTGA",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wispg-1",
-			"id":"_wispg",
-			"index":0,
+			"id":"n_DzZls",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"a":{
+							"type":"string",
+							"title":"a"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":2032,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wispg-1",
-			"id":"_hCk04",
-			"index":0,
+			"id":"n_1U2eS",
+			"index":2,
+			"inputs":{
+				"fileName":"test1.xlsx",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845749830/file_example_XLSX_10.xlsx",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":2003,
+				"resourceName":"excel_by_unifyapps_append_files",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_wispg-1",
+			"id":"n_fnG3t",
+			"index":3,
+			"inputs":{
+				"fileName":"CombinedFile.xlsx",
+				"skipFirstFileHeader":false,
+				"includeHeaders":true,
+				"outputSheetName":"Combined",
+				"keepExactFileName":false,
+				"fileList":[
+					"{{ n_1U2eS.outputs.fileDetails }}"
+				],
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Append multiple excel files into one sheet",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":1664,
+				"resourceName":"excel_by_unifyapps_extract_data",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_wispg-1",
+			"id":"n_uIe1Y",
+			"index":4,
+			"inputs":{
+				"flattenMergedCells":false,
+				"endColumn":2,
+				"fileDetails":"{{ n_fnG3t.outputs.fileDetails }}",
+				"startRow":1,
+				"startColumn":1,
+				"endRow":14,
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Extract Excel Data",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_wispg-1",
+			"id":"n_YbQYi",
+			"index":5,
+			"inputs":{
+				"result":{
+					"r":"{{ n_uIe1Y.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +199,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
