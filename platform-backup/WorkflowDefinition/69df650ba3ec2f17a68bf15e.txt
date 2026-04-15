@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776248075304,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_dcPW9",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_cPq0Z",
+			"type":"next"
+		}
+	],
+	"id":"69df650ba3ec2f17a68bf15e",
+	"lastModifiedBy":39,
+	"lcName":"practice5",
+	"modifiedTime":1776248075304,
+	"name":"Practice5",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_dcPW9-1",
+			"id":"_dcPW9",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_dcPW9-1",
+			"id":"_cPq0Z",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
