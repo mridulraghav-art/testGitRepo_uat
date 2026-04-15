@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776236023225,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_xPRhQ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_lsHM7",
+			"type":"next"
+		}
+	],
+	"id":"69df35f7ce3fdf72fd0fc8b3",
+	"lastModifiedBy":39,
+	"lcName":"child automation with test http api_21776236018231",
+	"modifiedTime":1776236023225,
+	"name":"Child automation with test http api_21776236018231",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_xPRhQ-1",
+			"id":"_xPRhQ",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_xPRhQ-1",
+			"id":"_lsHM7",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
