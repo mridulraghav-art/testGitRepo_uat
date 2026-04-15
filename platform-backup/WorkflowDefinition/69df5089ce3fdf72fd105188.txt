@@ -10,6 +10,13 @@
 			"fromNodeId":"n_vHmMB",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_akxVP",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_akxVP",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_PAI0D",
 			"type":"next"
 		}
@@ -17,7 +24,7 @@
 	"id":"69df5089ce3fdf72fd105188",
 	"lastModifiedBy":39,
 	"lcName":"parent_testhttpapipost_async_21776242796228",
-	"modifiedTime":1776242829914,
+	"modifiedTime":1776242839938,
 	"name":"Parent_testHttpApiPost_async_21776242796228",
 	"nodes":[
 		{
@@ -71,6 +78,32 @@
 		{
 			"context":{
 				"appName":"callables",
+				"resourceVersion":2206,
+				"resourceName":"callables_call_automation_async",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_sNK0d-1",
+			"id":"n_akxVP",
+			"index":2,
+			"inputs":{
+				"automationId":"69df5071f639075435b9c0a9",
+				"runtimeConnections":{},
+				"version":"-1",
+				"parameters":{
+					"input_String":"{{ n_vHmMB.outputs.input_String }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation async",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"callables",
 				"resourceVersion":2204,
 				"resourceName":"callables_return_to_automation",
 				"type":"APPLICATION"
@@ -80,7 +113,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_sNK0d-1",
 			"id":"n_PAI0D",
-			"index":2,
+			"index":3,
 			"inputs":{
 				"result":{
 					"output_String":"{{ n_vHmMB.outputs.input_String }}"
@@ -109,5 +142,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
