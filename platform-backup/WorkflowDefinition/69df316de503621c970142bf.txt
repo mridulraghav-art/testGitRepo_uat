@@ -6,46 +6,70 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_Hoygr",
+			"fromNodeId":"n_gJxxt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_ZmELI",
+			"toNodeId":"n_Mo8DU",
 			"type":"next"
 		}
 	],
 	"id":"69df316de503621c970142bf",
 	"lastModifiedBy":39,
 	"lcName":"dcsxza",
-	"modifiedTime":1776234861144,
+	"modifiedTime":1776234873916,
 	"name":"dcsxza",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Hoygr-1",
-			"id":"_Hoygr",
-			"index":0,
+			"id":"n_gJxxt",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":97,
+				"resourceName":"variable_by_unifyapps_create_2d_variable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Hoygr-1",
-			"id":"_ZmELI",
-			"index":0,
+			"id":"n_Mo8DU",
+			"index":2,
+			"inputs":{
+				"field_type":"STRING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create 2D variable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +80,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
