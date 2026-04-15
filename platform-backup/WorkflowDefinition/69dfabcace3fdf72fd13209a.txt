@@ -9,14 +9,14 @@
 			"fromNodeId":"n_OZTtw",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Nq96K",
+			"toNodeId":"n_S2tOB",
 			"type":"next"
 		}
 	],
 	"id":"69dfabcace3fdf72fd13209a",
 	"lastModifiedBy":39,
 	"lcName":"rfdsc",
-	"modifiedTime":1776266192580,
+	"modifiedTime":1776266213563,
 	"name":"rfdsc",
 	"nodes":[
 		{
@@ -26,7 +26,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_eq8a0-1",
 			"id":"n_OZTtw",
@@ -45,14 +45,56 @@
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_eq8a0-1",
-			"id":"_Nq96K",
+			"id":"n_S2tOB",
 			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"fdc":{
+							"type":"string",
+							"title":"Fdc"
+						}
+					},
+					"required":[
+						"fdc"
+					]
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"fdc":{
+							"type":"string",
+							"title":"Fdc"
+						}
+					},
+					"required":[
+						"fdc"
+					]
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
 		}
 	],
@@ -70,5 +112,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
