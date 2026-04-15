@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776242519371,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_JaUSl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_903iD",
+			"type":"next"
+		}
+	],
+	"id":"69df4f57f639075435b9b9d0",
+	"lastModifiedBy":39,
+	"lcName":"rtd",
+	"modifiedTime":1776242519371,
+	"name":"rtd",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_JaUSl-1",
+			"id":"_JaUSl",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_JaUSl-1",
+			"id":"_903iD",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
