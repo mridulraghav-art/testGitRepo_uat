@@ -6,7 +6,7 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_eq8a0",
+			"fromNodeId":"n_OZTtw",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"_Nq96K",
@@ -16,20 +16,31 @@
 	"id":"69dfabcace3fdf72fd13209a",
 	"lastModifiedBy":39,
 	"lcName":"rfdsc",
-	"modifiedTime":1776266186789,
+	"modifiedTime":1776266192580,
 	"name":"rfdsc",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_eq8a0-1",
-			"id":"_eq8a0",
-			"index":0,
+			"id":"n_OZTtw",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
@@ -39,13 +50,16 @@
 			"fallbackMode":"STOP",
 			"groupId":"_eq8a0-1",
 			"id":"_Nq96K",
-			"index":0,
+			"index":2,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +70,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
