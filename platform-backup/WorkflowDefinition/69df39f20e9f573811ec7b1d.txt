@@ -11,12 +11,19 @@
 			"skip":false,
 			"toNodeId":"n_EJcCK",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_EJcCK",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_hQBXx",
+			"type":"next"
 		}
 	],
 	"id":"69df39f20e9f573811ec7b1d",
 	"lastModifiedBy":39,
 	"lcName":"redfcs",
-	"modifiedTime":1776237054859,
+	"modifiedTime":1776237062122,
 	"name":"redfcs",
 	"nodes":[
 		{
@@ -70,6 +77,21 @@
 			"subTitle":"Callable",
 			"title":"Call automation",
 			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_wcO0b-1",
+			"id":"n_hQBXx",
+			"index":3,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -86,5 +108,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
