@@ -16,6 +16,13 @@
 			"fromNodeId":"n_GS2V1",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_xrGdg",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_xrGdg",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_qKLlm",
 			"type":"next"
 		}
@@ -23,7 +30,7 @@
 	"id":"69df389bf639075435b8c372",
 	"lastModifiedBy":39,
 	"lcName":"parent01",
-	"modifiedTime":1776236797797,
+	"modifiedTime":1776236896906,
 	"name":"parent01",
 	"nodes":[
 		{
@@ -79,6 +86,31 @@
 		},
 		{
 			"context":{
+				"appName":"callables",
+				"resourceVersion":2205,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_M34vE-1",
+			"id":"n_xrGdg",
+			"index":3,
+			"inputs":{
+				"automationId":"693aaee28448744626fa5bfb",
+				"runtimeConnections":{},
+				"synchronous":true,
+				"version":"-1",
+				"parameters":{}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
 				"appName":"stop"
 			},
 			"debug":false,
@@ -86,7 +118,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_M34vE-1",
 			"id":"n_qKLlm",
-			"index":3,
+			"index":4,
 			"skip":false,
 			"subTitle":"Stop",
 			"title":"Stop",
@@ -107,5 +139,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
