@@ -6,46 +6,126 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_M34vE",
+			"fromNodeId":"n_tHhnm",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_U78PL",
+			"toNodeId":"n_GS2V1",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GS2V1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_9uMOX",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_9uMOX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_qKLlm",
 			"type":"next"
 		}
 	],
 	"id":"69df389bf639075435b8c372",
 	"lastModifiedBy":39,
 	"lcName":"parent01",
-	"modifiedTime":1776236699337,
+	"modifiedTime":1776236739997,
 	"name":"parent01",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_M34vE-1",
-			"id":"_M34vE",
-			"index":0,
+			"id":"n_tHhnm",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2206,
+				"resourceName":"callables_call_automation_async",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_M34vE-1",
-			"id":"_U78PL",
-			"index":0,
+			"id":"n_GS2V1",
+			"index":2,
+			"inputs":{
+				"automationId":"69df3863f639075435b8c2ad",
+				"runtimeConnections":{},
+				"version":"-1",
+				"parameters":{
+					"refdc":"fcd"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Call automation async",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":1927,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_M34vE-1",
+			"id":"n_9uMOX",
+			"index":3,
+			"inputs":{
+				"field2":true
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_M34vE-1",
+			"id":"n_qKLlm",
+			"index":4,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +136,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
