@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776237042340,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_wcO0b",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_TzkMo",
+			"type":"next"
+		}
+	],
+	"id":"69df39f20e9f573811ec7b1d",
+	"lastModifiedBy":39,
+	"lcName":"redfcs",
+	"modifiedTime":1776237042340,
+	"name":"redfcs",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_wcO0b-1",
+			"id":"_wcO0b",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_wcO0b-1",
+			"id":"_TzkMo",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
