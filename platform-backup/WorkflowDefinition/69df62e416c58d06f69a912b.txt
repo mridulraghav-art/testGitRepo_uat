@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776247524796,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_U3K2e",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_4BzNw",
+			"type":"next"
+		}
+	],
+	"id":"69df62e416c58d06f69a912b",
+	"lastModifiedBy":39,
+	"lcName":"api_practice2",
+	"modifiedTime":1776247524796,
+	"name":"Api_Practice2",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_U3K2e-1",
+			"id":"_U3K2e",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_U3K2e-1",
+			"id":"_4BzNw",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
