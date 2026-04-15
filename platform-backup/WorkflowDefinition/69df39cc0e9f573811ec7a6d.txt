@@ -6,46 +6,124 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_1yhzv",
+			"fromNodeId":"n_jDa5S",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_uAkKe",
+			"toNodeId":"n_IozkG",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IozkG",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_JbsNI",
 			"type":"next"
 		}
 	],
 	"id":"69df39cc0e9f573811ec7a6d",
 	"lastModifiedBy":39,
 	"lcName":"dxs",
-	"modifiedTime":1776237004461,
+	"modifiedTime":1776237031249,
 	"name":"dxs",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_1yhzv-1",
-			"id":"_1yhzv",
-			"index":0,
+			"id":"n_jDa5S",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"dsx"
+					],
+					"properties":{
+						"dsx":{
+							"type":"string",
+							"title":"Dsx"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"dsx"
+					],
+					"properties":{
+						"dsx":{
+							"type":"string",
+							"title":"Dsx"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":1927,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_1yhzv-1",
-			"id":"_uAkKe",
-			"index":0,
+			"id":"n_IozkG",
+			"index":2,
+			"inputs":{
+				"field2":true
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_1yhzv-1",
+			"id":"n_JbsNI",
+			"index":3,
+			"inputs":{
+				"result":{
+					"dsx":"dxs"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +134,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
