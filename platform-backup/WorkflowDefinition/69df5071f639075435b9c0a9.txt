@@ -4,10 +4,26 @@
 	],
 	"createdTime":1776242801490,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1776242812113,
+		"deployedBy":39,
+		"deployedDefinitionId":"69df507cce3fdf72fd10510a",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"description":"description",
 	"edges":[
 		{
 			"fromNodeId":"n_HOLuy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_lZV92",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_lZV92",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_ikO8l",
@@ -17,7 +33,7 @@
 	"id":"69df5071f639075435b9c0a9",
 	"lastModifiedBy":39,
 	"lcName":"child automation with test http api_21776242796228",
-	"modifiedTime":1776242807271,
+	"modifiedTime":1776242816530,
 	"name":"Child automation with test http api_21776242796228",
 	"nodes":[
 		{
@@ -70,6 +86,29 @@
 		},
 		{
 			"context":{
+				"appName":"test_http",
+				"resourceVersion":1927,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_wcCGa-1",
+			"id":"n_lZV92",
+			"index":2,
+			"inputs":{
+				"field1":"workflow breaks",
+				"field2":true
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"callables",
 				"resourceVersion":2204,
 				"resourceName":"callables_return_to_automation",
@@ -80,7 +119,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_wcCGa-1",
 			"id":"n_ikO8l",
-			"index":2,
+			"index":3,
 			"inputs":{
 				"result":{
 					"output_String":"{{ n_HOLuy.outputs.input_String }}"
@@ -109,5 +148,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
