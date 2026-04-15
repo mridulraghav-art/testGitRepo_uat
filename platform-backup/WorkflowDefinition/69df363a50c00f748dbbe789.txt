@@ -10,6 +10,13 @@
 			"fromNodeId":"n_s8tyc",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_jOvCE",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_jOvCE",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_0K1PP",
 			"type":"next"
 		}
@@ -17,7 +24,7 @@
 	"id":"69df363a50c00f748dbbe789",
 	"lastModifiedBy":39,
 	"lcName":"parent_testhttpapipost_async_21776236059939",
-	"modifiedTime":1776236096946,
+	"modifiedTime":1776236103645,
 	"name":"Parent_testHttpApiPost_async_21776236059939",
 	"nodes":[
 		{
@@ -71,6 +78,32 @@
 		{
 			"context":{
 				"appName":"callables",
+				"resourceVersion":2206,
+				"resourceName":"callables_call_automation_async",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_5znrs-1",
+			"id":"n_jOvCE",
+			"index":2,
+			"inputs":{
+				"automationId":"69df3622987ef9323094badb",
+				"runtimeConnections":{},
+				"version":"-1",
+				"parameters":{
+					"input_String":"{{ n_s8tyc.outputs.input_String }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation async",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"callables",
 				"resourceVersion":2204,
 				"resourceName":"callables_return_to_automation",
 				"type":"APPLICATION"
@@ -80,7 +113,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_5znrs-1",
 			"id":"n_0K1PP",
-			"index":2,
+			"index":3,
 			"inputs":{
 				"result":{
 					"output_String":"{{ n_s8tyc.outputs.input_String }}"
@@ -109,5 +142,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
