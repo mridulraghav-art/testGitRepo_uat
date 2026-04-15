@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776266186789,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_eq8a0",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Nq96K",
+			"type":"next"
+		}
+	],
+	"id":"69dfabcace3fdf72fd13209a",
+	"lastModifiedBy":39,
+	"lcName":"rfdsc",
+	"modifiedTime":1776266186789,
+	"name":"rfdsc",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_eq8a0-1",
+			"id":"_eq8a0",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_eq8a0-1",
+			"id":"_Nq96K",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
