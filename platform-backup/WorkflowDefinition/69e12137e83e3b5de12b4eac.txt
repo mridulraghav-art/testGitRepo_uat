@@ -6,46 +6,107 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_apFCo",
+			"fromNodeId":"n_buhJc",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_oq3p4",
+			"toNodeId":"n_caeo3",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_caeo3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_am23w",
 			"type":"next"
 		}
 	],
 	"id":"69e12137e83e3b5de12b4eac",
 	"lastModifiedBy":39,
 	"lcName":"utilitybyunifyappslocalixeqqlclkp",
-	"modifiedTime":1776361783339,
+	"modifiedTime":1776361792728,
 	"name":"UtilityByUnifyAppsLocalIXEqqLClkP",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_apFCo-1",
-			"id":"_apFCo",
-			"index":0,
+			"id":"n_buhJc",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result":{
+							"type":"string",
+							"title":"Result"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":3172,
+				"resourceName":"utility_by_unifyapps_generate_canonical_xml",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_apFCo-1",
-			"id":"_oq3p4",
-			"index":0,
+			"id":"n_caeo3",
+			"index":2,
+			"inputs":{
+				"input":"<user ae=\"John\" age=\"25\"/>"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Utility by UnifyApps",
+			"title":"Generate Canonical XML",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_apFCo-1",
+			"id":"n_am23w",
+			"index":3,
+			"inputs":{
+				"result":{
+					"Result":"{{ n_caeo3.outputs.output }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +117,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
