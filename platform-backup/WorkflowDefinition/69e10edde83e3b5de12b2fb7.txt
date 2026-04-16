@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776357085376,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1776357116465,
+		"deployedAt":1776361156161,
 		"deployedBy":39,
-		"deployedDefinitionId":"69e10efc94ff516727f08c89",
+		"deployedDefinitionId":"69e11ec3ae09946b76798e92",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":2
+		"version":3,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
@@ -110,7 +110,7 @@
 	"id":"69e10edde83e3b5de12b2fb7",
 	"lastModifiedBy":39,
 	"lcName":"usage | openai",
-	"modifiedTime":1776361153390,
+	"modifiedTime":1776361808908,
 	"name":"Usage | OpenAI",
 	"nodes":[
 		{
@@ -1069,7 +1069,7 @@
 						}
 					}
 				},
-				"code":"def fmt = { n -> String.format(\"%,d\", n as long) }\ndef shortId = { id ->\n    if (!id) return \"-\"\n    def s = id.toString()\n    s.length() > 14 ? s.substring(0, 8) + \"…\" + s.substring(s.length() - 4) : s\n}\ndef rpad = { str, int width -> (str ?: \"\").toString().padRight(width) }\ndef lpad = { str, int width -> (str ?: \"\").toString().padLeft(width) }\ndef truncate = { str, int width ->\n    def s = (str ?: \"-\").toString()\n    (s.length() > width ? s.substring(0, width - 1) + \"…\" : s).padRight(width)\n}\n\n// ---- Aggregate ----\nlong grandTotal = usage.sum { it.hits as long } ?: 0L\n\n// Group by customer (customerId|customerName key keeps both for display)\ndef byCustomer = usage.groupBy { \"${it.customerId}|${it.customerName ?: ''}\" }\n\ndef sortedCustomers = byCustomer.collect { key, rows ->\n    [key: key, total: rows.sum { it.hits as long }, rows: rows]\n}.sort { -it.total }\n\n// ---- Column widths ----\nint wCustomer   = 20\nint wApp        = 10\nint wConnection = 16\nint wWorkflow   = 16\nint wHits       = 12\nint wPct        = 7\nint tableWidth  = wCustomer + wApp + wConnection + wWorkflow + wHits + wPct + (5 * 3)\n\ndef sep = { ch -> (ch as String) * tableWidth }\n\ndef sb = new StringBuilder()\n\n// ---- Header (outside code block so bold + emoji render) ----\nsb << \":bar_chart: *Usage Report*\\n\"\nsb << \"Total Hits: *${fmt(grandTotal)}*  |  Customers: *${byCustomer.size()}*  |  Rows: *${usage.size()}*\\n\\n\"\n\n// ---- Table (inside code block for monospace alignment) ----\nsb << \"```\\n\"\nsb << sep(\"=\") << \"\\n\"\nsb << rpad(\"Customer\", wCustomer) << \" | \"\nsb << rpad(\"App\", wApp) << \" | \"\nsb << rpad(\"Connection\", wConnection) << \" | \"\nsb << rpad(\"Workflow\", wWorkflow) << \" | \"\nsb << lpad(\"Hits\", wHits) << \" | \"\nsb << lpad(\"%\", wPct) << \"\\n\"\nsb << sep(\"=\") << \"\\n\"\n\nsortedCustomers.eachWithIndex { entry, idx ->\n    def parts = entry.key.split('\\\\|', 2)\n    def custId = parts[0]\n    def custName = parts.size() > 1 ? parts[1] : \"\"\n    def custPct = grandTotal > 0 ? entry.total * 100.0 / grandTotal : 0\n\n    // Customer subtotal row\n    sb << truncate(\"${custName} (${custId})\", wCustomer) << \" | \"\n    sb << rpad(\"— ALL —\", wApp) << \" | \"\n    sb << rpad(\"— ALL —\", wConnection) << \" | \"\n    sb << rpad(\"— ALL —\", wWorkflow) << \" | \"\n    sb << lpad(fmt(entry.total), wHits) << \" | \"\n    sb << lpad(String.format('%.1f', custPct), wPct) << \"\\n\"\n\n    // Detail rows for this customer, sorted by hits desc\n    def sortedRows = entry.rows.sort(false) { -(it.hits as long) }\n    sortedRows.each { r ->\n        def rowPct = grandTotal > 0 ? (r.hits as long) * 100.0 / grandTotal : 0\n        sb << rpad(\"\", wCustomer) << \" | \"\n        sb << rpad(r.appName ?: \"-\", wApp) << \" | \"\n        sb << rpad(shortId(r.connectionId), wConnection) << \" | \"\n        sb << rpad(shortId(r.workflowId), wWorkflow) << \" | \"\n        sb << lpad(fmt(r.hits as long), wHits) << \" | \"\n        sb << lpad(String.format('%.1f', rowPct), wPct) << \"\\n\"\n    }\n\n    // Separator between customers (not after the last one)\n    if (idx < sortedCustomers.size() - 1) {\n        sb << sep(\"-\") << \"\\n\"\n    }\n}\n\n// ---- Grand total footer ----\nsb << sep(\"=\") << \"\\n\"\nsb << rpad(\"GRAND TOTAL\", wCustomer) << \" | \"\nsb << rpad(\"\", wApp) << \" | \"\nsb << rpad(\"\", wConnection) << \" | \"\nsb << rpad(\"\", wWorkflow) << \" | \"\nsb << lpad(fmt(grandTotal), wHits) << \" | \"\nsb << lpad(\"100.0\", wPct) << \"\\n\"\nsb << sep(\"=\") << \"\\n\"\nsb << \"```\"\n\nString message = sb.toString()\nreturn [message: message]",
+				"code":"def fmt = { n -> String.format(\"%,d\", n as long) }\ndef rpad = { str, int width -> (str ?: \"\").toString().padRight(width) }\ndef lpad = { str, int width -> (str ?: \"\").toString().padLeft(width) }\ndef truncate = { str, int width ->\n    def s = (str ?: \"-\").toString()\n    (s.length() > width ? s.substring(0, width - 1) + \"…\" : s).padRight(width)\n}\n\n// ---- Aggregate ----\nlong grandTotal = usage.sum { it.hits as long } ?: 0L\n\ndef byCustomer = usage.groupBy { \"${it.customerId}|${it.customerName ?: ''}\" }\n\ndef sortedCustomers = byCustomer.collect { key, rows ->\n    [key: key, total: rows.sum { it.hits as long }, rows: rows]\n}.sort { -it.total }\n\n// ---- Column widths (IDs are 24 chars, so give them 26 for breathing room) ----\nint wCustomer   = 20\nint wApp        = 10\nint wConnection = 26\nint wWorkflow   = 26\nint wHits       = 12\nint wPct        = 7\nint tableWidth  = wCustomer + wApp + wConnection + wWorkflow + wHits + wPct + (5 * 3)\n\ndef sep = { ch -> (ch as String) * tableWidth }\n\ndef sb = new StringBuilder()\n\n// ---- Header (outside code block so bold + emoji render) ----\nsb << \":bar_chart: *Usage Report*\\n\"\nsb << \"Total Hits: *${fmt(grandTotal)}*  |  Customers: *${byCustomer.size()}*  |  Rows: *${usage.size()}*\\n\\n\"\n\n// ---- Table (inside code block for monospace alignment) ----\nsb << \"```\\n\"\nsb << sep(\"=\") << \"\\n\"\nsb << rpad(\"Customer\", wCustomer) << \" | \"\nsb << rpad(\"App\", wApp) << \" | \"\nsb << rpad(\"Connection\", wConnection) << \" | \"\nsb << rpad(\"Workflow\", wWorkflow) << \" | \"\nsb << lpad(\"Hits\", wHits) << \" | \"\nsb << lpad(\"%\", wPct) << \"\\n\"\nsb << sep(\"=\") << \"\\n\"\n\nsortedCustomers.eachWithIndex { entry, idx ->\n    def parts = entry.key.split('\\\\|', 2)\n    def custId = parts[0]\n    def custName = parts.size() > 1 ? parts[1] : \"\"\n    def custPct = grandTotal > 0 ? entry.total * 100.0 / grandTotal : 0\n\n    // Customer subtotal row\n    sb << truncate(\"${custName} (${custId})\", wCustomer) << \" | \"\n    sb << rpad(\"— ALL —\", wApp) << \" | \"\n    sb << rpad(\"— ALL —\", wConnection) << \" | \"\n    sb << rpad(\"— ALL —\", wWorkflow) << \" | \"\n    sb << lpad(fmt(entry.total), wHits) << \" | \"\n    sb << lpad(String.format('%.1f', custPct), wPct) << \"\\n\"\n\n    // Detail rows for this customer, sorted by hits desc\n    def sortedRows = entry.rows.sort(false) { -(it.hits as long) }\n    sortedRows.each { r ->\n        def rowPct = grandTotal > 0 ? (r.hits as long) * 100.0 / grandTotal : 0\n        sb << rpad(\"\", wCustomer) << \" | \"\n        sb << rpad(r.appName ?: \"-\", wApp) << \" | \"\n        sb << rpad(r.connectionId ?: \"-\", wConnection) << \" | \"\n        sb << rpad(r.workflowId ?: \"-\", wWorkflow) << \" | \"\n        sb << lpad(fmt(r.hits as long), wHits) << \" | \"\n        sb << lpad(String.format('%.1f', rowPct), wPct) << \"\\n\"\n    }\n\n    // Separator between customers (not after the last one)\n    if (idx < sortedCustomers.size() - 1) {\n        sb << sep(\"-\") << \"\\n\"\n    }\n}\n\n// ---- Grand total footer ----\nsb << sep(\"=\") << \"\\n\"\nsb << rpad(\"GRAND TOTAL\", wCustomer) << \" | \"\nsb << rpad(\"\", wApp) << \" | \"\nsb << rpad(\"\", wConnection) << \" | \"\nsb << rpad(\"\", wWorkflow) << \" | \"\nsb << lpad(fmt(grandTotal), wHits) << \" | \"\nsb << lpad(\"100.0\", wPct) << \"\\n\"\nsb << sep(\"=\") << \"\\n\"\nsb << \"```\"\n\nString message = sb.toString()\nreturn [message: message]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
@@ -1174,5 +1174,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
