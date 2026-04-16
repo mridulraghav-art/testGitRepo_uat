@@ -1,17 +1,17 @@
 {
 	"appsUsed":[
-		
+		"slack"
 	],
 	"createdTime":1776357085376,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1776357109881,
+		"deployedAt":1776357116465,
 		"deployedBy":39,
-		"deployedDefinitionId":"69e10ef5c925fe3afa4775f4",
+		"deployedDefinitionId":"69e10efc94ff516727f08c89",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":1
+		"version":2,
+		"workflowVersion":2
 	},
 	"edges":[
 		{
@@ -82,14 +82,35 @@
 			"fromNodeId":"n_2ADpr",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_mCHfh",
+			"toNodeId":"n_LrOj7",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LrOj7",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_EXroN",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_EXroN",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_eJpRM",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_eJpRM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_vsVcA",
 			"type":"next"
 		}
 	],
 	"id":"69e10edde83e3b5de12b2fb7",
 	"lastModifiedBy":39,
 	"lcName":"usage | openai",
-	"modifiedTime":1776357114625,
+	"modifiedTime":1776361153390,
 	"name":"Usage | OpenAI",
 	"nodes":[
 		{
@@ -99,7 +120,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_RDQMO-1",
 			"id":"n_SynGZ",
@@ -717,142 +738,57 @@
 					"type":"object",
 					"additionalProperties":false,
 					"properties":{
-						"result":{
-							"type":"object",
-							"properties":{
-								"hasMore":{
-									"type":"boolean",
-									"title":"hasMore"
-								},
-								"objects":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"hits":{
-												"type":"integer",
-												"title":"hits"
-											},
-											"appName":{
-												"type":"string",
-												"title":"appName"
-											},
-											"connectionId":{
-												"type":"string",
-												"title":"connectionId"
-											},
-											"workflowId":{
-												"type":"string",
-												"title":"workflowId"
-											}
-										},
-										"additionalProperties":false
+						"hasMore":{
+							"type":"boolean",
+							"title":"hasMore"
+						},
+						"objects":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"hits":{
+										"type":"integer",
+										"title":"hits"
 									},
-									"title":"objects"
-								},
-								"rowMetadata":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"columnName":{
-												"type":"string",
-												"title":"columnName"
-											},
-											"dataType":{
-												"type":"string",
-												"title":"dataType"
-											}
-										},
-										"additionalProperties":false
+									"appName":{
+										"type":"string",
+										"title":"appName"
 									},
-									"title":"rowMetadata"
+									"connectionId":{
+										"type":"string",
+										"title":"connectionId"
+									},
+									"workflowId":{
+										"type":"string",
+										"title":"workflowId"
+									}
 								},
-								"type":{
-									"type":"string",
-									"title":"type"
-								}
+								"additionalProperties":false
 							},
-							"title":"result",
-							"additionalProperties":false
+							"title":"objects"
 						},
-						"headers":{
-							"type":"object",
-							"properties":{
-								"date":{
-									"type":"array",
-									"items":{
-										"type":"string"
+						"rowMetadata":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"columnName":{
+										"type":"string",
+										"title":"columnName"
 									},
-									"title":"date"
+									"dataType":{
+										"type":"string",
+										"title":"dataType"
+									}
 								},
-								"content-length":{
-									"type":"array",
-									"items":{
-										"type":"string"
-									},
-									"title":"content-length"
-								},
-								"expires":{
-									"type":"array",
-									"items":{
-										"type":"string"
-									},
-									"title":"expires"
-								},
-								"x-trace-id":{
-									"type":"array",
-									"items":{
-										"type":"string"
-									},
-									"title":"x-trace-id"
-								},
-								"content-type":{
-									"type":"array",
-									"items":{
-										"type":"string"
-									},
-									"title":"content-type"
-								},
-								"cache-control":{
-									"type":"array",
-									"items":{
-										"type":"string"
-									},
-									"title":"cache-control"
-								},
-								"ua-internal-api-read-time":{
-									"type":"array",
-									"items":{
-										"type":"string"
-									},
-									"title":"ua-internal-api-read-time"
-								},
-								"ua-internal-api-time":{
-									"type":"array",
-									"items":{
-										"type":"string"
-									},
-									"title":"ua-internal-api-time"
-								},
-								"pragma":{
-									"type":"array",
-									"items":{
-										"type":"string"
-									},
-									"title":"pragma"
-								}
+								"additionalProperties":false
 							},
-							"title":"headers",
-							"additionalProperties":false
+							"title":"rowMetadata"
 						},
-						"rawParams":{
-							"type":"object",
-							"title":"rawParams"
-						},
-						"status":{
-							"type":"integer",
-							"title":"status"
+						"type":{
+							"type":"string",
+							"title":"type"
 						}
 					}
 				},
@@ -999,9 +935,9 @@
 				"captureStdOutput":false,
 				"parameters":{
 					"obj":{
-						"source":"{{ n_ghkb6.outputs.result.result.objects }}",
 						"ua:type":"mappedArray",
-						"items":"{{ n_ghkb6.outputs.result.result.objects[0] }}"
+						"source":"{{ n_ghkb6.outputs.result.objects }}",
+						"items":"{{ n_ghkb6.outputs.result.objects[0] }}"
 					}
 				}
 			},
@@ -1070,14 +1006,14 @@
 				"insertLocation":"END",
 				"itemsToAdd":{
 					"ua:type":"mappedArray",
-					"source":"{{ n_ghkb6.outputs.result.result.objects }}",
+					"source":"{{ n_ghkb6.outputs.result.objects }}",
 					"items":{
 						"customerId":"{{ n_2ADpr.outputs.item.key }}",
 						"customerName":"{{ n_2ADpr.outputs.item.value }}",
-						"hits":"{{ n_ghkb6.outputs.result.result.objects[0].hits }}",
-						"appName":"{{ n_ghkb6.outputs.result.result.objects[0].appName }}",
-						"connectionId":"{{ n_ghkb6.outputs.result.result.objects[0].connectionId }}",
-						"workflowId":"{{ n_ghkb6.outputs.result.result.objects[0].workflowId }}"
+						"hits":"{{ n_ghkb6.outputs.result.objects[0].hits }}",
+						"appName":"{{ n_ghkb6.outputs.result.objects[0].appName }}",
+						"connectionId":"{{ n_ghkb6.outputs.result.objects[0].connectionId }}",
+						"workflowId":"{{ n_ghkb6.outputs.result.objects[0].workflowId }}"
 					}
 				},
 				"listName":"{{ n_dN7CD.outputs.items[0] }}"
@@ -1088,19 +1024,140 @@
 			"type":"ACTION"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.parameters.usage.items"
+				]
+			},
 			"context":{
-				"appName":"stop"
+				"appName":"code_by_unifyapps",
+				"resourceVersion":1114,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_RDQMO-1",
-			"id":"n_mCHfh",
+			"id":"n_LrOj7",
 			"index":10,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"message":{
+							"type":"string",
+							"title":"Message"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"usage":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Usage"
+						}
+					}
+				},
+				"code":"def fmt = { n -> String.format(\"%,d\", n as long) }\ndef shortId = { id ->\n    if (!id) return \"-\"\n    def s = id.toString()\n    s.length() > 14 ? s.substring(0, 8) + \"…\" + s.substring(s.length() - 4) : s\n}\ndef rpad = { str, int width -> (str ?: \"\").toString().padRight(width) }\ndef lpad = { str, int width -> (str ?: \"\").toString().padLeft(width) }\ndef truncate = { str, int width ->\n    def s = (str ?: \"-\").toString()\n    (s.length() > width ? s.substring(0, width - 1) + \"…\" : s).padRight(width)\n}\n\n// ---- Aggregate ----\nlong grandTotal = usage.sum { it.hits as long } ?: 0L\n\n// Group by customer (customerId|customerName key keeps both for display)\ndef byCustomer = usage.groupBy { \"${it.customerId}|${it.customerName ?: ''}\" }\n\ndef sortedCustomers = byCustomer.collect { key, rows ->\n    [key: key, total: rows.sum { it.hits as long }, rows: rows]\n}.sort { -it.total }\n\n// ---- Column widths ----\nint wCustomer   = 20\nint wApp        = 10\nint wConnection = 16\nint wWorkflow   = 16\nint wHits       = 12\nint wPct        = 7\nint tableWidth  = wCustomer + wApp + wConnection + wWorkflow + wHits + wPct + (5 * 3)\n\ndef sep = { ch -> (ch as String) * tableWidth }\n\ndef sb = new StringBuilder()\n\n// ---- Header (outside code block so bold + emoji render) ----\nsb << \":bar_chart: *Usage Report*\\n\"\nsb << \"Total Hits: *${fmt(grandTotal)}*  |  Customers: *${byCustomer.size()}*  |  Rows: *${usage.size()}*\\n\\n\"\n\n// ---- Table (inside code block for monospace alignment) ----\nsb << \"```\\n\"\nsb << sep(\"=\") << \"\\n\"\nsb << rpad(\"Customer\", wCustomer) << \" | \"\nsb << rpad(\"App\", wApp) << \" | \"\nsb << rpad(\"Connection\", wConnection) << \" | \"\nsb << rpad(\"Workflow\", wWorkflow) << \" | \"\nsb << lpad(\"Hits\", wHits) << \" | \"\nsb << lpad(\"%\", wPct) << \"\\n\"\nsb << sep(\"=\") << \"\\n\"\n\nsortedCustomers.eachWithIndex { entry, idx ->\n    def parts = entry.key.split('\\\\|', 2)\n    def custId = parts[0]\n    def custName = parts.size() > 1 ? parts[1] : \"\"\n    def custPct = grandTotal > 0 ? entry.total * 100.0 / grandTotal : 0\n\n    // Customer subtotal row\n    sb << truncate(\"${custName} (${custId})\", wCustomer) << \" | \"\n    sb << rpad(\"— ALL —\", wApp) << \" | \"\n    sb << rpad(\"— ALL —\", wConnection) << \" | \"\n    sb << rpad(\"— ALL —\", wWorkflow) << \" | \"\n    sb << lpad(fmt(entry.total), wHits) << \" | \"\n    sb << lpad(String.format('%.1f', custPct), wPct) << \"\\n\"\n\n    // Detail rows for this customer, sorted by hits desc\n    def sortedRows = entry.rows.sort(false) { -(it.hits as long) }\n    sortedRows.each { r ->\n        def rowPct = grandTotal > 0 ? (r.hits as long) * 100.0 / grandTotal : 0\n        sb << rpad(\"\", wCustomer) << \" | \"\n        sb << rpad(r.appName ?: \"-\", wApp) << \" | \"\n        sb << rpad(shortId(r.connectionId), wConnection) << \" | \"\n        sb << rpad(shortId(r.workflowId), wWorkflow) << \" | \"\n        sb << lpad(fmt(r.hits as long), wHits) << \" | \"\n        sb << lpad(String.format('%.1f', rowPct), wPct) << \"\\n\"\n    }\n\n    // Separator between customers (not after the last one)\n    if (idx < sortedCustomers.size() - 1) {\n        sb << sep(\"-\") << \"\\n\"\n    }\n}\n\n// ---- Grand total footer ----\nsb << sep(\"=\") << \"\\n\"\nsb << rpad(\"GRAND TOTAL\", wCustomer) << \" | \"\nsb << rpad(\"\", wApp) << \" | \"\nsb << rpad(\"\", wConnection) << \" | \"\nsb << rpad(\"\", wWorkflow) << \" | \"\nsb << lpad(fmt(grandTotal), wHits) << \" | \"\nsb << lpad(\"100.0\", wPct) << \"\\n\"\nsb << sep(\"=\") << \"\\n\"\nsb << \"```\"\n\nString message = sb.toString()\nreturn [message: message]",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"usage":{
+						"source":"{{ n_dN7CD.outputs.items }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_dN7CD.outputs.items[0] }}"
+					}
+				}
+			},
 			"skip":false,
-			"subTitle":"Stop",
-			"title":"Stop",
-			"type":"STOP"
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":1071,
+				"resourceName":"files_by_unifyapps_create_temp_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_RDQMO-1",
+			"id":"n_EXroN",
+			"index":11,
+			"inputs":{
+				"isTmp":true,
+				"initialContentType":"plainText",
+				"initialContent":"{{ n_LrOj7.outputs.result.message }}",
+				"type":"SINGLE",
+				"fileType":"txt"
+			},
+			"skip":false,
+			"subTitle":"Files by UnifyApps",
+			"title":"Create a file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":2460,
+				"resourceName":"utility_by_unifyapps_generate_public_url",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_RDQMO-1",
+			"id":"n_eJpRM",
+			"index":12,
+			"inputs":{
+				"file":"{{ n_EXroN.outputs.fileDetails }}",
+				"expiryTime":5
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Generate public file URL",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"resourceVersion":13323,
+				"connectionId":"664b36e267fe826a855d480d",
+				"resourceName":"slack_send_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_RDQMO-1",
+			"id":"n_vsVcA",
+			"index":13,
+			"inputs":{
+				"sendAsBot":true,
+				"filename":"OpenAI",
+				"select":"URL",
+				"length":"{{ n_EXroN.outputs.fileDetails.size }}",
+				"channel_id":"C09DG326BS7",
+				"URL":"{{ n_eJpRM.outputs.url }}"
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Send File in Channel",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -1117,5 +1174,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
