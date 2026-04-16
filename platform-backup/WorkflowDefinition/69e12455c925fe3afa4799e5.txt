@@ -6,46 +6,107 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_IBW1i",
+			"fromNodeId":"n_fYcIG",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_IGc1u",
+			"toNodeId":"n_xWKOQ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_xWKOQ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_7xaP8",
 			"type":"next"
 		}
 	],
 	"id":"69e12455c925fe3afa4799e5",
 	"lastModifiedBy":39,
 	"lcName":"utilitybyunifyappslocalxukelwbdeq",
-	"modifiedTime":1776362581806,
+	"modifiedTime":1776362596058,
 	"name":"UtilityByUnifyAppsLocalXUkeLwbDeQ",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IBW1i-1",
-			"id":"_IBW1i",
-			"index":0,
+			"id":"n_fYcIG",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result":{
+							"type":"string",
+							"title":"Result"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":3172,
+				"resourceName":"utility_by_unifyapps_generate_canonical_xml",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IBW1i-1",
-			"id":"_IGc1u",
-			"index":0,
+			"id":"n_xWKOQ",
+			"index":2,
+			"inputs":{
+				"input":"<user z=\"1\" a=\"2\" m=\"3\"/>"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Utility by UnifyApps",
+			"title":"Generate Canonical XML",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_IBW1i-1",
+			"id":"n_7xaP8",
+			"index":3,
+			"inputs":{
+				"result":{
+					"Result":"{{ n_xWKOQ.outputs.output }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +117,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
