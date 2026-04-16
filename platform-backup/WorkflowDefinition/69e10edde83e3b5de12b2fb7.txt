@@ -4,6 +4,15 @@
 	],
 	"createdTime":1776357085376,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1776357109881,
+		"deployedBy":39,
+		"deployedDefinitionId":"69e10ef5c925fe3afa4775f4",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_SynGZ",
@@ -80,7 +89,7 @@
 	"id":"69e10edde83e3b5de12b2fb7",
 	"lastModifiedBy":39,
 	"lcName":"usage | openai",
-	"modifiedTime":1776357107818,
+	"modifiedTime":1776357114625,
 	"name":"Usage | OpenAI",
 	"nodes":[
 		{
@@ -668,7 +677,7 @@
 			"index":5,
 			"inputs":{
 				"listSource":"{{ n_Pj6kD.outputs.result.result }}",
-				"captureIterations":true
+				"captureIterations":false
 			},
 			"skip":false,
 			"subTitle":"Loop",
@@ -1108,5 +1117,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
