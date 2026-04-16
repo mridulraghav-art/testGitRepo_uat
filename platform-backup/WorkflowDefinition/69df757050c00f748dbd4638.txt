@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776252272052,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1776252319116,
+		"deployedAt":1776318665337,
 		"deployedBy":39,
-		"deployedDefinitionId":"69df759ef639075435ba954f",
+		"deployedDefinitionId":"69e078c901d163578913075d",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":1
+		"version":2,
+		"workflowVersion":2
 	},
 	"edges":[
 		{
@@ -32,7 +32,7 @@
 	"id":"69df757050c00f748dbd4638",
 	"lastModifiedBy":39,
 	"lcName":"cfgvb",
-	"modifiedTime":1776318662037,
+	"modifiedTime":1776335678056,
 	"name":"cfgvb",
 	"nodes":[
 		{
@@ -42,7 +42,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_YFCx6-1",
 			"id":"n_lTuzC",
@@ -61,6 +61,9 @@
 			"type":"START"
 		},
 		{
+			"additional":{
+				"xsdSchemaConfig":{}
+			},
 			"context":{
 				"appName":"variable_by_unifyapps",
 				"resourceVersion":1643,
@@ -68,7 +71,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_YFCx6-1",
 			"id":"n_2NnAl",
@@ -77,36 +80,12 @@
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
 				"layout":{},
-				"schema":{
-					"additionalProperties":false,
-					"type":"object",
-					"properties":{
-						"esrdfcv":{
-							"type":"string",
-							"title":"Esrdfcv"
-						}
-					},
-					"required":[
-						"esrdfcv"
-					]
-				}
+				"schema":{}
 			},
 			"inputs":{},
 			"outputSchema":{
 				"dynamic":false,
-				"schema":{
-					"additionalProperties":false,
-					"type":"object",
-					"properties":{
-						"esrdfcv":{
-							"type":"string",
-							"title":"Esrdfcv"
-						}
-					},
-					"required":[
-						"esrdfcv"
-					]
-				}
+				"schema":{}
 			},
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
@@ -121,7 +100,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_YFCx6-1",
 			"id":"n_1t6XT",
@@ -154,5 +133,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
