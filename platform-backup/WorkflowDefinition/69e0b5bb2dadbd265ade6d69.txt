@@ -6,46 +6,67 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_28YH4",
+			"fromNodeId":"n_l49Nh",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_B1qL4",
+			"toNodeId":"n_9mWJy",
 			"type":"next"
 		}
 	],
 	"id":"69e0b5bb2dadbd265ade6d69",
 	"lastModifiedBy":39,
 	"lcName":"hgy",
-	"modifiedTime":1776334267069,
+	"modifiedTime":1776334276356,
 	"name":"hgy",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_28YH4-1",
-			"id":"_28YH4",
-			"index":0,
+			"id":"n_l49Nh",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_28YH4-1",
-			"id":"_B1qL4",
-			"index":0,
+			"id":"n_9mWJy",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +77,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
