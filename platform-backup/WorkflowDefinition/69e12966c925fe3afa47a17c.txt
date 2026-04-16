@@ -6,46 +6,107 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_sGFMg",
+			"fromNodeId":"n_36uk7",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_ltQ1v",
+			"toNodeId":"n_Zgybl",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Zgybl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_aDPBP",
 			"type":"next"
 		}
 	],
 	"id":"69e12966c925fe3afa47a17c",
 	"lastModifiedBy":39,
 	"lcName":"utilitybyunifyappslocalptkmuhnvxv",
-	"modifiedTime":1776363878613,
+	"modifiedTime":1776363887972,
 	"name":"UtilityByUnifyAppsLocalPTKmUHnvxV",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sGFMg-1",
-			"id":"_sGFMg",
-			"index":0,
+			"id":"n_36uk7",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result":{
+							"type":"string",
+							"title":"Result"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":3172,
+				"resourceName":"utility_by_unifyapps_generate_canonical_xml",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sGFMg-1",
-			"id":"_ltQ1v",
-			"index":0,
+			"id":"n_Zgybl",
+			"index":2,
+			"inputs":{
+				"input":"<root><a>1</root>"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Utility by UnifyApps",
+			"title":"Generate Canonical XML",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_sGFMg-1",
+			"id":"n_aDPBP",
+			"index":3,
+			"inputs":{
+				"result":{
+					"Result":"{{ n_Zgybl.outputs.output }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +117,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
