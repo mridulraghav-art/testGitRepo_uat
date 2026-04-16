@@ -33,7 +33,7 @@
 	"id":"69e091a501d163578913bae1",
 	"lastModifiedBy":39,
 	"lcName":"duplicate condition 21776325023679",
-	"modifiedTime":1776325040837,
+	"modifiedTime":1776325054633,
 	"name":"duplicate condition 21776325023679",
 	"nodes":[
 		{
@@ -73,6 +73,12 @@
 			"index":2,
 			"inputs":{
 				"filters":[
+					{
+						"property":"{{ n_Z8rYq.outputs.shipping_address.zip }}{{ n_Z8rYq.outputs.current_total_discounts_set.shop_money.amount }}{{ n_Z8rYq.outputs.landing_site }}{{ n_Z8rYq.outputs.discount_allocations }}",
+						"filter":{
+							"operator":"MISSING"
+						}
+					},
 					{
 						"property":"{{ n_Z8rYq.outputs.shipping_address.zip }}{{ n_Z8rYq.outputs.current_total_discounts_set.shop_money.amount }}{{ n_Z8rYq.outputs.landing_site }}{{ n_Z8rYq.outputs.discount_allocations }}",
 						"filter":{
@@ -139,5 +145,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
