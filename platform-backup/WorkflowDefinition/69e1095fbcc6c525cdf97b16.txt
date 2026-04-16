@@ -5,47 +5,44 @@
 	"createdTime":1776355679558,
 	"deleted":false,
 	"edges":[
-		{
-			"fromNodeId":"_H6WMs",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_2RFKR",
-			"type":"next"
-		}
+		
 	],
 	"id":"69e1095fbcc6c525cdf97b16",
 	"lastModifiedBy":39,
 	"lcName":"dfc",
-	"modifiedTime":1776355679558,
+	"modifiedTime":1776355686054,
 	"name":"dfc",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_H6WMs-1",
-			"id":"_H6WMs",
-			"index":0,
+			"id":"n_pcK7g",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_H6WMs-1",
-			"id":"_2RFKR",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +53,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
