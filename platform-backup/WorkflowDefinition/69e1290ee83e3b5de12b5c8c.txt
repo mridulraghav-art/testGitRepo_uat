@@ -6,46 +6,107 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_6pgYy",
+			"fromNodeId":"n_zSiGT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_cibqP",
+			"toNodeId":"n_MLh25",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_MLh25",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_cvHxR",
 			"type":"next"
 		}
 	],
 	"id":"69e1290ee83e3b5de12b5c8c",
 	"lastModifiedBy":39,
 	"lcName":"utilitybyunifyappslocalnikohbnmfx",
-	"modifiedTime":1776363790622,
+	"modifiedTime":1776363802063,
 	"name":"UtilityByUnifyAppsLocalniKOhbNMfx",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_6pgYy-1",
-			"id":"_6pgYy",
-			"index":0,
+			"id":"n_zSiGT",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result":{
+							"type":"string",
+							"title":"Result"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":3172,
+				"resourceName":"utility_by_unifyapps_generate_canonical_xml",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_6pgYy-1",
-			"id":"_cibqP",
-			"index":0,
+			"id":"n_MLh25",
+			"index":2,
+			"inputs":{
+				"input":"<user age=\"25\" name=\"John\"></user>"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Utility by UnifyApps",
+			"title":"Generate Canonical XML",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_6pgYy-1",
+			"id":"n_cvHxR",
+			"index":3,
+			"inputs":{
+				"result":{
+					"Result":"{{ n_MLh25.outputs.output }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +117,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
