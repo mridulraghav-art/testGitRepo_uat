@@ -6,46 +6,109 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_ZNX1T",
+			"fromNodeId":"n_WDsDK",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_SGhI6",
+			"toNodeId":"n_tyQu7",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_tyQu7",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_n0e4g",
 			"type":"next"
 		}
 	],
 	"id":"69e093bdfa75ed2b9b974bb2",
 	"lastModifiedBy":39,
 	"lcName":"fghjk",
-	"modifiedTime":1776325565104,
+	"modifiedTime":1776325614299,
 	"name":"fghjk",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ZNX1T-1",
-			"id":"_ZNX1T",
-			"index":0,
+			"id":"n_WDsDK",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":824,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ZNX1T-1",
-			"id":"_SGhI6",
-			"index":0,
+			"id":"n_tyQu7",
+			"index":2,
+			"inputs":{
+				"fileName":"test",
+				"url":"https://sample-files.com/downloads/documents/pdf/basic-text.pdf",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":965,
+				"resourceName":"utility_by_unifyapps_compress_media",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_ZNX1T-1",
+			"id":"n_n0e4g",
+			"index":3,
+			"inputs":{
+				"imageDPI":150,
+				"fileDetails":"{{ n_tyQu7.outputs.fileDetails }}",
+				"outputQuality":0.8,
+				"bitRate":800000,
+				"removeMetadata":true,
+				"scale":1,
+				"removeRevisions":true,
+				"compressionLevel":9,
+				"contentType":"pdf",
+				"imageQuality":0.7
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Compress media content",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +119,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
