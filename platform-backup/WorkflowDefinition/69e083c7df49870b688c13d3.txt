@@ -52,7 +52,7 @@
 	"id":"69e083c7df49870b688c13d3",
 	"lastModifiedBy":39,
 	"lcName":"excelbyuni",
-	"modifiedTime":1776321682607,
+	"modifiedTime":1776321876291,
 	"name":"ExcelByuni",
 	"nodes":[
 		{
@@ -62,7 +62,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_IY6XT-1",
 			"id":"n_t0JXR",
@@ -84,7 +84,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_IY6XT-1",
 			"id":"n_P9uqR",
@@ -107,7 +107,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IY6XT-1",
 			"id":"n_DXaXO",
@@ -369,7 +369,7 @@
 			"id":"n_fikXz",
 			"index":4,
 			"inputs":{
-				"startFromRow":2,
+				"startFromRow":0,
 				"consumptionBehaviour":"string",
 				"file":"{{ n_P9uqR.outputs.fileDetails }}",
 				"useStreaming":false,
@@ -382,7 +382,7 @@
 				"batchSize":100,
 				"fileType":"xlsx",
 				"skipEmptyRows":false,
-				"startFromColumn":2
+				"startFromColumn":0
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
@@ -397,7 +397,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_fikXz@_IY6XT-1@l",
 			"id":"n_NZzyk",
@@ -420,7 +420,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_IY6XT-1",
 			"id":"n_YW2p5",
@@ -448,5 +448,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
