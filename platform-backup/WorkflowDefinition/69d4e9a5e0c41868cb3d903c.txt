@@ -25,7 +25,7 @@
 	"id":"69d4e9a5e0c41868cb3d903c",
 	"lastModifiedBy":39,
 	"lcName":"fwedwedwe",
-	"modifiedTime":1776266284973,
+	"modifiedTime":1776366479671,
 	"name":"fwedwedwe",
 	"nodes":[
 		{
@@ -67,7 +67,7 @@
 			"id":"n_Z2mUX",
 			"index":2,
 			"inputs":{
-				"code":"const collectionName = \"66894f139e900f59590b6adb\";\n        const targetDB = db.getSiblingDB(\"UnifyApp_ENTITY_1\");\n\n        const now = Date.now();\n        const sixtyDaysAgo = now - (60 * 24 * 60 * 60 * 1000);\n        const oneDay = 24 * 60 * 60 * 1000;\n\n        let batchStart = 0;\n        let totalDeleted = 0;\n\n        while (batchStart < sixtyDaysAgo) {\n        const batchEnd = batchStart + oneDay;\n\n        const query = {\n            cTm: { $gte: batchStart, $lt: batchEnd }\n        };\n\n        const deleted = targetDB.getCollection(collectionName).deleteMany(query);\n        print(`Deleted ${deleted.deletedCount} documents with cTm from ${new Date(batchStart).toISOString()} to ${new Date(batchEnd).toISOString()}`);\n\n        totalDeleted += deleted.deletedCount;\n        batchStart = batchEnd;\n        }\n\n        print(`Deletion complete. Total documents deleted: ${totalDeleted}`);",
+				"code":"",
 				"compile_static":false,
 				"captureStdOutput":false
 			},
@@ -91,5 +91,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
