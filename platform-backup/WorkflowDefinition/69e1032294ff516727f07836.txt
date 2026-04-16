@@ -9,6 +9,20 @@
 			"fromNodeId":"n_xITrT",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_Fvqr7",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Fvqr7",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_RnUff",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_RnUff",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_HdQ6R",
 			"type":"next"
 		},
@@ -23,7 +37,7 @@
 	"id":"69e1032294ff516727f07836",
 	"lastModifiedBy":39,
 	"lcName":"utilitybyunifyappslocalwkpwwiqwgz",
-	"modifiedTime":1776354093037,
+	"modifiedTime":1776355063660,
 	"name":"UtilityByUnifyAppsLocalwKpWWiQWGz",
 	"nodes":[
 		{
@@ -33,7 +47,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_ZJil3-1",
 			"id":"n_xITrT",
@@ -60,6 +74,51 @@
 		},
 		{
 			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":2032,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_ZJil3-1",
+			"id":"n_Fvqr7",
+			"index":2,
+			"inputs":{
+				"fileName":"test",
+				"url":"https://sample-files.com/downloads/documents/pdf/basic-text.pdf",
+				"option":"url"
+			},
+			"skip":false,
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":2938,
+				"resourceName":"utility_by_unifyapps_encode_file_to_base64",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_ZJil3-1",
+			"id":"n_RnUff",
+			"index":3,
+			"inputs":{
+				"fileDetails":"{{ n_Fvqr7.outputs.fileDetails }}",
+				"characterSet":"Binary(no.conv)"
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Encode file content",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"utility_by_unifyapps",
 				"resourceVersion":3170,
 				"resourceName":"utility_by_unifyapps_download_multiple_files_from_urls",
@@ -70,14 +129,14 @@
 			"fallbackMode":"STOP",
 			"groupId":"_ZJil3-1",
 			"id":"n_HdQ6R",
-			"index":2,
+			"index":4,
 			"inputs":{
 				"urls":[
 					"https://sample-files.com/downloads/documents/pdf/basic-text.pdf",
 					"https://sample-files.com/downloads/documents/docx/sample-files.com-formatted-report.docx"
 				]
 			},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Utility by UnifyApps",
 			"title":"Download multiple files from list of URL's",
 			"type":"ACTION"
@@ -94,10 +153,10 @@
 			"fallbackMode":"STOP",
 			"groupId":"_ZJil3-1",
 			"id":"n_nGrqA",
-			"index":3,
+			"index":5,
 			"inputs":{
 				"result":{
-					"Result":"{{ n_HdQ6R.outputs.filesDetails }}"
+					"Result":"{{ n_RnUff.outputs.fileDetails }}"
 				}
 			},
 			"skip":false,
@@ -120,5 +179,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
