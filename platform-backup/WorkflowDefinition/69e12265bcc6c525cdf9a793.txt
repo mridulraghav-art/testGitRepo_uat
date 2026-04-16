@@ -6,46 +6,107 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_nnTIo",
+			"fromNodeId":"n_1649H",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_mMi7X",
+			"toNodeId":"n_qErmQ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_qErmQ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_vsj8k",
 			"type":"next"
 		}
 	],
 	"id":"69e12265bcc6c525cdf9a793",
 	"lastModifiedBy":39,
 	"lcName":"utilitybyunifyappslocalojjhzcydgb",
-	"modifiedTime":1776362085842,
+	"modifiedTime":1776362095090,
 	"name":"UtilityByUnifyAppsLocaloJJHZCYdgb",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_nnTIo-1",
-			"id":"_nnTIo",
-			"index":0,
+			"id":"n_1649H",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result":{
+							"type":"string",
+							"title":"Result"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":3172,
+				"resourceName":"utility_by_unifyapps_generate_canonical_xml",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_nnTIo-1",
-			"id":"_mMi7X",
-			"index":0,
+			"id":"n_qErmQ",
+			"index":2,
+			"inputs":{
+				"input":"<user ae=\"John\" age=\"25\"/>"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Utility by UnifyApps",
+			"title":"Generate Canonical XML",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_nnTIo-1",
+			"id":"n_vsj8k",
+			"index":3,
+			"inputs":{
+				"result":{
+					"Result":"{{ n_qErmQ.outputs.output }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +117,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
