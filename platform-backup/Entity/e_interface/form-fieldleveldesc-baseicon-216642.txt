@@ -2,9 +2,29 @@
 	"createdTime":1776348409196,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"form-fieldleveldesc-baseicon-216642",
 	"lastModifiedBy":39,
-	"modifiedTime":1776348410922,
+	"modifiedTime":1776348415197,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -210,6 +230,9 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
 			"e_69e0ecfa71994e129d946399":"homepage",
 			"e_global_form-fieldleveldesc-baseicon-216642":"global-page-of-form-fieldleveldesc-baseicon-216642"
@@ -242,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
