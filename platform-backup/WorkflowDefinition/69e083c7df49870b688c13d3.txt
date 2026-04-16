@@ -52,7 +52,7 @@
 	"id":"69e083c7df49870b688c13d3",
 	"lastModifiedBy":39,
 	"lcName":"excelbyuni",
-	"modifiedTime":1776323815336,
+	"modifiedTime":1776323868376,
 	"name":"ExcelByuni",
 	"nodes":[
 		{
@@ -107,7 +107,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_IY6XT-1",
 			"id":"n_DXaXO",
@@ -370,7 +370,7 @@
 			"index":4,
 			"inputs":{
 				"startFromRow":0,
-				"consumptionBehaviour":"cell_type",
+				"consumptionBehaviour":"string",
 				"file":"{{ n_P9uqR.outputs.fileDetails }}",
 				"useStreaming":false,
 				"headerRow":true,
@@ -381,7 +381,7 @@
 				"evaluateFormulae":true,
 				"batchSize":100,
 				"fileType":"xlsx",
-				"skipEmptyRows":false,
+				"skipEmptyRows":true,
 				"startFromColumn":0
 			},
 			"skip":false,
@@ -448,5 +448,5 @@
 		}
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
