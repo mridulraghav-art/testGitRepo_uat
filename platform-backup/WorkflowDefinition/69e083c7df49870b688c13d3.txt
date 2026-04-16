@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776321479254,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_IY6XT",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Cb22S",
+			"type":"next"
+		}
+	],
+	"id":"69e083c7df49870b688c13d3",
+	"lastModifiedBy":39,
+	"lcName":"excelbyuni",
+	"modifiedTime":1776321479254,
+	"name":"ExcelByuni",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_IY6XT-1",
+			"id":"_IY6XT",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_IY6XT-1",
+			"id":"_Cb22S",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
