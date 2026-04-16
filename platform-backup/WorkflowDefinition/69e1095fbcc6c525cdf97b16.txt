@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776355679558,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_H6WMs",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_2RFKR",
+			"type":"next"
+		}
+	],
+	"id":"69e1095fbcc6c525cdf97b16",
+	"lastModifiedBy":39,
+	"lcName":"dfc",
+	"modifiedTime":1776355679558,
+	"name":"dfc",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_H6WMs-1",
+			"id":"_H6WMs",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_H6WMs-1",
+			"id":"_2RFKR",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
