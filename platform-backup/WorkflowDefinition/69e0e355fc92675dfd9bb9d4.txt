@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776345941136,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1776345959157,
+		"deployedAt":1776346006521,
 		"deployedBy":39,
-		"deployedDefinitionId":"69e0e366f43f1463808dfdef",
+		"deployedDefinitionId":"69e0e396f43f1463808dfe63",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":2
+		"version":2,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
@@ -20,12 +20,19 @@
 			"skip":false,
 			"toNodeId":"n_UEOLV",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UEOLV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_51PCv",
+			"type":"next"
 		}
 	],
 	"id":"69e0e355fc92675dfd9bb9d4",
 	"lastModifiedBy":39,
 	"lcName":"fvc",
-	"modifiedTime":1776346004903,
+	"modifiedTime":1776346049139,
 	"name":"fvc",
 	"nodes":[
 		{
@@ -61,7 +68,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_egzLO-1",
 			"id":"n_UEOLV",
@@ -87,6 +94,28 @@
 			"subTitle":"Va",
 			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":1927,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_egzLO-1",
+			"id":"n_51PCv",
+			"index":3,
+			"inputs":{
+				"field2":true
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -103,5 +132,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
