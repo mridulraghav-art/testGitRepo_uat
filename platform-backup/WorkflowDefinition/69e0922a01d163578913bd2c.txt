@@ -33,7 +33,7 @@
 	"id":"69e0922a01d163578913bd2c",
 	"lastModifiedBy":39,
 	"lcName":"duplicate condition 21776325155862",
-	"modifiedTime":1776325174592,
+	"modifiedTime":1776325180910,
 	"name":"duplicate condition 21776325155862",
 	"nodes":[
 		{
@@ -73,6 +73,12 @@
 			"index":2,
 			"inputs":{
 				"filters":[
+					{
+						"property":"{{ n_Y3nUt.outputs.shipping_address.zip }}{{ n_Y3nUt.outputs.current_total_discounts_set.shop_money.amount }}{{ n_Y3nUt.outputs.landing_site }}{{ n_Y3nUt.outputs.discount_allocations }}",
+						"filter":{
+							"operator":"MISSING"
+						}
+					},
 					{
 						"property":"{{ n_Y3nUt.outputs.shipping_address.zip }}{{ n_Y3nUt.outputs.current_total_discounts_set.shop_money.amount }}{{ n_Y3nUt.outputs.landing_site }}{{ n_Y3nUt.outputs.discount_allocations }}",
 						"filter":{
@@ -139,5 +145,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
