@@ -24,7 +24,7 @@
 	},
 	"id":"rescom-audioplayer-2177634906079535",
 	"lastModifiedBy":39,
-	"modifiedTime":1776349070420,
+	"modifiedTime":1776349076805,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69e0ef8eec607f4323a184bd":"homepage"
+			"e_69e0ef8eec607f4323a184bd":"homepage",
+			"e_global_rescom-audioplayer-2177634906079535":"global-page-of-rescom-audioplayer-2177634906079535"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_rescom-audioplayer-2177634906079535":{
+				"slug":"global-page-of-rescom-audioplayer-2177634906079535",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
