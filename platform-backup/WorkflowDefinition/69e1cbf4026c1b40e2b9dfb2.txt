@@ -7,46 +7,120 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_XXhwB",
+			"fromNodeId":"n_boiJd",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_QMrvo",
+			"toNodeId":"n_PvjUd",
 			"type":"next"
 		}
 	],
 	"id":"69e1cbf4026c1b40e2b9dfb2",
 	"lastModifiedBy":39,
 	"lcName":"build to preview 21776405487036",
-	"modifiedTime":1776405492185,
+	"modifiedTime":1776406835125,
 	"name":"build to preview 21776405487036",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_XXhwB-1",
-			"id":"_XXhwB",
-			"index":0,
+			"id":"n_boiJd",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"rt":{
+								"type":"array",
+								"items":{
+									"type":"string"
+								},
+								"title":"Rt"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"rt"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_XXhwB-1",
-			"id":"_QMrvo",
-			"index":0,
+			"id":"n_PvjUd",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"hieurf":{
+							"type":"string",
+							"title":"Hieurf"
+						}
+					},
+					"required":[
+						"hieurf"
+					]
+				}
+			},
+			"inputs":{
+				"hieurf":"{{ n_boiJd.outputs.body.rt }}"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"hieurf":{
+							"type":"string",
+							"title":"Hieurf"
+						}
+					},
+					"required":[
+						"hieurf"
+					]
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +134,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
