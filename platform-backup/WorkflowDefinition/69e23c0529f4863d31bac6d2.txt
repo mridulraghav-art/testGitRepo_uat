@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776434181931,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_apaGi",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_kb0cu",
+			"type":"next"
+		}
+	],
+	"id":"69e23c0529f4863d31bac6d2",
+	"lastModifiedBy":39,
+	"lcName":"dfgh",
+	"modifiedTime":1776434181931,
+	"name":"dfgh",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_apaGi-1",
+			"id":"_apaGi",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_apaGi-1",
+			"id":"_kb0cu",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
