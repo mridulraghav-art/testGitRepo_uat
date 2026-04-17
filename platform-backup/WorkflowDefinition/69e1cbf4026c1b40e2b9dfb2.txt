@@ -4,6 +4,15 @@
 	],
 	"createdTime":1776405492185,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1776406837463,
+		"deployedBy":39,
+		"deployedDefinitionId":"69e1d1353523ce120f61f16c",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"description":"description",
 	"edges":[
 		{
@@ -12,12 +21,35 @@
 			"skip":false,
 			"toNodeId":"n_PvjUd",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_PvjUd",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SQHNP",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SQHNP",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_4gAvG",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_SQHNP",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_tDtiw",
+			"type":"next"
 		}
 	],
 	"id":"69e1cbf4026c1b40e2b9dfb2",
 	"lastModifiedBy":39,
 	"lcName":"build to preview 21776405487036",
-	"modifiedTime":1776406835125,
+	"modifiedTime":1776407106152,
 	"name":"build to preview 21776405487036",
 	"nodes":[
 		{
@@ -27,7 +59,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_XXhwB-1",
 			"id":"n_boiJd",
@@ -69,7 +101,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_XXhwB-1",
 			"id":"n_PvjUd",
@@ -115,6 +147,146 @@
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceVersion":58,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_XXhwB-1",
+			"id":"n_SQHNP",
+			"index":3,
+			"inputs":{
+				"filters":[
+					{
+						"property":"1",
+						"filter":{
+							"operator":"EQUAL",
+							"value":"1"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_SQHNP@_XXhwB-1@y",
+			"id":"n_4gAvG",
+			"index":4,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"ftr":{
+							"type":"string",
+							"title":"Ftr"
+						}
+					},
+					"required":[
+						"ftr"
+					]
+				}
+			},
+			"inputs":{
+				"ftr":"{{ n_SQHNP.outputs.result }}"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"ftr":{
+							"type":"string",
+							"title":"Ftr"
+						}
+					},
+					"required":[
+						"ftr"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1643,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_SQHNP@_XXhwB-1@n",
+			"id":"n_tDtiw",
+			"index":5,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"erfc":{
+							"type":"string",
+							"title":"Erfc"
+						}
+					},
+					"required":[
+						"erfc"
+					]
+				}
+			},
+			"inputs":{
+				"erfc":"{{ n_PvjUd.outputs.hieurf }}"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"erfc":{
+							"type":"string",
+							"title":"Erfc"
+						}
+					},
+					"required":[
+						"erfc"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -134,5 +306,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
