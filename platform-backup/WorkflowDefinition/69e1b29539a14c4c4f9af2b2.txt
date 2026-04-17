@@ -37,12 +37,14 @@
 	"id":"69e1b29539a14c4c4f9af2b2",
 	"lastModifiedBy":39,
 	"lcName":"excel",
-	"modifiedTime":1776399059661,
+	"modifiedTime":1776399065722,
 	"name":"excel",
 	"nodes":[
 		{
 			"context":{
-				"appName":"callables"
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
 			"dirty":true,
@@ -50,9 +52,10 @@
 			"groupId":"_auZto-1",
 			"id":"n_9N9g8",
 			"index":1,
+			"inputs":{},
 			"skip":false,
 			"subTitle":"Callable",
-			"title":"Select a trigger event",
+			"title":"Trigger via automation",
 			"trigger":{
 				"type":"CALLABLE"
 			},
@@ -171,5 +174,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
