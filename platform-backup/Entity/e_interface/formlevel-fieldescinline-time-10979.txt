@@ -2,9 +2,29 @@
 	"createdTime":1776404960435,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"formlevel-fieldescinline-time-10979",
 	"lastModifiedBy":39,
-	"modifiedTime":1776404960435,
+	"modifiedTime":1776404964003,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -20,15 +40,20 @@
 			"_counter":{
 				"_moduleCount":0,
 				"_mqttTopicCounter":0,
-				"_pageCount":0
+				"_pageCount":1
 			}
 		},
 		"navigation":{
 			"secondary":[],
-			"defaultPageId":"",
+			"defaultPageId":"e_69e1c9e10eac4c1b09d9135f",
 			"appearance":{
 				"SM":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_t9cEn",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -57,10 +82,16 @@
 						"padding":{
 							"all":"p-0"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"LG":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_t9cEn",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -95,10 +126,16 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"XL":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_t9cEn",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"expandable"
@@ -133,10 +170,16 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"MD":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_t9cEn",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -171,10 +214,25 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				}
 			},
-			"primary":[]
+			"primary":[
+				{
+					"activeIcon":"Zap",
+					"name":"Homepage",
+					"icon":"Zap",
+					"id":"nav_t9cEn",
+					"type":"PAGE",
+					"pageId":"e_69e1c9e10eac4c1b09d9135f",
+					"slug":"homepage"
+				}
+			]
+		},
+		"interfacePageIdVsSlugMap":{
+			"e_global_formlevel-fieldescinline-time-10979":"global-page-of-formlevel-fieldescinline-time-10979",
+			"e_69e1c9e10eac4c1b09d9135f":"homepage"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -186,11 +244,23 @@
 		"type":"application",
 		"locale":{
 			"defaultLocale":"en-US"
+		},
+		"entityDetailsMap":{
+			"e_global_formlevel-fieldescinline-time-10979":{
+				"slug":"global-page-of-formlevel-fieldescinline-time-10979",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_69e1c9e10eac4c1b09d9135f":{
+				"slug":"homepage",
+				"isPublic":false,
+				"type":"PAGE"
+			}
 		}
 	},
 	"standard":false,
 	"tags":[
 		"dnt-application"
 	],
-	"version":0
+	"version":3
 }
