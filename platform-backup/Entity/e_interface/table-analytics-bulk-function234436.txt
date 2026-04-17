@@ -2,9 +2,29 @@
 	"createdTime":1776410077460,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"table-analytics-bulk-function234436",
 	"lastModifiedBy":39,
-	"modifiedTime":1776410078916,
+	"modifiedTime":1776410080017,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -211,7 +231,8 @@
 			]
 		},
 		"interfacePageIdVsSlugMap":{
-			"e_69e1dddeec607f4323a25f9d":"homepage"
+			"e_69e1dddeec607f4323a25f9d":"homepage",
+			"e_global_table-analytics-bulk-function234436":"global-page-of-table-analytics-bulk-function234436"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -229,6 +250,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_table-analytics-bulk-function234436":{
+				"slug":"global-page-of-table-analytics-bulk-function234436",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -236,5 +262,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":3
 }
