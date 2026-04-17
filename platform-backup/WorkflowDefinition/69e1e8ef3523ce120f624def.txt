@@ -18,12 +18,19 @@
 			"skip":false,
 			"toNodeId":"n_AcM7T",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_AcM7T",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_C36wH",
+			"type":"next"
 		}
 	],
 	"id":"69e1e8ef3523ce120f624def",
 	"lastModifiedBy":39,
 	"lcName":"cecwee",
-	"modifiedTime":1776413402926,
+	"modifiedTime":1776414883657,
 	"name":"cecwee",
 	"nodes":[
 		{
@@ -103,9 +110,42 @@
 				"listSource":"{{ n_JAk3P.outputs.edewdew }}",
 				"elementPosition":1
 			},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Utility by UnifyApps",
 			"title":"Get value at index from list",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.sortBy.items.field",
+					"root.sortBy.items.order"
+				]
+			},
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":3064,
+				"resourceName":"utility_by_unifyapps_sort_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Tnmm9-1",
+			"id":"n_C36wH",
+			"index":4,
+			"inputs":{
+				"listSource":"{{ n_JAk3P.outputs.edewdew }}",
+				"sortBy":[
+					{
+						"field":"{{ n_JAk3P.outputs.edewdew[0].dewdew }}",
+						"order":"ASC"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Sort list of objects",
 			"type":"ACTION"
 		}
 	],
@@ -123,5 +163,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
