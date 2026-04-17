@@ -2,9 +2,29 @@
 	"createdTime":1776406115757,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"undoremcomp-image-21776405275031413",
 	"lastModifiedBy":39,
-	"modifiedTime":1776406117196,
+	"modifiedTime":1776406118580,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -211,7 +231,8 @@
 			]
 		},
 		"interfacePageIdVsSlugMap":{
-			"e_69e1ce65ec607f4323a241d5":"homepage"
+			"e_69e1ce65ec607f4323a241d5":"homepage",
+			"e_global_undoremcomp-image-21776405275031413":"global-page-of-undoremcomp-image-21776405275031413"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -229,6 +250,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_undoremcomp-image-21776405275031413":{
+				"slug":"global-page-of-undoremcomp-image-21776405275031413",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -236,5 +262,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":3
 }
