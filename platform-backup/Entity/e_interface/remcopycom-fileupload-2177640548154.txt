@@ -24,7 +24,7 @@
 	},
 	"id":"remcopycom-fileupload-2177640548154",
 	"lastModifiedBy":39,
-	"modifiedTime":1776407412944,
+	"modifiedTime":1776407418416,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69e1d374ec607f4323a246b4":"homepage"
+			"e_69e1d374ec607f4323a246b4":"homepage",
+			"e_global_remcopycom-fileupload-2177640548154":"global-page-of-remcopycom-fileupload-2177640548154"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_remcopycom-fileupload-2177640548154":{
+				"slug":"global-page-of-remcopycom-fileupload-2177640548154",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
