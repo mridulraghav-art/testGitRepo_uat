@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776405707094,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_i4cQu",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_8HmGY",
+			"type":"next"
+		}
+	],
+	"id":"69e1cccbb896f4366a1f73a0",
+	"lastModifiedBy":39,
+	"lcName":"testautofil",
+	"modifiedTime":1776405707094,
+	"name":"testAutofil",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_i4cQu-1",
+			"id":"_i4cQu",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_i4cQu-1",
+			"id":"_8HmGY",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
