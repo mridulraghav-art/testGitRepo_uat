@@ -2,9 +2,29 @@
 	"createdTime":1776406013303,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"rescom-copilotvoice-217764052784685",
 	"lastModifiedBy":39,
-	"modifiedTime":1776406014698,
+	"modifiedTime":1776406020333,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -210,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69e1cdfeec607f4323a24192":"homepage"
+			"e_69e1cdfeec607f4323a24192":"homepage",
+			"e_global_rescom-copilotvoice-217764052784685":"global-page-of-rescom-copilotvoice-217764052784685"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -229,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_rescom-copilotvoice-217764052784685":{
+				"slug":"global-page-of-rescom-copilotvoice-217764052784685",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -236,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":5
 }
