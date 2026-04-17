@@ -6,46 +6,121 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_NWqji",
+			"fromNodeId":"n_YOG9a",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_4UsEo",
+			"toNodeId":"n_za3Qb",
 			"type":"next"
 		}
 	],
 	"id":"69e1e945e309256724616103",
 	"lastModifiedBy":39,
 	"lcName":"cecwecewec",
-	"modifiedTime":1776412997905,
+	"modifiedTime":1776413066792,
 	"name":"cecwecewec",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_NWqji-1",
-			"id":"_NWqji",
-			"index":0,
+			"id":"n_YOG9a",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"edewdew":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"dewdew":{
+										"type":"string",
+										"title":"Dewdew"
+									}
+								},
+								"additionalProperties":false,
+								"required":[
+									"dewdew"
+								]
+							},
+							"title":"Edewdew"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"cewewc":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"ecwedew":{
+										"type":"string",
+										"title":"Ecwedew"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"Cewewc"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_NWqji-1",
-			"id":"_4UsEo",
-			"index":0,
+			"id":"n_za3Qb",
+			"index":2,
+			"inputs":{
+				"result":{
+					"edewdew":{
+						"source":"{{ n_YOG9a.outputs.cewewc }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"dewdew":"{{ n_YOG9a.outputs.cewewc[0].ecwedew }}"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +131,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
