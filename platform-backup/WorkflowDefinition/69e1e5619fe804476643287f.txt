@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776412001162,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_wB8lf",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_0EhYa",
+			"type":"next"
+		}
+	],
+	"id":"69e1e5619fe804476643287f",
+	"lastModifiedBy":39,
+	"lcName":"gfvds",
+	"modifiedTime":1776412001162,
+	"name":"gfvds",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_wB8lf-1",
+			"id":"_wB8lf",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_wB8lf-1",
+			"id":"_0EhYa",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
