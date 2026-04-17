@@ -2,9 +2,29 @@
 	"createdTime":1776404713033,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"formlevel-fieldescinline-switc45045",
 	"lastModifiedBy":39,
-	"modifiedTime":1776404714109,
+	"modifiedTime":1776404720110,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -210,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69e1c8eaec607f4323a23a8a":"homepage"
+			"e_69e1c8eaec607f4323a23a8a":"homepage",
+			"e_global_formlevel-fieldescinline-switc45045":"global-page-of-formlevel-fieldescinline-switc45045"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -229,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_formlevel-fieldescinline-switc45045":{
+				"slug":"global-page-of-formlevel-fieldescinline-switc45045",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -236,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":5
 }
