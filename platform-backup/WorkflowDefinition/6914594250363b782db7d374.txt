@@ -1,0 +1,237 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776413767649,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"n_14vpp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_5sjrw",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_5sjrw",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_KdJ3x",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_KdJ3x",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_zbNDa",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_zbNDa",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_P5EYG",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_P5EYG",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_RAEpM",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_RAEpM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_lNhcm",
+			"type":"next"
+		}
+	],
+	"id":"6914594250363b782db7d374",
+	"lastModifiedBy":39,
+	"lcName":"dndshortenedurl ",
+	"modifiedTime":1776413767649,
+	"name":"DNDshortenedURL ",
+	"nodes":[
+		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":833,
+				"resourceName":"webhooks_default"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YVCUU-1",
+			"id":"n_14vpp",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
+			"skip":false,
+			"subTitle":"Webhook",
+			"title":"New event",
+			"trigger":{
+				"type":"WEBHOOK"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"url_shortener_by_unifyapps",
+				"resourceVersion":38,
+				"resourceName":"url_shortener_by_unifyapps_shorten_url",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YVCUU-1",
+			"id":"n_5sjrw",
+			"index":2,
+			"inputs":{
+				"redirectUrl":"https://www.google.com",
+				"shortCodeLength":7,
+				"title":"QA2 Automations Page1"
+			},
+			"skip":false,
+			"subTitle":"URL Shortener by UnifyApps",
+			"title":"Shorten URL",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"url_shortener_by_unifyapps",
+				"resourceVersion":40,
+				"resourceName":"url_shortener_by_unifyapps_resolve_short_code",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YVCUU-1",
+			"id":"n_KdJ3x",
+			"index":3,
+			"inputs":{
+				"shortCode":"{{ n_5sjrw.outputs.shortCode }}"
+			},
+			"skip":false,
+			"subTitle":"URL Shortener by UnifyApps",
+			"title":"Resolve Shortened URL",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"url_shortener_by_unifyapps",
+				"resourceVersion":39,
+				"resourceName":"url_shortener_by_unifyapps_search_mappings",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YVCUU-1",
+			"id":"n_zbNDa",
+			"index":4,
+			"inputs":{
+				"offest":0,
+				"titleQuery":"QA2 Automations Page",
+				"sortOrder":"ASC",
+				"limit":20
+			},
+			"skip":false,
+			"subTitle":"URL Shortener by UnifyApps",
+			"title":"Search Existing Shortened URLS",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"url_shortener_by_unifyapps",
+				"resourceVersion":36,
+				"resourceName":"url_shortener_by_unifyapps_update_redirect_url",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YVCUU-1",
+			"id":"n_P5EYG",
+			"index":5,
+			"inputs":{
+				"shortCode":"{{ n_5sjrw.outputs.shortCode }}",
+				"newRedirectUrl":"https://qa2.unifyapps.com/p/0/automations"
+			},
+			"skip":false,
+			"subTitle":"URL Shortener by UnifyApps",
+			"title":"Update Redirect URL",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"url_shortener_by_unifyapps",
+				"resourceVersion":40,
+				"resourceName":"url_shortener_by_unifyapps_resolve_short_code",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YVCUU-1",
+			"id":"_RAEpM",
+			"index":6,
+			"inputs":{
+				"shortCode":"{{ n_5sjrw.outputs.shortCode }}"
+			},
+			"skip":false,
+			"subTitle":"URL Shortener by UnifyApps",
+			"title":"Resolve Shortened URL",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"url_shortener_by_unifyapps",
+				"resourceVersion":41,
+				"resourceName":"url_shortener_by_unifyapps_remove_urls",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YVCUU-1",
+			"id":"n_lNhcm",
+			"index":7,
+			"inputs":{
+				"shortCodeList":{
+					"source":"{{ n_zbNDa.outputs.objects }}",
+					"ua:type":"mappedArray",
+					"items":"{{ n_zbNDa.outputs.objects[0].shortCode }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"URL Shortener by UnifyApps",
+			"title":"Remove Shortened URLs",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":5
+}
