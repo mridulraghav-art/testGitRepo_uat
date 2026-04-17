@@ -37,7 +37,7 @@
 	"id":"69e1b29539a14c4c4f9af2b2",
 	"lastModifiedBy":39,
 	"lcName":"excel",
-	"modifiedTime":1776399228883,
+	"modifiedTime":1776399523888,
 	"name":"excel",
 	"nodes":[
 		{
@@ -92,17 +92,17 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_auZto-1",
 			"id":"n_g3EHk",
 			"index":3,
 			"inputs":{
-				"replaceOriginal":false,
+				"replaceOriginal":true,
 				"fileDetails":"{{ n_zJssf.outputs.fileDetails }}",
 				"deleteOtherSheets":false,
 				"newSheetName":"sample",
-				"duplicateFromSheet":true,
+				"duplicateFromSheet":false,
 				"sourceSheetName":"Sheet1",
 				"fileType":"xlsx"
 			},
@@ -114,8 +114,8 @@
 		{
 			"context":{
 				"appName":"excel_by_unifyapps",
-				"resourceVersion":1664,
-				"resourceName":"excel_by_unifyapps_extract_data",
+				"resourceVersion":2165,
+				"resourceName":"excel_by_unifyapps_list_sheet_names",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -125,18 +125,12 @@
 			"id":"n_DRnJT",
 			"index":4,
 			"inputs":{
-				"flattenMergedCells":false,
-				"endColumn":2,
 				"fileDetails":"{{ n_g3EHk.outputs.fileDetails }}",
-				"sheetName":"sample",
-				"startRow":0,
-				"startColumn":0,
-				"endRow":2,
-				"fileType":"xlsx"
+				"fileType":"XLSX"
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
-			"title":"Extract Excel Data",
+			"title":"List sheet names in an Excel file",
 			"type":"ACTION"
 		},
 		{
@@ -147,7 +141,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_auZto-1",
 			"id":"n_tl3QN",
@@ -175,5 +169,5 @@
 		}
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
