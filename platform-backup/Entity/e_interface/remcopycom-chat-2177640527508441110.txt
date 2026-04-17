@@ -24,7 +24,7 @@
 	},
 	"id":"remcopycom-chat-2177640527508441110",
 	"lastModifiedBy":39,
-	"modifiedTime":1776407160635,
+	"modifiedTime":1776407165609,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69e1d278ec607f4323a24568":"homepage"
+			"e_69e1d278ec607f4323a24568":"homepage",
+			"e_global_remcopycom-chat-2177640527508441110":"global-page-of-remcopycom-chat-2177640527508441110"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_remcopycom-chat-2177640527508441110":{
+				"slug":"global-page-of-remcopycom-chat-2177640527508441110",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
