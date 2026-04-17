@@ -24,7 +24,7 @@
 	},
 	"id":"rescom-module-21776404733996050259",
 	"lastModifiedBy":39,
-	"modifiedTime":1776405143727,
+	"modifiedTime":1776405149437,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -230,8 +230,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_69e1ca97ec607f4323a23d9e":"homepage"
+			"e_69e1ca97ec607f4323a23d9e":"homepage",
+			"e_global_rescom-module-21776404733996050259":"global-page-of-rescom-module-21776404733996050259"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -249,6 +253,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_rescom-module-21776404733996050259":{
+				"slug":"global-page-of-rescom-module-21776404733996050259",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -256,5 +265,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
