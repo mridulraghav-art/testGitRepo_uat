@@ -37,7 +37,7 @@
 	"id":"69e1b29539a14c4c4f9af2b2",
 	"lastModifiedBy":39,
 	"lcName":"excel",
-	"modifiedTime":1776399153716,
+	"modifiedTime":1776399228883,
 	"name":"excel",
 	"nodes":[
 		{
@@ -126,11 +126,12 @@
 			"index":4,
 			"inputs":{
 				"flattenMergedCells":false,
-				"endColumn":10,
+				"endColumn":2,
+				"fileDetails":"{{ n_g3EHk.outputs.fileDetails }}",
 				"sheetName":"sample",
-				"startRow":1,
-				"startColumn":1,
-				"endRow":10,
+				"startRow":0,
+				"startColumn":0,
+				"endRow":2,
 				"fileType":"xlsx"
 			},
 			"skip":false,
@@ -174,5 +175,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
