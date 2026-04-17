@@ -4,6 +4,15 @@
 	],
 	"createdTime":1776412911274,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1776441309617,
+		"deployedBy":39,
+		"deployedDefinitionId":"69e257dde22e321416cb8621",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":6
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_QFYxr",
@@ -16,7 +25,7 @@
 	"id":"69e1e8ef3523ce120f624def",
 	"lastModifiedBy":39,
 	"lcName":"cecwee",
-	"modifiedTime":1776441307171,
+	"modifiedTime":1776441680035,
 	"name":"cecwee",
 	"nodes":[
 		{
@@ -102,7 +111,7 @@
 				},
 				"retryConfig":{
 					"backOffFactor":2.0,
-					"captureRetries":true,
+					"captureRetries":false,
 					"count":4,
 					"enabled":true,
 					"initialDelay":1000,
@@ -139,5 +148,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
