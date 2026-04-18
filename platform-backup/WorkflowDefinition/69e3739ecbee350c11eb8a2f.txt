@@ -40,12 +40,19 @@
 			"skip":false,
 			"toNodeId":"n_XgtrG",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_XgtrG",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_raMfN",
+			"type":"next"
 		}
 	],
 	"id":"69e3739ecbee350c11eb8a2f",
 	"lastModifiedBy":39,
 	"lcName":"pipeline_task",
-	"modifiedTime":1776514596406,
+	"modifiedTime":1776514627050,
 	"name":"pipeline_task",
 	"nodes":[
 		{
@@ -186,6 +193,27 @@
 			"subTitle":"Standard entities by UnifyApps",
 			"title":"Deploy a pipeline",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_iIkyp-1",
+			"id":"n_raMfN",
+			"index":6,
+			"inputs":{
+				"result":"Success"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -202,5 +230,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
