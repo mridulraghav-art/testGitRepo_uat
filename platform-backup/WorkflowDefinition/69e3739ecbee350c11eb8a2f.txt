@@ -4,6 +4,15 @@
 	],
 	"createdTime":1776513950402,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1776515041564,
+		"deployedBy":39,
+		"deployedDefinitionId":"69e377e1e82a564435f8424a",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":4
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_8UIOs",
@@ -51,9 +60,9 @@
 	],
 	"id":"69e3739ecbee350c11eb8a2f",
 	"lastModifiedBy":39,
-	"lcName":"pipeline_task",
-	"modifiedTime":1776514942438,
-	"name":"pipeline_task",
+	"lcName":"dnd_pipeline_task",
+	"modifiedTime":1776515112942,
+	"name":"DND_pipeline_task",
 	"nodes":[
 		{
 			"context":{
@@ -62,7 +71,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_iIkyp-1",
 			"id":"n_8UIOs",
@@ -214,7 +223,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_iIkyp-1",
 			"id":"n_raMfN",
@@ -244,5 +253,5 @@
 		}
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
