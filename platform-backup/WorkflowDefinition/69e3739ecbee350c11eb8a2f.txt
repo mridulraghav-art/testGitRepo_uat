@@ -52,7 +52,7 @@
 	"id":"69e3739ecbee350c11eb8a2f",
 	"lastModifiedBy":39,
 	"lcName":"pipeline_task",
-	"modifiedTime":1776514627050,
+	"modifiedTime":1776514942438,
 	"name":"pipeline_task",
 	"nodes":[
 		{
@@ -67,7 +67,19 @@
 			"groupId":"_iIkyp-1",
 			"id":"n_8UIOs",
 			"index":1,
-			"inputs":{},
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"Result":{
+							"type":"string",
+							"title":"Result"
+						}
+					}
+				}
+			},
 			"skip":false,
 			"subTitle":"Callable",
 			"title":"Trigger via automation",
@@ -84,7 +96,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_iIkyp-1",
 			"id":"n_NFTYV",
@@ -117,7 +129,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_iIkyp-1",
 			"id":"n_Z6Ind",
@@ -157,7 +169,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_iIkyp-1",
 			"id":"n_XgtrG",
@@ -180,7 +192,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_XgtrG@_iIkyp-1@l",
 			"id":"n_8mRzE",
@@ -208,7 +220,9 @@
 			"id":"n_raMfN",
 			"index":6,
 			"inputs":{
-				"result":"Success"
+				"result":{
+					"Result":"Success"
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -230,5 +244,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
