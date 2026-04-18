@@ -6,46 +6,191 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_iIkyp",
+			"fromNodeId":"n_8UIOs",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_IZgHe",
+			"toNodeId":"n_NFTYV",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_NFTYV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Z6Ind",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Z6Ind",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_XgtrG",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_XgtrG",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_8mRzE",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_8mRzE",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_XgtrG",
 			"type":"next"
 		}
 	],
 	"id":"69e3739ecbee350c11eb8a2f",
 	"lastModifiedBy":39,
 	"lcName":"pipeline_task",
-	"modifiedTime":1776513950402,
+	"modifiedTime":1776514580328,
 	"name":"pipeline_task",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_iIkyp-1",
-			"id":"_iIkyp",
-			"index":0,
+			"id":"n_8UIOs",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":5007,
+				"resourceName":"standard_entities_get_asset_count",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_iIkyp-1",
-			"id":"_IZgHe",
-			"index":0,
+			"id":"n_NFTYV",
+			"index":2,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"currentDeploymentStatus",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"DEPLOYED"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"assetType":"PipelineConfig"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Get Asset Count",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":5009,
+				"resourceName":"standard_entities_fetch_entities",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_iIkyp-1",
+			"id":"n_Z6Ind",
+			"index":3,
+			"inputs":{
+				"projections":[
+					{
+						"name":"id",
+						"aggregationFunction":"GROUP"
+					}
+				],
+				"filter":{
+					"filters":[
+						{
+							"property":"currentDeploymentStatus",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"DEPLOYED"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"entityType":"PipelineConfig",
+				"group":"STANDARD"
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Fetch entities",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":54,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_iIkyp-1",
+			"id":"n_XgtrG",
+			"index":4,
+			"inputs":{
+				"listSource":"{{ n_Z6Ind.outputs.objects }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":5007,
+				"resourceName":"standard_entities_deploy_pipeline",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_XgtrG@_iIkyp-1@l",
+			"id":"n_8mRzE",
+			"index":5,
+			"inputs":{
+				"forceRestart":false,
+				"pipelineId":"{{ n_XgtrG.outputs.item.columns.id }}"
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Deploy a pipeline",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +201,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
