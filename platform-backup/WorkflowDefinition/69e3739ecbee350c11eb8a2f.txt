@@ -45,7 +45,7 @@
 	"id":"69e3739ecbee350c11eb8a2f",
 	"lastModifiedBy":39,
 	"lcName":"pipeline_task",
-	"modifiedTime":1776514580328,
+	"modifiedTime":1776514596406,
 	"name":"pipeline_task",
 	"nodes":[
 		{
@@ -156,6 +156,7 @@
 			"id":"n_XgtrG",
 			"index":4,
 			"inputs":{
+				"repeatMode":"SINGLE",
 				"listSource":"{{ n_Z6Ind.outputs.objects }}",
 				"captureIterations":false
 			},
@@ -201,5 +202,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
