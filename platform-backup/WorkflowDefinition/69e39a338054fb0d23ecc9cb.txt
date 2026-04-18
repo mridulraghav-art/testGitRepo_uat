@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776523827857,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_2wnV1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_s1qoM",
+			"type":"next"
+		}
+	],
+	"id":"69e39a338054fb0d23ecc9cb",
+	"lastModifiedBy":39,
+	"lcName":"reconciliation_automation",
+	"modifiedTime":1776523827857,
+	"name":"reconciliation_automation",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"_2wnV1",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"_s1qoM",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
