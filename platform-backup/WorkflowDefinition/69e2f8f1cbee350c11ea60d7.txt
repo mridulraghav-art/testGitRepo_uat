@@ -6,47 +6,57 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_QiXM6",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_Izbx5",
-			"type":"next"
-		}
+		
 	],
 	"id":"69e2f8f1cbee350c11ea60d7",
 	"lastModifiedBy":39,
 	"lcName":"versions tabsearch_in_output_tab_217764825239930",
-	"modifiedTime":1776482545314,
+	"modifiedTime":1776482550681,
 	"name":"versions tabsearch_in_output_tab_217764825239930",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QiXM6-1",
-			"id":"_QiXM6",
-			"index":0,
+			"id":"n_Bu3YT",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"field":{
+								"type":"string",
+								"title":"field"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"field"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_QiXM6-1",
-			"id":"_Izbx5",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +70,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
