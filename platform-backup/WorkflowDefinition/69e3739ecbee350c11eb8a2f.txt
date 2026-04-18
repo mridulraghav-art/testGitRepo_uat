@@ -9,7 +9,7 @@
 		"deployedAt":1776515041564,
 		"deployedBy":39,
 		"deployedDefinitionId":"69e377e1e82a564435f8424a",
-		"status":"DEPLOYED",
+		"status":"PAUSED",
 		"version":1,
 		"workflowVersion":4
 	},
@@ -44,6 +44,13 @@
 		},
 		{
 			"fromNodeId":"n_8mRzE",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LxXzL",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LxXzL",
 			"name":"loopback",
 			"priority":0,
 			"skip":false,
@@ -58,10 +65,25 @@
 			"type":"next"
 		}
 	],
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"VIEW_RUNS",
+					"E",
+					"V"
+				],
+				"principalIds":[
+					"35587"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"69e3739ecbee350c11eb8a2f",
 	"lastModifiedBy":39,
 	"lcName":"dnd_pipeline_task",
-	"modifiedTime":1776515112942,
+	"modifiedTime":1776520294165,
 	"name":"DND_pipeline_task",
 	"nodes":[
 		{
@@ -217,6 +239,28 @@
 		},
 		{
 			"context":{
+				"appName":"delay",
+				"resourceVersion":53,
+				"resourceName":"delay_for",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_XgtrG@_iIkyp-1@l",
+			"id":"n_LxXzL",
+			"index":6,
+			"inputs":{
+				"duration":5,
+				"unit":"MINUTES"
+			},
+			"skip":false,
+			"subTitle":"Delay",
+			"title":"Set delay duration",
+			"type":"DELAY"
+		},
+		{
+			"context":{
 				"appName":"callables",
 				"resourceVersion":2204,
 				"resourceName":"callables_return_to_automation",
@@ -227,7 +271,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_iIkyp-1",
 			"id":"n_raMfN",
-			"index":6,
+			"index":7,
 			"inputs":{
 				"result":{
 					"Result":"Success"
@@ -253,5 +297,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":7
 }
