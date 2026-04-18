@@ -1,51 +1,1289 @@
 {
 	"appsUsed":[
-		
+		"postgres",
+		"sqlserver"
 	],
 	"createdTime":1776523827857,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_2wnV1",
+			"fromNodeId":"n_AEbWs",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_s1qoM",
+			"toNodeId":"n_hGiP0",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_hGiP0",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_885D9",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_885D9",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_R9HoC",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_R9HoC",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_25LJX",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_25LJX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_VVEa6",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_VVEa6",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_TVqSc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_TVqSc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_03jEb",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_03jEb",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_dUFIv",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_dUFIv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_DYRdS",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_DYRdS",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_NChtv",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_NChtv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_lsaX0",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_lsaX0",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_HEVi4",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_HEVi4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CoGFo",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_CoGFo",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_w7lrf",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_w7lrf",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_uOEt2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_uOEt2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_WNQL4",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_WNQL4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_1ibwr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_1ibwr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_PgQXG",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_PgQXG",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_liPRC",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_liPRC",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_7lrwY",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_7lrwY",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_HEVi4",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_HEVi4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_c0Wpq",
 			"type":"next"
 		}
 	],
 	"id":"69e39a338054fb0d23ecc9cb",
 	"lastModifiedBy":39,
 	"lcName":"reconciliation_automation",
-	"modifiedTime":1776523827857,
+	"modifiedTime":1776523980960,
 	"name":"reconciliation_automation",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2203,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_2wnV1-1",
-			"id":"_2wnV1",
-			"index":0,
+			"id":"n_AEbWs",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"resulting_record"
+					],
+					"properties":{
+						"resulting_record":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Resulting Record"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"source",
+						"Destination"
+					],
+					"properties":{
+						"source":{
+							"type":"string",
+							"title":"Source"
+						},
+						"Destination":{
+							"type":"string",
+							"title":"Destination"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":193,
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_2wnV1-1",
-			"id":"_s1qoM",
-			"index":0,
+			"id":"n_hGiP0",
+			"index":2,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_postgres_table",
+							"filter":{
+								"operator":"CONTAINS",
+								"value":"{{ n_iRByC.outputs.destination }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"shouldSearchInAnalyticsStore":false,
+				"searchField":{
+					"fields":[]
+				},
+				"object_type":"hdfc_knowledge_28_oct",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":20
+				},
+				"numberOfRecordsToFetch":"SINGLE",
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch records",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":229,
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"n_885D9",
+			"index":3,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_destination",
+							"filter":{
+								"operator":"CONTAINS",
+								"value":"{{ n_iRByC.outputs.destination }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"object_type":"hdfc_pipeline_ids_object",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":20
+				},
+				"numberOfRecordsToFetch":"SINGLE",
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch records",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":7,
+				"resourceName":"variable_by_unifyapps_create_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"n_R9HoC",
+			"index":4,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{
+					"createList":{
+						"ui:title":"",
+						"ua:type":{
+							"ui:widget":"hidden"
+						},
+						"items":{
+							"ui:title":"Initial list items",
+							"ui:description":"Set the initial values of the list (defaults to empty)"
+						},
+						"ui:order":[
+							"*",
+							"items"
+						]
+					},
+					"ua:title":{
+						"ui:widget":"hidden"
+					},
+					"ua:list_type":{
+						"ui:widget":"hidden"
+					}
+				},
+				"schema":{
+					"allOf":[
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"OBJECT"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"items":{
+												"type":"object",
+												"properties":{}
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"STRING"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of String"
+											},
+											"items":{
+												"type":"string"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"INTEGER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Integers"
+											},
+											"items":{
+												"type":"integer"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"NUMBER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Numbers"
+											},
+											"items":{
+												"type":"number"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"BOOLEAN"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Booleans"
+											},
+											"items":{
+												"type":"boolean"
+											}
+										}
+									}
+								}
+							}
+						}
+					],
+					"format":"ua:list",
+					"type":"object",
+					"properties":{
+						"ua:title":{
+							"type":"string"
+						},
+						"ua:list_type":{
+							"type":"string",
+							"title":"List Type",
+							"oneOf":[
+								{
+									"const":"OBJECT",
+									"title":"Object"
+								},
+								{
+									"const":"STRING",
+									"title":"String"
+								},
+								{
+									"const":"NUMBER",
+									"title":"Number"
+								},
+								{
+									"const":"INTEGER",
+									"title":"Integer"
+								},
+								{
+									"const":"BOOLEAN",
+									"title":"Boolean"
+								}
+							],
+							"default":"OBJECT"
+						},
+						"createList":{
+							"type":"object",
+							"properties":{
+								"ua:type":{
+									"type":"string",
+									"default":"mappedArray"
+								},
+								"source":{
+									"type":"string",
+									"format":"ua:source",
+									"title":"List Item Source"
+								},
+								"items":{
+									"additionalProperties":false,
+									"type":[
+										"object",
+										"string",
+										"number",
+										"boolean",
+										"integer"
+									],
+									"properties":{}
+								}
+							}
+						}
+					}
+				}
+			},
+			"inputs":{
+				"createList":{
+					"ua:type":"mappedArray"
+				},
+				"ua:title":"result_list",
+				"ua:list_type":"OBJECT"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"items":{
+							"type":"array",
+							"title":"result_list",
+							"disableActions":true,
+							"items":{
+								"type":"object",
+								"properties":{}
+							}
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"sqlserver",
+				"resourceVersion":161,
+				"connectionId":"66fa5208457e750775a50fa6",
+				"resourceName":"sqlserver_execute_sql",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"_25LJX",
+			"index":5,
+			"inputs":{
+				"performAsync":false,
+				"objectSourceResourceName":"sqlserver_execute_sql_metadata",
+				"sql":"select top 1 *\r\nfrom dbo.{{ n_iRByC.outputs.source }}\r\n\r\n"
+			},
+			"skip":false,
+			"subTitle":"Microsoft SQL Server",
+			"title":"Execute a SQL statement",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"postgres",
+				"resourceVersion":129,
+				"connectionId":"672f6466ad64045a64d8f56d",
+				"resourceName":"postgres_execute_sql",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"_VVEa6",
+			"index":6,
+			"inputs":{
+				"objectSourceResourceName":"postgres_execute_sql_metadata",
+				"sql":"select *\r\nfrom {{ n_hGiP0.outputs.properties.postgres_schema }}.{{ n_iRByC.outputs.destination }} LIMIT 1"
+			},
+			"skip":false,
+			"subTitle":"PostgreSQL",
+			"title":"Execute a SQL statement",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":6,
+				"resourceName":"standard_entities_get_data_pipeline_details",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"_TVqSc",
+			"index":7,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"id",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ n_885D9.outputs.properties.pipeline_id }}"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Get data pipeline details",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":40,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"_03jEb",
+			"index":8,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"res1"
+					],
+					"properties":{
+						"res1":{
+							"type":"string",
+							"title":"Res 1"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"sourceData",
+						"destinationData",
+						"schemaMappingData"
+					],
+					"properties":{
+						"sourceData":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Source Data"
+						},
+						"destinationData":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Destination Data"
+						},
+						"schemaMappingData":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Schema Mapping Data"
+						}
+					}
+				},
+				"code":"def detectDataMismatches(sourceData, destinationData, schemaMappingData) {\r\n    \r\n    if (!sourceData || sourceData.isEmpty()) {\r\n        return [\r\n            status: 'FAILED',\r\n            error: 'NO_DATA_IN_SOURCE',\r\n            mismatchedSourceRecords: [],\r\n            extraDestinationRecords: [],\r\n            detailedMismatches: [],\r\n            totalIssues: 0\r\n        ]\r\n    }\r\n    \r\n    if (!destinationData || destinationData.isEmpty()) {\r\n        return [\r\n            status: 'FAILED',\r\n            error: 'NO_DATA_IN_DESTINATION',\r\n            mismatchedSourceRecords: [],\r\n            extraDestinationRecords: [],\r\n            detailedMismatches: [],\r\n            totalIssues: 0\r\n        ]\r\n    }\r\n    \r\n    def fieldMappings = [:]\r\n    def sourceKeyField = null\r\n    def destKeyField = null\r\n    \r\n    schemaMappingData[0].fieldMappings.each { mapping ->\r\n        if (mapping.destinationField) {\r\n            fieldMappings[mapping.sourceField.name] = mapping.destinationField.name\r\n            if (mapping.destinationField.primary) {\r\n                sourceKeyField = mapping.sourceField.name\r\n                destKeyField = mapping.destinationField.name\r\n            }\r\n        }\r\n    }\r\n    \r\n    if (!sourceKeyField) {\r\n        sourceKeyField = sourceData[0].keySet().find { it.toUpperCase().contains(\"SEQ\") || it.toUpperCase().contains(\"ID\") }\r\n    }\r\n    if (!destKeyField) {\r\n        destKeyField = destinationData[0].keySet().find { it.toLowerCase().contains(\"id\") }\r\n    }\r\n    \r\n    def isDateField = { field ->\r\n        ['DATE', 'TIME', 'DATETIME', 'TIMESTAMP', '_TS', '_DT', '_AT'].any { \r\n            field.toUpperCase().contains(it) \r\n        }\r\n    }\r\n    \r\n    def normalizeDatetime = { val ->\r\n        if (!val) return null\r\n        val.toString().replaceAll('[^0-9]', '').take(14)\r\n    }\r\n    \r\n    def normalizeValue = { val ->\r\n        if (!val) return null\r\n        if (val instanceof String && val.trim().isEmpty()) return null\r\n        val instanceof String ? val.trim() : val\r\n    }\r\n    \r\n    def compareValues = { src, dst, srcField, dstField ->\r\n        def s = normalizeValue(src)\r\n        def d = normalizeValue(dst)\r\n        \r\n        if (!s && !d) return true\r\n        if (!s || !d) return false\r\n        \r\n        if (isDateField(srcField) || isDateField(dstField)) {\r\n            return normalizeDatetime(s) == normalizeDatetime(d)\r\n        }\r\n        \r\n        if (s instanceof Number || d instanceof Number) {\r\n            try {\r\n                return s.toString().toBigDecimal() == d.toString().toBigDecimal()\r\n            } catch (e) {\r\n                return s.toString() == d.toString()\r\n            }\r\n        }\r\n        \r\n        return s.toString().equalsIgnoreCase(d.toString())\r\n    }\r\n    \r\n    def destMap = new HashMap(destinationData.size() * 2)\r\n    destinationData.each { rec ->\r\n        def key = rec[destKeyField]\r\n        if (key) destMap[key] = rec\r\n    }\r\n    \r\n    def mismatchedRecords = []\r\n    def detailedMismatches = []\r\n    def matchedCount = 0\r\n    \r\n    sourceData.each { srcRec ->\r\n        def keyVal = srcRec[sourceKeyField]\r\n        \r\n        if (!keyVal) {\r\n            mismatchedRecords << srcRec\r\n            detailedMismatches << [\r\n                primaryKey: null,\r\n                issue: 'NULL_PRIMARY_KEY',\r\n                fieldMismatches: []\r\n            ]\r\n            return\r\n        }\r\n        \r\n        def dstRec = destMap[keyVal]\r\n        \r\n        if (!dstRec) {\r\n            mismatchedRecords << srcRec\r\n            detailedMismatches << [\r\n                primaryKey: keyVal,\r\n                issue: 'NOT_FOUND_IN_DESTINATION',\r\n                fieldMismatches: []\r\n            ]\r\n            return\r\n        }\r\n        \r\n        def fieldMismatches = []\r\n        \r\n        fieldMappings.each { srcField, dstField ->\r\n            if (!srcRec.containsKey(srcField) || !dstRec.containsKey(dstField)) return\r\n            \r\n            if (!compareValues(srcRec[srcField], dstRec[dstField], srcField, dstField)) {\r\n                fieldMismatches << [\r\n                    sourceField: srcField,\r\n                    destField: dstField,\r\n                    sourceValue: srcRec[srcField],\r\n                    destValue: dstRec[dstField]\r\n                ]\r\n            }\r\n        }\r\n        \r\n        if (fieldMismatches) {\r\n            mismatchedRecords << srcRec\r\n            detailedMismatches << [\r\n                primaryKey: keyVal,\r\n                issue: 'FIELD_MISMATCH',\r\n                fieldMismatches: fieldMismatches\r\n            ]\r\n        } else {\r\n            matchedCount++\r\n        }\r\n    }\r\n    \r\n    def sourceKeys = new HashSet(sourceData.collect { it[sourceKeyField] }.findAll())\r\n    def extraDestRecords = destinationData.findAll { rec ->\r\n        def key = rec[destKeyField]\r\n        key && !sourceKeys.contains(key)\r\n    }\r\n    \r\n    def totalIssues = mismatchedRecords.size() + extraDestRecords.size()\r\n    def uniqueKeys = detailedMismatches.collect { it.primaryKey }.findAll().unique()\r\n    \r\n    return [\r\n        status: totalIssues == 0 ? 'PASSED' : 'FAILED',\r\n        sourceKeyField: sourceKeyField,\r\n        destKeyField: destKeyField,\r\n        sourceCount: sourceData.size(),\r\n        destCount: destinationData.size(),\r\n        matchedCount: matchedCount,\r\n        mismatchedCount: mismatchedRecords.size(),\r\n        extraDestCount: extraDestRecords.size(),\r\n        totalIssues: totalIssues,\r\n        uniqueSourceKeysWithIssues: uniqueKeys,\r\n        mismatchedSourceRecords: mismatchedRecords,\r\n        extraDestinationRecords: extraDestRecords,\r\n        detailedMismatches: detailedMismatches\r\n    ]\r\n}\r\n\r\n// Replace these with your actual variable names from your ETL pipeline\r\n// Example: If your variables are named 'mssqlData', 'postgresData', 'schemaMapping'\r\n// then use: detectDataMismatches(mssqlData, postgresData, schemaMapping)\r\n\r\ndef mismatches = detectDataMismatches(sourceData, destinationData, schemaMappingData)\r\n\r\nreturn [res1: mismatches]",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"sourceData":[
+						"{{ _25LJX.outputs.rows }}"
+					],
+					"destinationData":[
+						"{{ _VVEa6.outputs.rows }}"
+					],
+					"schemaMappingData":[
+						"{{ _TVqSc.outputs.pipelineDetails[0].schemaMappings[0] }}"
+					]
+				}
+			},
+			"skip":true,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":53,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"n_dUFIv",
+			"index":9,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"res1"
+					],
+					"properties":{
+						"res1":{
+							"type":"string",
+							"title":"Res 1"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"sourceData",
+						"destinationData",
+						"schemaMappingData"
+					],
+					"properties":{
+						"sourceData":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Source Data"
+						},
+						"destinationData":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Destination Data"
+						},
+						"schemaMappingData":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Schema Mapping Data"
+						}
+					}
+				},
+				"code":"\r\n\r\ndef detectDataMismatches(sourceData, destinationData, schemaMappingData) {\r\n\r\n    // ---------- Basic checks ----------\r\n    if (!sourceData || sourceData.isEmpty()) {\r\n        return [ status:'FAILED', error:'NO_DATA_IN_SOURCE', mismatchedSourceRecords:[], extraDestinationRecords:[], detailedMismatches:[], totalIssues:0 ]\r\n    }\r\n    if (!destinationData || destinationData.isEmpty()) {\r\n        return [ status:'FAILED', error:'NO_DATA_IN_DESTINATION', mismatchedSourceRecords:[], extraDestinationRecords:[], detailedMismatches:[], totalIssues:0 ]\r\n    }\r\n\r\n    // ---------- Helpers to safely get field values from a record ----------\r\n    def toMapIfPossible = { rec ->\r\n        // Convert POJO-like objects to a Map of properties if feasible (non-destructive)\r\n        try {\r\n            if (rec instanceof Map) return rec\r\n            // Many SQL row types implement toRowResult or have properties\r\n            if (rec.metaClass.hasProperty(rec, 'toRowResult')) {\r\n                try { return rec.toRowResult() } catch (e) { /* ignore */ }\r\n            }\r\n            // Try to build map from properties\r\n            def m = [:]\r\n            rec.properties.each { k, v ->\r\n                if (k != 'class') m[k] = v\r\n            }\r\n            return m\r\n        } catch (e) {\r\n            return null\r\n        }\r\n    }\r\n\r\n    def safeGet = { rec, fieldName ->\r\n        if (rec == null || fieldName == null) return null\r\n        try {\r\n            // If record is a Map -> use map access (safe)\r\n            if (rec instanceof Map) {\r\n                // try exact key, then lower, upper\r\n                if (rec.containsKey(fieldName)) return rec.get(fieldName)\r\n                def low = fieldName.toLowerCase()\r\n                if (rec.containsKey(low)) return rec.get(low)\r\n                def up = fieldName.toUpperCase()\r\n                if (rec.containsKey(up)) return rec.get(up)\r\n                // try keys equalsIgnoreCase\r\n                def match = rec.keySet().find { k -> k?.toString()?.equalsIgnoreCase(fieldName) }\r\n                if (match) return rec.get(match)\r\n                return null\r\n            }\r\n\r\n            // If record is a List or Array -> cannot fetch by name safely, return null\r\n            if (rec instanceof List || rec instanceof Object[]) {\r\n                return null\r\n            }\r\n\r\n            // Try property access on POJO / Groovy object: rec.\"fieldName\"\r\n            try {\r\n                def val = rec.\"${fieldName}\"\r\n                return val\r\n            } catch (MissingPropertyException mpe) {\r\n                // try case-insensitive properties via metaClass\r\n                try {\r\n                    def prop = rec.metaClass.properties.find { p -> p.name.equalsIgnoreCase(fieldName) }\r\n                    if (prop) {\r\n                        return rec.\"${prop.name}\"\r\n                    }\r\n                } catch (e) { /* ignore */ }\r\n            } catch (ClassCastException cce) {\r\n                // This is the key problem we saw - don't attempt index-style access for String keys\r\n                return null\r\n            }\r\n\r\n            // Try toMapIfPossible and then map lookup\r\n            def converted = toMapIfPossible(rec)\r\n            if (converted) {\r\n                if (converted.containsKey(fieldName)) return converted.get(fieldName)\r\n                def match = converted.keySet().find { k -> k?.toString()?.equalsIgnoreCase(fieldName) }\r\n                if (match) return converted.get(match)\r\n            }\r\n\r\n            return null\r\n        } catch (e) {\r\n            // Catch-all - never rethrow to avoid casting errors bubbling up\r\n            return null\r\n        }\r\n    }\r\n\r\n    def safeHasKey = { rec, fieldName ->\r\n        if (rec == null || fieldName == null) return false\r\n        if (rec instanceof Map) {\r\n            if (rec.containsKey(fieldName)) return true\r\n            if (rec.containsKey(fieldName.toLowerCase())) return true\r\n            if (rec.containsKey(fieldName.toUpperCase())) return true\r\n            return rec.keySet().any { k -> k?.toString()?.equalsIgnoreCase(fieldName) }\r\n        }\r\n        // For POJO try metaClass properties\r\n        try {\r\n            def prop = rec.metaClass.properties.find { p -> p.name.equalsIgnoreCase(fieldName) }\r\n            if (prop) return true\r\n        } catch (e) { /* ignore */ }\r\n        // last resort: try convert to map\r\n        def converted = toMapIfPossible(rec)\r\n        if (converted) return converted.keySet().any { k -> k?.toString()?.equalsIgnoreCase(fieldName) }\r\n        return false\r\n    }\r\n\r\n    // ---------- Schema mapping and key detection ----------\r\n    def fieldMappings = [:]\r\n    def sourceKeyField = null\r\n    def destKeyField = null\r\n\r\n    try {\r\n        if (schemaMappingData && schemaMappingData[0]?.fieldMappings) {\r\n            schemaMappingData[0].fieldMappings.each { mapping ->\r\n                if (mapping?.sourceField?.name && mapping?.destinationField?.name) {\r\n                    fieldMappings[mapping.sourceField.name] = mapping.destinationField.name\r\n                    if (mapping.destinationField.primary) {\r\n                        sourceKeyField = mapping.sourceField.name\r\n                        destKeyField = mapping.destinationField.name\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    } catch (e) {\r\n        // ignore and fallback\r\n    }\r\n\r\n    // fallback heuristics (use first record keys if mapping not set)\r\n    if (!sourceKeyField) {\r\n        def first = sourceData[0]\r\n        def mp = toMapIfPossible(first)\r\n        if (mp) {\r\n            sourceKeyField = mp.keySet().find { it?.toString()?.toUpperCase()?.contains('SEQ') || it?.toString()?.toUpperCase()?.contains('ID') } as String\r\n        } else {\r\n            // try property names\r\n            sourceKeyField = first?.metaClass?.properties?.find { p -> p.name.toUpperCase().contains('SEQ') || p.name.toUpperCase().contains('ID') }?.name\r\n        }\r\n    }\r\n    if (!destKeyField) {\r\n        def firstD = destinationData[0]\r\n        def mpd = toMapIfPossible(firstD)\r\n        if (mpd) {\r\n            destKeyField = mpd.keySet().find { it?.toString()?.toUpperCase()?.contains('SEQ') || it?.toString()?.toUpperCase()?.contains('ID') } as String\r\n        } else {\r\n            destKeyField = firstD?.metaClass?.properties?.find { p -> p.name.toUpperCase().contains('SEQ') || p.name.toUpperCase().contains('ID') }?.name\r\n        }\r\n    }\r\n\r\n    if (!sourceKeyField || !destKeyField) {\r\n        return [\r\n            status: 'FAILED',\r\n            error: 'PRIMARY_KEY_NOT_DETECTED',\r\n            sourceKeyFieldCandidate: sourceKeyField,\r\n            destKeyFieldCandidate: destKeyField,\r\n            note: 'Provide explicit primary key mapping in schemaMappingData if detection fails.'\r\n        ]\r\n    }\r\n\r\n    // ---------- Normalizers and comparators ----------\r\n    def normalizeKey = { v ->\r\n        if (v == null) return null\r\n        return v.toString().trim()\r\n    }\r\n\r\n    def normalizeValue = { v ->\r\n        if (v == null) return null\r\n        def s = v.toString().trim()\r\n        if (s.isEmpty() || s.equalsIgnoreCase('null')) return null\r\n        return s\r\n    }\r\n\r\n    def isDateField = { fname ->\r\n        if (!fname) return false\r\n        def up = fname.toString().toUpperCase()\r\n        return up.contains('DATE') || up.contains('TIME') || up.contains('TS') || up.contains('DT') || up.contains('_AT')\r\n    }\r\n\r\n    def normalizeDate = { v ->\r\n        if (!v) return null\r\n        def s = v.toString().trim()\r\n        if (s.isEmpty()) return null\r\n        // try many formats via SimpleDateFormat\r\n        def fmts = [\"yyyy-MM-dd'T'HH:mm:ss\", \"yyyy-MM-dd HH:mm:ss\", \"yyyy-MM-dd\", \"dd-MM-yyyy\", \"dd/MM/yyyy\", \"yyyy/MM/dd\", \"yyyyMMdd\", \"ddMMyyyy\"]\r\n        for (fmt in fmts) {\r\n            try {\r\n                def sdf = new java.text.SimpleDateFormat(fmt)\r\n                sdf.setLenient(false)\r\n                def d = sdf.parse(s)\r\n                if (d) return new java.text.SimpleDateFormat(\"yyyyMMdd\").format(d)\r\n            } catch (e) { /* ignore */ }\r\n        }\r\n        // fallback: digits only (YYYYMMDD / other)\r\n        def digits = s.replaceAll(\"\\\\D\", \"\")\r\n        return digits ?: null\r\n    }\r\n\r\n    def areEquivalent = { a, b, aField, bField ->\r\n        def s = normalizeValue(a)\r\n        def d = normalizeValue(b)\r\n        if (s == null && d == null) return true\r\n        if (s == null || d == null) return false\r\n\r\n        // dates\r\n        if (isDateField(aField) || isDateField(bField)) {\r\n            return normalizeDate(s) == normalizeDate(d)\r\n        }\r\n\r\n        // numeric compare (safe)\r\n        try {\r\n            def sNum = new BigDecimal(s.replaceAll(\",\", \"\"))\r\n            def dNum = new BigDecimal(d.replaceAll(\",\", \"\"))\r\n            if (sNum.compareTo(dNum) == 0) return true\r\n        } catch (e) { /* not numeric */ }\r\n\r\n        // booleans\r\n        def boolMap = ['true':true, 'false':false, '1':true, '0':false, 'yes':true, 'no':false]\r\n        if (boolMap.containsKey(s.toLowerCase()) && boolMap.containsKey(d.toLowerCase())) {\r\n            return boolMap[s.toLowerCase()] == boolMap[d.toLowerCase()]\r\n        }\r\n\r\n        // case-insensitive string compare\r\n        return s.equalsIgnoreCase(d)\r\n    }\r\n\r\n    // ---------- Build destination lookup map using safeGet (always string keys) ----------\r\n    def destMap = [:] as LinkedHashMap\r\n    destinationData.each { rec ->\r\n        def rawKey = safeGet(rec, destKeyField)\r\n        def key = normalizeKey(rawKey)\r\n        if (key != null) {\r\n            // store original rec and also the resolved map form to ease field access later\r\n            destMap[key] = [ original: rec, mapified: toMapIfPossible(rec) ]\r\n        }\r\n    }\r\n\r\n    // ---------- Compare source -> destination ----------\r\n    def mismatchedRecords = []\r\n    def detailedMismatches = []\r\n    def matchedCount = 0\r\n\r\n    sourceData.each { srcRec ->\r\n        def rawSrcKey = safeGet(srcRec, sourceKeyField)\r\n        def srcKey = normalizeKey(rawSrcKey)\r\n\r\n        if (!srcKey) {\r\n            mismatchedRecords << srcRec\r\n            detailedMismatches << [ primaryKey: null, issue: 'NULL_PRIMARY_KEY', fieldMismatches: [] ]\r\n            return\r\n        }\r\n\r\n        def dstWrapper = destMap[srcKey]\r\n        if (!dstWrapper) {\r\n            mismatchedRecords << srcRec\r\n            detailedMismatches << [ primaryKey: srcKey, issue: 'NOT_FOUND_IN_DESTINATION', fieldMismatches: [] ]\r\n            return\r\n        }\r\n\r\n        def dstRec = dstWrapper.original\r\n        def dstMapified = dstWrapper.mapified ?: toMapIfPossible(dstRec)\r\n\r\n        def fieldMismatches = []\r\n\r\n        fieldMappings.each { srcField, dstField ->\r\n            def srcHas = safeHasKey(srcRec, srcField)\r\n            def dstHas = dstMapified ? dstMapified.containsKey(dstField) : safeHasKey(dstRec, dstField)\r\n            if (!srcHas || !dstHas) {\r\n                // Skip if field not present on either side (do not treat as mismatch)\r\n                return\r\n            }\r\n            def srcVal = safeGet(srcRec, srcField)\r\n            def dstVal = dstMapified ? dstMapified.get(dstField) : safeGet(dstRec, dstField)\r\n\r\n            if (!areEquivalent(srcVal, dstVal, srcField, dstField)) {\r\n                fieldMismatches << [\r\n                    sourceField: srcField,\r\n                    destField: dstField,\r\n                    sourceValue: srcVal,\r\n                    destValue: dstVal\r\n                ]\r\n            }\r\n        }\r\n\r\n        if (fieldMismatches) {\r\n            mismatchedRecords << srcRec\r\n            detailedMismatches << [ primaryKey: srcKey, issue: 'FIELD_MISMATCH', fieldMismatches: fieldMismatches ]\r\n        } else {\r\n            matchedCount++\r\n        }\r\n    }\r\n\r\n    // ---------- Extra destination records ----------\r\n    def sourceKeySet = sourceData.collect { safeGet(it, sourceKeyField) ? normalizeKey(safeGet(it, sourceKeyField)) : null }.findAll { it != null }.toSet()\r\n    def extraDestRecords = []\r\n    destinationData.each { rec ->\r\n        def dk = safeGet(rec, destKeyField) ? normalizeKey(safeGet(rec, destKeyField)) : null\r\n        if (dk && !sourceKeySet.contains(dk)) {\r\n            extraDestRecords << rec\r\n        }\r\n    }\r\n\r\n    def totalIssues = mismatchedRecords.size() + extraDestRecords.size()\r\n    def uniqueKeys = detailedMismatches.collect { it.primaryKey }.findAll { it != null }.unique()\r\n\r\n    return [\r\n        status: totalIssues == 0 ? 'PASSED' : 'FAILED',\r\n        sourceKeyField: sourceKeyField,\r\n        destKeyField: destKeyField,\r\n        sourceCount: sourceData.size(),\r\n        destCount: destinationData.size(),\r\n        matchedCount: matchedCount,\r\n        mismatchedCount: mismatchedRecords.size(),\r\n        extraDestCount: extraDestRecords.size(),\r\n        totalIssues: totalIssues,\r\n        uniqueSourceKeysWithIssues: uniqueKeys,\r\n        mismatchedSourceRecords: mismatchedRecords,\r\n        extraDestinationRecords: extraDestRecords,\r\n        detailedMismatches: detailedMismatches\r\n    ]\r\n}\r\n\r\n// ---------- execute ----------\r\ndef mismatches = detectDataMismatches(sourceData, destinationData, schemaMappingData)\r\nreturn [res1: mismatches]\r\n",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"sourceData":[
+						"{{ _25LJX.outputs.rows }}"
+					],
+					"destinationData":[
+						"{{ _VVEa6.outputs.rows }}"
+					],
+					"schemaMappingData":[
+						"{{ _TVqSc.outputs.pipelineDetails[0].schemaMappings }}"
+					]
+				}
+			},
+			"skip":true,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"sqlserver",
+				"resourceVersion":161,
+				"connectionId":"66fa5208457e750775a50fa6",
+				"resourceName":"sqlserver_execute_sql",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"n_DYRdS",
+			"index":10,
+			"inputs":{
+				"performAsync":false,
+				"objectSourceResourceName":"sqlserver_execute_sql_metadata",
+				"response_schema":{
+					"type":"object",
+					"properties":{
+						"count_source":{
+							"type":"integer",
+							"title":"Count Source"
+						}
+					},
+					"additionalProperties":false,
+					"required":[]
+				},
+				"sql":"select count(*) as count_source\r\nfrom dbo.{{ n_iRByC.outputs.source }}"
+			},
+			"skip":false,
+			"subTitle":"Microsoft SQL Server",
+			"title":"Execute a SQL statement",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"postgres",
+				"resourceVersion":129,
+				"connectionId":"66ffc2a4fa2ba84181902f35",
+				"resourceName":"postgres_execute_sql",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"n_NChtv",
+			"index":11,
+			"inputs":{
+				"objectSourceResourceName":"postgres_execute_sql_metadata",
+				"response_schema":{
+					"type":"object",
+					"properties":{
+						"count_dest":{
+							"type":"integer",
+							"title":"Count Dest"
+						}
+					},
+					"additionalProperties":false,
+					"required":[]
+				},
+				"sql":"select count(*) as count_dest\r\nfrom {{ n_hGiP0.outputs.properties.postgres_schema }}.{{ n_iRByC.outputs.destination }}"
+			},
+			"skip":false,
+			"subTitle":"PostgreSQL",
+			"title":"Execute a SQL statement",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":6,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"n_lsaX0",
+			"index":12,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"counter":{
+							"type":"integer",
+							"title":"Counter"
+						},
+						"Max_count":{
+							"type":"integer",
+							"title":"Max Count"
+						}
+					},
+					"required":[
+						"counter",
+						"Max_count"
+					]
+				}
+			},
+			"inputs":{
+				"Max_count":"=MAX({{ n_DYRdS.outputs.rows[0].count_source }},{{ n_NChtv.outputs.rows[0].count_dest }})",
+				"counter":0
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"counter":{
+							"type":"integer",
+							"title":"Counter"
+						},
+						"Max_count":{
+							"type":"integer",
+							"title":"Max Count"
+						}
+					},
+					"required":[
+						"counter",
+						"Max_count"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":6,
+				"resourceName":"loop_while",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"n_HEVi4",
+			"index":13,
+			"inputs":{
+				"condition":{
+					"filters":[
+						{
+							"property":"{{ n_lsaX0.outputs.counter }}",
+							"filter":{
+								"operator":"LTE",
+								"value":"{{ n_lsaX0.outputs.Max_count }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"captureIterations":true
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"While loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"sqlserver",
+				"resourceVersion":294,
+				"connectionId":"66fa5208457e750775a50fa6",
+				"resourceName":"sqlserver_select_rows_using_custom_sql",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_HEVi4@_2wnV1-1@l",
+			"id":"n_CoGFo",
+			"index":14,
+			"inputs":{
+				"offset":"{{ n_lsaX0.outputs.counter }}",
+				"objectSourceResourceName":"sqlserver_execute_sql_metadata",
+				"limit":2,
+				"orderBy":"{{ n_hGiP0.outputs.properties.mssql_unique_key }}",
+				"sql":"select *\nfrom dbo.{{ n_iRByC.outputs.source }}"
+			},
+			"skip":false,
+			"subTitle":"Microsoft SQL Server",
+			"title":"Select rows using custom sql",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"sqlserver",
+				"resourceVersion":161,
+				"connectionId":"66fa5208457e750775a50fa6",
+				"resourceName":"sqlserver_execute_sql",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_HEVi4@_2wnV1-1@l",
+			"id":"n_w7lrf",
+			"index":15,
+			"inputs":{
+				"performAsync":false,
+				"objectSourceResourceName":"sqlserver_execute_sql_metadata",
+				"sql":"select *\r\nfrom dbo.{{ n_iRByC.outputs.source }}\r\n\r\n"
+			},
+			"skip":true,
+			"subTitle":"Microsoft SQL Server",
+			"title":"Execute a SQL statement",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"postgres",
+				"resourceVersion":234,
+				"connectionId":"672f6466ad64045a64d8f56d",
+				"resourceName":"postgres_select_row_using_custom_sql_batch",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_HEVi4@_2wnV1-1@l",
+			"id":"n_uOEt2",
+			"index":16,
+			"inputs":{
+				"offset":"{{ n_lsaX0.outputs.counter }}",
+				"objectSourceResourceName":"postgres_execute_sql_metadata",
+				"limit":2,
+				"orderBy":"{{ n_hGiP0.outputs.properties.postgres_unique_key }}",
+				"sql":"select * \nfrom {{ n_hGiP0.outputs.properties.postgres_schema }}.{{ n_iRByC.outputs.destination }}"
+			},
+			"skip":false,
+			"subTitle":"PostgreSQL",
+			"title":"Select rows using custom sql",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"postgres",
+				"resourceVersion":129,
+				"connectionId":"672f6466ad64045a64d8f56d",
+				"resourceName":"postgres_execute_sql",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_HEVi4@_2wnV1-1@l",
+			"id":"n_WNQL4",
+			"index":17,
+			"inputs":{
+				"objectSourceResourceName":"postgres_execute_sql_metadata",
+				"sql":"select *\r\nfrom {{ n_hGiP0.outputs.properties.postgres_schema }}.{{ n_iRByC.outputs.destination }}\r\n"
+			},
+			"skip":true,
+			"subTitle":"PostgreSQL",
+			"title":"Execute a SQL statement",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":6,
+				"resourceName":"standard_entities_get_data_pipeline_details",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_HEVi4@_2wnV1-1@l",
+			"id":"n_1ibwr",
+			"index":18,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"id",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ n_885D9.outputs.properties.pipeline_id }}"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Get data pipeline details",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":53,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_HEVi4@_2wnV1-1@l",
+			"id":"n_PgQXG",
+			"index":19,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"res1"
+					],
+					"properties":{
+						"res1":{
+							"type":"string",
+							"title":"Res 1"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"sourceData",
+						"destinationData",
+						"schemaMappingData"
+					],
+					"properties":{
+						"sourceData":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Source Data"
+						},
+						"destinationData":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Destination Data"
+						},
+						"schemaMappingData":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Schema Mapping Data"
+						}
+					}
+				},
+				"code":"\r\n\r\ndef detectDataMismatches(sourceData, destinationData, schemaMappingData) {\r\n\r\n    // ---------- Basic checks ----------\r\n    if (!sourceData || sourceData.isEmpty()) {\r\n        return [ status:'FAILED', error:'NO_DATA_IN_SOURCE', mismatchedSourceRecords:[], extraDestinationRecords:[], detailedMismatches:[], totalIssues:0 ]\r\n    }\r\n    if (!destinationData || destinationData.isEmpty()) {\r\n        return [ status:'FAILED', error:'NO_DATA_IN_DESTINATION', mismatchedSourceRecords:[], extraDestinationRecords:[], detailedMismatches:[], totalIssues:0 ]\r\n    }\r\n\r\n    // ---------- Helpers to safely get field values from a record ----------\r\n    def toMapIfPossible = { rec ->\r\n        // Convert POJO-like objects to a Map of properties if feasible (non-destructive)\r\n        try {\r\n            if (rec instanceof Map) return rec\r\n            // Many SQL row types implement toRowResult or have properties\r\n            if (rec.metaClass.hasProperty(rec, 'toRowResult')) {\r\n                try { return rec.toRowResult() } catch (e) { /* ignore */ }\r\n            }\r\n            // Try to build map from properties\r\n            def m = [:]\r\n            rec.properties.each { k, v ->\r\n                if (k != 'class') m[k] = v\r\n            }\r\n            return m\r\n        } catch (e) {\r\n            return null\r\n        }\r\n    }\r\n\r\n    def safeGet = { rec, fieldName ->\r\n        if (rec == null || fieldName == null) return null\r\n        try {\r\n            // If record is a Map -> use map access (safe)\r\n            if (rec instanceof Map) {\r\n                // try exact key, then lower, upper\r\n                if (rec.containsKey(fieldName)) return rec.get(fieldName)\r\n                def low = fieldName.toLowerCase()\r\n                if (rec.containsKey(low)) return rec.get(low)\r\n                def up = fieldName.toUpperCase()\r\n                if (rec.containsKey(up)) return rec.get(up)\r\n                // try keys equalsIgnoreCase\r\n                def match = rec.keySet().find { k -> k?.toString()?.equalsIgnoreCase(fieldName) }\r\n                if (match) return rec.get(match)\r\n                return null\r\n            }\r\n\r\n            // If record is a List or Array -> cannot fetch by name safely, return null\r\n            if (rec instanceof List || rec instanceof Object[]) {\r\n                return null\r\n            }\r\n\r\n            // Try property access on POJO / Groovy object: rec.\"fieldName\"\r\n            try {\r\n                def val = rec.\"${fieldName}\"\r\n                return val\r\n            } catch (MissingPropertyException mpe) {\r\n                // try case-insensitive properties via metaClass\r\n                try {\r\n                    def prop = rec.metaClass.properties.find { p -> p.name.equalsIgnoreCase(fieldName) }\r\n                    if (prop) {\r\n                        return rec.\"${prop.name}\"\r\n                    }\r\n                } catch (e) { /* ignore */ }\r\n            } catch (ClassCastException cce) {\r\n                // This is the key problem we saw - don't attempt index-style access for String keys\r\n                return null\r\n            }\r\n\r\n            // Try toMapIfPossible and then map lookup\r\n            def converted = toMapIfPossible(rec)\r\n            if (converted) {\r\n                if (converted.containsKey(fieldName)) return converted.get(fieldName)\r\n                def match = converted.keySet().find { k -> k?.toString()?.equalsIgnoreCase(fieldName) }\r\n                if (match) return converted.get(match)\r\n            }\r\n\r\n            return null\r\n        } catch (e) {\r\n            // Catch-all - never rethrow to avoid casting errors bubbling up\r\n            return null\r\n        }\r\n    }\r\n\r\n    def safeHasKey = { rec, fieldName ->\r\n        if (rec == null || fieldName == null) return false\r\n        if (rec instanceof Map) {\r\n            if (rec.containsKey(fieldName)) return true\r\n            if (rec.containsKey(fieldName.toLowerCase())) return true\r\n            if (rec.containsKey(fieldName.toUpperCase())) return true\r\n            return rec.keySet().any { k -> k?.toString()?.equalsIgnoreCase(fieldName) }\r\n        }\r\n        // For POJO try metaClass properties\r\n        try {\r\n            def prop = rec.metaClass.properties.find { p -> p.name.equalsIgnoreCase(fieldName) }\r\n            if (prop) return true\r\n        } catch (e) { /* ignore */ }\r\n        // last resort: try convert to map\r\n        def converted = toMapIfPossible(rec)\r\n        if (converted) return converted.keySet().any { k -> k?.toString()?.equalsIgnoreCase(fieldName) }\r\n        return false\r\n    }\r\n\r\n    // ---------- Schema mapping and key detection ----------\r\n    def fieldMappings = [:]\r\n    def sourceKeyField = null\r\n    def destKeyField = null\r\n\r\n    try {\r\n        if (schemaMappingData && schemaMappingData[0]?.fieldMappings) {\r\n            schemaMappingData[0].fieldMappings.each { mapping ->\r\n                if (mapping?.sourceField?.name && mapping?.destinationField?.name) {\r\n                    fieldMappings[mapping.sourceField.name] = mapping.destinationField.name\r\n                    if (mapping.destinationField.primary) {\r\n                        sourceKeyField = mapping.sourceField.name\r\n                        destKeyField = mapping.destinationField.name\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    } catch (e) {\r\n        // ignore and fallback\r\n    }\r\n\r\n    // fallback heuristics (use first record keys if mapping not set)\r\n    if (!sourceKeyField) {\r\n        def first = sourceData[0]\r\n        def mp = toMapIfPossible(first)\r\n        if (mp) {\r\n            sourceKeyField = mp.keySet().find { it?.toString()?.toUpperCase()?.contains('SEQ') || it?.toString()?.toUpperCase()?.contains('ID') } as String\r\n        } else {\r\n            // try property names\r\n            sourceKeyField = first?.metaClass?.properties?.find { p -> p.name.toUpperCase().contains('SEQ') || p.name.toUpperCase().contains('ID') }?.name\r\n        }\r\n    }\r\n    if (!destKeyField) {\r\n        def firstD = destinationData[0]\r\n        def mpd = toMapIfPossible(firstD)\r\n        if (mpd) {\r\n            destKeyField = mpd.keySet().find { it?.toString()?.toUpperCase()?.contains('SEQ') || it?.toString()?.toUpperCase()?.contains('ID') } as String\r\n        } else {\r\n            destKeyField = firstD?.metaClass?.properties?.find { p -> p.name.toUpperCase().contains('SEQ') || p.name.toUpperCase().contains('ID') }?.name\r\n        }\r\n    }\r\n\r\n    if (!sourceKeyField || !destKeyField) {\r\n        return [\r\n            status: 'FAILED',\r\n            error: 'PRIMARY_KEY_NOT_DETECTED',\r\n            sourceKeyFieldCandidate: sourceKeyField,\r\n            destKeyFieldCandidate: destKeyField,\r\n            note: 'Provide explicit primary key mapping in schemaMappingData if detection fails.'\r\n        ]\r\n    }\r\n\r\n    // ---------- Normalizers and comparators ----------\r\n    def normalizeKey = { v ->\r\n        if (v == null) return null\r\n        return v.toString().trim()\r\n    }\r\n\r\n    def normalizeValue = { v ->\r\n        if (v == null) return null\r\n        def s = v.toString().trim()\r\n        if (s.isEmpty() || s.equalsIgnoreCase('null')) return null\r\n        return s\r\n    }\r\n\r\n    def isDateField = { fname ->\r\n        if (!fname) return false\r\n        def up = fname.toString().toUpperCase()\r\n        return up.contains('DATE') || up.contains('TIME') || up.contains('TS') || up.contains('DT') || up.contains('_AT')\r\n    }\r\n\r\n    def normalizeDate = { v ->\r\n        if (!v) return null\r\n        def s = v.toString().trim()\r\n        if (s.isEmpty()) return null\r\n        // try many formats via SimpleDateFormat\r\n        def fmts = [\"yyyy-MM-dd'T'HH:mm:ss\", \"yyyy-MM-dd HH:mm:ss\", \"yyyy-MM-dd\", \"dd-MM-yyyy\", \"dd/MM/yyyy\", \"yyyy/MM/dd\", \"yyyyMMdd\", \"ddMMyyyy\"]\r\n        for (fmt in fmts) {\r\n            try {\r\n                def sdf = new java.text.SimpleDateFormat(fmt)\r\n                sdf.setLenient(false)\r\n                def d = sdf.parse(s)\r\n                if (d) return new java.text.SimpleDateFormat(\"yyyyMMdd\").format(d)\r\n            } catch (e) { /* ignore */ }\r\n        }\r\n        // fallback: digits only (YYYYMMDD / other)\r\n        def digits = s.replaceAll(\"\\\\D\", \"\")\r\n        return digits ?: null\r\n    }\r\n\r\n    def areEquivalent = { a, b, aField, bField ->\r\n        def s = normalizeValue(a)\r\n        def d = normalizeValue(b)\r\n        if (s == null && d == null) return true\r\n        if (s == null || d == null) return false\r\n\r\n        // dates\r\n        if (isDateField(aField) || isDateField(bField)) {\r\n            return normalizeDate(s) == normalizeDate(d)\r\n        }\r\n\r\n        // numeric compare (safe)\r\n        try {\r\n            def sNum = new BigDecimal(s.replaceAll(\",\", \"\"))\r\n            def dNum = new BigDecimal(d.replaceAll(\",\", \"\"))\r\n            if (sNum.compareTo(dNum) == 0) return true\r\n        } catch (e) { /* not numeric */ }\r\n\r\n        // booleans\r\n        def boolMap = ['true':true, 'false':false, '1':true, '0':false, 'yes':true, 'no':false]\r\n        if (boolMap.containsKey(s.toLowerCase()) && boolMap.containsKey(d.toLowerCase())) {\r\n            return boolMap[s.toLowerCase()] == boolMap[d.toLowerCase()]\r\n        }\r\n\r\n        // case-insensitive string compare\r\n        return s.equalsIgnoreCase(d)\r\n    }\r\n\r\n    // ---------- Build destination lookup map using safeGet (always string keys) ----------\r\n    def destMap = [:] as LinkedHashMap\r\n    destinationData.each { rec ->\r\n        def rawKey = safeGet(rec, destKeyField)\r\n        def key = normalizeKey(rawKey)\r\n        if (key != null) {\r\n            // store original rec and also the resolved map form to ease field access later\r\n            destMap[key] = [ original: rec, mapified: toMapIfPossible(rec) ]\r\n        }\r\n    }\r\n\r\n    // ---------- Compare source -> destination ----------\r\n    def mismatchedRecords = []\r\n    def detailedMismatches = []\r\n    def matchedCount = 0\r\n\r\n    sourceData.each { srcRec ->\r\n        def rawSrcKey = safeGet(srcRec, sourceKeyField)\r\n        def srcKey = normalizeKey(rawSrcKey)\r\n\r\n        if (!srcKey) {\r\n            mismatchedRecords << srcRec\r\n            detailedMismatches << [ primaryKey: null, issue: 'NULL_PRIMARY_KEY', fieldMismatches: [] ]\r\n            return\r\n        }\r\n\r\n        def dstWrapper = destMap[srcKey]\r\n        if (!dstWrapper) {\r\n            mismatchedRecords << srcRec\r\n            detailedMismatches << [ primaryKey: srcKey, issue: 'NOT_FOUND_IN_DESTINATION', fieldMismatches: [] ]\r\n            return\r\n        }\r\n\r\n        def dstRec = dstWrapper.original\r\n        def dstMapified = dstWrapper.mapified ?: toMapIfPossible(dstRec)\r\n\r\n        def fieldMismatches = []\r\n\r\n        fieldMappings.each { srcField, dstField ->\r\n            def srcHas = safeHasKey(srcRec, srcField)\r\n            def dstHas = dstMapified ? dstMapified.containsKey(dstField) : safeHasKey(dstRec, dstField)\r\n            if (!srcHas || !dstHas) {\r\n                // Skip if field not present on either side (do not treat as mismatch)\r\n                return\r\n            }\r\n            def srcVal = safeGet(srcRec, srcField)\r\n            def dstVal = dstMapified ? dstMapified.get(dstField) : safeGet(dstRec, dstField)\r\n\r\n            if (!areEquivalent(srcVal, dstVal, srcField, dstField)) {\r\n                fieldMismatches << [\r\n                    sourceField: srcField,\r\n                    destField: dstField,\r\n                    sourceValue: srcVal,\r\n                    destValue: dstVal\r\n                ]\r\n            }\r\n        }\r\n\r\n        if (fieldMismatches) {\r\n            mismatchedRecords << srcRec\r\n            detailedMismatches << [ primaryKey: srcKey, issue: 'FIELD_MISMATCH', fieldMismatches: fieldMismatches ]\r\n        } else {\r\n            matchedCount++\r\n        }\r\n    }\r\n\r\n    // ---------- Extra destination records ----------\r\n    def sourceKeySet = sourceData.collect { safeGet(it, sourceKeyField) ? normalizeKey(safeGet(it, sourceKeyField)) : null }.findAll { it != null }.toSet()\r\n    def extraDestRecords = []\r\n    destinationData.each { rec ->\r\n        def dk = safeGet(rec, destKeyField) ? normalizeKey(safeGet(rec, destKeyField)) : null\r\n        if (dk && !sourceKeySet.contains(dk)) {\r\n            extraDestRecords << rec\r\n        }\r\n    }\r\n\r\n    def totalIssues = mismatchedRecords.size() + extraDestRecords.size()\r\n    def uniqueKeys = detailedMismatches.collect { it.primaryKey }.findAll { it != null }.unique()\r\n\r\n    return [\r\n        status: totalIssues == 0 ? 'PASSED' : 'FAILED',\r\n        sourceKeyField: sourceKeyField,\r\n        destKeyField: destKeyField,\r\n        sourceCount: sourceData.size(),\r\n        destCount: destinationData.size(),\r\n        matchedCount: matchedCount,\r\n        mismatchedCount: mismatchedRecords.size(),\r\n        extraDestCount: extraDestRecords.size(),\r\n        totalIssues: totalIssues,\r\n        uniqueSourceKeysWithIssues: uniqueKeys,\r\n        mismatchedSourceRecords: mismatchedRecords,\r\n        extraDestinationRecords: extraDestRecords,\r\n        detailedMismatches: detailedMismatches\r\n    ]\r\n}\r\n\r\n// ---------- execute ----------\r\ndef mismatches = detectDataMismatches(sourceData, destinationData, schemaMappingData)\r\nreturn [res1: mismatches]\r\n",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"sourceData":[
+						"{{ _25LJX.outputs.rows }}"
+					],
+					"destinationData":[
+						"{{ _VVEa6.outputs.rows }}"
+					],
+					"schemaMappingData":[
+						"{{ _TVqSc.outputs.pipelineDetails[0].schemaMappings }}"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":6,
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_HEVi4@_2wnV1-1@l",
+			"id":"n_liPRC",
+			"index":20,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_lsaX0.outputs.counter }}",
+						"value":"={{ n_lsaX0.outputs.counter }}+2"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":13,
+				"resourceName":"variable_by_unifyapps_add_items_to_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_HEVi4@_2wnV1-1@l",
+			"id":"n_7lrwY",
+			"index":21,
+			"inputs":{
+				"insertLocation":"END",
+				"itemsToAdd":{
+					"ua:type":"mappedArray",
+					"source":"{{ n_PgQXG.outputs.result }}",
+					"items":"{{ n_PgQXG.outputs.result.res1 }}"
+				},
+				"listName":"{{ n_R9HoC.outputs.items[0] }}"
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Add items to list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":6,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_2wnV1-1",
+			"id":"n_c0Wpq",
+			"index":22,
+			"inputs":{
+				"result":{
+					"resulting_record":"{{ n_PgQXG.outputs.result }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +1294,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
