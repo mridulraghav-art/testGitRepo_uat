@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776513950402,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_iIkyp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_IZgHe",
+			"type":"next"
+		}
+	],
+	"id":"69e3739ecbee350c11eb8a2f",
+	"lastModifiedBy":39,
+	"lcName":"pipeline_task",
+	"modifiedTime":1776513950402,
+	"name":"pipeline_task",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_iIkyp-1",
+			"id":"_iIkyp",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_iIkyp-1",
+			"id":"_IZgHe",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
