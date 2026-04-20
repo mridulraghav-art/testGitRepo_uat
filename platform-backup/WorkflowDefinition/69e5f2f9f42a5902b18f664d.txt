@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776677625181,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_VvR6K",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Ox2ui",
+			"type":"next"
+		}
+	],
+	"id":"69e5f2f9f42a5902b18f664d",
+	"lastModifiedBy":39,
+	"lcName":"testlogin",
+	"modifiedTime":1776677625181,
+	"name":"testLogin",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_VvR6K-1",
+			"id":"_VvR6K",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_VvR6K-1",
+			"id":"_Ox2ui",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
