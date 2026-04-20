@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776513950402,
 	"deleted":false,
-	"deployedVersion":3,
+	"deployedVersion":4,
 	"deploymentState":{
-		"deployedAt":1776679412423,
+		"deployedAt":1776679794300,
 		"deployedBy":39,
-		"deployedDefinitionId":"69e5f9f42bbc74146148753c",
+		"deployedDefinitionId":"69e5fb7285c6aa4e530b1d09",
 		"status":"DEPLOYED",
-		"version":3,
-		"workflowVersion":8
+		"version":4,
+		"workflowVersion":10
 	},
 	"edges":[
 		{
@@ -82,9 +82,9 @@
 	},
 	"id":"69e3739ecbee350c11eb8a2f",
 	"lastModifiedBy":39,
-	"lcName":"dnd_pipeline_task",
-	"modifiedTime":1776679792001,
-	"name":"DND_pipeline_task",
+	"lcName":"pipeline_flink_image_update",
+	"modifiedTime":1776679822847,
+	"name":"Pipeline_Flink_image_update",
 	"nodes":[
 		{
 			"context":{
@@ -245,7 +245,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_XgtrG@_iIkyp-1@l",
 			"id":"n_LxXzL",
@@ -297,5 +297,5 @@
 		}
 	},
 	"standard":false,
-	"version":10
+	"version":11
 }
