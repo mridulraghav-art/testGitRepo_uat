@@ -6,46 +6,197 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_Bu957",
+			"fromNodeId":"n_idwdG",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Cn05H",
+			"toNodeId":"n_5cgeb",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_5cgeb",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_xXTKz",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_xXTKz",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_1jac2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_1jac2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_VUaAd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_VUaAd",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_PDvVq",
 			"type":"next"
 		}
 	],
 	"id":"69e6194433b45b5f7f3b3be0",
 	"lastModifiedBy":39,
 	"lcName":"sample",
-	"modifiedTime":1776687428188,
+	"modifiedTime":1776687452409,
 	"name":"sample",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2205,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Bu957-1",
-			"id":"_Bu957",
-			"index":0,
+			"id":"n_idwdG",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":15947,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Bu957-1",
-			"id":"_Cn05H",
-			"index":0,
+			"id":"n_5cgeb",
+			"index":2,
+			"inputs":{
+				"fileName":"testing",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845749830/file_example_XLSX_10.xlsx",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":15947,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Bu957-1",
+			"id":"n_xXTKz",
+			"index":3,
+			"inputs":{
+				"fileName":"testing1",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1764585417761/DGE_Tools_issues.xlsx",
+				"option":"url"
+			},
+			"skip":false,
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":14446,
+				"resourceName":"excel_by_unifyapps_append_files",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Bu957-1",
+			"id":"n_1jac2",
+			"index":4,
+			"inputs":{
+				"fileName":"combine",
+				"skipFirstFileHeader":false,
+				"includeHeaders":false,
+				"outputSheetName":"Combined",
+				"keepExactFileName":false,
+				"fileList":[
+					"{{ n_5cgeb.outputs.fileDetails }}",
+					"{{ n_xXTKz.outputs.fileDetails }}"
+				],
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Append multiple excel files into one sheet",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":13771,
+				"resourceName":"excel_by_unifyapps_extract_data",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Bu957-1",
+			"id":"n_VUaAd",
+			"index":5,
+			"inputs":{
+				"flattenMergedCells":false,
+				"endColumn":20,
+				"fileDetails":"{{ n_1jac2.outputs.fileDetails }}",
+				"startRow":1,
+				"startColumn":1,
+				"endRow":20,
+				"fileType":"xlsx"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Extract Excel Data",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":17293,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Bu957-1",
+			"id":"n_PDvVq",
+			"index":6,
+			"inputs":{
+				"result":"{{ n_VUaAd.outputs }}"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +207,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
