@@ -6,7 +6,7 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_nhH9Z",
+			"fromNodeId":"n_YPXMH",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_VKNPg",
@@ -16,20 +16,32 @@
 	"id":"69e5ed227e67f339e003cd72",
 	"lastModifiedBy":39,
 	"lcName":"nlanf",
-	"modifiedTime":1776676151190,
+	"modifiedTime":1776676160527,
 	"name":"nlanf",
 	"nodes":[
 		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":54,
+				"resourceName":"schedule_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_nhH9Z-1",
-			"id":"_nhH9Z",
+			"id":"n_YPXMH",
 			"index":1,
+			"inputs":{
+				"cron":"INTERVAL",
+				"sequential":false,
+				"interval":15,
+				"frequency":"MINUTES"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
@@ -70,5 +82,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
