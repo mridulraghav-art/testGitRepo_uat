@@ -18,14 +18,21 @@
 			"fromNodeId":"n_QFYxr",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_NXDH9",
+			"toNodeId":"n_YFW6i",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_YFW6i",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_XryD3",
 			"type":"next"
 		}
 	],
 	"id":"69e1e8ef3523ce120f624def",
 	"lastModifiedBy":39,
 	"lcName":"cecwee",
-	"modifiedTime":1776441680035,
+	"modifiedTime":1776687897173,
 	"name":"cecwee",
 	"nodes":[
 		{
@@ -55,82 +62,69 @@
 		},
 		{
 			"context":{
-				"appName":"test_http",
-				"resourceVersion":1927,
-				"connectionId":"66b0ee649c311126267a17b7",
-				"resourceName":"test_http_post_api",
+				"appName":"callables",
+				"resourceVersion":2207,
+				"resourceName":"callables_call_automation",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Tnmm9-1",
-			"id":"n_NXDH9",
+			"id":"n_YFW6i",
 			"index":2,
 			"inputs":{
-				"field1":"success",
-				"field2":true
-			},
-			"options":{
-				"bulkheadConfig":{
-					"enabled":false,
-					"maxLeaseTimeUnit":"SECONDS",
-					"maxWaitDurationUnit":"SECONDS"
-				},
-				"businessHoursConfig":{
-					"enabled":false,
-					"waitForNextWindow":false
-				},
-				"cacheConfig":{
-					"enabled":false,
-					"usagePolicy":"ALWAYS"
-				},
-				"circuitBreakerConfig":{
-					"enabled":false
-				},
-				"disableLogging":false,
-				"enabledForReExecution":false,
-				"hookConfig":{
-					"enabled":false,
-					"postHooks":[
-						
-					],
-					"preHooks":[
-						
+				"automationId":"69e1e945e309256724616103",
+				"runtimeConnections":{},
+				"synchronous":true,
+				"version":"-1",
+				"parameters":{
+					"cewewc":[
+						{
+							"ecwedew":"test"
+						},
+						{
+							"ecwedew":"test1"
+						}
 					]
-				},
-				"logConfig":{
-					"enabled":false,
-					"logPolicies":[
-						
-					]
-				},
-				"rateLimitConfig":{
-					"enabled":false,
-					"waitForNextWindow":false
-				},
-				"retryConfig":{
-					"backOffFactor":2.0,
-					"captureRetries":false,
-					"count":4,
-					"enabled":true,
-					"initialDelay":1000,
-					"maxDelay":4000
-				},
-				"stepError":"STOP",
-				"telemetryConfig":{
-					"enableTelemetry":false,
-					"metricConfigs":[
-						
-					]
-				},
-				"timeoutConfig":{
-					"enabled":false
 				}
 			},
 			"skip":false,
-			"subTitle":"Test HTTP API",
-			"title":"Test HTTP Post API",
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":3173,
+				"resourceName":"utility_by_unifyapps_filter_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Tnmm9-1",
+			"id":"n_XryD3",
+			"index":3,
+			"inputs":{
+				"filter":{
+					"filters":[
+						{
+							"property":"{{ n_YFW6i.outputs.edewdew[0].dewdew }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"test"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"listSource":"{{ n_YFW6i.outputs.edewdew }}"
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Filter List of Data",
 			"type":"ACTION"
 		}
 	],
@@ -148,5 +142,5 @@
 		}
 	},
 	"standard":false,
-	"version":7
+	"version":8
 }
