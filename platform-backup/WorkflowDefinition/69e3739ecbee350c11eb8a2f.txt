@@ -18,13 +18,6 @@
 			"fromNodeId":"n_8UIOs",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_NFTYV",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_NFTYV",
-			"priority":0,
-			"skip":false,
 			"toNodeId":"n_Z6Ind",
 			"type":"next"
 		},
@@ -83,7 +76,7 @@
 	"id":"69e3739ecbee350c11eb8a2f",
 	"lastModifiedBy":39,
 	"lcName":"pipeline_flink_image_update",
-	"modifiedTime":1776679822847,
+	"modifiedTime":1776680814061,
 	"name":"Pipeline_Flink_image_update",
 	"nodes":[
 		{
@@ -122,39 +115,6 @@
 		{
 			"context":{
 				"appName":"standard_entities",
-				"resourceVersion":5007,
-				"resourceName":"standard_entities_get_asset_count",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_iIkyp-1",
-			"id":"n_NFTYV",
-			"index":2,
-			"inputs":{
-				"triggerInputCondition":{
-					"filters":[
-						{
-							"property":"currentDeploymentStatus",
-							"filter":{
-								"operator":"EQUAL",
-								"value":"DEPLOYED"
-							}
-						}
-					],
-					"operator":"AND"
-				},
-				"assetType":"PipelineConfig"
-			},
-			"skip":false,
-			"subTitle":"Standard entities by UnifyApps",
-			"title":"Get Asset Count",
-			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"standard_entities",
 				"resourceVersion":5009,
 				"resourceName":"standard_entities_fetch_entities",
 				"type":"APPLICATION"
@@ -164,7 +124,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_iIkyp-1",
 			"id":"n_Z6Ind",
-			"index":3,
+			"index":2,
 			"inputs":{
 				"projections":[
 					{
@@ -204,7 +164,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_iIkyp-1",
 			"id":"n_XgtrG",
-			"index":4,
+			"index":3,
 			"inputs":{
 				"repeatMode":"SINGLE",
 				"listSource":"{{ n_Z6Ind.outputs.objects }}",
@@ -227,7 +187,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_XgtrG@_iIkyp-1@l",
 			"id":"n_8mRzE",
-			"index":5,
+			"index":4,
 			"inputs":{
 				"forceRestart":false,
 				"pipelineId":"{{ n_XgtrG.outputs.item.columns.id }}"
@@ -249,7 +209,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_XgtrG@_iIkyp-1@l",
 			"id":"n_LxXzL",
-			"index":6,
+			"index":5,
 			"inputs":{
 				"duration":2,
 				"unit":"MINUTES"
@@ -271,7 +231,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_iIkyp-1",
 			"id":"n_raMfN",
-			"index":7,
+			"index":6,
 			"inputs":{
 				"result":{
 					"Result":"Success"
@@ -297,5 +257,5 @@
 		}
 	},
 	"standard":false,
-	"version":11
+	"version":12
 }
