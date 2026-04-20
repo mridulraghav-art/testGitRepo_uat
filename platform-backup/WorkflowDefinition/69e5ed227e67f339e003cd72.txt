@@ -9,14 +9,14 @@
 			"fromNodeId":"_nhH9Z",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_AOjIG",
+			"toNodeId":"n_VKNPg",
 			"type":"next"
 		}
 	],
 	"id":"69e5ed227e67f339e003cd72",
 	"lastModifiedBy":39,
 	"lcName":"nlanf",
-	"modifiedTime":1776676130020,
+	"modifiedTime":1776676151190,
 	"name":"nlanf",
 	"nodes":[
 		{
@@ -25,7 +25,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_nhH9Z-1",
 			"id":"_nhH9Z",
-			"index":0,
+			"index":1,
 			"skip":false,
 			"title":"Select a trigger event",
 			"trigger":{
@@ -34,18 +34,32 @@
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":0,
+				"resourceName":"standard_entities_deploy_pipeline",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_nhH9Z-1",
-			"id":"_AOjIG",
-			"index":0,
+			"id":"n_VKNPg",
+			"index":2,
+			"inputs":{
+				"forceRestart":false,
+				"pipelineId":"69e5e9c093d462180fc457af"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Deploy a pipeline",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +70,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
