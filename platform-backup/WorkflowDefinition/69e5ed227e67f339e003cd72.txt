@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1776676130020,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_nhH9Z",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_AOjIG",
+			"type":"next"
+		}
+	],
+	"id":"69e5ed227e67f339e003cd72",
+	"lastModifiedBy":39,
+	"lcName":"nlanf",
+	"modifiedTime":1776676130020,
+	"name":"nlanf",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_nhH9Z-1",
+			"id":"_nhH9Z",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_nhH9Z-1",
+			"id":"_AOjIG",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
