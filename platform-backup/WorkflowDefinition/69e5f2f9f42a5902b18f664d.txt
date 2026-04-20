@@ -6,46 +6,114 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_VvR6K",
+			"fromNodeId":"n_pPLja",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Ox2ui",
+			"toNodeId":"n_AdCXW",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_AdCXW",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_3m8QP",
 			"type":"next"
 		}
 	],
 	"id":"69e5f2f9f42a5902b18f664d",
 	"lastModifiedBy":39,
 	"lcName":"testlogin",
-	"modifiedTime":1776677625181,
+	"modifiedTime":1776677706051,
 	"name":"testLogin",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2204,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_VvR6K-1",
-			"id":"_VvR6K",
-			"index":0,
+			"id":"n_pPLja",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"ok"
+					],
+					"properties":{
+						"ok":{
+							"type":"string",
+							"title":"Ok"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"auth_by_unifyapps",
+				"resourceVersion":2253,
+				"resourceName":"auth_by_unifyapps_login",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_VvR6K-1",
-			"id":"_Ox2ui",
-			"index":0,
+			"id":"n_AdCXW",
+			"index":2,
+			"inputs":{
+				"formData":{
+					"username":"sdfsd",
+					"password":"sdfsdf"
+				},
+				"identityProviderId":"67b5d0ac51702a0785bf30c6"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Auth by UnifyApps",
+			"title":"Login to UnifyApps",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2205,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_VvR6K-1",
+			"id":"n_3m8QP",
+			"index":3,
+			"inputs":{
+				"result":{
+					"ok":"200"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +124,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
