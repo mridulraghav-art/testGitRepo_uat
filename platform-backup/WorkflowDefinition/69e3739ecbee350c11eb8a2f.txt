@@ -4,14 +4,14 @@
 	],
 	"createdTime":1776513950402,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1776520706114,
+		"deployedAt":1776679412423,
 		"deployedBy":39,
-		"deployedDefinitionId":"69e38e02e22e321416e0d0cc",
-		"status":"PAUSED",
-		"version":2,
-		"workflowVersion":7
+		"deployedDefinitionId":"69e5f9f42bbc74146148753c",
+		"status":"DEPLOYED",
+		"version":3,
+		"workflowVersion":8
 	},
 	"edges":[
 		{
@@ -83,7 +83,7 @@
 	"id":"69e3739ecbee350c11eb8a2f",
 	"lastModifiedBy":39,
 	"lcName":"dnd_pipeline_task",
-	"modifiedTime":1776679407740,
+	"modifiedTime":1776679786009,
 	"name":"DND_pipeline_task",
 	"nodes":[
 		{
@@ -245,13 +245,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_XgtrG@_iIkyp-1@l",
 			"id":"n_LxXzL",
 			"index":6,
 			"inputs":{
-				"duration":5,
+				"duration":2,
 				"unit":"MINUTES"
 			},
 			"skip":false,
@@ -297,5 +297,5 @@
 		}
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
