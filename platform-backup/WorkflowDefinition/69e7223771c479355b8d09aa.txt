@@ -1,51 +1,81 @@
 {
 	"appsUsed":[
-		
+		"microsoft_sharepoint"
 	],
 	"createdTime":1776755255634,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_hTRTC",
+			"fromNodeId":"n_ld30x",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_RIpgk",
+			"toNodeId":"n_0YDdi",
 			"type":"next"
 		}
 	],
 	"id":"69e7223771c479355b8d09aa",
 	"lastModifiedBy":39,
 	"lcName":"test1",
-	"modifiedTime":1776755255634,
+	"modifiedTime":1776755294909,
 	"name":"test1",
 	"nodes":[
 		{
+			"context":{
+				"appName":"microsoft_sharepoint",
+				"resourceVersion":3306,
+				"connectionId":"6916249b01950a794effb4e8",
+				"resourceName":"microsoft_sharepoint_on_new_file_or_updated_file_polling"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_hTRTC-1",
-			"id":"_hTRTC",
-			"index":0,
+			"id":"n_ld30x",
+			"index":1,
+			"inputs":{
+				"site_name":"sites/site123",
+				"interval":2,
+				"from":"2026-04-20T07:07:00Z",
+				"batchSize":1,
+				"folder_path":{
+					"id":"Shared%20Documents",
+					"context":[
+						{
+							"id":"Shared%20Documents",
+							"name":"Shared Documents"
+						}
+					]
+				},
+				"siteType":"sites"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Microsoft SharePoint",
+			"title":"New or Updated file",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"stop"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_hTRTC-1",
-			"id":"_RIpgk",
-			"index":0,
+			"id":"n_0YDdi",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +86,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
