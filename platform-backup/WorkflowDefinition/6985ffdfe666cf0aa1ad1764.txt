@@ -62,7 +62,7 @@
 	"id":"6985ffdfe666cf0aa1ad1764",
 	"lastModifiedBy":39,
 	"lcName":"test_masking",
-	"modifiedTime":1776757086350,
+	"modifiedTime":1776758794237,
 	"name":"test_masking",
 	"nodes":[
 		{
@@ -72,7 +72,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pCjL8-1",
 			"id":"n_r4jzk",
@@ -103,7 +103,7 @@
 						{
 							"filters":[
 								{
-									"property":"Phone_number",
+									"property":"{{ n_r4jzk.outputs.Phone_number }}",
 									"filter":{
 										"operator":"EQUAL",
 										"value":"1234567890"
@@ -349,5 +349,5 @@
 	"tags":[
 		
 	],
-	"version":7
+	"version":8
 }
