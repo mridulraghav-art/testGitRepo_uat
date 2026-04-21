@@ -4,14 +4,14 @@
 	],
 	"createdTime":1770389471773,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1776756467720,
+		"deployedAt":1776758796629,
 		"deployedBy":39,
-		"deployedDefinitionId":"69e726f38d36c4122cccac9e",
+		"deployedDefinitionId":"69e7300caca1435668f27e32",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":6
+		"version":2,
+		"workflowVersion":8
 	},
 	"edges":[
 		{
@@ -62,7 +62,7 @@
 	"id":"6985ffdfe666cf0aa1ad1764",
 	"lastModifiedBy":39,
 	"lcName":"test_masking",
-	"modifiedTime":1776758794237,
+	"modifiedTime":1776759098557,
 	"name":"test_masking",
 	"nodes":[
 		{
@@ -227,7 +227,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pCjL8-1",
 			"id":"n_ZqCWi",
@@ -245,7 +245,7 @@
 						"property":"{{ n_r4jzk.outputs.Phone_number }}",
 						"filter":{
 							"operator":"EQUAL",
-							"value":"9876566789"
+							"value":"1234567890"
 						}
 					}
 				],
@@ -349,5 +349,5 @@
 	"tags":[
 		
 	],
-	"version":8
+	"version":9
 }
