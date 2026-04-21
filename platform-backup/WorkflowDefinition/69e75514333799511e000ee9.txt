@@ -6,46 +6,127 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_ERge1",
+			"fromNodeId":"n_wI3t9",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_rcrEs",
+			"toNodeId":"n_11738",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_11738",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_kq41G",
 			"type":"next"
 		}
 	],
 	"id":"69e75514333799511e000ee9",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocalicktkvnxqr",
-	"modifiedTime":1776768276537,
+	"modifiedTime":1776768293453,
 	"name":"AnalyticsByUnifyAppsLocaliCkTkvnXqr",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ERge1-1",
-			"id":"_ERge1",
-			"index":0,
+			"id":"n_wI3t9",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"output"
+						},
+						"id":{
+							"type":"string",
+							"title":"id"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"input"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1990,
+				"resourceName":"analytics_by_unifyapps_export_sql",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ERge1-1",
-			"id":"_rcrEs",
-			"index":0,
+			"id":"n_11738",
+			"index":2,
+			"inputs":{
+				"fileName":"CSV_file",
+				"sheetName":"Sheet_0",
+				"query":"SELECT DISTINCT(statusCode) FROM CONNECTION WHERE appName='slack' AND connectionId='682adda0b3d1743888ec45db' AND statusCode BETWEEN 0 AND 200;",
+				"keepExactFileName":false,
+				"fileType":"CSV",
+				"group":"PLATFORM"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Export SQL Query Result",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_ERge1-1",
+			"id":"n_kq41G",
+			"index":3,
+			"inputs":{
+				"result":{
+					"output":"{{ n_11738.outputs.file }}",
+					"id":"{{ n_11738.outputs.id }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +137,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
