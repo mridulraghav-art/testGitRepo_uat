@@ -6,46 +6,127 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_zPY7e",
+			"fromNodeId":"n_EVOxx",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_3k6g6",
+			"toNodeId":"n_GMPIk",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GMPIk",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_xVECg",
 			"type":"next"
 		}
 	],
 	"id":"69e754a98d36c4122cce89bd",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocalopjzcuuhbm",
-	"modifiedTime":1776768169301,
+	"modifiedTime":1776768208904,
 	"name":"AnalyticsByUnifyAppsLocaloPJzcUUhBm",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_zPY7e-1",
-			"id":"_zPY7e",
-			"index":0,
+			"id":"n_EVOxx",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"output"
+						},
+						"id":{
+							"type":"string",
+							"title":"id"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"input"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1990,
+				"resourceName":"analytics_by_unifyapps_export_sql",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_zPY7e-1",
-			"id":"_3k6g6",
-			"index":0,
+			"id":"n_GMPIk",
+			"index":2,
+			"inputs":{
+				"fileName":"equals to",
+				"sheetName":"Sheet_0",
+				"query":"SELECT _pr_name, _pr_city, _pr_age FROM ENTITY_analytics_node_testcases_imp WHERE _pr_name = 'Bhavana' ;",
+				"keepExactFileName":true,
+				"fileType":"TSV",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Export SQL Query Result",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_zPY7e-1",
+			"id":"n_xVECg",
+			"index":3,
+			"inputs":{
+				"result":{
+					"output":"{{ n_GMPIk.outputs.file }}",
+					"id":"{{ n_GMPIk.outputs.id }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +137,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
