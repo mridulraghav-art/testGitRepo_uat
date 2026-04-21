@@ -5,47 +5,44 @@
 	"createdTime":1776756146298,
 	"deleted":false,
 	"edges":[
-		{
-			"fromNodeId":"_8XBU2",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_sWYDW",
-			"type":"next"
-		}
+		
 	],
 	"id":"69e725b2c549ae060567b3f7",
 	"lastModifiedBy":39,
 	"lcName":"hgjk",
-	"modifiedTime":1776756146298,
+	"modifiedTime":1776756151669,
 	"name":"hgjk",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8XBU2-1",
-			"id":"_8XBU2",
-			"index":0,
+			"id":"n_tL2H4",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_8XBU2-1",
-			"id":"_sWYDW",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +53,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
