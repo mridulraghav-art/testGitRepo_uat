@@ -6,7 +6,14 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_IXrVj",
+			"fromNodeId":"n_VPyor",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_hCL0c",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_hCL0c",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_JHBIr",
@@ -16,22 +23,78 @@
 	"id":"69e630c233b45b5f7f3bbedb",
 	"lastModifiedBy":39,
 	"lcName":"dfgjkaudk",
-	"modifiedTime":1776754094782,
+	"modifiedTime":1776755963448,
 	"name":"dfgjkaudk",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":53,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IXrVj-1",
-			"id":"_IXrVj",
+			"id":"n_VPyor",
 			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":2037,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_IXrVj-1",
+			"id":"n_hCL0c",
+			"index":2,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"error":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"description":{
+										"type":"string",
+										"title":"Description"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"Error"
+						}
+					}
+				},
+				"code":"return ['error':['description':'123']]",
+				"compile_static":false,
+				"captureStdOutput":false
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
 		},
 		{
 			"context":{
@@ -45,7 +108,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_IXrVj-1",
 			"id":"n_JHBIr",
-			"index":2,
+			"index":3,
 			"inputs":{
 				"recordId":"e_69e71ae99c37db72171070a9",
 				"writeThroughSessionVariables":false,
@@ -54,9 +117,9 @@
 				"skipPermissionCheck":false,
 				"updateFields":[
 					{
-						"fieldName":"error[0].description",
+						"fieldName":"properties.error",
 						"actionType":"SET",
-						"setValue":"abc"
+						"setValue":"{{ n_hCL0c.outputs.result.error }}"
 					}
 				],
 				"skipSchemaValidation":true,
@@ -91,5 +154,5 @@
 		"erfgerghwe",
 		"sdgbsdfbsdfb"
 	],
-	"version":1
+	"version":2
 }
