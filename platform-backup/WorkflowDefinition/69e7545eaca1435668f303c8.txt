@@ -6,46 +6,127 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_KinpU",
+			"fromNodeId":"n_BQ4Mk",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_oVK83",
+			"toNodeId":"n_7HZTZ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_7HZTZ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_EQdtS",
 			"type":"next"
 		}
 	],
 	"id":"69e7545eaca1435668f303c8",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocaloqftnunofg",
-	"modifiedTime":1776768094291,
+	"modifiedTime":1776768129148,
 	"name":"AnalyticsByUnifyAppsLocaloqFTnUNofG",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KinpU-1",
-			"id":"_KinpU",
-			"index":0,
+			"id":"n_BQ4Mk",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"output"
+						},
+						"id":{
+							"type":"string",
+							"title":"id"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"input"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1990,
+				"resourceName":"analytics_by_unifyapps_export_sql",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KinpU-1",
-			"id":"_oVK83",
-			"index":0,
+			"id":"n_7HZTZ",
+			"index":2,
+			"inputs":{
+				"fileName":"Contains",
+				"sheetName":"Sheet_0",
+				"query":"SELECT _pr_department FROM ENTITY_analytics_node_testcases_imp WHERE _pr_department LIKE '%Testing%' ;",
+				"keepExactFileName":true,
+				"fileType":"CSV",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Export SQL Query Result",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_KinpU-1",
+			"id":"n_EQdtS",
+			"index":3,
+			"inputs":{
+				"result":{
+					"output":"{{ n_7HZTZ.outputs.file }}",
+					"id":"{{ n_7HZTZ.outputs.id }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +137,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
