@@ -34,12 +34,26 @@
 			"skip":false,
 			"toNodeId":"n_JaGpI",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_cLEk0",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ue9us",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_JaGpI",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ue9us",
+			"type":"next"
 		}
 	],
 	"id":"6985ffdfe666cf0aa1ad1764",
 	"lastModifiedBy":39,
 	"lcName":"ere",
-	"modifiedTime":1776756010700,
+	"modifiedTime":1776756168246,
 	"name":"ere",
 	"nodes":[
 		{
@@ -284,6 +298,29 @@
 			"subTitle":"Variable by UnifyApps",
 			"title":"Update variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2206,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_pCjL8-1",
+			"id":"n_ue9us",
+			"index":6,
+			"inputs":{
+				"result":{
+					"Result":"{{ n_vFYKp.outputs.Result }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -303,5 +340,5 @@
 	"tags":[
 		
 	],
-	"version":4
+	"version":5
 }
