@@ -1,0 +1,243 @@
+{
+	"appsUsed":[
+		"whatsapp"
+	],
+	"createdTime":1776747767003,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"popv8",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"u31Az",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"u31Az",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_JDwfT",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_JDwfT",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_nbj2E",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_nbj2E",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Yu8mT",
+			"type":"next"
+		}
+	],
+	"id":"69e664b5779cee45845b9be2",
+	"lastModifiedBy":39,
+	"lcName":"whatsapp trigger (ai agent)",
+	"modifiedTime":1776747767003,
+	"name":"Whatsapp Trigger (AI Agent)",
+	"nodes":[
+		{
+			"context":{
+				"appName":"whatsapp",
+				"resourceVersion":2335,
+				"connectionId":"69a549d2e3346f27ea361715",
+				"resourceName":"whatsapp_on_new_message"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_bYBho-1",
+			"id":"popv8",
+			"index":0,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"{{ popv8.outputs.change.value.messages }}",
+							"filter":{
+								"operator":"EXISTS"
+							}
+						},
+						{
+							"property":"=LEN({{ popv8.outputs.change.value.messages }})",
+							"filter":{
+								"operator":"GT",
+								"value":"0"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"trigger_field":"messages"
+			},
+			"skip":false,
+			"subTitle":"WhatsApp",
+			"title":"New message",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":491,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_bYBho-1",
+			"id":"u31Az",
+			"index":0,
+			"inputs":{
+				"automationId":"67f4bb157c1d3e26449a935f",
+				"runtimeConnections":{
+					"whatsapp":"69a549d2e3346f27ea361715",
+					"deepgram":""
+				},
+				"synchronous":true,
+				"version":"-1",
+				"parameters":{
+					"messages":{
+						"source":"{{ popv8.outputs.change.value.messages }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"listReplyTitle":"{{ popv8.outputs.change.value.messages[0].interactive.list_reply.title }}",
+							"buttonReplyTitle":"{{ popv8.outputs.change.value.messages[0].interactive.button_reply.title }}",
+							"mimeType":"{{ popv8.outputs.change.value.messages[0].image.mime_type }}",
+							"imageId":"{{ popv8.outputs.change.value.messages[0].image.id }}",
+							"audioId":"{{ popv8.outputs.change.value.messages[0].audio.id }}",
+							"from":"{{ popv8.outputs.change.value.messages[0].from }}",
+							"messageBody":"{{ popv8.outputs.change.value.messages[0].text.body }}",
+							"caption":"{{ popv8.outputs.change.value.messages[0].image.caption }}"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":84,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_bYBho-1",
+			"id":"_JDwfT",
+			"index":0,
+			"inputs":{
+				"automationId":"674afe5adefb851816d61959",
+				"runtimeConnections":{},
+				"synchronous":true,
+				"version":"-1",
+				"parameters":{
+					"channelName":"whatsapp",
+					"text":"{{ u31Az.outputs.messageContent }}",
+					"triggerInput":"{{ popv8.outputs }}",
+					"caseAssociationType":"PREVIOUS_FAN_MESSAGE",
+					"messageType":"FAN",
+					"triggeredFromAutomationId":"{{ __RUN__.outputs.workflowId }}",
+					"toCustomerUserId":"e_69e663988b38dc7295ec6706",
+					"channelSpecificUserId":"{{ popv8.outputs.change.value.contacts[0].wa_id }}",
+					"attachments":{
+						"ua:type":"mappedArray",
+						"items":{
+							"name":"{{ u31Az.outputs.files[0].name }}",
+							"source":"{{ u31Az.outputs.files[0].source }}",
+							"sourceType":"{{ u31Az.outputs.files[0].sourceType }}",
+							"size":"{{ u31Az.outputs.files[0].size }}",
+							"url":"{{ u31Az.outputs.files[0].unifyPath }}",
+							"fileType":"{{ u31Az.outputs.files[0].processedFileType }}",
+							"mimeType":"{{ u31Az.outputs.files[0].mimeType }}"
+						},
+						"source":"{{ u31Az.outputs.files }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Case Management",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":84,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_bYBho-1",
+			"id":"_nbj2E",
+			"index":0,
+			"inputs":{
+				"automationId":"6732f70850384a29acf312fd",
+				"runtimeConnections":{},
+				"synchronous":false,
+				"triggerWorkflowWithRuntimeType":"IN_MEMORY",
+				"version":"-1",
+				"parameters":{
+					"messageId":"{{ _JDwfT.outputs.messageId }}",
+					"userEmailAddress":"{{ popv8.outputs.change.value.metadata.display_phone_number }}",
+					"aiAgentId":"e_69e663988b38dc7295ec6706",
+					"caseId":"{{ _JDwfT.outputs.caseId }}",
+					"userQuery":"{{ u31Az.outputs.messageContent }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_bYBho-1",
+			"id":"_Yu8mT",
+			"index":0,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"AI Agent",
+		"Trigger",
+		"AI Agent Deployment"
+	],
+	"version":1
+}
