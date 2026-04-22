@@ -6,46 +6,166 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_8YF9V",
+			"fromNodeId":"n_pMuJp",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_8t3Hs",
+			"toNodeId":"n_aAHvT",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_aAHvT",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_YUzOv",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_YUzOv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_jqSFt",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_jqSFt",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_XOrk0",
 			"type":"next"
 		}
 	],
 	"id":"69e8825ec549ae060571edbd",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocalwdaedchuyt",
-	"modifiedTime":1776845406429,
+	"modifiedTime":1776845425466,
 	"name":"AnalyticsByUnifyAppsLocalwdAeDchuYt",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8YF9V-1",
-			"id":"_8YF9V",
-			"index":0,
+			"id":"n_pMuJp",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result_AfterUpdate":{
+							"type":"string",
+							"title":"Result_AfterUpdate"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8YF9V-1",
-			"id":"_8t3Hs",
-			"index":0,
+			"id":"n_aAHvT",
+			"index":2,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_DOB='01/01/2026' where _pr_Emp_Name='pavan';",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1986,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8YF9V-1",
+			"id":"n_YUzOv",
+			"index":3,
+			"inputs":{
+				"query":"Select _pr_DOB from ENTITY_dnd_object_update_query_check where _pr_Emp_Name='pavan';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8YF9V-1",
+			"id":"n_jqSFt",
+			"index":4,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_DOB='01/01/2026' where _pr_Emp_Name='pavan';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8YF9V-1",
+			"id":"n_XOrk0",
+			"index":5,
+			"inputs":{
+				"result":{
+					"Result_AfterUpdate":"{{ n_YUzOv.outputs.objects }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +176,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
