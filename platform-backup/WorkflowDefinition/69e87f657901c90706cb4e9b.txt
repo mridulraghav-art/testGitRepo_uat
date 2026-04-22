@@ -6,46 +6,166 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_PqtqF",
+			"fromNodeId":"n_XDxYm",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_wzihp",
+			"toNodeId":"n_g9xAB",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_g9xAB",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_i4EUs",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_i4EUs",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Uqd8w",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Uqd8w",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_36a0L",
 			"type":"next"
 		}
 	],
 	"id":"69e87f657901c90706cb4e9b",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocalnehhocjhyz",
-	"modifiedTime":1776844645849,
+	"modifiedTime":1776844664456,
 	"name":"AnalyticsByUnifyAppsLocalnEhhOCJhYz",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_PqtqF-1",
-			"id":"_PqtqF",
-			"index":0,
+			"id":"n_XDxYm",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result_AfterUpdate":{
+							"type":"string",
+							"title":"Result_AfterUpdate"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_PqtqF-1",
-			"id":"_wzihp",
-			"index":0,
+			"id":"n_g9xAB",
+			"index":2,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_Age=22,_pr_Married=true where _pr_Emp_Name='Murali';",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1986,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_PqtqF-1",
+			"id":"n_i4EUs",
+			"index":3,
+			"inputs":{
+				"query":"Select _pr_Age,_pr_Married from ENTITY_dnd_object_update_query_check where _pr_Emp_Name='Murali';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_PqtqF-1",
+			"id":"n_Uqd8w",
+			"index":4,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_Age=21,_pr_Married=false where _pr_Emp_Name='Murali';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_PqtqF-1",
+			"id":"n_36a0L",
+			"index":5,
+			"inputs":{
+				"result":{
+					"Result_AfterUpdate":"{{ n_i4EUs.outputs.objects }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +176,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
