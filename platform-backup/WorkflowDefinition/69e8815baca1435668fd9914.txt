@@ -6,46 +6,166 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_dpnbv",
+			"fromNodeId":"n_4HiK5",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_zGH5b",
+			"toNodeId":"n_SPr8E",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SPr8E",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_NhGvj",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_NhGvj",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_9O398",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_9O398",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_VwsCU",
 			"type":"next"
 		}
 	],
 	"id":"69e8815baca1435668fd9914",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocalgpbrypveik",
-	"modifiedTime":1776845147880,
+	"modifiedTime":1776845164476,
 	"name":"AnalyticsByUnifyAppsLocalGpbRypvEiK",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_dpnbv-1",
-			"id":"_dpnbv",
-			"index":0,
+			"id":"n_4HiK5",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result_AfterUpdate":{
+							"type":"string",
+							"title":"Result_AfterUpdate"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_dpnbv-1",
-			"id":"_zGH5b",
-			"index":0,
+			"id":"n_SPr8E",
+			"index":2,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_Emp_Name='Sai' where _pr_DOB='1767225600000';",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1986,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_dpnbv-1",
+			"id":"n_NhGvj",
+			"index":3,
+			"inputs":{
+				"query":"Select count(_pr_Emp_Name) from ENTITY_dnd_object_update_query_check where _pr_Emp_Name='Sai';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_dpnbv-1",
+			"id":"n_9O398",
+			"index":4,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_Emp_Name='Sai' where _pr_DOB='1767225600000';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_dpnbv-1",
+			"id":"n_VwsCU",
+			"index":5,
+			"inputs":{
+				"result":{
+					"Result_AfterUpdate":"{{ n_NhGvj.outputs.objects }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +176,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
