@@ -6,46 +6,173 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_iBMYN",
+			"fromNodeId":"n_X9HUx",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_HSuk1",
+			"toNodeId":"n_CHO2H",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CHO2H",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_JCAJ6",
+			"type":"scope"
+		},
+		{
+			"fromNodeId":"n_JCAJ6",
+			"name":"scope-loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CHO2H",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CHO2H",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_5RzzL",
 			"type":"next"
 		}
 	],
 	"id":"69e86984f9de94210f3a5a01",
 	"lastModifiedBy":39,
 	"lcName":"ftyghj",
-	"modifiedTime":1776839044402,
+	"modifiedTime":1776839082006,
 	"name":"ftyghj",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_iBMYN-1",
-			"id":"_iBMYN",
-			"index":0,
+			"id":"n_X9HUx",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"tygh"
+					],
+					"properties":{
+						"tygh":{
+							"type":"string",
+							"title":"Tygh"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"inoutstring"
+					],
+					"properties":{
+						"inoutstring":{
+							"type":"string",
+							"title":"Inoutstring"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"scope",
+				"resourceVersion":647,
+				"resourceName":"scope_trigger_scope",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_iBMYN-1",
-			"id":"_HSuk1",
-			"index":0,
+			"id":"n_CHO2H",
+			"index":2,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"{{ n_X9HUx.outputs.inoutstring }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"Unifyapps"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Scope",
+			"title":"Trigger Scope",
+			"type":"SCOPE"
+		},
+		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":16294,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION",
+				"scopeNodeId":"n_CHO2H"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_CHO2H@_iBMYN-1@s",
+			"id":"n_JCAJ6",
+			"index":3,
+			"inputs":{
+				"field1":"workflow continues",
+				"field2":false
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":17890,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_iBMYN-1",
+			"id":"n_5RzzL",
+			"index":4,
+			"inputs":{
+				"result":{
+					"tygh":"trfyghj"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +183,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
