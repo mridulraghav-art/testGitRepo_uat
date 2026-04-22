@@ -6,46 +6,166 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_pDNmv",
+			"fromNodeId":"n_tAUsE",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_e3GTV",
+			"toNodeId":"n_54Nqj",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_54Nqj",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_fRJjg",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_fRJjg",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_a03nK",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_a03nK",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_yKWYs",
 			"type":"next"
 		}
 	],
 	"id":"69e882466108ae2fae73217f",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocalplbytahkwx",
-	"modifiedTime":1776845382619,
+	"modifiedTime":1776845400318,
 	"name":"AnalyticsByUnifyAppsLocalpLbyTAhKWx",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pDNmv-1",
-			"id":"_pDNmv",
-			"index":0,
+			"id":"n_tAUsE",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result_AfterUpdate":{
+							"type":"string",
+							"title":"Result_AfterUpdate"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pDNmv-1",
-			"id":"_e3GTV",
-			"index":0,
+			"id":"n_54Nqj",
+			"index":2,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_DOB=NULL where _pr_Emp_Name='JayaSimha';",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1986,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_pDNmv-1",
+			"id":"n_fRJjg",
+			"index":3,
+			"inputs":{
+				"query":"Select _pr_DOB from ENTITY_dnd_object_update_query_check where _pr_Emp_Name='JayaSimha';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_pDNmv-1",
+			"id":"n_a03nK",
+			"index":4,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_DOB='1058745600000' where _pr_Emp_Name='JayaSimha';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_pDNmv-1",
+			"id":"n_yKWYs",
+			"index":5,
+			"inputs":{
+				"result":{
+					"Result_AfterUpdate":"{{ n_fRJjg.outputs.objects }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +176,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
