@@ -6,46 +6,166 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_FxOTE",
+			"fromNodeId":"n_5M9E7",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_HMaKF",
+			"toNodeId":"n_wdB10",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_wdB10",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_jPILz",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_jPILz",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_dLw0q",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_dLw0q",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_M2ySZ",
 			"type":"next"
 		}
 	],
 	"id":"69e8813f6108ae2fae731d3c",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocaltdpctssmhb",
-	"modifiedTime":1776845119203,
+	"modifiedTime":1776845140782,
 	"name":"AnalyticsByUnifyAppsLocaltDpctssMHB",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FxOTE-1",
-			"id":"_FxOTE",
-			"index":0,
+			"id":"n_5M9E7",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result_AfterUpdate":{
+							"type":"string",
+							"title":"Result_AfterUpdate"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FxOTE-1",
-			"id":"_HMaKF",
-			"index":0,
+			"id":"n_wdB10",
+			"index":2,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_Married=true where _pr_City='Vijayawada';",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1986,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_FxOTE-1",
+			"id":"n_jPILz",
+			"index":3,
+			"inputs":{
+				"query":"Select _pr_Married from ENTITY_dnd_object_update_query_check where _pr_City='Vijayawada';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_FxOTE-1",
+			"id":"n_dLw0q",
+			"index":4,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_Married=false where _pr_City='Vijayawada';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_FxOTE-1",
+			"id":"n_M2ySZ",
+			"index":5,
+			"inputs":{
+				"result":{
+					"Result_AfterUpdate":"{{ n_jPILz.outputs.objects }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +176,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
