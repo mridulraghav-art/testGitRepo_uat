@@ -6,46 +6,126 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_CDdeg",
+			"fromNodeId":"n_6DxAN",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_oM6Mr",
+			"toNodeId":"n_ax25u",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_ax25u",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GkhU2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GkhU2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_PaJvW",
 			"type":"next"
 		}
 	],
 	"id":"69e843388d36c4122cd4d5ca",
 	"lastModifiedBy":39,
 	"lcName":"standardentitieslocaljqbwqenyiuumvwz",
-	"modifiedTime":1776829240752,
+	"modifiedTime":1776829255293,
 	"name":"standardEntitiesLocalJQBWQEnyiuUMvwz",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_CDdeg-1",
-			"id":"_CDdeg",
-			"index":0,
+			"id":"n_6DxAN",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":4997,
+				"resourceName":"standard_entities_create_env_variable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_CDdeg-1",
-			"id":"_oM6Mr",
-			"index":0,
+			"id":"n_ax25u",
+			"index":2,
+			"inputs":{
+				"name":"EnvVariable9LmxG06jDy",
+				"sensitive":false,
+				"value":"oldValue"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Create Environment Variable",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":4996,
+				"resourceName":"standard_entities_update_env_variable",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_CDdeg-1",
+			"id":"n_GkhU2",
+			"index":3,
+			"inputs":{
+				"name":"{{ n_ax25u.outputs.properties.name }}",
+				"sensitive":false,
+				"value":"newValue"
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Update Environment Variable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_CDdeg-1",
+			"id":"n_PaJvW",
+			"index":4,
+			"inputs":{
+				"result":"{{ n_GkhU2.outputs }}"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +136,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
