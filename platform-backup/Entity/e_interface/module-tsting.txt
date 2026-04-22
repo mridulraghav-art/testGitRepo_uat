@@ -24,7 +24,7 @@
 	},
 	"id":"module-tsting",
 	"lastModifiedBy":39,
-	"modifiedTime":1776839837201,
+	"modifiedTime":1776841938974,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -41,8 +41,20 @@
 				"_mqttTopicCounter":0,
 				"_pageCount":4,
 				"_moduleCount":1,
+				"_variableCounter":1,
 				"_templateComponentCount":0
 			}
+		},
+		"publicPageIds":[],
+		"manifest":{
+			"type":"WEB"
+		},
+		"pagePermissions":{
+			"e_69e873729c37db721719174b":{}
+		},
+		"type":"application",
+		"locale":{
+			"defaultLocale":"en-US"
 		},
 		"navigation":{
 			"secondary":[],
@@ -311,18 +323,12 @@
 			"e_69e86c9d6ae0b02b0420ad41":"page-4",
 			"e_69e862ea9c37db72171907b2":"page-2",
 			"e_69e8627f6ae0b02b0420a507":"homepage",
-			"e_global_module-tsting":"global-page-of-module-tsting"
-		},
-		"manifest":{
-			"type":"WEB"
+			"e_global_module-tsting":"global-page-of-module-tsting",
+			"e_69e873729c37db721719174b":""
 		},
 		"name":"module-tsting",
 		"theme":{
 			"defaultThemeId":"e_699c1348d53be90e1bfeabff"
-		},
-		"type":"application",
-		"locale":{
-			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
 			"e_69e8676a9c37db7217190978":{
@@ -349,6 +355,11 @@
 				"slug":"global-page-of-module-tsting",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_69e873729c37db721719174b":{
+				"slug":"",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -356,5 +367,5 @@
 	"tags":[
 		
 	],
-	"version":30
+	"version":36
 }
