@@ -6,46 +6,166 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_Xb2HU",
+			"fromNodeId":"n_C3K9e",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_uQBYC",
+			"toNodeId":"n_NmQEY",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_NmQEY",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_06SAE",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_06SAE",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UGtAR",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UGtAR",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GtnKm",
 			"type":"next"
 		}
 	],
 	"id":"69e881bc333799511e09b109",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocalghmhavxfxt",
-	"modifiedTime":1776845244112,
+	"modifiedTime":1776845269804,
 	"name":"AnalyticsByUnifyAppsLocalGhmhAvxFXt",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Xb2HU-1",
-			"id":"_Xb2HU",
-			"index":0,
+			"id":"n_C3K9e",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result_AfterUpdate":{
+							"type":"string",
+							"title":"Result_AfterUpdate"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Xb2HU-1",
-			"id":"_uQBYC",
-			"index":0,
+			"id":"n_NmQEY",
+			"index":2,
+			"inputs":{
+				"query":"update dnd_object_update_query_check set _pr_City='Hyderabad';",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1986,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Xb2HU-1",
+			"id":"n_06SAE",
+			"index":3,
+			"inputs":{
+				"query":"Select _pr_City from ENTITY_dnd_object_update_query_check;",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Xb2HU-1",
+			"id":"n_UGtAR",
+			"index":4,
+			"inputs":{
+				"query":"update dnd_object_update_query_check set _pr_City='Hyderabad';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Xb2HU-1",
+			"id":"n_GtnKm",
+			"index":5,
+			"inputs":{
+				"result":{
+					"Result_AfterUpdate":"{{ n_06SAE.outputs.objects }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +176,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
