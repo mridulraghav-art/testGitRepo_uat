@@ -24,7 +24,7 @@
 	},
 	"id":"module-tsting",
 	"lastModifiedBy":39,
-	"modifiedTime":1776837247064,
+	"modifiedTime":1776837907855,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,8 +39,8 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":1,
-				"_moduleCount":0,
+				"_pageCount":2,
+				"_moduleCount":1,
 				"_templateComponentCount":0
 			}
 		},
@@ -52,6 +52,10 @@
 					"primary":[
 						{
 							"id":"nav_AtjDA",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_snjej",
 							"hiddenInOverflow":false
 						}
 					],
@@ -90,6 +94,10 @@
 					"primary":[
 						{
 							"id":"nav_AtjDA",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_snjej",
 							"hiddenInOverflow":false
 						}
 					],
@@ -135,6 +143,10 @@
 						{
 							"id":"nav_AtjDA",
 							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_snjej",
+							"hiddenInOverflow":false
 						}
 					],
 					"navigationItem":{
@@ -178,6 +190,10 @@
 					"primary":[
 						{
 							"id":"nav_AtjDA",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_snjej",
 							"hiddenInOverflow":false
 						}
 					],
@@ -228,11 +244,22 @@
 					"type":"PAGE",
 					"pageId":"e_69e8627f6ae0b02b0420a507",
 					"slug":"homepage"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_snjej",
+					"type":"PAGE",
+					"pageId":"e_69e862ea9c37db72171907b2",
+					"slug":"page-2"
 				}
 			]
 		},
 		"interfacePageIdVsSlugMap":{
-			"e_69e8627f6ae0b02b0420a507":"homepage"
+			"e_69e8627f6ae0b02b0420a507":"homepage",
+			"e_global_module-tsting":"global-page-of-module-tsting",
+			"e_69e862ea9c37db72171907b2":"page-2"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -250,6 +277,16 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_module-tsting":{
+				"slug":"global-page-of-module-tsting",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_69e862ea9c37db72171907b2":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -257,5 +294,5 @@
 	"tags":[
 		
 	],
-	"version":2
+	"version":11
 }
