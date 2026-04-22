@@ -6,46 +6,166 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_sNYGW",
+			"fromNodeId":"n_OXbgU",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_UnViJ",
+			"toNodeId":"n_Shy2H",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Shy2H",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_7EZwI",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_7EZwI",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_3qVkT",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_3qVkT",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_otCqO",
 			"type":"next"
 		}
 	],
 	"id":"69e881a1aca1435668fd99bb",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocalqinwgybwfe",
-	"modifiedTime":1776845217859,
+	"modifiedTime":1776845237955,
 	"name":"AnalyticsByUnifyAppsLocalQINwGybwFe",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sNYGW-1",
-			"id":"_sNYGW",
-			"index":0,
+			"id":"n_OXbgU",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Result_AfterUpdate":{
+							"type":"string",
+							"title":"Result_AfterUpdate"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sNYGW-1",
-			"id":"_UnViJ",
-			"index":0,
+			"id":"n_Shy2H",
+			"index":2,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set City='Hyderabad';",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1986,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_sNYGW-1",
+			"id":"n_7EZwI",
+			"index":3,
+			"inputs":{
+				"query":"Select _pr_City from ENTITY_dnd_object_update_query_check;",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_sNYGW-1",
+			"id":"n_3qVkT",
+			"index":4,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set City='Hyderabad';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_sNYGW-1",
+			"id":"n_otCqO",
+			"index":5,
+			"inputs":{
+				"result":{
+					"Result_AfterUpdate":"{{ n_7EZwI.outputs.objects }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +176,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
