@@ -4,46 +4,18 @@
 	],
 	"createdTime":1774717531184,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1774717532238,
+		"deployedAt":1775579810473,
 		"deployedBy":0,
-		"deployedDefinitionId":"69c80a5b494e2a158031044e",
+		"deployedDefinitionId":"69d532a28ea9d82dc8fb2ddd",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":19
+		"version":2,
+		"workflowVersion":21
 	},
 	"edges":[
 		{
 			"fromNodeId":"3iNEX",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"KQ4fW",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"KQ4fW",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"agC4f",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"agC4f",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"3yG5L",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"3yG5L",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"puP5M",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"puP5M",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_qFcgZ",
@@ -61,162 +33,107 @@
 			"fromNodeId":"n_qFcgZ@1",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"njg21",
+			"toNodeId":"n_Inbzp",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"njg21",
+			"fromNodeId":"n_Inbzp",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"dFTNb",
+			"toNodeId":"n_4auVC",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"dFTNb",
+			"fromNodeId":"n_4auVC",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"FW69U",
+			"toNodeId":"n_8Yd4U",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"FW69U",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"jPSc2",
-			"type":"loop"
-		},
-		{
-			"fromNodeId":"jPSc2",
+			"fromNodeId":"n_8Yd4U",
 			"name":"yes",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"7frlW",
+			"toNodeId":"n_LgTyb",
 			"type":"if"
 		},
 		{
-			"fromNodeId":"7frlW",
+			"fromNodeId":"n_LgTyb",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"7nYCD",
+			"toNodeId":"n_29FLv",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"7nYCD",
+			"fromNodeId":"n_8Yd4U",
 			"name":"no",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"b7S1e",
+			"toNodeId":"n_29FLv",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"7nYCD",
-			"name":"yes",
+			"fromNodeId":"n_29FLv",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_GaGAM",
-			"type":"if"
-		},
-		{
-			"fromNodeId":"b7S1e",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_GaGAM",
+			"toNodeId":"n_wCZ8e",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_GaGAM",
-			"name":"yes",
+			"fromNodeId":"n_wCZ8e",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"vUKrY",
-			"type":"if"
-		},
-		{
-			"fromNodeId":"vUKrY",
-			"name":"loopback",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"FW69U",
+			"toNodeId":"n_s1pjQ",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_GaGAM",
-			"name":"no",
+			"fromNodeId":"n_s1pjQ",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"FW69U",
+			"toNodeId":"n_cauiU",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"jPSc2",
-			"name":"no",
+			"fromNodeId":"n_cauiU",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"FW69U",
+			"toNodeId":"n_t5KGn",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"FW69U",
+			"fromNodeId":"n_t5KGn",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"IzzSw",
+			"toNodeId":"n_1dwVN",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"IzzSw",
+			"fromNodeId":"n_1dwVN",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"vzNbB",
+			"toNodeId":"n_8UIVA",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"vzNbB",
+			"fromNodeId":"n_8UIVA",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"xORbN",
+			"toNodeId":"n_nOWW3",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"xORbN",
+			"fromNodeId":"n_nOWW3",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_Alz94",
+			"toNodeId":"n_f5mmo",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_Alz94",
+			"fromNodeId":"n_f5mmo",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"vBMPP",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"vBMPP",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"TU9se",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"TU9se",
-			"name":"yes",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"XlqC3",
-			"type":"if"
-		},
-		{
-			"fromNodeId":"XlqC3",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"UYgSw",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"UYgSw",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"GFzTm",
+			"toNodeId":"n_xxIqY",
 			"type":"next"
 		},
 		{
@@ -238,26 +155,32 @@
 			"fromNodeId":"n_PG3UH",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_jpZ7y",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_jpZ7y",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"_SvAJM",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"GFzTm",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"7o210",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"TU9se",
-			"name":"no",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"7o210",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"_SvAJM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_j4qIV",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_xxIqY",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"7o210",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_j4qIV",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"7o210",
@@ -285,7 +208,7 @@
 	"id":"69c3712f35729b0d7cf8ffe7",
 	"lastModifiedBy":0,
 	"lcName":"observability | get case traces info v2",
-	"modifiedTime":1775579810347,
+	"modifiedTime":1776938457963,
 	"name":"Observability | Get Case Traces Info V2",
 	"nodes":[
 		{
@@ -337,8 +260,17 @@
 						"totalOutputToken":{
 							"type":"integer",
 							"title":"Total Output Token"
+						},
+						"totalCacheReadTokens":{
+							"type":"integer",
+							"title":"Total Cache Read Tokens"
+						},
+						"totalCacheWriteTokens":{
+							"type":"integer",
+							"title":"Total Cache Write Tokens"
 						}
-					}
+					},
+					"dynamic":true
 				},
 				"setup":{
 					"type":"object",
@@ -362,115 +294,71 @@
 		},
 		{
 			"context":{
-				"appName":"storage_by_unifyapps",
-				"resourceVersion":75,
-				"resourceName":"storage_by_unifyapps_fetch_records",
+				"appName":"branch",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"vhHXW-1",
-			"id":"KQ4fW",
+			"id":"n_qFcgZ",
 			"index":2,
 			"inputs":{
-				"triggerInputCondition":{
-					"filters":[
-						{
-							"property":"properties_caseId",
-							"filter":{
-								"operator":"EQUAL",
-								"value":"{{ 3iNEX.outputs.caseId }}"
-							}
-						}
-					],
-					"operator":"AND"
-				},
-				"object_type":"service_hub_message",
-				"includeRoleMappings":false,
-				"includeCurrentUserPermissions":false,
-				"sortBy":[
+				"branches":[
 					{
-						"field":"cTm",
-						"order":"ASC"
+						"id":"1",
+						"inputs":{
+							"name":"trace"
+						}
+					},
+					{
+						"id":"2",
+						"inputs":{
+							"name":"total"
+						}
+					},
+					{
+						"id":"default"
 					}
-				],
-				"translationsOption":"DEFAULT",
-				"page":{
-					"paginateBy":"OFFSET",
-					"limit":20
-				},
-				"numberOfRecordsToFetch":"SINGLE",
-				"readThroughSessionVariables":false,
-				"includeTotalCount":false
+				]
 			},
 			"skip":false,
-			"subTitle":"Storage by UnifyApps",
-			"title":"Fetch records",
-			"type":"ACTION"
+			"subTitle":"Branch",
+			"title":"",
+			"type":"BRANCH"
 		},
 		{
 			"context":{
-				"appName":"storage_by_unifyapps",
-				"resourceVersion":75,
-				"resourceName":"storage_by_unifyapps_fetch_records",
+				"appName":"branch_condition",
+				"resourceVersion":0,
+				"resourceName":"branch_condition",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"vhHXW-1",
-			"id":"agC4f",
+			"groupId":"n_qFcgZ@vhHXW-1@1",
+			"id":"n_qFcgZ@1",
 			"index":3,
 			"inputs":{
-				"triggerInputCondition":{
-					"filters":[
-						{
-							"property":"properties_caseId",
-							"filter":{
-								"operator":"EQUAL",
-								"value":"{{ 3iNEX.outputs.caseId }}"
-							}
-						}
-					],
-					"operator":"AND"
-				},
-				"shouldSearchInAnalyticsStore":false,
-				"object_type":"service_hub_message",
-				"includeRoleMappings":false,
-				"includeCurrentUserPermissions":false,
-				"sortBy":[
-					{
-						"field":"cTm",
-						"order":"DESC"
-					}
-				],
-				"translationsOption":"DEFAULT",
-				"page":{
-					"paginateBy":"OFFSET",
-					"limit":20
-				},
-				"numberOfRecordsToFetch":"SINGLE",
-				"readThroughSessionVariables":false,
-				"includeTotalCount":false
+				"name":"trace"
 			},
 			"skip":false,
-			"subTitle":"Storage by UnifyApps",
-			"title":"Fetch records",
-			"type":"ACTION"
+			"title":"",
+			"type":"BRANCH_CONDITION"
 		},
 		{
 			"context":{
 				"appName":"variable_by_unifyapps",
-				"resourceVersion":300,
+				"resourceVersion":688,
 				"resourceName":"variable_by_unifyapps_create_list",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"vhHXW-1",
-			"id":"3yG5L",
+			"groupId":"n_qFcgZ@vhHXW-1@1",
+			"id":"n_Inbzp",
 			"index":4,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
@@ -680,40 +568,8 @@
 										"boolean",
 										"integer"
 									],
-									"properties":{
-										"traceId":{
-											"type":"string",
-											"title":"Trace Id"
-										},
-										"latency":{
-											"type":"number",
-											"title":"Latency"
-										},
-										"tokenCost":{
-											"type":"number",
-											"title":"Token Cost"
-										},
-										"tokens":{
-											"type":"number",
-											"title":"Tokens"
-										},
-										"inputTokens":{
-											"type":"integer",
-											"title":"Input Tokens"
-										},
-										"outputTokens":{
-											"type":"integer",
-											"title":"Output Tokens"
-										}
-									},
-									"required":[
-										"traceId",
-										"latency",
-										"tokenCost",
-										"tokens",
-										"inputTokens",
-										"outputTokens"
-									]
+									"properties":{},
+									"required":[]
 								}
 							}
 						}
@@ -724,7 +580,7 @@
 				"createList":{
 					"ua:type":"mappedArray"
 				},
-				"ua:title":"tracesInfos",
+				"ua:title":"caseTraceInfo",
 				"ua:list_type":"OBJECT"
 			},
 			"outputSchema":{
@@ -734,736 +590,122 @@
 					"properties":{
 						"items":{
 							"type":"array",
-							"title":"tracesInfos",
+							"title":"caseTraceInfo",
 							"disableActions":true,
 							"items":{
 								"type":"object",
+								"properties":{},
+								"required":[]
+							}
+						},
+						"_ua_variableDetails":{
+							"type":"array",
+							"title":"Variable Details",
+							"items":{
+								"type":"object",
 								"properties":{
-									"traceId":{
-										"type":"string",
-										"title":"Trace Id"
+									"description":{
+										"description":"Description of the variable",
+										"type":"string"
 									},
-									"latency":{
-										"type":"number",
-										"title":"Latency"
+									"dataType":{
+										"description":"Data type of the variable",
+										"type":"string"
 									},
-									"tokenCost":{
-										"type":"number",
-										"title":"Token Cost"
-									},
-									"tokens":{
-										"type":"number",
-										"title":"Tokens"
-									},
-									"inputTokens":{
-										"type":"integer",
-										"title":"Input Tokens"
-									},
-									"outputTokens":{
-										"type":"integer",
-										"title":"Output Tokens"
+									"name":{
+										"description":"Name of the variable",
+										"type":"string"
 									}
-								},
-								"required":[
-									"traceId",
-									"latency",
-									"tokenCost",
-									"tokens",
-									"inputTokens",
-									"outputTokens"
-								]
+								}
 							}
 						}
 					}
 				}
 			},
 			"skip":false,
-			"subTitle":"Variable",
+			"subTitle":"Variable by UnifyApps",
 			"title":"Create list",
 			"type":"ACTION"
 		},
 		{
 			"context":{
-				"appName":"variable_by_unifyapps",
-				"resourceVersion":672,
-				"resourceName":"variable_by_unifyapps_create_list",
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":1191,
+				"resourceName":"storage_by_unifyapps_fetch_records",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"vhHXW-1",
-			"id":"puP5M",
+			"groupId":"n_qFcgZ@vhHXW-1@1",
+			"id":"n_4auVC",
 			"index":5,
-			"inputSchema":{
-				"type":"SCHEMA_AND_LAYOUT",
-				"dynamic":false,
-				"layout":{
-					"createList":{
-						"ui:title":"",
-						"ua:type":{
-							"ui:widget":"hidden"
-						},
-						"items":{
-							"ui:title":"Initial list items",
-							"ui:description":"Set the initial values of the list (defaults to empty)"
-						},
-						"ui:order":[
-							"*",
-							"items"
-						]
-					},
-					"ua:title":{
-						"ui:widget":"hidden"
-					},
-					"ua:list_type":{
-						"ui:widget":"hidden"
-					}
-				},
-				"schema":{
-					"allOf":[
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
 						{
-							"if":{
-								"properties":{
-									"ua:list_type":{
-										"const":"OBJECT"
-									}
-								}
-							},
-							"then":{
-								"properties":{
-									"createList":{
-										"type":"object",
-										"properties":{
-											"items":{
-												"type":"object",
-												"properties":{}
-											}
-										}
-									}
-								}
+							"property":"properties_caseId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ 3iNEX.outputs.caseId }}"
 							}
 						},
 						{
-							"if":{
-								"properties":{
-									"ua:list_type":{
-										"const":"STRING"
-									}
-								}
-							},
-							"then":{
-								"properties":{
-									"createList":{
-										"type":"object",
-										"properties":{
-											"source":{
-												"type":"string",
-												"format":"ua:source",
-												"title":"List of String"
-											},
-											"items":{
-												"type":"string"
-											}
-										}
-									}
-								}
+							"property":"properties_type",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"fan"
 							}
 						},
 						{
-							"if":{
-								"properties":{
-									"ua:list_type":{
-										"const":"INTEGER"
-									}
-								}
-							},
-							"then":{
-								"properties":{
-									"createList":{
-										"type":"object",
-										"properties":{
-											"source":{
-												"type":"string",
-												"format":"ua:source",
-												"title":"List of Integers"
-											},
-											"items":{
-												"type":"integer"
-											}
-										}
-									}
-								}
-							}
-						},
-						{
-							"if":{
-								"properties":{
-									"ua:list_type":{
-										"const":"NUMBER"
-									}
-								}
-							},
-							"then":{
-								"properties":{
-									"createList":{
-										"type":"object",
-										"properties":{
-											"source":{
-												"type":"string",
-												"format":"ua:source",
-												"title":"List of Numbers"
-											},
-											"items":{
-												"type":"number"
-											}
-										}
-									}
-								}
-							}
-						},
-						{
-							"if":{
-								"properties":{
-									"ua:list_type":{
-										"const":"BOOLEAN"
-									}
-								}
-							},
-							"then":{
-								"properties":{
-									"createList":{
-										"type":"object",
-										"properties":{
-											"source":{
-												"type":"string",
-												"format":"ua:source",
-												"title":"List of Booleans"
-											},
-											"items":{
-												"type":"boolean"
-											}
-										}
-									}
-								}
-							}
-						}
-					],
-					"format":"ua:list",
-					"type":"object",
-					"properties":{
-						"ua:title":{
-							"type":"string"
-						},
-						"ua:list_type":{
-							"type":"string",
-							"title":"List Type",
-							"oneOf":[
+							"filters":[
 								{
-									"const":"OBJECT",
-									"title":"Object"
+									"property":"properties_additional_temporaryMessage",
+									"filter":{
+										"operator":"MISSING"
+									}
 								},
 								{
-									"const":"STRING",
-									"title":"String"
-								},
-								{
-									"const":"NUMBER",
-									"title":"Number"
-								},
-								{
-									"const":"INTEGER",
-									"title":"Integer"
-								},
-								{
-									"const":"BOOLEAN",
-									"title":"Boolean"
+									"property":"properties_additional_temporaryMessage",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"false"
+									}
 								}
 							],
-							"default":"OBJECT"
+							"operator":"OR"
 						},
-						"createList":{
-							"type":"object",
-							"properties":{
-								"ua:type":{
-									"type":"string",
-									"default":"mappedArray"
-								},
-								"source":{
-									"type":"string",
-									"format":"ua:source",
-									"title":"List Item Source"
-								},
-								"items":{
-									"additionalProperties":false,
-									"type":[
-										"object",
-										"string",
-										"number",
-										"boolean",
-										"integer"
-									],
-									"properties":{}
-								}
+						{
+							"property":"properties_additional_internalMessageType",
+							"filter":{
+								"operator":"MISSING"
 							}
 						}
-					}
-				}
-			},
-			"inputs":{
-				"createList":{
-					"ua:type":"mappedArray"
-				},
-				"ua:title":"visited",
-				"ua:list_type":"STRING"
-			},
-			"outputSchema":{
-				"dynamic":false,
-				"schema":{
-					"type":"object",
-					"properties":{
-						"items":{
-							"type":"array",
-							"title":"visited",
-							"disableActions":true,
-							"items":{
-								"type":"string"
-							}
-						}
-					}
-				}
-			},
-			"skip":false,
-			"subTitle":"Variable by UnifyApps",
-			"title":"Create list",
-			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"branch",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"vhHXW-1",
-			"id":"n_qFcgZ",
-			"index":6,
-			"inputs":{
-				"branches":[
-					{
-						"id":"1",
-						"inputs":{
-							"name":"trace"
-						}
-					},
-					{
-						"id":"2",
-						"inputs":{
-							"name":"total"
-						}
-					},
-					{
-						"id":"default"
-					}
-				]
-			},
-			"skip":false,
-			"subTitle":"Branch",
-			"title":"",
-			"type":"BRANCH"
-		},
-		{
-			"context":{
-				"appName":"branch_condition",
-				"resourceVersion":0,
-				"resourceName":"branch_condition",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_qFcgZ@vhHXW-1@1",
-			"id":"n_qFcgZ@1",
-			"index":7,
-			"inputs":{
-				"name":"trace"
-			},
-			"skip":false,
-			"title":"",
-			"type":"BRANCH_CONDITION"
-		},
-		{
-			"additional":{
-				"xsdSchemaConfig":{}
-			},
-			"context":{
-				"appName":"code_by_unifyapps",
-				"resourceVersion":58,
-				"resourceName":"code_by_unifyapps_groovy",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_qFcgZ@vhHXW-1@1",
-			"id":"njg21",
-			"index":8,
-			"inputs":{
-				"output":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"sqlQuery"
 					],
-					"properties":{
-						"sqlQuery":{
-							"type":"string",
-							"title":"Sql Query"
-						}
-					}
+					"operator":"AND"
 				},
-				"input":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"caseId"
-					],
-					"properties":{
-						"caseId":{
-							"type":"string",
-							"title":"Case Id"
-						}
-					}
-				},
-				"code":"String generateQuery(caseId) {\n    return \"SELECT \" +\n           \"    _pr_caseId AS caseId, \" +\n           \"    _pr_aiAgentId AS aiAgentId, \" +\n           \"    _pr_modelId AS modelId, \" +\n           \"    _pr_outputToken AS outputToken, \" +\n           \"    _pr_cost AS cost, \" +\n           \"    _pr_executionInstanceId AS executionInstanceId, \" +\n           \"    _pr_parent AS parent, \" +\n           \"    _pr_provider AS provider, \" +\n           \"    _pr_messageId AS messageId, \" +\n           \"    _pr_userId AS userId, \" +\n           \"    _pr_llmTimeTaken AS llmTimeTaken, \" +\n           \"    _pr_currentType AS currentType, \" +\n           \"    _pr_finish_reason AS finishReason, \" +\n           \"    _pr_inputTokenCost AS inputTokenCost, \" +\n           \"    _pr_outputTokenCost AS outputTokenCost, \" +\n           \"    _pr_rootExecutionId AS rootExecutionId, \" +\n           \"    _pr_parentExecutionId AS parentExecutionId, \" +\n           \"    _pr_toolName AS toolName, \" +\n           \"    _pr_inputToken AS inputToken, \" +\n           \"    _pr_llmErrorType AS llmErrorType, \" +\n           \"    _pr_fromAutomationId AS fromAutomationId, \" +\n           \"    _pr_topicName AS topicName, \" +\n           \"    _pr_startTime AS startTime  \" +\n           \"FROM ENTITY_e_traces \" +\n           \"WHERE _pr_messageId IS NOT NULL \" +\n           \"  AND _pr_caseId = '\" + caseId + \"' \" +\n           \"  AND _pr_fromAutomationId IN ( \" +\n            \"      '6851442f9e30586f552a6d73' , \"+\n            \"       '67df12719fa26d792211be4f', \"+\n           \"       '66ac70650f725f5b425d12d8', \" +\n           \"       '67933cc866e1f1098aa02c39', \" +\n           \"       '66b32227db0c6546b93d3acc', \" +\n           \"       '66a1e74accc70b77f9bf0308', \" +\n           \"       '66b356891a78c401cb586890', \" +\n           \"       '67e6651efd3591529146b261', \" +\n           \"       '67e4346d4718117333c7ee9a', \" +\n           \"       '66b3353e1a78c401cb583431', \" +\n           \"       '679c6521a6583456a7198e97', \" +\n           \"       '68206abcccc45f469e288de0', \" +\n           \"       '6853d10e492bca4185ba983d' \" +\n           \"  )\";\n}\n\ndef sqlQuery = generateQuery(caseId)\n\nreturn [sqlQuery: sqlQuery]",
-				"compile_static":false,
-				"isAsync":false,
-				"captureStdOutput":false,
-				"parameters":{
-					"caseId":"{{ 3iNEX.outputs.caseId }}"
-				}
-			},
-			"skip":false,
-			"subTitle":"Generate SQL",
-			"title":"Execute Groovy code",
-			"type":"ACTION"
-		},
-		{
-			"additional":{
-				"xsdSchemaConfig":{
-					"root":{}
-				}
-			},
-			"context":{
-				"appName":"analytics_by_unifyapps",
-				"resourceVersion":18,
-				"resourceName":"analytics_by_unifyapps_execute_query",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_qFcgZ@vhHXW-1@1",
-			"id":"dFTNb",
-			"index":9,
-			"inputs":{
-				"outputSchema":{
-					"type":"object",
-					"additionalProperties":false,
-					"properties":{
-						"columns":{
-							"type":"object",
-							"properties":{
-								"caseId":{
-									"type":"string",
-									"title":"caseId"
-								},
-								"aiAgentId":{
-									"type":"string",
-									"title":"aiAgentId"
-								},
-								"modelId":{
-									"type":"string",
-									"title":"modelId"
-								},
-								"intputToken":{
-									"type":"integer",
-									"title":"intputToken"
-								},
-								"outputToken":{
-									"type":"integer",
-									"title":"outputToken"
-								},
-								"cost":{
-									"type":"number",
-									"title":"cost"
-								},
-								"executionInstanceId":{
-									"type":"string",
-									"title":"executionInstanceId"
-								},
-								"parent":{
-									"type":"string",
-									"title":"parent"
-								},
-								"provider":{
-									"type":"string",
-									"title":"provider"
-								},
-								"messageId":{
-									"type":"string",
-									"title":"messageId"
-								},
-								"userId":{
-									"type":"string",
-									"title":"userId"
-								},
-								"llmTimeTaken":{
-									"type":"number",
-									"title":"llmTimeTaken"
-								},
-								"currentType":{
-									"type":"string",
-									"title":"currentType"
-								},
-								"finishReason":{
-									"type":"string",
-									"title":"finishReason"
-								},
-								"inputTokenCost":{
-									"type":"number",
-									"title":"inputTokenCost"
-								},
-								"outputTokenCost":{
-									"type":"number",
-									"title":"outputTokenCost"
-								},
-								"rootExecutionId":{
-									"type":"string",
-									"title":"rootExecutionId"
-								},
-								"parentExecutionId":{
-									"type":"string",
-									"title":"parentExecutionId"
-								},
-								"toolName":{
-									"type":"string",
-									"title":"toolName"
-								},
-								"prOutput":{
-									"type":"string",
-									"title":"prOutput"
-								},
-								"inputToken":{
-									"type":"integer",
-									"title":"inputToken"
-								},
-								"llmErrorType":{
-									"type":"string",
-									"title":"llmErrorType"
-								},
-								"fromAutomationId":{
-									"type":"string",
-									"title":"fromAutomationId"
-								},
-								"topicName":{
-									"type":"string",
-									"title":"topicName"
-								},
-								"startTime":{
-									"type":"integer",
-									"title":"startTime"
-								},
-								"prInput":{
-									"type":"object",
-									"properties":{},
-									"title":"prInput",
-									"additionalProperties":false,
-									"required":[]
-								}
-							},
-							"title":"columns",
-							"additionalProperties":false
-						}
-					}
-				},
-				"query":"{{ njg21.outputs.result.sqlQuery }}",
-				"group":"ENTITY_REPORTING"
-			},
-			"skip":false,
-			"subTitle":"Execute SQL",
-			"title":"Execute Analytics SQL Query",
-			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"loop",
-				"resourceVersion":301,
-				"resourceName":"loop_for_each",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_qFcgZ@vhHXW-1@1",
-			"id":"FW69U",
-			"index":10,
-			"inputs":{
-				"repeatMode":"SINGLE",
-				"listSource":"{{ dFTNb.outputs.objects }}",
-				"captureIterations":false
-			},
-			"skip":false,
-			"subTitle":"Loop",
-			"title":"For loop",
-			"type":"LOOP"
-		},
-		{
-			"context":{
-				"appName":"if_else",
-				"resourceVersion":291,
-				"resourceName":"if_else_condition",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"FW69U@n_qFcgZ@vhHXW-1@1@l",
-			"id":"jPSc2",
-			"index":11,
-			"inputs":{
-				"filters":[
+				"shouldSearchInAnalyticsStore":false,
+				"object_type":"service_hub_message",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"sortBy":[
 					{
-						"property":"{{ FW69U.outputs.item.columns.messageId }}",
-						"filter":{
-							"operator":"EXISTS"
-						}
+						"field":"cTm",
+						"order":"ASC"
 					}
 				],
-				"operator":"AND"
-			},
-			"skip":false,
-			"subTitle":"Condition",
-			"title":"Condition",
-			"type":"IF_ELSE"
-		},
-		{
-			"context":{
-				"appName":"code_by_unifyapps",
-				"resourceVersion":623,
-				"resourceName":"code_by_unifyapps_groovy",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"jPSc2@FW69U@n_qFcgZ@vhHXW-1@1@l@y",
-			"id":"7frlW",
-			"index":12,
-			"inputs":{
-				"output":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"result"
-					],
-					"properties":{
-						"result":{
-							"type":"boolean",
-							"title":"Result"
-						}
-					}
+				"translationsOption":"DEFAULT",
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":10000
 				},
-				"input":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"visited",
-						"traceId"
-					],
-					"properties":{
-						"visited":{
-							"type":"array",
-							"items":{
-								"type":"string"
-							},
-							"title":"Visited"
-						},
-						"traceId":{
-							"type":"string",
-							"title":"Trace Id"
-						}
-					}
-				},
-				"code":"def result = false\nif (binding.hasVariable('visited')) {\n    def visited = binding.getVariable('visited')\n    if (visited instanceof Collection) {\n        result = visited.contains(traceId)\n    }\n}\nreturn [\"result\": result]\n",
-				"compile_static":false,
-				"captureStdOutput":false,
-				"parameters":{
-					"traceId":"{{ FW69U.outputs.item.columns.messageId }}",
-					"visited":{
-						"source":"{{ puP5M.outputs.items }}",
-						"ua:type":"mappedArray",
-						"items":"{{ puP5M.outputs.items[0] }}"
-					}
-				}
+				"numberOfRecordsToFetch":"MULTIPLE",
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
 			},
 			"skip":false,
-			"subTitle":"Code by UnifyApps",
-			"title":"Execute Groovy code",
-			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"if_else",
-				"resourceVersion":578,
-				"resourceName":"if_else_condition",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"jPSc2@FW69U@n_qFcgZ@vhHXW-1@1@l@y",
-			"id":"7nYCD",
-			"index":13,
-			"inputs":{
-				"filters":[
-					{
-						"property":"{{ 7frlW.outputs.result.result }}",
-						"filter":{
-							"operator":"EQUAL",
-							"value":"true"
-						}
-					}
-				],
-				"operator":"AND"
-			},
-			"skip":false,
-			"subTitle":"Condition",
-			"title":"Condition",
-			"type":"IF_ELSE"
-		},
-		{
-			"context":{
-				"appName":"variable_by_unifyapps",
-				"resourceVersion":623,
-				"resourceName":"variable_by_unifyapps_add_item_to_list",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"7nYCD@jPSc2@FW69U@n_qFcgZ@vhHXW-1@1@l@y@n",
-			"id":"b7S1e",
-			"index":14,
-			"inputs":{
-				"itemToAdd":"{{ FW69U.outputs.item.columns.messageId }}",
-				"insertLocation":"END",
-				"listName":"{{ puP5M.outputs.items[0] }}"
-			},
-			"skip":false,
-			"subTitle":"Variable by UnifyApps",
-			"title":"Add item to list",
+			"subTitle":"Fetch Fan Messages",
+			"title":"Fetch records",
 			"type":"ACTION"
 		},
 		{
@@ -1476,59 +718,204 @@
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"jPSc2@FW69U@n_qFcgZ@vhHXW-1@1@l@y",
-			"id":"n_GaGAM",
-			"index":15,
+			"groupId":"n_qFcgZ@vhHXW-1@1",
+			"id":"n_8Yd4U",
+			"index":6,
 			"inputs":{
 				"filters":[
 					{
-						"property":"{{ FW69U.outputs.item.columns.currentType }}",
+						"property":"=LEN({{ n_4auVC.outputs.objects }})",
 						"filter":{
-							"operator":"EQUAL",
-							"value":"LLM"
+							"operator":"LTE",
+							"value":"0"
 						}
 					}
 				],
 				"operator":"AND"
 			},
 			"skip":false,
-			"subTitle":"currentType = LLM?",
+			"subTitle":"Condition",
 			"title":"Condition",
 			"type":"IF_ELSE"
 		},
 		{
 			"context":{
-				"appName":"variable_by_unifyapps",
-				"resourceVersion":299,
-				"resourceName":"variable_by_unifyapps_add_item_to_list",
+				"appName":"callables",
+				"resourceVersion":806,
+				"resourceName":"callables_return_to_automation",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"n_GaGAM@jPSc2@FW69U@n_qFcgZ@vhHXW-1@1@l@y@y",
-			"id":"vUKrY",
-			"index":16,
+			"groupId":"n_8Yd4U@n_qFcgZ@vhHXW-1@1@y",
+			"id":"n_LgTyb",
+			"index":7,
 			"inputs":{
-				"itemToAdd":{
-					"traceId":"{{ FW69U.outputs.item.columns.messageId }}",
-					"tokenCost":"=SUM({{ FW69U.outputs.item.columns.inputTokenCost }},{{ FW69U.outputs.item.columns.outputTokenCost }})",
-					"tokens":"=SUM({{ FW69U.outputs.item.columns.inputToken }},{{ FW69U.outputs.item.columns.outputToken }})",
-					"inputTokens":"{{ FW69U.outputs.item.columns.inputToken }}",
-					"outputTokens":"{{ FW69U.outputs.item.columns.outputToken }}"
-				},
-				"insertLocation":"END",
-				"listName":"{{ 3yG5L.outputs.items[0] }}"
+				"result":{
+					"result":{
+						"source":"{{ n_Inbzp.outputs.items }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_Inbzp.outputs.items[0] }}"
+					}
+				}
 			},
 			"skip":false,
-			"subTitle":"Variable",
-			"title":"Add item to list",
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.parameters.fanMessages.items"
+				]
+			},
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":735,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_qFcgZ@vhHXW-1@1",
+			"id":"n_29FLv",
+			"index":8,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"startTime":{
+							"type":"integer",
+							"title":"Start Time"
+						},
+						"endTime":{
+							"type":"integer",
+							"title":"End Time"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"fanMessages":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Fan Messages"
+						}
+					}
+				},
+				"code":"def fanMessages = binding.hasVariable('fanMessages') ? binding.getVariable('fanMessages') : []\n\ndef startTime = null\ndef endTime = null\n\nif (fanMessages && fanMessages.size() > 0) {\n\n    def times = fanMessages.collect { it.createdTime }\n    \n    def firstMessageTime = times.min()\n    def lastMessageTime = times.max()\n    \n    def buffer = 3 * 60 * 60 * 1000\n    startTime = firstMessageTime - buffer\n    endTime = lastMessageTime + buffer\n}\n\nreturn [\n    \"startTime\": startTime,\n    \"endTime\": endTime\n]",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"fanMessages":{
+						"source":"{{ n_4auVC.outputs.objects }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_4auVC.outputs.objects[0] }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"startTime and endTime",
+			"title":"Execute Groovy code",
 			"type":"ACTION"
 		},
 		{
 			"context":{
 				"appName":"variable_by_unifyapps",
-				"resourceVersion":672,
+				"resourceVersion":693,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_qFcgZ@vhHXW-1@1",
+			"id":"n_wCZ8e",
+			"index":9,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"startTime":{
+							"type":"integer",
+							"title":"Start Time"
+						},
+						"endTime":{
+							"type":"integer",
+							"title":"End Time"
+						}
+					},
+					"required":[]
+				}
+			},
+			"inputs":{
+				"startTime":"{{ n_29FLv.outputs.result.startTime }}",
+				"endTime":"{{ n_29FLv.outputs.result.endTime }}"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"startTime":{
+							"type":"integer",
+							"title":"Start Time"
+						},
+						"endTime":{
+							"type":"integer",
+							"title":"End Time"
+						},
+						"_ua_variableDetails":{
+							"type":"array",
+							"title":"Variable Details",
+							"items":{
+								"type":"object",
+								"properties":{
+									"description":{
+										"description":"Description of the variable",
+										"type":"string"
+									},
+									"dataType":{
+										"description":"Data type of the variable",
+										"type":"string"
+									},
+									"name":{
+										"description":"Name of the variable",
+										"type":"string"
+									}
+								}
+							}
+						}
+					},
+					"required":[]
+				}
+			},
+			"skip":false,
+			"subTitle":"startTime and endTime",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":688,
 				"resourceName":"variable_by_unifyapps_create_list",
 				"type":"APPLICATION"
 			},
@@ -1536,8 +923,8 @@
 			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_qFcgZ@vhHXW-1@1",
-			"id":"IzzSw",
-			"index":17,
+			"id":"n_s1pjQ",
+			"index":10,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -1756,8 +1143,8 @@
 			"inputs":{
 				"createList":{
 					"ua:type":"mappedArray",
-					"source":"{{ puP5M.outputs.items }}",
-					"items":"{{ puP5M.outputs.items[0] }}"
+					"source":"{{ n_4auVC.outputs.objects }}",
+					"items":"{{ n_4auVC.outputs.objects[0].id }}"
 				},
 				"ua:title":"fanMessageIds",
 				"ua:list_type":"STRING"
@@ -1774,13 +1161,332 @@
 							"items":{
 								"type":"string"
 							}
+						},
+						"_ua_variableDetails":{
+							"type":"array",
+							"title":"Variable Details",
+							"items":{
+								"type":"object",
+								"properties":{
+									"description":{
+										"description":"Description of the variable",
+										"type":"string"
+									},
+									"dataType":{
+										"description":"Data type of the variable",
+										"type":"string"
+									},
+									"name":{
+										"description":"Name of the variable",
+										"type":"string"
+									}
+								}
+							}
 						}
 					}
 				}
 			},
 			"skip":false,
-			"subTitle":"Variable by UnifyApps",
+			"subTitle":"fanMessageIds",
 			"title":"Create list",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.parameters.fanMessageIds.items"
+				]
+			},
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":735,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_qFcgZ@vhHXW-1@1",
+			"id":"n_cauiU",
+			"index":11,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"sqlQuery":{
+							"type":"string",
+							"title":"Sql Query"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"caseId":{
+							"type":"string",
+							"title":"Case Id"
+						},
+						"startTime":{
+							"type":"integer",
+							"title":"Start Time"
+						},
+						"endTime":{
+							"type":"integer",
+							"title":"End Time"
+						},
+						"fanMessageIds":{
+							"type":"array",
+							"items":{
+								"type":"string"
+							},
+							"title":"Fan Message Ids"
+						}
+					}
+				},
+				"code":"def fanMessageIdsList = binding.hasVariable('fanMessageIds') ? binding.getVariable('fanMessageIds') : []\ndef formattedFanMessageIds = fanMessageIdsList\n    .collect { \"'${it}'\" }\n    .join(\",\")\n\ndef fanMessageIds = formattedFanMessageIds\n\ndef startTime =  binding.hasVariable('startTime') ? binding.getVariable('startTime') : null\ndef endTime = binding.hasVariable('endTime') ? binding.getVariable('endTime') : null\n\ndef timeFilter = \"\"\nif(startTime!=null && endTime !=null){\n    timeFilter = \" AND eTraces.createdTime BETWEEN \" + startTime + \" AND \" + endTime + \" \"\n}\n\nString generateQuery(fanMessageIds, timeFilter) {\n    return \"SELECT \" +\n           \"   eTraces._pr_messageId AS traceId, \" +\n           \"   SUM(COALESCE(eTraces._pr_inputToken, 0) + COALESCE(eTraces._pr_outputToken, 0)) AS tokens, \" +\n           \"   SUM(eTraces._pr_cost) AS tokenCost, \" +\n           \"   SUM(COALESCE(eTraces._pr_inputToken, 0)) AS inputTokens, \" +\n           \"   SUM(COALESCE(eTraces._pr_outputToken, 0)) AS outputTokens, \" +\n           \"   SUM(COALESCE(eTraces._pr_cacheReadInputTokens, 0)) AS cacheReadTokens, \" +\n           \"   SUM(COALESCE(eTraces._pr_cacheWriteInputTokens, 0)) AS cacheWriteTokens, \" +\n           \"   MAX(m.createdTime) AS createdTime \" +\n           \" FROM ENTITY_e_traces eTraces \" +\n           \" JOIN ENTITY_service_hub_message m \" +\n           \"   ON eTraces._pr_messageId = m.id \" +\n         \"   AND eTraces._pr_messageId IS NOT NULL \" +\n           \" WHERE eTraces._pr_messageId IN (\" + fanMessageIds + \") \" +\n           \"   AND eTraces._pr_fromAutomationId IN ( \" +\n           \"      '6851442f9e30586f552a6d73', \" +\n           \"      '67df12719fa26d792211be4f', \" +\n           \"      '66ac70650f725f5b425d12d8', \" +\n           \"      '67933cc866e1f1098aa02c39', \" +\n           \"      '66b32227db0c6546b93d3acc', \" +\n           \"      '66a1e74accc70b77f9bf0308', \" +\n           \"      '66b356891a78c401cb586890', \" +\n           \"      '67e6651efd3591529146b261', \" +\n           \"      '67e4346d4718117333c7ee9a', \" +\n           \"      '66b3353e1a78c401cb583431', \" +\n           \"      '679c6521a6583456a7198e97', \" +\n           \"      '68206abcccc45f469e288de0', \" +\n           \"      '6853d10e492bca4185ba983d' \" +\n           \"   ) \" +\n           \"    \" + timeFilter + \" \" +\n           \" GROUP BY eTraces._pr_messageId \" +\n           \" ORDER BY createdTime ASC\";\n}\n\ndef sqlQuery = generateQuery(fanMessageIds, timeFilter)\nreturn [sqlQuery: sqlQuery]",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"caseId":"{{ 3iNEX.outputs.caseId }}",
+					"startTime":"{{ n_wCZ8e.outputs.startTime }}",
+					"endTime":"{{ n_wCZ8e.outputs.endTime }}",
+					"fanMessageIds":{
+						"source":"{{ n_s1pjQ.outputs.items }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_s1pjQ.outputs.items[0] }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Generate SQL",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":691,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_qFcgZ@vhHXW-1@1",
+			"id":"n_t5KGn",
+			"index":12,
+			"inputs":{
+				"outputSchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"columns":{
+							"type":"object",
+							"properties":{
+								"traceId":{
+									"type":"string",
+									"title":"traceId"
+								},
+								"tokenCost":{
+									"type":"number",
+									"title":"tokenCost"
+								},
+								"tokens":{
+									"type":"integer",
+									"title":"tokens"
+								},
+								"inputTokens":{
+									"type":"integer",
+									"title":"inputTokens"
+								},
+								"outputTokens":{
+									"type":"integer",
+									"title":"outputTokens"
+								},
+								"createdTime":{
+									"type":"integer",
+									"title":"createdTime"
+								},
+								"cacheReadTokens":{
+									"type":"integer",
+									"title":"Cache Read Tokens"
+								},
+								"cacheWriteTokens":{
+									"type":"integer",
+									"title":"Cache Write Tokens"
+								}
+							},
+							"title":"columns",
+							"additionalProperties":false,
+							"required":[]
+						}
+					}
+				},
+				"query":"{{ n_cauiU.outputs.result.sqlQuery }}",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"xsdSchemaConfig":{}
+			},
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":693,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_qFcgZ@vhHXW-1@1",
+			"id":"n_1dwVN",
+			"index":13,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"traceInfo":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"traceId":{
+										"type":"string",
+										"title":"traceId"
+									},
+									"tokenCost":{
+										"type":"number",
+										"title":"tokenCost"
+									},
+									"tokens":{
+										"type":"integer",
+										"title":"tokens"
+									},
+									"inputTokens":{
+										"type":"integer",
+										"title":"inputTokens"
+									},
+									"outputTokens":{
+										"type":"integer",
+										"title":"outputTokens"
+									},
+									"cacheReadTokens":{
+										"type":"integer",
+										"title":"Cache Read Tokens"
+									},
+									"cacheWriteTokens":{
+										"type":"integer",
+										"title":"Cache Write Tokens"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"traceInfo"
+						}
+					}
+				}
+			},
+			"inputs":{
+				"traceInfo":{
+					"source":"{{ n_t5KGn.outputs.objects }}",
+					"ua:type":"mappedArray",
+					"items":{
+						"traceId":"{{ n_t5KGn.outputs.objects[0].columns.traceId }}",
+						"tokenCost":"{{ n_t5KGn.outputs.objects[0].columns.tokenCost }}",
+						"tokens":"{{ n_t5KGn.outputs.objects[0].columns.tokens }}",
+						"outputTokens":"{{ n_t5KGn.outputs.objects[0].columns.outputTokens }}",
+						"inputTokens":"{{ n_t5KGn.outputs.objects[0].columns.inputTokens }}",
+						"cacheReadTokens":"{{ n_t5KGn.outputs.objects[0].columns.cacheReadTokens }}",
+						"cacheWriteTokens":"{{ n_t5KGn.outputs.objects[0].columns.cacheWriteTokens }}"
+					}
+				}
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"traceInfo":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"traceId":{
+										"type":"string",
+										"title":"traceId"
+									},
+									"tokenCost":{
+										"type":"number",
+										"title":"tokenCost"
+									},
+									"tokens":{
+										"type":"integer",
+										"title":"tokens"
+									},
+									"inputTokens":{
+										"type":"integer",
+										"title":"inputTokens"
+									},
+									"outputTokens":{
+										"type":"integer",
+										"title":"outputTokens"
+									},
+									"cacheReadTokens":{
+										"type":"integer",
+										"title":"Cache Read Tokens"
+									},
+									"cacheWriteTokens":{
+										"type":"integer",
+										"title":"Cache Write Tokens"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"traceInfo"
+						},
+						"_ua_variableDetails":{
+							"type":"array",
+							"title":"Variable Details",
+							"items":{
+								"type":"object",
+								"properties":{
+									"description":{
+										"description":"Description of the variable",
+										"type":"string"
+									},
+									"dataType":{
+										"description":"Data type of the variable",
+										"type":"string"
+									},
+									"name":{
+										"description":"Name of the variable",
+										"type":"string"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Trace Info",
+			"title":"Create variables",
 			"type":"ACTION"
 		},
 		{
@@ -1794,8 +1500,8 @@
 			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_qFcgZ@vhHXW-1@1",
-			"id":"vzNbB",
-			"index":18,
+			"id":"n_8UIVA",
+			"index":14,
 			"inputs":{
 				"triggerInputCondition":{
 					"filters":[
@@ -1803,14 +1509,7 @@
 							"property":"properties_additional_parentMessageId",
 							"filter":{
 								"operator":"IN",
-								"value":"{{ IzzSw.outputs.items }}"
-							}
-						},
-						{
-							"property":"properties_type",
-							"filter":{
-								"operator":"NOT_EQUAL",
-								"value":"fan"
+								"value":"{{ n_s1pjQ.outputs.items }}"
 							}
 						},
 						{
@@ -1818,25 +1517,25 @@
 								{
 									"property":"properties_additional_temporaryMessage",
 									"filter":{
-										"operator":"MISSING"
+										"operator":"EXISTS"
 									}
 								},
 								{
 									"property":"properties_additional_temporaryMessage",
 									"filter":{
-										"operator":"EQUAL",
+										"operator":"NOT_EQUAL",
 										"value":"true"
-									}
-								},
-								{
-									"property":"properties_additional_temporaryMessage",
-									"filter":{
-										"operator":"EQUAL",
-										"value":"false"
 									}
 								}
 							],
-							"operator":"OR"
+							"operator":"AND"
+						},
+						{
+							"property":"properties_type",
+							"filter":{
+								"operator":"NOT_EQUAL",
+								"value":"fan"
+							}
 						}
 					],
 					"operator":"AND"
@@ -1847,7 +1546,7 @@
 				"includeCurrentUserPermissions":false,
 				"sortBy":[
 					{
-						"field":"mTm",
+						"field":"cTm",
 						"order":"DESC"
 					}
 				],
@@ -1862,438 +1561,180 @@
 				"includeTotalCount":false
 			},
 			"skip":false,
-			"subTitle":"Storage",
+			"subTitle":"get last bot responses",
 			"title":"Fetch records",
 			"type":"ACTION"
 		},
 		{
 			"context":{
-				"appName":"storage_by_unifyapps",
-				"resourceVersion":290,
-				"resourceName":"storage_by_unifyapps_get_records_by_ids",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_qFcgZ@vhHXW-1@1",
-			"id":"xORbN",
-			"index":19,
-			"inputs":{
-				"object_type":"service_hub_message",
-				"includeRoleMappings":false,
-				"includeCurrentUserPermissions":false,
-				"ids":{
-					"source":"{{ 3yG5L.outputs.items }}",
-					"ua:type":"mappedArray",
-					"items":"{{ 3yG5L.outputs.items[0].traceId }}"
-				},
-				"translationsOption":"DEFAULT",
-				"readThroughSessionVariables":false
-			},
-			"skip":false,
-			"subTitle":"Storage",
-			"title":"Get records by IDs",
-			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"storage_by_unifyapps",
-				"resourceVersion":1108,
-				"resourceName":"storage_by_unifyapps_get_records_by_ids",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_qFcgZ@vhHXW-1@1",
-			"id":"n_Alz94",
-			"index":20,
-			"inputs":{
-				"object_type":"test_case_runs",
-				"includeRoleMappings":false,
-				"includeCurrentUserPermissions":false,
-				"ids":{
-					"source":"{{ 3yG5L.outputs.items }}",
-					"ua:type":"mappedArray",
-					"items":"{{ 3yG5L.outputs.items[0].traceId }}"
-				},
-				"translationsOption":"DEFAULT",
-				"readThroughSessionVariables":false
-			},
-			"skip":false,
-			"subTitle":"Storage by UnifyApps",
-			"title":"Get records by IDs",
-			"type":"ACTION"
-		},
-		{
-			"context":{
 				"appName":"variable_by_unifyapps",
-				"resourceVersion":706,
-				"resourceName":"variable_by_unifyapps_create_list",
+				"resourceVersion":693,
+				"resourceName":"variable_by_unifyapps_create_variables",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_qFcgZ@vhHXW-1@1",
-			"id":"vBMPP",
-			"index":21,
+			"id":"n_nOWW3",
+			"index":15,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
-				"layout":{
-					"createList":{
-						"ui:title":"",
-						"ua:type":{
-							"ui:widget":"hidden"
-						},
-						"items":{
-							"ui:title":"Initial list items",
-							"ui:description":"Set the initial values of the list (defaults to empty)"
-						},
-						"ui:order":[
-							"*",
-							"items"
-						]
-					},
-					"ua:title":{
-						"ui:widget":"hidden"
-					},
-					"ua:list_type":{
-						"ui:widget":"hidden"
-					}
-				},
+				"layout":{},
 				"schema":{
-					"allOf":[
-						{
-							"if":{
-								"properties":{
-									"ua:list_type":{
-										"const":"OBJECT"
-									}
-								}
-							},
-							"then":{
-								"properties":{
-									"createList":{
-										"type":"object",
-										"properties":{
-											"items":{
-												"type":"object",
-												"properties":{}
-											}
-										}
-									}
-								}
-							}
-						},
-						{
-							"if":{
-								"properties":{
-									"ua:list_type":{
-										"const":"STRING"
-									}
-								}
-							},
-							"then":{
-								"properties":{
-									"createList":{
-										"type":"object",
-										"properties":{
-											"source":{
-												"type":"string",
-												"format":"ua:source",
-												"title":"List of String"
-											},
-											"items":{
-												"type":"string"
-											}
-										}
-									}
-								}
-							}
-						},
-						{
-							"if":{
-								"properties":{
-									"ua:list_type":{
-										"const":"INTEGER"
-									}
-								}
-							},
-							"then":{
-								"properties":{
-									"createList":{
-										"type":"object",
-										"properties":{
-											"source":{
-												"type":"string",
-												"format":"ua:source",
-												"title":"List of Integers"
-											},
-											"items":{
-												"type":"integer"
-											}
-										}
-									}
-								}
-							}
-						},
-						{
-							"if":{
-								"properties":{
-									"ua:list_type":{
-										"const":"NUMBER"
-									}
-								}
-							},
-							"then":{
-								"properties":{
-									"createList":{
-										"type":"object",
-										"properties":{
-											"source":{
-												"type":"string",
-												"format":"ua:source",
-												"title":"List of Numbers"
-											},
-											"items":{
-												"type":"number"
-											}
-										}
-									}
-								}
-							}
-						},
-						{
-							"if":{
-								"properties":{
-									"ua:list_type":{
-										"const":"BOOLEAN"
-									}
-								}
-							},
-							"then":{
-								"properties":{
-									"createList":{
-										"type":"object",
-										"properties":{
-											"source":{
-												"type":"string",
-												"format":"ua:source",
-												"title":"List of Booleans"
-											},
-											"items":{
-												"type":"boolean"
-											}
-										}
-									}
-								}
-							}
-						}
-					],
-					"format":"ua:list",
+					"additionalProperties":false,
 					"type":"object",
 					"properties":{
-						"ua:title":{
-							"type":"string"
-						},
-						"ua:list_type":{
-							"type":"string",
-							"title":"List Type",
-							"oneOf":[
-								{
-									"const":"OBJECT",
-									"title":"Object"
-								},
-								{
-									"const":"STRING",
-									"title":"String"
-								},
-								{
-									"const":"NUMBER",
-									"title":"Number"
-								},
-								{
-									"const":"INTEGER",
-									"title":"Integer"
-								},
-								{
-									"const":"BOOLEAN",
-									"title":"Boolean"
-								}
-							],
-							"default":"OBJECT"
-						},
-						"createList":{
-							"type":"object",
-							"properties":{
-								"ua:type":{
-									"type":"string",
-									"default":"mappedArray"
-								},
-								"source":{
-									"type":"string",
-									"format":"ua:source",
-									"title":"List Item Source"
-								},
-								"items":{
-									"additionalProperties":false,
-									"type":[
-										"object",
-										"string",
-										"number",
-										"boolean",
-										"integer"
-									],
-									"properties":{
-										"result":{
-											"type":"object",
-											"properties":{},
-											"additionalProperties":false,
-											"title":"Result"
-										}
+						"botResponses":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"streamingCompletionTime":{
+										"type":"integer",
+										"title":"Streaming Completion Time"
 									},
-									"required":[
-										"result"
-									]
-								}
-							}
+									"modifiedTime":{
+										"type":"integer",
+										"title":"Modified Time"
+									},
+									"createdTime":{
+										"type":"integer",
+										"title":"Created Time"
+									},
+									"parentMessageId":{
+										"type":"string",
+										"title":"Parent Message Id"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"Bot Responses"
 						}
-					}
+					},
+					"required":[]
 				}
 			},
 			"inputs":{
-				"createList":{
-					"ua:type":"mappedArray"
-				},
-				"ua:title":"response",
-				"ua:list_type":"OBJECT"
+				"botResponses":{
+					"source":"{{ n_8UIVA.outputs.objects }}",
+					"ua:type":"mappedArray",
+					"items":{
+						"streamingCompletionTime":"{{ n_8UIVA.outputs.objects[0].properties.additional.streamingCompletionTime }}",
+						"modifiedTime":"{{ n_8UIVA.outputs.objects[0].modifiedTime }}",
+						"createdTime":"{{ n_8UIVA.outputs.objects[0].createdTime }}",
+						"parentMessageId":"{{ n_8UIVA.outputs.objects[0].properties.additional.parentMessageId }}"
+					}
+				}
 			},
 			"outputSchema":{
 				"dynamic":false,
 				"schema":{
+					"additionalProperties":false,
 					"type":"object",
 					"properties":{
-						"items":{
+						"botResponses":{
 							"type":"array",
-							"title":"response",
-							"disableActions":true,
 							"items":{
 								"type":"object",
 								"properties":{
-									"result":{
-										"type":"object",
-										"properties":{},
-										"additionalProperties":false,
-										"title":"Result"
+									"streamingCompletionTime":{
+										"type":"integer",
+										"title":"Streaming Completion Time"
+									},
+									"modifiedTime":{
+										"type":"integer",
+										"title":"Modified Time"
+									},
+									"createdTime":{
+										"type":"integer",
+										"title":"Created Time"
+									},
+									"parentMessageId":{
+										"type":"string",
+										"title":"Parent Message Id"
 									}
 								},
-								"required":[
-									"result"
-								]
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"Bot Responses"
+						},
+						"_ua_variableDetails":{
+							"type":"array",
+							"title":"Variable Details",
+							"items":{
+								"type":"object",
+								"properties":{
+									"description":{
+										"description":"Description of the variable",
+										"type":"string"
+									},
+									"dataType":{
+										"description":"Data type of the variable",
+										"type":"string"
+									},
+									"name":{
+										"description":"Name of the variable",
+										"type":"string"
+									}
+								}
 							}
 						}
-					}
+					},
+					"required":[]
 				}
 			},
 			"skip":false,
-			"subTitle":"Variable by UnifyApps",
-			"title":"Create list",
+			"subTitle":"Bot Responses",
+			"title":"Create variables",
 			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"if_else",
-				"resourceVersion":612,
-				"resourceName":"if_else_condition",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_qFcgZ@vhHXW-1@1",
-			"id":"TU9se",
-			"index":22,
-			"inputs":{
-				"filters":[
-					{
-						"property":"=LEN({{ xORbN.outputs.objects }})",
-						"filter":{
-							"operator":"GT",
-							"value":"0"
-						}
-					}
-				],
-				"operator":"AND"
-			},
-			"skip":false,
-			"subTitle":"Condition",
-			"title":"Condition",
-			"type":"IF_ELSE"
 		},
 		{
 			"additional":{
 				"visibleOptionalFields":[
-					"root.parameters.fanMessages.items.streamCompletionTime",
-					"root.parameters.brandMessages.items.streamCompletionTime"
+					"root.parameters.botResponses.items.streamingCompletionTime",
+					"root.parameters.botResponses.items.modifiedTime",
+					"root.parameters.botResponses.items.createdTime",
+					"root.parameters.botResponses.items.parentMessageId",
+					"root.parameters.traceInfo.items.traceId",
+					"root.parameters.traceInfo.items.tokenCost",
+					"root.parameters.traceInfo.items.tokens",
+					"root.parameters.traceInfo.items.inputTokens",
+					"root.parameters.traceInfo.items.outputTokens",
+					"root.parameters.fanMessagesInfo.items.message",
+					"root.parameters.fanMessagesInfo.items.traceId",
+					"root.parameters.fanMessagesInfo.items.traceStartEpochTime",
+					"root.parameters.traceInfo.items.cacheReadTokens",
+					"root.parameters.traceInfo.items.cacheWriteTokens"
 				]
 			},
 			"context":{
 				"appName":"code_by_unifyapps",
-				"resourceVersion":300,
+				"resourceVersion":736,
 				"resourceName":"code_by_unifyapps_groovy",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"TU9se@n_qFcgZ@vhHXW-1@1@y",
-			"id":"XlqC3",
-			"index":23,
+			"groupId":"n_qFcgZ@vhHXW-1@1",
+			"id":"n_f5mmo",
+			"index":16,
 			"inputs":{
 				"output":{
 					"type":"object",
 					"additionalProperties":false,
-					"required":[
-						"result"
-					],
+					"required":[],
 					"properties":{
 						"result":{
 							"type":"array",
 							"items":{
 								"type":"object",
-								"properties":{
-									"id":{
-										"type":"string",
-										"title":"Id"
-									},
-									"latency":{
-										"type":"number",
-										"title":"Latency"
-									},
-									"traceStartEpochTime":{
-										"type":"number",
-										"title":"Trace Start Epoch Time"
-									},
-									"message":{
-										"type":"string",
-										"title":"Message"
-									},
-									"traceSuccess":{
-										"type":"boolean",
-										"title":"Trace Success"
-									}
-								},
-								"additionalProperties":false,
-								"required":[
-									"id",
-									"latency",
-									"traceStartEpochTime",
-									"message",
-									"traceSuccess"
-								]
+								"properties":{},
+								"additionalProperties":false
 							},
 							"title":"Result"
 						}
@@ -2302,248 +1743,162 @@
 				"input":{
 					"type":"object",
 					"additionalProperties":false,
-					"required":[
-						"brandMessages",
-						"fanMessages",
-						"traceSuccessList"
-					],
+					"required":[],
 					"properties":{
-						"brandMessages":{
+						"botResponses":{
 							"type":"array",
 							"items":{
 								"type":"object",
 								"properties":{
-									"parentMessageId":{
-										"type":"string",
-										"title":"Parent Message Id"
+									"streamingCompletionTime":{
+										"type":"integer",
+										"title":"streamingCompletionTime"
 									},
 									"modifiedTime":{
-										"type":"number",
-										"title":"Modified Time"
-									},
-									"streamCompletionTime":{
 										"type":"integer",
-										"title":"Stream Completion Time"
-									}
-								},
-								"additionalProperties":false,
-								"required":[
-									"parentMessageId",
-									"modifiedTime"
-								]
-							},
-							"title":"Brand Messages"
-						},
-						"fanMessages":{
-							"type":"array",
-							"items":{
-								"type":"object",
-								"properties":{
-									"messageId":{
-										"type":"string",
-										"title":"Message Id"
+										"title":"modifiedTime"
 									},
 									"createdTime":{
-										"type":"number",
-										"title":"Created Time"
+										"type":"integer",
+										"title":"createdTime"
 									},
-									"message":{
+									"parentMessageId":{
 										"type":"string",
-										"title":"Message"
+										"title":"parentMessageId"
 									}
 								},
-								"additionalProperties":false,
-								"required":[
-									"messageId",
-									"createdTime",
-									"message"
-								]
+								"additionalProperties":false
 							},
-							"title":"Fan Messages"
+							"title":"botResponses"
 						},
-						"traceSuccessList":{
-							"type":"array",
-							"items":{
-								"type":"object",
-								"properties":{},
-								"additionalProperties":false
-							},
-							"title":"Trace Success List"
-						}
-					}
-				},
-				"code":"def fanMessageIdVsBrandMessage = [:]\n\nbrandMessages = (binding.hasVariable('brandMessages') && brandMessages instanceof List) ? brandMessages : [] \nbrandMessages.each { brandMessage ->\n    def fanMessageId = brandMessage.parentMessageId\n    if (!fanMessageIdVsBrandMessage.containsKey(fanMessageId)) {\n        fanMessageIdVsBrandMessage[fanMessageId] = brandMessage\n    }\n}\n\n// traceEvalRunMap\ntraceSuccessList=(binding.hasVariable('traceSuccessList') && traceSuccessList instanceof List) ? traceSuccessList : [] \ndef traceEvalRunMap = traceSuccessList.collectEntries { [(it.traceId): it] }\n\ndef result = []\nfanMessages = (binding.hasVariable('fanMessages') && fanMessages instanceof List) ? fanMessages : [] \nfanMessages = fanMessages.sort { it.createdTime ?: 0 }\nfanMessages.each { fanMessage ->\n    def fanMessageId = fanMessage.messageId\n    def brandMessage = fanMessageIdVsBrandMessage[fanMessageId]\n    def traceSuccess = traceEvalRunMap[fanMessageId]?.properties?.result\n\n    if (brandMessage) {\n        def endTime\n        if (brandMessage.containsKey('streamCompletionTime')) {\n            endTime = brandMessage.streamCompletionTime\n        } else {\n            endTime = brandMessage.modifiedTime\n        }\n\n        if (endTime != null && fanMessage.createdTime != null) {\n            def latency = endTime - fanMessage.createdTime\n            result << [id: fanMessageId, latency: latency, traceStartEpochTime:fanMessage.createdTime , message:fanMessage.message, traceSuccess:traceSuccess]\n        }\n    }\n}\n\nreturn ['result': result]\n",
-				"compile_static":false,
-				"captureStdOutput":false,
-				"parameters":{
-					"brandMessages":{
-						"source":"{{ vzNbB.outputs.objects }}",
-						"ua:type":"mappedArray",
-						"items":{
-							"parentMessageId":"{{ vzNbB.outputs.objects[0].properties.additional.parentMessageId }}",
-							"modifiedTime":"{{ vzNbB.outputs.objects[0].modifiedTime }}",
-							"streamCompletionTime":"{{ vzNbB.outputs.objects[0].properties.additional.streamingCompletionTime }}"
-						}
-					},
-					"fanMessages":{
-						"source":"{{ xORbN.outputs.objects }}",
-						"ua:type":"mappedArray",
-						"items":{
-							"messageId":"{{ xORbN.outputs.objects[0].id }}",
-							"createdTime":"{{ xORbN.outputs.objects[0].createdTime }}",
-							"message":"{{ xORbN.outputs.objects[0].properties.content.text }}"
-						}
-					},
-					"traceSuccessList":{
-						"source":"{{ n_Alz94.outputs.objects }}",
-						"ua:type":"mappedArray",
-						"items":"{{ n_Alz94.outputs.objects[0] }}"
-					}
-				}
-			},
-			"skip":false,
-			"subTitle":"Code",
-			"title":"Execute Groovy code",
-			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"code_by_unifyapps",
-				"resourceVersion":300,
-				"resourceName":"code_by_unifyapps_groovy",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"TU9se@n_qFcgZ@vhHXW-1@1@y",
-			"id":"UYgSw",
-			"index":24,
-			"inputs":{
-				"output":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"traceInfos"
-					],
-					"properties":{
-						"traceInfos":{
-							"type":"array",
-							"items":{
-								"type":"object",
-								"properties":{},
-								"additionalProperties":false
-							},
-							"title":"Trace Infos"
-						}
-					}
-				},
-				"input":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"latencyInfo",
-						"traceInfos"
-					],
-					"properties":{
-						"latencyInfo":{
+						"traceInfo":{
 							"type":"array",
 							"items":{
 								"type":"object",
 								"properties":{
-									"id":{
+									"traceId":{
 										"type":"string",
-										"title":"Id"
+										"title":"traceId"
 									},
-									"latency":{
+									"tokenCost":{
 										"type":"number",
-										"title":"Latency"
+										"title":"tokenCost"
 									},
-									"traceStartEpochTime":{
-										"type":"number",
-										"title":"Trace Start Epoch Time"
+									"tokens":{
+										"type":"integer",
+										"title":"tokens"
 									},
+									"inputTokens":{
+										"type":"integer",
+										"title":"inputTokens"
+									},
+									"outputTokens":{
+										"type":"integer",
+										"title":"outputTokens"
+									},
+									"cacheReadTokens":{
+										"type":"integer",
+										"title":"Cache Read Tokens"
+									},
+									"cacheWriteTokens":{
+										"type":"integer",
+										"title":"Cache Write Tokens"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"traceInfo"
+						},
+						"fanMessagesInfo":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
 									"message":{
 										"type":"string",
 										"title":"Message"
 									},
-									"traceSuccess":{
-										"type":"boolean",
-										"title":"Trace Success"
+									"traceId":{
+										"type":"string",
+										"title":"traceId"
+									},
+									"traceStartEpochTime":{
+										"type":"integer",
+										"title":"Trace Start Epoch Time"
 									}
 								},
 								"additionalProperties":false,
-								"required":[
-									"id",
-									"latency",
-									"traceStartEpochTime",
-									"message",
-									"traceSuccess"
-								]
+								"required":[]
 							},
-							"title":"Latency Info"
-						},
-						"traceInfos":{
-							"type":"array",
-							"items":{
-								"type":"object",
-								"properties":{},
-								"additionalProperties":false
-							},
-							"title":"Trace Infos"
+							"title":"Fan Messages Info"
 						}
 					}
 				},
-				"code":"def result = []\n\nif (binding.hasVariable('latencyInfo') && binding.hasVariable('traceInfos')) {\n    def map = [:]\n\n    traceInfos.each { traceInfo ->\n        def id = traceInfo.traceId\n        def value = map.get(id)\n        if (!value) {\n            map[id] = [\n                traceId  : id,\n                tokens   : traceInfo.tokens ?: 0,\n                tokenCost: traceInfo.tokenCost ?: 0,\n                inputTokens: traceInfo.inputTokens ?: 0,\n                outputTokens: traceInfo.outputTokens ?: 0,\n            ]\n        } else {\n            map[id].tokenCost += (traceInfo.tokenCost ?: 0)\n            map[id].tokens += (traceInfo.tokens ?: 0)\n            map[id].inputTokens += (traceInfo.inputTokens ?: 0)\n            map[id].outputTokens += (traceInfo.outputTokens ?: 0)\n        }\n    }\n\n    latencyInfo.each { info ->\n        def value = map[info.id]\n        if (value) {\n            value['latency'] = info.latency\n            value['traceStartEpochTime']= info.traceStartEpochTime\n            value['message']=info.message\n            value['traceSuccess']=info.traceSuccess\n            result << value\n        }\n    }\n}\n\nreturn ['traceInfos': result]\n",
+				"code":"def botResponsesList = (binding.hasVariable('botResponses') && botResponses instanceof List) ? botResponses : []\ndef traceInfoList = (binding.hasVariable('traceInfo') && traceInfo instanceof List) ? traceInfo : []\ndef fanMessagesList = (binding.hasVariable('fanMessagesInfo') && fanMessagesInfo instanceof List) ? fanMessagesInfo : []\n\n// Map botResponses by parentMessageId\ndef botResponseMap = [:]\nbotResponsesList.each { br ->\n    if (br?.parentMessageId && !botResponseMap.containsKey(br.parentMessageId)) {\n        botResponseMap[br.parentMessageId] = br\n    }\n}\n\n// Map traceInfo by traceId\ndef traceMap = [:]\ntraceInfoList.each { trace ->\n    if (trace?.traceId && !traceMap.containsKey(trace.traceId)) {\n        traceMap[trace.traceId] = trace\n    }\n}\n\ndef result = []\n\nfanMessagesList.each { fanMsg ->\n    def obj = [:]\n\n    obj.putAll(fanMsg)\n\n    def fanMessageId = fanMsg.traceId\n    def trace = traceMap[fanMessageId]\n    if (trace) {\n        obj.tokens = trace?.tokens\n        obj.tokenCost = trace?.tokenCost\n        obj.inputTokens = trace?.inputTokens\n        obj.outputTokens = trace?.outputTokens\n        obj.cacheReadTokens = trace?.cacheReadTokens ?: 0\n        obj.cacheWriteTokens = trace?.cacheWriteTokens ?: 0\n    }\n\n    def botResponse = botResponseMap[fanMessageId]\n    if (botResponse) {\n        def endTime = null\n        if (botResponse.containsKey('streamingCompletionTime') && botResponse.streamingCompletionTime != null) {\n            endTime = botResponse.streamingCompletionTime\n        } else if (botResponse.containsKey('modifiedTime') && botResponse.modifiedTime != null) {\n            endTime = botResponse.modifiedTime\n        }\n        def startTime = fanMsg?.traceStartEpochTime\n        if (endTime != null && startTime != null) {\n            obj.latency = endTime - startTime\n        }\n    }\n\n    result << obj\n}\n\nreturn [\n  \"result\": result\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
-					"latencyInfo":{
-						"source":"{{ XlqC3.outputs.result.result }}",
+					"botResponses":{
+						"source":"{{ n_nOWW3.outputs.botResponses }}",
 						"ua:type":"mappedArray",
 						"items":{
-							"id":"{{ XlqC3.outputs.result.result[0].id }}",
-							"latency":"{{ XlqC3.outputs.result.result[0].latency }}",
-							"traceStartEpochTime":"{{ XlqC3.outputs.result.result[0].traceStartEpochTime }}",
-							"message":"{{ XlqC3.outputs.result.result[0].message }}",
-							"traceSuccess":"{{ XlqC3.outputs.result.result[0].traceSuccess }}"
+							"streamingCompletionTime":"{{ n_nOWW3.outputs.botResponses[0].streamingCompletionTime }}",
+							"modifiedTime":"{{ n_nOWW3.outputs.botResponses[0].modifiedTime }}",
+							"createdTime":"{{ n_nOWW3.outputs.botResponses[0].createdTime }}",
+							"parentMessageId":"{{ n_nOWW3.outputs.botResponses[0].parentMessageId }}"
 						}
 					},
-					"traceInfos":{
-						"source":"{{ 3yG5L.outputs.items }}",
+					"traceInfo":{
+						"source":"{{ n_1dwVN.outputs.traceInfo }}",
 						"ua:type":"mappedArray",
-						"items":"{{ 3yG5L.outputs.items[0] }}"
+						"items":{
+							"traceId":"{{ n_1dwVN.outputs.traceInfo[0].traceId }}",
+							"tokenCost":"{{ n_1dwVN.outputs.traceInfo[0].tokenCost }}",
+							"tokens":"{{ n_1dwVN.outputs.traceInfo[0].tokens }}",
+							"outputTokens":"{{ n_1dwVN.outputs.traceInfo[0].outputTokens }}",
+							"inputTokens":"{{ n_1dwVN.outputs.traceInfo[0].inputTokens }}",
+							"cacheReadTokens":"{{ n_1dwVN.outputs.traceInfo[0].cacheReadTokens }}",
+							"cacheWriteTokens":"{{ n_1dwVN.outputs.traceInfo[0].cacheWriteTokens }}"
+						}
+					},
+					"fanMessagesInfo":{
+						"source":"{{ n_4auVC.outputs.objects }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"message":"{{ n_4auVC.outputs.objects[0].properties.content.text }}",
+							"traceId":"{{ n_4auVC.outputs.objects[0].id }}",
+							"traceStartEpochTime":"{{ n_4auVC.outputs.objects[0].createdTime }}"
+						}
 					}
 				}
 			},
 			"skip":false,
-			"subTitle":"Code",
+			"subTitle":"Latency",
 			"title":"Execute Groovy code",
 			"type":"ACTION"
 		},
 		{
 			"context":{
 				"appName":"variable_by_unifyapps",
-				"resourceVersion":631,
+				"resourceVersion":682,
 				"resourceName":"variable_by_unifyapps_add_items_to_list",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"TU9se@n_qFcgZ@vhHXW-1@1@y",
-			"id":"GFzTm",
-			"index":25,
+			"groupId":"n_qFcgZ@vhHXW-1@1",
+			"id":"n_xxIqY",
+			"index":17,
 			"inputs":{
 				"insertLocation":"END",
 				"itemsToAdd":{
 					"ua:type":"mappedArray",
-					"source":"{{ UYgSw.outputs.result.traceInfos }}",
-					"items":{
-						"result":"{{ UYgSw.outputs.result.traceInfos[0] }}"
-					}
+					"source":"{{ n_f5mmo.outputs.result.result }}",
+					"items":"{{ n_f5mmo.outputs.result.result[0] }}"
 				},
-				"listName":"{{ vBMPP.outputs.items[0] }}"
+				"listName":"{{ n_Inbzp.outputs.items[0] }}"
 			},
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
@@ -2562,7 +1917,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_qFcgZ@vhHXW-1@2",
 			"id":"n_qFcgZ@2",
-			"index":26,
+			"index":18,
 			"inputs":{
 				"name":"total"
 			},
@@ -2582,7 +1937,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_qFcgZ@vhHXW-1@2",
 			"id":"n_PG3UH",
-			"index":27,
+			"index":19,
 			"inputs":{
 				"triggerInputCondition":{
 					"filters":[
@@ -2616,6 +1971,68 @@
 		},
 		{
 			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":757,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_qFcgZ@vhHXW-1@2",
+			"id":"n_jpZ7y",
+			"index":20,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"startTime":{
+							"type":"integer",
+							"title":"Start Time"
+						},
+						"endTime":{
+							"type":"integer",
+							"title":"End Time"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"startTime":{
+							"type":"integer",
+							"title":"Start Time"
+						},
+						"lastBrandMessageTime":{
+							"type":"integer",
+							"title":"Last Brand Message Time"
+						},
+						"lastFanMessageTime":{
+							"type":"integer",
+							"title":"Last Fan Message Time"
+						}
+					}
+				},
+				"code":"def TWO_HOURS_MILLIS = 2 * 60 * 60 * 1000\n\ndef inputStartTime = binding.hasVariable('startTime') ? binding.getVariable('startTime') : null\ndef lastBrandMessageTime = binding.hasVariable('lastBrandMessageTime') ? binding.getVariable('lastBrandMessageTime') : null\ndef lastFanMessageTime = binding.hasVariable('lastFanMessageTime') ? binding.getVariable('lastFanMessageTime') : null\n\ndef finalStartTime = inputStartTime\ndef finalEndTime\n\nif (lastBrandMessageTime) {\n    finalEndTime = lastBrandMessageTime + TWO_HOURS_MILLIS\n\n} else if (lastFanMessageTime) {\n    finalEndTime = lastFanMessageTime + TWO_HOURS_MILLIS\n\n} else {\n    finalEndTime = System.currentTimeMillis()\n}\n\nreturn [\n    \"startTime\" : finalStartTime,\n    \"endTime\"   : finalEndTime\n]",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"startTime":"{{ n_PG3UH.outputs.createdTime }}",
+					"lastBrandMessageTime":"{{ n_PG3UH.outputs.properties.additional.lastBrandMessageTime }}",
+					"lastFanMessageTime":"{{ n_PG3UH.outputs.properties.lastFanMessageTime }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"analytics_by_unifyapps",
 				"resourceVersion":856,
 				"resourceName":"analytics_by_unifyapps_query_reports",
@@ -2626,7 +2043,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_qFcgZ@vhHXW-1@2",
 			"id":"_SvAJM",
-			"index":28,
+			"index":21,
 			"inputs":{
 				"projections":[
 					{
@@ -2657,6 +2074,18 @@
 						"name":"ENTITY_e_traces=::=outputToken",
 						"aggregationFunction":"SUM",
 						"alias":"outputTokens",
+						"includePercentageChange":false
+					},
+					{
+						"name":"ENTITY_e_traces=::=cacheReadInputTokens",
+						"aggregationFunction":"SUM",
+						"alias":"totalCacheReadTokens",
+						"includePercentageChange":false
+					},
+					{
+						"name":"ENTITY_e_traces=::=cacheWriteInputTokens",
+						"aggregationFunction":"SUM",
+						"alias":"totalCacheWriteTokens",
 						"includePercentageChange":false
 					},
 					{
@@ -2693,6 +2122,12 @@
 								"operator":"EQUAL",
 								"value":"{{ 3iNEX.outputs.caseId }}"
 							}
+						},
+						{
+							"property":"ENTITY_e_traces=::=messageId",
+							"filter":{
+								"operator":"EXISTS"
+							}
 						}
 					],
 					"operator":"AND"
@@ -2700,11 +2135,142 @@
 				"entityType":"ENTITY_e_traces",
 				"includeTotalHits":true,
 				"sorts":[],
+				"timeFilter":{
+					"since":"{{ n_jpZ7y.outputs.result.startTime }}",
+					"until":"{{ n_jpZ7y.outputs.result.endTime }}"
+				},
 				"group":"ENTITY_REPORTING"
 			},
 			"skip":false,
 			"subTitle":"total calculation for session",
 			"title":"Analytics Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":757,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_qFcgZ@vhHXW-1@2",
+			"id":"n_j4qIV",
+			"index":22,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"duration":{
+							"type":"integer",
+							"title":"duration"
+						},
+						"traceCount":{
+							"type":"integer",
+							"title":"traceCount"
+						},
+						"totalLatency":{
+							"type":"integer",
+							"title":"totalLatency"
+						},
+						"inputTokens":{
+							"type":"integer",
+							"title":"inputTokens"
+						},
+						"sessionId":{
+							"type":"string",
+							"title":"sessionId"
+						},
+						"outputTokens":{
+							"type":"integer",
+							"title":"outputTokens"
+						},
+						"totalTokens":{
+							"type":"integer",
+							"title":"totalTokens"
+						},
+						"totalCost":{
+							"type":"number",
+							"title":"totalCost"
+						},
+						"totalCacheReadTokens":{
+							"type":"integer",
+							"title":"totalCacheReadTokens"
+						},
+						"totalCacheWriteTokens":{
+							"type":"integer",
+							"title":"totalCacheWriteTokens"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"duration":{
+							"type":"integer",
+							"title":"duration"
+						},
+						"traceCount":{
+							"type":"integer",
+							"title":"traceCount"
+						},
+						"totalLatency":{
+							"type":"integer",
+							"title":"totalLatency"
+						},
+						"inputTokens":{
+							"type":"integer",
+							"title":"inputTokens"
+						},
+						"sessionId":{
+							"type":"string",
+							"title":"sessionId"
+						},
+						"outputTokens":{
+							"type":"integer",
+							"title":"outputTokens"
+						},
+						"totalTokens":{
+							"type":"integer",
+							"title":"totalTokens"
+						},
+						"totalCost":{
+							"type":"number",
+							"title":"totalCost"
+						},
+						"totalCacheReadTokens":{
+							"type":"integer",
+							"title":"totalCacheReadTokens"
+						},
+						"totalCacheWriteTokens":{
+							"type":"integer",
+							"title":"totalCacheWriteTokens"
+						}
+					}
+				},
+				"code":"def duration           = binding.hasVariable('duration')       ? duration       : 0\ndef traceCount         = binding.hasVariable('traceCount')     ? traceCount     : 0\ndef totalLatency       = binding.hasVariable('totalLatency')   ? totalLatency   : 0\ndef inputTokens        = binding.hasVariable('inputTokens')    ? inputTokens    : 0\ndef sessionId          = binding.hasVariable('sessionId')      ? sessionId      : \"\"\ndef outputTokens       = binding.hasVariable('outputTokens')   ? outputTokens   : 0\ndef totalTokens        = binding.hasVariable('totalTokens')    ? totalTokens    : 0\ndef totalCost          = binding.hasVariable('totalCost')      ? totalCost      : 0\ndef totalCacheReadTokens          = binding.hasVariable('totalCacheReadTokens')      ? totalCacheReadTokens      : 0\ndef totalCacheWriteTokens          = binding.hasVariable('totalCacheWriteTokens')      ? totalCacheWriteTokens      : 0\n\n\nreturn [\n    'duration'              : duration,\n    'traceCount'            : traceCount,\n    'totalLatency'          : totalLatency,\n    'inputTokens'           : inputTokens,\n    'sessionId'             : sessionId,\n    'outputTokens'          : outputTokens,\n    'totalTokens'           : totalTokens,\n    'totalCost'             : totalCost,\n    'totalCacheReadTokens'  : totalCacheReadTokens,\n    'totalCacheWriteTokens' : totalCacheWriteTokens\n]",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"duration":"{{ _SvAJM.outputs.objects[0].columns.duration }}",
+					"traceCount":"{{ _SvAJM.outputs.objects[0].columns.traceCount }}",
+					"totalLatency":"{{ _SvAJM.outputs.objects[0].columns.totalLatency }}",
+					"inputTokens":"{{ _SvAJM.outputs.objects[0].columns.inputTokens }}",
+					"sessionId":"{{ _SvAJM.outputs.objects[0].columns.sessionId }}",
+					"outputTokens":"{{ _SvAJM.outputs.objects[0].columns.outputTokens }}",
+					"totalTokens":"{{ _SvAJM.outputs.objects[0].columns.totalTokens }}",
+					"totalCost":"{{ _SvAJM.outputs.objects[0].columns.totalCost }}",
+					"totalCacheReadTokens":"{{ _SvAJM.outputs.objects[0].columns.totalCacheReadTokens }}",
+					"totalCacheWriteTokens":"{{ _SvAJM.outputs.objects[0].columns.totalCacheWriteTokens }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
 			"type":"ACTION"
 		},
 		{
@@ -2719,18 +2285,20 @@
 			"fallbackMode":"STOP",
 			"groupId":"vhHXW-1",
 			"id":"7o210",
-			"index":29,
+			"index":23,
 			"inputs":{
 				"result":{
-					"totalToken":"{{ _SvAJM.outputs.objects[0].columns.totalTokens }}",
-					"totalTokenCost":"{{ _SvAJM.outputs.objects[0].columns.totalCost }}",
-					"totalLatency":"{{ _SvAJM.outputs.objects[0].columns.totalLatency }}",
-					"totalInputToken":"{{ _SvAJM.outputs.objects[0].columns.inputTokens }}",
-					"totalOutputToken":"{{ _SvAJM.outputs.objects[0].columns.outputTokens }}",
+					"totalToken":"{{ n_j4qIV.outputs.result.totalTokens }}",
+					"totalTokenCost":"{{ n_j4qIV.outputs.result.totalCost }}",
+					"totalLatency":"{{ n_j4qIV.outputs.result.totalLatency }}",
+					"totalInputToken":"{{ n_j4qIV.outputs.result.inputTokens }}",
+					"totalOutputToken":"{{ n_j4qIV.outputs.result.outputTokens }}",
+					"totalCacheReadTokens":"{{ n_j4qIV.outputs.result.totalCacheReadTokens }}",
+					"totalCacheWriteTokens":"{{ n_j4qIV.outputs.result.totalCacheWriteTokens }}",
 					"result":{
+						"source":"{{ n_Inbzp.outputs.items }}",
 						"ua:type":"mappedArray",
-						"source":"{{ vBMPP.outputs.items }}",
-						"items":"{{ vBMPP.outputs.items[0].result }}"
+						"items":"{{ n_Inbzp.outputs.items[0] }}"
 					}
 				}
 			},
@@ -2757,5 +2325,5 @@
 	"tags":[
 		"AI Agent"
 	],
-	"version":21
+	"version":23
 }
