@@ -30,7 +30,7 @@
 	},
 	"id":"testzsdz",
 	"lastModifiedBy":39,
-	"modifiedTime":1776835269220,
+	"modifiedTime":1776957019603,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -48,6 +48,17 @@
 				"_mqttTopicCounter":0,
 				"_pageCount":4
 			}
+		},
+		"publicPageIds":[],
+		"manifest":{
+			"type":"WEB"
+		},
+		"pagePermissions":{
+			"e_69ea364fff4b8165dd14687b":{}
+		},
+		"type":"application",
+		"locale":{
+			"defaultLocale":"en-US"
 		},
 		"navigation":{
 			"secondary":[],
@@ -244,18 +255,12 @@
 			"e_69cc7e7f52b5f369444e03c4":"homepage",
 			"e_global_testzsdz":"global-page-of-testzsdz",
 			"e_69d38103291a3e43dc41fedd":"page-3",
-			"e_69e85ac5a5d7db6dcb227c68":"page-4"
-		},
-		"manifest":{
-			"type":"WEB"
+			"e_69e85ac5a5d7db6dcb227c68":"page-4",
+			"e_69ea364fff4b8165dd14687b":""
 		},
 		"name":"test",
 		"theme":{
 			"defaultThemeId":"e_699c1348d53be90e1bfeabff"
-		},
-		"type":"application",
-		"locale":{
-			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
 			"e_69d235c8710a896fd0cf7f52":{
@@ -282,6 +287,11 @@
 				"slug":"page-4",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_69ea364fff4b8165dd14687b":{
+				"slug":"",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -289,5 +299,5 @@
 	"tags":[
 		
 	],
-	"version":18
+	"version":21
 }
