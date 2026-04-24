@@ -2,9 +2,29 @@
 	"createdTime":1777018764890,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"mobile-text-heading2-21777018737202",
 	"lastModifiedBy":39,
-	"modifiedTime":1777018764890,
+	"modifiedTime":1777032557811,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -18,14 +38,15 @@
 				"favicon":"/favicon.png"
 			},
 			"_counter":{
-				"_moduleCount":0,
 				"_mqttTopicCounter":0,
-				"_pageCount":0
+				"_pageCount":1,
+				"_moduleCount":0,
+				"_variableCounter":1
 			}
 		},
 		"navigation":{
 			"secondary":[],
-			"defaultPageId":"",
+			"defaultPageId":"e_69eb278d71b0616c9bec1305",
 			"appearance":{
 				"SM":{
 					"primary":[],
@@ -57,7 +78,8 @@
 						"padding":{
 							"all":"p-0"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"LG":{
 					"primary":[],
@@ -95,7 +117,8 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"XL":{
 					"primary":[],
@@ -133,7 +156,8 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"MD":{
 					"primary":[],
@@ -171,10 +195,15 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				}
 			},
 			"primary":[]
+		},
+		"interfacePageIdVsSlugMap":{
+			"e_69eb278d71b0616c9bec1305":"homepage",
+			"e_global_mobile-text-heading2-21777018737202":"global-page-of-mobile-text-heading2-21777018737202"
 		},
 		"manifest":{
 			"type":"MOBILE"
@@ -186,11 +215,23 @@
 		"type":"application",
 		"locale":{
 			"defaultLocale":"en-US"
+		},
+		"entityDetailsMap":{
+			"e_69eb278d71b0616c9bec1305":{
+				"slug":"homepage",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_global_mobile-text-heading2-21777018737202":{
+				"slug":"global-page-of-mobile-text-heading2-21777018737202",
+				"isPublic":false,
+				"type":"PAGE"
+			}
 		}
 	},
 	"standard":false,
 	"tags":[
 		"dnt-application"
 	],
-	"version":0
+	"version":14
 }
