@@ -4,14 +4,14 @@
 	],
 	"createdTime":1777008260885,
 	"deleted":false,
-	"deployedVersion":5,
+	"deployedVersion":6,
 	"deploymentState":{
-		"deployedAt":1777009609393,
+		"deployedAt":1777009616621,
 		"deployedBy":39,
-		"deployedDefinitionId":"69eb03c90a348123d1fb1128",
+		"deployedDefinitionId":"69eb03d0c549ae060588fc37",
 		"status":"DEPLOYED",
-		"version":5,
-		"workflowVersion":5
+		"version":6,
+		"workflowVersion":6
 	},
 	"edges":[
 		{
@@ -157,7 +157,7 @@
 	"id":"69eafe848d36c4122cee6e05",
 	"lastModifiedBy":39,
 	"lcName":"test_race_condition",
-	"modifiedTime":1777009614573,
+	"modifiedTime":1777032021195,
 	"name":"test_race_condition",
 	"nodes":[
 		{
@@ -167,7 +167,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_uubBh-1",
 			"id":"n_3KQ3d",
@@ -599,14 +599,15 @@
 		
 	],
 	"settings":{
-		"enableNodeLevelLogging":true,
+		"enableNodeLevelLogging":false,
 		"enableRunLogging":true,
 		"enableVariableLogging":true,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
