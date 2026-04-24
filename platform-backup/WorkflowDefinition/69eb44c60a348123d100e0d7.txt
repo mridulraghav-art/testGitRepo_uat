@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1777026246070,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_M4afI",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_bKlQg",
+			"type":"next"
+		}
+	],
+	"id":"69eb44c60a348123d100e0d7",
+	"lastModifiedBy":39,
+	"lcName":"new test workflow",
+	"modifiedTime":1777026246070,
+	"name":"new test workflow",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_M4afI-1",
+			"id":"_M4afI",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_M4afI-1",
+			"id":"_bKlQg",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
