@@ -4,18 +4,18 @@
 	],
 	"createdTime":1777008260885,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1777008708499,
+		"deployedAt":1777009277847,
 		"deployedBy":39,
-		"deployedDefinitionId":"69eb0044f9de94210f4a68ee",
+		"deployedDefinitionId":"69eb027df9de94210f4a709a",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":2
+		"version":3,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
-			"fromNodeId":"n_rfEAB",
+			"fromNodeId":"n_TdRgM",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_1NiBF",
@@ -157,31 +157,34 @@
 	"id":"69eafe848d36c4122cee6e05",
 	"lastModifiedBy":39,
 	"lcName":"test_race_condition",
-	"modifiedTime":1777009275368,
+	"modifiedTime":1777009428834,
 	"name":"test_race_condition",
 	"nodes":[
 		{
 			"context":{
-				"appName":"webhooks",
-				"resourceVersion":53,
-				"resourceName":"webhooks_default"
+				"appName":"schedule",
+				"resourceVersion":54,
+				"resourceName":"schedule_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_uubBh-1",
-			"id":"n_rfEAB",
+			"id":"n_TdRgM",
 			"index":1,
 			"inputs":{
-				"request":{
-					"contentType":"application/json"
-				}
+				"cron":"EXPRESSION",
+				"expression":"15 11 24 4 *",
+				"sequential":false,
+				"timezone":"Asia/Calcutta",
+				"interval":15,
+				"frequency":"MINUTES"
 			},
 			"skip":false,
-			"subTitle":"Webhook",
-			"title":"New event",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"WEBHOOK"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
@@ -608,5 +611,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
