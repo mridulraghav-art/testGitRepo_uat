@@ -4,14 +4,14 @@
 	],
 	"createdTime":1774717531184,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1775579810473,
+		"deployedAt":1776938458086,
 		"deployedBy":0,
-		"deployedDefinitionId":"69d532a28ea9d82dc8fb2ddd",
+		"deployedDefinitionId":"69e9edda333799511e142760",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":21
+		"version":3,
+		"workflowVersion":23
 	},
 	"edges":[
 		{
@@ -208,7 +208,7 @@
 	"id":"69c3712f35729b0d7cf8ffe7",
 	"lastModifiedBy":0,
 	"lcName":"observability | get case traces info v2",
-	"modifiedTime":1776938457963,
+	"modifiedTime":1777100484359,
 	"name":"Observability | Get Case Traces Info V2",
 	"nodes":[
 		{
@@ -269,8 +269,7 @@
 							"type":"integer",
 							"title":"Total Cache Write Tokens"
 						}
-					},
-					"dynamic":true
+					}
 				},
 				"setup":{
 					"type":"object",
@@ -597,27 +596,6 @@
 								"properties":{},
 								"required":[]
 							}
-						},
-						"_ua_variableDetails":{
-							"type":"array",
-							"title":"Variable Details",
-							"items":{
-								"type":"object",
-								"properties":{
-									"description":{
-										"description":"Description of the variable",
-										"type":"string"
-									},
-									"dataType":{
-										"description":"Data type of the variable",
-										"type":"string"
-									},
-									"name":{
-										"description":"Name of the variable",
-										"type":"string"
-									}
-								}
-							}
 						}
 					}
 				}
@@ -881,27 +859,6 @@
 						"endTime":{
 							"type":"integer",
 							"title":"End Time"
-						},
-						"_ua_variableDetails":{
-							"type":"array",
-							"title":"Variable Details",
-							"items":{
-								"type":"object",
-								"properties":{
-									"description":{
-										"description":"Description of the variable",
-										"type":"string"
-									},
-									"dataType":{
-										"description":"Data type of the variable",
-										"type":"string"
-									},
-									"name":{
-										"description":"Name of the variable",
-										"type":"string"
-									}
-								}
-							}
 						}
 					},
 					"required":[]
@@ -1160,27 +1117,6 @@
 							"disableActions":true,
 							"items":{
 								"type":"string"
-							}
-						},
-						"_ua_variableDetails":{
-							"type":"array",
-							"title":"Variable Details",
-							"items":{
-								"type":"object",
-								"properties":{
-									"description":{
-										"description":"Description of the variable",
-										"type":"string"
-									},
-									"dataType":{
-										"description":"Data type of the variable",
-										"type":"string"
-									},
-									"name":{
-										"description":"Name of the variable",
-										"type":"string"
-									}
-								}
 							}
 						}
 					}
@@ -1459,27 +1395,6 @@
 								"required":[]
 							},
 							"title":"traceInfo"
-						},
-						"_ua_variableDetails":{
-							"type":"array",
-							"title":"Variable Details",
-							"items":{
-								"type":"object",
-								"properties":{
-									"description":{
-										"description":"Description of the variable",
-										"type":"string"
-									},
-									"dataType":{
-										"description":"Data type of the variable",
-										"type":"string"
-									},
-									"name":{
-										"description":"Name of the variable",
-										"type":"string"
-									}
-								}
-							}
 						}
 					}
 				}
@@ -1661,27 +1576,6 @@
 								"required":[]
 							},
 							"title":"Bot Responses"
-						},
-						"_ua_variableDetails":{
-							"type":"array",
-							"title":"Variable Details",
-							"items":{
-								"type":"object",
-								"properties":{
-									"description":{
-										"description":"Description of the variable",
-										"type":"string"
-									},
-									"dataType":{
-										"description":"Data type of the variable",
-										"type":"string"
-									},
-									"name":{
-										"description":"Name of the variable",
-										"type":"string"
-									}
-								}
-							}
 						}
 					},
 					"required":[]
@@ -2325,5 +2219,5 @@
 	"tags":[
 		"AI Agent"
 	],
-	"version":23
+	"version":25
 }
