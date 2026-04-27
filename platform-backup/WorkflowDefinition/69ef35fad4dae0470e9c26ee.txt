@@ -16,7 +16,7 @@
 	"id":"69ef35fad4dae0470e9c26ee",
 	"lastModifiedBy":39,
 	"lcName":"fwefweew",
-	"modifiedTime":1777313289475,
+	"modifiedTime":1777313326854,
 	"name":"fwefweew",
 	"nodes":[
 		{
@@ -78,6 +78,11 @@
 						"name":"WORKFLOW_ID",
 						"aggregationFunction":"GROUP",
 						"includePercentageChange":false
+					},
+					{
+						"name":"TIMESTAMP",
+						"aggregationFunction":"GROUP",
+						"includePercentageChange":false
 					}
 				],
 				"entityType":"CONNECTION",
@@ -103,5 +108,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
