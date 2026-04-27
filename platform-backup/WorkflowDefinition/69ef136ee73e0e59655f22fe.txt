@@ -6,46 +6,121 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_9Lamg",
+			"fromNodeId":"n_eewfX",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_EHmC2",
+			"toNodeId":"n_6twJN",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_6twJN",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_i9Gbb",
 			"type":"next"
 		}
 	],
 	"id":"69ef136ee73e0e59655f22fe",
 	"lastModifiedBy":39,
 	"lcName":"codebyunifyappslocaluplhphlxeb",
-	"modifiedTime":1777275758235,
+	"modifiedTime":1777275766518,
 	"name":"CodeByUnifyAppsLocalUPlhPhLxeB",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9Lamg-1",
-			"id":"_9Lamg",
-			"index":0,
+			"id":"n_eewfX",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"a":{
+							"type":"integer",
+							"title":"a"
+						},
+						"b":{
+							"type":"integer",
+							"title":"b"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":2041,
+				"resourceName":"code_by_unifyapps_java",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9Lamg-1",
-			"id":"_EHmC2",
-			"index":0,
+			"id":"n_6twJN",
+			"index":2,
+			"inputs":{
+				"captureStdOutput":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Java code",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2209,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_9Lamg-1",
+			"id":"n_i9Gbb",
+			"index":3,
+			"inputs":{
+				"result":{
+					"r":"{{ n_6twJN.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +131,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
