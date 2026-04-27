@@ -5,12 +5,18 @@
 	"createdTime":1777284602458,
 	"deleted":false,
 	"edges":[
-		
+		{
+			"fromNodeId":"n_HkRqb",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_sS6tL",
+			"type":"next"
+		}
 	],
 	"id":"69ef35fad4dae0470e9c26ee",
 	"lastModifiedBy":39,
 	"lcName":"fwefweew",
-	"modifiedTime":1777284609329,
+	"modifiedTime":1777295179766,
 	"name":"fwefweew",
 	"nodes":[
 		{
@@ -20,7 +26,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_qI4NI-1",
 			"id":"n_HkRqb",
@@ -37,6 +43,27 @@
 				"type":"WEBHOOK"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":1988,
+				"resourceName":"analytics_by_unifyapps_query_reports",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_qI4NI-1",
+			"id":"n_sS6tL",
+			"index":2,
+			"inputs":{
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Analytics Query",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -53,5 +80,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
