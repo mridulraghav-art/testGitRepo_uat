@@ -11,12 +11,19 @@
 			"skip":false,
 			"toNodeId":"n_sS6tL",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_sS6tL",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Z4AEd",
+			"type":"next"
 		}
 	],
 	"id":"69ef35fad4dae0470e9c26ee",
 	"lastModifiedBy":39,
 	"lcName":"fwefweew",
-	"modifiedTime":1777313326854,
+	"modifiedTime":1777355691076,
 	"name":"fwefweew",
 	"nodes":[
 		{
@@ -26,7 +33,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_qI4NI-1",
 			"id":"n_HkRqb",
@@ -92,6 +99,65 @@
 			"subTitle":"Analytics by UnifyApps",
 			"title":"Analytics Query",
 			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{}
+				}
+			},
+			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":1955,
+				"resourceName":"custom_http_endpoint_execute",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_qI4NI-1",
+			"id":"n_Z4AEd",
+			"index":3,
+			"inputs":{
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"body":{
+					"edew":"{{ n_sS6tL.outputs.objects[0].columns.WORKFLOW_ID }}",
+					"dewde":"{{ n_sS6tL.outputs.objects[0].columns.WORKFLOW_ID }}"
+				},
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"httpVersion":"HTTP_2",
+				"bodySchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"edew",
+						"dewde"
+					],
+					"properties":{
+						"edew":{
+							"type":"string",
+							"title":"Edew"
+						},
+						"dewde":{
+							"type":"string",
+							"title":"Dewde"
+						}
+					}
+				},
+				"responseContentType":"HEADER_BASED",
+				"followRedirects":"NORMAL",
+				"authType":"CUSTOM",
+				"requestContentType":"application/json",
+				"ignoreTrailingSlashes":false,
+				"certificateType":"CERT_STRING"
+			},
+			"skip":false,
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"Execute REST request",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -108,5 +174,5 @@
 		}
 	},
 	"standard":false,
-	"version":7
+	"version":8
 }
