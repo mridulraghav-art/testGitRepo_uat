@@ -4,6 +4,15 @@
 	],
 	"createdTime":1777361860926,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1777361884988,
+		"deployedBy":39,
+		"deployedDefinitionId":"69f063dca0974911cb6dd20d",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_xglRF",
@@ -61,7 +70,7 @@
 	"id":"69f063c45951b174ede690cc",
 	"lastModifiedBy":39,
 	"lcName":"fdsx",
-	"modifiedTime":1777361883006,
+	"modifiedTime":1777382083810,
 	"name":"fdsx",
 	"nodes":[
 		{
@@ -175,7 +184,7 @@
 				},
 				"rateLimitConfig":{
 					"duration":"1",
-					"enabled":true,
+					"enabled":false,
 					"threshold":"0",
 					"unit":"MINUTES",
 					"waitForNextWindow":false
@@ -309,5 +318,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
