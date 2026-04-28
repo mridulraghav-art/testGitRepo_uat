@@ -6,46 +6,299 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_U3LaF",
+			"fromNodeId":"n_xglRF",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Lzdqz",
+			"toNodeId":"n_CpsOy",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CpsOy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_gp69D",
+			"type":"scope"
+		},
+		{
+			"fromNodeId":"n_gp69D",
+			"name":"scope-loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CpsOy",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CpsOy",
+			"name":"success",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ZY2mY",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CpsOy",
+			"name":"error",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_s2YxY",
+			"type":"error"
+		},
+		{
+			"fromNodeId":"n_ZY2mY",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BE86M",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_s2YxY",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BE86M",
 			"type":"next"
 		}
 	],
 	"id":"69f063c45951b174ede690cc",
 	"lastModifiedBy":39,
 	"lcName":"fdsx",
-	"modifiedTime":1777361860926,
+	"modifiedTime":1777361883006,
 	"name":"fdsx",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2208,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_U3LaF-1",
-			"id":"_U3LaF",
-			"index":0,
+			"id":"n_xglRF",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output"
+					],
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"Output"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input"
+					],
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"Input"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"scope",
+				"resourceVersion":1084,
+				"resourceName":"scope_trigger_scope",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
+			"fallbackMode":"MANUAL",
+			"groupId":"_U3LaF-1",
+			"id":"n_CpsOy",
+			"index":2,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"{{ n_xglRF.outputs.input }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"Unifyapps"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false,
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"duration":"1",
+					"enabled":true,
+					"threshold":"0",
+					"unit":"MINUTES",
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"enabled":false
+				},
+				"stepError":"MANUAL",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"enabled":false
+				}
+			},
+			"skip":false,
+			"subTitle":"Scope",
+			"title":"Trigger Scope",
+			"type":"SCOPE"
+		},
+		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":17044,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION",
+				"scopeNodeId":"n_CpsOy"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_CpsOy@_U3LaF-1@s",
+			"id":"n_gp69D",
+			"index":3,
+			"inputs":{
+				"field1":"workflow continues",
+				"field2":false
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":18689,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_U3LaF-1",
-			"id":"_Lzdqz",
-			"index":0,
+			"id":"n_BE86M",
+			"index":4,
+			"inputs":{
+				"result":{
+					"output_String":"{{ n_xg2vt.outputs.input_String }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":17044,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_CpsOy@_U3LaF-1@success",
+			"id":"n_ZY2mY",
+			"index":5,
+			"inputs":{
+				"field1":"workflow continues",
+				"field2":false
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":17044,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_CpsOy@_U3LaF-1@error",
+			"id":"n_s2YxY",
+			"index":6,
+			"inputs":{
+				"field1":"workflow continues",
+				"field2":false
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +309,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
