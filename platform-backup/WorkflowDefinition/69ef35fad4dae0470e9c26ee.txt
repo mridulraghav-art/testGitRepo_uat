@@ -23,7 +23,7 @@
 	"id":"69ef35fad4dae0470e9c26ee",
 	"lastModifiedBy":39,
 	"lcName":"fwefweew",
-	"modifiedTime":1777363499563,
+	"modifiedTime":1777363533827,
 	"name":"fwefweew",
 	"nodes":[
 		{
@@ -59,7 +59,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_qI4NI-1",
 			"id":"n_sS6tL",
@@ -92,6 +92,18 @@
 						"includePercentageChange":false
 					}
 				],
+				"filter":{
+					"filters":[
+						{
+							"property":"CONNECTION_ID",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"122221"
+							}
+						}
+					],
+					"operator":"AND"
+				},
 				"entityType":"CONNECTION",
 				"group":"PLATFORM"
 			},
@@ -156,5 +168,5 @@
 		}
 	},
 	"standard":false,
-	"version":10
+	"version":11
 }
