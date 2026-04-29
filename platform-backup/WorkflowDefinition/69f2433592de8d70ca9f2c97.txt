@@ -6,46 +6,109 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_jsSAw",
+			"fromNodeId":"n_4TQar",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_pkCpt",
+			"toNodeId":"n_Uorni",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Uorni",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_0klV8",
 			"type":"next"
 		}
 	],
 	"id":"69f2433592de8d70ca9f2c97",
 	"lastModifiedBy":39,
 	"lcName":"skeletonerrorslocal2037841371",
-	"modifiedTime":1777484597715,
+	"modifiedTime":1777484607838,
 	"name":"skeletonErrorsLocal2037841371",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":54,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_jsSAw-1",
-			"id":"_jsSAw",
-			"index":0,
+			"id":"n_4TQar",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"array",
+								"items":{
+									"type":"string"
+								},
+								"title":"input"
+							}
+						},
+						"additionalProperties":false
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":97,
+				"resourceName":"variable_by_unifyapps_create_3d_variable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_jsSAw-1",
-			"id":"_pkCpt",
-			"index":0,
+			"id":"n_Uorni",
+			"index":2,
+			"inputs":{
+				"field_type":"STRING",
+				"field_name":"varOne"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create 3D variable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":104,
+				"resourceName":"variable_by_unifyapps_update_3d_variable",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_jsSAw-1",
+			"id":"n_0klV8",
+			"index":3,
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update 3D variable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +119,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
