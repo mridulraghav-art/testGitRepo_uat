@@ -11,19 +11,12 @@
 			"skip":false,
 			"toNodeId":"n_7nfJi",
 			"type":"next"
-		},
-		{
-			"fromNodeId":"n_7nfJi",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_FA5GY",
-			"type":"next"
 		}
 	],
 	"id":"69f23ee4ce10c51b32365dcc",
 	"lastModifiedBy":39,
 	"lcName":"skeletonerrorslocal5453191746",
-	"modifiedTime":1777483518867,
+	"modifiedTime":1777483665683,
 	"name":"skeletonErrorsLocal5453191746",
 	"nodes":[
 		{
@@ -33,7 +26,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_bekNs-1",
 			"id":"n_4HVFx",
@@ -67,8 +60,8 @@
 		{
 			"context":{
 				"appName":"variable_by_unifyapps",
-				"resourceVersion":98,
-				"resourceName":"variable_by_unifyapps_create_2d_variable",
+				"resourceVersion":97,
+				"resourceName":"variable_by_unifyapps_create_3d_variable",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -78,35 +71,11 @@
 			"id":"n_7nfJi",
 			"index":2,
 			"inputs":{
-				"field_type":"STRING",
-				"field_name":"varOne"
+				"field_type":"STRING"
 			},
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
-			"title":"Create 2D variable",
-			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"variable_by_unifyapps",
-				"resourceVersion":108,
-				"resourceName":"variable_by_unifyapps_update_2d_variable",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_bekNs-1",
-			"id":"n_FA5GY",
-			"index":3,
-			"inputs":{
-				"variable":"{{ n_7nfJi.outputs.varOne }}",
-				"colIndex":3,
-				"rowIndex":3
-			},
-			"skip":false,
-			"subTitle":"Variable by UnifyApps",
-			"title":"Update 2D variable",
+			"title":"Create 3D variable",
 			"type":"ACTION"
 		}
 	],
@@ -124,5 +93,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
