@@ -6,46 +6,113 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_G15Ib",
+			"fromNodeId":"n_ZhvZ5",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_MWhEU",
+			"toNodeId":"n_DklOO",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_DklOO",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_srS3D",
 			"type":"next"
 		}
 	],
 	"id":"69f22c7896521943e8957d1e",
 	"lastModifiedBy":39,
 	"lcName":"skeletonerrorslocal4745626649",
-	"modifiedTime":1777478776972,
+	"modifiedTime":1777478793829,
 	"name":"skeletonErrorsLocal4745626649",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":54,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_G15Ib-1",
-			"id":"_G15Ib",
-			"index":0,
+			"id":"n_ZhvZ5",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"array",
+								"items":{
+									"type":"string"
+								},
+								"title":"input"
+							}
+						},
+						"additionalProperties":false
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":98,
+				"resourceName":"variable_by_unifyapps_create_2d_variable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_G15Ib-1",
-			"id":"_MWhEU",
-			"index":0,
+			"id":"n_DklOO",
+			"index":2,
+			"inputs":{
+				"field_type":"STRING",
+				"field_name":"varOne"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create 2D variable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":108,
+				"resourceName":"variable_by_unifyapps_update_2d_variable",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_G15Ib-1",
+			"id":"n_srS3D",
+			"index":3,
+			"inputs":{
+				"variable":"{{ n_DklOO.outputs.varOne }}",
+				"rowIndex":3
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update 2D variable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +123,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
