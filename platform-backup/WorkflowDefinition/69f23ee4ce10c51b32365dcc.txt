@@ -11,12 +11,26 @@
 			"skip":false,
 			"toNodeId":"n_7nfJi",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_7nfJi",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_KREcq",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_KREcq",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_4BW6H",
+			"type":"next"
 		}
 	],
 	"id":"69f23ee4ce10c51b32365dcc",
 	"lastModifiedBy":39,
 	"lcName":"skeletonerrorslocal5453191746",
-	"modifiedTime":1777483665683,
+	"modifiedTime":1777483902656,
 	"name":"skeletonErrorsLocal5453191746",
 	"nodes":[
 		{
@@ -71,12 +85,51 @@
 			"id":"n_7nfJi",
 			"index":2,
 			"inputs":{
-				"field_type":"STRING"
+				"field_type":"STRING",
+				"field_name":"ed"
 			},
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create 3D variable",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":104,
+				"resourceName":"variable_by_unifyapps_update_3d_variable",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_bekNs-1",
+			"id":"n_KREcq",
+			"index":3,
+			"inputs":{
+				"variable":"{{ n_7nfJi.outputs.ed }}",
+				"depthIndex":1,
+				"rowIndex":1
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update 3D variable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_bekNs-1",
+			"id":"n_4BW6H",
+			"index":4,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -93,5 +146,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
