@@ -9,13 +9,6 @@
 			"fromNodeId":"n_SjOMs",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_7oveY",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_7oveY",
-			"priority":0,
-			"skip":false,
 			"toNodeId":"n_iAryn",
 			"type":"next"
 		}
@@ -23,7 +16,7 @@
 	"id":"69f249be16c03a3e12176d1f",
 	"lastModifiedBy":39,
 	"lcName":"skeletonerrorslocal8196385521",
-	"modifiedTime":1777486293027,
+	"modifiedTime":1777486377451,
 	"name":"skeletonErrorsLocal8196385521",
 	"nodes":[
 		{
@@ -33,7 +26,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_BEgyZ-1",
 			"id":"n_SjOMs",
@@ -67,38 +60,16 @@
 		{
 			"context":{
 				"appName":"variable_by_unifyapps",
-				"resourceVersion":97,
-				"resourceName":"variable_by_unifyapps_create_3d_variable",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_BEgyZ-1",
-			"id":"n_7oveY",
-			"index":2,
-			"inputs":{
-				"field_type":"STRING",
-				"field_name":"varOne"
-			},
-			"skip":false,
-			"subTitle":"Variable by UnifyApps",
-			"title":"Create 3D variable",
-			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"variable_by_unifyapps",
 				"resourceVersion":104,
 				"resourceName":"variable_by_unifyapps_update_3d_variable",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_BEgyZ-1",
 			"id":"n_iAryn",
-			"index":3,
+			"index":2,
 			"inputs":{
 				"variable":"{{ n_7oveY.outputs.varOne }}",
 				"depthIndex":1,
@@ -125,5 +96,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
