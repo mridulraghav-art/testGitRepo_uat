@@ -6,46 +6,110 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_LNGwh",
+			"fromNodeId":"n_qENOa",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_sHPKy",
+			"toNodeId":"n_5M6CH",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_5M6CH",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_6ya16",
 			"type":"next"
 		}
 	],
 	"id":"69f2437292de8d70ca9f2d24",
 	"lastModifiedBy":39,
 	"lcName":"skeletonerrorslocal7281394504",
-	"modifiedTime":1777484658732,
+	"modifiedTime":1777484672699,
 	"name":"skeletonErrorsLocal7281394504",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":54,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_LNGwh-1",
-			"id":"_LNGwh",
-			"index":0,
+			"id":"n_qENOa",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"array",
+								"items":{
+									"type":"string"
+								},
+								"title":"input"
+							}
+						},
+						"additionalProperties":false
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":97,
+				"resourceName":"variable_by_unifyapps_create_3d_variable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_LNGwh-1",
-			"id":"_sHPKy",
-			"index":0,
+			"id":"n_5M6CH",
+			"index":2,
+			"inputs":{
+				"field_type":"STRING",
+				"field_name":"varOne"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create 3D variable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":104,
+				"resourceName":"variable_by_unifyapps_update_3d_variable",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_LNGwh-1",
+			"id":"n_6ya16",
+			"index":3,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update 3D variable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +120,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
