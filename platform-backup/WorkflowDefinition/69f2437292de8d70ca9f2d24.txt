@@ -23,7 +23,7 @@
 	"id":"69f2437292de8d70ca9f2d24",
 	"lastModifiedBy":39,
 	"lcName":"skeletonerrorslocal7281394504",
-	"modifiedTime":1777484672699,
+	"modifiedTime":1777484678277,
 	"name":"skeletonErrorsLocal7281394504",
 	"nodes":[
 		{
@@ -99,7 +99,12 @@
 			"groupId":"_LNGwh-1",
 			"id":"n_6ya16",
 			"index":3,
-			"inputs":{},
+			"inputs":{
+				"variable":"{{ n_5M6CH.outputs.varOne }}",
+				"depthIndex":1,
+				"colIndex":3,
+				"rowIndex":3
+			},
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
 			"title":"Update 3D variable",
@@ -120,5 +125,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
