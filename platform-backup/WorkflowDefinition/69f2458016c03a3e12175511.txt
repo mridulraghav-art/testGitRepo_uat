@@ -23,7 +23,7 @@
 	"id":"69f2458016c03a3e12175511",
 	"lastModifiedBy":39,
 	"lcName":"sdf",
-	"modifiedTime":1777485313864,
+	"modifiedTime":1777485329570,
 	"name":"sdf",
 	"nodes":[
 		{
@@ -87,6 +87,9 @@
 			"id":"n_Luygl",
 			"index":3,
 			"inputs":{
+				"variable":"{{ n_vXNgZ.outputs.dc }}",
+				"colIndex":1,
+				"rowIndex":1,
 				"value":"{{ n_vXNgZ.outputs._ua_variableDetails[0].dataType }}"
 			},
 			"skip":false,
@@ -109,5 +112,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
