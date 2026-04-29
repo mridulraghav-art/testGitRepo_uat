@@ -16,7 +16,7 @@
 	"id":"69f0f59a8f5f86452f206db9",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1777442307535,
+	"modifiedTime":1777442316606,
 	"name":"test",
 	"nodes":[
 		{
@@ -34,6 +34,12 @@
 			"type":"START"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.records.items.name",
+					"root.records.items._ua_id"
+				]
+			},
 			"context":{
 				"appName":"mdm_by_unifyapps",
 				"resourceVersion":0,
@@ -72,5 +78,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
