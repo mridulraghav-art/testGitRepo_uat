@@ -9,14 +9,14 @@
 			"fromNodeId":"n_SjOMs",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_1SDCL",
+			"toNodeId":"n_TmMh0",
 			"type":"next"
 		}
 	],
 	"id":"69f249be16c03a3e12176d1f",
 	"lastModifiedBy":39,
 	"lcName":"skeletonerrorslocal8196385521",
-	"modifiedTime":1777486399906,
+	"modifiedTime":1777486420679,
 	"name":"skeletonErrorsLocal8196385521",
 	"nodes":[
 		{
@@ -60,25 +60,23 @@
 		{
 			"context":{
 				"appName":"variable_by_unifyapps",
-				"resourceVersion":104,
-				"resourceName":"variable_by_unifyapps_update_3d_variable",
+				"resourceVersion":98,
+				"resourceName":"variable_by_unifyapps_create_2d_variable",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_BEgyZ-1",
-			"id":"n_1SDCL",
+			"id":"n_TmMh0",
 			"index":2,
 			"inputs":{
-				"variable":"{{ n_SjOMs.outputs.body.input }}",
-				"depthIndex":1,
-				"colIndex":1,
-				"rowIndex":1
+				"field_type":"STRING",
+				"field_name":"r"
 			},
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
-			"title":"Update 3D variable",
+			"title":"Create 2D variable",
 			"type":"ACTION"
 		}
 	],
@@ -96,5 +94,5 @@
 		}
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
