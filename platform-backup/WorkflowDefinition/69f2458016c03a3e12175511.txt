@@ -23,7 +23,7 @@
 	"id":"69f2458016c03a3e12175511",
 	"lastModifiedBy":39,
 	"lcName":"sdf",
-	"modifiedTime":1777485660179,
+	"modifiedTime":1777486189290,
 	"name":"sdf",
 	"nodes":[
 		{
@@ -54,8 +54,8 @@
 		{
 			"context":{
 				"appName":"variable_by_unifyapps",
-				"resourceVersion":98,
-				"resourceName":"variable_by_unifyapps_create_2d_variable",
+				"resourceVersion":97,
+				"resourceName":"variable_by_unifyapps_create_3d_variable",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -66,18 +66,18 @@
 			"index":2,
 			"inputs":{
 				"field_type":"STRING",
-				"field_name":"dc"
+				"field_name":"e"
 			},
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
-			"title":"Create 2D variable",
+			"title":"Create 3D variable",
 			"type":"ACTION"
 		},
 		{
 			"context":{
 				"appName":"variable_by_unifyapps",
-				"resourceVersion":108,
-				"resourceName":"variable_by_unifyapps_update_2d_variable",
+				"resourceVersion":104,
+				"resourceName":"variable_by_unifyapps_update_3d_variable",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -87,13 +87,14 @@
 			"id":"n_Luygl",
 			"index":3,
 			"inputs":{
-				"variable":"{{ n_vXNgZ.outputs.dc }}",
-				"colIndex":1,
-				"rowIndex":1
+				"variable":"{{ n_vXNgZ.outputs.e }}",
+				"depthIndex":3,
+				"colIndex":3,
+				"rowIndex":3
 			},
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
-			"title":"Update 2D variable",
+			"title":"Update 3D variable",
 			"type":"ACTION"
 		}
 	],
@@ -111,5 +112,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
