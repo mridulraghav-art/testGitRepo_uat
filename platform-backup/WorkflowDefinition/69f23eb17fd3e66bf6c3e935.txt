@@ -6,46 +6,110 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_zNEMO",
+			"fromNodeId":"n_DV779",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_g8rxc",
+			"toNodeId":"n_WNr67",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_WNr67",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_bPnNi",
 			"type":"next"
 		}
 	],
 	"id":"69f23eb17fd3e66bf6c3e935",
 	"lastModifiedBy":39,
 	"lcName":"skeletonerrorslocal1411206189",
-	"modifiedTime":1777483441092,
+	"modifiedTime":1777483451202,
 	"name":"skeletonErrorsLocal1411206189",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":54,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_zNEMO-1",
-			"id":"_zNEMO",
-			"index":0,
+			"id":"n_DV779",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"array",
+								"items":{
+									"type":"string"
+								},
+								"title":"input"
+							}
+						},
+						"additionalProperties":false
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":98,
+				"resourceName":"variable_by_unifyapps_create_2d_variable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_zNEMO-1",
-			"id":"_g8rxc",
-			"index":0,
+			"id":"n_WNr67",
+			"index":2,
+			"inputs":{
+				"field_type":"STRING",
+				"field_name":"varOne"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create 2D variable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":108,
+				"resourceName":"variable_by_unifyapps_update_2d_variable",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_zNEMO-1",
+			"id":"n_bPnNi",
+			"index":3,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update 2D variable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +120,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
