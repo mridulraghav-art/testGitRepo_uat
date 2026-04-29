@@ -6,46 +6,99 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_PxLYU",
+			"fromNodeId":"n_aKyiE",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_ylmwI",
+			"toNodeId":"n_vXNgZ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_vXNgZ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Luygl",
 			"type":"next"
 		}
 	],
 	"id":"69f2458016c03a3e12175511",
 	"lastModifiedBy":39,
 	"lcName":"sdf",
-	"modifiedTime":1777485184521,
+	"modifiedTime":1777485313864,
 	"name":"sdf",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":54,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_PxLYU-1",
-			"id":"_PxLYU",
-			"index":0,
+			"id":"n_aKyiE",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":98,
+				"resourceName":"variable_by_unifyapps_create_2d_variable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_PxLYU-1",
-			"id":"_ylmwI",
-			"index":0,
+			"id":"n_vXNgZ",
+			"index":2,
+			"inputs":{
+				"field_type":"STRING",
+				"field_name":"dc"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create 2D variable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":108,
+				"resourceName":"variable_by_unifyapps_update_2d_variable",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_PxLYU-1",
+			"id":"n_Luygl",
+			"index":3,
+			"inputs":{
+				"value":"{{ n_vXNgZ.outputs._ua_variableDetails[0].dataType }}"
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update 2D variable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +109,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
