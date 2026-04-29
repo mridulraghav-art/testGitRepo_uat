@@ -6,46 +6,80 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_NX1Hs",
+			"fromNodeId":"n_Zsmhp",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_7Diuz",
+			"toNodeId":"n_Fu9G5",
 			"type":"next"
 		}
 	],
 	"id":"69f2445a16c03a3e12174f53",
 	"lastModifiedBy":39,
 	"lcName":"skeletonerrorslocal6334972786",
-	"modifiedTime":1777484890017,
+	"modifiedTime":1777484896326,
 	"name":"skeletonErrorsLocal6334972786",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":54,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_NX1Hs-1",
-			"id":"_NX1Hs",
-			"index":0,
+			"id":"n_Zsmhp",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"array",
+								"items":{
+									"type":"string"
+								},
+								"title":"input"
+							}
+						},
+						"additionalProperties":false
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":97,
+				"resourceName":"variable_by_unifyapps_create_3d_variable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_NX1Hs-1",
-			"id":"_7Diuz",
-			"index":0,
+			"id":"n_Fu9G5",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create 3D variable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +90,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
