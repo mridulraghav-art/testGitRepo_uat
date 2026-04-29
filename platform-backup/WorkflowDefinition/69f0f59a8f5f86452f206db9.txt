@@ -9,14 +9,14 @@
 			"fromNodeId":"_Qphxz",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_RwAim",
+			"toNodeId":"n_qKcop",
 			"type":"next"
 		}
 	],
 	"id":"69f0f59a8f5f86452f206db9",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1777399194367,
+	"modifiedTime":1777442182296,
 	"name":"test",
 	"nodes":[
 		{
@@ -25,7 +25,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_Qphxz-1",
 			"id":"_Qphxz",
-			"index":0,
+			"index":1,
 			"skip":false,
 			"title":"Select a trigger event",
 			"trigger":{
@@ -34,18 +34,32 @@
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"mdm_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"mdm_by_unifyapps_create_staging_records",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Qphxz-1",
-			"id":"_RwAim",
-			"index":0,
+			"id":"n_qKcop",
+			"index":2,
+			"inputs":{
+				"recordEventType":"INSERT",
+				"modelId":"69118dc70f1c7f344764e301"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Ontology by UnifyApps",
+			"title":"Create Staging Records",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +70,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
