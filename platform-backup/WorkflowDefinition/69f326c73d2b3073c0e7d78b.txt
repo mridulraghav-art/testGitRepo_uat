@@ -6,46 +6,104 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_ibPFw",
+			"fromNodeId":"n_NA7Ny",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_UU63D",
+			"toNodeId":"n_v1IPS",
 			"type":"next"
 		}
 	],
 	"id":"69f326c73d2b3073c0e7d78b",
 	"lastModifiedBy":39,
 	"lcName":"caldel",
-	"modifiedTime":1777542855342,
+	"modifiedTime":1777542894105,
 	"name":"caldel",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":54,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ibPFw-1",
-			"id":"_ibPFw",
-			"index":0,
+			"id":"n_NA7Ny",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1644,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ibPFw-1",
-			"id":"_UU63D",
-			"index":0,
+			"id":"n_v1IPS",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"s4":{
+							"type":"string",
+							"title":"S 4"
+						}
+					},
+					"required":[
+						"s4"
+					]
+				}
+			},
+			"inputs":{
+				"s4":"766"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"s4":{
+							"type":"string",
+							"title":"S 4"
+						}
+					},
+					"required":[
+						"s4"
+					]
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +114,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
