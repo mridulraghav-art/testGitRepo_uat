@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1777542855342,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_ibPFw",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_UU63D",
+			"type":"next"
+		}
+	],
+	"id":"69f326c73d2b3073c0e7d78b",
+	"lastModifiedBy":39,
+	"lcName":"caldel",
+	"modifiedTime":1777542855342,
+	"name":"caldel",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ibPFw-1",
+			"id":"_ibPFw",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ibPFw-1",
+			"id":"_UU63D",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
