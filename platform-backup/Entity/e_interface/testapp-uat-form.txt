@@ -2,9 +2,29 @@
 	"createdTime":1777546223020,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"testapp-uat-form",
 	"lastModifiedBy":39,
-	"modifiedTime":1777546223020,
+	"modifiedTime":1777546258077,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -20,12 +40,12 @@
 			"_counter":{
 				"_moduleCount":0,
 				"_mqttTopicCounter":0,
-				"_pageCount":0
+				"_pageCount":2
 			}
 		},
 		"navigation":{
 			"secondary":[],
-			"defaultPageId":"",
+			"defaultPageId":"e_69f333f1cefa6a5b463e9ac8",
 			"appearance":{
 				"SM":{
 					"primary":[],
@@ -57,7 +77,8 @@
 						"padding":{
 							"all":"p-0"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"LG":{
 					"primary":[],
@@ -95,7 +116,8 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"XL":{
 					"primary":[],
@@ -133,7 +155,8 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"MD":{
 					"primary":[],
@@ -171,10 +194,16 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				}
 			},
 			"primary":[]
+		},
+		"interfacePageIdVsSlugMap":{
+			"e_69f333f1cefa6a5b463e9ac8":"homepage",
+			"e_69f33412fa011d428b8f6a9f":"page-2",
+			"e_global_testapp-uat-form":"global-page-of-testapp-uat-form"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -186,11 +215,28 @@
 		"type":"application",
 		"locale":{
 			"defaultLocale":"en-US"
+		},
+		"entityDetailsMap":{
+			"e_69f333f1cefa6a5b463e9ac8":{
+				"slug":"homepage",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_69f33412fa011d428b8f6a9f":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_global_testapp-uat-form":{
+				"slug":"global-page-of-testapp-uat-form",
+				"isPublic":false,
+				"type":"PAGE"
+			}
 		}
 	},
 	"standard":false,
 	"tags":[
 		
 	],
-	"version":0
+	"version":5
 }
