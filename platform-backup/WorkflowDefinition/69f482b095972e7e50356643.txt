@@ -4,18 +4,25 @@
 	],
 	"createdTime":1777631920849,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1777632016732,
+		"deployedAt":1777633985376,
 		"deployedBy":39,
-		"deployedDefinitionId":"69f483109817e45b243cef72",
+		"deployedDefinitionId":"69f48ac191cd59215115dcdb",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":2
+		"version":3,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
 			"fromNodeId":"n_2WiAP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Amdjb",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Amdjb",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_l8VyR",
@@ -32,7 +39,7 @@
 	"id":"69f482b095972e7e50356643",
 	"lastModifiedBy":39,
 	"lcName":"decimal",
-	"modifiedTime":1777633980855,
+	"modifiedTime":1777634022149,
 	"name":"decimal",
 	"nodes":[
 		{
@@ -84,6 +91,28 @@
 		{
 			"context":{
 				"appName":"sqlserver",
+				"resourceVersion":4282,
+				"connectionId":"6911f01e124a4c632c5f5da8",
+				"resourceName":"sqlserver_get_table_schema",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_sg8al-1",
+			"id":"n_Amdjb",
+			"index":2,
+			"inputs":{
+				"tableName":"Claims"
+			},
+			"skip":false,
+			"subTitle":"Microsoft SQL Server",
+			"title":"Get table schema",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"sqlserver",
 				"resourceVersion":4274,
 				"connectionId":"6911f01e124a4c632c5f5da8",
 				"resourceName":"sqlserver_execute_sql",
@@ -94,7 +123,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_sg8al-1",
 			"id":"n_l8VyR",
-			"index":2,
+			"index":3,
 			"inputs":{
 				"performAsync":false,
 				"objectSourceResourceName":"sqlserver_execute_sql_metadata",
@@ -117,7 +146,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_sg8al-1",
 			"id":"n_WiJEv",
-			"index":3,
+			"index":4,
 			"inputs":{
 				"result":{
 					"output":"{{ n_l8VyR.outputs.rows[0].Claim_Amount }}"
@@ -143,5 +172,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
