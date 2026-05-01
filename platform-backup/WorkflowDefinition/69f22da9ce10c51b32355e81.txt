@@ -1,51 +1,124 @@
 {
 	"appsUsed":[
-		
+		"sqlserver"
 	],
 	"createdTime":1777479081506,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_EzmfU",
+			"fromNodeId":"n_vfUxK",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_ukw1I",
+			"toNodeId":"n_Y8MRF",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Y8MRF",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_N2RuV",
 			"type":"next"
 		}
 	],
 	"id":"69f22da9ce10c51b32355e81",
 	"lastModifiedBy":39,
 	"lcName":"df",
-	"modifiedTime":1777479081506,
+	"modifiedTime":1777633891606,
 	"name":"df",
 	"nodes":[
 		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":55,
+				"resourceName":"schedule_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_EzmfU-1",
-			"id":"_EzmfU",
-			"index":0,
+			"id":"n_vfUxK",
+			"index":1,
+			"inputs":{
+				"cron":"INTERVAL",
+				"sequential":false,
+				"interval":15,
+				"frequency":"SECONDS"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"sqlserver",
+				"resourceVersion":4274,
+				"connectionId":"6911f01e124a4c632c5f5da8",
+				"resourceName":"sqlserver_execute_sql",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_EzmfU-1",
-			"id":"_ukw1I",
-			"index":0,
+			"id":"n_Y8MRF",
+			"index":2,
+			"inputs":{
+				"performAsync":false,
+				"objectSourceResourceName":"sqlserver_execute_sql_metadata",
+				"sql":"select top 10 *\nfrom claims"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Microsoft SQL Server",
+			"title":"Execute a SQL statement",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.records.items.deci",
+					"root.records.items.test1"
+				]
+			},
+			"context":{
+				"appName":"mdm_by_unifyapps",
+				"resourceVersion":2395,
+				"resourceName":"mdm_by_unifyapps_create_staging_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_EzmfU-1",
+			"id":"n_N2RuV",
+			"index":3,
+			"inputs":{
+				"sourceId":"69f48290b6743e5bde04c1c9",
+				"recordEventType":"INSERT",
+				"modelId":"69f482902c588a392e028240",
+				"records":{
+					"source":"{{ n_Y8MRF.outputs.rows }}",
+					"ua:type":"mappedArray",
+					"items":{
+						"deci":"{{ n_Y8MRF.outputs.rows[0].Claim_Amount }}",
+						"test1":"{{ n_Y8MRF.outputs.rows[0].Claim_ID }}"
+					}
+				},
+				"unifiedEntityId":"deciml_1"
+			},
+			"skip":false,
+			"subTitle":"Ontology by UnifyApps",
+			"title":"Create Staging Records",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +129,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
