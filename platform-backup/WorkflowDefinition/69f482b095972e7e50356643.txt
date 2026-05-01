@@ -4,6 +4,15 @@
 	],
 	"createdTime":1777631920849,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1777631977845,
+		"deployedBy":39,
+		"deployedDefinitionId":"69f482e995972e7e5035669c",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_2WiAP",
@@ -23,7 +32,7 @@
 	"id":"69f482b095972e7e50356643",
 	"lastModifiedBy":39,
 	"lcName":"decimal",
-	"modifiedTime":1777631976007,
+	"modifiedTime":1777632015347,
 	"name":"decimal",
 	"nodes":[
 		{
@@ -43,12 +52,12 @@
 					"type":"object",
 					"additionalProperties":false,
 					"required":[
-						"outptu"
+						"output"
 					],
 					"properties":{
-						"outptu":{
+						"output":{
 							"type":"number",
-							"title":"Outptu"
+							"title":"Output"
 						}
 					}
 				},
@@ -161,5 +170,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
