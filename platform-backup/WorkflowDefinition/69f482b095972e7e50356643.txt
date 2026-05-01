@@ -1,28 +1,28 @@
 {
 	"appsUsed":[
-		
+		"sqlserver"
 	],
 	"createdTime":1777631920849,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1777631977845,
+		"deployedAt":1777632016732,
 		"deployedBy":39,
-		"deployedDefinitionId":"69f482e995972e7e5035669c",
+		"deployedDefinitionId":"69f483109817e45b243cef72",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":1
+		"version":2,
+		"workflowVersion":2
 	},
 	"edges":[
 		{
 			"fromNodeId":"n_2WiAP",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_UsCPJ",
+			"toNodeId":"n_l8VyR",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_UsCPJ",
+			"fromNodeId":"n_l8VyR",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_WiJEv",
@@ -32,7 +32,7 @@
 	"id":"69f482b095972e7e50356643",
 	"lastModifiedBy":39,
 	"lcName":"decimal",
-	"modifiedTime":1777632015347,
+	"modifiedTime":1777633980855,
 	"name":"decimal",
 	"nodes":[
 		{
@@ -42,7 +42,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_sg8al-1",
 			"id":"n_2WiAP",
@@ -83,53 +83,26 @@
 		},
 		{
 			"context":{
-				"appName":"variable_by_unifyapps",
-				"resourceVersion":1644,
-				"resourceName":"variable_by_unifyapps_create_variables",
+				"appName":"sqlserver",
+				"resourceVersion":4274,
+				"connectionId":"6911f01e124a4c632c5f5da8",
+				"resourceName":"sqlserver_execute_sql",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sg8al-1",
-			"id":"n_UsCPJ",
+			"id":"n_l8VyR",
 			"index":2,
-			"inputSchema":{
-				"type":"SCHEMA_AND_LAYOUT",
-				"dynamic":false,
-				"layout":{},
-				"schema":{
-					"additionalProperties":false,
-					"type":"object",
-					"properties":{
-						"var":{
-							"type":"number",
-							"title":"Var"
-						}
-					},
-					"required":[]
-				}
-			},
 			"inputs":{
-				"var":235367
-			},
-			"outputSchema":{
-				"dynamic":false,
-				"schema":{
-					"additionalProperties":false,
-					"type":"object",
-					"properties":{
-						"var":{
-							"type":"number",
-							"title":"Var"
-						}
-					},
-					"required":[]
-				}
+				"performAsync":false,
+				"objectSourceResourceName":"sqlserver_execute_sql_metadata",
+				"sql":"select top 5 *\nfrom dbo.claims"
 			},
 			"skip":false,
-			"subTitle":"Variable by UnifyApps",
-			"title":"Create variables",
+			"subTitle":"Microsoft SQL Server",
+			"title":"Execute a SQL statement",
 			"type":"ACTION"
 		},
 		{
@@ -147,7 +120,7 @@
 			"index":3,
 			"inputs":{
 				"result":{
-					"outptu":"{{ n_UsCPJ.outputs.var }}"
+					"output":"{{ n_l8VyR.outputs.rows[0].Claim_Amount }}"
 				}
 			},
 			"skip":false,
@@ -170,5 +143,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
