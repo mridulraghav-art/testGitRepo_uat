@@ -23,7 +23,7 @@
 	"id":"69f22da9ce10c51b32355e81",
 	"lastModifiedBy":39,
 	"lcName":"df",
-	"modifiedTime":1777633891606,
+	"modifiedTime":1777638185530,
 	"name":"df",
 	"nodes":[
 		{
@@ -99,14 +99,11 @@
 				"sourceId":"69f48290b6743e5bde04c1c9",
 				"recordEventType":"INSERT",
 				"modelId":"69f482902c588a392e028240",
-				"records":{
-					"source":"{{ n_Y8MRF.outputs.rows }}",
-					"ua:type":"mappedArray",
-					"items":{
-						"deci":"{{ n_Y8MRF.outputs.rows[0].Claim_Amount }}",
-						"test1":"{{ n_Y8MRF.outputs.rows[0].Claim_ID }}"
+				"records":[
+					{
+						"test1":"test2"
 					}
-				},
+				],
 				"unifiedEntityId":"deciml_1"
 			},
 			"skip":false,
@@ -129,5 +126,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
