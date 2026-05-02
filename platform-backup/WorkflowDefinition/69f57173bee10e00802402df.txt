@@ -23,7 +23,7 @@
 	"id":"69f57173bee10e00802402df",
 	"lastModifiedBy":39,
 	"lcName":"template_checking",
-	"modifiedTime":1777693255320,
+	"modifiedTime":1777693355774,
 	"name":"Template_Checking",
 	"nodes":[
 		{
@@ -90,7 +90,7 @@
 					"name":"{{ n_rzdPk.outputs.name }}",
 					"age":"{{ n_rzdPk.outputs.age }}"
 				},
-				"template_content":"hii",
+				"template_content":"hii {{ n_rzdPk.outputs.name }}",
 				"template_id":"e_68d82c0957bf855bbcc07bb7",
 				"nested_eval":true
 			},
@@ -137,5 +137,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
