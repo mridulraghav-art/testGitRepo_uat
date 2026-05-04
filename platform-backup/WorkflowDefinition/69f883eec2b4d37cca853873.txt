@@ -4,22 +4,28 @@
 	],
 	"createdTime":1777894382190,
 	"deleted":false,
-	"deployedVersion":7,
+	"deployedVersion":8,
 	"deploymentState":{
-		"deployedAt":1777895267209,
+		"deployedAt":1777895279089,
 		"deployedBy":39,
-		"deployedDefinitionId":"69f887629ed3c709d0221931",
+		"deployedDefinitionId":"69f8876e3647ce465ec4ccf1",
 		"status":"DEPLOYED",
-		"version":7,
-		"workflowVersion":7
+		"version":8,
+		"workflowVersion":8
 	},
 	"edges":[
-		
+		{
+			"fromNodeId":"n_q2KNK",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_yW5Nc",
+			"type":"next"
+		}
 	],
 	"id":"69f883eec2b4d37cca853873",
 	"lastModifiedBy":39,
 	"lcName":"test_check1",
-	"modifiedTime":1777895277357,
+	"modifiedTime":1777895293172,
 	"name":"test_check1",
 	"nodes":[
 		{
@@ -29,14 +35,32 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_JNR9w-1",
 			"id":"n_q2KNK",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json"
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"Input"
+							},
+							"output":{
+								"type":"string",
+								"title":"Output"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input",
+							"output"
+						]
+					}
 				}
 			},
 			"skip":false,
@@ -46,6 +70,33 @@
 				"type":"WEBHOOK"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2283,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_JNR9w-1",
+			"id":"n_yW5Nc",
+			"index":2,
+			"inputs":{
+				"automationId":"693aaee28448744626fa5bfb",
+				"runtimeConnections":{},
+				"synchronous":true,
+				"version":"-1",
+				"parameters":{
+					"input":"cfd"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
 		}
 	],
 	"ownerUserId":39,
@@ -58,5 +109,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
