@@ -4,14 +4,14 @@
 	],
 	"createdTime":1769494216197,
 	"deleted":false,
-	"deployedVersion":7,
+	"deployedVersion":8,
 	"deploymentState":{
-		"deployedAt":1772386665018,
+		"deployedAt":1774523352973,
 		"deployedBy":0,
-		"deployedDefinitionId":"69a47968616c9e4b1d855a97",
+		"deployedDefinitionId":"69c513d84cb7ee36a220dbe3",
 		"status":"DEPLOYED",
-		"version":7,
-		"workflowVersion":12
+		"version":8,
+		"workflowVersion":14
 	},
 	"edges":[
 		{
@@ -54,9 +54,9 @@
 		]
 	},
 	"id":"6970aaef71305b77656094af",
-	"lastModifiedBy":0,
+	"lastModifiedBy":-1,
 	"lcName":"best practice | automation | run group checks | variables",
-	"modifiedTime":1774523352658,
+	"modifiedTime":1777893353572,
 	"name":"Best Practice | Automation | Run Group Checks | Variables",
 	"nodes":[
 		{
@@ -124,7 +124,8 @@
 							},
 							"title":"Checks"
 						}
-					}
+					},
+					"dynamic":true
 				},
 				"callableInterfaceId":"694d430f730d4541854abd6d",
 				"setup":{
@@ -228,6 +229,27 @@
 								"additionalProperties":false
 							},
 							"title":"Group Checks"
+						},
+						"_ua_variableDetails":{
+							"title":"Variable Details",
+							"items":{
+								"type":"object",
+								"properties":{
+									"dataType":{
+										"type":"string",
+										"description":"Data type of the variable"
+									},
+									"name":{
+										"type":"string",
+										"description":"Name of the variable"
+									},
+									"description":{
+										"type":"string",
+										"description":"Description of the variable"
+									}
+								}
+							},
+							"type":"array"
 						}
 					},
 					"required":[]
@@ -481,5 +503,5 @@
 		"BPC",
 		"Automation"
 	],
-	"version":14
+	"version":16
 }
