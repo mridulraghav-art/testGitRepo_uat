@@ -1,0 +1,219 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1777927189228,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"gQCa7",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"uhcUP",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"uhcUP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"wNl4q",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"wNl4q",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"iklcx",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"iklcx",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"RVdgI",
+			"type":"next"
+		}
+	],
+	"id":"66cdce8e6113d547a9143ab7",
+	"lastModifiedBy":39,
+	"lcName":"[dnd] export obejct and send notification",
+	"modifiedTime":1777927189228,
+	"name":"[DND] Export Obejct and Send Notification",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":46,
+				"resourceName":"callables_from_automation"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"QhmaL-1",
+			"id":"gQCa7",
+			"index":0,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"properties":{
+						"success":{
+							"type":"string",
+							"title":"Success"
+						}
+					},
+					"additionalProperties":false,
+					"required":[]
+				},
+				"setup":{
+					"type":"object",
+					"properties":{
+						"fileType":{
+							"type":"string",
+							"title":"File Type"
+						},
+						"filter":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Filter"
+						},
+						"entityType":{
+							"type":"string",
+							"title":"Entity Type"
+						}
+					},
+					"additionalProperties":false,
+					"required":[]
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Trigger from automation",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":1407,
+				"resourceName":"storage_by_unifyapps_export_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"QhmaL-1",
+			"id":"uhcUP",
+			"index":0,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"resolvedFilter":{
+								"filter":"{{ gQCa7.outputs.filter }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"object_type":"{{ gQCa7.outputs.entityType }}",
+				"fileType":"{{ gQCa7.outputs.fileType }}"
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Export records",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"notification_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"notification_by_unifyapps_send_notification",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"QhmaL-1",
+			"id":"wNl4q",
+			"index":0,
+			"inputs":{
+				"input_schema":{
+					"fileUrl":"{{ uhcUP.outputs.file.source }}"
+				},
+				"receivers":{
+					"user":"{{ __RUN__.outputs.userId }}"
+				},
+				"eventType":"SUCCESS",
+				"applicationId":"",
+				"templateId":"e_66b30d6972eb8770edca5b47",
+				"user":"{{ __RUN__.outputs.userId }}",
+				"content":{
+					"templateId":"e_66b30d6972eb8770edca5b47",
+					"input_schema":{
+						"fileUrl":"/api/file/download/{{ uhcUP.outputs.id }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Notification by UnifyApps",
+			"title":"Send Notification",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":42,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"QhmaL-1",
+			"id":"iklcx",
+			"index":0,
+			"inputs":{
+				"result":{
+					"success":"true"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"QhmaL-1",
+			"id":"RVdgI",
+			"index":0,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":3
+}
