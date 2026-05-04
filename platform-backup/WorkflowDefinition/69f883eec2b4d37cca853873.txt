@@ -4,14 +4,14 @@
 	],
 	"createdTime":1777894382190,
 	"deleted":false,
-	"deployedVersion":17,
+	"deployedVersion":18,
 	"deploymentState":{
-		"deployedAt":1777897905829,
+		"deployedAt":1777898123386,
 		"deployedBy":39,
-		"deployedDefinitionId":"69f891b1e2398133cf9ac81c",
+		"deployedDefinitionId":"69f8928b3647ce465ec505fb",
 		"status":"DEPLOYED",
-		"version":17,
-		"workflowVersion":18
+		"version":18,
+		"workflowVersion":19
 	},
 	"edges":[
 		{
@@ -30,6 +30,14 @@
 			"type":"if"
 		},
 		{
+			"fromNodeId":"n_AtcfG",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_I8eDK",
+			"type":"next"
+		},
+		{
 			"fromNodeId":"n_KPqQm",
 			"priority":0,
 			"skip":false,
@@ -37,8 +45,7 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_AtcfG",
-			"name":"no",
+			"fromNodeId":"n_I8eDK",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_I6o3Q",
@@ -48,7 +55,7 @@
 	"id":"69f883eec2b4d37cca853873",
 	"lastModifiedBy":39,
 	"lcName":"test_check1",
-	"modifiedTime":1777898121851,
+	"modifiedTime":1777898148399,
 	"name":"test_check1",
 	"nodes":[
 		{
@@ -91,7 +98,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_JNR9w-1",
 			"id":"n_AtcfG",
@@ -121,7 +128,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_AtcfG@_JNR9w-1@y",
 			"id":"n_KPqQm",
@@ -170,6 +177,33 @@
 		},
 		{
 			"context":{
+				"appName":"callables",
+				"resourceVersion":2283,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_AtcfG@_JNR9w-1@n",
+			"id":"n_I8eDK",
+			"index":4,
+			"inputs":{
+				"automationId":"693aaee28448744626fa5bfb",
+				"runtimeConnections":{},
+				"synchronous":true,
+				"version":"-1",
+				"parameters":{
+					"input":"dcs"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
 				"appName":"stop"
 			},
 			"debug":false,
@@ -177,7 +211,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_JNR9w-1",
 			"id":"n_I6o3Q",
-			"index":4,
+			"index":5,
 			"skip":false,
 			"subTitle":"Stop",
 			"title":"Stop",
@@ -194,5 +228,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":19
+	"version":20
 }
