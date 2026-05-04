@@ -4,13 +4,28 @@
 	],
 	"createdTime":1777875759678,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1777875766101,
+		"deployedBy":39,
+		"deployedDefinitionId":"69f83b3528c301715a261ef5",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
-		
+		{
+			"fromNodeId":"n_dOre4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_dSIrd",
+			"type":"next"
+		}
 	],
 	"id":"69f83b2f8df1ae3266f75bb3",
 	"lastModifiedBy":39,
 	"lcName":"gvfcdxz",
-	"modifiedTime":1777875764339,
+	"modifiedTime":1777875778782,
 	"name":"gvfcdxz",
 	"nodes":[
 		{
@@ -20,7 +35,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_jzt2I-1",
 			"id":"n_dOre4",
@@ -37,6 +52,59 @@
 				"type":"WEBHOOK"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1647,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_jzt2I-1",
+			"id":"n_dSIrd",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"fcdx":{
+							"type":"string",
+							"title":"Fcdx"
+						}
+					},
+					"required":[
+						"fcdx"
+					]
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"fcdx":{
+							"type":"string",
+							"title":"Fcdx"
+						}
+					},
+					"required":[
+						"fcdx"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -53,5 +121,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
