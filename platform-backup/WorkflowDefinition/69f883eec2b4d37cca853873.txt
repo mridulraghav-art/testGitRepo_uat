@@ -4,14 +4,14 @@
 	],
 	"createdTime":1777894382190,
 	"deleted":false,
-	"deployedVersion":3,
+	"deployedVersion":4,
 	"deploymentState":{
-		"deployedAt":1777895140177,
+		"deployedAt":1777895163330,
 		"deployedBy":39,
-		"deployedDefinitionId":"69f886e3e2398133cf9a8d36",
+		"deployedDefinitionId":"69f886fa2b17a075dc2b54db",
 		"status":"DEPLOYED",
-		"version":3,
-		"workflowVersion":3
+		"version":4,
+		"workflowVersion":4
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"69f883eec2b4d37cca853873",
 	"lastModifiedBy":39,
 	"lcName":"test_check1",
-	"modifiedTime":1777895154773,
+	"modifiedTime":1777895193399,
 	"name":"test_check1",
 	"nodes":[
 		{
@@ -35,14 +35,32 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_JNR9w-1",
 			"id":"n_q2KNK",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json"
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"Input"
+							},
+							"output":{
+								"type":"string",
+								"title":"Output"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input",
+							"output"
+						]
+					}
 				}
 			},
 			"skip":false,
@@ -91,5 +109,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
