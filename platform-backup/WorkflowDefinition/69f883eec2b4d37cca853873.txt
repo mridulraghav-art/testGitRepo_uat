@@ -55,7 +55,7 @@
 	"id":"69f883eec2b4d37cca853873",
 	"lastModifiedBy":39,
 	"lcName":"test_check1",
-	"modifiedTime":1777898148399,
+	"modifiedTime":1777898157501,
 	"name":"test_check1",
 	"nodes":[
 		{
@@ -98,7 +98,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_JNR9w-1",
 			"id":"n_AtcfG",
@@ -108,7 +108,7 @@
 					{
 						"property":"1",
 						"filter":{
-							"operator":"EQUAL",
+							"operator":"NOT_EQUAL",
 							"value":"1"
 						}
 					}
@@ -183,7 +183,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_AtcfG@_JNR9w-1@n",
 			"id":"n_I8eDK",
@@ -228,5 +228,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":20
+	"version":21
 }
