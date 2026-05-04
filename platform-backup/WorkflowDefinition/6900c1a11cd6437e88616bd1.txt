@@ -4,14 +4,14 @@
 	],
 	"createdTime":1762259201858,
 	"deleted":false,
-	"deployedVersion":16,
+	"deployedVersion":17,
 	"deploymentState":{
-		"deployedAt":1772386667227,
+		"deployedAt":1774523356886,
 		"deployedBy":0,
-		"deployedDefinitionId":"69a4796b8da59a474ccd2105",
+		"deployedDefinitionId":"69c513dccedd590310a10060",
 		"status":"DEPLOYED",
-		"version":16,
-		"workflowVersion":40
+		"version":17,
+		"workflowVersion":42
 	},
 	"edges":[
 		{
@@ -54,9 +54,9 @@
 		]
 	},
 	"id":"6900c1a11cd6437e88616bd1",
-	"lastModifiedBy":0,
+	"lastModifiedBy":-1,
 	"lcName":"best practices | check group | data source",
-	"modifiedTime":1774523356681,
+	"modifiedTime":1777893356047,
 	"name":"Best Practices | Check Group | Data Source",
 	"nodes":[
 		{
@@ -578,11 +578,14 @@
 							}
 						},
 						"_ua_variableDetails":{
-							"type":"array",
 							"title":"Variable Details",
 							"items":{
 								"type":"object",
 								"properties":{
+									"dataType":{
+										"type":"string",
+										"description":"Data type of the variable"
+									},
 									"name":{
 										"type":"string",
 										"description":"Name of the variable"
@@ -590,13 +593,10 @@
 									"description":{
 										"type":"string",
 										"description":"Description of the variable"
-									},
-									"dataType":{
-										"type":"string",
-										"description":"Data type of the variable"
 									}
 								}
-							}
+							},
+							"type":"array"
 						}
 					}
 				}
@@ -996,5 +996,5 @@
 	"tags":[
 		"BPC"
 	],
-	"version":42
+	"version":44
 }
