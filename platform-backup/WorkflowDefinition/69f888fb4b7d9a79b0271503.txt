@@ -6,46 +6,204 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_ofkXz",
+			"fromNodeId":"n_1cUCT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_XSqy2",
+			"toNodeId":"n_dIMR4",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_dIMR4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_5ViAq",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_5ViAq",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_jlNpH",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_jlNpH",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_5ViAq",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_5ViAq",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_dIMR4",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_dIMR4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_k9MWN",
 			"type":"next"
 		}
 	],
 	"id":"69f888fb4b7d9a79b0271503",
 	"lastModifiedBy":39,
 	"lcName":"test_loop1",
-	"modifiedTime":1777895675450,
+	"modifiedTime":1777895783022,
 	"name":"test_loop1",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":57,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ofkXz-1",
-			"id":"_ofkXz",
-			"index":0,
+			"id":"n_1cUCT",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":0,
+				"resourceName":"loop_for",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ofkXz-1",
-			"id":"_XSqy2",
-			"index":0,
+			"id":"n_dIMR4",
+			"index":2,
+			"inputs":{
+				"start":0,
+				"limit":10,
+				"step":1,
+				"captureIterations":true
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Loop",
+			"title":"For loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":52,
+				"resourceName":"loop_for",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_dIMR4@_ofkXz-1@l",
+			"id":"n_5ViAq",
+			"index":3,
+			"inputs":{
+				"start":0,
+				"limit":5,
+				"step":1,
+				"captureIterations":true
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1647,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_5ViAq@n_dIMR4@_ofkXz-1@l@l",
+			"id":"n_jlNpH",
+			"index":4,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"trf":{
+							"type":"string",
+							"title":"Trf"
+						}
+					},
+					"required":[
+						"trf"
+					]
+				}
+			},
+			"inputs":{
+				"trf":"=SUM({{ n_dIMR4.outputs.index }},{{ n_5ViAq.outputs.index }})"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"trf":{
+							"type":"string",
+							"title":"Trf"
+						}
+					},
+					"required":[
+						"trf"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_ofkXz-1",
+			"id":"n_k9MWN",
+			"index":5,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +214,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
