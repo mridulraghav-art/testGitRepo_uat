@@ -4,14 +4,14 @@
 	],
 	"createdTime":1767085404010,
 	"deleted":false,
-	"deployedVersion":10,
+	"deployedVersion":11,
 	"deploymentState":{
-		"deployedAt":1772386663846,
+		"deployedAt":1774523350684,
 		"deployedBy":0,
-		"deployedDefinitionId":"69a4796767a7525dbad1881b",
+		"deployedDefinitionId":"69c513d6dfe5426d27716db7",
 		"status":"DEPLOYED",
-		"version":10,
-		"workflowVersion":48
+		"version":11,
+		"workflowVersion":50
 	},
 	"edges":[
 		{
@@ -111,9 +111,9 @@
 		]
 	},
 	"id":"694d1e0b294cd74928c22575",
-	"lastModifiedBy":0,
+	"lastModifiedBy":-1,
 	"lcName":"best practice | automation | run checks",
-	"modifiedTime":1774523350351,
+	"modifiedTime":1777893351618,
 	"name":"Best Practice | Automation | Run Checks",
 	"nodes":[
 		{
@@ -361,6 +361,27 @@
 								"required":[]
 							},
 							"title":"Runtime Checks"
+						},
+						"_ua_variableDetails":{
+							"title":"Variable Details",
+							"items":{
+								"type":"object",
+								"properties":{
+									"dataType":{
+										"type":"string",
+										"description":"Data type of the variable"
+									},
+									"name":{
+										"type":"string",
+										"description":"Name of the variable"
+									},
+									"description":{
+										"type":"string",
+										"description":"Description of the variable"
+									}
+								}
+							},
+							"type":"array"
 						}
 					}
 				}
@@ -714,6 +735,27 @@
 								},
 								"required":[]
 							}
+						},
+						"_ua_variableDetails":{
+							"title":"Variable Details",
+							"items":{
+								"type":"object",
+								"properties":{
+									"dataType":{
+										"type":"string",
+										"description":"Data type of the variable"
+									},
+									"name":{
+										"type":"string",
+										"description":"Name of the variable"
+									},
+									"description":{
+										"type":"string",
+										"description":"Description of the variable"
+									}
+								}
+							},
+							"type":"array"
 						}
 					}
 				}
@@ -1096,5 +1138,5 @@
 	"tags":[
 		"BPC"
 	],
-	"version":50
+	"version":52
 }
