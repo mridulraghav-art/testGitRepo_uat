@@ -4,14 +4,14 @@
 	],
 	"createdTime":1777894382190,
 	"deleted":false,
-	"deployedVersion":18,
+	"deployedVersion":19,
 	"deploymentState":{
-		"deployedAt":1777898123386,
+		"deployedAt":1777898164758,
 		"deployedBy":39,
-		"deployedDefinitionId":"69f8928b3647ce465ec505fb",
+		"deployedDefinitionId":"69f892b43e3d691b45eeb0c8",
 		"status":"DEPLOYED",
-		"version":18,
-		"workflowVersion":19
+		"version":19,
+		"workflowVersion":21
 	},
 	"edges":[
 		{
@@ -55,7 +55,7 @@
 	"id":"69f883eec2b4d37cca853873",
 	"lastModifiedBy":39,
 	"lcName":"test_check1",
-	"modifiedTime":1777898157501,
+	"modifiedTime":1777898421172,
 	"name":"test_check1",
 	"nodes":[
 		{
@@ -98,7 +98,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_JNR9w-1",
 			"id":"n_AtcfG",
@@ -183,7 +183,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_AtcfG@_JNR9w-1@n",
 			"id":"n_I8eDK",
@@ -197,7 +197,7 @@
 					"input":"dcs"
 				}
 			},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Callable",
 			"title":"Call automation",
 			"type":"CALL_WORKFLOW"
@@ -228,5 +228,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":21
+	"version":22
 }
