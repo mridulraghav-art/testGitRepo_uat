@@ -4,35 +4,22 @@
 	],
 	"createdTime":1777894382190,
 	"deleted":false,
-	"deployedVersion":5,
+	"deployedVersion":6,
 	"deploymentState":{
-		"deployedAt":1777895195266,
+		"deployedAt":1777895223170,
 		"deployedBy":39,
-		"deployedDefinitionId":"69f8871b1611d369730aa78f",
+		"deployedDefinitionId":"69f887361611d369730aa7bf",
 		"status":"DEPLOYED",
-		"version":5,
-		"workflowVersion":5
+		"version":6,
+		"workflowVersion":6
 	},
 	"edges":[
-		{
-			"fromNodeId":"n_q2KNK",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_yW5Nc",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_yW5Nc",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_d9blK",
-			"type":"next"
-		}
+		
 	],
 	"id":"69f883eec2b4d37cca853873",
 	"lastModifiedBy":39,
 	"lcName":"test_check1",
-	"modifiedTime":1777895220895,
+	"modifiedTime":1777895265712,
 	"name":"test_check1",
 	"nodes":[
 		{
@@ -42,32 +29,14 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_JNR9w-1",
 			"id":"n_q2KNK",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json",
-					"body":{
-						"type":"object",
-						"properties":{
-							"input":{
-								"type":"string",
-								"title":"Input"
-							},
-							"output":{
-								"type":"string",
-								"title":"Output"
-							}
-						},
-						"additionalProperties":false,
-						"required":[
-							"input",
-							"output"
-						]
-					}
+					"contentType":"application/json"
 				}
 			},
 			"skip":false,
@@ -77,86 +46,6 @@
 				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"context":{
-				"appName":"callables",
-				"resourceVersion":2283,
-				"resourceName":"callables_call_automation",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_JNR9w-1",
-			"id":"n_yW5Nc",
-			"index":2,
-			"inputs":{
-				"automationId":"693aaee28448744626fa5bfb",
-				"runtimeConnections":{},
-				"synchronous":true,
-				"version":"-1",
-				"parameters":{
-					"input":"cfd"
-				}
-			},
-			"skip":false,
-			"subTitle":"Callable",
-			"title":"Call automation",
-			"type":"CALL_WORKFLOW"
-		},
-		{
-			"context":{
-				"appName":"variable_by_unifyapps",
-				"resourceVersion":1647,
-				"resourceName":"variable_by_unifyapps_create_variables",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_JNR9w-1",
-			"id":"n_d9blK",
-			"index":3,
-			"inputSchema":{
-				"type":"SCHEMA_AND_LAYOUT",
-				"dynamic":false,
-				"layout":{},
-				"schema":{
-					"additionalProperties":false,
-					"type":"object",
-					"properties":{
-						"input":{
-							"type":"string",
-							"title":"Input"
-						}
-					},
-					"required":[
-						"input"
-					]
-				}
-			},
-			"inputs":{},
-			"outputSchema":{
-				"dynamic":false,
-				"schema":{
-					"additionalProperties":false,
-					"type":"object",
-					"properties":{
-						"input":{
-							"type":"string",
-							"title":"Input"
-						}
-					},
-					"required":[
-						"input"
-					]
-				}
-			},
-			"skip":false,
-			"subTitle":"Variable by UnifyApps",
-			"title":"Create variables",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -169,5 +58,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
