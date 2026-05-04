@@ -4,14 +4,14 @@
 	],
 	"createdTime":1777894382190,
 	"deleted":false,
-	"deployedVersion":13,
+	"deployedVersion":14,
 	"deploymentState":{
-		"deployedAt":1777895594499,
+		"deployedAt":1777897759902,
 		"deployedBy":39,
-		"deployedDefinitionId":"69f888aa3647ce465ec4d088",
+		"deployedDefinitionId":"69f8911f3647ce465ec50062",
 		"status":"DEPLOYED",
-		"version":13,
-		"workflowVersion":13
+		"version":14,
+		"workflowVersion":15
 	},
 	"edges":[
 		{
@@ -25,42 +25,31 @@
 	"id":"69f883eec2b4d37cca853873",
 	"lastModifiedBy":39,
 	"lcName":"test_check1",
-	"modifiedTime":1777897758024,
+	"modifiedTime":1777897773373,
 	"name":"test_check1",
 	"nodes":[
 		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{
+						"request":{}
+					}
+				}
+			},
 			"context":{
 				"appName":"webhooks",
 				"resourceVersion":57,
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_JNR9w-1",
 			"id":"n_q2KNK",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json",
-					"body":{
-						"type":"object",
-						"properties":{
-							"input":{
-								"type":"string",
-								"title":"Input"
-							},
-							"output":{
-								"type":"string",
-								"title":"Output"
-							}
-						},
-						"additionalProperties":false,
-						"required":[
-							"input",
-							"output"
-						]
-					}
+					"contentType":"application/json"
 				}
 			},
 			"skip":false,
@@ -109,5 +98,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":15
+	"version":16
 }
