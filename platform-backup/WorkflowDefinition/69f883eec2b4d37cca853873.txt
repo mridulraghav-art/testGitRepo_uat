@@ -41,11 +41,18 @@
 			"fromNodeId":"n_KPqQm",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_I6o3Q",
+			"toNodeId":"n_RFOHg",
 			"type":"next"
 		},
 		{
 			"fromNodeId":"n_I8eDK",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_RFOHg",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_RFOHg",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_I6o3Q",
@@ -55,7 +62,7 @@
 	"id":"69f883eec2b4d37cca853873",
 	"lastModifiedBy":39,
 	"lcName":"test_check1",
-	"modifiedTime":1777898421172,
+	"modifiedTime":1777927381656,
 	"name":"test_check1",
 	"nodes":[
 		{
@@ -183,7 +190,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_AtcfG@_JNR9w-1@n",
 			"id":"n_I8eDK",
@@ -204,6 +211,31 @@
 		},
 		{
 			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":5549,
+				"resourceName":"standard_entities_update_automation_details",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_JNR9w-1",
+			"id":"n_RFOHg",
+			"index":5,
+			"inputs":{
+				"description":"updated",
+				"fieldsToUpdate":[
+					"DESCRIPTION"
+				],
+				"workflowId":"69f883eec2b4d37cca853873"
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Update Automation Details",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"stop"
 			},
 			"debug":false,
@@ -211,7 +243,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_JNR9w-1",
 			"id":"n_I6o3Q",
-			"index":5,
+			"index":6,
 			"skip":false,
 			"subTitle":"Stop",
 			"title":"Stop",
@@ -228,5 +260,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":22
+	"version":23
 }
