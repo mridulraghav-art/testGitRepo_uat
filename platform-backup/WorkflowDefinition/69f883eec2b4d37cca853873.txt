@@ -4,28 +4,22 @@
 	],
 	"createdTime":1777894382190,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1777894395161,
+		"deployedAt":1777894596614,
 		"deployedBy":39,
-		"deployedDefinitionId":"69f883fa227c5237d8def72d",
+		"deployedDefinitionId":"69f884c487b047446e998786",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":1
+		"version":2,
+		"workflowVersion":2
 	},
 	"edges":[
-		{
-			"fromNodeId":"n_q2KNK",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_yW5Nc",
-			"type":"next"
-		}
+		
 	],
 	"id":"69f883eec2b4d37cca853873",
 	"lastModifiedBy":39,
 	"lcName":"test_check1",
-	"modifiedTime":1777894594894,
+	"modifiedTime":1777895136250,
 	"name":"test_check1",
 	"nodes":[
 		{
@@ -52,33 +46,6 @@
 				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"context":{
-				"appName":"callables",
-				"resourceVersion":2283,
-				"resourceName":"callables_call_automation",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_JNR9w-1",
-			"id":"n_yW5Nc",
-			"index":2,
-			"inputs":{
-				"automationId":"693aaee28448744626fa5bfb",
-				"runtimeConnections":{},
-				"synchronous":true,
-				"version":"-1",
-				"parameters":{
-					"input":"cfd"
-				}
-			},
-			"skip":false,
-			"subTitle":"Callable",
-			"title":"Call automation",
-			"type":"CALL_WORKFLOW"
 		}
 	],
 	"ownerUserId":39,
@@ -95,5 +62,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
