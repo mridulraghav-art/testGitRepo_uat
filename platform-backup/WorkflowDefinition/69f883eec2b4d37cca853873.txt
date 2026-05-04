@@ -4,28 +4,65 @@
 	],
 	"createdTime":1777894382190,
 	"deleted":false,
-	"deployedVersion":10,
+	"deployedVersion":11,
 	"deploymentState":{
-		"deployedAt":1777895361628,
+		"deployedAt":1777895371883,
 		"deployedBy":39,
-		"deployedDefinitionId":"69f887c1e2398133cf9a90d5",
+		"deployedDefinitionId":"69f887cbc0180b0f119f5d8c",
 		"status":"DEPLOYED",
-		"version":10,
-		"workflowVersion":10
+		"version":11,
+		"workflowVersion":11
 	},
 	"edges":[
 		{
 			"fromNodeId":"n_q2KNK",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_yW5Nc",
+			"toNodeId":"n_bmsDR",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_bmsDR",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GiyUc",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_GiyUc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BqbhI",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_BqbhI",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GiyUc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GiyUc",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_bmsDR",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_bmsDR",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_yWqdU",
 			"type":"next"
 		}
 	],
 	"id":"69f883eec2b4d37cca853873",
 	"lastModifiedBy":39,
 	"lcName":"test_check1",
-	"modifiedTime":1777895366564,
+	"modifiedTime":1777895579159,
 	"name":"test_check1",
 	"nodes":[
 		{
@@ -73,30 +110,119 @@
 		},
 		{
 			"context":{
-				"appName":"callables",
-				"resourceVersion":2283,
-				"resourceName":"callables_call_automation",
+				"appName":"loop",
+				"resourceVersion":52,
+				"resourceName":"loop_for",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_JNR9w-1",
-			"id":"n_yW5Nc",
+			"id":"n_bmsDR",
 			"index":2,
 			"inputs":{
-				"automationId":"693aaee28448744626fa5bfb",
-				"runtimeConnections":{},
-				"synchronous":true,
-				"version":"-1",
-				"parameters":{
-					"input":"cfd"
+				"start":0,
+				"limit":10,
+				"step":1,
+				"captureIterations":true
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":52,
+				"resourceName":"loop_for",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_bmsDR@_JNR9w-1@l",
+			"id":"n_GiyUc",
+			"index":3,
+			"inputs":{
+				"start":0,
+				"limit":5,
+				"step":1,
+				"captureIterations":true
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1647,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_GiyUc@n_bmsDR@_JNR9w-1@l@l",
+			"id":"n_BqbhI",
+			"index":4,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"name":{
+							"type":"string",
+							"title":"Name"
+						}
+					},
+					"required":[
+						"name"
+					]
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"name":{
+							"type":"string",
+							"title":"Name"
+						}
+					},
+					"required":[
+						"name"
+					]
 				}
 			},
 			"skip":false,
-			"subTitle":"Callable",
-			"title":"Call automation",
-			"type":"CALL_WORKFLOW"
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_JNR9w-1",
+			"id":"n_yWqdU",
+			"index":5,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -113,5 +239,5 @@
 		}
 	},
 	"standard":false,
-	"version":11
+	"version":12
 }
