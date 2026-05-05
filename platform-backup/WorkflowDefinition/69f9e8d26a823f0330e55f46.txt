@@ -1,0 +1,61 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1777985746267,
+	"deleted":false,
+	"description":"whenever a new record is created in my salesforce account object send me an email , check the client and to the respective slack channel of that client send a message",
+	"edges":[
+		{
+			"fromNodeId":"_Yo5W9",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_pxXD2",
+			"type":"next"
+		}
+	],
+	"id":"69f9e8d26a823f0330e55f46",
+	"lastModifiedBy":39,
+	"lcName":"test automation",
+	"modifiedTime":1777985746267,
+	"name":"test automation",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Yo5W9-1",
+			"id":"_Yo5W9",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Yo5W9-1",
+			"id":"_pxXD2",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
