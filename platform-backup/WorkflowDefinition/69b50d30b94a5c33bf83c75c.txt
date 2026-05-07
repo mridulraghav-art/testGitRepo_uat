@@ -4,6 +4,15 @@
 	],
 	"createdTime":1778175035276,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1778175036550,
+		"deployedBy":-1,
+		"deployedDefinitionId":"69fccc3b1048574cac2e0e70",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":40
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_6VD5W",
@@ -151,10 +160,21 @@
 			"type":"next"
 		}
 	],
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"VIEW_RUNS",
+					"V"
+				],
+				"principalType":"GLOBAL"
+			}
+		]
+	},
 	"id":"69b50d30b94a5c33bf83c75c",
 	"lastModifiedBy":-1,
 	"lcName":"set theme to standard (dnd)",
-	"modifiedTime":1778175035276,
+	"modifiedTime":1778177183653,
 	"name":"Set Theme To Standard (DND)",
 	"nodes":[
 		{
@@ -2502,5 +2522,5 @@
 	"tags":[
 		
 	],
-	"version":40
+	"version":42
 }
