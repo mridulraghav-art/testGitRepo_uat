@@ -4,6 +4,15 @@
 	],
 	"createdTime":1775887927678,
 	"deleted":false,
+	"deployedVersion":3,
+	"deploymentState":{
+		"deployedAt":1778177184269,
+		"deployedBy":-1,
+		"deployedDefinitionId":"69fcd4a052a57a5998b637b5",
+		"status":"DEPLOYED",
+		"version":3,
+		"workflowVersion":23
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_W13TF",
@@ -56,10 +65,21 @@
 			"type":"next"
 		}
 	],
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"VIEW_RUNS",
+					"V"
+				],
+				"principalType":"GLOBAL"
+			}
+		]
+	},
 	"id":"696f3326ed01cf39ad2b88a1",
-	"lastModifiedBy":39,
+	"lastModifiedBy":-1,
 	"lcName":"deletethemeandupdatetodefault",
-	"modifiedTime":1775887927678,
+	"modifiedTime":1778177267733,
 	"name":"deleteThemeAndUpdateToDefault",
 	"nodes":[
 		{
@@ -385,5 +405,5 @@
 	"tags":[
 		
 	],
-	"version":20
+	"version":25
 }
