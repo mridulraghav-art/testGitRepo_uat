@@ -1,6 +1,6 @@
 {
 	"appsUsed":[
-		
+		"snowflake"
 	],
 	"createdTime":1778060976377,
 	"deleted":false,
@@ -9,14 +9,14 @@
 			"fromNodeId":"_w8YDv",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_iVriH",
+			"toNodeId":"n_dQfql",
 			"type":"next"
 		}
 	],
 	"id":"69fb0eb09b7c020c6c53635f",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1778060976377,
+	"modifiedTime":1778160955641,
 	"name":"test",
 	"nodes":[
 		{
@@ -25,7 +25,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_w8YDv-1",
 			"id":"_w8YDv",
-			"index":0,
+			"index":1,
 			"skip":false,
 			"title":"Select a trigger event",
 			"trigger":{
@@ -34,18 +34,34 @@
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"snowflake",
+				"resourceVersion":4280,
+				"connectionId":"69fc586dece2bc093b48fd5a",
+				"resourceName":"snowflake_insert_row",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_w8YDv-1",
-			"id":"_iVriH",
-			"index":0,
+			"id":"n_dQfql",
+			"index":2,
+			"inputs":{
+				"objectSourceResourceName":"snowflake_fetch_columns",
+				"table":"QAWSEDSAMPLE_TABLE1",
+				"timeout":60
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Snowflake",
+			"title":"Insert a row",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +72,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
