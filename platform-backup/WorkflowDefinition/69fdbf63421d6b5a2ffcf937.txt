@@ -30,7 +30,7 @@
 	"id":"69fdbf63421d6b5a2ffcf937",
 	"lastModifiedBy":39,
 	"lcName":"test db2",
-	"modifiedTime":1778253447650,
+	"modifiedTime":1778253464835,
 	"name":"Test db2",
 	"nodes":[
 		{
@@ -67,7 +67,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_5yQjG-1",
 			"id":"n_yfikV",
@@ -111,7 +111,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_5yQjG-1",
 			"id":"n_Vpaz8",
@@ -174,7 +174,7 @@
 							"ID":1,
 							"EMAIL":"ab.",
 							"IS_ACTIVE":true,
-							"EMP_NAME":"{{ n_RZdnK.outputs.result.id }}"
+							"EMP_NAME":"{{ n_Vpaz8.outputs.result.id }}"
 						},
 						"ua:type":"mappedArray"
 					}
@@ -205,5 +205,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
