@@ -9,6 +9,13 @@
 			"fromNodeId":"n_Lm3te",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_gfdjI",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_gfdjI",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_whjE0",
 			"type":"next"
 		}
@@ -16,7 +23,7 @@
 	"id":"69fdb5ca6dda5343736b7e5b",
 	"lastModifiedBy":39,
 	"lcName":"gfvb",
-	"modifiedTime":1778234849592,
+	"modifiedTime":1778234863914,
 	"name":"gfvb",
 	"nodes":[
 		{
@@ -52,8 +59,23 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_yir3G-1",
-			"id":"n_whjE0",
+			"id":"n_gfdjI",
 			"index":2,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_yir3G-1",
+			"id":"n_whjE0",
+			"index":3,
 			"skip":false,
 			"subTitle":"Stop",
 			"title":"Stop",
@@ -74,5 +96,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
