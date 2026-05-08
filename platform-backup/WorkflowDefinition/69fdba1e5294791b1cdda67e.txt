@@ -14,12 +14,18 @@
 		"workflowVersion":4
 	},
 	"edges":[
-		
+		{
+			"fromNodeId":"n_ajWnm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_4QYlD",
+			"type":"next"
+		}
 	],
 	"id":"69fdba1e5294791b1cdda67e",
 	"lastModifiedBy":39,
 	"lcName":"rfdcsx",
-	"modifiedTime":1778236113652,
+	"modifiedTime":1778236127694,
 	"name":"rfdcsx",
 	"nodes":[
 		{
@@ -46,6 +52,21 @@
 				"type":"WEBHOOK"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_J48wP-1",
+			"id":"n_4QYlD",
+			"index":2,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -62,5 +83,5 @@
 		}
 	},
 	"standard":false,
-	"version":7
+	"version":8
 }
