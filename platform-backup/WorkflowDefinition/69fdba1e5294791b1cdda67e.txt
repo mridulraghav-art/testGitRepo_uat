@@ -5,12 +5,18 @@
 	"createdTime":1778235934387,
 	"deleted":false,
 	"edges":[
-		
+		{
+			"fromNodeId":"n_ajWnm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_t6P1C",
+			"type":"next"
+		}
 	],
 	"id":"69fdba1e5294791b1cdda67e",
 	"lastModifiedBy":39,
 	"lcName":"rfdcsx",
-	"modifiedTime":1778235941009,
+	"modifiedTime":1778235951575,
 	"name":"rfdcsx",
 	"nodes":[
 		{
@@ -20,7 +26,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_J48wP-1",
 			"id":"n_ajWnm",
@@ -37,6 +43,21 @@
 				"type":"WEBHOOK"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_J48wP-1",
+			"id":"n_t6P1C",
+			"index":2,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -53,5 +74,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
