@@ -1,51 +1,138 @@
 {
 	"appsUsed":[
-		
+		"ibm_db2",
+		"snowflake"
 	],
 	"createdTime":1778225611372,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_9H7Qq",
+			"fromNodeId":"n_vA7Fz",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_8MFzy",
+			"toNodeId":"n_mRsPA",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_mRsPA",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SAmaj",
 			"type":"next"
 		}
 	],
 	"id":"69fd91cb1167163ecfadb3c5",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1778225611372,
+	"modifiedTime":1778237442967,
 	"name":"test",
 	"nodes":[
 		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":58,
+				"resourceName":"schedule_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9H7Qq-1",
-			"id":"_9H7Qq",
-			"index":0,
+			"id":"n_vA7Fz",
+			"index":1,
+			"inputs":{
+				"cron":"INTERVAL",
+				"sequential":false,
+				"interval":15,
+				"frequency":"MINUTES"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"ibm_db2",
+				"resourceVersion":3916,
+				"connectionId":"69fd903328024040c4782c8c",
+				"resourceName":"ibm_db2_select_rows",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9H7Qq-1",
-			"id":"_8MFzy",
-			"index":0,
+			"id":"n_mRsPA",
+			"index":2,
+			"inputs":{
+				"objectSourceResourceName":"ibm_db2_fetch_columns_information",
+				"outputColumns":[
+					"CREATED_AT",
+					"ID",
+					"EMP_NAME",
+					"EMP_NUMBER",
+					"IS_ACTIVE",
+					"JOIN_DATE"
+				],
+				"objectId":"EMPLOYEE_DETAILS2"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"IBM DB2",
+			"title":"Select rows",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.rows.items.EMP_NAME",
+					"root.record.rows.items.EMPLOYEE_ID",
+					"root.record.rows.items.CREATED_DATETIME",
+					"root.record.rows.items.CREATED_DATE",
+					"root.record.rows.items.ID",
+					"root.record.rows.items.EMAIL",
+					"root.record.rows.items.IS_ACTIVE"
+				]
+			},
+			"context":{
+				"appName":"snowflake",
+				"resourceVersion":4261,
+				"connectionId":"69fc586dece2bc093b48fd5a",
+				"resourceName":"snowflake_upsert_rows",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_9H7Qq-1",
+			"id":"n_SAmaj",
+			"index":3,
+			"inputs":{
+				"record":{
+					"rows":{
+						"source":"{{ n_mRsPA.outputs.rows }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"EMP_NAME":"{{ n_mRsPA.outputs.rows[0].EMP_NAME }}",
+							"EMPLOYEE_ID":"{{ n_mRsPA.outputs.rows[0].ID }}"
+						}
+					}
+				},
+				"objectId":"SAMPLE_TABLE1",
+				"timeout":60
+			},
+			"skip":false,
+			"subTitle":"Snowflake",
+			"title":"Upsert rows",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +143,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
