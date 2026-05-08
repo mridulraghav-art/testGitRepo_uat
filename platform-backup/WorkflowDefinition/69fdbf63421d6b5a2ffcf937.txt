@@ -9,13 +9,6 @@
 			"fromNodeId":"_5yQjG",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_RZdnK",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_RZdnK",
-			"priority":0,
-			"skip":false,
 			"toNodeId":"n_yfikV",
 			"type":"next"
 		},
@@ -37,7 +30,7 @@
 	"id":"69fdbf63421d6b5a2ffcf937",
 	"lastModifiedBy":39,
 	"lcName":"test db2",
-	"modifiedTime":1778253332499,
+	"modifiedTime":1778253447650,
 	"name":"Test db2",
 	"nodes":[
 		{
@@ -53,47 +46,6 @@
 				"type":"EVENT"
 			},
 			"type":"START"
-		},
-		{
-			"additional":{
-				"xsdSchemaConfig":{
-					"root":{}
-				}
-			},
-			"context":{
-				"appName":"code_by_unifyapps",
-				"resourceVersion":2091,
-				"resourceName":"code_by_unifyapps_groovy",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_5yQjG-1",
-			"id":"n_RZdnK",
-			"index":2,
-			"inputs":{
-				"output":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"id"
-					],
-					"properties":{
-						"id":{
-							"type":"string",
-							"title":"Id"
-						}
-					}
-				},
-				"code":"def handleOddCharactersRegex(String input) {\n    if (input == null) return input\n    \n    // Process backslashes first to avoid interference\n    def result = input.replaceAll(/(?<!\\\\)(\\\\\\\\)*\\\\/, { match ->\n        def count = match.length()\n        if (count % 2 == 1) {\n            return '\\\\' * (count * 2)\n        }\n        return match\n    })\n    \n    // Process quotes\n    result = result.replaceAll(/(?<!\\\\)('')*'/, { match ->\n        def count = match.length()\n        if (count % 2 == 1) {\n            return \"'\" * (count * 2)\n        }\n        return match\n    })\n    \n    return result\n}",
-				"compile_static":false,
-				"captureStdOutput":false
-			},
-			"skip":false,
-			"subTitle":"Code by UnifyApps",
-			"title":"Execute Groovy code",
-			"type":"ACTION"
 		},
 		{
 			"additional":{
@@ -119,7 +71,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_5yQjG-1",
 			"id":"n_yfikV",
-			"index":3,
+			"index":2,
 			"inputs":{
 				"record":{
 					"rows":{
@@ -141,7 +93,7 @@
 					"CREATED_DATE"
 				]
 			},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Snowflake",
 			"title":"Upsert rows",
 			"type":"ACTION"
@@ -163,7 +115,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_5yQjG-1",
 			"id":"n_Vpaz8",
-			"index":4,
+			"index":3,
 			"inputs":{
 				"output":{
 					"type":"object",
@@ -178,7 +130,7 @@
 						}
 					}
 				},
-				"code":"\nString handleOddCharactersRegex(String input) {\n    if (input == null) return null\n\n    StringBuilder result = new StringBuilder()\n    int i = 0\n\n    while (i < input.length()) {\n        char ch = input.charAt(i)\n\n        // Handle backslashes\n        if (ch == '\\\\') {\n            int count = 0\n            while (i < input.length() && input.charAt(i) == '\\\\') {\n                count++\n                i++\n            }\n            if (count % 2 == 1) {\n                result.append(\"\\\\\" * (count * 2))\n            } else {\n                result.append(\"\\\\\" * count)\n            }\n            continue\n        }\n\n        // Handle single quotes\n        if (ch == '\\'') {\n            int count = 0\n            while (i < input.length() && input.charAt(i) == '\\'') {\n                count++\n                i++\n            }\n            if (count % 2 == 1) {\n                result.append(\"'\" * (count * 2))\n            } else {\n                result.append(\"'\" * count)\n            }\n            continue\n        }\n\n        // Normal character\n        result.append(ch)\n        i++\n    }\n\n    return result.toString()\n}",
+				"code":"\nString handleOddCharactersRegex(String input) {\n    if (input == null) return null\n\n    StringBuilder result = new StringBuilder()\n    int i = 0\n\n    while (i < input.length()) {\n        char ch = input.charAt(i)\n\n        // Handle backslashes\n        if (ch == '\\\\') {\n            int count = 0\n            while (i < input.length() && input.charAt(i) == '\\\\') {\n                count++\n                i++\n            }\n            if (count % 2 == 1) {\n                result.append(\"\\\\\" * (count * 2))\n            } else {\n                result.append(\"\\\\\" * count)\n            }\n            continue\n        }\n\n        // Handle single quotes\n        if (ch == '\\'') {\n            int count = 0\n            while (i < input.length() && input.charAt(i) == '\\'') {\n                count++\n                i++\n            }\n            if (count % 2 == 1) {\n                result.append(\"'\" * (count * 2))\n            } else {\n                result.append(\"'\" * count)\n            }\n            continue\n        }\n\n        // Normal character\n        result.append(ch)\n        i++\n    }\n\n    return result.toString()\n}\n\nreturn handleOddCharactersRegex(\"abc'\")",
 				"compile_static":false,
 				"captureStdOutput":false
 			},
@@ -211,7 +163,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_5yQjG-1",
 			"id":"n_hQr76",
-			"index":5,
+			"index":4,
 			"inputs":{
 				"record":{
 					"rows":{
@@ -253,5 +205,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
