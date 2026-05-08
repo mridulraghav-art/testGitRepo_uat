@@ -1,6 +1,6 @@
 {
 	"appsUsed":[
-		
+		"snowflake"
 	],
 	"createdTime":1778237283565,
 	"deleted":false,
@@ -9,14 +9,14 @@
 			"fromNodeId":"_5yQjG",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_YCKbh",
+			"toNodeId":"n_yfikV",
 			"type":"next"
 		}
 	],
 	"id":"69fdbf63421d6b5a2ffcf937",
 	"lastModifiedBy":39,
 	"lcName":"test db2",
-	"modifiedTime":1778237283565,
+	"modifiedTime":1778251177213,
 	"name":"Test db2",
 	"nodes":[
 		{
@@ -25,7 +25,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_5yQjG-1",
 			"id":"_5yQjG",
-			"index":0,
+			"index":1,
 			"skip":false,
 			"title":"Select a trigger event",
 			"trigger":{
@@ -34,18 +34,47 @@
 			"type":"START"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.rows.items.EMP_NAME",
+					"root.record.rows.items.EMPLOYEE_ID",
+					"root.record.rows.items.CREATED_DATETIME",
+					"root.record.rows.items.CREATED_DATE",
+					"root.record.rows.items.ID",
+					"root.record.rows.items.EMAIL",
+					"root.record.rows.items.IS_ACTIVE"
+				]
+			},
+			"context":{
+				"appName":"snowflake",
+				"resourceVersion":4261,
+				"connectionId":"69fc586dece2bc093b48fd5a",
+				"resourceName":"snowflake_upsert_rows",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_5yQjG-1",
-			"id":"_YCKbh",
-			"index":0,
+			"id":"n_yfikV",
+			"index":2,
+			"inputs":{
+				"objectId":"SAMPLE_TABLE",
+				"timeout":60,
+				"primaryKey":[
+					"CREATED_DATE"
+				]
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Snowflake",
+			"title":"Upsert rows",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +85,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
