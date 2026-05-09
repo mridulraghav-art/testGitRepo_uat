@@ -4,6 +4,15 @@
 	],
 	"createdTime":1777284602458,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1778157048219,
+		"deployedBy":39,
+		"deployedDefinitionId":"69fc85f752a57a5998b41306",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":17
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_HkRqb",
@@ -37,7 +46,7 @@
 	"id":"69ef35fad4dae0470e9c26ee",
 	"lastModifiedBy":39,
 	"lcName":"fwefweew",
-	"modifiedTime":1778157029133,
+	"modifiedTime":1778337339243,
 	"name":"fwefweew",
 	"nodes":[
 		{
@@ -144,7 +153,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_qI4NI-1",
 			"id":"n_Z4AEd",
@@ -159,6 +168,7 @@
 				},
 				"connectionType":"DIRECT",
 				"sslVerify":false,
+				"responseHeaders":[],
 				"httpVersion":"HTTP_2",
 				"responseContentType":"HEADER_BASED",
 				"followRedirects":"NORMAL",
@@ -286,5 +296,5 @@
 		}
 	},
 	"standard":false,
-	"version":17
+	"version":18
 }
