@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778308266394,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_u7QnX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_JbOU4",
+			"type":"next"
+		}
+	],
+	"id":"69fed4aa94282c2bafcd2cae",
+	"lastModifiedBy":39,
+	"lcName":"fsda",
+	"modifiedTime":1778308266394,
+	"name":"fsda",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_u7QnX-1",
+			"id":"_u7QnX",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_u7QnX-1",
+			"id":"_JbOU4",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
