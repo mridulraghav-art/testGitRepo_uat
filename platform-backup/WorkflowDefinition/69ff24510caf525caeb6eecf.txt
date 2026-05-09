@@ -1,5 +1,6 @@
 {
 	"appsUsed":[
+		"ibm_db2",
 		"snowflake"
 	],
 	"createdTime":1778328657312,
@@ -9,14 +10,21 @@
 			"fromNodeId":"n_cfqze",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_hjs5J",
+			"toNodeId":"n_guIGc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_guIGc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_HDSjI",
 			"type":"next"
 		}
 	],
 	"id":"69ff24510caf525caeb6eecf",
 	"lastModifiedBy":39,
 	"lcName":"awdqwf",
-	"modifiedTime":1778331677752,
+	"modifiedTime":1778339714577,
 	"name":"awdqwf",
 	"nodes":[
 		{
@@ -45,6 +53,31 @@
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"ibm_db2",
+				"resourceVersion":3922,
+				"connectionId":"69fd903328024040c4782c8c",
+				"resourceName":"ibm_db2_export_query_as_csv",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_6FOBG-1",
+			"id":"n_guIGc",
+			"index":2,
+			"inputs":{
+				"quote":"SINGLE_QUOTES",
+				"delimiter":"COMMA",
+				"skipHeaderRow":false,
+				"sql":"select * from EMPLOYEE_DETAILS2"
+			},
+			"skip":false,
+			"subTitle":"IBM DB2",
+			"title":"Export query result",
+			"type":"ACTION"
+		},
+		{
 			"additional":{
 				"visibleOptionalFields":[
 					"root.record.rows.items.EMP_NAME",
@@ -58,37 +91,23 @@
 			},
 			"context":{
 				"appName":"snowflake",
-				"resourceVersion":4261,
+				"resourceVersion":4278,
 				"connectionId":"69fc586dece2bc093b48fd5a",
-				"resourceName":"snowflake_upsert_rows",
+				"resourceName":"snowflake_upload_file_to_internal_stage",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_6FOBG-1",
-			"id":"n_hjs5J",
-			"index":2,
+			"id":"n_HDSjI",
+			"index":3,
 			"inputs":{
-				"record":{
-					"rows":{
-						"items":{
-							"EMP_NAME":"fdv",
-							"EMPLOYEE_ID":99,
-							"CREATED_DATETIME":"2026-05-09T18:31:02.090+05:30",
-							"CREATED_DATE":"2026-05-09",
-							"ID":9,
-							"EMAIL":"j",
-							"IS_ACTIVE":true
-						},
-						"ua:type":"mappedArray"
-					}
-				},
-				"objectId":"QEDFRWSAMPLE_TABLE1",
-				"timeout":60,
-				"primaryKey":[
-					"ID"
-				]
+				"path":"/",
+				"file":"{{ n_guIGc.outputs.file }}",
+				"file_name":"Test1234",
+				"stage_name":"S3_STAGE_69FDA8DF1BF9F34B7E325DCB",
+				"source_type":"file"
 			},
 			"options":{
 				"bulkheadConfig":{
@@ -143,7 +162,7 @@
 			},
 			"skip":false,
 			"subTitle":"Snowflake",
-			"title":"Upsert rows",
+			"title":"Upload file to internal stage",
 			"type":"ACTION"
 		}
 	],
@@ -161,5 +180,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
