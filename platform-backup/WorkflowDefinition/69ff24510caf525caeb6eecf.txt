@@ -1,51 +1,142 @@
 {
 	"appsUsed":[
-		
+		"snowflake"
 	],
 	"createdTime":1778328657312,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_6FOBG",
+			"fromNodeId":"n_cfqze",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_UYw5u",
+			"toNodeId":"n_hjs5J",
 			"type":"next"
 		}
 	],
 	"id":"69ff24510caf525caeb6eecf",
 	"lastModifiedBy":39,
 	"lcName":"awdqwf",
-	"modifiedTime":1778328657312,
+	"modifiedTime":1778331664101,
 	"name":"awdqwf",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":57,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_6FOBG-1",
-			"id":"_6FOBG",
-			"index":0,
+			"id":"n_cfqze",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.rows.items.EMP_NAME",
+					"root.record.rows.items.EMPLOYEE_ID",
+					"root.record.rows.items.CREATED_DATETIME",
+					"root.record.rows.items.CREATED_DATE",
+					"root.record.rows.items.ID",
+					"root.record.rows.items.EMAIL",
+					"root.record.rows.items.IS_ACTIVE"
+				]
+			},
+			"context":{
+				"appName":"snowflake",
+				"resourceVersion":4261,
+				"connectionId":"69fc586dece2bc093b48fd5a",
+				"resourceName":"snowflake_upsert_rows",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_6FOBG-1",
-			"id":"_UYw5u",
-			"index":0,
+			"id":"n_hjs5J",
+			"index":2,
+			"inputs":{
+				"objectId":"QEDFRWSAMPLE_TABLE1",
+				"timeout":60,
+				"primaryKey":[
+					"ID"
+				]
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false,
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"enabled":false
+				},
+				"stepError":"STOP",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Snowflake",
+			"title":"Upsert rows",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +147,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
