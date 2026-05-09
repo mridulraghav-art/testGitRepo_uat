@@ -16,7 +16,7 @@
 	"id":"69ff24510caf525caeb6eecf",
 	"lastModifiedBy":39,
 	"lcName":"awdqwf",
-	"modifiedTime":1778331664101,
+	"modifiedTime":1778331677752,
 	"name":"awdqwf",
 	"nodes":[
 		{
@@ -26,7 +26,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_6FOBG-1",
 			"id":"n_cfqze",
@@ -70,6 +70,20 @@
 			"id":"n_hjs5J",
 			"index":2,
 			"inputs":{
+				"record":{
+					"rows":{
+						"items":{
+							"EMP_NAME":"fdv",
+							"EMPLOYEE_ID":99,
+							"CREATED_DATETIME":"2026-05-09T18:31:02.090+05:30",
+							"CREATED_DATE":"2026-05-09",
+							"ID":9,
+							"EMAIL":"j",
+							"IS_ACTIVE":true
+						},
+						"ua:type":"mappedArray"
+					}
+				},
 				"objectId":"QEDFRWSAMPLE_TABLE1",
 				"timeout":60,
 				"primaryKey":[
@@ -147,5 +161,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
