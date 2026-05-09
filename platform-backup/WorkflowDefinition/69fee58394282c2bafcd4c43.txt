@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778312579313,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_KKKWj",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_2ZJQL",
+			"type":"next"
+		}
+	],
+	"id":"69fee58394282c2bafcd4c43",
+	"lastModifiedBy":39,
+	"lcName":"unlock",
+	"modifiedTime":1778312579313,
+	"name":"Unlock",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_KKKWj-1",
+			"id":"_KKKWj",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_KKKWj-1",
+			"id":"_2ZJQL",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
