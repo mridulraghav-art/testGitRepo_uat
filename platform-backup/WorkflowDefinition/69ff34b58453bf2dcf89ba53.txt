@@ -1,12 +1,41 @@
 {
 	"appsUsed":[
-		
+		"oracledb",
+		"snowflake"
 	],
 	"createdTime":1778332853412,
 	"deleted":false,
 	"edges":[
 		{
 			"fromNodeId":"n_uAYa9",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_e2pWi",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_e2pWi",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_FDWM5",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_FDWM5",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_O7mWS",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_O7mWS",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_17TVT",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_17TVT",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_mBPdh",
@@ -16,7 +45,7 @@
 	"id":"69ff34b58453bf2dcf89ba53",
 	"lastModifiedBy":39,
 	"lcName":"ewds",
-	"modifiedTime":1778332865918,
+	"modifiedTime":1778388881905,
 	"name":"ewds",
 	"nodes":[
 		{
@@ -26,7 +55,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_akizl-1",
 			"id":"n_uAYa9",
@@ -46,6 +75,122 @@
 		},
 		{
 			"context":{
+				"appName":"oracledb",
+				"resourceVersion":4189,
+				"connectionId":"668ea67ee28e36532056bec0",
+				"resourceName":"oracledb_select_rows_in_batch",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_akizl-1",
+			"id":"n_e2pWi",
+			"index":2,
+			"inputs":{
+				"objectSourceResourceName":"oracledb_fetch_columns_information",
+				"output_columns":[
+					"ID",
+					"ETL_CREATED_AT",
+					"ETL_UPDATED_AT",
+					"USERNAME"
+				],
+				"table":"FLINKUSERNEW.AUDIT_TEST"
+			},
+			"skip":false,
+			"subTitle":"Oracle DB",
+			"title":"Select rows",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"csv_by_unifyapps",
+				"resourceVersion":2167,
+				"resourceName":"csv_by_unifyapps_list_to_csv_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_akizl-1",
+			"id":"n_FDWM5",
+			"index":3,
+			"inputs":{
+				"fileName":"hello",
+				"delimiter":",",
+				"staticHeaders":[
+					{
+						"key":"ID",
+						"value":"{{ n_e2pWi.outputs.rows[0].ID }}"
+					},
+					{
+						"key":"USERNAME",
+						"value":"{{ n_e2pWi.outputs.rows[0].USERNAME }}"
+					}
+				],
+				"skipHeaderRow":false,
+				"headerType":"STATIC",
+				"encoding":"UTF-8",
+				"keepExactFileName":false,
+				"dataSource":"{{ n_e2pWi.outputs.rows }}",
+				"fileType":"csv"
+			},
+			"skip":false,
+			"subTitle":"CSV by UnifyApps",
+			"title":"Write data to CSV file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"snowflake",
+				"resourceVersion":4278,
+				"connectionId":"69fc586dece2bc093b48fd5a",
+				"resourceName":"snowflake_upload_file_to_internal_stage",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_akizl-1",
+			"id":"n_O7mWS",
+			"index":4,
+			"inputs":{
+				"compress_data":true,
+				"file":"{{ n_FDWM5.outputs.fileDetails }}",
+				"file_name":"{{ n_FDWM5.outputs.fileDetails.name }}",
+				"stage_name":"S3_STAGE_69FC599EF174F4643B3122C2",
+				"source_type":"file"
+			},
+			"skip":true,
+			"subTitle":"Snowflake",
+			"title":"Upload file to internal stage",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"snowflake",
+				"resourceVersion":4284,
+				"connectionId":"69fc586dece2bc093b48fd5a",
+				"resourceName":"snowflake_bulk_load_data_to_table_from_stage",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_akizl-1",
+			"id":"n_17TVT",
+			"index":5,
+			"inputs":{
+				"stage":"S3_STAGE_69FC599EF174F4643B3122C2",
+				"table":"EMPLOYEE_DETAILS2"
+			},
+			"skip":true,
+			"subTitle":"Snowflake",
+			"title":"Bulk load data to table from stage",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"callables",
 				"resourceVersion":2285,
 				"resourceName":"callables_call_automation",
@@ -56,7 +201,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_akizl-1",
 			"id":"n_mBPdh",
-			"index":2,
+			"index":6,
 			"inputs":{
 				"automationId":"69ff34a194282c2bafcf2b9a",
 				"runtimeConnections":{},
@@ -66,7 +211,7 @@
 					"a":"a"
 				}
 			},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Callable",
 			"title":"Call automation",
 			"type":"CALL_WORKFLOW"
@@ -86,5 +231,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
