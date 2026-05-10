@@ -5,6 +5,15 @@
 	],
 	"createdTime":1778332853412,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1778388896952,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a000fa035a81e12e2be342a",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":4
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_uAYa9",
@@ -45,7 +54,7 @@
 	"id":"69ff34b58453bf2dcf89ba53",
 	"lastModifiedBy":39,
 	"lcName":"ewds",
-	"modifiedTime":1778388893666,
+	"modifiedTime":1778389213814,
 	"name":"ewds",
 	"nodes":[
 		{
@@ -82,7 +91,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_akizl-1",
 			"id":"n_e2pWi",
@@ -91,11 +100,14 @@
 				"objectSourceResourceName":"oracledb_fetch_columns_information",
 				"output_columns":[
 					"ID",
-					"ETL_CREATED_AT",
-					"ETL_UPDATED_AT",
-					"USERNAME"
+					"CREATED_AT",
+					"EMP_NAME",
+					"EMP_NUMBER",
+					"IS_ACTIVE",
+					"JOIN_DATE"
 				],
-				"table":"FLINKUSERNEW.AUDIT_TEST"
+				"limit":1000,
+				"table":"FLINKUSERNEW.EMPLOYEE_DETAILS100"
 			},
 			"skip":false,
 			"subTitle":"Oracle DB",
@@ -110,22 +122,38 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_akizl-1",
 			"id":"n_FDWM5",
 			"index":3,
 			"inputs":{
-				"fileName":"hello",
+				"fileName":"helloworld",
 				"delimiter":",",
 				"staticHeaders":[
+					{
+						"key":"EMP_NAME",
+						"value":"{{ n_e2pWi.outputs.rows[0].EMP_NAME }}"
+					},
+					{
+						"key":"EMP_NUMBER",
+						"value":"{{ n_e2pWi.outputs.rows[0].EMP_NUMBER }}"
+					},
 					{
 						"key":"ID",
 						"value":"{{ n_e2pWi.outputs.rows[0].ID }}"
 					},
 					{
-						"key":"USERNAME",
-						"value":"{{ n_e2pWi.outputs.rows[0].USERNAME }}"
+						"key":"CREATED_AT",
+						"value":"{{ n_e2pWi.outputs.rows[0].CREATED_AT }}"
+					},
+					{
+						"key":"JOIN_DATE",
+						"value":"{{ n_e2pWi.outputs.rows[0].JOIN_DATE }}"
+					},
+					{
+						"key":"IS_ACTIVE",
+						"value":"{{ n_e2pWi.outputs.rows[0].IS_ACTIVE }}"
 					}
 				],
 				"skipHeaderRow":false,
@@ -149,19 +177,20 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_akizl-1",
 			"id":"n_O7mWS",
 			"index":4,
 			"inputs":{
 				"compress_data":true,
+				"path":"/manav/",
 				"file":"{{ n_FDWM5.outputs.fileDetails }}",
 				"file_name":"{{ n_FDWM5.outputs.fileDetails.name }}",
 				"stage_name":"S3_STAGE_69FC599EF174F4643B3122C2",
 				"source_type":"file"
 			},
-			"skip":true,
+			"skip":false,
 			"subTitle":"Snowflake",
 			"title":"Upload file to internal stage",
 			"type":"ACTION"
@@ -175,16 +204,19 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_akizl-1",
 			"id":"n_17TVT",
 			"index":5,
 			"inputs":{
+				"fileName":"{{ n_O7mWS.outputs.file_name }}",
 				"stage":"S3_STAGE_69FC599EF174F4643B3122C2",
-				"table":"EMPLOYEE_DETAILS2"
+				"headerRow":true,
+				"table":"EMPLOYEE_DETAILS2",
+				"fileFormat":"CSV_FORMAT_69FC599EF174F4643B3122C2"
 			},
-			"skip":true,
+			"skip":false,
 			"subTitle":"Snowflake",
 			"title":"Bulk load data to table from stage",
 			"type":"ACTION"
@@ -227,5 +259,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
