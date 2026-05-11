@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778507603715,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_KKS6G",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_GJpep",
+			"type":"next"
+		}
+	],
+	"id":"6a01df5330fc6e6c1ff85bce",
+	"lastModifiedBy":39,
+	"lcName":"frfer",
+	"modifiedTime":1778507603715,
+	"name":"frfer",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_KKS6G-1",
+			"id":"_KKS6G",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_KKS6G-1",
+			"id":"_GJpep",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
