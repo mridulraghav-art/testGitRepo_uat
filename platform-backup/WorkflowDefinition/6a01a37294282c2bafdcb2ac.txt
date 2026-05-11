@@ -6,46 +6,87 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_ewHbR",
+			"fromNodeId":"n_x8Eqb",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_rdR2r",
+			"toNodeId":"n_vo5le",
 			"type":"next"
 		}
 	],
 	"id":"6a01a37294282c2bafdcb2ac",
 	"lastModifiedBy":39,
 	"lcName":"sample",
-	"modifiedTime":1778492274487,
+	"modifiedTime":1778493546396,
 	"name":"sample",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2283,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ewHbR-1",
-			"id":"_ewHbR",
-			"index":0,
+			"id":"n_x8Eqb",
+			"index":1,
+			"inputs":{
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"a",
+						"b"
+					],
+					"properties":{
+						"a":{
+							"type":"integer",
+							"title":"a"
+						},
+						"b":{
+							"type":"integer",
+							"title":"b"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":2090,
+				"resourceName":"code_by_unifyapps_playwright",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ewHbR-1",
-			"id":"_rdR2r",
-			"index":0,
+			"id":"n_vo5le",
+			"index":2,
+			"inputs":{
+				"async":false,
+				"usePlaywrightTestFramework":false,
+				"script":"let result: String = {{ n_x8Eqb.outputs.a }};\nresult;"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute playwright script",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +97,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
