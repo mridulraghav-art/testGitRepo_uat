@@ -11,12 +11,19 @@
 			"skip":false,
 			"toNodeId":"n_vo5le",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_vo5le",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UUmLg",
+			"type":"next"
 		}
 	],
 	"id":"6a01a37294282c2bafdcb2ac",
 	"lastModifiedBy":39,
 	"lcName":"sample",
-	"modifiedTime":1778493546396,
+	"modifiedTime":1778493700827,
 	"name":"sample",
 	"nodes":[
 		{
@@ -41,7 +48,7 @@
 					],
 					"properties":{
 						"a":{
-							"type":"integer",
+							"type":"string",
 							"title":"a"
 						},
 						"b":{
@@ -75,12 +82,33 @@
 			"inputs":{
 				"async":false,
 				"usePlaywrightTestFramework":false,
-				"script":"let result: String = {{ n_x8Eqb.outputs.a }};\nresult;"
+				"script":"let result = {{ n_x8Eqb.outputs.a }};\nresult;"
 			},
 			"skip":false,
 			"subTitle":"Code by UnifyApps",
 			"title":"Execute playwright script",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2284,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_ewHbR-1",
+			"id":"n_UUmLg",
+			"index":3,
+			"inputs":{
+				"result":"{{ n_vo5le.outputs }}"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -97,5 +125,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
