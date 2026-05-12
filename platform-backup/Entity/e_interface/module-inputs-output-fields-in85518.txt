@@ -2,9 +2,29 @@
 	"createdTime":1778562322282,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"module-inputs-output-fields-in85518",
 	"lastModifiedBy":39,
-	"modifiedTime":1778562322282,
+	"modifiedTime":1778562350650,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -19,17 +39,34 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":0,
-				"_moduleCount":0,
+				"_pageCount":1,
+				"_moduleCount":1,
+				"_variableCounter":1,
 				"_templateComponentCount":0
 			}
 		},
+		"publicPageIds":[],
+		"manifest":{
+			"type":"WEB"
+		},
+		"pagePermissions":{
+			"e_6a02b513d79181041ea0ab8a":{}
+		},
+		"type":"application",
+		"locale":{
+			"defaultLocale":"en-US"
+		},
 		"navigation":{
 			"secondary":[],
-			"defaultPageId":"",
+			"defaultPageId":"e_6a02b513d79181041ea0ab8a",
 			"appearance":{
 				"SM":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_gQt1q",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -58,10 +95,16 @@
 						"padding":{
 							"all":"p-0"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"LG":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_gQt1q",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -96,10 +139,16 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"XL":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_gQt1q",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"expandable"
@@ -134,10 +183,16 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"MD":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_gQt1q",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -172,26 +227,46 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				}
 			},
-			"primary":[]
+			"primary":[
+				{
+					"activeIcon":"Zap",
+					"name":"Homepage",
+					"icon":"Zap",
+					"id":"nav_gQt1q",
+					"type":"PAGE",
+					"pageId":"e_6a02b513d79181041ea0ab8a",
+					"slug":"homepage"
+				}
+			]
 		},
-		"manifest":{
-			"type":"WEB"
+		"interfacePageIdVsSlugMap":{
+			"e_6a02b513d79181041ea0ab8a":"homepage",
+			"e_global_module-inputs-output-fields-in85518":"global-page-of-module-inputs-output-fields-in85518"
 		},
 		"name":"module-inputs-output-fields-integer-217785623167370",
 		"theme":{
 			"defaultThemeId":"e_699c1348d53be90e1bfeabff"
 		},
-		"type":"application",
-		"locale":{
-			"defaultLocale":"en-US"
+		"entityDetailsMap":{
+			"e_6a02b513d79181041ea0ab8a":{
+				"slug":"homepage",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_global_module-inputs-output-fields-in85518":{
+				"slug":"global-page-of-module-inputs-output-fields-in85518",
+				"isPublic":false,
+				"type":"PAGE"
+			}
 		}
 	},
 	"standard":false,
 	"tags":[
 		"dnt-application"
 	],
-	"version":0
+	"version":7
 }
