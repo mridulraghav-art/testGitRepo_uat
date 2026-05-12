@@ -16,18 +16,11 @@
 			"fromNodeId":"n_qmFMF",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_Ph7pE",
+			"toNodeId":"n_JV1zd",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_Ph7pE",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_IG7Nc",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_IG7Nc",
+			"fromNodeId":"n_JV1zd",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_TM5Ky",
@@ -37,7 +30,7 @@
 	"id":"6a02bc528ba75c619734cfdf",
 	"lastModifiedBy":39,
 	"lcName":"excel",
-	"modifiedTime":1778568382407,
+	"modifiedTime":1778569623209,
 	"name":"excel",
 	"nodes":[
 		{
@@ -85,57 +78,25 @@
 			"type":"ACTION"
 		},
 		{
-			"additional":{
-				"visibleOptionalFields":[
-					"root.formulas.items.column"
-				]
-			},
 			"context":{
 				"appName":"excel_by_unifyapps",
-				"resourceVersion":72,
-				"resourceName":"excel_by_unifyapps_create_pivot_table",
+				"resourceVersion":2254,
+				"resourceName":"excel_by_unifyapps_list_sheet_names",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KqZOv-1",
-			"id":"n_Ph7pE",
+			"id":"n_JV1zd",
 			"index":3,
 			"inputs":{
 				"fileDetails":"{{ n_qmFMF.outputs.fileDetails }}",
-				"showGrandTotals":true,
-				"createInNewFile":true
+				"fileType":"XLSX"
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
-			"title":"Create Pivot Table",
-			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"excel_by_unifyapps",
-				"resourceVersion":1753,
-				"resourceName":"excel_by_unifyapps_extract_data",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_KqZOv-1",
-			"id":"n_IG7Nc",
-			"index":4,
-			"inputs":{
-				"flattenMergedCells":false,
-				"endColumn":1,
-				"startRow":1,
-				"startColumn":1,
-				"endRow":1,
-				"fileType":"xlsx"
-			},
-			"skip":false,
-			"subTitle":"Excel by UnifyApps",
-			"title":"Extract Excel Data",
+			"title":"List sheet names in an Excel file",
 			"type":"ACTION"
 		},
 		{
@@ -146,13 +107,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KqZOv-1",
 			"id":"n_TM5Ky",
-			"index":5,
+			"index":4,
 			"inputs":{
-				"result":"{{ n_IG7Nc.outputs }}"
+				"result":"{{ n_JV1zd.outputs.sheetNames }}"
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -174,5 +135,5 @@
 		}
 	},
 	"standard":false,
-	"version":10
+	"version":11
 }
