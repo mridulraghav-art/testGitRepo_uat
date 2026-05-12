@@ -30,7 +30,7 @@
 	"id":"6a02bc528ba75c619734cfdf",
 	"lastModifiedBy":39,
 	"lcName":"excel",
-	"modifiedTime":1778572735886,
+	"modifiedTime":1778572748898,
 	"name":"excel",
 	"nodes":[
 		{
@@ -62,7 +62,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_KqZOv-1",
 			"id":"n_qmFMF",
@@ -85,14 +85,14 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KqZOv-1",
 			"id":"n_JV1zd",
 			"index":3,
 			"inputs":{
 				"fileDetails":"{{ n_qmFMF.outputs.fileDetails }}",
-				"fileType":"XLSM"
+				"fileType":"XLS"
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
@@ -135,5 +135,5 @@
 		}
 	},
 	"standard":false,
-	"version":20
+	"version":21
 }
