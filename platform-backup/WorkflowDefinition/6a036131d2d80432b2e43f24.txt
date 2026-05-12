@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778606385412,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_DZAel",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_PUpoo",
+			"type":"next"
+		}
+	],
+	"id":"6a036131d2d80432b2e43f24",
+	"lastModifiedBy":39,
+	"lcName":"scopewithincasesteperrorfollowerrorpath_21778606379477",
+	"modifiedTime":1778606385412,
+	"name":"ScopeWithInCaseStepErrorFollowErrorPath_21778606379477",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_DZAel-1",
+			"id":"_DZAel",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_DZAel-1",
+			"id":"_PUpoo",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
