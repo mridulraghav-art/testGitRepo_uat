@@ -4,10 +4,41 @@
 	],
 	"createdTime":1778606437146,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1778606444473,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a03616ca3bb831739dad5b6",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"description":"description",
 	"edges":[
 		{
 			"fromNodeId":"n_wH5hn",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_6C1vq",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_6C1vq",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_npMys",
+			"type":"scope"
+		},
+		{
+			"fromNodeId":"n_npMys",
+			"name":"scope-loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_6C1vq",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_6C1vq",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_wkcP4",
@@ -17,7 +48,7 @@
 	"id":"6a036165988b281a38fce8e6",
 	"lastModifiedBy":39,
 	"lcName":"stopautomationwhenworkflowdoesnothaveanyerr_21778606432169",
-	"modifiedTime":1778606443700,
+	"modifiedTime":1778606884776,
 	"name":"StopAutomationWhenWorkflowDoesNotHaveAnyErr_21778606432169",
 	"nodes":[
 		{
@@ -27,7 +58,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_K9w3X-1",
 			"id":"n_wH5hn",
@@ -70,17 +101,73 @@
 		},
 		{
 			"context":{
-				"appName":"callables",
-				"resourceVersion":2284,
-				"resourceName":"callables_return_to_automation",
+				"appName":"scope",
+				"resourceVersion":57,
+				"resourceName":"scope_trigger_scope",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_K9w3X-1",
-			"id":"n_wkcP4",
+			"id":"n_6C1vq",
 			"index":2,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"{{ n_wH5hn.outputs.input_String }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"Unifyapps"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"subTitle":"Scope",
+			"title":"Trigger Scope",
+			"type":"SCOPE"
+		},
+		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":1967,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION",
+				"scopeNodeId":"n_6C1vq"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_6C1vq@_K9w3X-1@s",
+			"id":"n_npMys",
+			"index":3,
+			"inputs":{
+				"field1":"workflow continues",
+				"field2":false
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2284,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_K9w3X-1",
+			"id":"n_wkcP4",
+			"index":4,
 			"inputs":{
 				"result":{
 					"output_String":"{{ n_wH5hn.outputs.input_String }}"
@@ -109,5 +196,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
