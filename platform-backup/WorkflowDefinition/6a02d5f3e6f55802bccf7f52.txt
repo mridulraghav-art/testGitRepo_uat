@@ -6,46 +6,148 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_DwUr7",
+			"fromNodeId":"n_hPjZT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_O4XJz",
+			"toNodeId":"n_mkK9t",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_mkK9t",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_qa6nY",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_qa6nY",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ibDZN",
 			"type":"next"
 		}
 	],
 	"id":"6a02d5f3e6f55802bccf7f52",
 	"lastModifiedBy":39,
 	"lcName":"excelfilelocalbvatggmjas",
-	"modifiedTime":1778570739036,
+	"modifiedTime":1778570835838,
 	"name":"ExcelFileLocalbVAtggMjaS",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2283,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_DwUr7-1",
-			"id":"_DwUr7",
-			"index":0,
+			"id":"n_hPjZT",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"a":{
+							"type":"string",
+							"title":"a"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":2088,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_DwUr7-1",
-			"id":"_O4XJz",
-			"index":0,
+			"id":"n_mkK9t",
+			"index":2,
+			"inputs":{
+				"fileName":"test",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1764585417761/DGE_Tools_issues.xlsx",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":2254,
+				"resourceName":"excel_by_unifyapps_list_sheet_names",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_DwUr7-1",
+			"id":"n_qa6nY",
+			"index":3,
+			"inputs":{
+				"fileDetails":"{{ n_mkK9t.outputs.fileDetails }}",
+				"fileType":"XLS"
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"List sheet names in an Excel file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2284,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_DwUr7-1",
+			"id":"n_ibDZN",
+			"index":4,
+			"inputs":{
+				"result":{
+					"r":"{{ n_qa6nY.outputs }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +158,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
