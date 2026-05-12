@@ -39,6 +39,29 @@
 		},
 		{
 			"fromNodeId":"n_xZZcp",
+			"name":"success",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BmxCs",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_xZZcp",
+			"name":"error",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_OhkOp",
+			"type":"error"
+		},
+		{
+			"fromNodeId":"n_BmxCs",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_joGH2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_OhkOp",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_joGH2",
@@ -48,7 +71,7 @@
 	"id":"6a036131d2d80432b2e43f24",
 	"lastModifiedBy":39,
 	"lcName":"scopewithincasesteperrorfollowerrorpath_21778606379477",
-	"modifiedTime":1778606400420,
+	"modifiedTime":1778606408417,
 	"name":"ScopeWithInCaseStepErrorFollowErrorPath_21778606379477",
 	"nodes":[
 		{
@@ -108,7 +131,7 @@
 			},
 			"debug":false,
 			"dirty":true,
-			"fallbackMode":"STOP",
+			"fallbackMode":"MANUAL",
 			"groupId":"_DZAel-1",
 			"id":"n_xZZcp",
 			"index":2,
@@ -124,6 +147,63 @@
 						}
 					],
 					"operator":"AND"
+				}
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false,
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"duration":"1",
+					"enabled":true,
+					"threshold":"0",
+					"unit":"MINUTES",
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"enabled":false
+				},
+				"stepError":"MANUAL",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"enabled":false
 				}
 			},
 			"skip":false,
@@ -177,6 +257,40 @@
 			"subTitle":"Callable",
 			"title":"Respond to automation",
 			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":1967,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_xZZcp@_DZAel-1@success",
+			"id":"n_BmxCs",
+			"index":5,
+			"inputs":{
+				"field1":"workflow continues",
+				"field2":false
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
+			"type":"ACTION"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_xZZcp@_DZAel-1@error",
+			"id":"n_OhkOp",
+			"index":6,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -196,5 +310,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
