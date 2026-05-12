@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778607699555,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_Pa3U4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_9zT2j",
+			"type":"next"
+		}
+	],
+	"id":"6a036653a3342d3c74b46f46",
+	"lastModifiedBy":39,
+	"lcName":"stopautomationwhenworkflowdoesnothaveanyerr_21778607692251",
+	"modifiedTime":1778607699555,
+	"name":"StopAutomationWhenWorkflowDoesNotHaveAnyErr_21778607692251",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Pa3U4-1",
+			"id":"_Pa3U4",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Pa3U4-1",
+			"id":"_9zT2j",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
