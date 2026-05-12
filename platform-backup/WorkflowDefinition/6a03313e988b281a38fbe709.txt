@@ -11,12 +11,26 @@
 			"skip":false,
 			"toNodeId":"_rhxdB",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"_rhxdB",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_e5VWJ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_e5VWJ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_4vjfe",
+			"type":"next"
 		}
 	],
 	"id":"6a03313e988b281a38fbe709",
 	"lastModifiedBy":39,
 	"lcName":"sample",
-	"modifiedTime":1778594110430,
+	"modifiedTime":1778597899994,
 	"name":"sample",
 	"nodes":[
 		{
@@ -25,7 +39,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_llz87-1",
 			"id":"_llz87",
-			"index":0,
+			"index":1,
 			"skip":false,
 			"title":"Select a trigger event",
 			"trigger":{
@@ -39,13 +53,134 @@
 			"fallbackMode":"STOP",
 			"groupId":"_llz87-1",
 			"id":"_rhxdB",
-			"index":0,
+			"index":2,
 			"skip":false,
 			"title":"Select an app and action",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4096,
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_llz87-1",
+			"id":"n_e5VWJ",
+			"index":3,
+			"inputs":{
+				"shouldSearchInAnalyticsStore":false,
+				"object_type":"mdm_entity_1",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":20
+				},
+				"numberOfRecordsToFetch":"MULTIPLE",
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch records",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.records.items._ua_id",
+					"root.records.items.DOB",
+					"root.records.items.name",
+					"root.records.items.working_status",
+					"root.records.items.integer",
+					"root.records.items.mdmRecordMetadata.modelId",
+					"root.records.items.mdmRecordMetadata.contributingSources.items",
+					"root.records.items.mdmRecordMetadata.sourceDetails.items.fieldName",
+					"root.records.items.mdmRecordMetadata.sourceDetails.items.sourceId",
+					"root.records.items.mdmRecordMetadata.sourceDetails.items.stageRecordId",
+					"root.records.items.mdmRecordMetadata.sourceDetails.items.sourceAppName",
+					"root.records.items.mdmRecordMetadata.sourceDetails.items.modifiedTime",
+					"root.records.items.age",
+					"root.records.source",
+					"root.records.ua:type",
+					"root.records.items._ua_id",
+					"root.records.items.DOB",
+					"root.records.items.name",
+					"root.records.items.working_status",
+					"root.records.items.integer",
+					"root.records.items.mdmRecordMetadata.modelId",
+					"root.records.items.mdmRecordMetadata.sourceDetails.source",
+					"root.records.items.mdmRecordMetadata.sourceDetails.ua:type",
+					"root.records.items.mdmRecordMetadata.sourceDetails.items.fieldName",
+					"root.records.items.mdmRecordMetadata.sourceDetails.items.sourceId",
+					"root.records.items.mdmRecordMetadata.sourceDetails.items.stageRecordId",
+					"root.records.items.mdmRecordMetadata.sourceDetails.items.sourceAppName",
+					"root.records.items.mdmRecordMetadata.sourceDetails.items.modifiedTime",
+					"root.records.items.age"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4094,
+				"resourceName":"storage_by_unifyapps_bulk_create_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_llz87-1",
+			"id":"n_4vjfe",
+			"index":4,
+			"inputs":{
+				"useRawPayload":false,
+				"object_type":"mdm_entity_1",
+				"skipIfBlank":false,
+				"records":{
+					"source":"{{ n_e5VWJ.outputs.objects }}",
+					"ua:type":"mappedArray",
+					"items":{
+						"_ua_id":"{{ n_e5VWJ.outputs.objects[0].properties._ua_id }}",
+						"DOB":"{{ n_e5VWJ.outputs.objects[0].properties.DOB }}",
+						"name":"{{ n_e5VWJ.outputs.objects[0].properties.name }}",
+						"working_status":"{{ n_e5VWJ.outputs.objects[0].properties.working_status }}",
+						"integer":"{{ n_e5VWJ.outputs.objects[0].properties.integer }}",
+						"mdmRecordMetadata":{
+							"modelId":"{{ n_e5VWJ.outputs.objects[0].properties.mdmRecordMetadata.modelId }}",
+							"sourceDetails":{
+								"source":"{{ n_e5VWJ.outputs.objects[0].properties.mdmRecordMetadata.sourceDetails }}",
+								"ua:type":"mappedArray",
+								"items":{
+									"fieldName":"{{ n_e5VWJ.outputs.objects[0].properties.mdmRecordMetadata.sourceDetails[0].fieldName }}",
+									"sourceId":"{{ n_e5VWJ.outputs.objects[0].properties.mdmRecordMetadata.sourceDetails[0].sourceId }}",
+									"stageRecordId":"{{ n_e5VWJ.outputs.objects[0].properties.mdmRecordMetadata.sourceDetails[0].stageRecordId }}",
+									"sourceAppName":"{{ n_e5VWJ.outputs.objects[0].properties.mdmRecordMetadata.sourceDetails[0].sourceAppName }}",
+									"modifiedTime":"{{ n_e5VWJ.outputs.objects[0].properties.mdmRecordMetadata.sourceDetails[0].modifiedTime }}"
+								}
+							},
+							"contributingSources":{
+								"source":"{{ n_e5VWJ.outputs.objects[0].properties.mdmRecordMetadata.contributingSources }}",
+								"ua:type":"mappedArray"
+							}
+						},
+						"age":"{{ n_e5VWJ.outputs.objects[0].properties.age }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Create or update records in bulk",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +191,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
