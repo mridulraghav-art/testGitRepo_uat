@@ -24,7 +24,7 @@
 	},
 	"id":"module-inputs-output-fields-st44607",
 	"lastModifiedBy":39,
-	"modifiedTime":1778566912681,
+	"modifiedTime":1778566926748,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -41,8 +41,21 @@
 				"_mqttTopicCounter":0,
 				"_pageCount":1,
 				"_moduleCount":0,
+				"_variableCounter":1,
 				"_templateComponentCount":0
 			}
+		},
+		"publicPageIds":[],
+		"manifest":{
+			"type":"WEB"
+		},
+		"pagePermissions":{
+			"e_6a02c6ff8e35082c98d091b2":{},
+			"e_6a02c70bc63d99497055a282":{}
+		},
+		"type":"application",
+		"locale":{
+			"defaultLocale":"en-US"
 		},
 		"navigation":{
 			"secondary":[],
@@ -232,21 +245,20 @@
 			]
 		},
 		"interfacePageIdVsSlugMap":{
+			"e_6a02c70bc63d99497055a282":"",
 			"e_6a02c6ff8e35082c98d091b2":"homepage",
 			"e_global_module-inputs-output-fields-st44607":"global-page-of-module-inputs-output-fields-st44607"
-		},
-		"manifest":{
-			"type":"WEB"
 		},
 		"name":"module-inputs-output-fields-string-217785668990190",
 		"theme":{
 			"defaultThemeId":"e_699c1348d53be90e1bfeabff"
 		},
-		"type":"application",
-		"locale":{
-			"defaultLocale":"en-US"
-		},
 		"entityDetailsMap":{
+			"e_6a02c70bc63d99497055a282":{
+				"slug":"",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_6a02c6ff8e35082c98d091b2":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -263,5 +275,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":8
 }
