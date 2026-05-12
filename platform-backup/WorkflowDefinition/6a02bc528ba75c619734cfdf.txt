@@ -30,7 +30,7 @@
 	"id":"6a02bc528ba75c619734cfdf",
 	"lastModifiedBy":39,
 	"lcName":"excel",
-	"modifiedTime":1778576225675,
+	"modifiedTime":1778576335089,
 	"name":"excel",
 	"nodes":[
 		{
@@ -62,14 +62,14 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KqZOv-1",
 			"id":"n_qmFMF",
 			"index":2,
 			"inputs":{
 				"fileName":"sample",
-				"url":"https://pdfobject.com/pdf/sample.pdf",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845749830/file_example_XLSX_10.xlsx",
 				"option":"url"
 			},
 			"skip":false,
@@ -80,8 +80,8 @@
 		{
 			"context":{
 				"appName":"excel_by_unifyapps",
-				"resourceVersion":2254,
-				"resourceName":"excel_by_unifyapps_list_sheet_names",
+				"resourceVersion":2252,
+				"resourceName":"excel_by_unifyapps_extract_headers",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -92,11 +92,11 @@
 			"index":3,
 			"inputs":{
 				"fileDetails":"{{ n_qmFMF.outputs.fileDetails }}",
-				"fileType":"pdf"
+				"fileType":"XLSX"
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
-			"title":"List sheet names in an Excel file",
+			"title":"Extract headers from Excel file",
 			"type":"ACTION"
 		},
 		{
@@ -135,5 +135,5 @@
 		}
 	},
 	"standard":false,
-	"version":28
+	"version":29
 }
