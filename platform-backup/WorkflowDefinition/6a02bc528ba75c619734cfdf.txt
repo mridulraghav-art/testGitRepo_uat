@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778564178934,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_KqZOv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_8lyzA",
+			"type":"next"
+		}
+	],
+	"id":"6a02bc528ba75c619734cfdf",
+	"lastModifiedBy":39,
+	"lcName":"excel",
+	"modifiedTime":1778564178934,
+	"name":"excel",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_KqZOv-1",
+			"id":"_KqZOv",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_KqZOv-1",
+			"id":"_8lyzA",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
