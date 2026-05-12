@@ -37,7 +37,7 @@
 	"id":"6a02bc528ba75c619734cfdf",
 	"lastModifiedBy":39,
 	"lcName":"excel",
-	"modifiedTime":1778564493827,
+	"modifiedTime":1778564704912,
 	"name":"excel",
 	"nodes":[
 		{
@@ -87,41 +87,30 @@
 		{
 			"context":{
 				"appName":"excel_by_unifyapps",
-				"resourceVersion":1713,
-				"resourceName":"excel_by_unifyapps_generic_operations",
+				"resourceVersion":2089,
+				"resourceName":"excel_by_unifyapps_add_columns_with_formulas",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KqZOv-1",
 			"id":"n_Ph7pE",
 			"index":3,
 			"inputs":{
-				"fileName":"sampled",
-				"evaluateFormulas":true,
+				"evaluateFormulas":false,
 				"fileDetails":"{{ n_qmFMF.outputs.fileDetails }}",
-				"operations":{
-					"items":{
-						"action":"rename",
-						"filterConditions":[
-							{
-								"column":"First Name",
-								"condition":"equals"
-							}
-						]
-					},
-					"ua:type":"mappedArray",
-					"source":"{{ n_qmFMF.outputs.fileDetails }}"
-				},
-				"sheetName":"Sheet1",
+				"formulas":[
+					{
+						"formula":"=SUM(1,2)"
+					}
+				],
 				"keepExactFileName":false,
-				"outputFormat":"csv",
-				"preserveSheetFormatting":false
+				"outputFormat":"csv"
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
-			"title":"Perform Operations on Excel File",
+			"title":"Add Columns with Formulas to Excel",
 			"type":"ACTION"
 		},
 		{
@@ -188,5 +177,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
