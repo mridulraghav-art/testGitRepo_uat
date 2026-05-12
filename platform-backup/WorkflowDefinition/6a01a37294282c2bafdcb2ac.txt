@@ -23,7 +23,7 @@
 	"id":"6a01a37294282c2bafdcb2ac",
 	"lastModifiedBy":39,
 	"lcName":"sample",
-	"modifiedTime":1778493700827,
+	"modifiedTime":1778563906117,
 	"name":"sample",
 	"nodes":[
 		{
@@ -48,11 +48,11 @@
 					],
 					"properties":{
 						"a":{
-							"type":"string",
+							"type":"integer",
 							"title":"a"
 						},
 						"b":{
-							"type":"integer",
+							"type":"string",
 							"title":"b"
 						}
 					}
@@ -82,7 +82,7 @@
 			"inputs":{
 				"async":false,
 				"usePlaywrightTestFramework":false,
-				"script":"let result = {{ n_x8Eqb.outputs.a }};\nresult;"
+				"script":"num : String = {{ n_x8Eqb.outputs.a }};\nresult = num;"
 			},
 			"skip":false,
 			"subTitle":"Code by UnifyApps",
@@ -125,5 +125,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
