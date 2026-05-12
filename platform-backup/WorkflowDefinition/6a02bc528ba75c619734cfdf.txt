@@ -37,7 +37,7 @@
 	"id":"6a02bc528ba75c619734cfdf",
 	"lastModifiedBy":39,
 	"lcName":"excel",
-	"modifiedTime":1778567862428,
+	"modifiedTime":1778568382407,
 	"name":"excel",
 	"nodes":[
 		{
@@ -92,8 +92,8 @@
 			},
 			"context":{
 				"appName":"excel_by_unifyapps",
-				"resourceVersion":2089,
-				"resourceName":"excel_by_unifyapps_add_columns_with_formulas",
+				"resourceVersion":72,
+				"resourceName":"excel_by_unifyapps_create_pivot_table",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -103,19 +103,13 @@
 			"id":"n_Ph7pE",
 			"index":3,
 			"inputs":{
-				"evaluateFormulas":false,
 				"fileDetails":"{{ n_qmFMF.outputs.fileDetails }}",
-				"formulas":[
-					{
-						"formula":"=SUM(4,6)"
-					}
-				],
-				"keepExactFileName":false,
-				"outputFormat":"csv"
+				"showGrandTotals":true,
+				"createInNewFile":true
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
-			"title":"Add Columns with Formulas to Excel",
+			"title":"Create Pivot Table",
 			"type":"ACTION"
 		},
 		{
@@ -126,19 +120,17 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KqZOv-1",
 			"id":"n_IG7Nc",
 			"index":4,
 			"inputs":{
 				"flattenMergedCells":false,
-				"endColumn":20,
-				"fileDetails":"{{ n_Ph7pE.outputs.fileDetails }}",
-				"sheetName":"Sheet1",
+				"endColumn":1,
 				"startRow":1,
 				"startColumn":1,
-				"endRow":20,
+				"endRow":1,
 				"fileType":"xlsx"
 			},
 			"skip":false,
@@ -182,5 +174,5 @@
 		}
 	},
 	"standard":false,
-	"version":9
+	"version":10
 }
