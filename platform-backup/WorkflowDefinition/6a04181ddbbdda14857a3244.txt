@@ -30,7 +30,7 @@
 	"id":"6a04181ddbbdda14857a3244",
 	"lastModifiedBy":39,
 	"lcName":"excelfiles",
-	"modifiedTime":1778665838956,
+	"modifiedTime":1778669948322,
 	"name":"excelfiles",
 	"nodes":[
 		{
@@ -62,14 +62,14 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_0I0xE-1",
 			"id":"n_OzjL7",
 			"index":2,
 			"inputs":{
 				"fileName":"sample",
-				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845749830/file_example_XLSX_10.xlsx",
+				"url":"https://pdfobject.com/pdf/sample.pdf",
 				"option":"url"
 			},
 			"skip":false,
@@ -80,8 +80,8 @@
 		{
 			"context":{
 				"appName":"excel_by_unifyapps",
-				"resourceVersion":1753,
-				"resourceName":"excel_by_unifyapps_extract_data",
+				"resourceVersion":2252,
+				"resourceName":"excel_by_unifyapps_excel_file_converter",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -91,18 +91,13 @@
 			"id":"n_aICHd",
 			"index":3,
 			"inputs":{
-				"flattenMergedCells":false,
-				"endColumn":20,
-				"fileDetails":"{{ n_OzjL7.outputs.fileDetails }}",
-				"sheetName":"ServiceNow Tool",
-				"startRow":1,
-				"startColumn":1,
-				"endRow":20,
-				"fileType":"csv"
+				"sourceFileType":"xlsx",
+				"file":"{{ n_OzjL7.outputs.fileDetails }}",
+				"targetFileType":"xlsx"
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
-			"title":"Extract Excel Data",
+			"title":"Convert Excel file format",
 			"type":"ACTION"
 		},
 		{
@@ -141,5 +136,5 @@
 		}
 	},
 	"standard":false,
-	"version":22
+	"version":23
 }
