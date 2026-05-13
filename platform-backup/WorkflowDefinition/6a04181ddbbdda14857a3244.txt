@@ -1,12 +1,19 @@
 {
 	"appsUsed":[
-		
+		"slack"
 	],
 	"createdTime":1778653213967,
 	"deleted":false,
 	"edges":[
 		{
 			"fromNodeId":"n_sudxb",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_XJwzq",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_XJwzq",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_OzjL7",
@@ -30,7 +37,7 @@
 	"id":"6a04181ddbbdda14857a3244",
 	"lastModifiedBy":39,
 	"lcName":"excelfiles",
-	"modifiedTime":1778670028319,
+	"modifiedTime":1778696252569,
 	"name":"excelfiles",
 	"nodes":[
 		{
@@ -56,17 +63,40 @@
 		},
 		{
 			"context":{
-				"appName":"files_by_unifyapps",
-				"resourceVersion":2088,
-				"resourceName":"files_by_unifyapps_upload_file",
+				"appName":"slack",
+				"resourceVersion":4526,
+				"connectionId":"699d98ab74d0266b0ef2c463",
+				"resourceName":"slack_post_message_in_channel",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_0I0xE-1",
-			"id":"n_OzjL7",
+			"id":"n_XJwzq",
 			"index":2,
+			"inputs":{
+				"link_names":true,
+				"mrkdwn":true
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Post message",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":2088,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_0I0xE-1",
+			"id":"n_OzjL7",
+			"index":3,
 			"inputs":{
 				"fileName":"sample",
 				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1764223064200/file_example_XLS_10.xls",
@@ -85,11 +115,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_0I0xE-1",
 			"id":"n_aICHd",
-			"index":3,
+			"index":4,
 			"inputs":{
 				"sourceFileType":"xls",
 				"file":"{{ n_OzjL7.outputs.fileDetails }}",
@@ -112,7 +142,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_0I0xE-1",
 			"id":"n_oNDtd",
-			"index":4,
+			"index":5,
 			"inputs":{
 				"result":"{{ n_aICHd.outputs }}"
 			},
@@ -136,5 +166,5 @@
 		}
 	},
 	"standard":false,
-	"version":24
+	"version":25
 }
