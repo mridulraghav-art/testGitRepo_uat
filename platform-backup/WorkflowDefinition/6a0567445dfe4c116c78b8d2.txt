@@ -30,7 +30,7 @@
 	"id":"6a0567445dfe4c116c78b8d2",
 	"lastModifiedBy":39,
 	"lcName":"excel",
-	"modifiedTime":1778739180986,
+	"modifiedTime":1778739630984,
 	"name":"excel",
 	"nodes":[
 		{
@@ -62,7 +62,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_17Ozw-1",
 			"id":"n_a8Tdw",
@@ -80,8 +80,8 @@
 		{
 			"context":{
 				"appName":"excel_by_unifyapps",
-				"resourceVersion":1753,
-				"resourceName":"excel_by_unifyapps_extract_data",
+				"resourceVersion":2253,
+				"resourceName":"excel_by_unifyapps_convert_to_csv",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -91,18 +91,14 @@
 			"id":"n_nmPAn",
 			"index":3,
 			"inputs":{
-				"flattenMergedCells":true,
-				"endColumn":21,
+				"startFromRow":1,
 				"fileDetails":"{{ n_a8Tdw.outputs.fileDetails }}",
-				"sheetName":"sampled",
-				"startRow":1,
-				"startColumn":1,
-				"endRow":20,
-				"fileType":"xlsx"
+				"evaluateFormulae":false,
+				"fileType":"xls"
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
-			"title":"Extract Excel Data",
+			"title":"Convert Excel file to CSV",
 			"type":"ACTION"
 		},
 		{
@@ -141,5 +137,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
