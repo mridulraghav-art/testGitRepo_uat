@@ -24,7 +24,7 @@
 	},
 	"id":"dis-cus-stor-mul-modal-217787684759",
 	"lastModifiedBy":39,
-	"modifiedTime":1778762706793,
+	"modifiedTime":1778762747108,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,6 +39,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
+				"_dataSourceCounter":1,
 				"_pageCount":1,
 				"_moduleCount":0,
 				"_templateComponentCount":0
@@ -231,7 +232,11 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
+			"e_global_dis-cus-stor-mul-modal-217787684759":"global-page-of-dis-cus-stor-mul-modal-217787684759",
 			"e_6a05c3d2742b4111258ebbee":"homepage"
 		},
 		"manifest":{
@@ -246,6 +251,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_global_dis-cus-stor-mul-modal-217787684759":{
+				"slug":"global-page-of-dis-cus-stor-mul-modal-217787684759",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_6a05c3d2742b4111258ebbee":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -257,5 +267,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":7
 }
