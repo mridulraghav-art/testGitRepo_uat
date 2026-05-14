@@ -24,7 +24,7 @@
 	},
 	"id":"cus-map-obj-mul-modal-2177876551655",
 	"lastModifiedBy":39,
-	"modifiedTime":1778765953041,
+	"modifiedTime":1778765975853,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,6 +39,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
+				"_dataSourceCounter":1,
 				"_pageCount":1,
 				"_moduleCount":0,
 				"_templateComponentCount":0
@@ -231,8 +232,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a05d0811040043950f918bd":"homepage"
+			"e_6a05d0811040043950f918bd":"homepage",
+			"e_global_cus-map-obj-mul-modal-2177876551655":"global-page-of-cus-map-obj-mul-modal-2177876551655"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -250,6 +255,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_cus-map-obj-mul-modal-2177876551655":{
+				"slug":"global-page-of-cus-map-obj-mul-modal-2177876551655",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -257,5 +267,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":7
 }
