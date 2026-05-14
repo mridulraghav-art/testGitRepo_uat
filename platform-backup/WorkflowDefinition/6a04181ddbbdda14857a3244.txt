@@ -39,7 +39,7 @@
 	"id":"6a04181ddbbdda14857a3244",
 	"lastModifiedBy":39,
 	"lcName":"excelfiles",
-	"modifiedTime":1778738964280,
+	"modifiedTime":1778738987028,
 	"name":"excelfiles",
 	"nodes":[
 		{
@@ -89,24 +89,29 @@
 		{
 			"context":{
 				"appName":"excel_by_unifyapps",
-				"resourceVersion":2252,
-				"resourceName":"excel_by_unifyapps_excel_file_converter",
+				"resourceVersion":1753,
+				"resourceName":"excel_by_unifyapps_extract_data",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_0I0xE-1",
 			"id":"n_aICHd",
 			"index":3,
 			"inputs":{
-				"sourceFileType":"xls",
-				"file":"{{ n_OzjL7.outputs.fileDetails }}",
-				"targetFileType":"xlsx"
+				"flattenMergedCells":false,
+				"endColumn":1,
+				"fileDetails":"{{ n_OzjL7.outputs.fileDetails }}",
+				"sheetName":"Sheet1",
+				"startRow":1,
+				"startColumn":1,
+				"endRow":1,
+				"fileType":"xlsx"
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
-			"title":"Convert Excel file format",
+			"title":"Extract Excel Data",
 			"type":"ACTION"
 		},
 		{
@@ -145,5 +150,5 @@
 		}
 	},
 	"standard":false,
-	"version":28
+	"version":29
 }
