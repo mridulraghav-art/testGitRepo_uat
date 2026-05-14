@@ -30,7 +30,7 @@
 	"id":"6a0567445dfe4c116c78b8d2",
 	"lastModifiedBy":39,
 	"lcName":"excel",
-	"modifiedTime":1778740117094,
+	"modifiedTime":1778741371841,
 	"name":"excel",
 	"nodes":[
 		{
@@ -91,8 +91,9 @@
 			"id":"n_nmPAn",
 			"index":3,
 			"inputs":{
-				"startFromRow":4,
+				"startFromRow":1,
 				"fileDetails":"{{ n_a8Tdw.outputs.fileDetails }}",
+				"delimiter":":",
 				"evaluateFormulae":false,
 				"fileType":"xlsx"
 			},
@@ -137,5 +138,5 @@
 		}
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
