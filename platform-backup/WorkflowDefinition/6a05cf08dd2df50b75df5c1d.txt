@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778765576114,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_idpKh",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_RfjYA",
+			"type":"next"
+		}
+	],
+	"id":"6a05cf08dd2df50b75df5c1d",
+	"lastModifiedBy":39,
+	"lcName":"dropcall-mul-modal-217787655689870",
+	"modifiedTime":1778765576114,
+	"name":"dropcall-mul-modal-217787655689870",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_idpKh-1",
+			"id":"_idpKh",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_idpKh-1",
+			"id":"_RfjYA",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
