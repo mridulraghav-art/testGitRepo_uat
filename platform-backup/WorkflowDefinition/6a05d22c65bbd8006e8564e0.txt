@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778766380850,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_GerAc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_fOcLK",
+			"type":"next"
+		}
+	],
+	"id":"6a05d22c65bbd8006e8564e0",
+	"lastModifiedBy":39,
+	"lcName":"lab-cus-sin-cal-modal-217787660928470",
+	"modifiedTime":1778766380850,
+	"name":"lab-cus-sin-cal-modal-217787660928470",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_GerAc-1",
+			"id":"_GerAc",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_GerAc-1",
+			"id":"_fOcLK",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
