@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778762534924,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_BbuRo",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_qBc1m",
+			"type":"next"
+		}
+	],
+	"id":"6a05c326c6affb0ca131866a",
+	"lastModifiedBy":39,
+	"lcName":"val-cus-call-mul-modal-217787622041750",
+	"modifiedTime":1778762534924,
+	"name":"val-cus-call-mul-modal-217787622041750",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_BbuRo-1",
+			"id":"_BbuRo",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_BbuRo-1",
+			"id":"_qBc1m",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
