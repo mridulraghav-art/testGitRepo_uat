@@ -24,7 +24,7 @@
 	},
 	"id":"fdvsfwsvdvd",
 	"lastModifiedBy":39,
-	"modifiedTime":1778760598264,
+	"modifiedTime":1778760818586,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,6 +39,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
+				"_dataSourceCounter":1,
 				"_pageCount":1,
 				"_moduleCount":0,
 				"_templateComponentCount":0
@@ -201,8 +202,12 @@
 			},
 			"primary":[]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a05bb9441f407294613a375":"homepage"
+			"e_6a05bb9441f407294613a375":"homepage",
+			"e_global_fdvsfwsvdvd":"global-page-of-fdvsfwsvdvd"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -220,6 +225,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_fdvsfwsvdvd":{
+				"slug":"global-page-of-fdvsfwsvdvd",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -227,5 +237,5 @@
 	"tags":[
 		
 	],
-	"version":1
+	"version":8
 }
