@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778765924271,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_6lzyg",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_MIMAq",
+			"type":"next"
+		}
+	],
+	"id":"6a05d0649770bd03bc78f43c",
+	"lastModifiedBy":39,
+	"lcName":"lab-cus-sin-cal-modal-217787655689870",
+	"modifiedTime":1778765924271,
+	"name":"lab-cus-sin-cal-modal-217787655689870",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_6lzyg-1",
+			"id":"_6lzyg",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_6lzyg-1",
+			"id":"_MIMAq",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
