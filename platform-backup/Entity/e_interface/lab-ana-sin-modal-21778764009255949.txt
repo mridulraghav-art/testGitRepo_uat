@@ -24,7 +24,7 @@
 	},
 	"id":"lab-ana-sin-modal-21778764009255949",
 	"lastModifiedBy":39,
-	"modifiedTime":1778764291962,
+	"modifiedTime":1778764321848,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,6 +39,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
+				"_dataSourceCounter":1,
 				"_pageCount":1,
 				"_moduleCount":0,
 				"_templateComponentCount":0
@@ -231,7 +232,11 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
+			"e_global_lab-ana-sin-modal-21778764009255949":"global-page-of-lab-ana-sin-modal-21778764009255949",
 			"e_6a05ca03742b411125964dfe":"homepage"
 		},
 		"manifest":{
@@ -246,6 +251,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_global_lab-ana-sin-modal-21778764009255949":{
+				"slug":"global-page-of-lab-ana-sin-modal-21778764009255949",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_6a05ca03742b411125964dfe":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -257,5 +267,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":7
 }
