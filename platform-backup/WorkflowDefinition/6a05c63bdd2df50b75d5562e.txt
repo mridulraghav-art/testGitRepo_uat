@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778763323667,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_pzS4B",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_WgoVA",
+			"type":"next"
+		}
+	],
+	"id":"6a05c63bdd2df50b75d5562e",
+	"lastModifiedBy":39,
+	"lcName":"lab-call-sin-modal-217787630293470",
+	"modifiedTime":1778763323667,
+	"name":"lab-call-sin-modal-217787630293470",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_pzS4B-1",
+			"id":"_pzS4B",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_pzS4B-1",
+			"id":"_WgoVA",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
