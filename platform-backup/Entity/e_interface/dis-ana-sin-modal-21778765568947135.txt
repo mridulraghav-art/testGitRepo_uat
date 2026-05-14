@@ -4,7 +4,7 @@
 	"entityType":"e_interface",
 	"id":"dis-ana-sin-modal-21778765568947135",
 	"lastModifiedBy":39,
-	"modifiedTime":1778765702799,
+	"modifiedTime":1778765739520,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -19,6 +19,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
+				"_dataSourceCounter":1,
 				"_pageCount":1,
 				"_moduleCount":0,
 				"_templateComponentCount":0
@@ -211,8 +212,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a05cf8651c83f350c41f99f":"homepage"
+			"e_6a05cf8651c83f350c41f99f":"homepage",
+			"e_global_dis-ana-sin-modal-21778765568947135":"global-page-of-dis-ana-sin-modal-21778765568947135"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -230,6 +235,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_dis-ana-sin-modal-21778765568947135":{
+				"slug":"global-page-of-dis-ana-sin-modal-21778765568947135",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -237,5 +247,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":7
 }
