@@ -30,7 +30,7 @@
 	"id":"6a0567445dfe4c116c78b8d2",
 	"lastModifiedBy":39,
 	"lcName":"excel",
-	"modifiedTime":1778742848084,
+	"modifiedTime":1778743735718,
 	"name":"excel",
 	"nodes":[
 		{
@@ -81,7 +81,7 @@
 			"context":{
 				"appName":"excel_by_unifyapps",
 				"resourceVersion":2252,
-				"resourceName":"excel_by_unifyapps_excel_file_converter",
+				"resourceName":"excel_by_unifyapps_create_file",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -91,14 +91,12 @@
 			"id":"n_nmPAn",
 			"index":3,
 			"inputs":{
-				"sourceFileType":"xls",
-				"fileName":"sample",
-				"file":"{{ n_a8Tdw.outputs.fileDetails }}",
-				"targetFileType":"xlsb"
+				"fileName":"{{ n_a8Tdw.outputs.fileDetails }}",
+				"fileType":"xls"
 			},
 			"skip":false,
 			"subTitle":"Excel by UnifyApps",
-			"title":"Convert Excel file format",
+			"title":"Create a new Excel file",
 			"type":"ACTION"
 		},
 		{
@@ -137,5 +135,5 @@
 		}
 	},
 	"standard":false,
-	"version":14
+	"version":15
 }
