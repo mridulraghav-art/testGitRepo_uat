@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778766318745,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_Tlybo",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_VlQSI",
+			"type":"next"
+		}
+	],
+	"id":"6a05d1eedd2df50b75e3f872",
+	"lastModifiedBy":39,
+	"lcName":"dis-cus-call-mul-modal-217787660928470",
+	"modifiedTime":1778766318745,
+	"name":"dis-cus-call-mul-modal-217787660928470",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Tlybo-1",
+			"id":"_Tlybo",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Tlybo-1",
+			"id":"_VlQSI",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
