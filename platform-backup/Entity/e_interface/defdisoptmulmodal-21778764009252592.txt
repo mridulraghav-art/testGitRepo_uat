@@ -24,7 +24,7 @@
 	},
 	"id":"defdisoptmulmodal-21778764009252592",
 	"lastModifiedBy":39,
-	"modifiedTime":1778764019557,
+	"modifiedTime":1778764024916,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -231,8 +231,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a05c8f3742b4111259564df":"homepage"
+			"e_6a05c8f3742b4111259564df":"homepage",
+			"e_global_defdisoptmulmodal-21778764009252592":"global-page-of-defdisoptmulmodal-21778764009252592"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -250,6 +254,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_defdisoptmulmodal-21778764009252592":{
+				"slug":"global-page-of-defdisoptmulmodal-21778764009252592",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -257,5 +266,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":4
 }
