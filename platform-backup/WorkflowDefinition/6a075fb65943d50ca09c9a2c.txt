@@ -4,6 +4,15 @@
 	],
 	"createdTime":1778868150598,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1778868157500,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a075fbdd83dff051b17e3f0",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"description":"description",
 	"edges":[
 		{
@@ -12,12 +21,19 @@
 			"skip":false,
 			"toNodeId":"n_3Heer",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_3Heer",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_zozlY",
+			"type":"next"
 		}
 	],
 	"id":"6a075fb65943d50ca09c9a2c",
 	"lastModifiedBy":39,
 	"lcName":"successfulandfailedrun_graphbehavior217788681452950",
-	"modifiedTime":1778868156513,
+	"modifiedTime":1778868212207,
 	"name":"successfulAndFailedRun_graphBehavior217788681452950",
 	"nodes":[
 		{
@@ -27,7 +43,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_sFDEL-1",
 			"id":"n_ESTlO",
@@ -66,7 +82,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_sFDEL-1",
 			"id":"n_3Heer",
@@ -110,6 +126,28 @@
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"test_http",
+				"resourceVersion":1968,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_sFDEL-1",
+			"id":"n_zozlY",
+			"index":3,
+			"inputs":{
+				"field2":true
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -129,5 +167,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
