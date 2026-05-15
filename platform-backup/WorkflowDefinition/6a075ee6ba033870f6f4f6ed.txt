@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778867942341,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_MuvFy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_pBtOs",
+			"type":"next"
+		}
+	],
+	"id":"6a075ee6ba033870f6f4f6ed",
+	"lastModifiedBy":39,
+	"lcName":"failedrun_graphbehavior217788679342440",
+	"modifiedTime":1778867942341,
+	"name":"failedRun_graphBehavior217788679342440",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_MuvFy-1",
+			"id":"_MuvFy",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_MuvFy-1",
+			"id":"_pBtOs",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
