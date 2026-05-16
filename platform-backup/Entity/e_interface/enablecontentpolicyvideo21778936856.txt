@@ -1,6 +1,12 @@
 {
 	"createdTime":1778936776245,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1778936795433,
+		"deployedBy":39,
+		"entityVersion":5,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"enablecontentpolicyvideo21778936856",
 	"lastModifiedBy":39,
-	"modifiedTime":1778936793123,
+	"modifiedTime":1778936798505,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -43,6 +49,16 @@
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
+		},
+		"manifest":{
+			"type":"WEB"
+		},
+		"type":"application",
+		"locale":{
+			"defaultLocale":"en-US"
+		},
+		"customCode":{
+			"footer":"<video width=\"320\" height=\"240\" controls>\r\n         <source src=\"https://videos.pexels.com/video-files/6548176/6548176-hd_1920_1080_24fps.mp4\" type=\"video/mp4\">\r\n                  </video>"
 		},
 		"navigation":{
 			"secondary":[],
@@ -249,16 +265,9 @@
 			"e_6a086bcd10400439506f83ae":"homepage",
 			"e_global_enablecontentpolicyvideo21778936856":"global-page-of-enablecontentpolicyvideo21778936856"
 		},
-		"manifest":{
-			"type":"WEB"
-		},
 		"name":"enablecontentpolicyvideo217789367690780",
 		"theme":{
 			"defaultThemeId":"e_699c1348d53be90e1bfeabff"
-		},
-		"type":"application",
-		"locale":{
-			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
 			"e_6a086bcd10400439506f83ae":{
@@ -277,5 +286,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":5
+	"version":6
 }
