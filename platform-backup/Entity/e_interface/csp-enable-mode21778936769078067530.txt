@@ -2,9 +2,29 @@
 	"createdTime":1778936776015,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"csp-enable-mode21778936769078067530",
 	"lastModifiedBy":39,
-	"modifiedTime":1778936776015,
+	"modifiedTime":1778936790309,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -19,17 +39,22 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":0,
+				"_pageCount":1,
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
 		},
 		"navigation":{
 			"secondary":[],
-			"defaultPageId":"",
+			"defaultPageId":"e_6a086bcd2cb7f916c2aaa37a",
 			"appearance":{
 				"SM":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_D4Bao",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -58,10 +83,16 @@
 						"padding":{
 							"all":"p-0"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"LG":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_D4Bao",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -96,10 +127,16 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"XL":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_D4Bao",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"expandable"
@@ -134,10 +171,16 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"MD":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_D4Bao",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -172,10 +215,25 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				}
 			},
-			"primary":[]
+			"primary":[
+				{
+					"activeIcon":"Zap",
+					"name":"Homepage",
+					"icon":"Zap",
+					"id":"nav_D4Bao",
+					"type":"PAGE",
+					"pageId":"e_6a086bcd2cb7f916c2aaa37a",
+					"slug":"homepage"
+				}
+			]
+		},
+		"interfacePageIdVsSlugMap":{
+			"e_6a086bcd2cb7f916c2aaa37a":"homepage",
+			"e_global_csp-enable-mode21778936769078067530":"global-page-of-csp-enable-mode21778936769078067530"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -187,11 +245,26 @@
 		"type":"application",
 		"locale":{
 			"defaultLocale":"en-US"
+		},
+		"entityDetailsMap":{
+			"e_6a086bcd2cb7f916c2aaa37a":{
+				"slug":"homepage",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_global_csp-enable-mode21778936769078067530":{
+				"slug":"global-page-of-csp-enable-mode21778936769078067530",
+				"isPublic":false,
+				"type":"PAGE"
+			}
+		},
+		"customCode":{
+			"footer":"<img src=\"https://images.pexels.com/photos/4016579/pexels-photo-4016579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2\" alt=\"\" height=\"300\" width=\"300\"/>"
 		}
 	},
 	"standard":false,
 	"tags":[
 		"dnt-application"
 	],
-	"version":0
+	"version":4
 }
