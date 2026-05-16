@@ -1,0 +1,65 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1778913626476,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_IeurX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_4F822",
+			"type":"next"
+		}
+	],
+	"id":"6a08115ab7f94b3c04d6b5d7",
+	"lastModifiedBy":39,
+	"lcName":"update_workspace_from_preview_217789136160540",
+	"modifiedTime":1778913626476,
+	"name":"Update_Workspace_From_Preview_217789136160540",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_IeurX-1",
+			"id":"_IeurX",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_IeurX-1",
+			"id":"_4F822",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"projectId":5,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
