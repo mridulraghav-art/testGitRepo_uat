@@ -24,7 +24,7 @@
 	},
 	"id":"enablecontentpolicyvideo21778936856",
 	"lastModifiedBy":39,
-	"modifiedTime":1778936783533,
+	"modifiedTime":1778936793123,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -231,6 +231,20 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC",
+			"cspData":{
+				"resourceControl":[
+					{
+						"key":"https://videos.pexels.com/",
+						"value":"video"
+					}
+				]
+			},
+			"cspDetails":{
+				"enforceCSP":true
+			}
+		},
 		"interfacePageIdVsSlugMap":{
 			"e_6a086bcd10400439506f83ae":"homepage",
 			"e_global_enablecontentpolicyvideo21778936856":"global-page-of-enablecontentpolicyvideo21778936856"
@@ -263,5 +277,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
