@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779037331954,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_RJHSM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_mxIBr",
+			"type":"next"
+		}
+	],
+	"id":"6a09f493630d2770b8490c90",
+	"lastModifiedBy":39,
+	"lcName":"ai agent list with models",
+	"modifiedTime":1779037331954,
+	"name":"AI Agent List with Models",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_RJHSM-1",
+			"id":"_RJHSM",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_RJHSM-1",
+			"id":"_mxIBr",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
