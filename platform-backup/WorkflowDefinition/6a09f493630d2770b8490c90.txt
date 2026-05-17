@@ -4,6 +4,15 @@
 	],
 	"createdTime":1779037331954,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1779037467058,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a09f51af39b4f3f56cbec54",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_5uFvp",
@@ -144,7 +153,7 @@
 	"id":"6a09f493630d2770b8490c90",
 	"lastModifiedBy":39,
 	"lcName":"ai agent list with models",
-	"modifiedTime":1779037464744,
+	"modifiedTime":1779037631707,
 	"name":"AI Agent List with Models",
 	"nodes":[
 		{
@@ -1814,7 +1823,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_RJHSM-1",
 			"id":"n_FcCvn",
@@ -1825,10 +1834,10 @@
 				"object_type":"agent_list_link",
 				"skipIfBlank":false,
 				"record":{
-					"url":"{{ n_oSTrv.outputs.url }}"
+					"link":"{{ n_oSTrv.outputs.url }}"
 				}
 			},
-			"skip":true,
+			"skip":false,
 			"subTitle":"Storage",
 			"title":"Create record",
 			"type":"ACTION"
@@ -1871,5 +1880,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
