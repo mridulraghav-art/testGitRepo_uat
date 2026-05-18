@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779090222289,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_SRPBa",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_VNQuV",
+			"type":"next"
+		}
+	],
+	"id":"6a0ac32e630d2770b8550113",
+	"lastModifiedBy":39,
+	"lcName":"appenddatatocsvlocalpjmljesoio",
+	"modifiedTime":1779090222289,
+	"name":"AppendDataToCSVLocalpJMljesoIO",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_SRPBa-1",
+			"id":"_SRPBa",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_SRPBa-1",
+			"id":"_VNQuV",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
