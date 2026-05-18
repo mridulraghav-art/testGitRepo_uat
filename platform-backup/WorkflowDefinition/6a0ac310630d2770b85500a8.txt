@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779090192822,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_mHeQz",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_qMNuv",
+			"type":"next"
+		}
+	],
+	"id":"6a0ac310630d2770b85500a8",
+	"lastModifiedBy":39,
+	"lcName":"appenddatatocsvlocalshulefsccx",
+	"modifiedTime":1779090192822,
+	"name":"AppendDataToCSVLocalsHULEFsCCx",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_mHeQz-1",
+			"id":"_mHeQz",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_mHeQz-1",
+			"id":"_qMNuv",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
