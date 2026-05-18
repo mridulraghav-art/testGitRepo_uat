@@ -7,46 +7,70 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_eLRYk",
+			"fromNodeId":"n_IDpRO",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_8fIIK",
+			"toNodeId":"n_Ytgik",
 			"type":"next"
 		}
 	],
 	"id":"6a0b0ee5b17cad01eb8b0fba",
 	"lastModifiedBy":39,
 	"lcName":"debug_ai_minimize_restore217791095993980",
-	"modifiedTime":1779109605504,
+	"modifiedTime":1779109613971,
 	"name":"debug_ai_minimize_restore217791095993980",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_eLRYk-1",
-			"id":"_eLRYk",
-			"index":0,
+			"id":"n_IDpRO",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":2105,
+				"resourceName":"code_by_unifyapps_java",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_eLRYk-1",
-			"id":"_8fIIK",
-			"index":0,
+			"id":"n_Ytgik",
+			"index":2,
+			"inputs":{
+				"captureStdOutput":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Java code",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +84,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
