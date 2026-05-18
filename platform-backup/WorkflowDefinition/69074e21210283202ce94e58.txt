@@ -26,6 +26,13 @@
 			"fromNodeId":"n_DF2ce",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_Hp2fS",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Hp2fS",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_eG2dN",
 			"type":"next"
 		}
@@ -33,7 +40,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1779092661614,
+	"modifiedTime":1779092746914,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -283,10 +290,16 @@
 											"type":"string",
 											"title":"K 1",
 											"default":"v1"
+										},
+										"K2":{
+											"type":"string",
+											"title":"K 2",
+											"default":"V2"
 										}
 									},
 									"required":[
-										"k1"
+										"k1",
+										"K2"
 									]
 								}
 							}
@@ -298,7 +311,8 @@
 				"createList":{
 					"ua:type":"mappedArray",
 					"items":{
-						"k1":"v1"
+						"k1":"v1",
+						"K2":"K2"
 					}
 				},
 				"ua:title":"List",
@@ -320,10 +334,16 @@
 										"type":"string",
 										"title":"K 1",
 										"default":"v1"
+									},
+									"K2":{
+										"type":"string",
+										"title":"K 2",
+										"default":"V2"
 									}
 								},
 								"required":[
-									"k1"
+									"k1",
+									"K2"
 								]
 							}
 						}
@@ -333,6 +353,65 @@
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1648,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_QPyDa-1",
+			"id":"n_Hp2fS",
+			"index":3,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"new_obj":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"New Obj"
+						}
+					},
+					"required":[
+						"new_obj"
+					]
+				}
+			},
+			"inputs":{
+				"new_obj":"{{ n_DF2ce.outputs.items[0].k1 }}"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"new_obj":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"New Obj"
+						}
+					},
+					"required":[
+						"new_obj"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
 		},
 		{
@@ -347,7 +426,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_eG2dN",
-			"index":3,
+			"index":4,
 			"inputs":{
 				"result":"{{ n_kzSW5.outputs.properties.uniqueId }}"
 			},
@@ -374,5 +453,5 @@
 	"tags":[
 		
 	],
-	"version":37
+	"version":38
 }
