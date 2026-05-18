@@ -19,11 +19,11 @@
 			"fromNodeId":"n_QjEiF",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_E1Ox6",
+			"toNodeId":"n_DF2ce",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_E1Ox6",
+			"fromNodeId":"n_DF2ce",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_eG2dN",
@@ -33,7 +33,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1779092560303,
+	"modifiedTime":1779092661614,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -58,46 +58,281 @@
 			"type":"START"
 		},
 		{
-			"additional":{
-				"visibleOptionalFields":[
-					"root.record.mdmRecordMetadata.modelId",
-					"root.record.mdmRecordMetadata.contributingSources.items",
-					"root.record.mdmRecordMetadata.sourceDetails.items.fieldName",
-					"root.record.mdmRecordMetadata.sourceDetails.items.sourceId",
-					"root.record.mdmRecordMetadata.sourceDetails.items.stageRecordId",
-					"root.record.mdmRecordMetadata.sourceDetails.items.sourceAppName",
-					"root.record.mdmRecordMetadata.sourceDetails.items.modifiedTime"
-				]
-			},
 			"context":{
-				"appName":"storage_by_unifyapps",
-				"resourceVersion":4096,
-				"resourceName":"storage_by_unifyapps_create_record",
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1647,
+				"resourceName":"variable_by_unifyapps_create_list",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
-			"id":"n_E1Ox6",
+			"id":"n_DF2ce",
 			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{
+					"createList":{
+						"ui:title":"",
+						"ua:type":{
+							"ui:widget":"hidden"
+						},
+						"items":{
+							"ui:title":"Initial list items",
+							"ui:description":"Set the initial values of the list (defaults to empty)"
+						},
+						"ui:order":[
+							"*",
+							"items"
+						]
+					},
+					"ua:title":{
+						"ui:widget":"hidden"
+					},
+					"ua:list_type":{
+						"ui:widget":"hidden"
+					}
+				},
+				"schema":{
+					"allOf":[
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"OBJECT"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"items":{
+												"type":"object",
+												"properties":{}
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"STRING"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of String"
+											},
+											"items":{
+												"type":"string"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"INTEGER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Integers"
+											},
+											"items":{
+												"type":"integer"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"NUMBER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Numbers"
+											},
+											"items":{
+												"type":"number"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"BOOLEAN"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Booleans"
+											},
+											"items":{
+												"type":"boolean"
+											}
+										}
+									}
+								}
+							}
+						}
+					],
+					"format":"ua:list",
+					"type":"object",
+					"properties":{
+						"ua:title":{
+							"type":"string"
+						},
+						"ua:list_type":{
+							"type":"string",
+							"title":"List Type",
+							"oneOf":[
+								{
+									"const":"OBJECT",
+									"title":"Object"
+								},
+								{
+									"const":"STRING",
+									"title":"String"
+								},
+								{
+									"const":"NUMBER",
+									"title":"Number"
+								},
+								{
+									"const":"INTEGER",
+									"title":"Integer"
+								},
+								{
+									"const":"BOOLEAN",
+									"title":"Boolean"
+								}
+							],
+							"default":"OBJECT"
+						},
+						"createList":{
+							"type":"object",
+							"properties":{
+								"ua:type":{
+									"type":"string",
+									"default":"mappedArray"
+								},
+								"source":{
+									"type":"string",
+									"format":"ua:source",
+									"title":"List Item Source"
+								},
+								"items":{
+									"additionalProperties":false,
+									"type":[
+										"object",
+										"string",
+										"number",
+										"boolean",
+										"integer"
+									],
+									"properties":{
+										"k1":{
+											"type":"string",
+											"title":"K 1",
+											"default":"v1"
+										}
+									},
+									"required":[
+										"k1"
+									]
+								}
+							}
+						}
+					}
+				}
+			},
 			"inputs":{
-				"useRawPayload":false,
-				"writeThroughSessionVariables":false,
-				"object_type":"mdm_entity_1",
-				"skipIfBlank":false,
-				"record":{
-					"mdmRecordMetadata":{
-						"contributingSources":{
-							"ua:type":"mappedArray",
-							"items":"{{ n_kzSW5.outputs.properties.mdmRecordMetadata.contributingSources[0] }}"
+				"createList":{
+					"ua:type":"mappedArray",
+					"items":{
+						"k1":"v1"
+					}
+				},
+				"ua:title":"List",
+				"ua:list_type":"OBJECT"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"items":{
+							"type":"array",
+							"title":"List",
+							"disableActions":true,
+							"items":{
+								"type":"object",
+								"properties":{
+									"k1":{
+										"type":"string",
+										"title":"K 1",
+										"default":"v1"
+									}
+								},
+								"required":[
+									"k1"
+								]
+							}
 						}
 					}
 				}
 			},
 			"skip":false,
-			"subTitle":"Storage by UnifyApps",
-			"title":"Create record",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create list",
 			"type":"ACTION"
 		},
 		{
@@ -139,5 +374,5 @@
 	"tags":[
 		
 	],
-	"version":36
+	"version":37
 }
