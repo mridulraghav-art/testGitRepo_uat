@@ -6,46 +6,216 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_8oZCR",
+			"fromNodeId":"n_bZBi6",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_JZBxh",
+			"toNodeId":"n_mHWxL",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_mHWxL",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_jNE8X",
 			"type":"next"
 		}
 	],
 	"id":"6a0aeec7630d2770b857fcac",
 	"lastModifiedBy":39,
 	"lcName":"fetch records",
-	"modifiedTime":1779101383798,
+	"modifiedTime":1779101514314,
 	"name":"fetch records",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2302,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8oZCR-1",
-			"id":"_8oZCR",
-			"index":0,
+			"id":"n_bZBi6",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"createdTime":{
+							"type":"integer",
+							"title":"createdTime"
+						},
+						"deleted":{
+							"type":"boolean",
+							"title":"deleted"
+						},
+						"entityType":{
+							"type":"string",
+							"title":"entityType"
+						},
+						"id":{
+							"type":"string",
+							"title":"id"
+						},
+						"lastModifiedBy":{
+							"type":"integer",
+							"title":"lastModifiedBy"
+						},
+						"modifiedTime":{
+							"type":"integer",
+							"title":"modifiedTime"
+						},
+						"ownerUserId":{
+							"type":"integer",
+							"title":"ownerUserId"
+						},
+						"projectId":{
+							"type":"integer",
+							"title":"projectId"
+						},
+						"properties":{
+							"type":"object",
+							"properties":{
+								"name":{
+									"type":"string",
+									"title":"name"
+								},
+								"location":{
+									"type":"string",
+									"title":"location"
+								},
+								"designation":{
+									"type":"string",
+									"title":"designation"
+								},
+								"age":{
+									"type":"string",
+									"title":"age"
+								}
+							},
+							"title":"properties",
+							"additionalProperties":false
+						},
+						"standard":{
+							"type":"boolean",
+							"title":"standard"
+						},
+						"version":{
+							"type":"integer",
+							"title":"version"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"filter"
+					],
+					"properties":{
+						"filter":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Filter"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4142,
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8oZCR-1",
-			"id":"_JZBxh",
-			"index":0,
+			"id":"n_mHWxL",
+			"index":2,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"resolvedFilter":{
+								"filter":"{{ n_bZBi6.outputs.filter }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"shouldSearchInAnalyticsStore":false,
+				"object_type":"projecttest",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":20
+				},
+				"numberOfRecordsToFetch":"SINGLE",
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch records",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2303,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8oZCR-1",
+			"id":"n_jNE8X",
+			"index":3,
+			"inputs":{
+				"result":{
+					"createdTime":"{{ n_mHWxL.outputs.createdTime }}",
+					"deleted":"{{ n_mHWxL.outputs.deleted }}",
+					"entityType":"{{ n_mHWxL.outputs.entityType }}",
+					"id":"{{ n_mHWxL.outputs.id }}",
+					"lastModifiedBy":"{{ n_mHWxL.outputs.lastModifiedBy }}",
+					"modifiedTime":"{{ n_mHWxL.outputs.modifiedTime }}",
+					"ownerUserId":"{{ n_mHWxL.outputs.ownerUserId }}",
+					"properties":{
+						"name":"{{ n_mHWxL.outputs.properties.name }}",
+						"location":"{{ n_mHWxL.outputs.properties.location }}",
+						"designation":"{{ n_mHWxL.outputs.properties.designation }}",
+						"age":"{{ n_mHWxL.outputs.properties.age }}"
+					},
+					"standard":"{{ n_mHWxL.outputs.standard }}",
+					"version":"{{ n_mHWxL.outputs.version }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +226,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
