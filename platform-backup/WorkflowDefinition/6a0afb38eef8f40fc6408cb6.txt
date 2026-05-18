@@ -7,46 +7,80 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_noMsl",
+			"fromNodeId":"n_pRYf8",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_HATee",
+			"toNodeId":"n_djDos",
 			"type":"next"
 		}
 	],
 	"id":"6a0afb38eef8f40fc6408cb6",
 	"lastModifiedBy":39,
 	"lcName":"fcgvhbn217791045623580",
-	"modifiedTime":1779104568492,
+	"modifiedTime":1779104573907,
 	"name":"fcgvhbn217791045623580",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2302,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_noMsl-1",
-			"id":"_noMsl",
-			"index":0,
+			"id":"n_pRYf8",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output_String"
+					],
+					"properties":{
+						"output_String":{
+							"type":"string",
+							"title":"output_String"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":2105,
+				"resourceName":"code_by_unifyapps_java",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_noMsl-1",
-			"id":"_HATee",
-			"index":0,
+			"id":"n_djDos",
+			"index":2,
+			"inputs":{
+				"captureStdOutput":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Java code",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +94,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
