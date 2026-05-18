@@ -7,46 +7,74 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_IBFbd",
+			"fromNodeId":"n_qw0ua",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_CWeld",
+			"toNodeId":"n_H9ckv",
 			"type":"next"
 		}
 	],
 	"id":"6a0b09d0b17cad01eb8ae275",
 	"lastModifiedBy":39,
 	"lcName":"codetestingsuccessfullexcecution_217791082916630",
-	"modifiedTime":1779108304101,
+	"modifiedTime":1779108313063,
 	"name":"codeTestingSuccessfullExcecution_217791082916630",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IBFbd-1",
-			"id":"_IBFbd",
-			"index":0,
+			"id":"n_qw0ua",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":2104,
+				"resourceName":"code_by_unifyapps_python",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_IBFbd-1",
-			"id":"_CWeld",
-			"index":0,
+			"id":"n_H9ckv",
+			"index":2,
+			"inputs":{
+				"configurationMode":"DEFAULT",
+				"isAsync":false,
+				"python_version":"3.12",
+				"outputFilesGlob":"*",
+				"captureStdOutput":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Python script",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +88,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
