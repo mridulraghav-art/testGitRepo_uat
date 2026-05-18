@@ -6,46 +6,70 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_tCT1j",
+			"fromNodeId":"n_wJbAg",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_hSZvi",
+			"toNodeId":"n_yfnON",
 			"type":"next"
 		}
 	],
 	"id":"6a0b3d6205f4ad3019ebe7df",
 	"lastModifiedBy":39,
 	"lcName":"sampler",
-	"modifiedTime":1779121506114,
+	"modifiedTime":1779121674604,
 	"name":"sampler",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_tCT1j-1",
-			"id":"_tCT1j",
-			"index":0,
+			"id":"n_wJbAg",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":2102,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_tCT1j-1",
-			"id":"_hSZvi",
-			"index":0,
+			"id":"n_yfnON",
+			"index":2,
+			"inputs":{
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +80,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
