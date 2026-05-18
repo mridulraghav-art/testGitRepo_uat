@@ -39,7 +39,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1779092942244,
+	"modifiedTime":1779093094122,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -289,16 +289,10 @@
 											"type":"string",
 											"title":"K 1",
 											"default":"v1"
-										},
-										"K1":{
-											"type":"string",
-											"title":"K 1",
-											"default":"V2"
 										}
 									},
 									"required":[
-										"k1",
-										"K1"
+										"k1"
 									]
 								}
 							}
@@ -310,8 +304,7 @@
 				"createList":{
 					"ua:type":"mappedArray",
 					"items":{
-						"k1":"v1",
-						"K1":"V2"
+						"k1":"v1"
 					}
 				},
 				"ua:title":"List",
@@ -333,16 +326,10 @@
 										"type":"string",
 										"title":"K 1",
 										"default":"v1"
-									},
-									"K1":{
-										"type":"string",
-										"title":"K 1",
-										"default":"V2"
 									}
 								},
 								"required":[
-									"k1",
-									"K1"
+									"k1"
 								]
 							}
 						}
@@ -452,5 +439,5 @@
 	"tags":[
 		
 	],
-	"version":40
+	"version":41
 }
