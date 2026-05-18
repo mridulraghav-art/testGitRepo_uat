@@ -6,47 +6,44 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_TKHgu",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_DPVO6",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a0af89e630d2770b8589cf1",
 	"lastModifiedBy":39,
 	"lcName":"cloneworkflowwithtags_217791038970130",
-	"modifiedTime":1779103902234,
+	"modifiedTime":1779103904188,
 	"name":"cloneWorkflowWithTags_217791038970130",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TKHgu-1",
-			"id":"_TKHgu",
-			"index":0,
+			"id":"n_rVqJ0",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_TKHgu-1",
-			"id":"_DPVO6",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +57,5 @@
 	"tags":[
 		"clone_tag_217791038970130"
 	],
-	"version":0
+	"version":1
 }
