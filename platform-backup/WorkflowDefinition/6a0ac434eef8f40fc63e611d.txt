@@ -6,46 +6,237 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_Xq8Xq",
+			"fromNodeId":"n_wOZQO",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_S1Kif",
+			"toNodeId":"n_cLUN1",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_cLUN1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Ue14W",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Ue14W",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_uCdB9",
 			"type":"next"
 		}
 	],
 	"id":"6a0ac434eef8f40fc63e611d",
 	"lastModifiedBy":39,
 	"lcName":"appenddatatocsvlocalkqdvsrqesu",
-	"modifiedTime":1779090484922,
+	"modifiedTime":1779090631434,
 	"name":"AppendDataToCSVLocalkqdvsrQeSu",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2302,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Xq8Xq-1",
-			"id":"_Xq8Xq",
-			"index":0,
+			"id":"n_wOZQO",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"r":{
+							"type":"string",
+							"title":"r"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"files":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"name":{
+										"type":"string",
+										"title":"name"
+									},
+									"department":{
+										"type":"string",
+										"title":"department"
+									},
+									"age":{
+										"type":"integer",
+										"title":"age"
+									}
+								},
+								"additionalProperties":false
+							},
+							"title":"files"
+						},
+						"append":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"name":{
+										"type":"string",
+										"title":"name"
+									},
+									"department":{
+										"type":"string",
+										"title":"department"
+									},
+									"age":{
+										"type":"integer",
+										"title":"age"
+									}
+								},
+								"additionalProperties":false
+							},
+							"title":"append"
+						},
+						"headers":{
+							"type":"array",
+							"items":{
+								"type":"string"
+							},
+							"title":"headers"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"csv_by_unifyapps",
+				"resourceVersion":2178,
+				"resourceName":"csv_by_unifyapps_list_to_csv_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Xq8Xq-1",
-			"id":"_S1Kif",
-			"index":0,
+			"id":"n_cLUN1",
+			"index":2,
+			"inputs":{
+				"fileName":"file",
+				"delimiter":";",
+				"staticHeaders":[
+					{
+						"key":"1",
+						"value":"{{ n_wOZQO.outputs.files[0].name }}"
+					},
+					{
+						"key":"2",
+						"value":"{{ n_wOZQO.outputs.files[0].department }}"
+					},
+					{
+						"key":"3",
+						"value":"{{ n_wOZQO.outputs.files[0].age }}"
+					}
+				],
+				"skipHeaderRow":false,
+				"headerType":"DYNAMIC",
+				"encoding":"UTF-8",
+				"keepExactFileName":false,
+				"dataSource":"{{ n_wOZQO.outputs.files }}",
+				"fileType":"txt",
+				"dynamicHeaders":{
+					"source":"{{ n_wOZQO.outputs.headers }}",
+					"ua:type":"mappedArray",
+					"items":"{{ n_wOZQO.outputs.headers[0] }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"CSV by UnifyApps",
+			"title":"Write data to CSV file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"csv_by_unifyapps",
+				"resourceVersion":2166,
+				"resourceName":"csv_by_unifyapps_append_list_to_csv_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Xq8Xq-1",
+			"id":"n_Ue14W",
+			"index":3,
+			"inputs":{
+				"fileDetails":"{{ n_cLUN1.outputs.fileDetails }}",
+				"delimiter":"\\u0020",
+				"staticHeaders":[
+					{
+						"key":"1",
+						"value":"{{ n_wOZQO.outputs.append[0].name }}"
+					},
+					{
+						"key":"2",
+						"value":"{{ n_wOZQO.outputs.append[0].department }}"
+					},
+					{
+						"key":"3",
+						"value":"{{ n_wOZQO.outputs.append[0].age }}"
+					}
+				],
+				"skipHeaderRow":false,
+				"headerType":"STATIC",
+				"encoding":"UTF-8",
+				"dataSource":"{{ n_wOZQO.outputs.append }}"
+			},
+			"skip":false,
+			"subTitle":"CSV by UnifyApps",
+			"title":"Append data to CSV file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2303,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_Xq8Xq-1",
+			"id":"n_uCdB9",
+			"index":4,
+			"inputs":{
+				"result":{
+					"r":"{{ n_Ue14W.outputs.fileDetails }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +247,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
