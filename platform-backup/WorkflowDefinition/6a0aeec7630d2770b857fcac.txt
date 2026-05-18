@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779101383798,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_8oZCR",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_JZBxh",
+			"type":"next"
+		}
+	],
+	"id":"6a0aeec7630d2770b857fcac",
+	"lastModifiedBy":39,
+	"lcName":"fetch records",
+	"modifiedTime":1779101383798,
+	"name":"fetch records",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_8oZCR-1",
+			"id":"_8oZCR",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_8oZCR-1",
+			"id":"_JZBxh",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
