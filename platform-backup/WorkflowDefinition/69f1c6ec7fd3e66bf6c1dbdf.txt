@@ -16,18 +16,18 @@
 			"fromNodeId":"n_lufhb",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_F1BZE",
+			"toNodeId":"n_caDZ6",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_F1BZE",
+			"fromNodeId":"n_caDZ6",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_HG8k0",
+			"toNodeId":"n_3tJmI",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_HG8k0",
+			"fromNodeId":"n_3tJmI",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_DJCyh",
@@ -37,7 +37,7 @@
 	"id":"69f1c6ec7fd3e66bf6c1dbdf",
 	"lastModifiedBy":39,
 	"lcName":"eded",
-	"modifiedTime":1779097388380,
+	"modifiedTime":1779097714549,
 	"name":"eded",
 	"nodes":[
 		{
@@ -152,10 +152,10 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_cVWZY-1",
-			"id":"n_F1BZE",
+			"id":"n_caDZ6",
 			"index":3,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
@@ -366,13 +366,13 @@
 										"integer"
 									],
 									"properties":{
-										"k1":{
+										"test1234":{
 											"type":"string",
-											"title":"K 1"
+											"title":"Test 1234"
 										}
 									},
 									"required":[
-										"k1"
+										"test1234"
 									]
 								}
 							}
@@ -384,7 +384,7 @@
 				"createList":{
 					"ua:type":"mappedArray",
 					"items":{
-						"k1":"345"
+						"test1234":"gg"
 					}
 				},
 				"ua:title":"List",
@@ -402,13 +402,13 @@
 							"items":{
 								"type":"object",
 								"properties":{
-									"k1":{
+									"test1234":{
 										"type":"string",
-										"title":"K 1"
+										"title":"Test 1234"
 									}
 								},
 								"required":[
-									"k1"
+									"test1234"
 								]
 							}
 						}
@@ -428,16 +428,18 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_cVWZY-1",
-			"id":"n_HG8k0",
+			"id":"n_3tJmI",
 			"index":4,
 			"inputs":{
-				"itemToAdd":"{{ n_lufhb.outputs }}",
+				"itemToAdd":{
+					"test1234":"{{ n_lufhb.outputs.k1 }}"
+				},
 				"insertLocation":"START",
 				"captureAddedItem":false,
-				"listName":"{{ n_F1BZE.outputs.items[0] }}"
+				"listName":"{{ n_caDZ6.outputs.items[0] }}"
 			},
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
@@ -480,5 +482,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":5
 }
