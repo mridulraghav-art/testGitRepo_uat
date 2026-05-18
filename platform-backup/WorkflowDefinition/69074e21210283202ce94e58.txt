@@ -39,7 +39,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1779092784303,
+	"modifiedTime":1779092942244,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -71,7 +71,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_DF2ce",
@@ -290,15 +290,15 @@
 											"title":"K 1",
 											"default":"v1"
 										},
-										"K2":{
+										"K1":{
 											"type":"string",
-											"title":"K 2",
+											"title":"K 1",
 											"default":"V2"
 										}
 									},
 									"required":[
 										"k1",
-										"K2"
+										"K1"
 									]
 								}
 							}
@@ -311,7 +311,7 @@
 					"ua:type":"mappedArray",
 					"items":{
 						"k1":"v1",
-						"K2":"K2"
+						"K1":"V2"
 					}
 				},
 				"ua:title":"List",
@@ -334,15 +334,15 @@
 										"title":"K 1",
 										"default":"v1"
 									},
-									"K2":{
+									"K1":{
 										"type":"string",
-										"title":"K 2",
+										"title":"K 1",
 										"default":"V2"
 									}
 								},
 								"required":[
 									"k1",
-									"K2"
+									"K1"
 								]
 							}
 						}
@@ -362,7 +362,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_Hp2fS",
@@ -452,5 +452,5 @@
 	"tags":[
 		
 	],
-	"version":39
+	"version":40
 }
