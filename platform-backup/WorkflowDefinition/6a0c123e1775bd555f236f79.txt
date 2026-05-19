@@ -6,46 +6,64 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_qRIep",
+			"fromNodeId":"n_NMfxX",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_d53EH",
+			"toNodeId":"n_Pvg1l",
 			"type":"next"
 		}
 	],
 	"id":"6a0c123e1775bd555f236f79",
 	"lastModifiedBy":39,
 	"lcName":"example",
-	"modifiedTime":1779175998268,
+	"modifiedTime":1779176019387,
 	"name":"example",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_qRIep-1",
-			"id":"_qRIep",
-			"index":0,
+			"id":"n_NMfxX",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"stop"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_qRIep-1",
-			"id":"_d53EH",
-			"index":0,
+			"id":"n_Pvg1l",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -59,5 +77,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
