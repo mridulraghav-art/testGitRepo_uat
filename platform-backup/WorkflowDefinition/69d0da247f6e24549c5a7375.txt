@@ -9,11 +9,11 @@
 			"fromNodeId":"n_VMQy8",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_2uPNy",
+			"toNodeId":"n_5qfCG",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_2uPNy",
+			"fromNodeId":"n_5qfCG",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_i7L8s",
@@ -23,7 +23,7 @@
 	"id":"69d0da247f6e24549c5a7375",
 	"lastModifiedBy":39,
 	"lcName":"example_http",
-	"modifiedTime":1775554014700,
+	"modifiedTime":1779160386652,
 	"name":"example_http",
 	"nodes":[
 		{
@@ -49,23 +49,35 @@
 		},
 		{
 			"context":{
-				"appName":"standard_entities",
-				"resourceVersion":4637,
-				"resourceName":"standard_entities_manage_project_collaborators",
+				"appName":"custom_http_endpoint",
+				"resourceVersion":2003,
+				"resourceName":"custom_http_endpoint_execute_soap",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_XMbVa-1",
-			"id":"n_2uPNy",
+			"id":"n_5qfCG",
 			"index":2,
 			"inputs":{
-				"userIds":[]
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"POST",
+				"version":"v1.2",
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"path":"/",
+				"baseUrl":"https://www.crcind.com/csp/samples/SOAP.Demo.cls?WSDL",
+				"responseContentType":"application/soap+xml",
+				"authType":"CUSTOM",
+				"requestContentType":"application/soap+xml",
+				"isNestedHeaders":false
 			},
 			"skip":false,
-			"subTitle":"Standard entities by UnifyApps",
-			"title":"Add project collaborators",
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"Execute SOAP request",
 			"type":"ACTION"
 		},
 		{
@@ -76,13 +88,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_XMbVa-1",
 			"id":"n_i7L8s",
 			"index":3,
 			"inputs":{
-				"result":"{{ n_2uPNy.outputs }}"
+				"result":"{{ n_5qfCG.outputs }}"
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -104,5 +116,5 @@
 		}
 	},
 	"standard":false,
-	"version":9
+	"version":10
 }
