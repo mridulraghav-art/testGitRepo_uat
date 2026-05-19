@@ -1,53 +1,80 @@
 {
 	"appsUsed":[
-		
+		"slack"
 	],
 	"createdTime":1779175969267,
 	"deleted":false,
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_yhjQ9",
+			"fromNodeId":"n_35RSM",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_8rKAf",
+			"toNodeId":"n_z5bc6",
 			"type":"next"
 		}
 	],
 	"id":"6a0c12215f4a391c5d197e1b",
 	"lastModifiedBy":39,
 	"lcName":"filteraddmultipleorconditions_217791759629680",
-	"modifiedTime":1779175969267,
+	"modifiedTime":1779175977597,
 	"name":"filterAddMultipleOrConditions_217791759629680",
 	"nodes":[
 		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":59,
+				"resourceName":"schedule_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_yhjQ9-1",
-			"id":"_yhjQ9",
-			"index":0,
+			"id":"n_35RSM",
+			"index":1,
+			"inputs":{
+				"cron":"INTERVAL",
+				"sequential":false,
+				"interval":15,
+				"frequency":"MINUTES"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"slack",
+				"resourceVersion":4566,
+				"connectionId":"662f8ddb91d8ba4394d0cce6",
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_yhjQ9-1",
-			"id":"_8rKAf",
-			"index":0,
+			"id":"n_z5bc6",
+			"index":2,
+			"inputs":{
+				"link_names":true,
+				"mrkdwn":true
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Slack",
+			"title":"Post message",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
 	"projectId":21,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -61,5 +88,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
