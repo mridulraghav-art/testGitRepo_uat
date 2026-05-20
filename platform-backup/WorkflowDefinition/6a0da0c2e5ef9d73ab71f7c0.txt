@@ -7,52 +7,92 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_80Uf1",
+			"fromNodeId":"n_UCd9K",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_pWyDV",
+			"toNodeId":"n_DY80d",
 			"type":"next"
 		}
 	],
 	"id":"6a0da0c2e5ef9d73ab71f7c0",
 	"lastModifiedBy":39,
 	"lcName":"storage_by_updaterecordsbyquery_mandatory217792779114620",
-	"modifiedTime":1779278018442,
+	"modifiedTime":1779278044970,
 	"name":"Storage_by_UpdateRecordsByQuery_Mandatory217792779114620",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_80Uf1-1",
-			"id":"_80Uf1",
-			"index":0,
+			"id":"n_UCd9K",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4153,
+				"resourceName":"storage_by_unifyapps_update_records",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_80Uf1-1",
-			"id":"_pWyDV",
-			"index":0,
+			"id":"n_DY80d",
+			"index":2,
+			"inputs":{
+				"numberOfRecordsToUpdate":"MULTIPLE",
+				"object_type":"at3bii",
+				"skipIfBlank":false,
+				"updateFields":[
+					{
+						"fieldName":"properties.number_field",
+						"actionType":"SET",
+						"setValue":"100"
+					}
+				],
+				"page":{
+					"offset":0,
+					"limit":20
+				},
+				"skipSchemaValidation":true,
+				"unsetIfNull":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update records by query",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +100,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":3
 }
