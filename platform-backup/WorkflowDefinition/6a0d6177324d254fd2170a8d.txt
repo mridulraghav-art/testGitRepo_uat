@@ -6,46 +6,133 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_eSiaA",
+			"fromNodeId":"n_Ka4EQ",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_HyGvp",
+			"toNodeId":"n_kVjJa",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_kVjJa",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_kassB",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_kassB",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_JpDW6",
 			"type":"next"
 		}
 	],
 	"id":"6a0d6177324d254fd2170a8d",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1779261815234,
+	"modifiedTime":1779262125128,
 	"name":"test",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2311,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_eSiaA-1",
-			"id":"_eSiaA",
-			"index":0,
+			"id":"n_Ka4EQ",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":2110,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_eSiaA-1",
-			"id":"_HyGvp",
-			"index":0,
+			"id":"n_kVjJa",
+			"index":2,
+			"inputs":{
+				"fileName":"file.pdf",
+				"url":"https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":3470,
+				"resourceName":"utility_by_unifyapps_compress_media",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_eSiaA-1",
+			"id":"n_kassB",
+			"index":3,
+			"inputs":{
+				"imageDPI":150,
+				"fileDetails":"{{ n_kVjJa.outputs.fileDetails }}",
+				"outputQuality":0.8,
+				"bitRate":800000,
+				"removeMetadata":true,
+				"scale":1,
+				"removeRevisions":true,
+				"compressionLevel":2,
+				"contentType":"pdf",
+				"imageQuality":0.7
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Compress media content",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2312,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_eSiaA-1",
+			"id":"n_JpDW6",
+			"index":4,
+			"inputs":{
+				"result":"{{ n_kassB.outputs.fileDetails }}"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +143,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
