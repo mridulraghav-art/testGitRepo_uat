@@ -4,14 +4,14 @@
 	],
 	"createdTime":1778830946764,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1778833665534,
+		"deployedAt":1778834167222,
 		"deployedBy":-1,
-		"deployedDefinitionId":"6a06d901060bf33c29a3c825",
+		"deployedDefinitionId":"6a06daf7060bf33c29a46094",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":20
+		"version":3,
+		"workflowVersion":22
 	},
 	"edges":[
 		{
@@ -267,7 +267,7 @@
 	"id":"6a0369f994a00324c906e69b",
 	"lastModifiedBy":-1,
 	"lcName":"lookup copilot",
-	"modifiedTime":1778834167078,
+	"modifiedTime":1779273431949,
 	"name":"Lookup Copilot",
 	"nodes":[
 		{
@@ -278,8 +278,8 @@
 			},
 			"context":{
 				"appName":"callables",
-				"resourceVersion":3861,
-				"resourceName":"callables_from_automation"
+				"resourceVersion":841,
+				"resourceName":"callables_from_interface"
 			},
 			"debug":false,
 			"dirty":false,
@@ -289,109 +289,116 @@
 			"index":1,
 			"inputs":{
 				"result":{
-					"type":"object",
 					"additionalProperties":false,
-					"required":[],
+					"type":"object",
+					"ua:modal":{
+						"field_type":"STRING",
+						"is_optional":true
+					},
 					"properties":{
 						"type":{
 							"type":"string",
-							"title":"Type"
+							"title":"type"
+						},
+						"cursor":{
+							"type":"object",
+							"properties":{},
+							"title":"cursor",
+							"additionalProperties":false,
+							"required":[]
+						},
+						"hasMore":{
+							"type":"boolean",
+							"title":"hasMore"
 						},
 						"object":{
 							"type":"object",
-							"properties":{},
-							"additionalProperties":false,
-							"title":"Object"
+							"title":"object"
 						},
 						"objects":{
 							"type":"array",
 							"items":{
 								"type":"object",
 								"properties":{},
-								"additionalProperties":false
+								"additionalProperties":false,
+								"required":[]
 							},
-							"title":"Objects"
-						},
-						"cursor":{
-							"type":"object",
-							"properties":{},
-							"additionalProperties":false,
-							"title":"Cursor"
-						},
-						"hasMore":{
-							"type":"boolean",
-							"title":"Has More"
+							"title":"objects"
 						}
 					},
 					"dynamic":true
 				},
+				"callableInterfaceId":"6a0c5e18336c6166b99eb938",
 				"setup":{
-					"type":"object",
 					"additionalProperties":false,
+					"type":"object",
 					"required":[],
+					"ua:modal":{
+						"field_type":"STRING",
+						"is_optional":true
+					},
 					"properties":{
 						"keys":{
 							"type":"array",
 							"items":{
 								"type":"string"
 							},
-							"title":"Keys"
-						},
-						"type":{
-							"type":"string",
-							"title":"Type"
+							"title":"keys"
 						},
 						"filter":{
 							"type":"object",
 							"properties":{},
+							"title":"filter",
 							"additionalProperties":false,
-							"title":"Filter"
+							"required":[]
 						},
-						"sorts":{
-							"type":"array",
-							"items":{
-								"type":"object",
-								"properties":{},
-								"additionalProperties":false
-							},
-							"title":"Sorts"
+						"query":{
+							"type":"string",
+							"title":"query"
+						},
+						"lookupType":{
+							"type":"string",
+							"title":"lookupType"
 						},
 						"page":{
 							"type":"object",
 							"properties":{
 								"offset":{
 									"type":"integer",
-									"title":"Offset"
+									"title":"offset"
 								},
 								"limit":{
 									"type":"integer",
-									"title":"Limit"
+									"title":"limit"
 								}
 							},
-							"additionalProperties":false,
-							"title":"Page",
-							"required":[]
+							"title":"page",
+							"additionalProperties":false
 						},
-						"lookupType":{
+						"type":{
 							"type":"string",
-							"title":"Lookup Type"
+							"title":"type"
 						},
-						"query":{
-							"type":"string",
-							"title":"Query"
+						"sorts":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"sorts"
 						},
 						"options":{
 							"type":"object",
-							"properties":{},
-							"additionalProperties":false,
-							"title":"Options"
+							"title":"options"
 						}
 					}
 				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
-			"title":"Trigger via automation",
+			"title":"Trigger interface",
 			"trigger":{
 				"type":"CALLABLE"
 			},
@@ -471,23 +478,23 @@
 					"additionalProperties":false,
 					"required":[],
 					"properties":{
-						"aiagentList":{
-							"type":"array",
-							"items":{
-								"type":"string"
-							},
-							"title":"Aiagent List"
-						},
 						"llmList":{
 							"type":"array",
 							"items":{
 								"type":"string"
 							},
-							"title":"Llm"
+							"title":"llmList"
+						},
+						"ai_agent_list":{
+							"type":"array",
+							"items":{
+								"type":"string"
+							},
+							"title":"ai_agent_list"
 						}
 					}
 				},
-				"code":"def aiAgentList =[\n  \"id\",\n  \"properties.name\",\n  \"properties.avatarUrl\",\n  \"entityType\",\n  \"properties.agentType\",\n  \"properties.workflowGPTDetails\",\n  \"properties.workflowDefinition\",\n  \"properties.responseGenerationSettings\",\n  \"properties.voiceSettings\",\n  \"properties.conversationStarters\",\n  \"properties.conversationPlaceholder\",\n  \"properties.description\",\n  \"properties.multiAgentConfig\",\n  \"properties.defaultTools\",\n  \"properties.enableDocumentVisionByDefault\",\n  \"properties.topicExecutionSettings\",\n  \"properties.dictationSettings\"\n]\n\ndef llmList = [\n  'properties.name', 'properties.iconUrl',\n  'properties.description', 'properties.modelGroup'\n]\n\n\nreturn [\n  'aiAgentList': aiAgentList,\n  'llmList': llmList\n]",
+				"code":"def ai_agent_list =[\n  \"id\",\n  \"properties.name\",\n  \"properties.avatarUrl\",\n  \"entityType\",\n  \"properties.agentType\",\n  \"properties.workflowGPTDetails\",\n  \"properties.workflowDefinition\",\n  \"properties.responseGenerationSettings\",\n  \"properties.voiceSettings\",\n  \"properties.conversationStarters\",\n  \"properties.conversationPlaceholder\",\n  \"properties.description\",\n  \"properties.multiAgentConfig\",\n  \"properties.defaultTools\",\n  \"properties.enableDocumentVisionByDefault\",\n  \"properties.topicExecutionSettings\",\n  \"properties.dictationSettings\",\n  'standard',\n  'version',\n  'deleted'\n]\n\ndef llmList = [\n  'id',\n  'properties.name', 'properties.iconUrl',\n  'properties.description', 'properties.modelGroup',\n  'standard',\n  'version',\n  'deleted'\n]\n\n\nreturn [\n  'ai_agent_list': ai_agent_list,\n  'llmList': llmList\n]",
 				"compile_static":false,
 				"captureStdOutput":false
 			},
@@ -640,9 +647,9 @@
 				"lookupType":"{{ n_wBnzu.outputs.lookupType }}",
 				"type":"ByKeys",
 				"fields":{
-					"source":"{{ n_H2CFV.outputs.result.aiagentList }}",
 					"ua:type":"mappedArray",
-					"items":"{{ n_H2CFV.outputs.result.aiagentList[0] }}"
+					"source":"{{ n_H2CFV.outputs.result.ai_agent_list }}",
+					"items":"{{ n_H2CFV.outputs.result.ai_agent_list[0] }}"
 				}
 			},
 			"skip":false,
@@ -651,6 +658,11 @@
 			"type":"ACTION"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.parameters.ai_agent_list.items"
+				]
+			},
 			"context":{
 				"appName":"code_by_unifyapps",
 				"resourceVersion":1209,
@@ -691,14 +703,26 @@
 							"properties":{},
 							"additionalProperties":false,
 							"title":"Response"
+						},
+						"ai_agent_list":{
+							"type":"array",
+							"items":{
+								"type":"string"
+							},
+							"title":"Ai Agent List"
 						}
 					}
 				},
-				"code":"return [\n  'type':response.type,\n  'object':response.objects\n]",
+				"code":"def response     = binding.hasVariable('response')      ? binding.getVariable('response')      : null\ndef agentFields  = binding.hasVariable('ai_agent_list') ? binding.getVariable('ai_agent_list') : []\ndef llmFields    = binding.hasVariable('llmList')       ? binding.getVariable('llmList')       : []\n\n// Pre-tokenize whitelists once so each object doesn't re-split paths\ndef agentPaths = agentFields.collect { it.tokenize('.') }\ndef llmPaths   = llmFields.collect { it.tokenize('.') }\n\n// Read a nested value from `source` using a pre-tokenized path like ['properties', 'name']\ndef getPath = { source, parts ->\n    def cur = source\n    for (p in parts) {\n        if (cur == null) return null\n        cur = cur[p]\n    }\n    return cur\n}\n\n// Write a value into `target` at a pre-tokenized path, creating nested maps as needed\ndef setPath = { target, parts, value ->\n    if (parts.isEmpty()) return\n    def cur = target\n    for (int i = 0; i < parts.size() - 1; i++) {\n        def p = parts[i]\n        if (!(cur[p] instanceof Map)) cur[p] = [:]\n        cur = cur[p]\n    }\n    cur[parts[-1]] = value\n}\n\n// Pick allowed fields out of an object, preserving the nesting in the output\ndef filterItem = { obj, paths ->\n    def picked = [:]\n    if (obj != null && paths != null) {\n        paths.each { parts ->\n            def v = getPath(obj, parts)\n            if (v != null) setPath(picked, parts, v)\n        }\n    }\n    return picked\n}\n\n// Decide which whitelist applies per object — agents have entityType \"ai_agent\"; models don't\ndef choosePaths = { obj ->\n    return obj?.entityType == 'ai_agent' ? agentPaths : llmPaths\n}\n\n// Filter objects (handles both List and Map shapes of `response.objects`)\ndef rawObjects = response?.objects\ndef filteredObjects\nif (rawObjects instanceof List) {\n    filteredObjects = rawObjects.collect { filterItem(it, choosePaths(it)) }\n} else if (rawObjects instanceof Map) {\n    filteredObjects = [:]\n    rawObjects.each { k, obj -> filteredObjects[k] = filterItem(obj, choosePaths(obj)) }\n} else {\n    filteredObjects = [:]\n}\n\nreturn [\n    'type'   : response?.type,\n    'object' : filteredObjects\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
-					"response":"{{ n_w8jGa.outputs.response }}"
+					"response":"{{ n_w8jGa.outputs.response }}",
+					"ai_agent_list":{
+						"source":"{{ n_H2CFV.outputs.result.ai_agent_list }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_H2CFV.outputs.result.ai_agent_list[0] }}"
+					}
 				}
 			},
 			"skip":false,
@@ -796,6 +820,11 @@
 			"type":"ACTION"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.parameters.llmList.items"
+				]
+			},
 			"context":{
 				"appName":"code_by_unifyapps",
 				"resourceVersion":1209,
@@ -836,14 +865,26 @@
 							"properties":{},
 							"additionalProperties":false,
 							"title":"Response"
+						},
+						"llmList":{
+							"type":"array",
+							"items":{
+								"type":"string"
+							},
+							"title":"Llm List"
 						}
 					}
 				},
-				"code":"return [\n  'type':response.type,\n  'object':response.objects\n]",
+				"code":"def response     = binding.hasVariable('response')      ? binding.getVariable('response')      : null\ndef agentFields  = binding.hasVariable('ai_agent_list') ? binding.getVariable('ai_agent_list') : []\ndef llmFields    = binding.hasVariable('llmList')       ? binding.getVariable('llmList')       : []\n\n// Pre-tokenize whitelists once so each object doesn't re-split paths\ndef agentPaths = agentFields.collect { it.tokenize('.') }\ndef llmPaths   = llmFields.collect { it.tokenize('.') }\n\n// Read a nested value from `source` using a pre-tokenized path like ['properties', 'name']\ndef getPath = { source, parts ->\n    def cur = source\n    for (p in parts) {\n        if (cur == null) return null\n        cur = cur[p]\n    }\n    return cur\n}\n\n// Write a value into `target` at a pre-tokenized path, creating nested maps as needed\ndef setPath = { target, parts, value ->\n    if (parts.isEmpty()) return\n    def cur = target\n    for (int i = 0; i < parts.size() - 1; i++) {\n        def p = parts[i]\n        if (!(cur[p] instanceof Map)) cur[p] = [:]\n        cur = cur[p]\n    }\n    cur[parts[-1]] = value\n}\n\n// Pick allowed fields out of an object, preserving the nesting in the output\ndef filterItem = { obj, paths ->\n    def picked = [:]\n    if (obj != null && paths != null) {\n        paths.each { parts ->\n            def v = getPath(obj, parts)\n            if (v != null) setPath(picked, parts, v)\n        }\n    }\n    return picked\n}\n\n// Decide which whitelist applies per object — agents have entityType \"ai_agent\"; models don't\ndef choosePaths = { obj ->\n    return obj?.entityType == 'ai_agent' ? agentPaths : llmPaths\n}\n\n// Filter objects (handles both List and Map shapes of `response.objects`)\ndef rawObjects = response?.objects\ndef filteredObjects\nif (rawObjects instanceof List) {\n    filteredObjects = rawObjects.collect { filterItem(it, choosePaths(it)) }\n} else if (rawObjects instanceof Map) {\n    filteredObjects = [:]\n    rawObjects.each { k, obj -> filteredObjects[k] = filterItem(obj, choosePaths(obj)) }\n} else {\n    filteredObjects = [:]\n}\n\nreturn [\n    'type'   : response?.type,\n    'object': filteredObjects\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
-					"response":"{{ n_KNJlr.outputs.response }}"
+					"response":"{{ n_KNJlr.outputs.response }}",
+					"llmList":{
+						"source":"{{ n_H2CFV.outputs.result.llmList }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_H2CFV.outputs.result.llmList[0] }}"
+					}
 				}
 			},
 			"skip":false,
@@ -1117,9 +1158,9 @@
 				},
 				"type":"ByQuery",
 				"fields":{
-					"source":"{{ n_H2CFV.outputs.result.aiagentList }}",
 					"ua:type":"mappedArray",
-					"items":"{{ n_H2CFV.outputs.result.aiagentList[0] }}"
+					"source":"{{ n_H2CFV.outputs.result.ai_agent_list }}",
+					"items":"{{ n_H2CFV.outputs.result.ai_agent_list[0] }}"
 				}
 			},
 			"skip":false,
@@ -1128,6 +1169,11 @@
 			"type":"ACTION"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.parameters.ai_agent_list.items"
+				]
+			},
 			"context":{
 				"appName":"code_by_unifyapps",
 				"resourceVersion":1209,
@@ -1181,14 +1227,26 @@
 							"properties":{},
 							"additionalProperties":false,
 							"title":"Response"
+						},
+						"ai_agent_list":{
+							"type":"array",
+							"items":{
+								"type":"string"
+							},
+							"title":"Ai Agent List"
 						}
 					}
 				},
-				"code":"return [\n  'type':response.type,\n  'objects':response.objects,\n  'cursor':response.cursor,\n  'hasMore':response.hasMore\n]",
+				"code":"def response     = binding.hasVariable('response')      ? binding.getVariable('response')      : null\ndef agentFields  = binding.hasVariable('ai_agent_list') ? binding.getVariable('ai_agent_list') : []\ndef llmFields    = binding.hasVariable('llmList')       ? binding.getVariable('llmList')       : []\n\n// Pre-tokenize whitelists once so each object doesn't re-split paths\ndef agentPaths = agentFields.collect { it.tokenize('.') }\ndef llmPaths   = llmFields.collect { it.tokenize('.') }\n\n// Read a nested value from `source` using a pre-tokenized path like ['properties', 'name']\ndef getPath = { source, parts ->\n    def cur = source\n    for (p in parts) {\n        if (cur == null) return null\n        cur = cur[p]\n    }\n    return cur\n}\n\n// Write a value into `target` at a pre-tokenized path, creating nested maps as needed\ndef setPath = { target, parts, value ->\n    if (parts.isEmpty()) return\n    def cur = target\n    for (int i = 0; i < parts.size() - 1; i++) {\n        def p = parts[i]\n        if (!(cur[p] instanceof Map)) cur[p] = [:]\n        cur = cur[p]\n    }\n    cur[parts[-1]] = value\n}\n\n// Pick allowed fields out of an object, preserving the nesting in the output\ndef filterItem = { obj, paths ->\n    def picked = [:]\n    if (obj != null && paths != null) {\n        paths.each { parts ->\n            def v = getPath(obj, parts)\n            if (v != null) setPath(picked, parts, v)\n        }\n    }\n    return picked\n}\n\n// Decide which whitelist applies per object — agents have entityType \"ai_agent\"; models don't\ndef choosePaths = { obj ->\n    return obj?.entityType == 'ai_agent' ? agentPaths : llmPaths\n}\n\n// Filter objects (handles both List and Map shapes of `response.objects`)\ndef rawObjects = response?.objects\ndef filteredObjects\nif (rawObjects instanceof List) {\n    filteredObjects = rawObjects.collect { filterItem(it, choosePaths(it)) }\n} else if (rawObjects instanceof Map) {\n    filteredObjects = [:]\n    rawObjects.each { k, obj -> filteredObjects[k] = filterItem(obj, choosePaths(obj)) }\n} else {\n    filteredObjects = [:]\n}\n\nreturn [\n    'type'   : response?.type,\n    'cursor' : response?.cursor,\n    'hasMore': response?.hasMore,\n    'objects': filteredObjects\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
-					"response":"{{ n_TUmSf.outputs.response }}"
+					"response":"{{ n_TUmSf.outputs.response }}",
+					"ai_agent_list":{
+						"source":"{{ n_H2CFV.outputs.result.ai_agent_list }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_H2CFV.outputs.result.ai_agent_list[0] }}"
+					}
 				}
 			},
 			"skip":false,
@@ -1307,6 +1365,11 @@
 			"type":"ACTION"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.parameters.llmList.items"
+				]
+			},
 			"context":{
 				"appName":"code_by_unifyapps",
 				"resourceVersion":1209,
@@ -1360,14 +1423,26 @@
 							"properties":{},
 							"additionalProperties":false,
 							"title":"Response"
+						},
+						"llmList":{
+							"type":"array",
+							"items":{
+								"type":"string"
+							},
+							"title":"Llm List"
 						}
 					}
 				},
-				"code":"return [\n  'type':response.type,\n  'objects':response.objects,\n  'cursor':response.cursor,\n  'hasMore':response.hasMore\n]",
+				"code":"def response     = binding.hasVariable('response')      ? binding.getVariable('response')      : null\ndef agentFields  = binding.hasVariable('ai_agent_list') ? binding.getVariable('ai_agent_list') : []\ndef llmFields    = binding.hasVariable('llmList')       ? binding.getVariable('llmList')       : []\n\n// Pre-tokenize whitelists once so each object doesn't re-split paths\ndef agentPaths = agentFields.collect { it.tokenize('.') }\ndef llmPaths   = llmFields.collect { it.tokenize('.') }\n\n// Read a nested value from `source` using a pre-tokenized path like ['properties', 'name']\ndef getPath = { source, parts ->\n    def cur = source\n    for (p in parts) {\n        if (cur == null) return null\n        cur = cur[p]\n    }\n    return cur\n}\n\n// Write a value into `target` at a pre-tokenized path, creating nested maps as needed\ndef setPath = { target, parts, value ->\n    if (parts.isEmpty()) return\n    def cur = target\n    for (int i = 0; i < parts.size() - 1; i++) {\n        def p = parts[i]\n        if (!(cur[p] instanceof Map)) cur[p] = [:]\n        cur = cur[p]\n    }\n    cur[parts[-1]] = value\n}\n\n// Pick allowed fields out of an object, preserving the nesting in the output\ndef filterItem = { obj, paths ->\n    def picked = [:]\n    if (obj != null && paths != null) {\n        paths.each { parts ->\n            def v = getPath(obj, parts)\n            if (v != null) setPath(picked, parts, v)\n        }\n    }\n    return picked\n}\n\n// Decide which whitelist applies per object — agents have entityType \"ai_agent\"; models don't\ndef choosePaths = { obj ->\n    return obj?.entityType == 'ai_agent' ? agentPaths : llmPaths\n}\n\n// Filter objects (handles both List and Map shapes of `response.objects`)\ndef rawObjects = response?.objects\ndef filteredObjects\nif (rawObjects instanceof List) {\n    filteredObjects = rawObjects.collect { filterItem(it, choosePaths(it)) }\n} else if (rawObjects instanceof Map) {\n    filteredObjects = [:]\n    rawObjects.each { k, obj -> filteredObjects[k] = filterItem(obj, choosePaths(obj)) }\n} else {\n    filteredObjects = [:]\n}\n\nreturn [\n    'type'   : response?.type,\n    'cursor' : response?.cursor,\n    'hasMore': response?.hasMore,\n    'objects': filteredObjects\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
-					"response":"{{ n_jKo7Z.outputs.response }}"
+					"response":"{{ n_jKo7Z.outputs.response }}",
+					"llmList":{
+						"source":"{{ n_H2CFV.outputs.result.llmList }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_H2CFV.outputs.result.llmList[0] }}"
+					}
 				}
 			},
 			"skip":false,
@@ -1584,5 +1659,5 @@
 		}
 	},
 	"standard":true,
-	"version":22
+	"version":24
 }
