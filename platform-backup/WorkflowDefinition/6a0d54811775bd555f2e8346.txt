@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779258497933,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_oHp4h",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_RWr4G",
+			"type":"next"
+		}
+	],
+	"id":"6a0d54811775bd555f2e8346",
+	"lastModifiedBy":39,
+	"lcName":"ticket checking ",
+	"modifiedTime":1779258497933,
+	"name":"Ticket Checking ",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_oHp4h-1",
+			"id":"_oHp4h",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_oHp4h-1",
+			"id":"_RWr4G",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
