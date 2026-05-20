@@ -6,46 +6,79 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_aK9Dz",
+			"fromNodeId":"n_BPmj7",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_xL21J",
+			"toNodeId":"n_U92Az",
 			"type":"next"
 		}
 	],
 	"id":"6a0d8bbde5ef9d73ab712916",
 	"lastModifiedBy":39,
 	"lcName":"call another autoamtion",
-	"modifiedTime":1779272637059,
+	"modifiedTime":1779272791272,
 	"name":"call another autoamtion",
 	"nodes":[
 		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":59,
+				"resourceName":"schedule_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_aK9Dz-1",
-			"id":"_aK9Dz",
-			"index":0,
+			"id":"n_BPmj7",
+			"index":1,
+			"inputs":{
+				"cron":"INTERVAL",
+				"sequential":false,
+				"interval":15,
+				"frequency":"MINUTES"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2314,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_aK9Dz-1",
-			"id":"_xL21J",
-			"index":0,
+			"id":"n_U92Az",
+			"index":2,
+			"inputs":{
+				"automationId":"6a0d8a7c140a52534c1d5e0a",
+				"runtimeConnections":{},
+				"synchronous":true,
+				"version":"-1",
+				"parameters":{
+					"sfd":"{{ n_BPmj7.outputs.scheduleTime }}",
+					"safdasdf":"{{ n_BPmj7.outputs.scheduleWeek }}",
+					"asfasdfasfdsadf":"{{ n_BPmj7.outputs.scheduleMonth }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +89,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
