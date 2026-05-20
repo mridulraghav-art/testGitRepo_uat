@@ -7,46 +7,104 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_AuP9o",
+			"fromNodeId":"n_M7OTu",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_9BLLQ",
+			"toNodeId":"n_vCrzy",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_vCrzy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ff2T0",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_ff2T0",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_vCrzy",
 			"type":"next"
 		}
 	],
 	"id":"6a0da1285f4a391c5d273133",
 	"lastModifiedBy":39,
 	"lcName":"multiple action node with incomplete action  - 21779277905113",
-	"modifiedTime":1779278126730,
+	"modifiedTime":1779278138659,
 	"name":"Multiple action node with incomplete action  - 21779277905113",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_AuP9o-1",
-			"id":"_AuP9o",
-			"index":0,
+			"id":"n_M7OTu",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"loop",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_AuP9o-1",
-			"id":"_9BLLQ",
-			"index":0,
+			"id":"n_vCrzy",
+			"index":2,
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"Select an action",
+			"type":"LOOP"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_vCrzy@_AuP9o-1@l",
+			"id":"n_ff2T0",
+			"index":3,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +119,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
