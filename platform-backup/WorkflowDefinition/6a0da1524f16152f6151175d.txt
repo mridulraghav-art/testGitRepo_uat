@@ -7,46 +7,129 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_nTJKx",
+			"fromNodeId":"n_rWIr3",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_33BPx",
+			"toNodeId":"n_b0tjd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_b0tjd",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_JNJ3m",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_b0tjd",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_iZ475",
 			"type":"next"
 		}
 	],
 	"id":"6a0da1524f16152f6151175d",
 	"lastModifiedBy":39,
 	"lcName":"single action node with complete input  - 21779277905113",
-	"modifiedTime":1779278168268,
+	"modifiedTime":1779278178360,
 	"name":"Single action node with complete input  - 21779277905113",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_nTJKx-1",
-			"id":"_nTJKx",
-			"index":0,
+			"id":"n_rWIr3",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"if_else",
+				"resourceVersion":63,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_nTJKx-1",
-			"id":"_33BPx",
-			"index":0,
+			"id":"n_b0tjd",
+			"index":2,
+			"inputs":{
+				"filters":[
+					{
+						"property":"Condition field",
+						"filter":{
+							"operator":"EQUAL"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_b0tjd@_nTJKx-1@y",
+			"id":"n_JNJ3m",
+			"index":3,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_b0tjd@_nTJKx-1@n",
+			"id":"n_iZ475",
+			"index":4,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +144,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
