@@ -7,52 +7,90 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_TZYuV",
+			"fromNodeId":"n_967Gh",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_lRiJG",
+			"toNodeId":"n_a5XE8",
 			"type":"next"
 		}
 	],
 	"id":"6a0da0ba324d254fd2198fec",
 	"lastModifiedBy":39,
 	"lcName":"runtestcheck_217792779114620",
-	"modifiedTime":1779278010557,
+	"modifiedTime":1779278037640,
 	"name":"runtestCheck_217792779114620",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TZYuV-1",
-			"id":"_TZYuV",
-			"index":0,
+			"id":"n_967Gh",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2315,
+				"resourceName":"callables_schedule_a_callable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TZYuV-1",
-			"id":"_lRiJG",
-			"index":0,
+			"id":"n_a5XE8",
+			"index":2,
+			"inputs":{
+				"automation_id":"6a0da09de5ef9d73ab71ebd2",
+				"schedule_method":{
+					"schedule_type":"ONE_TIME",
+					"setup_config":{
+						"start_time":"2026-05-20T11:53:54.183Z",
+						"timezone":"Asia/Kolkata",
+						"unit":"MINUTES",
+						"expression":"0 0 * * *"
+					}
+				},
+				"runtimeConnections":{},
+				"cancel_existing":true,
+				"version":"-1",
+				"schedule_name":"Schedule_test_example"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Schedule callable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +98,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":2
 }
