@@ -4,6 +4,15 @@
 	],
 	"createdTime":1779272316037,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1779272693667,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a0d8bf5e5ef9d73ab712b02",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_bYqYK",
@@ -14,6 +23,13 @@
 		},
 		{
 			"fromNodeId":"n_op3zu",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_4obkU",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_4obkU",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_PdK9f",
@@ -61,7 +77,7 @@
 	"id":"6a0d8a7c140a52534c1d5e0a",
 	"lastModifiedBy":39,
 	"lcName":"another callable",
-	"modifiedTime":1779272591652,
+	"modifiedTime":1779272824760,
 	"name":"another callable",
 	"nodes":[
 		{
@@ -71,7 +87,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_PkQBf-1",
 			"id":"n_bYqYK",
@@ -189,15 +205,37 @@
 		},
 		{
 			"context":{
-				"appName":"branch",
+				"appName":"delay",
+				"resourceVersion":58,
+				"resourceName":"delay_for",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_PkQBf-1",
-			"id":"n_PdK9f",
+			"id":"n_4obkU",
 			"index":3,
+			"inputs":{
+				"duration":5,
+				"unit":"SECONDS"
+			},
+			"skip":false,
+			"subTitle":"Delay",
+			"title":"Set delay duration",
+			"type":"DELAY"
+		},
+		{
+			"context":{
+				"appName":"branch",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_PkQBf-1",
+			"id":"n_PdK9f",
+			"index":4,
 			"inputs":{
 				"branches":[
 					{
@@ -234,7 +272,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_PdK9f@_PkQBf-1@1",
 			"id":"n_PdK9f@1",
-			"index":4,
+			"index":5,
 			"inputs":{
 				"name":"Branch 1"
 			},
@@ -254,7 +292,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_PdK9f@_PkQBf-1@1",
 			"id":"n_KF7Bi",
-			"index":5,
+			"index":6,
 			"inputs":{
 				"result":{
 					"asdfsafasf":"{{ n_bYqYK.outputs.sfd }}",
@@ -278,7 +316,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_PdK9f@_PkQBf-1@2",
 			"id":"n_PdK9f@2",
-			"index":6,
+			"index":7,
 			"inputs":{
 				"name":"Branch 2"
 			},
@@ -298,7 +336,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_PdK9f@_PkQBf-1@2",
 			"id":"n_TzVCv",
-			"index":7,
+			"index":8,
 			"inputs":{
 				"result":{
 					"asdfsafasf":"{{ n_op3zu.outputs.vare }}"
@@ -317,11 +355,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_PdK9f@_PkQBf-1@default",
 			"id":"n_8T4SX",
-			"index":8,
+			"index":9,
 			"inputs":{
 				"result":{
 					"asdfsafasf":"{{ __USER__.outputs.id }}"
@@ -347,5 +385,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
