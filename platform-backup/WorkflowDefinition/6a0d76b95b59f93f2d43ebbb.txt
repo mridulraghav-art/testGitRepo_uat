@@ -265,7 +265,7 @@
 	"id":"6a0d76b95b59f93f2d43ebbb",
 	"lastModifiedBy":97894,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779302957049,
+	"modifiedTime":1779303231832,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -276,8 +276,8 @@
 			},
 			"context":{
 				"appName":"callables",
-				"resourceVersion":3522,
-				"resourceName":"callables_from_api"
+				"resourceVersion":3487,
+				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
 			"dirty":false,
@@ -286,235 +286,221 @@
 			"id":"n_JWcBu",
 			"index":1,
 			"inputs":{
-				"request":{
-					"contentType":"application/json"
-				},
-				"endpointType":"REST",
-				"response":[
-					{
-						"status":200,
-						"contentType":"application/json",
-						"textBody":{
-							"type":"string"
-						},
-						"body":{
-							"type":"object",
-							"properties":{
-								"q1":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"failures":{
-												"type":"integer",
-												"title":"failures"
-											},
-											"success":{
-												"type":"integer",
-												"title":"success"
-											},
-											"total_runs":{
-												"type":"integer",
-												"title":"total_runs"
-											},
-											"workflowId":{
-												"type":"string",
-												"title":"workflowId"
-											}
-										},
-										"additionalProperties":false,
-										"required":[]
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"q2":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"workflowId":{
+										"type":"string",
+										"title":"Workflow Id"
 									},
-									"title":"q1"
+									"total_runs":{
+										"type":"integer",
+										"title":"Total Runs"
+									},
+									"success":{
+										"type":"integer",
+										"title":"Success"
+									},
+									"failures":{
+										"type":"integer",
+										"title":"Failures"
+									}
 								},
-								"q2":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"failures":{
-												"type":"integer",
-												"title":"failures"
-											},
-											"success":{
-												"type":"integer",
-												"title":"success"
-											},
-											"total_runs":{
-												"type":"integer",
-												"title":"total_runs"
-											},
-											"workflowId":{
-												"type":"string",
-												"title":"workflowId"
-											}
-										},
-										"additionalProperties":false,
-										"required":[]
-									},
-									"title":"q2"
-								},
-								"q3":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"failures":{
-												"type":"integer",
-												"title":"failures"
-											},
-											"success":{
-												"type":"integer",
-												"title":"success"
-											},
-											"total_runs":{
-												"type":"integer",
-												"title":"total_runs"
-											},
-											"workflowId":{
-												"type":"string",
-												"title":"workflowId"
-											}
-										},
-										"additionalProperties":false,
-										"required":[]
-									},
-									"title":"q3"
-								},
-								"q4":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"p25_latency":{
-												"type":"integer",
-												"title":"p25_latency"
-											},
-											"p50_latency":{
-												"type":"integer",
-												"title":"p50_latency"
-											},
-											"p99_latency":{
-												"type":"number",
-												"title":"p99_latency"
-											},
-											"workflowId":{
-												"type":"string",
-												"title":"workflowId"
-											}
-										},
-										"additionalProperties":false,
-										"required":[]
-									},
-									"title":"q4"
-								},
-								"q5":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"avgRPH":{
-												"type":"number",
-												"title":"avgRPH"
-											},
-											"endPointPath":{
-												"type":"string",
-												"title":"endPointPath"
-											},
-											"avgRPM":{
-												"type":"number",
-												"title":"avgRPM"
-											}
-										},
-										"additionalProperties":false,
-										"required":[]
-									},
-									"title":"q5"
-								},
-								"q6":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"accessProfile":{
-												"type":"string",
-												"title":"accessProfile"
-											},
-											"hour_of_day":{
-												"type":"integer",
-												"title":"hour_of_day"
-											},
-											"request_count":{
-												"type":"integer",
-												"title":"request_count"
-											}
-										},
-										"additionalProperties":false,
-										"required":[]
-									},
-									"title":"q6"
-								},
-								"q7":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"endPointPath":{
-												"type":"string",
-												"title":"endPointPath"
-											},
-											"failureCount":{
-												"type":"integer",
-												"title":"failureCount"
-											},
-											"httpMethod":{
-												"type":"string",
-												"title":"httpMethod"
-											},
-											"statusCode":{
-												"type":"integer",
-												"title":"statusCode"
-											}
-										},
-										"additionalProperties":false,
-										"required":[]
-									},
-									"title":"q7"
-								},
-								"q8":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"failures":{
-												"type":"integer",
-												"title":"failures"
-											},
-											"success":{
-												"type":"integer",
-												"title":"success"
-											},
-											"total_runs":{
-												"type":"integer",
-												"title":"total_runs"
-											}
-										},
-										"additionalProperties":false,
-										"required":[]
-									},
-									"title":"q8"
-								}
+								"additionalProperties":false,
+								"required":[]
 							},
-							"additionalProperties":false
+							"title":"q2"
 						},
-						"namespaces":[]
+						"q3":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"workflowId":{
+										"type":"string",
+										"title":"Workflow Id"
+									},
+									"total_runs":{
+										"type":"integer",
+										"title":"Total Runs"
+									},
+									"success":{
+										"type":"integer",
+										"title":"Success"
+									},
+									"failures":{
+										"type":"integer",
+										"title":"Failures"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q3"
+						},
+						"q4":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"workflowId":{
+										"type":"string",
+										"title":"Workflow Id"
+									},
+									"p25_latency":{
+										"type":"number",
+										"title":"P 25 Latency"
+									},
+									"p50_latency":{
+										"type":"number",
+										"title":"P 50 Latency"
+									},
+									"p99_latency":{
+										"type":"number",
+										"title":"P 99 Latency"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q4"
+						},
+						"q5":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"endPointPath":{
+										"type":"string",
+										"title":"End Point Path"
+									},
+									"avgRPM":{
+										"type":"number",
+										"title":"Avg RPM"
+									},
+									"avgRPH":{
+										"type":"number",
+										"title":"Avg RPH"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q5"
+						},
+						"q6":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"accessProfile":{
+										"type":"string",
+										"title":"Access Profile"
+									},
+									"hour_of_day":{
+										"type":"integer",
+										"title":"Hour Of Day"
+									},
+									"request_count":{
+										"type":"integer",
+										"title":"Request Count"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q6"
+						},
+						"q7":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"endPointPath":{
+										"type":"string",
+										"title":"End Point Path"
+									},
+									"httpMethod":{
+										"type":"string",
+										"title":"Http Method"
+									},
+									"statusCode":{
+										"type":"integer",
+										"title":"Status Code"
+									},
+									"failureCount":{
+										"type":"integer",
+										"title":"Failure Count"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q7"
+						},
+						"q1":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"totalruns":{
+										"type":"integer",
+										"title":"Totalruns"
+									},
+									"failure":{
+										"type":"integer",
+										"title":"Failure"
+									},
+									"success":{
+										"type":"integer",
+										"title":"Success"
+									},
+									"workflowid":{
+										"type":"string",
+										"title":"workflowid"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q1"
+						},
+						"q8":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"total_runs":{
+										"type":"integer",
+										"title":"total_runs"
+									},
+									"success":{
+										"type":"integer",
+										"title":"success"
+									},
+									"failures":{
+										"type":"integer",
+										"title":"failures"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q8"
+						}
 					}
-				],
-				"streamingResponse":false
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
-			"title":"Trigger via API",
+			"title":"Trigger via automation",
 			"trigger":{
 				"type":"CALLABLE"
 			},
@@ -1825,8 +1811,8 @@
 		{
 			"context":{
 				"appName":"callables",
-				"resourceVersion":3532,
-				"resourceName":"callables_return_response_to_api",
+				"resourceVersion":3531,
+				"resourceName":"callables_return_to_automation",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -1836,92 +1822,89 @@
 			"id":"n_RJ9ld",
 			"index":27,
 			"inputs":{
-				"streamingCompleted":true,
-				"responseName":"200_undefined",
-				"body":{
+				"result":{
 					"q1":{
-						"source":"{{ n_cV2zi.outputs.result.out1 }}",
 						"ua:type":"mappedArray",
 						"items":{
-							"failures":"{{ n_cV2zi.outputs.result.out1[0].failures }}",
+							"totalruns":"{{ n_cV2zi.outputs.result.out1[0].total_runs }}",
+							"failure":"{{ n_cV2zi.outputs.result.out1[0].failures }}",
 							"success":"{{ n_cV2zi.outputs.result.out1[0].success }}",
-							"total_runs":"{{ n_cV2zi.outputs.result.out1[0].total_runs }}",
-							"workflowId":"{{ n_cV2zi.outputs.result.out1[0].workflowId }}"
-						}
+							"workflowid":"{{ n_cV2zi.outputs.result.out1[0].workflowId }}"
+						},
+						"source":"{{ n_cV2zi.outputs.result.out1 }}"
 					},
 					"q2":{
-						"source":"{{ n_F76h5.outputs.result.out2 }}",
 						"ua:type":"mappedArray",
 						"items":{
-							"failures":"{{ n_F76h5.outputs.result.out2[0].failures }}",
-							"success":"{{ n_F76h5.outputs.result.out2[0].success }}",
+							"workflowId":"{{ n_F76h5.outputs.result.out2[0].workflowId }}",
 							"total_runs":"{{ n_F76h5.outputs.result.out2[0].total_runs }}",
-							"workflowId":"{{ n_F76h5.outputs.result.out2[0].workflowId }}"
-						}
+							"success":"{{ n_F76h5.outputs.result.out2[0].success }}",
+							"failures":"{{ n_F76h5.outputs.result.out2[0].failures }}"
+						},
+						"source":"{{ n_F76h5.outputs.result.out2 }}"
 					},
 					"q3":{
-						"source":"{{ _jErtp.outputs.result.out3 }}",
 						"ua:type":"mappedArray",
 						"items":{
-							"failures":"{{ _jErtp.outputs.result.out3[0].failures }}",
-							"success":"{{ _jErtp.outputs.result.out3[0].success }}",
+							"workflowId":"{{ _jErtp.outputs.result.out3[0].workflowId }}",
 							"total_runs":"{{ _jErtp.outputs.result.out3[0].total_runs }}",
-							"workflowId":"{{ _jErtp.outputs.result.out3[0].workflowId }}"
-						}
+							"success":"{{ _jErtp.outputs.result.out3[0].success }}",
+							"failures":"{{ _jErtp.outputs.result.out3[0].failures }}"
+						},
+						"source":"{{ _jErtp.outputs.result.out3 }}"
 					},
 					"q4":{
-						"source":"{{ _rYjo0.outputs.result.out4 }}",
 						"ua:type":"mappedArray",
 						"items":{
+							"workflowId":"{{ _rYjo0.outputs.result.out4[0].workflowId }}",
 							"p25_latency":"{{ _rYjo0.outputs.result.out4[0].p25_latency }}",
 							"p50_latency":"{{ _rYjo0.outputs.result.out4[0].p50_latency }}",
-							"p99_latency":"{{ _rYjo0.outputs.result.out4[0].p99_latency }}",
-							"workflowId":"{{ _rYjo0.outputs.result.out4[0].workflowId }}"
-						}
+							"p99_latency":"{{ _rYjo0.outputs.result.out4[0].p99_latency }}"
+						},
+						"source":"{{ _rYjo0.outputs.result.out4 }}"
 					},
 					"q5":{
-						"source":"{{ _B3XUK.outputs.result.out5 }}",
 						"ua:type":"mappedArray",
 						"items":{
-							"avgRPH":"{{ _B3XUK.outputs.result.out5[0].avgRPH }}",
 							"endPointPath":"{{ _B3XUK.outputs.result.out5[0].endPointPath }}",
-							"avgRPM":"{{ _B3XUK.outputs.result.out5[0].avgRPM }}"
-						}
+							"avgRPM":"{{ _B3XUK.outputs.result.out5[0].avgRPM }}",
+							"avgRPH":"{{ _B3XUK.outputs.result.out5[0].avgRPH }}"
+						},
+						"source":"{{ _B3XUK.outputs.result.out5 }}"
 					},
 					"q6":{
-						"source":"{{ _dbXlH.outputs.result.out6 }}",
 						"ua:type":"mappedArray",
 						"items":{
 							"accessProfile":"{{ _dbXlH.outputs.result.out6[0].accessProfile }}",
 							"hour_of_day":"{{ _dbXlH.outputs.result.out6[0].hour_of_day }}",
 							"request_count":"{{ _dbXlH.outputs.result.out6[0].request_count }}"
-						}
+						},
+						"source":"{{ _dbXlH.outputs.result.out6 }}"
 					},
 					"q7":{
-						"source":"{{ _akgPx.outputs.result.out7 }}",
 						"ua:type":"mappedArray",
 						"items":{
 							"endPointPath":"{{ _akgPx.outputs.result.out7[0].endPointPath }}",
-							"failureCount":"{{ _akgPx.outputs.result.out7[0].failureCount }}",
 							"httpMethod":"{{ _akgPx.outputs.result.out7[0].httpMethod }}",
-							"statusCode":"{{ _akgPx.outputs.result.out7[0].statusCode }}"
-						}
+							"statusCode":"{{ _akgPx.outputs.result.out7[0].statusCode }}",
+							"failureCount":"{{ _akgPx.outputs.result.out7[0].failureCount }}"
+						},
+						"source":"{{ _akgPx.outputs.result.out7 }}"
 					},
 					"q8":{
-						"source":"{{ _exWFk.outputs.result.out8 }}",
 						"ua:type":"mappedArray",
 						"items":{
-							"failures":"{{ _exWFk.outputs.result.out8[0].failures }}",
+							"total_runs":"{{ _exWFk.outputs.result.out8[0].total_runs }}",
 							"success":"{{ _exWFk.outputs.result.out8[0].success }}",
-							"total_runs":"{{ _exWFk.outputs.result.out8[0].total_runs }}"
-						}
+							"failures":"{{ _exWFk.outputs.result.out8[0].failures }}"
+						},
+						"source":"{{ _exWFk.outputs.result.out8 }}"
 					}
-				},
-				"status":200
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
-			"title":"Respond to API request",
+			"title":"Respond to automation",
 			"type":"STOP"
 		}
 	],
@@ -1939,5 +1922,5 @@
 		}
 	},
 	"standard":false,
-	"version":14
+	"version":15
 }
