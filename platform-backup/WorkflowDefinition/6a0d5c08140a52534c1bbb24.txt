@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779260424640,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_ZGsYT",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_hNEYI",
+			"type":"next"
+		}
+	],
+	"id":"6a0d5c08140a52534c1bbb24",
+	"lastModifiedBy":39,
+	"lcName":"fecdsxz",
+	"modifiedTime":1779260424640,
+	"name":"fecdsxz",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ZGsYT-1",
+			"id":"_ZGsYT",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ZGsYT-1",
+			"id":"_hNEYI",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
