@@ -1,0 +1,65 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779277973935,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_ABUF9",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_P4aIg",
+			"type":"next"
+		}
+	],
+	"id":"6a0da0954f16152f61510c92",
+	"lastModifiedBy":39,
+	"lcName":"active deploy btn  21779277905113",
+	"modifiedTime":1779277980191,
+	"name":"Active deploy btn  21779277905113",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ABUF9-1",
+			"id":"_ABUF9",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ABUF9-1",
+			"id":"_P4aIg",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
+		"route":{
+			"default":false,
+			"headerValueTierMap":{},
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":1
+}
