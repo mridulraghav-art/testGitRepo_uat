@@ -32,7 +32,7 @@
 	"id":"6a0de3fae5ef9d73ab75f502",
 	"lastModifiedBy":39,
 	"lcName":"cfv",
-	"modifiedTime":1779295299253,
+	"modifiedTime":1779295320373,
 	"name":"cfv",
 	"nodes":[
 		{
@@ -49,9 +49,32 @@
 			"index":1,
 			"inputs":{
 				"request":{
+					"queryParams":{
+						"type":"object",
+						"additionalProperties":false,
+						"required":[],
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"Input"
+							}
+						}
+					},
 					"contentType":"application/json"
 				},
 				"endpointType":"REST",
+				"response":[
+					{
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						},
+						"htmlBody":{
+							"type":"string"
+						}
+					}
+				],
 				"streamingResponse":false
 			},
 			"skip":false,
@@ -107,7 +130,7 @@
 			"index":3,
 			"inputs":{
 				"streamingCompleted":true,
-				"responseName":"200_success",
+				"responseName":"200_undefined",
 				"status":200
 			},
 			"skip":false,
@@ -130,11 +153,8 @@
 			"index":4,
 			"inputs":{
 				"streamingCompleted":true,
-				"responseName":"400_Fail",
-				"body":{
-					"output":"failed"
-				},
-				"status":400
+				"responseName":"200_undefined",
+				"status":200
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -156,5 +176,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
