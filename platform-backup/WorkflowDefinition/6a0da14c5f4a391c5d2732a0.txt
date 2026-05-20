@@ -4,55 +4,119 @@
 	],
 	"createdTime":1779278156430,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1779278179790,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a0da1634f16152f615117e6",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_FWGE0",
+			"fromNodeId":"n_1gJNy",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_s5Mbr",
+			"toNodeId":"n_0f09M",
 			"type":"next"
 		}
 	],
 	"id":"6a0da14c5f4a391c5d2732a0",
 	"lastModifiedBy":39,
 	"lcName":"restoreoldestversion_217792779108210",
-	"modifiedTime":1779278156430,
+	"modifiedTime":1779278186208,
 	"name":"restoreOldestVersion_217792779108210",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2313,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FWGE0-1",
-			"id":"_FWGE0",
-			"index":0,
+			"id":"n_1gJNy",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output_String"
+					],
+					"properties":{
+						"output_String":{
+							"type":"string",
+							"title":"output_String"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input_String",
+						"input_string2"
+					],
+					"properties":{
+						"input_String":{
+							"type":"string",
+							"title":"input_String"
+						},
+						"input_string2":{
+							"type":"string",
+							"title":"input_string2"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2314,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_FWGE0-1",
-			"id":"_s5Mbr",
-			"index":0,
+			"id":"n_0f09M",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output_String":"{{ n_1gJNy.outputs.input_String }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +124,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":3
 }
