@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779278156430,
 	"deleted":false,
-	"deployedVersion":3,
+	"deployedVersion":4,
 	"deploymentState":{
-		"deployedAt":1779278196847,
+		"deployedAt":1779278203944,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a0da174324d254fd2199969",
+		"deployedDefinitionId":"6a0da17b1775bd555f3261c7",
 		"status":"DEPLOYED",
-		"version":3,
-		"workflowVersion":4
+		"version":4,
+		"workflowVersion":5
 	},
 	"description":"description",
 	"edges":[
@@ -26,7 +26,7 @@
 	"id":"6a0da14c5f4a391c5d2732a0",
 	"lastModifiedBy":39,
 	"lcName":"restoreoldestversion_217792779108210",
-	"modifiedTime":1779278203092,
+	"modifiedTime":1779278210324,
 	"name":"restoreOldestVersion_217792779108210",
 	"nodes":[
 		{
@@ -59,27 +59,12 @@
 					"type":"object",
 					"additionalProperties":false,
 					"required":[
-						"input_String",
-						"input_string2",
-						"input_string3",
-						"input_string4"
+						"input_String"
 					],
 					"properties":{
 						"input_String":{
 							"type":"string",
 							"title":"input_String"
-						},
-						"input_string2":{
-							"type":"string",
-							"title":"input_string2"
-						},
-						"input_string3":{
-							"type":"string",
-							"title":"input_string3"
-						},
-						"input_string4":{
-							"type":"string",
-							"title":"input_string4"
 						}
 					}
 				}
@@ -100,7 +85,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_FWGE0-1",
 			"id":"n_0f09M",
@@ -134,5 +119,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":5
+	"version":6
 }
