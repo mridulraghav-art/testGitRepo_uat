@@ -410,7 +410,7 @@
 	"id":"6a0ef10e9f719d01f3144adc",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy) (copy)",
-	"modifiedTime":1779372093776,
+	"modifiedTime":1779372277177,
 	"name":"Automation-API (copy) (copy)",
 	"nodes":[
 		{
@@ -1533,7 +1533,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@4",
 			"id":"n_EJNsY",
@@ -1677,13 +1677,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@5",
 			"id":"n_lbmPQ",
 			"index":16,
 			"inputs":{
-				"query":"SELECT\n    endPointPath,\n\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60)), 0),\n        2\n    ) AS avgRPM,\n\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600)), 0),\n        2\n    ) AS avgRPH\n\nFROM API_ENDPOINT\nGROUP BY endPointPath\nORDER BY avgRPM DESC;",
+				"query":"SELECT\n    endPointPath,\n\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60)), 0),\n        2\n    ) AS avgRPM,\n\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600)), 0),\n        2\n    ) AS avgRPH\n\nFROM API_ENDPOINT\nWHERE invokeTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000\nGROUP BY endPointPath \nORDER BY avgRPM DESC;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -1817,13 +1817,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@6",
 			"id":"n_tplHz",
 			"index":19,
 			"inputs":{
-				"query":"SELECT\n    accessProfile,\n    HOUR(FROM_UNIXTIME(invokeTime / 1000)) AS hour_of_day,\n    COUNT(*) AS request_count\nFROM API_ENDPOINT\nGROUP BY accessProfile, hour_of_day\nORDER BY request_count DESC;",
+				"query":"SELECT\n    accessProfile,\n    HOUR(FROM_UNIXTIME(invokeTime / 1000)) AS hour_of_day,\n    COUNT(*) AS request_count\nFROM API_ENDPOINT\nWHERE invokeTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000\nGROUP BY accessProfile, hour_of_day\nORDER BY request_count DESC;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -3114,5 +3114,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
