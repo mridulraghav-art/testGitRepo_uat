@@ -410,7 +410,7 @@
 	"id":"6a0ef10e9f719d01f3144adc",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy) (copy)",
-	"modifiedTime":1779371880233,
+	"modifiedTime":1779372093776,
 	"name":"Automation-API (copy) (copy)",
 	"nodes":[
 		{
@@ -1101,7 +1101,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@1",
 			"id":"_sGOPx",
@@ -1533,13 +1533,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@4",
 			"id":"n_EJNsY",
 			"index":13,
 			"inputs":{
-				"query":"SELECT\n    workflowId,\n    ROUND(PERCENTILE_APPROX(executionTime, 0.25), 2) AS p25_latency,\n    ROUND(PERCENTILE_APPROX(executionTime, 0.50), 2) AS p50_latency,\n    ROUND(PERCENTILE_APPROX(executionTime, 0.99), 2) AS p99_latency\n\nFROM WORKFLOW_EXECUTION\nGROUP BY workflowId;",
+				"query":"SELECT\n    workflowId,\n    ROUND(PERCENTILE_APPROX(executionTime, 0.25), 2) AS p25_latency,\n    ROUND(PERCENTILE_APPROX(executionTime, 0.50), 2) AS p50_latency,\n    ROUND(PERCENTILE_APPROX(executionTime, 0.99), 2) AS p99_latency\n\nFROM WORKFLOW_EXECUTION\nWHERE startTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000\nGROUP BY workflowId;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -3114,5 +3114,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
