@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779302866646,
 	"deleted":false,
-	"deployedVersion":8,
+	"deployedVersion":9,
 	"deploymentState":{
-		"deployedAt":1779347524830,
+		"deployedAt":1779348048356,
 		"deployedBy":97900,
-		"deployedDefinitionId":"6a0eb044e5ef9d73ab7bd406",
+		"deployedDefinitionId":"6a0eb2501775bd555f3dd5c3",
 		"status":"DEPLOYED",
-		"version":8,
-		"workflowVersion":29
+		"version":9,
+		"workflowVersion":30
 	},
 	"edges":[
 		{
@@ -381,7 +381,7 @@
 	"id":"6a0d76b95b59f93f2d43ebbb",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779348046542,
+	"modifiedTime":1779348763907,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -677,6 +677,14 @@
 									"avgRPH":{
 										"type":"number",
 										"title":"avgRPH"
+									},
+									"total_request_per_hour":{
+										"type":"integer",
+										"title":"total_request_per_hour"
+									},
+									"total_request_per_min":{
+										"type":"integer",
+										"title":"total_request_per_min"
 									}
 								},
 								"additionalProperties":false,
@@ -2428,7 +2436,7 @@
 			"id":"n_Fqr1D",
 			"index":34,
 			"inputs":{
-				"query":"SELECT\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60)), 0),\n        2\n    ) AS avgRPM,\n\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600)), 0),\n        2\n    ) AS avgRPH\n\nFROM API_ENDPOINT;",
+				"query":"SELECT\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60)), 0),\n        2\n    ) AS avgRPM,\n\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600)), 0),\n        2\n    ) AS avgRPH\n    COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60))                             AS total_request_per_min,\n    COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600))                           AS total_request_per_hour\nFROM API_ENDPOINT;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -2472,6 +2480,14 @@
 									"avgRPH":{
 										"type":"number",
 										"title":"avgRPH"
+									},
+									"total_request_per_min":{
+										"type":"integer",
+										"title":"total_request_per_min"
+									},
+									"total_request_per_hour":{
+										"type":"integer",
+										"title":"total_request_per_hour"
 									}
 								},
 								"additionalProperties":false,
@@ -2777,7 +2793,9 @@
 						"ua:type":"mappedArray",
 						"items":{
 							"avgRPM":"{{ n_jP24M.outputs.result.out11[0].avgRPM }}",
-							"avgRPH":"{{ n_jP24M.outputs.result.out11[0].avgRPH }}"
+							"avgRPH":"{{ n_jP24M.outputs.result.out11[0].avgRPH }}",
+							"total_request_per_hour":"{{ n_jP24M.outputs.result.out11[0].total_request_per_hour }}",
+							"total_request_per_min":"{{ n_jP24M.outputs.result.out11[0].total_request_per_min }}"
 						}
 					},
 					"q12":{
@@ -2814,5 +2832,5 @@
 		}
 	},
 	"standard":false,
-	"version":30
+	"version":31
 }
