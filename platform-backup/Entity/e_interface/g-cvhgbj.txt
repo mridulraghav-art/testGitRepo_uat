@@ -24,7 +24,7 @@
 	},
 	"id":"g-cvhgbj",
 	"lastModifiedBy":39,
-	"modifiedTime":1779369531303,
+	"modifiedTime":1779376794529,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -38,7 +38,7 @@
 				"favicon":"/favicon.png"
 			},
 			"_counter":{
-				"_pageCount":1,
+				"_pageCount":2,
 				"_mqttTopicCounter":0,
 				"_dataSourceCounter":1,
 				"_moduleCount":0,
@@ -52,7 +52,12 @@
 			"defaultPageId":"e_6a0ee54580830b496b47e2f0",
 			"appearance":{
 				"SM":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_7IHrf",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -85,7 +90,12 @@
 					"secondary":[]
 				},
 				"LG":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_7IHrf",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -124,7 +134,12 @@
 					"secondary":[]
 				},
 				"XL":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_7IHrf",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"expandable"
@@ -163,7 +178,12 @@
 					"secondary":[]
 				},
 				"MD":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_7IHrf",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -202,11 +222,22 @@
 					"secondary":[]
 				}
 			},
-			"primary":[]
+			"primary":[
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_7IHrf",
+					"type":"PAGE",
+					"pageId":"e_6a0f229ad89ec7156cf41060",
+					"slug":"page-2"
+				}
+			]
 		},
 		"interfacePageIdVsSlugMap":{
 			"e_6a0ee54580830b496b47e2f0":"homepage",
-			"e_global_g-cvhgbj":"global-page-of-g-cvhgbj"
+			"e_global_g-cvhgbj":"global-page-of-g-cvhgbj",
+			"e_6a0f229ad89ec7156cf41060":"page-2"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -229,6 +260,11 @@
 				"slug":"global-page-of-g-cvhgbj",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_6a0f229ad89ec7156cf41060":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -236,5 +272,5 @@
 	"tags":[
 		
 	],
-	"version":7
+	"version":10
 }
