@@ -6,46 +6,85 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_Xl91f",
+			"fromNodeId":"n_xj2vr",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_HJNtY",
+			"toNodeId":"n_bbtks",
 			"type":"next"
 		}
 	],
 	"id":"6a0ef3ba9f719d01f3145acc",
 	"lastModifiedBy":97894,
 	"lcName":"dt analytics",
-	"modifiedTime":1779364794836,
+	"modifiedTime":1779365233306,
 	"name":"DT analytics",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2315,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Xl91f-1",
-			"id":"_Xl91f",
-			"index":0,
+			"id":"n_xj2vr",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":2016,
+				"resourceName":"custom_http_endpoint_execute",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Xl91f-1",
-			"id":"_HJNtY",
-			"index":0,
+			"id":"n_bbtks",
+			"index":2,
+			"inputs":{
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"GET",
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"baseUrl":"https://uat-automation.uat.unifyapps.com/api-endpoint/apis/api1",
+				"httpVersion":"HTTP_2",
+				"responseContentType":"HEADER_BASED",
+				"followRedirects":"NORMAL",
+				"authType":"CUSTOM",
+				"requestContentType":"application/json",
+				"ignoreTrailingSlashes":false,
+				"certificateType":"CERT_STRING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"Execute REST request",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":97894,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +95,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
