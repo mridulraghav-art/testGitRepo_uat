@@ -24,7 +24,7 @@
 	},
 	"id":"set-cva-n-decrementby-number-public-2177",
 	"lastModifiedBy":39,
-	"modifiedTime":1779277992449,
+	"modifiedTime":1779354956631,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,8 +39,9 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":1,
+				"_pageCount":2,
 				"_moduleCount":0,
+				"_variableCounter":1,
 				"_templateComponentCount":0
 			}
 		},
@@ -52,6 +53,10 @@
 					"primary":[
 						{
 							"id":"nav_GaFBA",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_0aZBT",
 							"hiddenInOverflow":false
 						}
 					],
@@ -90,6 +95,10 @@
 					"primary":[
 						{
 							"id":"nav_GaFBA",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_0aZBT",
 							"hiddenInOverflow":false
 						}
 					],
@@ -135,6 +144,10 @@
 						{
 							"id":"nav_GaFBA",
 							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_0aZBT",
+							"hiddenInOverflow":false
 						}
 					],
 					"navigationItem":{
@@ -178,6 +191,10 @@
 					"primary":[
 						{
 							"id":"nav_GaFBA",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_0aZBT",
 							"hiddenInOverflow":false
 						}
 					],
@@ -228,10 +245,23 @@
 					"type":"PAGE",
 					"pageId":"e_6a0da0a664e34a764240c3cb",
 					"slug":"homepage"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_0aZBT",
+					"type":"PAGE",
+					"pageId":"e_6a0ecd4cd89ec7156cb96796",
+					"slug":"page-2"
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
+			"e_6a0ecd4cd89ec7156cb96796":"page-2",
 			"e_global_set-cva-n-decrementby-number-public-2177":"global-page-of-set-cva-n-decrementby-number-public-2177",
 			"e_6a0da0a664e34a764240c3cb":"homepage"
 		},
@@ -247,6 +277,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_6a0ecd4cd89ec7156cb96796":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_global_set-cva-n-decrementby-number-public-2177":{
 				"slug":"global-page-of-set-cva-n-decrementby-number-public-2177",
 				"isPublic":false,
@@ -263,5 +298,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":11
 }
