@@ -381,7 +381,7 @@
 	"id":"6a0d76b95b59f93f2d43ebbb",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779345213948,
+	"modifiedTime":1779345591591,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -700,6 +700,18 @@
 									"p99_latency":{
 										"type":"number",
 										"title":"p99_latency"
+									},
+									"avg_latency":{
+										"type":"number",
+										"title":"avg_latency"
+									},
+									"max_latency":{
+										"type":"number",
+										"title":"max_latency"
+									},
+									"min_latency":{
+										"type":"number",
+										"title":"min_latency"
 									}
 								},
 								"additionalProperties":false,
@@ -2547,7 +2559,7 @@
 			"id":"n_LI0xD",
 			"index":37,
 			"inputs":{
-				"query":"SELECT\n\n    PERCENTILE_APPROX(executionTime, 0.25) AS p25_latency,\n    PERCENTILE_APPROX(executionTime, 0.50) AS p50_latency,\n    PERCENTILE_APPROX(executionTime, 0.99) AS p99_latency\n\nFROM WORKFLOW_EXECUTION;",
+				"query":"SELECT\n    PERCENTILE_APPROX(executionTime, 0.25) AS p25_latency,\n    PERCENTILE_APPROX(executionTime, 0.50) AS p50_latency,\n    PERCENTILE_APPROX(executionTime, 0.99) AS p99_latency,\n    AVG(executionTime)                     AS avg_latency,\n    MAX(executionTime)                     AS max_latency,\n    MIN(executionTime)                     AS min_latency\n\nFROM WORKFLOW_EXECUTION;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -2595,6 +2607,18 @@
 									"p99_latency":{
 										"type":"number",
 										"title":"p99_latency"
+									},
+									"avg_latency":{
+										"type":"number",
+										"title":"avg_latency"
+									},
+									"max_latency":{
+										"type":"number",
+										"title":"max_latency"
+									},
+									"min_latency":{
+										"type":"number",
+										"title":"min_latency"
 									}
 								},
 								"additionalProperties":false,
@@ -2762,7 +2786,10 @@
 						"items":{
 							"p25_latency":"{{ n_VxDwc.outputs.result.out12[0].p25_latency }}",
 							"p50_latency":"{{ n_VxDwc.outputs.result.out12[0].p50_latency }}",
-							"p99_latency":"{{ n_VxDwc.outputs.result.out12[0].p99_latency }}"
+							"p99_latency":"{{ n_VxDwc.outputs.result.out12[0].p99_latency }}",
+							"avg_latency":"{{ n_VxDwc.outputs.result.out12[0].avg_latency }}",
+							"max_latency":"{{ n_VxDwc.outputs.result.out12[0].max_latency }}",
+							"min_latency":"{{ n_VxDwc.outputs.result.out12[0].min_latency }}"
 						}
 					}
 				}
@@ -2787,5 +2814,5 @@
 		}
 	},
 	"standard":false,
-	"version":24
+	"version":25
 }
