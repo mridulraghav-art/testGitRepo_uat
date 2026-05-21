@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779364794836,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_Xl91f",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_HJNtY",
+			"type":"next"
+		}
+	],
+	"id":"6a0ef3ba9f719d01f3145acc",
+	"lastModifiedBy":97894,
+	"lcName":"dt analytics",
+	"modifiedTime":1779364794836,
+	"name":"DT analytics",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Xl91f-1",
+			"id":"_Xl91f",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Xl91f-1",
+			"id":"_HJNtY",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":97894,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
