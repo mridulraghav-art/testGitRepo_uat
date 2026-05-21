@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779302866646,
 	"deleted":false,
-	"deployedVersion":11,
+	"deployedVersion":12,
 	"deploymentState":{
-		"deployedAt":1779348953206,
+		"deployedAt":1779350077873,
 		"deployedBy":97900,
-		"deployedDefinitionId":"6a0eb5d9324d254fd224b820",
+		"deployedDefinitionId":"6a0eba3d4f16152f615d2bf7",
 		"status":"DEPLOYED",
-		"version":11,
-		"workflowVersion":33
+		"version":12,
+		"workflowVersion":34
 	},
 	"edges":[
 		{
@@ -381,7 +381,7 @@
 	"id":"6a0d76b95b59f93f2d43ebbb",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779350049987,
+	"modifiedTime":1779353563812,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -1878,13 +1878,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@7",
 			"id":"n_lsXA9",
 			"index":22,
 			"inputs":{
-				"query":"SELECT\n    endPointPath,\n    httpMethod,\n    statusCode,\n    COUNT(*) AS failureCount\nFROM API_ENDPOINT\nWHERE statusCode >= 400\nGROUP BY endPointPath, httpMethod, statusCode\nORDER BY failureCount DESC\nLIMIT 10;",
+				"query":"SELECT\n    endPointPath,\n    httpMethod,\n    statusCode,\n    COUNT(*) AS failureCount\nFROM API_ENDPOINT\nWHERE statusCode >= 400\nGROUP BY endPointPath, httpMethod, statusCode\nORDER BY failureCount DESC\nLIMIT 5;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -2017,7 +2017,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@8",
 			"id":"n_4u9Im",
@@ -2044,7 +2044,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@8",
 			"id":"_exWFk",
@@ -2430,13 +2430,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@11",
 			"id":"n_Fqr1D",
 			"index":34,
 			"inputs":{
-				"query":"SELECT\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60)), 0),\n        2\n    ) AS avgRPM,\n\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600)), 0),\n        2\n    ) AS avgRPH,\n    COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60))                             AS total_request_per_min,\n    COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600))                           AS total_request_per_hour\nFROM API_ENDPOINT;",
+				"query":"WITH minute_buckets AS (\n    SELECT\n        FLOOR(invokeTime / 1000 / 60) AS minute_bucket,\n        COUNT(*) AS cnt\n    FROM API_ENDPOINT\n    GROUP BY minute_bucket\n),\nhour_buckets AS (\n    SELECT\n        FLOOR(invokeTime / 1000 / 3600) AS hour_bucket,\n        COUNT(*) AS cnt\n    FROM API_ENDPOINT\n    GROUP BY hour_bucket\n)\nSELECT\n    ROUND(SUM(m.cnt) / NULLIF(COUNT(m.minute_bucket), 0), 2)  AS avgRPM,\n    ROUND(SUM(h.cnt) / NULLIF(COUNT(h.hour_bucket),  0), 2)  AS avgRPH,\n    MAX(m.cnt)                                                 AS peakRPM,\n    PERCENTILE_APPROX(m.cnt, 0.95)                            AS p95RPM\nFROM minute_buckets m\nCROSS JOIN hour_buckets h;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -2832,5 +2832,5 @@
 		}
 	},
 	"standard":false,
-	"version":34
+	"version":35
 }
