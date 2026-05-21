@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779302866646,
 	"deleted":false,
-	"deployedVersion":12,
+	"deployedVersion":13,
 	"deploymentState":{
-		"deployedAt":1779350077873,
+		"deployedAt":1779353972933,
 		"deployedBy":97900,
-		"deployedDefinitionId":"6a0eba3d4f16152f615d2bf7",
+		"deployedDefinitionId":"6a0ec974f081eb3302f8596a",
 		"status":"DEPLOYED",
-		"version":12,
-		"workflowVersion":34
+		"version":13,
+		"workflowVersion":36
 	},
 	"edges":[
 		{
@@ -286,6 +286,28 @@
 			"type":"next"
 		},
 		{
+			"fromNodeId":"n_n1Q8p",
+			"name":"13",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_n1Q8p@13",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_n1Q8p@13",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_XA5ZM",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_XA5ZM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_lHcwN",
+			"type":"next"
+		},
+		{
 			"fromNodeId":"n_cV2zi",
 			"priority":0,
 			"skip":false,
@@ -370,6 +392,13 @@
 			"type":"next"
 		},
 		{
+			"fromNodeId":"n_lHcwN",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_RJ9ld",
+			"type":"next"
+		},
+		{
 			"fromNodeId":"n_n1Q8p",
 			"name":"default",
 			"priority":0,
@@ -381,7 +410,7 @@
 	"id":"6a0d76b95b59f93f2d43ebbb",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779353970960,
+	"modifiedTime":1779361527306,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -726,6 +755,29 @@
 								"required":[]
 							},
 							"title":"q12"
+						},
+						"q13":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"total_runs":{
+										"type":"integer",
+										"title":"total_runs"
+									},
+									"success":{
+										"type":"integer",
+										"title":"success"
+									},
+									"failures":{
+										"type":"integer",
+										"title":"failures"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q13"
 						}
 					}
 				}
@@ -953,6 +1005,24 @@
 						"id":"12",
 						"inputs":{
 							"name":"Branch 12",
+							"conditions":{
+								"filters":[
+									{
+										"property":"1",
+										"filter":{
+											"operator":"EQUAL",
+											"value":"1"
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"13",
+						"inputs":{
+							"name":"Branch 13",
 							"conditions":{
 								"filters":[
 									{
@@ -2678,6 +2748,141 @@
 		},
 		{
 			"context":{
+				"appName":"branch_condition",
+				"resourceVersion":0,
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_n1Q8p@_UsV6q-1@13",
+			"id":"n_n1Q8p@13",
+			"index":39,
+			"inputs":{
+				"name":"Branch 13",
+				"conditions":{
+					"filters":[
+						{
+							"property":"1",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"1"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":2062,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_n1Q8p@_UsV6q-1@13",
+			"id":"n_XA5ZM",
+			"index":40,
+			"inputs":{
+				"query":"SELECT \n    DATE(FROM_UNIXTIME(startTime / 1000)) AS day,\n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED')\n  AND startTime >= (UNIX_TIMESTAMP() - 7 * 86400) * 1000\nGROUP BY DATE(FROM_UNIXTIME(startTime / 1000))\nORDER BY day ASC;",
+				"group":"PLATFORM"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.parameters.q13_input.items"
+				]
+			},
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_n1Q8p@_UsV6q-1@13",
+			"id":"n_lHcwN",
+			"index":41,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"out13":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"total_runs":{
+										"type":"integer",
+										"title":"total_runs"
+									},
+									"success":{
+										"type":"integer",
+										"title":"success"
+									},
+									"failures":{
+										"type":"integer",
+										"title":"failures"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"out13"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"q13_input":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"q12_input"
+						}
+					}
+				},
+				"code":"def out13 = q13_input.collect { item ->\n    item.columns\n}\nreturn [\"out13\" : out13];  ",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"q13_input":{
+						"source":"{{ n_XA5ZM.outputs.objects }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_XA5ZM.outputs.objects[0] }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"callables",
 				"resourceVersion":3531,
 				"resourceName":"callables_return_to_automation",
@@ -2688,7 +2893,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_UsV6q-1",
 			"id":"n_RJ9ld",
-			"index":39,
+			"index":42,
 			"inputs":{
 				"result":{
 					"q1":{
@@ -2809,6 +3014,15 @@
 							"max_latency":"{{ n_VxDwc.outputs.result.out12[0].max_latency }}",
 							"min_latency":"{{ n_VxDwc.outputs.result.out12[0].min_latency }}"
 						}
+					},
+					"q13":{
+						"source":"{{ n_lHcwN.outputs.result.out13 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"total_runs":"{{ n_lHcwN.outputs.result.out13[0].total_runs }}",
+							"success":"{{ n_lHcwN.outputs.result.out13[0].success }}",
+							"failures":"{{ n_lHcwN.outputs.result.out13[0].failures }}"
+						}
 					}
 				}
 			},
@@ -2832,5 +3046,5 @@
 		}
 	},
 	"standard":false,
-	"version":36
+	"version":37
 }
