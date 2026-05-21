@@ -24,7 +24,7 @@
 	},
 	"id":"set-cva-n-setvalue-number-publ31131",
 	"lastModifiedBy":39,
-	"modifiedTime":1779394784829,
+	"modifiedTime":1779394794955,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -41,6 +41,7 @@
 				"_mqttTopicCounter":0,
 				"_pageCount":1,
 				"_moduleCount":0,
+				"_variableCounter":1,
 				"_templateComponentCount":0
 			}
 		},
@@ -231,7 +232,11 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
+			"e_global_set-cva-n-setvalue-number-publ31131":"global-page-of-set-cva-n-setvalue-number-publ31131",
 			"e_6a0f68e0d89ec7156cf5120a":"homepage"
 		},
 		"manifest":{
@@ -246,6 +251,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_global_set-cva-n-setvalue-number-publ31131":{
+				"slug":"global-page-of-set-cva-n-setvalue-number-publ31131",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_6a0f68e0d89ec7156cf5120a":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -257,5 +267,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":5
 }
