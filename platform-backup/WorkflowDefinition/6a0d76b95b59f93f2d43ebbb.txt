@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779302866646,
 	"deleted":false,
-	"deployedVersion":14,
+	"deployedVersion":15,
 	"deploymentState":{
-		"deployedAt":1779362252218,
+		"deployedAt":1779362994913,
 		"deployedBy":97900,
-		"deployedDefinitionId":"6a0ee9cc9cd05f3d74f873d6",
+		"deployedDefinitionId":"6a0eecb2f081eb330212c7e8",
 		"status":"DEPLOYED",
-		"version":14,
-		"workflowVersion":40
+		"version":15,
+		"workflowVersion":44
 	},
 	"edges":[
 		{
@@ -410,7 +410,7 @@
 	"id":"6a0d76b95b59f93f2d43ebbb",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779362992128,
+	"modifiedTime":1779363949252,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -425,7 +425,7 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UsV6q-1",
 			"id":"n_JWcBu",
@@ -449,302 +449,342 @@
 							"type":"object",
 							"properties":{
 								"q1":{
-									"type":"object",
-									"properties":{
-										"total_runs":{
-											"type":"integer",
-											"title":"total_runs"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"total_runs":{
+												"type":"integer",
+												"title":"total_runs"
+											},
+											"failures":{
+												"type":"integer",
+												"title":"failures"
+											},
+											"success":{
+												"type":"integer",
+												"title":"success"
+											},
+											"workflowId":{
+												"type":"string",
+												"title":"workflowId"
+											}
 										},
-										"failures":{
-											"type":"integer",
-											"title":"failures"
-										},
-										"success":{
-											"type":"integer",
-											"title":"success"
-										},
-										"workflowId":{
-											"type":"string",
-											"title":"workflowId"
-										}
+										"additionalProperties":false
 									},
-									"title":"q1",
-									"additionalProperties":false
+									"title":"q1"
 								},
 								"q2":{
-									"type":"object",
-									"properties":{
-										"total_runs":{
-											"type":"integer",
-											"title":"total_runs"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"total_runs":{
+												"type":"integer",
+												"title":"total_runs"
+											},
+											"failures":{
+												"type":"integer",
+												"title":"failures"
+											},
+											"success":{
+												"type":"integer",
+												"title":"success"
+											},
+											"workflowId":{
+												"type":"string",
+												"title":"workflowId"
+											}
 										},
-										"failures":{
-											"type":"integer",
-											"title":"failures"
-										},
-										"success":{
-											"type":"integer",
-											"title":"success"
-										},
-										"workflowId":{
-											"type":"string",
-											"title":"workflowId"
-										}
+										"additionalProperties":false
 									},
-									"title":"q2",
-									"additionalProperties":false
+									"title":"q2"
 								},
 								"q3":{
-									"type":"object",
-									"properties":{
-										"total_runs":{
-											"type":"integer",
-											"title":"total_runs"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"total_runs":{
+												"type":"integer",
+												"title":"total_runs"
+											},
+											"failures":{
+												"type":"integer",
+												"title":"failures"
+											},
+											"success":{
+												"type":"integer",
+												"title":"success"
+											},
+											"workflowId":{
+												"type":"string",
+												"title":"workflowId"
+											}
 										},
-										"failures":{
-											"type":"integer",
-											"title":"failures"
-										},
-										"success":{
-											"type":"integer",
-											"title":"success"
-										},
-										"workflowId":{
-											"type":"string",
-											"title":"workflowId"
-										}
+										"additionalProperties":false
 									},
-									"title":"q3",
-									"additionalProperties":false
+									"title":"q3"
 								},
 								"q4":{
-									"type":"object",
-									"properties":{
-										"p99_latency":{
-											"type":"number",
-											"title":"p99_latency"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"p99_latency":{
+												"type":"number",
+												"title":"p99_latency"
+											},
+											"p25_latency":{
+												"type":"integer",
+												"title":"p25_latency"
+											},
+											"p50_latency":{
+												"type":"integer",
+												"title":"p50_latency"
+											},
+											"workflowId":{
+												"type":"string",
+												"title":"workflowId"
+											}
 										},
-										"p25_latency":{
-											"type":"integer",
-											"title":"p25_latency"
-										},
-										"p50_latency":{
-											"type":"integer",
-											"title":"p50_latency"
-										},
-										"workflowId":{
-											"type":"string",
-											"title":"workflowId"
-										}
+										"additionalProperties":false
 									},
-									"title":"q4",
-									"additionalProperties":false
+									"title":"q4"
 								},
 								"q5":{
-									"type":"object",
-									"properties":{
-										"endPointPath":{
-											"type":"string",
-											"title":"endPointPath"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"endPointPath":{
+												"type":"string",
+												"title":"endPointPath"
+											},
+											"avgRPM":{
+												"type":"number",
+												"title":"avgRPM"
+											},
+											"avgRPH":{
+												"type":"number",
+												"title":"avgRPH"
+											}
 										},
-										"avgRPM":{
-											"type":"number",
-											"title":"avgRPM"
-										},
-										"avgRPH":{
-											"type":"number",
-											"title":"avgRPH"
-										}
+										"additionalProperties":false
 									},
-									"title":"q5",
-									"additionalProperties":false
+									"title":"q5"
 								},
 								"q6":{
-									"type":"object",
-									"properties":{
-										"accessProfile":{
-											"type":"string",
-											"title":"accessProfile"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"accessProfile":{
+												"type":"string",
+												"title":"accessProfile"
+											},
+											"hour_of_day":{
+												"type":"integer",
+												"title":"hour_of_day"
+											},
+											"request_count":{
+												"type":"integer",
+												"title":"request_count"
+											}
 										},
-										"hour_of_day":{
-											"type":"integer",
-											"title":"hour_of_day"
-										},
-										"request_count":{
-											"type":"integer",
-											"title":"request_count"
-										}
+										"additionalProperties":false
 									},
-									"title":"q6",
-									"additionalProperties":false
+									"title":"q6"
 								},
 								"q7":{
-									"type":"object",
-									"properties":{
-										"endPointPath":{
-											"type":"string",
-											"title":"endPointPath"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"endPointPath":{
+												"type":"string",
+												"title":"endPointPath"
+											},
+											"httpMethod":{
+												"type":"string",
+												"title":"httpMethod"
+											},
+											"failureCount":{
+												"type":"integer",
+												"title":"failureCount"
+											},
+											"statusCode":{
+												"type":"integer",
+												"title":"statusCode"
+											}
 										},
-										"httpMethod":{
-											"type":"string",
-											"title":"httpMethod"
-										},
-										"failureCount":{
-											"type":"integer",
-											"title":"failureCount"
-										},
-										"statusCode":{
-											"type":"integer",
-											"title":"statusCode"
-										}
+										"additionalProperties":false
 									},
-									"title":"q7",
-									"additionalProperties":false
+									"title":"q7"
 								},
 								"q8":{
-									"type":"object",
-									"properties":{
-										"total_runs":{
-											"type":"integer",
-											"title":"total_runs"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"total_runs":{
+												"type":"integer",
+												"title":"total_runs"
+											},
+											"success":{
+												"type":"integer",
+												"title":"success"
+											},
+											"failures":{
+												"type":"integer",
+												"title":"failures"
+											},
+											"success_rate":{
+												"type":"number",
+												"title":"success_rate"
+											},
+											"failure_rate":{
+												"type":"number",
+												"title":"failure_rate"
+											}
 										},
-										"success":{
-											"type":"integer",
-											"title":"success"
-										},
-										"failures":{
-											"type":"integer",
-											"title":"failures"
-										},
-										"success_rate":{
-											"type":"number",
-											"title":"success_rate"
-										},
-										"failure_rate":{
-											"type":"number",
-											"title":"failure_rate"
-										}
+										"additionalProperties":false
 									},
-									"title":"q8",
-									"additionalProperties":false
+									"title":"q8"
 								},
 								"q9":{
-									"type":"object",
-									"properties":{
-										"total_runs":{
-											"type":"integer",
-											"title":"total_runs"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"total_runs":{
+												"type":"integer",
+												"title":"total_runs"
+											},
+											"failures":{
+												"type":"integer",
+												"title":"failures"
+											},
+											"success":{
+												"type":"integer",
+												"title":"success"
+											}
 										},
-										"failures":{
-											"type":"integer",
-											"title":"failures"
-										},
-										"success":{
-											"type":"integer",
-											"title":"success"
-										}
+										"additionalProperties":false
 									},
-									"title":"q9",
-									"additionalProperties":false
+									"title":"q9"
 								},
 								"q10":{
-									"type":"object",
-									"properties":{
-										"total_runs":{
-											"type":"integer",
-											"title":"total_runs"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"total_runs":{
+												"type":"integer",
+												"title":"total_runs"
+											},
+											"failures":{
+												"type":"integer",
+												"title":"failures"
+											},
+											"success":{
+												"type":"integer",
+												"title":"success"
+											}
 										},
-										"failures":{
-											"type":"integer",
-											"title":"failures"
-										},
-										"success":{
-											"type":"integer",
-											"title":"success"
-										}
+										"additionalProperties":false
 									},
-									"title":"q10",
-									"additionalProperties":false
+									"title":"q10"
 								},
 								"q11":{
-									"type":"object",
-									"properties":{
-										"p95RPM":{
-											"type":"number",
-											"title":"p95RPM"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"p95RPM":{
+												"type":"number",
+												"title":"p95RPM"
+											},
+											"avgRPM":{
+												"type":"number",
+												"title":"avgRPM"
+											},
+											"avgRPH":{
+												"type":"number",
+												"title":"avgRPH"
+											},
+											"peakRPM":{
+												"type":"integer",
+												"title":"peakRPM"
+											}
 										},
-										"avgRPM":{
-											"type":"number",
-											"title":"avgRPM"
-										},
-										"avgRPH":{
-											"type":"number",
-											"title":"avgRPH"
-										},
-										"peakRPM":{
-											"type":"integer",
-											"title":"peakRPM"
-										}
+										"additionalProperties":false
 									},
-									"title":"q11",
-									"additionalProperties":false
+									"title":"q11"
 								},
 								"q12":{
-									"type":"object",
-									"properties":{
-										"p99_latency":{
-											"type":"number",
-											"title":"p99_latency"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"p99_latency":{
+												"type":"number",
+												"title":"p99_latency"
+											},
+											"min_latency":{
+												"type":"integer",
+												"title":"min_latency"
+											},
+											"avg_latency":{
+												"type":"number",
+												"title":"avg_latency"
+											},
+											"max_latency":{
+												"type":"integer",
+												"title":"max_latency"
+											},
+											"p25_latency":{
+												"type":"integer",
+												"title":"p25_latency"
+											},
+											"p50_latency":{
+												"type":"integer",
+												"title":"p50_latency"
+											}
 										},
-										"min_latency":{
-											"type":"integer",
-											"title":"min_latency"
-										},
-										"avg_latency":{
-											"type":"number",
-											"title":"avg_latency"
-										},
-										"max_latency":{
-											"type":"integer",
-											"title":"max_latency"
-										},
-										"p25_latency":{
-											"type":"integer",
-											"title":"p25_latency"
-										},
-										"p50_latency":{
-											"type":"integer",
-											"title":"p50_latency"
-										}
+										"additionalProperties":false
 									},
-									"title":"q12",
-									"additionalProperties":false
+									"title":"q12"
 								},
 								"q13":{
-									"type":"object",
-									"properties":{
-										"total_runs":{
-											"type":"integer",
-											"title":"total_runs"
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"total_runs":{
+												"type":"integer",
+												"title":"total_runs"
+											},
+											"failures":{
+												"type":"integer",
+												"title":"failures"
+											},
+											"success":{
+												"type":"integer",
+												"title":"success"
+											},
+											"day":{
+												"type":"string",
+												"title":"day"
+											}
 										},
-										"failures":{
-											"type":"integer",
-											"title":"failures"
-										},
-										"success":{
-											"type":"integer",
-											"title":"success"
-										},
-										"day":{
-											"type":"string",
-											"title":"day"
-										}
+										"additionalProperties":false
 									},
-									"title":"q13",
-									"additionalProperties":false
+									"title":"q13"
 								}
 							},
-							"additionalProperties":false
+							"additionalProperties":false,
+							"required":[]
 						},
 						"namespaces":[]
 					}
@@ -2782,7 +2822,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@13",
 			"id":"n_lHcwN",
@@ -2875,64 +2915,149 @@
 						"total_runs":"{{ n_cV2zi.outputs.result.out1[0].total_runs }}",
 						"failures":"{{ n_cV2zi.outputs.result.out1[0].failures }}",
 						"success":"{{ n_cV2zi.outputs.result.out1[0].success }}",
-						"workflowId":"{{ n_cV2zi.outputs.result.out1[0].workflowId }}"
+						"workflowId":"{{ n_cV2zi.outputs.result.out1[0].workflowId }}",
+						"source":"{{ n_cV2zi.outputs.result.out1 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"total_runs":"{{ n_cV2zi.outputs.result.out1[0].total_runs }}",
+							"failures":"{{ n_cV2zi.outputs.result.out1[0].failures }}",
+							"success":"{{ n_cV2zi.outputs.result.out1[0].success }}",
+							"workflowId":"{{ n_cV2zi.outputs.result.out1[0].workflowId }}"
+						}
 					},
 					"q2":{
 						"total_runs":"{{ n_F76h5.outputs.result.out2[0].total_runs }}",
 						"failures":"{{ n_F76h5.outputs.result.out2[0].failures }}",
 						"success":"{{ n_F76h5.outputs.result.out2[0].success }}",
-						"workflowId":"{{ n_F76h5.outputs.result.out2[0].workflowId }}"
+						"workflowId":"{{ n_F76h5.outputs.result.out2[0].workflowId }}",
+						"source":"{{ n_F76h5.outputs.result.out2 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"total_runs":"{{ n_F76h5.outputs.result.out2[0].total_runs }}",
+							"failures":"{{ n_F76h5.outputs.result.out2[0].failures }}",
+							"success":"{{ n_F76h5.outputs.result.out2[0].success }}",
+							"workflowId":"{{ n_F76h5.outputs.result.out2[0].workflowId }}"
+						}
 					},
 					"q3":{
 						"total_runs":"{{ _jErtp.outputs.result.out3[0].total_runs }}",
 						"failures":"{{ _jErtp.outputs.result.out3[0].failures }}",
 						"success":"{{ _jErtp.outputs.result.out3[0].success }}",
-						"workflowId":"{{ _jErtp.outputs.result.out3[0].workflowId }}"
+						"workflowId":"{{ _jErtp.outputs.result.out3[0].workflowId }}",
+						"source":"{{ _jErtp.outputs.result.out3 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"total_runs":"{{ _jErtp.outputs.result.out3[0].total_runs }}",
+							"failures":"{{ _jErtp.outputs.result.out3[0].failures }}",
+							"success":"{{ _jErtp.outputs.result.out3[0].success }}",
+							"workflowId":"{{ _jErtp.outputs.result.out3[0].workflowId }}"
+						}
 					},
 					"q4":{
 						"p99_latency":"{{ _rYjo0.outputs.result.out4[0].p99_latency }}",
 						"p25_latency":"{{ _rYjo0.outputs.result.out4[0].p25_latency }}",
 						"p50_latency":"{{ _rYjo0.outputs.result.out4[0].p50_latency }}",
-						"workflowId":"{{ _rYjo0.outputs.result.out4[0].workflowId }}"
+						"workflowId":"{{ _rYjo0.outputs.result.out4[0].workflowId }}",
+						"source":"{{ _rYjo0.outputs.result.out4 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"p99_latency":"{{ _rYjo0.outputs.result.out4[0].p99_latency }}",
+							"p25_latency":"{{ _rYjo0.outputs.result.out4[0].p25_latency }}",
+							"p50_latency":"{{ _rYjo0.outputs.result.out4[0].p50_latency }}",
+							"workflowId":"{{ _rYjo0.outputs.result.out4[0].workflowId }}"
+						}
 					},
 					"q5":{
 						"endPointPath":"{{ _B3XUK.outputs.result.out5[0].endPointPath }}",
 						"avgRPM":"{{ _B3XUK.outputs.result.out5[0].avgRPM }}",
-						"avgRPH":"{{ _B3XUK.outputs.result.out5[0].avgRPH }}"
+						"avgRPH":"{{ _B3XUK.outputs.result.out5[0].avgRPH }}",
+						"source":"{{ _B3XUK.outputs.result.out5 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"endPointPath":"{{ _B3XUK.outputs.result.out5[0].endPointPath }}",
+							"avgRPM":"{{ _B3XUK.outputs.result.out5[0].avgRPM }}",
+							"avgRPH":"{{ _B3XUK.outputs.result.out5[0].avgRPH }}"
+						}
 					},
 					"q6":{
 						"accessProfile":"{{ _dbXlH.outputs.result.out6[0].accessProfile }}",
 						"hour_of_day":"{{ _dbXlH.outputs.result.out6[0].hour_of_day }}",
-						"request_count":"{{ _dbXlH.outputs.result.out6[0].request_count }}"
+						"request_count":"{{ _dbXlH.outputs.result.out6[0].request_count }}",
+						"source":"{{ _dbXlH.outputs.result.out6 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"accessProfile":"{{ _dbXlH.outputs.result.out6[0].accessProfile }}",
+							"hour_of_day":"{{ _dbXlH.outputs.result.out6[0].hour_of_day }}",
+							"request_count":"{{ _dbXlH.outputs.result.out6[0].request_count }}"
+						}
 					},
 					"q7":{
 						"endPointPath":"{{ _akgPx.outputs.result.out7[0].endPointPath }}",
 						"httpMethod":"{{ _akgPx.outputs.result.out7[0].httpMethod }}",
 						"failureCount":"{{ _akgPx.outputs.result.out7[0].failureCount }}",
-						"statusCode":"{{ _akgPx.outputs.result.out7[0].statusCode }}"
+						"statusCode":"{{ _akgPx.outputs.result.out7[0].statusCode }}",
+						"source":"{{ _akgPx.outputs.result.out7 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"endPointPath":"{{ _akgPx.outputs.result.out7[0].endPointPath }}",
+							"httpMethod":"{{ _akgPx.outputs.result.out7[0].httpMethod }}",
+							"failureCount":"{{ _akgPx.outputs.result.out7[0].failureCount }}",
+							"statusCode":"{{ _akgPx.outputs.result.out7[0].statusCode }}"
+						}
 					},
 					"q8":{
 						"total_runs":"{{ _exWFk.outputs.result.out8[0].total_runs }}",
 						"success":"{{ _exWFk.outputs.result.out8[0].success }}",
 						"failures":"{{ _exWFk.outputs.result.out8[0].failures }}",
 						"success_rate":"{{ _exWFk.outputs.result.out8[0].success_rate }}",
-						"failure_rate":"{{ _exWFk.outputs.result.out8[0].failure_rate }}"
+						"failure_rate":"{{ _exWFk.outputs.result.out8[0].failure_rate }}",
+						"source":"{{ _exWFk.outputs.result.out8 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"total_runs":"{{ _exWFk.outputs.result.out8[0].total_runs }}",
+							"success":"{{ _exWFk.outputs.result.out8[0].success }}",
+							"failures":"{{ _exWFk.outputs.result.out8[0].failures }}",
+							"success_rate":"{{ _exWFk.outputs.result.out8[0].success_rate }}",
+							"failure_rate":"{{ _exWFk.outputs.result.out8[0].failure_rate }}"
+						}
 					},
 					"q9":{
 						"total_runs":"{{ n_dvrDB.outputs.result.out9[0].total_runs }}",
 						"failures":"{{ n_dvrDB.outputs.result.out9[0].failures }}",
-						"success":"{{ n_dvrDB.outputs.result.out9[0].success }}"
+						"success":"{{ n_dvrDB.outputs.result.out9[0].success }}",
+						"source":"{{ n_dvrDB.outputs.result.out9 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"total_runs":"{{ n_dvrDB.outputs.result.out9[0].total_runs }}",
+							"failures":"{{ n_dvrDB.outputs.result.out9[0].failures }}",
+							"success":"{{ n_dvrDB.outputs.result.out9[0].success }}"
+						}
 					},
 					"q10":{
 						"total_runs":"{{ n_pxVnm.outputs.result.out10[0].total_runs }}",
 						"failures":"{{ n_pxVnm.outputs.result.out10[0].failures }}",
-						"success":"{{ n_pxVnm.outputs.result.out10[0].success }}"
+						"success":"{{ n_pxVnm.outputs.result.out10[0].success }}",
+						"source":"{{ n_pxVnm.outputs.result.out10 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"total_runs":"{{ n_pxVnm.outputs.result.out10[0].total_runs }}",
+							"failures":"{{ n_pxVnm.outputs.result.out10[0].failures }}",
+							"success":"{{ n_pxVnm.outputs.result.out10[0].success }}"
+						}
 					},
 					"q11":{
 						"p95RPM":"{{ n_jP24M.outputs.result.out11[0].p95RPM }}",
 						"avgRPM":"{{ n_jP24M.outputs.result.out11[0].avgRPM }}",
 						"avgRPH":"{{ n_jP24M.outputs.result.out11[0].avgRPH }}",
-						"peakRPM":"{{ n_jP24M.outputs.result.out11[0].peakRPM }}"
+						"peakRPM":"{{ n_jP24M.outputs.result.out11[0].peakRPM }}",
+						"source":"{{ n_jP24M.outputs.result.out11 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"p95RPM":"{{ n_jP24M.outputs.result.out11[0].p95RPM }}",
+							"avgRPM":"{{ n_jP24M.outputs.result.out11[0].avgRPM }}",
+							"avgRPH":"{{ n_jP24M.outputs.result.out11[0].avgRPH }}",
+							"peakRPM":"{{ n_jP24M.outputs.result.out11[0].peakRPM }}"
+						}
 					},
 					"q12":{
 						"p99_latency":"{{ n_VxDwc.outputs.result.out12[0].p99_latency }}",
@@ -2940,13 +3065,31 @@
 						"avg_latency":"{{ n_VxDwc.outputs.result.out12[0].avg_latency }}",
 						"max_latency":"{{ n_VxDwc.outputs.result.out12[0].max_latency }}",
 						"p25_latency":"{{ n_VxDwc.outputs.result.out12[0].p25_latency }}",
-						"p50_latency":"{{ n_VxDwc.outputs.result.out12[0].p50_latency }}"
+						"p50_latency":"{{ n_VxDwc.outputs.result.out12[0].p50_latency }}",
+						"source":"{{ n_VxDwc.outputs.result.out12 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"p99_latency":"{{ n_VxDwc.outputs.result.out12[0].p99_latency }}",
+							"min_latency":"{{ n_VxDwc.outputs.result.out12[0].min_latency }}",
+							"avg_latency":"{{ n_VxDwc.outputs.result.out12[0].avg_latency }}",
+							"max_latency":"{{ n_VxDwc.outputs.result.out12[0].max_latency }}",
+							"p25_latency":"{{ n_VxDwc.outputs.result.out12[0].p25_latency }}",
+							"p50_latency":"{{ n_VxDwc.outputs.result.out12[0].p50_latency }}"
+						}
 					},
 					"q13":{
 						"total_runs":"{{ n_lHcwN.outputs.result.out13[0].total_runs }}",
 						"failures":"{{ n_lHcwN.outputs.result.out13[0].failures }}",
 						"success":"{{ n_lHcwN.outputs.result.out13[0].success }}",
-						"day":"{{ n_lHcwN.outputs.result.out13[0].day }}"
+						"day":"{{ n_lHcwN.outputs.result.out13[0].day }}",
+						"source":"{{ n_lHcwN.outputs.result.out13 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"total_runs":"{{ n_lHcwN.outputs.result.out13[0].total_runs }}",
+							"failures":"{{ n_lHcwN.outputs.result.out13[0].failures }}",
+							"success":"{{ n_lHcwN.outputs.result.out13[0].success }}",
+							"day":"{{ n_lHcwN.outputs.result.out13[0].day }}"
+						}
 					}
 				},
 				"status":200
@@ -2971,5 +3114,5 @@
 		}
 	},
 	"standard":false,
-	"version":44
+	"version":45
 }
