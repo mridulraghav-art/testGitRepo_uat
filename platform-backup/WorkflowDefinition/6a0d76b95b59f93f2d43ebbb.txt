@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779302866646,
 	"deleted":false,
-	"deployedVersion":6,
+	"deployedVersion":7,
 	"deploymentState":{
-		"deployedAt":1779346035125,
+		"deployedAt":1779346866947,
 		"deployedBy":97900,
-		"deployedDefinitionId":"6a0eaa72324d254fd22443e6",
+		"deployedDefinitionId":"6a0eadb21775bd555f3dbb9b",
 		"status":"DEPLOYED",
-		"version":6,
-		"workflowVersion":27
+		"version":7,
+		"workflowVersion":28
 	},
 	"edges":[
 		{
@@ -381,7 +381,7 @@
 	"id":"6a0d76b95b59f93f2d43ebbb",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779346864304,
+	"modifiedTime":1779347384263,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -2009,13 +2009,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@8",
 			"id":"n_4u9Im",
 			"index":25,
 			"inputs":{
-				"query":"SELECT \n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED');\n",
+				"query":"SELECT \n    COUNT(id)                                                                    AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END)                       AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END)                          AS failures,\n    ROUND(SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) * 100.0 \n          / NULLIF(COUNT(id), 0), 2)                                             AS success_rate,\n    ROUND(SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) * 100.0 \n          / NULLIF(COUNT(id), 0), 2)                                             AS failure_rate\n\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED');\n",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -2036,7 +2036,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@8",
 			"id":"_exWFk",
@@ -2096,7 +2096,7 @@
 						}
 					}
 				},
-				"code":"def out8 = q8_input.collect { item ->\n    def columns = item.columns\n    def totalRuns = columns.total_runs ?: 0\n    def success = columns.success ?: 0\n    def failures = columns.failures ?: 0\n    \n    def successRate = totalRuns > 0 ? ((success / totalRuns) * 100).round(2) : 0.0\n    def failureRate = totalRuns > 0 ? ((failures / totalRuns) * 100).round(2) : 0.0\n    \n    [\n        total_runs   : totalRuns,\n        success      : success,\n        failures     : failures,\n        success_rate : successRate,\n        failure_rate : failureRate\n    ]\n}\nreturn [\"out8\": out8]",
+				"code":"def out8 = q8_input.collect { item ->\n    item.columns\n}\nreturn [\"out8\" : out8];  ",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
@@ -2814,5 +2814,5 @@
 		}
 	},
 	"standard":false,
-	"version":28
+	"version":29
 }
