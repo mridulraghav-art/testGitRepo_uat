@@ -410,7 +410,7 @@
 	"id":"6a0ef10e9f719d01f3144adc",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy) (copy)",
-	"modifiedTime":1779368397333,
+	"modifiedTime":1779371861174,
 	"name":"Automation-API (copy) (copy)",
 	"nodes":[
 		{
@@ -1107,7 +1107,7 @@
 			"id":"_sGOPx",
 			"index":4,
 			"inputs":{
-				"query":"SELECT\n    workflowId,\n\n    SUM(count) AS total_runs,\n\n    MAX(\n        CASE\n            WHEN status = 'COMPLETED'\n            THEN count\n            ELSE 0\n        END\n    ) AS success,\n\n    MAX(\n        CASE\n            WHEN status = 'FAILED'\n            THEN count\n            ELSE 0\n        END\n    ) AS failures\n\nFROM WORKFLOW_EXECUTION_COUNT\nWHERE status IN ('COMPLETED', 'FAILED')\nGROUP BY workflowId;",
+				"query":"SELECT \n    workflowId,\n    SUM(count) AS total_runs,\n    MAX(CASE WHEN status = 'COMPLETED' THEN count ELSE 0 END) AS success,\n    MAX(CASE WHEN status = 'FAILED' THEN count ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION_COUNT\nWHERE status IN ('COMPLETED', 'FAILED')\nGROUP BY workflowId\nORDER BY workflowId;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -1245,13 +1245,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@2",
 			"id":"n_JD8W4",
 			"index":7,
 			"inputs":{
-				"query":"SELECT \n    workflowId,\n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED')\n  AND startTime >= (UNIX_TIMESTAMP() - 7 * 86400) * 1000\nGROUP BY workflowId;",
+				"query":"SELECT \n    workflowId,\n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED')\n  AND startTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000\nGROUP BY workflowId;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -2795,13 +2795,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@13",
 			"id":"n_XA5ZM",
 			"index":40,
 			"inputs":{
-				"query":"SELECT \n    DATE(FROM_UNIXTIME(startTime / 1000)) AS day,\n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED')\n  AND startTime >= (UNIX_TIMESTAMP() - 7 * 86400) * 1000\nGROUP BY DATE(FROM_UNIXTIME(startTime / 1000))\nORDER BY day ASC;",
+				"query":"SELECT \n    DATE(FROM_UNIXTIME(startTime / 1000)) AS day,\n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED')\n  AND startTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000\nGROUP BY DATE(FROM_UNIXTIME(startTime / 1000))\nORDER BY day ASC;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -3114,5 +3114,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
