@@ -381,7 +381,7 @@
 	"id":"6a0ef10e9f719d01f3144adc",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy) (copy)",
-	"modifiedTime":1779374395548,
+	"modifiedTime":1779374559580,
 	"name":"Automation-API (copy) (copy)",
 	"nodes":[
 		{
@@ -396,7 +396,7 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UsV6q-1",
 			"id":"n_JWcBu",
@@ -544,28 +544,6 @@
 										"additionalProperties":false
 									},
 									"title":"q5"
-								},
-								"q6":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"accessProfile":{
-												"type":"string",
-												"title":"accessProfile"
-											},
-											"hour_of_day":{
-												"type":"integer",
-												"title":"hour_of_day"
-											},
-											"request_count":{
-												"type":"integer",
-												"title":"request_count"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q6"
 								},
 								"q7":{
 									"type":"array",
@@ -776,7 +754,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UsV6q-1",
 			"id":"n_n1Q8p",
@@ -2328,7 +2306,7 @@
 			"id":"n_Fqr1D",
 			"index":31,
 			"inputs":{
-				"query":"WITH minute_buckets AS (\n    SELECT\n        FLOOR(invokeTime / 1000 / 60) AS minute_bucket,\n        COUNT(*) AS cnt\n    FROM API_ENDPOINT\n    WHERE invokeTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000\n    GROUP BY minute_bucket\n),\nhour_buckets AS (\n    SELECT\n        FLOOR(invokeTime / 1000 / 3600) AS hour_bucket,\n        COUNT(*) AS cnt\n    FROM API_ENDPOINT\n        WHERE invokeTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000\n\n    GROUP BY hour_bucket\n)\nSELECT\n    ROUND(SUM(m.cnt) / NULLIF(COUNT(m.minute_bucket), 0), 2)  AS avgRPM,\n    ROUND(SUM(h.cnt) / NULLIF(COUNT(h.hour_bucket),  0), 2)  AS avgRPH,\n    MAX(m.cnt)                                                 AS peakRPM,\n    PERCENTILE_APPROX(m.cnt, 0.95)                            AS p95RPM\nFROM minute_buckets m\n\nCROSS JOIN hour_buckets h;",
+				"query":"WITH minute_buckets AS (\n    SELECT\n        FLOOR(invokeTime / 1000 / 60) AS minute_bucket,\n        COUNT(*) AS cnt\n    FROM API_ENDPOINT\n    WHERE invokeTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000\n    GROUP BY minute_bucket\n),\nhour_buckets AS (\n    SELECT\n        FLOOR(invokeTime / 1000 / 3600) AS hour_bucket,\n        COUNT(*) AS cnt\n    FROM API_ENDPOINT\n        WHERE invokeTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000\n\n    GROUP BY hour_bucket\n)\nSELECT\n    ROUND(SUM(m.cnt) / NULLIF(COUNT(m.minute_bucket), 0), 2)  AS avgRPM,\n    ROUND(SUM(h.cnt) / NULLIF(COUNT(h.hour_bucket),  0), 2)  AS avgRPH,\n    MAX(m.cnt)                                                 AS peakRPM,\n    PERCENTILE_APPROX(m.cnt, 0.95)                            AS p95RPM\nFROM minute_buckets m\nCROSS JOIN hour_buckets h;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -2715,7 +2693,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UsV6q-1",
 			"id":"n_RJ9ld",
@@ -2927,5 +2905,5 @@
 		}
 	},
 	"standard":false,
-	"version":10
+	"version":11
 }
