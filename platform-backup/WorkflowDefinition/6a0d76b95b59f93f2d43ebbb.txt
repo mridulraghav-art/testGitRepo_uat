@@ -410,7 +410,7 @@
 	"id":"6a0d76b95b59f93f2d43ebbb",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779362601342,
+	"modifiedTime":1779362926468,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -425,7 +425,7 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_UsV6q-1",
 			"id":"n_JWcBu",
@@ -2853,151 +2853,102 @@
 		{
 			"context":{
 				"appName":"callables",
-				"resourceVersion":3531,
-				"resourceName":"callables_return_to_automation",
+				"resourceVersion":2316,
+				"resourceName":"callables_return_response_to_api",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UsV6q-1",
 			"id":"n_RJ9ld",
 			"index":42,
 			"inputs":{
-				"result":{
+				"streamingCompleted":true,
+				"responseName":"200_undefined",
+				"body":{
 					"q1":{
-						"ua:type":"mappedArray",
-						"items":{
-							"totalruns":"{{ n_cV2zi.outputs.result.out1[0].total_runs }}",
-							"failure":"{{ n_cV2zi.outputs.result.out1[0].failures }}",
-							"success":"{{ n_cV2zi.outputs.result.out1[0].success }}",
-							"workflowid":"{{ n_cV2zi.outputs.result.out1[0].workflowId }}"
-						},
-						"source":"{{ n_cV2zi.outputs.result.out1 }}"
+						"total_runs":"{{ n_cV2zi.outputs.result.out1[0].total_runs }}",
+						"failures":"{{ n_cV2zi.outputs.result.out1[0].failures }}",
+						"success":"{{ n_cV2zi.outputs.result.out1[0].success }}",
+						"workflowId":"{{ n_cV2zi.outputs.result.out1[0].workflowId }}"
 					},
 					"q2":{
-						"ua:type":"mappedArray",
-						"items":{
-							"workflowId":"{{ n_F76h5.outputs.result.out2[0].workflowId }}",
-							"total_runs":"{{ n_F76h5.outputs.result.out2[0].total_runs }}",
-							"success":"{{ n_F76h5.outputs.result.out2[0].success }}",
-							"failures":"{{ n_F76h5.outputs.result.out2[0].failures }}"
-						},
-						"source":"{{ n_F76h5.outputs.result.out2 }}"
+						"total_runs":"{{ n_F76h5.outputs.result.out2[0].total_runs }}",
+						"failures":"{{ n_F76h5.outputs.result.out2[0].failures }}",
+						"success":"{{ n_F76h5.outputs.result.out2[0].success }}",
+						"workflowId":"{{ n_F76h5.outputs.result.out2[0].workflowId }}"
 					},
 					"q3":{
-						"ua:type":"mappedArray",
-						"items":{
-							"workflowId":"{{ _jErtp.outputs.result.out3[0].workflowId }}",
-							"total_runs":"{{ _jErtp.outputs.result.out3[0].total_runs }}",
-							"success":"{{ _jErtp.outputs.result.out3[0].success }}",
-							"failures":"{{ _jErtp.outputs.result.out3[0].failures }}"
-						},
-						"source":"{{ _jErtp.outputs.result.out3 }}"
+						"total_runs":"{{ _jErtp.outputs.result.out3[0].total_runs }}",
+						"failures":"{{ _jErtp.outputs.result.out3[0].failures }}",
+						"success":"{{ _jErtp.outputs.result.out3[0].success }}",
+						"workflowId":"{{ _jErtp.outputs.result.out3[0].workflowId }}"
 					},
 					"q4":{
-						"ua:type":"mappedArray",
-						"items":{
-							"workflowId":"{{ _rYjo0.outputs.result.out4[0].workflowId }}",
-							"p25_latency":"{{ _rYjo0.outputs.result.out4[0].p25_latency }}",
-							"p50_latency":"{{ _rYjo0.outputs.result.out4[0].p50_latency }}",
-							"p99_latency":"{{ _rYjo0.outputs.result.out4[0].p99_latency }}"
-						},
-						"source":"{{ _rYjo0.outputs.result.out4 }}"
+						"p99_latency":"{{ _rYjo0.outputs.result.out4[0].p99_latency }}",
+						"p25_latency":"{{ _rYjo0.outputs.result.out4[0].p25_latency }}",
+						"p50_latency":"{{ _rYjo0.outputs.result.out4[0].p50_latency }}",
+						"workflowId":"{{ _rYjo0.outputs.result.out4[0].workflowId }}"
 					},
 					"q5":{
-						"ua:type":"mappedArray",
-						"items":{
-							"endPointPath":"{{ _B3XUK.outputs.result.out5[0].endPointPath }}",
-							"avgRPM":"{{ _B3XUK.outputs.result.out5[0].avgRPM }}",
-							"avgRPH":"{{ _B3XUK.outputs.result.out5[0].avgRPH }}"
-						},
-						"source":"{{ _B3XUK.outputs.result.out5 }}"
+						"endPointPath":"{{ _B3XUK.outputs.result.out5[0].endPointPath }}",
+						"avgRPM":"{{ _B3XUK.outputs.result.out5[0].avgRPM }}",
+						"avgRPH":"{{ _B3XUK.outputs.result.out5[0].avgRPH }}"
 					},
 					"q6":{
-						"ua:type":"mappedArray",
-						"items":{
-							"accessProfile":"{{ _dbXlH.outputs.result.out6[0].accessProfile }}",
-							"hour_of_day":"{{ _dbXlH.outputs.result.out6[0].hour_of_day }}",
-							"request_count":"{{ _dbXlH.outputs.result.out6[0].request_count }}"
-						},
-						"source":"{{ _dbXlH.outputs.result.out6 }}"
+						"accessProfile":"{{ _dbXlH.outputs.result.out6[0].accessProfile }}",
+						"hour_of_day":"{{ _dbXlH.outputs.result.out6[0].hour_of_day }}",
+						"request_count":"{{ _dbXlH.outputs.result.out6[0].request_count }}"
 					},
 					"q7":{
-						"ua:type":"mappedArray",
-						"items":{
-							"endPointPath":"{{ _akgPx.outputs.result.out7[0].endPointPath }}",
-							"httpMethod":"{{ _akgPx.outputs.result.out7[0].httpMethod }}",
-							"statusCode":"{{ _akgPx.outputs.result.out7[0].statusCode }}",
-							"failureCount":"{{ _akgPx.outputs.result.out7[0].failureCount }}"
-						},
-						"source":"{{ _akgPx.outputs.result.out7 }}"
+						"endPointPath":"{{ _akgPx.outputs.result.out7[0].endPointPath }}",
+						"httpMethod":"{{ _akgPx.outputs.result.out7[0].httpMethod }}",
+						"failureCount":"{{ _akgPx.outputs.result.out7[0].failureCount }}",
+						"statusCode":"{{ _akgPx.outputs.result.out7[0].statusCode }}"
 					},
 					"q8":{
-						"ua:type":"mappedArray",
-						"items":{
-							"total_runs":"{{ _exWFk.outputs.result.out8[0].total_runs }}",
-							"success":"{{ _exWFk.outputs.result.out8[0].success }}",
-							"failures":"{{ _exWFk.outputs.result.out8[0].failures }}",
-							"successrate":"{{ _exWFk.outputs.result.out8[0].success_rate }}",
-							"failurerate":"{{ _exWFk.outputs.result.out8[0].failure_rate }}"
-						},
-						"source":"{{ _exWFk.outputs.result.out8 }}"
+						"total_runs":"{{ _exWFk.outputs.result.out8[0].total_runs }}",
+						"success":"{{ _exWFk.outputs.result.out8[0].success }}",
+						"failures":"{{ _exWFk.outputs.result.out8[0].failures }}",
+						"success_rate":"{{ _exWFk.outputs.result.out8[0].success_rate }}",
+						"failure_rate":"{{ _exWFk.outputs.result.out8[0].failure_rate }}"
 					},
 					"q9":{
-						"source":"{{ n_dvrDB.outputs.result.out9 }}",
-						"ua:type":"mappedArray",
-						"items":{
-							"total_runs":"{{ n_dvrDB.outputs.result.out9[0].total_runs }}",
-							"success":"{{ n_dvrDB.outputs.result.out9[0].success }}",
-							"failures":"{{ n_dvrDB.outputs.result.out9[0].failures }}"
-						}
+						"total_runs":"{{ n_dvrDB.outputs.result.out9[0].total_runs }}",
+						"failures":"{{ n_dvrDB.outputs.result.out9[0].failures }}",
+						"success":"{{ n_dvrDB.outputs.result.out9[0].success }}"
 					},
 					"q10":{
-						"source":"{{ n_pxVnm.outputs.result.out10 }}",
-						"ua:type":"mappedArray",
-						"items":{
-							"total_runs":"{{ n_pxVnm.outputs.result.out10[0].total_runs }}",
-							"success":"{{ n_pxVnm.outputs.result.out10[0].success }}",
-							"failures":"{{ n_pxVnm.outputs.result.out10[0].failures }}"
-						}
+						"total_runs":"{{ n_pxVnm.outputs.result.out10[0].total_runs }}",
+						"failures":"{{ n_pxVnm.outputs.result.out10[0].failures }}",
+						"success":"{{ n_pxVnm.outputs.result.out10[0].success }}"
 					},
 					"q11":{
-						"source":"{{ n_jP24M.outputs.result.out11 }}",
-						"ua:type":"mappedArray",
-						"items":{
-							"avgRPM":"{{ n_jP24M.outputs.result.out11[0].avgRPM }}",
-							"avgRPH":"{{ n_jP24M.outputs.result.out11[0].avgRPH }}",
-							"p95RPM":"{{ n_jP24M.outputs.result.out11[0].p95RPM }}",
-							"peakRPM":"{{ n_jP24M.outputs.result.out11[0].peakRPM }}"
-						}
+						"p95RPM":"{{ n_jP24M.outputs.result.out11[0].p95RPM }}",
+						"avgRPM":"{{ n_jP24M.outputs.result.out11[0].avgRPM }}",
+						"avgRPH":"{{ n_jP24M.outputs.result.out11[0].avgRPH }}",
+						"peakRPM":"{{ n_jP24M.outputs.result.out11[0].peakRPM }}"
 					},
 					"q12":{
-						"source":"{{ n_VxDwc.outputs.result.out12 }}",
-						"ua:type":"mappedArray",
-						"items":{
-							"p25_latency":"{{ n_VxDwc.outputs.result.out12[0].p25_latency }}",
-							"p50_latency":"{{ n_VxDwc.outputs.result.out12[0].p50_latency }}",
-							"p99_latency":"{{ n_VxDwc.outputs.result.out12[0].p99_latency }}",
-							"avg_latency":"{{ n_VxDwc.outputs.result.out12[0].avg_latency }}",
-							"max_latency":"{{ n_VxDwc.outputs.result.out12[0].max_latency }}",
-							"min_latency":"{{ n_VxDwc.outputs.result.out12[0].min_latency }}"
-						}
+						"p99_latency":"{{ n_VxDwc.outputs.result.out12[0].p99_latency }}",
+						"min_latency":"{{ n_VxDwc.outputs.result.out12[0].min_latency }}",
+						"avg_latency":"{{ n_VxDwc.outputs.result.out12[0].avg_latency }}",
+						"max_latency":"{{ n_VxDwc.outputs.result.out12[0].max_latency }}",
+						"p25_latency":"{{ n_VxDwc.outputs.result.out12[0].p25_latency }}",
+						"p50_latency":"{{ n_VxDwc.outputs.result.out12[0].p50_latency }}"
 					},
 					"q13":{
-						"source":"{{ n_lHcwN.outputs.result.out13 }}",
-						"ua:type":"mappedArray",
-						"items":{
-							"total_runs":"{{ n_lHcwN.outputs.result.out13[0].total_runs }}",
-							"success":"{{ n_lHcwN.outputs.result.out13[0].success }}",
-							"failures":"{{ n_lHcwN.outputs.result.out13[0].failures }}"
-						}
+						"total_runs":"{{ n_lHcwN.outputs.result.out13[0].total_runs }}",
+						"failures":"{{ n_lHcwN.outputs.result.out13[0].failures }}",
+						"success":"{{ n_lHcwN.outputs.result.out13[0].success }}"
 					}
-				}
+				},
+				"status":200
 			},
 			"skip":false,
 			"subTitle":"Callable",
-			"title":"Respond to automation",
+			"title":"Respond to API request",
 			"type":"STOP"
 		}
 	],
@@ -3015,5 +2966,5 @@
 		}
 	},
 	"standard":false,
-	"version":41
+	"version":42
 }
