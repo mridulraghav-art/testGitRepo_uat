@@ -410,7 +410,7 @@
 	"id":"6a0d76b95b59f93f2d43ebbb",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779361825004,
+	"modifiedTime":1779362230886,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -2792,7 +2792,7 @@
 			"id":"n_XA5ZM",
 			"index":40,
 			"inputs":{
-				"query":"SELECT \n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED')\n  AND startTime >= UNIX_TIMESTAMP(CURDATE() - INTERVAL 7 DAY) * 1000;",
+				"query":"SELECT \n    DATE(FROM_UNIXTIME(startTime / 1000)) AS day,\n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED')\n  AND startTime >= (UNIX_TIMESTAMP() - 7 * 86400) * 1000\nGROUP BY DATE(FROM_UNIXTIME(startTime / 1000))\nORDER BY day ASC;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -3046,5 +3046,5 @@
 		}
 	},
 	"standard":false,
-	"version":39
+	"version":40
 }
