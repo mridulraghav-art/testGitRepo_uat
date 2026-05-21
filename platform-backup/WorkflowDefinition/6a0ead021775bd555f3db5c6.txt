@@ -6,46 +6,95 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_L7WRu",
+			"fromNodeId":"n_TZDxn",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Yy4Ee",
+			"toNodeId":"n_cAwxz",
 			"type":"next"
 		}
 	],
 	"id":"6a0ead021775bd555f3db5c6",
 	"lastModifiedBy":39,
 	"lcName":"test_check1",
-	"modifiedTime":1779346690531,
+	"modifiedTime":1779346709877,
 	"name":"test_check1",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2314,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_L7WRu-1",
-			"id":"_L7WRu",
-			"index":0,
+			"id":"n_TZDxn",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"outptu"
+					],
+					"properties":{
+						"outptu":{
+							"type":"string",
+							"title":"Outptu"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input"
+					],
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"Input"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2315,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_L7WRu-1",
-			"id":"_Yy4Ee",
-			"index":0,
+			"id":"n_cAwxz",
+			"index":2,
+			"inputs":{
+				"result":{
+					"outptu":"cool"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +105,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
