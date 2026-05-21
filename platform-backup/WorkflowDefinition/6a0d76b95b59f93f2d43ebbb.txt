@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779302866646,
 	"deleted":false,
-	"deployedVersion":15,
+	"deployedVersion":16,
 	"deploymentState":{
-		"deployedAt":1779362994913,
+		"deployedAt":1779363963052,
 		"deployedBy":97900,
-		"deployedDefinitionId":"6a0eecb2f081eb330212c7e8",
+		"deployedDefinitionId":"6a0ef07a9f719d01f31447a4",
 		"status":"DEPLOYED",
-		"version":15,
-		"workflowVersion":44
+		"version":16,
+		"workflowVersion":47
 	},
 	"edges":[
 		{
@@ -408,9 +408,9 @@
 		}
 	],
 	"id":"6a0d76b95b59f93f2d43ebbb",
-	"lastModifiedBy":97900,
+	"lastModifiedBy":97894,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779363958863,
+	"modifiedTime":1779364191489,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -421,379 +421,370 @@
 			},
 			"context":{
 				"appName":"callables",
-				"resourceVersion":2315,
-				"resourceName":"callables_from_api"
+				"resourceVersion":3487,
+				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UsV6q-1",
 			"id":"n_JWcBu",
 			"index":1,
 			"inputs":{
-				"request":{
-					"contentType":"application/json"
-				},
-				"endpointType":"REST",
-				"response":[
-					{
-						"status":200,
-						"contentType":"application/json",
-						"textBody":{
-							"type":"string"
-						},
-						"htmlBody":{
-							"type":"string"
-						},
-						"body":{
-							"type":"object",
-							"properties":{
-								"q1":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"total_runs":{
-												"type":"integer",
-												"title":"total_runs"
-											},
-											"failures":{
-												"type":"integer",
-												"title":"failures"
-											},
-											"success":{
-												"type":"integer",
-												"title":"success"
-											},
-											"workflowId":{
-												"type":"string",
-												"title":"workflowId"
-											}
-										},
-										"additionalProperties":false
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"q2":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"workflowId":{
+										"type":"string",
+										"title":"Workflow Id"
 									},
-									"title":"q1"
+									"total_runs":{
+										"type":"integer",
+										"title":"Total Runs"
+									},
+									"success":{
+										"type":"integer",
+										"title":"Success"
+									},
+									"failures":{
+										"type":"integer",
+										"title":"Failures"
+									}
 								},
-								"q2":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"total_runs":{
-												"type":"integer",
-												"title":"total_runs"
-											},
-											"failures":{
-												"type":"integer",
-												"title":"failures"
-											},
-											"success":{
-												"type":"integer",
-												"title":"success"
-											},
-											"workflowId":{
-												"type":"string",
-												"title":"workflowId"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q2"
-								},
-								"q3":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"total_runs":{
-												"type":"integer",
-												"title":"total_runs"
-											},
-											"failures":{
-												"type":"integer",
-												"title":"failures"
-											},
-											"success":{
-												"type":"integer",
-												"title":"success"
-											},
-											"workflowId":{
-												"type":"string",
-												"title":"workflowId"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q3"
-								},
-								"q4":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"p99_latency":{
-												"type":"number",
-												"title":"p99_latency"
-											},
-											"p25_latency":{
-												"type":"integer",
-												"title":"p25_latency"
-											},
-											"p50_latency":{
-												"type":"integer",
-												"title":"p50_latency"
-											},
-											"workflowId":{
-												"type":"string",
-												"title":"workflowId"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q4"
-								},
-								"q5":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"endPointPath":{
-												"type":"string",
-												"title":"endPointPath"
-											},
-											"avgRPM":{
-												"type":"number",
-												"title":"avgRPM"
-											},
-											"avgRPH":{
-												"type":"number",
-												"title":"avgRPH"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q5"
-								},
-								"q6":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"accessProfile":{
-												"type":"string",
-												"title":"accessProfile"
-											},
-											"hour_of_day":{
-												"type":"integer",
-												"title":"hour_of_day"
-											},
-											"request_count":{
-												"type":"integer",
-												"title":"request_count"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q6"
-								},
-								"q7":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"endPointPath":{
-												"type":"string",
-												"title":"endPointPath"
-											},
-											"httpMethod":{
-												"type":"string",
-												"title":"httpMethod"
-											},
-											"failureCount":{
-												"type":"integer",
-												"title":"failureCount"
-											},
-											"statusCode":{
-												"type":"integer",
-												"title":"statusCode"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q7"
-								},
-								"q8":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"total_runs":{
-												"type":"integer",
-												"title":"total_runs"
-											},
-											"success":{
-												"type":"integer",
-												"title":"success"
-											},
-											"failures":{
-												"type":"integer",
-												"title":"failures"
-											},
-											"success_rate":{
-												"type":"number",
-												"title":"success_rate"
-											},
-											"failure_rate":{
-												"type":"number",
-												"title":"failure_rate"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q8"
-								},
-								"q9":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"total_runs":{
-												"type":"integer",
-												"title":"total_runs"
-											},
-											"failures":{
-												"type":"integer",
-												"title":"failures"
-											},
-											"success":{
-												"type":"integer",
-												"title":"success"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q9"
-								},
-								"q10":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"total_runs":{
-												"type":"integer",
-												"title":"total_runs"
-											},
-											"failures":{
-												"type":"integer",
-												"title":"failures"
-											},
-											"success":{
-												"type":"integer",
-												"title":"success"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q10"
-								},
-								"q11":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"p95RPM":{
-												"type":"number",
-												"title":"p95RPM"
-											},
-											"avgRPM":{
-												"type":"number",
-												"title":"avgRPM"
-											},
-											"avgRPH":{
-												"type":"number",
-												"title":"avgRPH"
-											},
-											"peakRPM":{
-												"type":"integer",
-												"title":"peakRPM"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q11"
-								},
-								"q12":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"p99_latency":{
-												"type":"number",
-												"title":"p99_latency"
-											},
-											"min_latency":{
-												"type":"integer",
-												"title":"min_latency"
-											},
-											"avg_latency":{
-												"type":"number",
-												"title":"avg_latency"
-											},
-											"max_latency":{
-												"type":"integer",
-												"title":"max_latency"
-											},
-											"p25_latency":{
-												"type":"integer",
-												"title":"p25_latency"
-											},
-											"p50_latency":{
-												"type":"integer",
-												"title":"p50_latency"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q12"
-								},
-								"q13":{
-									"type":"array",
-									"items":{
-										"type":"object",
-										"properties":{
-											"total_runs":{
-												"type":"integer",
-												"title":"total_runs"
-											},
-											"failures":{
-												"type":"integer",
-												"title":"failures"
-											},
-											"success":{
-												"type":"integer",
-												"title":"success"
-											},
-											"day":{
-												"type":"string",
-												"title":"day"
-											}
-										},
-										"additionalProperties":false
-									},
-									"title":"q13"
-								}
+								"additionalProperties":false,
+								"required":[]
 							},
-							"additionalProperties":false,
-							"required":[]
+							"title":"q2"
 						},
-						"namespaces":[]
+						"q3":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"workflowId":{
+										"type":"string",
+										"title":"Workflow Id"
+									},
+									"total_runs":{
+										"type":"integer",
+										"title":"Total Runs"
+									},
+									"success":{
+										"type":"integer",
+										"title":"Success"
+									},
+									"failures":{
+										"type":"integer",
+										"title":"Failures"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q3"
+						},
+						"q4":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"workflowId":{
+										"type":"string",
+										"title":"Workflow Id"
+									},
+									"p25_latency":{
+										"type":"number",
+										"title":"P 25 Latency"
+									},
+									"p50_latency":{
+										"type":"number",
+										"title":"P 50 Latency"
+									},
+									"p99_latency":{
+										"type":"number",
+										"title":"P 99 Latency"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q4"
+						},
+						"q5":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"endPointPath":{
+										"type":"string",
+										"title":"End Point Path"
+									},
+									"avgRPM":{
+										"type":"number",
+										"title":"Avg RPM"
+									},
+									"avgRPH":{
+										"type":"number",
+										"title":"Avg RPH"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q5"
+						},
+						"q6":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"accessProfile":{
+										"type":"string",
+										"title":"Access Profile"
+									},
+									"hour_of_day":{
+										"type":"integer",
+										"title":"Hour Of Day"
+									},
+									"request_count":{
+										"type":"integer",
+										"title":"Request Count"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q6"
+						},
+						"q7":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"endPointPath":{
+										"type":"string",
+										"title":"End Point Path"
+									},
+									"httpMethod":{
+										"type":"string",
+										"title":"Http Method"
+									},
+									"statusCode":{
+										"type":"integer",
+										"title":"Status Code"
+									},
+									"failureCount":{
+										"type":"integer",
+										"title":"Failure Count"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q7"
+						},
+						"q1":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"totalruns":{
+										"type":"integer",
+										"title":"Totalruns"
+									},
+									"failure":{
+										"type":"integer",
+										"title":"Failure"
+									},
+									"success":{
+										"type":"integer",
+										"title":"Success"
+									},
+									"workflowid":{
+										"type":"string",
+										"title":"workflowid"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q1"
+						},
+						"q8":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"total_runs":{
+										"type":"integer",
+										"title":"total_runs"
+									},
+									"success":{
+										"type":"integer",
+										"title":"success"
+									},
+									"failures":{
+										"type":"integer",
+										"title":"failures"
+									},
+									"successrate":{
+										"type":"number",
+										"title":"successrate"
+									},
+									"failurerate":{
+										"type":"number",
+										"title":"failurerate"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q8"
+						},
+						"q9":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"total_runs":{
+										"type":"integer",
+										"title":"total_runs"
+									},
+									"success":{
+										"type":"integer",
+										"title":"success"
+									},
+									"failures":{
+										"type":"integer",
+										"title":"failures"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q9"
+						},
+						"q10":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"total_runs":{
+										"type":"integer",
+										"title":"total_runs"
+									},
+									"success":{
+										"type":"integer",
+										"title":"success"
+									},
+									"failures":{
+										"type":"integer",
+										"title":"failures"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q10"
+						},
+						"q11":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"avgRPM":{
+										"type":"number",
+										"title":"avgRPM"
+									},
+									"avgRPH":{
+										"type":"number",
+										"title":"avgRPH"
+									},
+									"p95RPM":{
+										"type":"integer",
+										"title":"p95RPM"
+									},
+									"peakRPM":{
+										"type":"integer",
+										"title":"peakRPM"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q11"
+						},
+						"q12":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"p25_latency":{
+										"type":"number",
+										"title":"p25_latency"
+									},
+									"p50_latency":{
+										"type":"number",
+										"title":"p50_latency"
+									},
+									"p99_latency":{
+										"type":"number",
+										"title":"p99_latency"
+									},
+									"avg_latency":{
+										"type":"number",
+										"title":"avg_latency"
+									},
+									"max_latency":{
+										"type":"number",
+										"title":"max_latency"
+									},
+									"min_latency":{
+										"type":"number",
+										"title":"min_latency"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q12"
+						},
+						"q13":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"total_runs":{
+										"type":"integer",
+										"title":"total_runs"
+									},
+									"success":{
+										"type":"integer",
+										"title":"success"
+									},
+									"failures":{
+										"type":"integer",
+										"title":"failures"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q13"
+						}
 					}
-				],
-				"streamingResponse":false
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
-			"title":"Trigger via API",
+			"title":"Trigger via automation",
 			"trigger":{
 				"type":"CALLABLE"
 			},
@@ -2822,7 +2813,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@13",
 			"id":"n_lHcwN",
@@ -2849,10 +2840,6 @@
 									"failures":{
 										"type":"integer",
 										"title":"failures"
-									},
-									"day":{
-										"type":"string",
-										"title":"day"
 									}
 								},
 								"additionalProperties":false,
@@ -2897,8 +2884,8 @@
 		{
 			"context":{
 				"appName":"callables",
-				"resourceVersion":2316,
-				"resourceName":"callables_return_response_to_api",
+				"resourceVersion":3531,
+				"resourceName":"callables_return_to_automation",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -2908,195 +2895,140 @@
 			"id":"n_RJ9ld",
 			"index":42,
 			"inputs":{
-				"streamingCompleted":true,
-				"responseName":"200_undefined",
-				"body":{
+				"result":{
 					"q1":{
-						"total_runs":"{{ n_cV2zi.outputs.result.out1[0].total_runs }}",
-						"failures":"{{ n_cV2zi.outputs.result.out1[0].failures }}",
-						"success":"{{ n_cV2zi.outputs.result.out1[0].success }}",
-						"workflowId":"{{ n_cV2zi.outputs.result.out1[0].workflowId }}",
-						"source":"{{ n_cV2zi.outputs.result.out1 }}",
 						"ua:type":"mappedArray",
 						"items":{
-							"total_runs":"{{ n_cV2zi.outputs.result.out1[0].total_runs }}",
-							"failures":"{{ n_cV2zi.outputs.result.out1[0].failures }}",
+							"totalruns":"{{ n_cV2zi.outputs.result.out1[0].total_runs }}",
+							"failure":"{{ n_cV2zi.outputs.result.out1[0].failures }}",
 							"success":"{{ n_cV2zi.outputs.result.out1[0].success }}",
-							"workflowId":"{{ n_cV2zi.outputs.result.out1[0].workflowId }}"
-						}
+							"workflowid":"{{ n_cV2zi.outputs.result.out1[0].workflowId }}"
+						},
+						"source":"{{ n_cV2zi.outputs.result.out1 }}"
 					},
 					"q2":{
-						"total_runs":"{{ n_F76h5.outputs.result.out2[0].total_runs }}",
-						"failures":"{{ n_F76h5.outputs.result.out2[0].failures }}",
-						"success":"{{ n_F76h5.outputs.result.out2[0].success }}",
-						"workflowId":"{{ n_F76h5.outputs.result.out2[0].workflowId }}",
-						"source":"{{ n_F76h5.outputs.result.out2 }}",
 						"ua:type":"mappedArray",
 						"items":{
+							"workflowId":"{{ n_F76h5.outputs.result.out2[0].workflowId }}",
 							"total_runs":"{{ n_F76h5.outputs.result.out2[0].total_runs }}",
-							"failures":"{{ n_F76h5.outputs.result.out2[0].failures }}",
 							"success":"{{ n_F76h5.outputs.result.out2[0].success }}",
-							"workflowId":"{{ n_F76h5.outputs.result.out2[0].workflowId }}"
-						}
+							"failures":"{{ n_F76h5.outputs.result.out2[0].failures }}"
+						},
+						"source":"{{ n_F76h5.outputs.result.out2 }}"
 					},
 					"q3":{
-						"total_runs":"{{ _jErtp.outputs.result.out3[0].total_runs }}",
-						"failures":"{{ _jErtp.outputs.result.out3[0].failures }}",
-						"success":"{{ _jErtp.outputs.result.out3[0].success }}",
-						"workflowId":"{{ _jErtp.outputs.result.out3[0].workflowId }}",
-						"source":"{{ _jErtp.outputs.result.out3 }}",
 						"ua:type":"mappedArray",
 						"items":{
+							"workflowId":"{{ _jErtp.outputs.result.out3[0].workflowId }}",
 							"total_runs":"{{ _jErtp.outputs.result.out3[0].total_runs }}",
-							"failures":"{{ _jErtp.outputs.result.out3[0].failures }}",
 							"success":"{{ _jErtp.outputs.result.out3[0].success }}",
-							"workflowId":"{{ _jErtp.outputs.result.out3[0].workflowId }}"
-						}
+							"failures":"{{ _jErtp.outputs.result.out3[0].failures }}"
+						},
+						"source":"{{ _jErtp.outputs.result.out3 }}"
 					},
 					"q4":{
-						"p99_latency":"{{ _rYjo0.outputs.result.out4[0].p99_latency }}",
-						"p25_latency":"{{ _rYjo0.outputs.result.out4[0].p25_latency }}",
-						"p50_latency":"{{ _rYjo0.outputs.result.out4[0].p50_latency }}",
-						"workflowId":"{{ _rYjo0.outputs.result.out4[0].workflowId }}",
-						"source":"{{ _rYjo0.outputs.result.out4 }}",
 						"ua:type":"mappedArray",
 						"items":{
-							"p99_latency":"{{ _rYjo0.outputs.result.out4[0].p99_latency }}",
+							"workflowId":"{{ _rYjo0.outputs.result.out4[0].workflowId }}",
 							"p25_latency":"{{ _rYjo0.outputs.result.out4[0].p25_latency }}",
 							"p50_latency":"{{ _rYjo0.outputs.result.out4[0].p50_latency }}",
-							"workflowId":"{{ _rYjo0.outputs.result.out4[0].workflowId }}"
-						}
+							"p99_latency":"{{ _rYjo0.outputs.result.out4[0].p99_latency }}"
+						},
+						"source":"{{ _rYjo0.outputs.result.out4 }}"
 					},
 					"q5":{
-						"endPointPath":"{{ _B3XUK.outputs.result.out5[0].endPointPath }}",
-						"avgRPM":"{{ _B3XUK.outputs.result.out5[0].avgRPM }}",
-						"avgRPH":"{{ _B3XUK.outputs.result.out5[0].avgRPH }}",
-						"source":"{{ _B3XUK.outputs.result.out5 }}",
 						"ua:type":"mappedArray",
 						"items":{
 							"endPointPath":"{{ _B3XUK.outputs.result.out5[0].endPointPath }}",
 							"avgRPM":"{{ _B3XUK.outputs.result.out5[0].avgRPM }}",
 							"avgRPH":"{{ _B3XUK.outputs.result.out5[0].avgRPH }}"
-						}
+						},
+						"source":"{{ _B3XUK.outputs.result.out5 }}"
 					},
 					"q6":{
-						"accessProfile":"{{ _dbXlH.outputs.result.out6[0].accessProfile }}",
-						"hour_of_day":"{{ _dbXlH.outputs.result.out6[0].hour_of_day }}",
-						"request_count":"{{ _dbXlH.outputs.result.out6[0].request_count }}",
-						"source":"{{ _dbXlH.outputs.result.out6 }}",
 						"ua:type":"mappedArray",
 						"items":{
 							"accessProfile":"{{ _dbXlH.outputs.result.out6[0].accessProfile }}",
 							"hour_of_day":"{{ _dbXlH.outputs.result.out6[0].hour_of_day }}",
 							"request_count":"{{ _dbXlH.outputs.result.out6[0].request_count }}"
-						}
+						},
+						"source":"{{ _dbXlH.outputs.result.out6 }}"
 					},
 					"q7":{
-						"endPointPath":"{{ _akgPx.outputs.result.out7[0].endPointPath }}",
-						"httpMethod":"{{ _akgPx.outputs.result.out7[0].httpMethod }}",
-						"failureCount":"{{ _akgPx.outputs.result.out7[0].failureCount }}",
-						"statusCode":"{{ _akgPx.outputs.result.out7[0].statusCode }}",
-						"source":"{{ _akgPx.outputs.result.out7 }}",
 						"ua:type":"mappedArray",
 						"items":{
 							"endPointPath":"{{ _akgPx.outputs.result.out7[0].endPointPath }}",
 							"httpMethod":"{{ _akgPx.outputs.result.out7[0].httpMethod }}",
-							"failureCount":"{{ _akgPx.outputs.result.out7[0].failureCount }}",
-							"statusCode":"{{ _akgPx.outputs.result.out7[0].statusCode }}"
-						}
+							"statusCode":"{{ _akgPx.outputs.result.out7[0].statusCode }}",
+							"failureCount":"{{ _akgPx.outputs.result.out7[0].failureCount }}"
+						},
+						"source":"{{ _akgPx.outputs.result.out7 }}"
 					},
 					"q8":{
-						"total_runs":"{{ _exWFk.outputs.result.out8[0].total_runs }}",
-						"success":"{{ _exWFk.outputs.result.out8[0].success }}",
-						"failures":"{{ _exWFk.outputs.result.out8[0].failures }}",
-						"success_rate":"{{ _exWFk.outputs.result.out8[0].success_rate }}",
-						"failure_rate":"{{ _exWFk.outputs.result.out8[0].failure_rate }}",
-						"source":"{{ _exWFk.outputs.result.out8 }}",
 						"ua:type":"mappedArray",
 						"items":{
 							"total_runs":"{{ _exWFk.outputs.result.out8[0].total_runs }}",
 							"success":"{{ _exWFk.outputs.result.out8[0].success }}",
 							"failures":"{{ _exWFk.outputs.result.out8[0].failures }}",
-							"success_rate":"{{ _exWFk.outputs.result.out8[0].success_rate }}",
-							"failure_rate":"{{ _exWFk.outputs.result.out8[0].failure_rate }}"
-						}
+							"successrate":"{{ _exWFk.outputs.result.out8[0].success_rate }}",
+							"failurerate":"{{ _exWFk.outputs.result.out8[0].failure_rate }}"
+						},
+						"source":"{{ _exWFk.outputs.result.out8 }}"
 					},
 					"q9":{
-						"total_runs":"{{ n_dvrDB.outputs.result.out9[0].total_runs }}",
-						"failures":"{{ n_dvrDB.outputs.result.out9[0].failures }}",
-						"success":"{{ n_dvrDB.outputs.result.out9[0].success }}",
 						"source":"{{ n_dvrDB.outputs.result.out9 }}",
 						"ua:type":"mappedArray",
 						"items":{
 							"total_runs":"{{ n_dvrDB.outputs.result.out9[0].total_runs }}",
-							"failures":"{{ n_dvrDB.outputs.result.out9[0].failures }}",
-							"success":"{{ n_dvrDB.outputs.result.out9[0].success }}"
+							"success":"{{ n_dvrDB.outputs.result.out9[0].success }}",
+							"failures":"{{ n_dvrDB.outputs.result.out9[0].failures }}"
 						}
 					},
 					"q10":{
-						"total_runs":"{{ n_pxVnm.outputs.result.out10[0].total_runs }}",
-						"failures":"{{ n_pxVnm.outputs.result.out10[0].failures }}",
-						"success":"{{ n_pxVnm.outputs.result.out10[0].success }}",
 						"source":"{{ n_pxVnm.outputs.result.out10 }}",
 						"ua:type":"mappedArray",
 						"items":{
 							"total_runs":"{{ n_pxVnm.outputs.result.out10[0].total_runs }}",
-							"failures":"{{ n_pxVnm.outputs.result.out10[0].failures }}",
-							"success":"{{ n_pxVnm.outputs.result.out10[0].success }}"
+							"success":"{{ n_pxVnm.outputs.result.out10[0].success }}",
+							"failures":"{{ n_pxVnm.outputs.result.out10[0].failures }}"
 						}
 					},
 					"q11":{
-						"p95RPM":"{{ n_jP24M.outputs.result.out11[0].p95RPM }}",
-						"avgRPM":"{{ n_jP24M.outputs.result.out11[0].avgRPM }}",
-						"avgRPH":"{{ n_jP24M.outputs.result.out11[0].avgRPH }}",
-						"peakRPM":"{{ n_jP24M.outputs.result.out11[0].peakRPM }}",
 						"source":"{{ n_jP24M.outputs.result.out11 }}",
 						"ua:type":"mappedArray",
 						"items":{
-							"p95RPM":"{{ n_jP24M.outputs.result.out11[0].p95RPM }}",
 							"avgRPM":"{{ n_jP24M.outputs.result.out11[0].avgRPM }}",
 							"avgRPH":"{{ n_jP24M.outputs.result.out11[0].avgRPH }}",
+							"p95RPM":"{{ n_jP24M.outputs.result.out11[0].p95RPM }}",
 							"peakRPM":"{{ n_jP24M.outputs.result.out11[0].peakRPM }}"
 						}
 					},
 					"q12":{
-						"p99_latency":"{{ n_VxDwc.outputs.result.out12[0].p99_latency }}",
-						"min_latency":"{{ n_VxDwc.outputs.result.out12[0].min_latency }}",
-						"avg_latency":"{{ n_VxDwc.outputs.result.out12[0].avg_latency }}",
-						"max_latency":"{{ n_VxDwc.outputs.result.out12[0].max_latency }}",
-						"p25_latency":"{{ n_VxDwc.outputs.result.out12[0].p25_latency }}",
-						"p50_latency":"{{ n_VxDwc.outputs.result.out12[0].p50_latency }}",
 						"source":"{{ n_VxDwc.outputs.result.out12 }}",
 						"ua:type":"mappedArray",
 						"items":{
+							"p25_latency":"{{ n_VxDwc.outputs.result.out12[0].p25_latency }}",
+							"p50_latency":"{{ n_VxDwc.outputs.result.out12[0].p50_latency }}",
 							"p99_latency":"{{ n_VxDwc.outputs.result.out12[0].p99_latency }}",
-							"min_latency":"{{ n_VxDwc.outputs.result.out12[0].min_latency }}",
 							"avg_latency":"{{ n_VxDwc.outputs.result.out12[0].avg_latency }}",
 							"max_latency":"{{ n_VxDwc.outputs.result.out12[0].max_latency }}",
-							"p25_latency":"{{ n_VxDwc.outputs.result.out12[0].p25_latency }}",
-							"p50_latency":"{{ n_VxDwc.outputs.result.out12[0].p50_latency }}"
+							"min_latency":"{{ n_VxDwc.outputs.result.out12[0].min_latency }}"
 						}
 					},
 					"q13":{
-						"total_runs":"{{ n_lHcwN.outputs.result.out13[0].total_runs }}",
-						"failures":"{{ n_lHcwN.outputs.result.out13[0].failures }}",
-						"success":"{{ n_lHcwN.outputs.result.out13[0].success }}",
-						"day":"{{ n_lHcwN.outputs.result.out13[0].day }}",
 						"source":"{{ n_lHcwN.outputs.result.out13 }}",
 						"ua:type":"mappedArray",
 						"items":{
 							"total_runs":"{{ n_lHcwN.outputs.result.out13[0].total_runs }}",
-							"failures":"{{ n_lHcwN.outputs.result.out13[0].failures }}",
 							"success":"{{ n_lHcwN.outputs.result.out13[0].success }}",
-							"day":"{{ n_lHcwN.outputs.result.out13[0].day }}"
+							"failures":"{{ n_lHcwN.outputs.result.out13[0].failures }}"
 						}
 					}
-				},
-				"status":200
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
-			"title":"Respond to API request",
+			"title":"Respond to automation",
 			"type":"STOP"
 		}
 	],
@@ -3114,5 +3046,5 @@
 		}
 	},
 	"standard":false,
-	"version":47
+	"version":48
 }
