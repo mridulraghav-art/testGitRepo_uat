@@ -410,7 +410,7 @@
 	"id":"6a0ef10e9f719d01f3144adc",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy) (copy)",
-	"modifiedTime":1779372497598,
+	"modifiedTime":1779374185134,
 	"name":"Automation-API (copy) (copy)",
 	"nodes":[
 		{
@@ -1957,7 +1957,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@7",
 			"id":"n_lsXA9",
@@ -2096,7 +2096,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@8",
 			"id":"n_4u9Im",
@@ -2239,13 +2239,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@9",
 			"id":"n_CF6rZ",
 			"index":28,
 			"inputs":{
-				"query":"SELECT \n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED')\n  AND startTime >= (UNIX_TIMESTAMP() - 7 * 86400) * 1000;",
+				"query":"SELECT \n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED')\n  AND startTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -2509,13 +2509,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@11",
 			"id":"n_Fqr1D",
 			"index":34,
 			"inputs":{
-				"query":"WITH minute_buckets AS (\n    SELECT\n        FLOOR(invokeTime / 1000 / 60) AS minute_bucket,\n        COUNT(*) AS cnt\n    FROM API_ENDPOINT\n    GROUP BY minute_bucket\n),\nhour_buckets AS (\n    SELECT\n        FLOOR(invokeTime / 1000 / 3600) AS hour_bucket,\n        COUNT(*) AS cnt\n    FROM API_ENDPOINT\n    GROUP BY hour_bucket\n)\nSELECT\n    ROUND(SUM(m.cnt) / NULLIF(COUNT(m.minute_bucket), 0), 2)  AS avgRPM,\n    ROUND(SUM(h.cnt) / NULLIF(COUNT(h.hour_bucket),  0), 2)  AS avgRPH,\n    MAX(m.cnt)                                                 AS peakRPM,\n    PERCENTILE_APPROX(m.cnt, 0.95)                            AS p95RPM\nFROM minute_buckets m\nCROSS JOIN hour_buckets h;",
+				"query":"WITH minute_buckets AS (\n    SELECT\n        FLOOR(invokeTime / 1000 / 60) AS minute_bucket,\n        COUNT(*) AS cnt\n    FROM API_ENDPOINT\n    GROUP BY minute_bucket\n),\nhour_buckets AS (\n    SELECT\n        FLOOR(invokeTime / 1000 / 3600) AS hour_bucket,\n        COUNT(*) AS cnt\n    FROM API_ENDPOINT\n    GROUP BY hour_bucket\n)\nSELECT\n    ROUND(SUM(m.cnt) / NULLIF(COUNT(m.minute_bucket), 0), 2)  AS avgRPM,\n    ROUND(SUM(h.cnt) / NULLIF(COUNT(h.hour_bucket),  0), 2)  AS avgRPH,\n    MAX(m.cnt)                                                 AS peakRPM,\n    PERCENTILE_APPROX(m.cnt, 0.95)                            AS p95RPM\nFROM minute_buckets m\n\nCROSS JOIN hour_buckets h;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -2648,13 +2648,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@12",
 			"id":"n_LI0xD",
 			"index":37,
 			"inputs":{
-				"query":"SELECT\n    ROUND(PERCENTILE_APPROX(executionTime, 0.25), 2) AS p25_latency,\n    ROUND(PERCENTILE_APPROX(executionTime, 0.50), 2) AS p50_latency,\n    ROUND(PERCENTILE_APPROX(executionTime, 0.99), 2) AS p99_latency,\n    ROUND(AVG(executionTime), 2)                     AS avg_latency,\n    ROUND(MAX(executionTime), 2)                     AS max_latency,\n    ROUND(MIN(executionTime), 2)                     AS min_latency\n\nFROM WORKFLOW_EXECUTION;",
+				"query":"SELECT\n    ROUND(PERCENTILE_APPROX(executionTime, 0.25), 2) AS p25_latency,\n    ROUND(PERCENTILE_APPROX(executionTime, 0.50), 2) AS p50_latency,\n    ROUND(PERCENTILE_APPROX(executionTime, 0.99), 2) AS p99_latency,\n    ROUND(AVG(executionTime), 2)                     AS avg_latency,\n    ROUND(MAX(executionTime), 2)                     AS max_latency,\n    ROUND(MIN(executionTime), 2)                     AS min_latency\n\nFROM WORKFLOW_EXECUTION\nWHERE startTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -3114,5 +3114,5 @@
 		}
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
