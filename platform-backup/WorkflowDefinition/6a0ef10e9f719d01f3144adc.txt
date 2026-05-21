@@ -410,7 +410,7 @@
 	"id":"6a0ef10e9f719d01f3144adc",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy) (copy)",
-	"modifiedTime":1779372277177,
+	"modifiedTime":1779372497598,
 	"name":"Automation-API (copy) (copy)",
 	"nodes":[
 		{
@@ -1677,7 +1677,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@5",
 			"id":"n_lbmPQ",
@@ -1817,7 +1817,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@6",
 			"id":"n_tplHz",
@@ -1957,13 +1957,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@7",
 			"id":"n_lsXA9",
 			"index":22,
 			"inputs":{
-				"query":"SELECT\n    endPointPath,\n    httpMethod,\n    statusCode,\n    COUNT(*) AS failureCount\nFROM API_ENDPOINT\nWHERE statusCode >= 400\nGROUP BY endPointPath, httpMethod, statusCode\nORDER BY failureCount DESC\nLIMIT 5;",
+				"query":"SELECT\n    endPointPath,\n    httpMethod,\n    statusCode,\n    COUNT(*) AS failureCount\nFROM API_ENDPOINT\nWHERE statusCode >= 400 AND invokeTime >= UNIX_TIMESTAMP(DATE_SUB(CURDATE(), INTERVAL 6 DAY)) * 1000\nGROUP BY endPointPath, httpMethod, statusCode\nORDER BY failureCount DESC\nLIMIT 5;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -2096,13 +2096,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@8",
 			"id":"n_4u9Im",
 			"index":25,
 			"inputs":{
-				"query":"SELECT \n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END)                       AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END)                          AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED');\n",
+				"query":"SELECT \n    SUM(count) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN count ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN count ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION_COUNT\nWHERE status IN ('COMPLETED', 'FAILED');",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -3114,5 +3114,5 @@
 		}
 	},
 	"standard":false,
-	"version":7
+	"version":8
 }
