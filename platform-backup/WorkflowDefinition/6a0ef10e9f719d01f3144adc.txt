@@ -4,6 +4,15 @@
 	],
 	"createdTime":1779364110890,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1779364119434,
+		"deployedBy":97894,
+		"deployedDefinitionId":"6a0ef117f081eb3302141eb0",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":0
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_JWcBu",
@@ -399,9 +408,9 @@
 		}
 	],
 	"id":"6a0ef10e9f719d01f3144adc",
-	"lastModifiedBy":97894,
+	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy) (copy)",
-	"modifiedTime":1779364110890,
+	"modifiedTime":1779367835115,
 	"name":"Automation-API (copy) (copy)",
 	"nodes":[
 		{
@@ -1092,13 +1101,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@1",
 			"id":"_sGOPx",
 			"index":4,
 			"inputs":{
-				"query":"SELECT \n    workflowId,\n    COUNT(id) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION\nWHERE status IN ('COMPLETED', 'FAILED')\nGROUP BY workflowId;\n",
+				"query":"SELECT \n    workflowId,\n    SUM(count) AS total_runs,\n    SUM(CASE WHEN status = 'COMPLETED' THEN count ELSE 0 END) AS success,\n    SUM(CASE WHEN status = 'FAILED' THEN count ELSE 0 END) AS failures\nFROM WORKFLOW_EXECUTION_COUNT\nWHERE status IN ('COMPLETED', 'FAILED')\nGROUP BY workflowId;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -3105,5 +3114,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
