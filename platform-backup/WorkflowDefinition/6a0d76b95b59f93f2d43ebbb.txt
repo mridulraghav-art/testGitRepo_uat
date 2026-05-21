@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779302866646,
 	"deleted":false,
-	"deployedVersion":9,
+	"deployedVersion":10,
 	"deploymentState":{
-		"deployedAt":1779348048356,
+		"deployedAt":1779348904161,
 		"deployedBy":97900,
-		"deployedDefinitionId":"6a0eb2501775bd555f3dd5c3",
+		"deployedDefinitionId":"6a0eb5a8140a52534c28c510",
 		"status":"DEPLOYED",
-		"version":9,
-		"workflowVersion":30
+		"version":10,
+		"workflowVersion":32
 	},
 	"edges":[
 		{
@@ -381,7 +381,7 @@
 	"id":"6a0d76b95b59f93f2d43ebbb",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779348902724,
+	"modifiedTime":1779348950234,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -2430,13 +2430,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n1Q8p@_UsV6q-1@11",
 			"id":"n_Fqr1D",
 			"index":34,
 			"inputs":{
-				"query":"SELECT\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60)), 0),\n        2\n    ) AS avgRPM,\n\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600)), 0),\n        2\n    ) AS avgRPH\n    COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60))                             AS total_request_per_min,\n    COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600))                           AS total_request_per_hour\nFROM API_ENDPOINT;",
+				"query":"SELECT\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60)), 0),\n        2\n    ) AS avgRPM,\n\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600)), 0),\n        2\n    ) AS avgRPH,\n    COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60))                             AS total_request_per_min,\n    COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600))                           AS total_request_per_hour\nFROM API_ENDPOINT;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -2832,5 +2832,5 @@
 		}
 	},
 	"standard":false,
-	"version":32
+	"version":33
 }
