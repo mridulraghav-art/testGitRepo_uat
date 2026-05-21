@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779302866646,
 	"deleted":false,
-	"deployedVersion":4,
+	"deployedVersion":5,
 	"deploymentState":{
-		"deployedAt":1779343230103,
+		"deployedAt":1779343466156,
 		"deployedBy":97900,
-		"deployedDefinitionId":"6a0e9f7d5f4a391c5d317133",
+		"deployedDefinitionId":"6a0ea06a140a52534c28643b",
 		"status":"DEPLOYED",
-		"version":4,
-		"workflowVersion":19
+		"version":5,
+		"workflowVersion":20
 	},
 	"edges":[
 		{
@@ -242,6 +242,28 @@
 			"type":"next"
 		},
 		{
+			"fromNodeId":"n_n1Q8p",
+			"name":"11",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_n1Q8p@11",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_n1Q8p@11",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Fqr1D",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Fqr1D",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_jP24M",
+			"type":"next"
+		},
+		{
 			"fromNodeId":"n_cV2zi",
 			"priority":0,
 			"skip":false,
@@ -312,6 +334,13 @@
 			"type":"next"
 		},
 		{
+			"fromNodeId":"n_jP24M",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_RJ9ld",
+			"type":"next"
+		},
+		{
 			"fromNodeId":"n_n1Q8p",
 			"name":"default",
 			"priority":0,
@@ -323,7 +352,7 @@
 	"id":"6a0d76b95b59f93f2d43ebbb",
 	"lastModifiedBy":97900,
 	"lcName":"automation-api (copy)",
-	"modifiedTime":1779343463399,
+	"modifiedTime":1779344359902,
 	"name":"Automation-API (copy)",
 	"nodes":[
 		{
@@ -598,6 +627,25 @@
 								"required":[]
 							},
 							"title":"q10"
+						},
+						"q11":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"avgRPM":{
+										"type":"number",
+										"title":"avgRPM"
+									},
+									"avgRPH":{
+										"type":"number",
+										"title":"avgRPH"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"q11"
 						}
 					}
 				}
@@ -789,6 +837,24 @@
 						"id":"10",
 						"inputs":{
 							"name":"Branch 10",
+							"conditions":{
+								"filters":[
+									{
+										"property":"1",
+										"filter":{
+											"operator":"EQUAL",
+											"value":"1"
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"11",
+						"inputs":{
+							"name":"Branch 11",
 							"conditions":{
 								"filters":[
 									{
@@ -2220,6 +2286,137 @@
 		},
 		{
 			"context":{
+				"appName":"branch_condition",
+				"resourceVersion":0,
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_n1Q8p@_UsV6q-1@11",
+			"id":"n_n1Q8p@11",
+			"index":33,
+			"inputs":{
+				"name":"Branch 11",
+				"conditions":{
+					"filters":[
+						{
+							"property":"1",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"1"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":2061,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_n1Q8p@_UsV6q-1@11",
+			"id":"n_Fqr1D",
+			"index":34,
+			"inputs":{
+				"query":"SELECT\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 60)), 0),\n        2\n    ) AS avgRPM,\n\n    ROUND(\n        COUNT(*) /\n        NULLIF(COUNT(DISTINCT FLOOR(invokeTime / 1000 / 3600)), 0),\n        2\n    ) AS avgRPH\n\nFROM API_ENDPOINT;",
+				"group":"PLATFORM"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.parameters.q11_input.items"
+				]
+			},
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_n1Q8p@_UsV6q-1@11",
+			"id":"n_jP24M",
+			"index":35,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"out11":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"avgRPM":{
+										"type":"number",
+										"title":"avgRPM"
+									},
+									"avgRPH":{
+										"type":"number",
+										"title":"avgRPH"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"out11"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"q11_input":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"q11_input"
+						}
+					}
+				},
+				"code":"def out11 = q11_input.collect { item ->\n    item.columns\n}\nreturn [\"out11\" : out11];  ",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"q11_input":{
+						"source":"{{ n_Fqr1D.outputs.objects }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_Fqr1D.outputs.objects[0] }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"callables",
 				"resourceVersion":3531,
 				"resourceName":"callables_return_to_automation",
@@ -2230,7 +2427,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_UsV6q-1",
 			"id":"n_RJ9ld",
-			"index":33,
+			"index":36,
 			"inputs":{
 				"result":{
 					"q1":{
@@ -2327,6 +2524,14 @@
 							"success":"{{ n_pxVnm.outputs.result.out10[0].success }}",
 							"failures":"{{ n_pxVnm.outputs.result.out10[0].failures }}"
 						}
+					},
+					"q11":{
+						"source":"{{ n_jP24M.outputs.result.out11 }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"avgRPM":"{{ n_jP24M.outputs.result.out11[0].avgRPM }}",
+							"avgRPH":"{{ n_jP24M.outputs.result.out11[0].avgRPH }}"
+						}
 					}
 				}
 			},
@@ -2350,5 +2555,5 @@
 		}
 	},
 	"standard":false,
-	"version":20
+	"version":21
 }
