@@ -24,7 +24,7 @@
 	},
 	"id":"2-w-2",
 	"lastModifiedBy":39,
-	"modifiedTime":1779382358675,
+	"modifiedTime":1779383005080,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,11 +39,21 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":2,
+				"_pageCount":3,
 				"_moduleCount":0,
 				"_variableCounter":2,
 				"_templateComponentCount":0
 			}
+		},
+		"manifest":{
+			"type":"WEB"
+		},
+		"type":"application",
+		"locale":{
+			"defaultLocale":"en-US"
+		},
+		"customCode":{
+			"header":"<style>\ndiv {\n    color: green;\n}\n</style>"
 		},
 		"navigation":{
 			"secondary":[],
@@ -53,6 +63,10 @@
 					"primary":[
 						{
 							"id":"nav_ctuo9",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_rA0ny",
 							"hiddenInOverflow":false
 						}
 					],
@@ -91,6 +105,10 @@
 					"primary":[
 						{
 							"id":"nav_ctuo9",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_rA0ny",
 							"hiddenInOverflow":false
 						}
 					],
@@ -136,6 +154,10 @@
 						{
 							"id":"nav_ctuo9",
 							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_rA0ny",
+							"hiddenInOverflow":false
 						}
 					],
 					"navigationItem":{
@@ -179,6 +201,10 @@
 					"primary":[
 						{
 							"id":"nav_ctuo9",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_rA0ny",
 							"hiddenInOverflow":false
 						}
 					],
@@ -229,31 +255,32 @@
 					"type":"PAGE",
 					"pageId":"e_6a0ee9c6d89ec7156cea098d",
 					"slug":"homepage"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 3",
+					"icon":"Zap",
+					"id":"nav_rA0ny",
+					"type":"PAGE",
+					"pageId":"e_6a0f3ad464e34a7642d95d60",
+					"slug":"page-3"
 				}
 			]
 		},
-		"interfacePageIdVsSlugMap":{
-			"e_6a0ee9c6d89ec7156cea098d":"homepage",
-			"e_global_2-w-2":"global-page-of-2-w-2",
-			"e_6a0f226680830b496b59003c":"page-2"
+		"security":{
+			"type":"PUBLIC"
 		},
-		"manifest":{
-			"type":"WEB"
+		"interfacePageIdVsSlugMap":{
+			"e_global_2-w-2":"global-page-of-2-w-2",
+			"e_6a0f226680830b496b59003c":"page-2",
+			"e_6a0ee9c6d89ec7156cea098d":"homepage",
+			"e_6a0f3ad464e34a7642d95d60":"page-3"
 		},
 		"name":"2w2",
 		"theme":{
 			"defaultThemeId":"e_699c1348d53be90e1bfeabff"
 		},
-		"type":"application",
-		"locale":{
-			"defaultLocale":"en-US"
-		},
 		"entityDetailsMap":{
-			"e_6a0ee9c6d89ec7156cea098d":{
-				"slug":"homepage",
-				"isPublic":false,
-				"type":"PAGE"
-			},
 			"e_global_2-w-2":{
 				"slug":"global-page-of-2-w-2",
 				"isPublic":false,
@@ -263,15 +290,22 @@
 				"slug":"page-2",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_6a0ee9c6d89ec7156cea098d":{
+				"slug":"homepage",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_6a0f3ad464e34a7642d95d60":{
+				"slug":"page-3",
+				"isPublic":false,
+				"type":"PAGE"
 			}
-		},
-		"customCode":{
-			"header":"<style>\ndiv {\n    color: green;\n}\n</style>"
 		}
 	},
 	"standard":false,
 	"tags":[
 		
 	],
-	"version":13
+	"version":15
 }
