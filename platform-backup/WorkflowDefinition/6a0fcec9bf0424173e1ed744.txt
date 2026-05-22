@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779420873460,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_Gos8D",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_p9yi0",
+			"type":"next"
+		}
+	],
+	"id":"6a0fcec9bf0424173e1ed744",
+	"lastModifiedBy":39,
+	"lcName":"soaphttptosoapendpoint_217794208662910",
+	"modifiedTime":1779420873460,
+	"name":"soapHTTPToSOAPEndpoint_217794208662910",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Gos8D-1",
+			"id":"_Gos8D",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Gos8D-1",
+			"id":"_p9yi0",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
