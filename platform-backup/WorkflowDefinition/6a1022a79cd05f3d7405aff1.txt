@@ -4,6 +4,15 @@
 	],
 	"createdTime":1779442343843,
 	"deleted":false,
+	"deployedVersion":3,
+	"deploymentState":{
+		"deployedAt":1779442386054,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a1022d2c694407936819c12",
+		"status":"DEPLOYED",
+		"version":3,
+		"workflowVersion":4
+	},
 	"description":"description",
 	"edges":[
 		{
@@ -17,7 +26,7 @@
 	"id":"6a1022a79cd05f3d7405aff1",
 	"lastModifiedBy":39,
 	"lcName":"restorerecentversion_217794422051200",
-	"modifiedTime":1779442369535,
+	"modifiedTime":1779442393526,
 	"name":"restoreRecentVersion_217794422051200",
 	"nodes":[
 		{
@@ -50,12 +59,27 @@
 					"type":"object",
 					"additionalProperties":false,
 					"required":[
-						"input_String"
+						"input_String",
+						"input_string2",
+						"input_string3",
+						"input_string4"
 					],
 					"properties":{
 						"input_String":{
 							"type":"string",
 							"title":"input_String"
+						},
+						"input_string2":{
+							"type":"string",
+							"title":"input_string2"
+						},
+						"input_string3":{
+							"type":"string",
+							"title":"input_string3"
+						},
+						"input_string4":{
+							"type":"string",
+							"title":"input_string4"
 						}
 					}
 				}
@@ -110,5 +134,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":5
 }
