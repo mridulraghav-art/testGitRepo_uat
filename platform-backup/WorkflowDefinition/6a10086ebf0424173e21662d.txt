@@ -4,49 +4,112 @@
 	],
 	"createdTime":1779435630046,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1779435649514,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a1008819f719d01f31e1045",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_QCtPi",
+			"fromNodeId":"n_HoxHG",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_RH0x1",
+			"toNodeId":"n_7YV0C",
 			"type":"next"
 		}
 	],
 	"id":"6a10086ebf0424173e21662d",
 	"lastModifiedBy":39,
 	"lcName":"listofversionsinui_217794354807320",
-	"modifiedTime":1779435636181,
+	"modifiedTime":1779435654092,
 	"name":"listOfVersionsInUI_217794354807320",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2315,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QCtPi-1",
-			"id":"_QCtPi",
-			"index":0,
+			"id":"n_HoxHG",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output_String"
+					],
+					"properties":{
+						"output_String":{
+							"type":"string",
+							"title":"output_String"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input_String",
+						"input_string2"
+					],
+					"properties":{
+						"input_String":{
+							"type":"string",
+							"title":"input_String"
+						},
+						"input_string2":{
+							"type":"string",
+							"title":"Input String 2"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2316,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QCtPi-1",
-			"id":"_RH0x1",
-			"index":0,
+			"id":"n_7YV0C",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output_String":"{{ n_HoxHG.outputs.input_String }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +124,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":3
 }
