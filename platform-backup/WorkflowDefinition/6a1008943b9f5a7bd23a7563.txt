@@ -1,0 +1,65 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779435668236,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_imoXP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_wK1za",
+			"type":"next"
+		}
+	],
+	"id":"6a1008943b9f5a7bd23a7563",
+	"lastModifiedBy":39,
+	"lcName":"multiple action node with incomplete action  - 21779435467863",
+	"modifiedTime":1779435679264,
+	"name":"Multiple action node with incomplete action  - 21779435467863",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_imoXP-1",
+			"id":"_imoXP",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_imoXP-1",
+			"id":"_wK1za",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
+		"route":{
+			"default":false,
+			"headerValueTierMap":{},
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":1
+}
