@@ -1,58 +1,49 @@
 {
 	"appsUsed":[
-		
+		"shopify"
 	],
 	"createdTime":1779442212633,
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_guWCy",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_raOZY",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a102224bf0424173e21cf7c",
 	"lastModifiedBy":39,
 	"lcName":"cloneworkflow_217794422051200",
-	"modifiedTime":1779442212633,
+	"modifiedTime":1779442224417,
 	"name":"cloneWorkflow_217794422051200",
 	"nodes":[
 		{
+			"context":{
+				"appName":"shopify"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_guWCy-1",
-			"id":"_guWCy",
-			"index":0,
+			"id":"n_MiT77",
+			"index":1,
 			"skip":false,
+			"subTitle":"Shopify",
 			"title":"Select a trigger event",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_guWCy-1",
-			"id":"_raOZY",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +51,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":2
 }
