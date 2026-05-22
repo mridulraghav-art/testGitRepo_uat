@@ -7,46 +7,96 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_WSABF",
+			"fromNodeId":"n_VAYg6",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_FkWtS",
+			"toNodeId":"n_nxjZj",
 			"type":"next"
 		}
 	],
 	"id":"6a102211f081eb3302185d48",
 	"lastModifiedBy":39,
 	"lcName":"childnode-workflow-217794421867300",
-	"modifiedTime":1779442200347,
+	"modifiedTime":1779442214989,
 	"name":"childnode-workflow-217794421867300",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2316,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_WSABF-1",
-			"id":"_WSABF",
-			"index":0,
+			"id":"n_VAYg6",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input_String"
+					],
+					"properties":{
+						"input_String":{
+							"type":"string",
+							"title":"input_String"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"Field_input"
+					],
+					"properties":{
+						"Field_input":{
+							"type":"string",
+							"title":"Field_input",
+							"default":"1"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2317,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_WSABF-1",
-			"id":"_FkWtS",
-			"index":0,
+			"id":"n_nxjZj",
+			"index":2,
+			"inputs":{
+				"result":{
+					"input_String":"2"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +111,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
