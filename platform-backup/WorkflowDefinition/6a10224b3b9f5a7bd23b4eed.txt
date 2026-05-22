@@ -7,46 +7,109 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_8hnbi",
+			"fromNodeId":"n_vdDKp",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_3dsE8",
+			"toNodeId":"n_RxP2R",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_RxP2R",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_tWKZz",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_tWKZz",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_RxP2R",
 			"type":"next"
 		}
 	],
 	"id":"6a10224b3b9f5a7bd23b4eed",
 	"lastModifiedBy":39,
 	"lcName":"multiple action node with incomplete input  - 21779442188637",
-	"modifiedTime":1779442258866,
+	"modifiedTime":1779442268473,
 	"name":"Multiple action node with incomplete input  - 21779442188637",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8hnbi-1",
-			"id":"_8hnbi",
-			"index":0,
+			"id":"n_vdDKp",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":59,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8hnbi-1",
-			"id":"_3dsE8",
-			"index":0,
+			"id":"n_RxP2R",
+			"index":2,
+			"inputs":{
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_RxP2R@_8hnbi-1@l",
+			"id":"n_tWKZz",
+			"index":3,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +124,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
