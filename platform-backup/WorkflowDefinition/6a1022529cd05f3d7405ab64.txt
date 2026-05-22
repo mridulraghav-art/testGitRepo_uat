@@ -4,6 +4,15 @@
 	],
 	"createdTime":1779442258921,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1779442280725,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a1022689f719d01f31f7243",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"description":"description",
 	"edges":[
 		{
@@ -17,7 +26,7 @@
 	"id":"6a1022529cd05f3d7405ab64",
 	"lastModifiedBy":39,
 	"lcName":"restoresselectedversion_217794422051200",
-	"modifiedTime":1779442279586,
+	"modifiedTime":1779442285214,
 	"name":"restoresSelectedVersion_217794422051200",
 	"nodes":[
 		{
@@ -50,12 +59,17 @@
 					"type":"object",
 					"additionalProperties":false,
 					"required":[
-						"input_String"
+						"input_String",
+						"input_string2"
 					],
 					"properties":{
 						"input_String":{
 							"type":"string",
 							"title":"input_String"
+						},
+						"input_string2":{
+							"type":"string",
+							"title":"Input String 2"
 						}
 					}
 				}
@@ -110,5 +124,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
