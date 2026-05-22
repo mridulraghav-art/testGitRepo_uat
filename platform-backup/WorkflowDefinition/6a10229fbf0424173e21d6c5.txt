@@ -7,46 +7,165 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_teLcy",
+			"fromNodeId":"n_FIBs8",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_twlvy",
+			"toNodeId":"n_0gBrv",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_0gBrv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_wMm4G",
 			"type":"next"
 		}
 	],
 	"id":"6a10229fbf0424173e21d6c5",
 	"lastModifiedBy":39,
 	"lcName":"continue_automation _217794421886370",
-	"modifiedTime":1779442342145,
+	"modifiedTime":1779442354537,
 	"name":"Continue_automation _217794421886370",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_teLcy-1",
-			"id":"_teLcy",
-			"index":0,
+			"id":"n_FIBs8",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":2018,
+				"resourceName":"custom_http_endpoint_execute",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
+			"fallbackMode":"CONTINUE",
+			"groupId":"_teLcy-1",
+			"id":"n_0gBrv",
+			"index":2,
+			"inputs":{
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"baseUrl":"shgdhs",
+				"httpVersion":"HTTP_2",
+				"responseContentType":"HEADER_BASED",
+				"followRedirects":"NORMAL",
+				"authType":"CUSTOM",
+				"requestContentType":"application/json",
+				"ignoreTrailingSlashes":false,
+				"certificateType":"CERT_STRING"
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false,
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"enabled":false
+				},
+				"stepError":"CONTINUE",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"enabled":false
+				}
+			},
+			"skip":false,
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"Execute REST request",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"delay",
+				"resourceVersion":58,
+				"resourceName":"delay_for",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_teLcy-1",
-			"id":"_twlvy",
-			"index":0,
+			"id":"n_wMm4G",
+			"index":3,
+			"inputs":{
+				"duration":5,
+				"unit":"SECONDS"
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Delay",
+			"title":"Set delay duration",
+			"type":"DELAY"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +180,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
