@@ -7,46 +7,83 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_wPjyO",
+			"fromNodeId":"n_CHPJf",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_uNVBI",
+			"toNodeId":"n_grTaJ",
 			"type":"next"
 		}
 	],
 	"id":"6a1022a3c6944079368184fc",
 	"lastModifiedBy":39,
 	"lcName":"runtestcheck_217794421894820",
-	"modifiedTime":1779442346329,
+	"modifiedTime":1779442364486,
 	"name":"runtestCheck_217794421894820",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wPjyO-1",
-			"id":"_wPjyO",
-			"index":0,
+			"id":"n_CHPJf",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2318,
+				"resourceName":"callables_schedule_a_callable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wPjyO-1",
-			"id":"_uNVBI",
-			"index":0,
+			"id":"n_grTaJ",
+			"index":2,
+			"inputs":{
+				"automation_id":"6a102287c694407936817585",
+				"schedule_method":{
+					"schedule_type":"ONE_TIME",
+					"setup_config":{
+						"start_time":"2026-05-22T09:32:40.860Z",
+						"timezone":"Asia/Kolkata",
+						"unit":"MINUTES",
+						"expression":"0 0 * * *"
+					}
+				},
+				"runtimeConnections":{},
+				"cancel_existing":true,
+				"version":"-1",
+				"schedule_name":"Schedule_test_example"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Schedule callable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +98,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
