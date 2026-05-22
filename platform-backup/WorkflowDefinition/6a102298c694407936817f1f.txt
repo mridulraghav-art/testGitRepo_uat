@@ -7,52 +7,81 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_7Cja9",
+			"fromNodeId":"n_FdPps",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_AmUut",
+			"toNodeId":"n_SNbzh",
 			"type":"next"
 		}
 	],
 	"id":"6a102298c694407936817f1f",
 	"lastModifiedBy":39,
 	"lcName":"build-2 21779442183298",
-	"modifiedTime":1779442328985,
+	"modifiedTime":1779442347963,
 	"name":"build-2 21779442183298",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2317,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_7Cja9-1",
-			"id":"_7Cja9",
-			"index":0,
+			"id":"n_FdPps",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4155,
+				"resourceName":"storage_by_unifyapps_create_record",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_7Cja9-1",
-			"id":"_AmUut",
-			"index":0,
+			"id":"n_SNbzh",
+			"index":2,
+			"inputs":{
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"skipIfBlank":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Storage by UnifyApps",
+			"title":"Create record",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +89,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":2
 }
