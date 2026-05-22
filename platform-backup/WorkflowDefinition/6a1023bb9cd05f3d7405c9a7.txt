@@ -6,46 +6,64 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_YE8h1",
+			"fromNodeId":"n_f8ewM",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_mwVls",
+			"toNodeId":"n_WxECQ",
 			"type":"next"
 		}
 	],
 	"id":"6a1023bb9cd05f3d7405c9a7",
 	"lastModifiedBy":39,
 	"lcName":"frefer",
-	"modifiedTime":1779442619442,
+	"modifiedTime":1779442627272,
 	"name":"frefer",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_YE8h1-1",
-			"id":"_YE8h1",
-			"index":0,
+			"id":"n_f8ewM",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"stop"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_YE8h1-1",
-			"id":"_mwVls",
-			"index":0,
+			"id":"n_WxECQ",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +74,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
