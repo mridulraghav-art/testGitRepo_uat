@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779442282833,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_Z2mSS",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_I7H5Q",
+			"type":"next"
+		}
+	],
+	"id":"6a10226af081eb3302186007",
+	"lastModifiedBy":39,
+	"lcName":"e2e_workflow_callable_basic(testing_path_headers_query_params)_217794421867300",
+	"modifiedTime":1779442282833,
+	"name":"E2E_Workflow_Callable_Basic(Testing_Path_Headers_Query_params)_217794421867300",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Z2mSS-1",
+			"id":"_Z2mSS",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Z2mSS-1",
+			"id":"_I7H5Q",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
