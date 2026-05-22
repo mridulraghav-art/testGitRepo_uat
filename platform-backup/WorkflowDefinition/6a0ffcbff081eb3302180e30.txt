@@ -6,46 +6,72 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_jvvcc",
+			"fromNodeId":"n_z2KU8",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_GtWTw",
+			"toNodeId":"n_KiBB4",
 			"type":"next"
 		}
 	],
 	"id":"6a0ffcbff081eb3302180e30",
 	"lastModifiedBy":39,
 	"lcName":"samplerrw",
-	"modifiedTime":1779432639789,
+	"modifiedTime":1779435257271,
 	"name":"samplerrw",
 	"nodes":[
 		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{}
+				}
+			},
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2315,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_jvvcc-1",
-			"id":"_jvvcc",
-			"index":0,
+			"id":"n_z2KU8",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":2112,
+				"resourceName":"files_by_unifyapps_create_pdf_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_jvvcc-1",
-			"id":"_GtWTw",
-			"index":0,
+			"id":"n_KiBB4",
+			"index":2,
+			"inputs":{
+				"fileName":"asdfg",
+				"content":"=sum("
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Create a PDF file",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +82,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
