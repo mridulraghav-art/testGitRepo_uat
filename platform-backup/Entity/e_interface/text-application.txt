@@ -24,7 +24,7 @@
 	},
 	"id":"text-application",
 	"lastModifiedBy":39,
-	"modifiedTime":1779445890342,
+	"modifiedTime":1779445988699,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -49,7 +49,12 @@
 			"defaultPageId":"e_6a103082d89ec7156cf861e6",
 			"appearance":{
 				"SM":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_l3UQG",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -82,7 +87,12 @@
 					"secondary":[]
 				},
 				"LG":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_l3UQG",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -121,7 +131,12 @@
 					"secondary":[]
 				},
 				"XL":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_l3UQG",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"expandable"
@@ -160,7 +175,12 @@
 					"secondary":[]
 				},
 				"MD":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_l3UQG",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -199,10 +219,22 @@
 					"secondary":[]
 				}
 			},
-			"primary":[]
+			"primary":[
+				{
+					"activeIcon":"StarBackground",
+					"name":"Nav Item 1",
+					"icon":"Star01",
+					"id":"nav_l3UQG",
+					"type":"PAGE",
+					"pageId":"e_6a103082d89ec7156cf861e6",
+					"url":"",
+					"slug":"homepage"
+				}
+			]
 		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a103082d89ec7156cf861e6":"homepage"
+			"e_6a103082d89ec7156cf861e6":"homepage",
+			"e_global_text-application":"global-page-of-text-application"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -220,6 +252,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_text-application":{
+				"slug":"global-page-of-text-application",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -227,5 +264,5 @@
 	"tags":[
 		
 	],
-	"version":1
+	"version":4
 }
