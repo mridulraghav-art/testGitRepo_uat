@@ -17,7 +17,7 @@
 	"id":"6a0fccbd3b9f5a7bd239cbab",
 	"lastModifiedBy":39,
 	"lcName":"workflow_clone_editschema_copy217794203280670",
-	"modifiedTime":1779420349527,
+	"modifiedTime":1779420354615,
 	"name":"workflow_clone_editSchema_copy217794203280670",
 	"nodes":[
 		{
@@ -66,7 +66,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_vdkbi-1",
 			"id":"n_TyzPq",
@@ -79,31 +79,30 @@
 					"additionalProperties":false,
 					"type":"object",
 					"properties":{
-						"inputField":{
+						"input_Field_updated":{
 							"type":"string",
-							"title":"inputField"
+							"title":"input_Field_updated"
 						}
 					},
 					"required":[
-						"inputField"
+						"input_Field_updated"
 					]
 				}
 			},
 			"inputs":{},
 			"outputSchema":{
-				"type":"SCHEMA",
 				"dynamic":false,
 				"schema":{
 					"additionalProperties":false,
 					"type":"object",
 					"properties":{
-						"inputField":{
+						"input_Field_updated":{
 							"type":"string",
-							"title":"inputField"
+							"title":"input_Field_updated"
 						}
 					},
 					"required":[
-						"inputField"
+						"input_Field_updated"
 					]
 				}
 			},
@@ -131,5 +130,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
