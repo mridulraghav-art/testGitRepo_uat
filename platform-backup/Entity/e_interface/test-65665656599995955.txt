@@ -24,7 +24,7 @@
 	},
 	"id":"test-65665656599995955",
 	"lastModifiedBy":39,
-	"modifiedTime":1779448481199,
+	"modifiedTime":1779448501819,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -201,8 +201,12 @@
 			},
 			"primary":[]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a103aa1d89ec7156cf8750a":"homepage"
+			"e_6a103aa1d89ec7156cf8750a":"homepage",
+			"e_global_test-65665656599995955":"global-page-of-test-65665656599995955"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -220,6 +224,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_test-65665656599995955":{
+				"slug":"global-page-of-test-65665656599995955",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -227,5 +236,5 @@
 	"tags":[
 		
 	],
-	"version":1
+	"version":4
 }
