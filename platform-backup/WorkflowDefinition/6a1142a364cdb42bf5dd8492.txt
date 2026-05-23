@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779516067887,
+	"deleted":false,
+	"description":"scds",
+	"edges":[
+		{
+			"fromNodeId":"_JZxxx",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_ocfy1",
+			"type":"next"
+		}
+	],
+	"id":"6a1142a364cdb42bf5dd8492",
+	"lastModifiedBy":39,
+	"lcName":"scs",
+	"modifiedTime":1779516067887,
+	"name":"scs",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_JZxxx-1",
+			"id":"_JZxxx",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_JZxxx-1",
+			"id":"_ocfy1",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"JTest-117325425908750"
+	],
+	"version":0
+}
