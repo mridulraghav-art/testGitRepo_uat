@@ -1,6 +1,12 @@
 {
 	"createdTime":1779439453500,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1779535752470,
+		"deployedBy":39,
+		"entityVersion":24,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"vhjk",
 	"lastModifiedBy":39,
-	"modifiedTime":1779520289438,
+	"modifiedTime":1779537733564,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,7 +45,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":2,
+				"_pageCount":3,
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
@@ -234,7 +240,8 @@
 		"interfacePageIdVsSlugMap":{
 			"e_6a115321d89ec7156cfabe68":"page-2",
 			"e_6a10176064e34a7642dd25f9":"homepage",
-			"e_global_vhjk":"global-page-of-vhjk"
+			"e_global_vhjk":"global-page-of-vhjk",
+			"e_6a119745d89ec7156cfbb82b":"page-3"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -262,6 +269,11 @@
 				"slug":"global-page-of-vhjk",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_6a119745d89ec7156cfbb82b":{
+				"slug":"page-3",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -269,5 +281,5 @@
 	"tags":[
 		
 	],
-	"version":11
+	"version":25
 }
