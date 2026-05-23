@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779529430453,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1779529430748,
+		"deployedAt":1779530093267,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a1176d6bff5e57a492da312",
+		"deployedDefinitionId":"6a11796d1c8e614a2de67217",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":27
+		"version":2,
+		"workflowVersion":28
 	},
 	"edges":[
 		{
@@ -61,7 +61,7 @@
 	"id":"6a059b33e9f5110998a70974",
 	"lastModifiedBy":39,
 	"lcName":"test_bulkhead_new",
-	"modifiedTime":1779530090729,
+	"modifiedTime":1779530265184,
 	"name":"Test_Bulkhead_New",
 	"nodes":[
 		{
@@ -180,7 +180,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_x5jiW-1",
 			"id":"n_86yxz",
@@ -234,7 +234,7 @@
 					"maxConcurrency":"5",
 					"maxLeaseTime":"10",
 					"maxLeaseTimeUnit":"SECONDS",
-					"maxWaitDuration":"15",
+					"maxWaitDuration":"1",
 					"maxWaitDurationUnit":"SECONDS"
 				},
 				"businessHoursConfig":{
@@ -356,5 +356,5 @@
 		}
 	},
 	"standard":false,
-	"version":28
+	"version":29
 }
