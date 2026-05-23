@@ -1,0 +1,61 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779545339271,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_Y2Oqs",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_7lFYD",
+			"type":"next"
+		}
+	],
+	"id":"6a11b4fba2b03e4a8b8d4ea5",
+	"lastModifiedBy":39,
+	"lcName":"rbacworkspaceautomation pvpzbggq",
+	"modifiedTime":1779545339271,
+	"name":"RbacWorkspaceAutomation PvpzbgGq",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Y2Oqs-1",
+			"id":"_Y2Oqs",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Y2Oqs-1",
+			"id":"_7lFYD",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"projectId":64,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
