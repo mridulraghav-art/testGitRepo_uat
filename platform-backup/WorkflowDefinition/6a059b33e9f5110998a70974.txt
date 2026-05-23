@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779529430453,
 	"deleted":false,
-	"deployedVersion":11,
+	"deployedVersion":12,
 	"deploymentState":{
-		"deployedAt":1779532121148,
+		"deployedAt":1779532169012,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a118159a2b03e4a8b8b978f",
+		"deployedDefinitionId":"6a1181881eeaed5bc5286ceb",
 		"status":"DEPLOYED",
-		"version":11,
-		"workflowVersion":37
+		"version":12,
+		"workflowVersion":38
 	},
 	"edges":[
 		{
@@ -61,7 +61,7 @@
 	"id":"6a059b33e9f5110998a70974",
 	"lastModifiedBy":39,
 	"lcName":"test_bulkhead_new",
-	"modifiedTime":1779532167446,
+	"modifiedTime":1779532245569,
 	"name":"Test_Bulkhead_New",
 	"nodes":[
 		{
@@ -192,7 +192,7 @@
 							"property":"{{ n_RNbWT.outputs.a }}",
 							"filter":{
 								"operator":"LTE",
-								"value":"6"
+								"value":"10"
 							}
 						}
 					],
@@ -356,5 +356,5 @@
 		}
 	},
 	"standard":false,
-	"version":38
+	"version":39
 }
