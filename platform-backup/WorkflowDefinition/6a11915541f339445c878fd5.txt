@@ -4,6 +4,15 @@
 	],
 	"createdTime":1779537790872,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1779537791331,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a11977e1c8e614a2de89e93",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":0
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_lZAgR",
@@ -11,12 +20,19 @@
 			"skip":false,
 			"toNodeId":"n_Gi4l6",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Gi4l6",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_8EMUw",
+			"type":"next"
 		}
 	],
 	"id":"6a11915541f339445c878fd5",
 	"lastModifiedBy":39,
 	"lcName":"testtouat (copy)",
-	"modifiedTime":1779537790872,
+	"modifiedTime":1779537847317,
 	"name":"testtouat (copy)",
 	"nodes":[
 		{
@@ -65,7 +81,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_CFMCx-1",
 			"id":"n_Gi4l6",
@@ -111,6 +127,27 @@
 			"subTitle":"Variable by Sirion",
 			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1649,
+				"resourceName":"variable_by_unifyapps_add_item_to_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_CFMCx-1",
+			"id":"n_8EMUw",
+			"index":3,
+			"inputs":{
+				"captureAddedItem":false
+			},
+			"skip":false,
+			"subTitle":"Variable by teja",
+			"title":"Add item to list",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -127,5 +164,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
