@@ -6,7 +6,7 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_RGqkE",
+			"fromNodeId":"n_vtoDq",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_VCb7L",
@@ -23,20 +23,31 @@
 	"id":"6a104afec69440793685488e",
 	"lastModifiedBy":39,
 	"lcName":"sdaws",
-	"modifiedTime":1779520883724,
+	"modifiedTime":1779520887941,
 	"name":"sdaws",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_RGqkE-1",
-			"id":"_RGqkE",
+			"id":"n_vtoDq",
 			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
@@ -48,7 +59,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_RGqkE-1",
 			"id":"n_VCb7L",
@@ -101,5 +112,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
