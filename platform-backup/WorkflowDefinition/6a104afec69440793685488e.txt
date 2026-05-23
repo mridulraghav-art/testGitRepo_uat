@@ -9,14 +9,21 @@
 			"fromNodeId":"_RGqkE",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Vujpa",
+			"toNodeId":"n_VCb7L",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_VCb7L",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_36kaT",
 			"type":"next"
 		}
 	],
 	"id":"6a104afec69440793685488e",
 	"lastModifiedBy":39,
 	"lcName":"sdaws",
-	"modifiedTime":1779452670152,
+	"modifiedTime":1779520878261,
 	"name":"sdaws",
 	"nodes":[
 		{
@@ -25,7 +32,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_RGqkE-1",
 			"id":"_RGqkE",
-			"index":0,
+			"index":1,
 			"skip":false,
 			"title":"Select a trigger event",
 			"trigger":{
@@ -34,18 +41,56 @@
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":2127,
+				"resourceName":"code_by_unifyapps_python",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_RGqkE-1",
-			"id":"_Vujpa",
-			"index":0,
+			"id":"n_VCb7L",
+			"index":2,
+			"inputs":{
+				"configurationMode":"DEFAULT",
+				"isAsync":false,
+				"python_version":"3.12",
+				"outputFilesGlob":"*",
+				"captureStdOutput":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Python script",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":2073,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_RGqkE-1",
+			"id":"n_36kaT",
+			"index":3,
+			"inputs":{
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +101,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
