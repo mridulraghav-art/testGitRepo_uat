@@ -4,14 +4,14 @@
 	],
 	"createdTime":1779529430453,
 	"deleted":false,
-	"deployedVersion":16,
+	"deployedVersion":17,
 	"deploymentState":{
-		"deployedAt":1779532837104,
+		"deployedAt":1779537767802,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a11842576c4e362914e1aba",
+		"deployedDefinitionId":"6a1197671eeaed5bc528ce49",
 		"status":"DEPLOYED",
-		"version":16,
-		"workflowVersion":42
+		"version":17,
+		"workflowVersion":43
 	},
 	"edges":[
 		{
@@ -61,7 +61,7 @@
 	"id":"6a059b33e9f5110998a70974",
 	"lastModifiedBy":39,
 	"lcName":"test_bulkhead_new",
-	"modifiedTime":1779537764983,
+	"modifiedTime":1779537889280,
 	"name":"Test_Bulkhead_New",
 	"nodes":[
 		{
@@ -192,7 +192,7 @@
 							"property":"{{ n_RNbWT.outputs.a }}",
 							"filter":{
 								"operator":"LTE",
-								"value":"10"
+								"value":"11"
 							}
 						}
 					],
@@ -231,10 +231,10 @@
 			"options":{
 				"bulkheadConfig":{
 					"enabled":true,
-					"maxConcurrency":"3",
-					"maxLeaseTime":"5",
+					"maxConcurrency":"10",
+					"maxLeaseTime":"3",
 					"maxLeaseTimeUnit":"SECONDS",
-					"maxWaitDuration":"10",
+					"maxWaitDuration":"5",
 					"maxWaitDurationUnit":"SECONDS"
 				},
 				"businessHoursConfig":{
@@ -356,5 +356,5 @@
 		}
 	},
 	"standard":false,
-	"version":43
+	"version":44
 }
