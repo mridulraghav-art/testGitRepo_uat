@@ -1,6 +1,12 @@
 {
 	"createdTime":1779448478810,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1779448581554,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":3
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"test-65665656599995955",
 	"lastModifiedBy":39,
-	"modifiedTime":1779448501819,
+	"modifiedTime":1779519247832,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,8 +45,10 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
+				"_dataSourceCounter":1,
 				"_pageCount":1,
 				"_moduleCount":0,
+				"_variableCounter":1,
 				"_templateComponentCount":0
 			}
 		},
@@ -217,7 +225,10 @@
 		},
 		"type":"application",
 		"locale":{
-			"defaultLocale":"en-US"
+			"defaultLocale":"en-US",
+			"supportedLocales":[
+				"ar-AE"
+			]
 		},
 		"entityDetailsMap":{
 			"e_6a103aa1d89ec7156cf8750a":{
@@ -236,5 +247,5 @@
 	"tags":[
 		
 	],
-	"version":4
+	"version":19
 }
