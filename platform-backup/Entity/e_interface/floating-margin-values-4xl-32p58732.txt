@@ -24,7 +24,7 @@
 	},
 	"id":"floating-margin-values-4xl-32p58732",
 	"lastModifiedBy":39,
-	"modifiedTime":1779717267904,
+	"modifiedTime":1779717272710,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,7 +39,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":1,
+				"_pageCount":2,
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
@@ -52,6 +52,10 @@
 					"primary":[
 						{
 							"id":"nav_4RUoV",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_uBzqE",
 							"hiddenInOverflow":false
 						}
 					],
@@ -90,6 +94,10 @@
 					"primary":[
 						{
 							"id":"nav_4RUoV",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_uBzqE",
 							"hiddenInOverflow":false
 						}
 					],
@@ -135,6 +143,10 @@
 						{
 							"id":"nav_4RUoV",
 							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_uBzqE",
+							"hiddenInOverflow":false
 						}
 					],
 					"navigationItem":{
@@ -178,6 +190,10 @@
 					"primary":[
 						{
 							"id":"nav_4RUoV",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_uBzqE",
 							"hiddenInOverflow":false
 						}
 					],
@@ -228,10 +244,20 @@
 					"type":"PAGE",
 					"pageId":"e_6a14549380830b496b680f86",
 					"slug":"homepage"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_uBzqE",
+					"type":"PAGE",
+					"pageId":"e_6a145498d89ec7156c031bcd",
+					"slug":"page-2"
 				}
 			]
 		},
 		"interfacePageIdVsSlugMap":{
+			"e_6a145498d89ec7156c031bcd":"page-2",
 			"e_6a14549380830b496b680f86":"homepage",
 			"e_global_floating-margin-values-4xl-32p58732":"global-page-of-floating-margin-values-4xl-32p58732"
 		},
@@ -247,6 +273,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_6a145498d89ec7156c031bcd":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_6a14549380830b496b680f86":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -263,5 +294,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":2
+	"version":5
 }
