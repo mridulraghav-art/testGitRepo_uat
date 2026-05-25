@@ -1,6 +1,12 @@
 {
 	"createdTime":1779694083531,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1779694104795,
+		"deployedBy":39,
+		"entityVersion":7,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"test-publicerferfr12",
 	"lastModifiedBy":39,
-	"modifiedTime":1779694087019,
+	"modifiedTime":1779694111587,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -201,6 +207,9 @@
 			},
 			"primary":[]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
 			"e_global_test-publicerferfr12":"global-page-of-test-publicerferfr12",
 			"e_6a13fa0680830b496b65658e":"homepage"
@@ -233,5 +242,5 @@
 	"tags":[
 		
 	],
-	"version":2
+	"version":8
 }
