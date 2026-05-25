@@ -1,6 +1,12 @@
 {
 	"createdTime":1779693878216,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1779694028867,
+		"deployedBy":39,
+		"entityVersion":6,
+		"version":2
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"test-123dfvgt",
 	"lastModifiedBy":39,
-	"modifiedTime":1779693882532,
+	"modifiedTime":1779703428687,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,7 +45,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":1,
+				"_pageCount":2,
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
@@ -49,7 +55,12 @@
 			"defaultPageId":"e_6a13f939d89ec7156c025c6f",
 			"appearance":{
 				"SM":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_Xbsjh",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -82,7 +93,12 @@
 					"secondary":[]
 				},
 				"LG":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_Xbsjh",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -121,7 +137,12 @@
 					"secondary":[]
 				},
 				"XL":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_Xbsjh",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"expandable"
@@ -160,7 +181,12 @@
 					"secondary":[]
 				},
 				"MD":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_Xbsjh",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -199,9 +225,20 @@
 					"secondary":[]
 				}
 			},
-			"primary":[]
+			"primary":[
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_Xbsjh",
+					"type":"PAGE",
+					"pageId":"e_6a141e84d89ec7156c02aabc",
+					"slug":"page-2"
+				}
+			]
 		},
 		"interfacePageIdVsSlugMap":{
+			"e_6a141e84d89ec7156c02aabc":"page-2",
 			"e_6a13f939d89ec7156c025c6f":"homepage",
 			"e_global_test-123dfvgt":"global-page-of-test-123dfvgt"
 		},
@@ -217,6 +254,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_6a141e84d89ec7156c02aabc":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_6a13f939d89ec7156c025c6f":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -233,5 +275,5 @@
 	"tags":[
 		
 	],
-	"version":2
+	"version":7
 }
