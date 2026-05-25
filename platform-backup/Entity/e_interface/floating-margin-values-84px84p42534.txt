@@ -24,7 +24,7 @@
 	},
 	"id":"floating-margin-values-84px84p42534",
 	"lastModifiedBy":39,
-	"modifiedTime":1779717130358,
+	"modifiedTime":1779717135085,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,7 +39,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":1,
+				"_pageCount":2,
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
@@ -52,6 +52,10 @@
 					"primary":[
 						{
 							"id":"nav_G0ebK",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_l8jHP",
 							"hiddenInOverflow":false
 						}
 					],
@@ -90,6 +94,10 @@
 					"primary":[
 						{
 							"id":"nav_G0ebK",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_l8jHP",
 							"hiddenInOverflow":false
 						}
 					],
@@ -135,6 +143,10 @@
 						{
 							"id":"nav_G0ebK",
 							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_l8jHP",
+							"hiddenInOverflow":false
 						}
 					],
 					"navigationItem":{
@@ -178,6 +190,10 @@
 					"primary":[
 						{
 							"id":"nav_G0ebK",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_l8jHP",
 							"hiddenInOverflow":false
 						}
 					],
@@ -228,11 +244,22 @@
 					"type":"PAGE",
 					"pageId":"e_6a14540ad89ec7156c031b0f",
 					"slug":"homepage"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_l8jHP",
+					"type":"PAGE",
+					"pageId":"e_6a14540fd89ec7156c031b20",
+					"slug":"page-2"
 				}
 			]
 		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a14540ad89ec7156c031b0f":"homepage"
+			"e_6a14540fd89ec7156c031b20":"page-2",
+			"e_6a14540ad89ec7156c031b0f":"homepage",
+			"e_global_floating-margin-values-84px84p42534":"global-page-of-floating-margin-values-84px84p42534"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -246,8 +273,18 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_6a14540fd89ec7156c031b20":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_6a14540ad89ec7156c031b0f":{
 				"slug":"homepage",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_global_floating-margin-values-84px84p42534":{
+				"slug":"global-page-of-floating-margin-values-84px84p42534",
 				"isPublic":false,
 				"type":"PAGE"
 			}
@@ -257,5 +294,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":5
 }
