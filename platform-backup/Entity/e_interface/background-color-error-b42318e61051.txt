@@ -24,7 +24,7 @@
 	},
 	"id":"background-color-error-b42318e61051",
 	"lastModifiedBy":39,
-	"modifiedTime":1779711022659,
+	"modifiedTime":1779711028333,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,7 +39,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":1,
+				"_pageCount":2,
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
@@ -52,6 +52,10 @@
 					"primary":[
 						{
 							"id":"nav_k1pqy",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_PPhQC",
 							"hiddenInOverflow":false
 						}
 					],
@@ -90,6 +94,10 @@
 					"primary":[
 						{
 							"id":"nav_k1pqy",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_PPhQC",
 							"hiddenInOverflow":false
 						}
 					],
@@ -135,6 +143,10 @@
 						{
 							"id":"nav_k1pqy",
 							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_PPhQC",
+							"hiddenInOverflow":false
 						}
 					],
 					"navigationItem":{
@@ -178,6 +190,10 @@
 					"primary":[
 						{
 							"id":"nav_k1pqy",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_PPhQC",
 							"hiddenInOverflow":false
 						}
 					],
@@ -228,10 +244,21 @@
 					"type":"PAGE",
 					"pageId":"e_6a143c2ed89ec7156c02e55e",
 					"slug":"homepage"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_PPhQC",
+					"type":"PAGE",
+					"pageId":"e_6a143c34d89ec7156c02e564",
+					"slug":"page-2"
 				}
 			]
 		},
 		"interfacePageIdVsSlugMap":{
+			"e_global_background-color-error-b42318e61051":"global-page-of-background-color-error-b42318e61051",
+			"e_6a143c34d89ec7156c02e564":"page-2",
 			"e_6a143c2ed89ec7156c02e55e":"homepage"
 		},
 		"manifest":{
@@ -246,6 +273,16 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_global_background-color-error-b42318e61051":{
+				"slug":"global-page-of-background-color-error-b42318e61051",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_6a143c34d89ec7156c02e564":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_6a143c2ed89ec7156c02e55e":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -257,5 +294,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":5
 }
