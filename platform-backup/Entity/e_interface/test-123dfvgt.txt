@@ -30,7 +30,7 @@
 	},
 	"id":"test-123dfvgt",
 	"lastModifiedBy":39,
-	"modifiedTime":1779703428687,
+	"modifiedTime":1779703686559,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -45,8 +45,9 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":2,
+				"_pageCount":3,
 				"_moduleCount":0,
+				"_variableCounter":1,
 				"_templateComponentCount":0
 			}
 		},
@@ -238,9 +239,10 @@
 			]
 		},
 		"interfacePageIdVsSlugMap":{
+			"e_global_test-123dfvgt":"global-page-of-test-123dfvgt",
+			"e_6a141f86d89ec7156c02ab30":"page-3",
 			"e_6a141e84d89ec7156c02aabc":"page-2",
-			"e_6a13f939d89ec7156c025c6f":"homepage",
-			"e_global_test-123dfvgt":"global-page-of-test-123dfvgt"
+			"e_6a13f939d89ec7156c025c6f":"homepage"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -254,6 +256,16 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_global_test-123dfvgt":{
+				"slug":"global-page-of-test-123dfvgt",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_6a141f86d89ec7156c02ab30":{
+				"slug":"page-3",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_6a141e84d89ec7156c02aabc":{
 				"slug":"page-2",
 				"isPublic":false,
@@ -263,11 +275,6 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
-			},
-			"e_global_test-123dfvgt":{
-				"slug":"global-page-of-test-123dfvgt",
-				"isPublic":false,
-				"type":"PAGE"
 			}
 		}
 	},
@@ -275,5 +282,5 @@
 	"tags":[
 		
 	],
-	"version":7
+	"version":10
 }
