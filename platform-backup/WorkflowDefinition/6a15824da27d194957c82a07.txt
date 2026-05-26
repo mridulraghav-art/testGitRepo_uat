@@ -4,6 +4,15 @@
 	],
 	"createdTime":1779794509748,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1779794840293,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a158397a27d194957c842f7",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_52rkh",
@@ -15,9 +24,9 @@
 	],
 	"id":"6a15824da27d194957c82a07",
 	"lastModifiedBy":39,
-	"lcName":"test-python-script",
-	"modifiedTime":1779794836675,
-	"name":"test-python-script",
+	"lcName":"aws guardduty - cloudtrail threat findings",
+	"modifiedTime":1779795775477,
+	"name":"AWS GuardDuty - CloudTrail Threat Findings",
 	"nodes":[
 		{
 			"context":{
@@ -26,7 +35,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_1gEbM-1",
 			"id":"n_52rkh",
@@ -52,7 +61,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_1gEbM-1",
 			"id":"n_4DaHN",
@@ -247,5 +256,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
