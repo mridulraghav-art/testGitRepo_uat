@@ -6,46 +6,237 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_1gEbM",
+			"fromNodeId":"n_52rkh",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_dOCai",
+			"toNodeId":"n_4DaHN",
 			"type":"next"
 		}
 	],
 	"id":"6a15824da27d194957c82a07",
 	"lastModifiedBy":39,
 	"lcName":"test-python-script",
-	"modifiedTime":1779794509748,
+	"modifiedTime":1779794836675,
 	"name":"test-python-script",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_1gEbM-1",
-			"id":"_1gEbM",
-			"index":0,
+			"id":"n_52rkh",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"code_by_unifyapps_python",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_1gEbM-1",
-			"id":"_dOCai",
-			"index":0,
+			"id":"n_4DaHN",
+			"index":2,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"result":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"Id":{
+										"type":"string",
+										"title":"Id"
+									},
+									"Title":{
+										"type":"string",
+										"title":"Title"
+									},
+									"Type":{
+										"type":"string",
+										"title":"Type"
+									},
+									"Severity":{
+										"type":"integer",
+										"title":"Severity"
+									},
+									"Region":{
+										"type":"string",
+										"title":"Region"
+									},
+									"AccountId":{
+										"type":"string",
+										"title":"AccountId"
+									},
+									"CreatedAt":{
+										"type":"string",
+										"title":"CreatedAt"
+									},
+									"UpdatedAt":{
+										"type":"string",
+										"title":"UpdatedAt"
+									},
+									"Description":{
+										"type":"string",
+										"title":"Description"
+									},
+									"ResourceType":{
+										"type":"string",
+										"title":"ResourceType"
+									},
+									"ActionType":{
+										"type":"string",
+										"title":"ActionType"
+									},
+									"ApiCallAction":{
+										"type":"object",
+										"properties":{
+											"Api":{
+												"type":"string",
+												"title":"Api"
+											},
+											"CallerType":{
+												"type":"string",
+												"title":"CallerType"
+											},
+											"RemoteIpDetails":{
+												"type":"object",
+												"properties":{
+													"City":{
+														"type":"object",
+														"properties":{
+															"CityName":{
+																"type":"string",
+																"title":"CityName"
+															}
+														},
+														"title":"City",
+														"additionalProperties":false
+													},
+													"Country":{
+														"type":"object",
+														"properties":{
+															"CountryName":{
+																"type":"string",
+																"title":"CountryName"
+															}
+														},
+														"title":"Country",
+														"additionalProperties":false
+													},
+													"GeoLocation":{
+														"type":"object",
+														"properties":{
+															"Lat":{
+																"type":"number",
+																"title":"Lat"
+															},
+															"Lon":{
+																"type":"number",
+																"title":"Lon"
+															}
+														},
+														"title":"GeoLocation",
+														"additionalProperties":false
+													},
+													"IpAddressV4":{
+														"type":"string",
+														"title":"IpAddressV4"
+													},
+													"Organization":{
+														"type":"object",
+														"properties":{
+															"Asn":{
+																"type":"string",
+																"title":"Asn"
+															},
+															"AsnOrg":{
+																"type":"string",
+																"title":"AsnOrg"
+															},
+															"Isp":{
+																"type":"string",
+																"title":"Isp"
+															},
+															"Org":{
+																"type":"string",
+																"title":"Org"
+															}
+														},
+														"title":"Organization",
+														"additionalProperties":false
+													}
+												},
+												"title":"RemoteIpDetails",
+												"additionalProperties":false
+											},
+											"ServiceName":{
+												"type":"string",
+												"title":"ServiceName"
+											},
+											"AffectedResources":{
+												"type":"object",
+												"title":"AffectedResources"
+											},
+											"ErrorCode":{
+												"type":"string",
+												"title":"ErrorCode"
+											}
+										},
+										"title":"ApiCallAction",
+										"additionalProperties":false
+									}
+								},
+								"additionalProperties":false
+							},
+							"title":"result"
+						},
+						"outputFiles":{
+							"type":"object",
+							"title":"outputFiles"
+						}
+					}
+				},
+				"configurationMode":"DEFAULT",
+				"code":"#!/usr/bin/env python3\n\nimport boto3\nimport json\n\nREGION = \"ap-south-1\"\n\ndef get_detectors(gd):\n    return gd.list_detectors().get(\"DetectorIds\", [])\n\ndef is_cloudtrail_finding(finding):\n    action = finding.get(\"Service\", {}).get(\"Action\", {})\n    return action.get(\"ActionType\") == \"AWS_API_CALL\"\n\ndef fetch_findings():\n    gd = boto3.client(\"guardduty\", region_name=REGION)\n    results = []\n\n    for detector_id in get_detectors(gd):\n\n        paginator = gd.get_paginator(\"list_findings\")\n\n        for page in paginator.paginate(\n            DetectorId=detector_id,\n            PaginationConfig={\"PageSize\": 50}\n        ):\n\n            finding_ids = page.get(\"FindingIds\", [])\n\n            if not finding_ids:\n                continue\n\n            for i in range(0, len(finding_ids), 50):\n\n                batch = finding_ids[i:i + 50]\n\n                response = gd.get_findings(\n                    DetectorId=detector_id,\n                    FindingIds=batch\n                )\n\n                for finding in response.get(\"Findings\", []):\n\n                    if is_cloudtrail_finding(finding):\n                        results.append({\n                            \"Id\": finding.get(\"Id\"),\n                            \"Title\": finding.get(\"Title\"),\n                            \"Type\": finding.get(\"Type\"),\n                            \"Severity\": finding.get(\"Severity\"),\n                            \"Region\": finding.get(\"Region\"),\n                            \"AccountId\": finding.get(\"AccountId\"),\n                            \"CreatedAt\": finding.get(\"CreatedAt\"),\n                            \"UpdatedAt\": finding.get(\"UpdatedAt\"),\n                            \"Description\": finding.get(\"Description\"),\n                            \"ResourceType\": finding.get(\"Resource\", {}).get(\"ResourceType\"),\n                            \"ActionType\": finding.get(\"Service\", {}).get(\"Action\", {}).get(\"ActionType\"),\n                            \"ApiCallAction\": finding.get(\"Service\", {}).get(\"Action\", {}).get(\"AwsApiCallAction\", {})\n                        })\n\n    return results\n\nif __name__ == \"__main__\":\n\n    findings = fetch_findings()\n    result = findings\n    # print(json.dumps(findings, indent=2, default=str))\n\n    # print(f\"\\nTotal CloudTrail Findings: {len(findings)}\")",
+				"isAsync":false,
+				"python_version":"3.12",
+				"outputFilesGlob":"*",
+				"captureStdOutput":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Python script",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +247,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
