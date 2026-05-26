@@ -1,51 +1,116 @@
 {
 	"appsUsed":[
-		
+		"slack"
 	],
 	"createdTime":1779819307248,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_cElYU",
+			"fromNodeId":"n_UyEMq",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_8Vomk",
+			"toNodeId":"n_S4iIl",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S4iIl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_DwEdK",
 			"type":"next"
 		}
 	],
 	"id":"6a15e32b90a87e3b8b50ea2c",
 	"lastModifiedBy":39,
 	"lcName":"automation test",
-	"modifiedTime":1779819307248,
+	"modifiedTime":1779819718377,
 	"name":"automation test",
 	"nodes":[
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4179,
+				"resourceName":"storage_by_unifyapps_on_create_record"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_cElYU-1",
-			"id":"_cElYU",
-			"index":0,
+			"id":"n_UyEMq",
+			"index":1,
+			"inputs":{
+				"object_type":"e_ai_evaluation_metric"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Storage by UnifyApps",
+			"title":"New record",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"slack",
+				"resourceVersion":4602,
+				"connectionId":"6a0d4e9cb212e119d1f57dc4",
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_cElYU-1",
-			"id":"_8Vomk",
-			"index":0,
+			"id":"n_S4iIl",
+			"index":2,
+			"inputs":{
+				"link_names":true,
+				"messageType":"text",
+				"channel":"C0AV12FCG8M",
+				"text":"{{ n_UyEMq.outputs.properties.metricConfig.code.language }}{{ n_UyEMq.outputs.properties.metricConfig.base_metrics }}{{ n_UyEMq.outputs.properties.metricConfig.code.language }}",
+				"mrkdwn":true
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Slack",
+			"title":"Post message",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4178,
+				"resourceName":"storage_by_unifyapps_create_record",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_cElYU-1",
+			"id":"n_DwEdK",
+			"index":3,
+			"inputs":{
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"object_type":"knowledge_source",
+				"skipIfBlank":false,
+				"record":{
+					"allowedDownloaderTaskCount":false,
+					"newIndexingFlowEnabled":false,
+					"timeBasedIndexingSupported":false,
+					"realtimeIndexingSupported":false,
+					"reportingViewEnabled":false
+				}
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Create record",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +121,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
