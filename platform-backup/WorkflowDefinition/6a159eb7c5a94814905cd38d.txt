@@ -4,6 +4,15 @@
 	],
 	"createdTime":1779801783069,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1779801799928,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a159ec7c5a94814905cd3ee",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_e423W",
@@ -16,7 +25,7 @@
 	"id":"6a159eb7c5a94814905cd38d",
 	"lastModifiedBy":39,
 	"lcName":"eara",
-	"modifiedTime":1779801797718,
+	"modifiedTime":1779801819527,
 	"name":"eara",
 	"nodes":[
 		{
@@ -68,14 +77,20 @@
 						"erg":{
 							"type":"string",
 							"title":"Erg"
+						},
+						"fer":{
+							"type":"string",
+							"title":"Fer"
 						}
 					},
 					"required":[
-						"erg"
+						"erg",
+						"fer"
 					]
 				}
 			},
 			"inputs":{
+				"fer":"etg",
 				"erg":"etg"
 			},
 			"outputSchema":{
@@ -87,10 +102,15 @@
 						"erg":{
 							"type":"string",
 							"title":"Erg"
+						},
+						"fer":{
+							"type":"string",
+							"title":"Fer"
 						}
 					},
 					"required":[
-						"erg"
+						"erg",
+						"fer"
 					]
 				}
 			},
@@ -114,5 +134,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
