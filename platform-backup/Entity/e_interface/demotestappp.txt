@@ -2,10 +2,10 @@
 	"createdTime":1779781217016,
 	"deleted":false,
 	"deploymentState":{
-		"deployedAt":1779860878422,
+		"deployedAt":1779860934141,
 		"deployedBy":39,
-		"entityVersion":3,
-		"version":1
+		"entityVersion":4,
+		"version":2
 	},
 	"entityType":"e_interface",
 	"grants":{
@@ -30,7 +30,7 @@
 	},
 	"id":"demotestappp",
 	"lastModifiedBy":39,
-	"modifiedTime":1779860930955,
+	"modifiedTime":1779861681573,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -45,7 +45,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":1,
+				"_pageCount":2,
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
@@ -64,6 +64,10 @@
 					"primary":[
 						{
 							"id":"nav_0EJJF",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_tqllu",
 							"hiddenInOverflow":false
 						}
 					],
@@ -108,6 +112,10 @@
 					"primary":[
 						{
 							"id":"nav_0EJJF",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_tqllu",
 							"hiddenInOverflow":false
 						}
 					],
@@ -159,6 +167,10 @@
 						{
 							"id":"nav_0EJJF",
 							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_tqllu",
+							"hiddenInOverflow":false
 						}
 					],
 					"navigationItem":{
@@ -208,6 +220,10 @@
 					"primary":[
 						{
 							"id":"nav_0EJJF",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_tqllu",
 							"hiddenInOverflow":false
 						}
 					],
@@ -264,10 +280,20 @@
 					"type":"PAGE",
 					"pageId":"e_6a154e6580830b496b6ac1a8",
 					"slug":"homepage"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_tqllu",
+					"type":"PAGE",
+					"pageId":"e_6a1688b1d89ec7156c0d8c86",
+					"slug":"page-2"
 				}
 			]
 		},
 		"interfacePageIdVsSlugMap":{
+			"e_6a1688b1d89ec7156c0d8c86":"page-2",
 			"e_6a154e6580830b496b6ac1a8":"homepage",
 			"e_global_demotestappp":"global-page-of-demotestappp"
 		},
@@ -283,6 +309,11 @@
 			"defaultLocale":"en-US"
 		},
 		"entityDetailsMap":{
+			"e_6a1688b1d89ec7156c0d8c86":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
+			},
 			"e_6a154e6580830b496b6ac1a8":{
 				"slug":"homepage",
 				"isPublic":false,
@@ -299,5 +330,5 @@
 	"tags":[
 		
 	],
-	"version":4
+	"version":5
 }
