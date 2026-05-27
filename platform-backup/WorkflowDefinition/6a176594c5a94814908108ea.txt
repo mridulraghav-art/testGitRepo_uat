@@ -6,47 +6,44 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_YmQ9a",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_SjguM",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a176594c5a94814908108ea",
 	"lastModifiedBy":39,
 	"lcName":"totalautomationsanddeployed_217799182157890",
-	"modifiedTime":1779918228757,
+	"modifiedTime":1779918231381,
 	"name":"totalAutomationsAndDeployed_217799182157890",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_YmQ9a-1",
-			"id":"_YmQ9a",
-			"index":0,
+			"id":"n_wZJsW",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_YmQ9a-1",
-			"id":"_SjguM",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +57,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
