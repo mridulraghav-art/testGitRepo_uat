@@ -37,7 +37,7 @@
 	"id":"6a16c75ca27d194957de0003",
 	"lastModifiedBy":97900,
 	"lcName":"workflow activity",
-	"modifiedTime":1779905986315,
+	"modifiedTime":1779906098655,
 	"name":"Workflow Activity",
 	"nodes":[
 		{
@@ -180,7 +180,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_MMhI7-1",
 			"id":"n_pkBNA",
@@ -221,7 +221,7 @@
 				"filter":{
 					"filters":[
 						{
-							"property":"{{ n_mXmJv.outputs.objects[0].labelDetails.changeType }}",
+							"property":"{{ n_mXmJv.outputs.objects[0].changeType }}",
 							"filter":{
 								"operator":"EQUAL",
 								"value":"{{ n_OSBWX.outputs.body.changeType }}"
@@ -245,7 +245,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_MMhI7-1",
 			"id":"n_cCDpb",
@@ -294,5 +294,5 @@
 		}
 	},
 	"standard":false,
-	"version":11
+	"version":12
 }
