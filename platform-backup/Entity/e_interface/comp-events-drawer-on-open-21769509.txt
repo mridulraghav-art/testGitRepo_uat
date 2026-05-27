@@ -24,7 +24,7 @@
 	},
 	"id":"comp-events-drawer-on-open-21769509",
 	"lastModifiedBy":39,
-	"modifiedTime":1779876278823,
+	"modifiedTime":1779876284457,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -231,8 +231,12 @@
 				}
 			]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a16c1b6d89ec7156c0f8aec":"homepage"
+			"e_6a16c1b6d89ec7156c0f8aec":"homepage",
+			"e_global_comp-events-drawer-on-open-21769509":"global-page-of-comp-events-drawer-on-open-21769509"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -250,6 +254,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_comp-events-drawer-on-open-21769509":{
+				"slug":"global-page-of-comp-events-drawer-on-open-21769509",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -257,5 +266,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":4
 }
