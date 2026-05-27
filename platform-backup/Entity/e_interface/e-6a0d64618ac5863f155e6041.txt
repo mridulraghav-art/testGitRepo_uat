@@ -2,10 +2,10 @@
 	"createdTime":1779266873630,
 	"deleted":false,
 	"deploymentState":{
-		"deployedAt":1779429957650,
+		"deployedAt":1779873974091,
 		"deployedBy":97894,
-		"entityVersion":155,
-		"version":3
+		"entityVersion":158,
+		"version":5
 	},
 	"entityType":"e_interface",
 	"grants":{
@@ -25,119 +25,34 @@
 					"97894"
 				],
 				"principalType":"USER"
+			},
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"97900"
+				],
+				"principalType":"USER"
 			}
 		]
 	},
 	"id":"e-6a0d64618ac5863f155e6041",
 	"lastModifiedBy":97894,
-	"modifiedTime":1779440717368,
+	"modifiedTime":1779877329771,
 	"ownerUserId":97894,
 	"properties":{
 		"standard":false,
 		"navigation":{
+			"secondary":[],
 			"defaultPageId":"opp_data_plane_e_6a0d64618ac5863f155e6041",
-			"primary":[
-				{
-					"name":"Opp - Data Plane",
-					"icon":"SvgLightbulb02",
-					"breakpointVisibility":[],
-					"pageInputs":{},
-					"id":"nav_4319bf85-e2bc-4ea4-aecb-4a11b24ba756",
-					"type":"PAGE",
-					"pageId":"opp_data_plane_e_6a0d64618ac5863f155e6041",
-					"slug":"opp_data_plane"
-				},
-				{
-					"name":"Opp - Workflow Plane",
-					"icon":"SvgLightbulb02",
-					"breakpointVisibility":[],
-					"pageInputs":{},
-					"id":"nav_eb9204e8-70e8-43ef-aa42-722a032161fe",
-					"type":"PAGE",
-					"pageId":"opp_workflow_plane_e_6a0d64618ac5863f155e6041",
-					"slug":"opp_workflow_plane"
-				},
-				{
-					"name":"OneShop - Data Plane",
-					"icon":"SvgLightbulb02",
-					"breakpointVisibility":[],
-					"pageInputs":{},
-					"id":"nav_025bb69d-dd75-456a-ad45-932a3c27c2a4",
-					"type":"PAGE",
-					"pageId":"oneshop_data_plane_e_6a0d64618ac5863f155e6041",
-					"slug":"oneshop_data_plane"
-				},
-				{
-					"name":"OneShop - Workflow Plane",
-					"icon":"SvgLightbulb02",
-					"breakpointVisibility":[],
-					"pageInputs":{},
-					"id":"nav_f3235617-623a-4b23-85e8-eb69433adb63",
-					"type":"PAGE",
-					"pageId":"oneshop_workflow_plane_e_6a0d64618ac5863f155e6041",
-					"slug":"oneshop_workflow_plane"
-				},
-				{
-					"name":"Payments - Data Plane",
-					"icon":"SvgLightbulb02",
-					"breakpointVisibility":[],
-					"pageInputs":{},
-					"id":"nav_d5fe3c44-64bf-4d30-9d6e-113b7caf4d84",
-					"type":"PAGE",
-					"pageId":"payments_data_plane_e_6a0d64618ac5863f155e6041",
-					"slug":"payments_data_plane"
-				},
-				{
-					"name":"Payments - Workflow Plane",
-					"icon":"SvgLightbulb02",
-					"breakpointVisibility":[],
-					"pageInputs":{},
-					"id":"nav_90cd244b-b66d-4ee0-81e5-fd4b5378487c",
-					"type":"PAGE",
-					"pageId":"payments_workflow_plane_e_6a0d64618ac5863f155e6041",
-					"slug":"payments_workflow_plane"
-				},
-				{
-					"name":"OMS - Data Plane",
-					"icon":"SvgLightbulb02",
-					"breakpointVisibility":[],
-					"pageInputs":{},
-					"id":"nav_98641194-b478-41af-92f5-f7a9e2827652",
-					"type":"PAGE",
-					"pageId":"oms_data_plane_e_6a0d64618ac5863f155e6041",
-					"slug":"oms_data_plane"
-				},
-				{
-					"name":"OMS - Workflow Plane",
-					"icon":"SvgLightbulb02",
-					"breakpointVisibility":[],
-					"pageInputs":{},
-					"id":"nav_1d4d28bf-9028-4054-b9ef-4139638439f6",
-					"type":"PAGE",
-					"pageId":"oms_workflow_plane_e_6a0d64618ac5863f155e6041",
-					"slug":"oms_workflow_plane"
-				},
-				{
-					"name":"CRM - Data Plane",
-					"icon":"SvgLightbulb02",
-					"breakpointVisibility":[],
-					"pageInputs":{},
-					"id":"nav_3cd7b00a-a949-4c57-92e9-f34ade7b2ce4",
-					"type":"PAGE",
-					"pageId":"crm_data_plane_e_6a0d64618ac5863f155e6041",
-					"slug":"crm_data_plane"
-				},
-				{
-					"name":"CRM - Workflow Plane",
-					"icon":"SvgLightbulb02",
-					"breakpointVisibility":[],
-					"pageInputs":{},
-					"id":"nav_49f5badd-231d-4dad-a4b9-8feb6f34669f",
-					"type":"PAGE",
-					"pageId":"crm_workflow_plane_e_6a0d64618ac5863f155e6041",
-					"slug":"crm_workflow_plane"
-				}
-			],
 			"appearance":{
 				"SM":{
 					"styles":{
@@ -154,7 +69,50 @@
 					"navigationItem":{
 						"labelVariant":"none",
 						"selectionVariant":"stroke"
-					}
+					},
+					"primary":[
+						{
+							"id":"nav_4319bf85-e2bc-4ea4-aecb-4a11b24ba756",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_eb9204e8-70e8-43ef-aa42-722a032161fe",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_025bb69d-dd75-456a-ad45-932a3c27c2a4",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_f3235617-623a-4b23-85e8-eb69433adb63",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_d5fe3c44-64bf-4d30-9d6e-113b7caf4d84",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_90cd244b-b66d-4ee0-81e5-fd4b5378487c",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_98641194-b478-41af-92f5-f7a9e2827652",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_1d4d28bf-9028-4054-b9ef-4139638439f6",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_3cd7b00a-a949-4c57-92e9-f34ade7b2ce4",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_49f5badd-231d-4dad-a4b9-8feb6f34669f",
+							"hiddenInOverflow":false
+						}
+					],
+					"secondary":[]
 				},
 				"LG":{
 					"styles":{
@@ -171,24 +129,130 @@
 					"navigationItem":{
 						"labelVariant":"none",
 						"selectionVariant":"stroke"
-					}
+					},
+					"primary":[
+						{
+							"id":"nav_4319bf85-e2bc-4ea4-aecb-4a11b24ba756",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_eb9204e8-70e8-43ef-aa42-722a032161fe",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_025bb69d-dd75-456a-ad45-932a3c27c2a4",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_f3235617-623a-4b23-85e8-eb69433adb63",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_d5fe3c44-64bf-4d30-9d6e-113b7caf4d84",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_90cd244b-b66d-4ee0-81e5-fd4b5378487c",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_98641194-b478-41af-92f5-f7a9e2827652",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_1d4d28bf-9028-4054-b9ef-4139638439f6",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_3cd7b00a-a949-4c57-92e9-f34ade7b2ce4",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_49f5badd-231d-4dad-a4b9-8feb6f34669f",
+							"hiddenInOverflow":false
+						}
+					],
+					"secondary":[]
 				},
 				"XL":{
 					"styles":{
-						"width":"w-full"
+						"width":"w-auto"
 					},
 					"theme":"inherit",
 					"navigationBar":{
 						"position":"top",
 						"navigatorType":"Custom",
-						"pageTransition":"FADE",
+						"navigatorModuleId":"e_6a0d64e48ac5863f155e66c4",
 						"type":"fixed",
-						"navigatorModuleId":"e_6a0d64e48ac5863f155e66c4"
+						"overflowDetails":{
+							"icon":"Menu01",
+							"label":"More"
+						}
 					},
 					"navigationItem":{
+						"selectionVariant":"stroke",
+						"text":{
+							"variant":"text-sm",
+							"weight":"semi-bold",
+							"colors":{}
+						},
+						"icon":{
+							"size":"md",
+							"colors":{}
+						},
 						"labelVariant":"none",
-						"selectionVariant":"stroke"
-					}
+						"background":{
+							"colors":{}
+						}
+					},
+					"userReordered":{
+						"primary":false,
+						"secondary":false,
+						"userMenu":false
+					},
+					"primary":[
+						{
+							"id":"nav_4319bf85-e2bc-4ea4-aecb-4a11b24ba756",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_eb9204e8-70e8-43ef-aa42-722a032161fe",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_025bb69d-dd75-456a-ad45-932a3c27c2a4",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_f3235617-623a-4b23-85e8-eb69433adb63",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_d5fe3c44-64bf-4d30-9d6e-113b7caf4d84",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_90cd244b-b66d-4ee0-81e5-fd4b5378487c",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_98641194-b478-41af-92f5-f7a9e2827652",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_1d4d28bf-9028-4054-b9ef-4139638439f6",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_3cd7b00a-a949-4c57-92e9-f34ade7b2ce4",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_49f5badd-231d-4dad-a4b9-8feb6f34669f",
+							"hiddenInOverflow":false
+						}
+					],
+					"secondary":[]
 				},
 				"MD":{
 					"styles":{
@@ -205,9 +269,164 @@
 					"navigationItem":{
 						"labelVariant":"none",
 						"selectionVariant":"stroke"
-					}
+					},
+					"primary":[
+						{
+							"id":"nav_4319bf85-e2bc-4ea4-aecb-4a11b24ba756",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_eb9204e8-70e8-43ef-aa42-722a032161fe",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_025bb69d-dd75-456a-ad45-932a3c27c2a4",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_f3235617-623a-4b23-85e8-eb69433adb63",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_d5fe3c44-64bf-4d30-9d6e-113b7caf4d84",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_90cd244b-b66d-4ee0-81e5-fd4b5378487c",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_98641194-b478-41af-92f5-f7a9e2827652",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_1d4d28bf-9028-4054-b9ef-4139638439f6",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_3cd7b00a-a949-4c57-92e9-f34ade7b2ce4",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_49f5badd-231d-4dad-a4b9-8feb6f34669f",
+							"hiddenInOverflow":false
+						}
+					],
+					"secondary":[]
 				}
-			}
+			},
+			"primary":[
+				{
+					"hiddenInOverflow":false,
+					"name":"Opp - Data Plane",
+					"icon":"SvgLightbulb02",
+					"breakpointVisibility":[],
+					"pageInputs":{},
+					"id":"nav_4319bf85-e2bc-4ea4-aecb-4a11b24ba756",
+					"type":"PAGE",
+					"pageId":"opp_data_plane_e_6a0d64618ac5863f155e6041",
+					"slug":"opp_data_plane"
+				},
+				{
+					"hiddenInOverflow":false,
+					"name":"Opp - Workflow Plane",
+					"icon":"SvgLightbulb02",
+					"breakpointVisibility":[],
+					"pageInputs":{},
+					"id":"nav_eb9204e8-70e8-43ef-aa42-722a032161fe",
+					"type":"PAGE",
+					"pageId":"opp_workflow_plane_e_6a0d64618ac5863f155e6041",
+					"slug":"opp_workflow_plane"
+				},
+				{
+					"hiddenInOverflow":false,
+					"name":"OneShop - Data Plane",
+					"icon":"SvgLightbulb02",
+					"breakpointVisibility":[],
+					"pageInputs":{},
+					"id":"nav_025bb69d-dd75-456a-ad45-932a3c27c2a4",
+					"type":"PAGE",
+					"pageId":"oneshop_data_plane_e_6a0d64618ac5863f155e6041",
+					"slug":"oneshop_data_plane"
+				},
+				{
+					"hiddenInOverflow":false,
+					"name":"OneShop - Workflow Plane",
+					"icon":"SvgLightbulb02",
+					"breakpointVisibility":[],
+					"pageInputs":{},
+					"id":"nav_f3235617-623a-4b23-85e8-eb69433adb63",
+					"type":"PAGE",
+					"pageId":"oneshop_workflow_plane_e_6a0d64618ac5863f155e6041",
+					"slug":"oneshop_workflow_plane"
+				},
+				{
+					"hiddenInOverflow":false,
+					"name":"Payments - Data Plane",
+					"icon":"SvgLightbulb02",
+					"breakpointVisibility":[],
+					"pageInputs":{},
+					"id":"nav_d5fe3c44-64bf-4d30-9d6e-113b7caf4d84",
+					"type":"PAGE",
+					"pageId":"payments_data_plane_e_6a0d64618ac5863f155e6041",
+					"slug":"payments_data_plane"
+				},
+				{
+					"hiddenInOverflow":false,
+					"name":"Payments - Workflow Plane",
+					"icon":"SvgLightbulb02",
+					"breakpointVisibility":[],
+					"pageInputs":{},
+					"id":"nav_90cd244b-b66d-4ee0-81e5-fd4b5378487c",
+					"type":"PAGE",
+					"pageId":"payments_workflow_plane_e_6a0d64618ac5863f155e6041",
+					"slug":"payments_workflow_plane"
+				},
+				{
+					"hiddenInOverflow":false,
+					"name":"OMS - Data Plane",
+					"icon":"SvgLightbulb02",
+					"breakpointVisibility":[],
+					"pageInputs":{},
+					"id":"nav_98641194-b478-41af-92f5-f7a9e2827652",
+					"type":"PAGE",
+					"pageId":"oms_data_plane_e_6a0d64618ac5863f155e6041",
+					"slug":"oms_data_plane"
+				},
+				{
+					"hiddenInOverflow":false,
+					"name":"OMS - Workflow Plane",
+					"icon":"SvgLightbulb02",
+					"breakpointVisibility":[],
+					"pageInputs":{},
+					"id":"nav_1d4d28bf-9028-4054-b9ef-4139638439f6",
+					"type":"PAGE",
+					"pageId":"oms_workflow_plane_e_6a0d64618ac5863f155e6041",
+					"slug":"oms_workflow_plane"
+				},
+				{
+					"hiddenInOverflow":false,
+					"name":"CRM - Data Plane",
+					"icon":"SvgLightbulb02",
+					"breakpointVisibility":[],
+					"pageInputs":{},
+					"id":"nav_3cd7b00a-a949-4c57-92e9-f34ade7b2ce4",
+					"type":"PAGE",
+					"pageId":"crm_data_plane_e_6a0d64618ac5863f155e6041",
+					"slug":"crm_data_plane"
+				},
+				{
+					"hiddenInOverflow":false,
+					"name":"CRM - Workflow Plane",
+					"icon":"SvgLightbulb02",
+					"breakpointVisibility":[],
+					"pageInputs":{},
+					"id":"nav_49f5badd-231d-4dad-a4b9-8feb6f34669f",
+					"type":"PAGE",
+					"pageId":"crm_workflow_plane_e_6a0d64618ac5863f155e6041",
+					"slug":"crm_workflow_plane"
+				}
+			]
 		},
 		"metadata":{
 			"logo":{
@@ -247,7 +466,9 @@
 		"name":"UnifyApps DT Analytics",
 		"theme":{
 			"defaultScheme":"light",
-			"defaultThemeId":"e-6a0d64618ac5863f155e6041_theme"
+			"output":"\n      .interface-theme,\n      .interface-theme [data-color-scheme='light'] {\n        \n      }\n    \n        .interface-theme[data-color-scheme='dark'],\n        .interface-theme [data-color-scheme='dark'] {\n          \n        }\n      ",
+			"defaultThemeId":"e-6a0d64618ac5863f155e6041_theme",
+			"cssVars":{}
 		},
 		"provisionApp":false,
 		"type":"application",
@@ -301,5 +522,5 @@
 	"tags":[
 		"AI Generated"
 	],
-	"version":156
+	"version":160
 }
