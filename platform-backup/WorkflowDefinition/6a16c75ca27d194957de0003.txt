@@ -23,34 +23,11 @@
 			"fromNodeId":"n_pkBNA",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_D7mYv",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_D7mYv",
-			"name":"yes",
-			"priority":0,
-			"skip":false,
 			"toNodeId":"n_f5rTb",
-			"type":"if"
+			"type":"next"
 		},
 		{
 			"fromNodeId":"n_f5rTb",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_oqESO",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_oqESO",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_cCDpb",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_D7mYv",
-			"name":"no",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_cCDpb",
@@ -60,7 +37,7 @@
 	"id":"6a16c75ca27d194957de0003",
 	"lastModifiedBy":97900,
 	"lcName":"workflow activity",
-	"modifiedTime":1779907032903,
+	"modifiedTime":1779907136979,
 	"name":"Workflow Activity",
 	"nodes":[
 		{
@@ -229,35 +206,6 @@
 		},
 		{
 			"context":{
-				"appName":"if_else",
-				"resourceVersion":63,
-				"resourceName":"if_else_condition",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_MMhI7-1",
-			"id":"n_D7mYv",
-			"index":4,
-			"inputs":{
-				"filters":[
-					{
-						"property":"{{ n_OSBWX.outputs.body.changeType }}",
-						"filter":{
-							"operator":"EXISTS"
-						}
-					}
-				],
-				"operator":"AND"
-			},
-			"skip":false,
-			"subTitle":"Condition",
-			"title":"Condition",
-			"type":"IF_ELSE"
-		},
-		{
-			"context":{
 				"appName":"utility_by_unifyapps",
 				"resourceVersion":3497,
 				"resourceName":"utility_by_unifyapps_filter_list",
@@ -266,9 +214,9 @@
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
-			"groupId":"n_D7mYv@_MMhI7-1@y",
+			"groupId":"_MMhI7-1",
 			"id":"n_f5rTb",
-			"index":5,
+			"index":4,
 			"inputs":{
 				"filter":{
 					"filters":[
@@ -280,7 +228,7 @@
 							}
 						}
 					],
-					"operator":"OR"
+					"operator":"AND"
 				},
 				"listSource":"{{ n_mXmJv.outputs.objects }}"
 			},
@@ -299,9 +247,9 @@
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
-			"groupId":"n_D7mYv@_MMhI7-1@y",
-			"id":"n_oqESO",
-			"index":6,
+			"groupId":"_MMhI7-1",
+			"id":"n_cCDpb",
+			"index":5,
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"200_undefined",
@@ -330,48 +278,6 @@
 			"subTitle":"Callable",
 			"title":"Respond to API request",
 			"type":"STOP"
-		},
-		{
-			"context":{
-				"appName":"callables",
-				"resourceVersion":2341,
-				"resourceName":"callables_return_response_to_api",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_MMhI7-1",
-			"id":"n_cCDpb",
-			"index":7,
-			"inputs":{
-				"streamingCompleted":true,
-				"responseName":"200_undefined",
-				"body":{
-					"auditRecords":{
-						"source":"{{ n_oygIe.outputs.result.filter_records }}",
-						"ua:type":"mappedArray",
-						"items":"{{ n_oygIe.outputs.result.filter_records[0] }}"
-					},
-					"res":{
-						"ua:type":"mappedArray",
-						"items":{
-							"changeType":"{{ n_mXmJv.outputs.objects[0].changeType }}",
-							"modifiedTime":"{{ n_mXmJv.outputs.objects[0].modifiedTime }}",
-							"ownerUserId":"{{ n_mXmJv.outputs.objects[0].ownerUserId }}",
-							"username":"{{ n_mXmJv.outputs.objects[0].username }}",
-							"version":"{{ n_mXmJv.outputs.objects[0].version }}",
-							"lastModifiedBy":"{{ n_mXmJv.outputs.objects[0].lastModifiedBy }}"
-						},
-						"source":"{{ n_mXmJv.outputs.objects }}"
-					}
-				},
-				"status":200
-			},
-			"skip":false,
-			"subTitle":"Callable",
-			"title":"Respond to API request",
-			"type":"STOP"
 		}
 	],
 	"ownerUserId":97900,
@@ -388,5 +294,5 @@
 		}
 	},
 	"standard":false,
-	"version":20
+	"version":21
 }
