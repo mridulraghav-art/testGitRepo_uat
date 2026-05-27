@@ -46,7 +46,7 @@
 	"id":"6a16c75ca27d194957de0003",
 	"lastModifiedBy":97900,
 	"lcName":"workflow activity",
-	"modifiedTime":1779904352592,
+	"modifiedTime":1779905012667,
 	"name":"Workflow Activity",
 	"nodes":[
 		{
@@ -65,7 +65,7 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_MMhI7-1",
 			"id":"n_OSBWX",
@@ -162,7 +162,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_MMhI7-1",
 			"id":"n_mXmJv",
@@ -189,7 +189,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_MMhI7-1",
 			"id":"n_yPaAX",
@@ -308,7 +308,9 @@
 							"changeType":"{{ n_mXmJv.outputs.objects[0].changeType }}",
 							"modifiedTime":"{{ n_mXmJv.outputs.objects[0].modifiedTime }}",
 							"ownerUserId":"{{ n_mXmJv.outputs.objects[0].ownerUserId }}",
-							"username":"{{ n_mXmJv.outputs.objects[0].username }}"
+							"username":"{{ n_mXmJv.outputs.objects[0].username }}",
+							"lastModifiedBy":"{{ n_mXmJv.outputs.objects[0].lastModifiedBy }}",
+							"version":"{{ n_mXmJv.outputs.objects[0].version }}"
 						}
 					}
 				},
@@ -334,5 +336,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
