@@ -24,7 +24,7 @@
 	},
 	"id":"lgoutusrtmplt21779861285996027818",
 	"lastModifiedBy":39,
-	"modifiedTime":1779861299475,
+	"modifiedTime":1779861301821,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -45,7 +45,13 @@
 			}
 		},
 		"navigation":{
-			"secondary":[],
+			"secondary":[
+				{
+					"type":"USER_MENU",
+					"name":"Profile",
+					"id":"userMenu"
+				}
+			],
 			"defaultPageId":"lgoutusrtmplt21779861285996027818_login",
 			"appearance":{
 				"SM":{
@@ -84,7 +90,13 @@
 							"all":"p-0"
 						}
 					},
-					"secondary":[]
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				},
 				"LG":{
 					"primary":[
@@ -128,7 +140,13 @@
 							"y":"gap-y-lg"
 						}
 					},
-					"secondary":[]
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				},
 				"XL":{
 					"primary":[
@@ -172,7 +190,13 @@
 							"y":"gap-y-lg"
 						}
 					},
-					"secondary":[]
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				},
 				"MD":{
 					"primary":[
@@ -216,7 +240,13 @@
 							"y":"gap-y-lg"
 						}
 					},
-					"secondary":[]
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				}
 			},
 			"primary":[
@@ -272,5 +302,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":4
+	"version":6
 }
