@@ -46,10 +46,19 @@
 	"id":"6a16c75ca27d194957de0003",
 	"lastModifiedBy":97900,
 	"lcName":"workflow activity",
-	"modifiedTime":1779902691408,
+	"modifiedTime":1779904352592,
 	"name":"Workflow Activity",
 	"nodes":[
 		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{
+						"response":[
+							{}
+						]
+					}
+				}
+			},
 			"context":{
 				"appName":"callables",
 				"resourceVersion":2340,
@@ -91,23 +100,48 @@
 						"htmlBody":{
 							"type":"string"
 						},
+						"namespaces":[],
 						"body":{
 							"type":"object",
 							"properties":{
-								"auditRecords":{
+								"res":{
 									"type":"array",
 									"items":{
 										"type":"object",
-										"properties":{},
+										"properties":{
+											"changeType":{
+												"type":"string",
+												"title":"changeType"
+											},
+											"lastModifiedBy":{
+												"type":"integer",
+												"title":"lastModifiedBy"
+											},
+											"modifiedTime":{
+												"type":"integer",
+												"title":"modifiedTime"
+											},
+											"ownerUserId":{
+												"type":"integer",
+												"title":"ownerUserId"
+											},
+											"username":{
+												"type":"string",
+												"title":"username"
+											},
+											"version":{
+												"type":"integer",
+												"title":"version"
+											}
+										},
 										"additionalProperties":false
 									},
-									"title":"auditRecords"
+									"title":"res"
 								}
 							},
 							"additionalProperties":false,
 							"required":[]
-						},
-						"namespaces":[]
+						}
 					}
 				],
 				"streamingResponse":false
@@ -128,7 +162,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_MMhI7-1",
 			"id":"n_mXmJv",
@@ -191,7 +225,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_yPaAX@_MMhI7-1@y",
 			"id":"n_oygIe",
@@ -266,6 +300,16 @@
 						"source":"{{ n_oygIe.outputs.result.filter_records }}",
 						"ua:type":"mappedArray",
 						"items":"{{ n_oygIe.outputs.result.filter_records[0] }}"
+					},
+					"res":{
+						"source":"{{ n_mXmJv.outputs.objects }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"changeType":"{{ n_mXmJv.outputs.objects[0].changeType }}",
+							"modifiedTime":"{{ n_mXmJv.outputs.objects[0].modifiedTime }}",
+							"ownerUserId":"{{ n_mXmJv.outputs.objects[0].ownerUserId }}",
+							"username":"{{ n_mXmJv.outputs.objects[0].username }}"
+						}
 					}
 				},
 				"status":200
@@ -290,5 +334,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
