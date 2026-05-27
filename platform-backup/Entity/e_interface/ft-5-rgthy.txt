@@ -1,6 +1,12 @@
 {
 	"createdTime":1779867261733,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1779867271914,
+		"deployedBy":39,
+		"entityVersion":3,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"ft-5-rgthy",
 	"lastModifiedBy":39,
-	"modifiedTime":1779867264615,
+	"modifiedTime":1779867385316,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -45,7 +51,13 @@
 			}
 		},
 		"navigation":{
-			"secondary":[],
+			"secondary":[
+				{
+					"type":"USER_MENU",
+					"name":"Profile",
+					"id":"userMenu"
+				}
+			],
 			"defaultPageId":"e_6a169e80d89ec7156c0da84c",
 			"appearance":{
 				"SM":{
@@ -79,7 +91,13 @@
 							"all":"p-0"
 						}
 					},
-					"secondary":[]
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				},
 				"LG":{
 					"primary":[],
@@ -118,32 +136,25 @@
 							"y":"gap-y-lg"
 						}
 					},
-					"secondary":[]
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				},
 				"XL":{
-					"primary":[],
-					"navigationItem":{
-						"selectionVariant":"stroke",
-						"labelVariant":"expandable"
-					},
-					"navigationBar":{
-						"overflowDetails":{
-							"icon":"Menu01",
-							"label":"More"
-						},
-						"position":"start",
-						"type":"fixed",
-						"navigatorType":"Standard"
-					},
+					"userMenu":[],
 					"styles":{
+						"height":"h-auto",
+						"borderColor":"border-secondary",
 						"width":{
 							"custom":"56px"
 						},
-						"height":"h-auto",
 						"borderWidth":{
 							"r":"border-e"
 						},
-						"borderColor":"border-secondary",
 						"borderRadius":{
 							"all":"rounded-none"
 						},
@@ -157,7 +168,44 @@
 							"y":"gap-y-lg"
 						}
 					},
-					"secondary":[]
+					"theme":"inherit",
+					"navigationBar":{
+						"position":"start",
+						"navigatorType":"Standard",
+						"type":"fixed",
+						"overflowDetails":{
+							"icon":"Menu01",
+							"label":"More"
+						}
+					},
+					"navigationItem":{
+						"selectionVariant":"stroke",
+						"text":{
+							"variant":"text-sm",
+							"weight":"semi-bold",
+							"colors":{}
+						},
+						"icon":{
+							"size":"md",
+							"colors":{}
+						},
+						"labelVariant":"expandable",
+						"background":{
+							"colors":{}
+						}
+					},
+					"userReordered":{
+						"primary":false,
+						"secondary":false,
+						"userMenu":false
+					},
+					"primary":[],
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					]
 				},
 				"MD":{
 					"primary":[],
@@ -196,13 +244,20 @@
 							"y":"gap-y-lg"
 						}
 					},
-					"secondary":[]
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				}
 			},
 			"primary":[]
 		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a169e80d89ec7156c0da84c":"homepage"
+			"e_6a169e80d89ec7156c0da84c":"homepage",
+			"e_global_ft-5-rgthy":"global-page-of-ft-5-rgthy"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -210,6 +265,8 @@
 		"name":"ft5rgthy",
 		"parentInterfaceId":"test-123",
 		"theme":{
+			"cssVars":{},
+			"output":"\n      .interface-theme,\n      .interface-theme [data-color-scheme='light'] {\n        \n      }\n    \n        .interface-theme[data-color-scheme='dark'],\n        .interface-theme [data-color-scheme='dark'] {\n          \n        }\n      ",
 			"defaultThemeId":"e_699c1348d53be90e1bfeabff"
 		},
 		"type":"application",
@@ -221,6 +278,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_ft-5-rgthy":{
+				"slug":"global-page-of-ft-5-rgthy",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -228,5 +290,5 @@
 	"tags":[
 		
 	],
-	"version":1
+	"version":4
 }
