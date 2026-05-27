@@ -1,6 +1,12 @@
 {
 	"createdTime":1779862217011,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1779862292970,
+		"deployedBy":39,
+		"entityVersion":4,
+		"version":1
+	},
 	"entityType":"e_interface",
 	"grants":{
 		"configs":[
@@ -24,7 +30,7 @@
 	},
 	"id":"gghyu",
 	"lastModifiedBy":39,
-	"modifiedTime":1779862220320,
+	"modifiedTime":1779866204027,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,19 +45,33 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":1,
+				"_pageCount":3,
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
 		},
 		"navigation":{
-			"secondary":[],
+			"secondary":[
+				{
+					"type":"USER_MENU",
+					"name":"Profile",
+					"id":"userMenu"
+				}
+			],
 			"defaultPageId":"e_6a168accd89ec7156c0d91bf",
 			"appearance":{
 				"SM":{
 					"primary":[
 						{
 							"id":"nav_MTXPQ",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_ZQqdl",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_bNVwV",
 							"hiddenInOverflow":false
 						}
 					],
@@ -84,12 +104,26 @@
 							"all":"p-0"
 						}
 					},
-					"secondary":[]
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				},
 				"LG":{
 					"primary":[
 						{
 							"id":"nav_MTXPQ",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_ZQqdl",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_bNVwV",
 							"hiddenInOverflow":false
 						}
 					],
@@ -128,12 +162,26 @@
 							"y":"gap-y-lg"
 						}
 					},
-					"secondary":[]
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				},
 				"XL":{
 					"primary":[
 						{
 							"id":"nav_MTXPQ",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_ZQqdl",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_bNVwV",
 							"hiddenInOverflow":false
 						}
 					],
@@ -172,12 +220,26 @@
 							"y":"gap-y-lg"
 						}
 					},
-					"secondary":[]
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				},
 				"MD":{
 					"primary":[
 						{
 							"id":"nav_MTXPQ",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_ZQqdl",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_bNVwV",
 							"hiddenInOverflow":false
 						}
 					],
@@ -216,7 +278,13 @@
 							"y":"gap-y-lg"
 						}
 					},
-					"secondary":[]
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				}
 			},
 			"primary":[
@@ -228,11 +296,32 @@
 					"type":"PAGE",
 					"pageId":"e_6a168accd89ec7156c0d91bf",
 					"slug":"homepage"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_ZQqdl",
+					"type":"PAGE",
+					"pageId":"e_6a169a4e80830b496b6eeffc",
+					"slug":"page-2"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 3",
+					"icon":"Zap",
+					"id":"nav_bNVwV",
+					"type":"PAGE",
+					"pageId":"e_6a169a5cd89ec7156c0da400",
+					"slug":"page-3"
 				}
 			]
 		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a168accd89ec7156c0d91bf":"homepage"
+			"e_6a168accd89ec7156c0d91bf":"homepage",
+			"e_global_gghyu":"global-page-of-gghyu",
+			"e_6a169a5cd89ec7156c0da400":"page-3",
+			"e_6a169a4e80830b496b6eeffc":"page-2"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -250,6 +339,21 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_gghyu":{
+				"slug":"global-page-of-gghyu",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_6a169a5cd89ec7156c0da400":{
+				"slug":"page-3",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_6a169a4e80830b496b6eeffc":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -257,5 +361,5 @@
 	"tags":[
 		
 	],
-	"version":1
+	"version":7
 }
