@@ -16,18 +16,27 @@
 			"fromNodeId":"n_mXmJv",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_pkBNA",
+			"toNodeId":"n_yPaAX",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_pkBNA",
+			"fromNodeId":"n_yPaAX",
+			"name":"yes",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_f5rTb",
+			"toNodeId":"n_oygIe",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_oygIe",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_cCDpb",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_f5rTb",
+			"fromNodeId":"n_yPaAX",
+			"name":"no",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_cCDpb",
@@ -37,7 +46,7 @@
 	"id":"6a16c75ca27d194957de0003",
 	"lastModifiedBy":97900,
 	"lcName":"workflow activity",
-	"modifiedTime":1779906379991,
+	"modifiedTime":1779906447088,
 	"name":"Workflow Activity",
 	"nodes":[
 		{
@@ -56,7 +65,7 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_MMhI7-1",
 			"id":"n_OSBWX",
@@ -153,7 +162,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_MMhI7-1",
 			"id":"n_mXmJv",
@@ -174,67 +183,100 @@
 		},
 		{
 			"context":{
-				"appName":"standard_entities",
-				"resourceVersion":5725,
-				"resourceName":"standard_entities_fetch_entities",
+				"appName":"if_else",
+				"resourceVersion":63,
+				"resourceName":"if_else_condition",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_MMhI7-1",
-			"id":"n_pkBNA",
+			"id":"n_yPaAX",
 			"index":3,
 			"inputs":{
-				"projections":[
+				"filters":[
 					{
-						"name":"username",
-						"aggregationFunction":"GROUP"
+						"property":"{{ n_OSBWX.outputs.body.changeType }}",
+						"filter":{
+							"operator":"EXISTS"
+						}
 					},
 					{
-						"name":"id",
-						"aggregationFunction":"GROUP"
+						"property":"{{ n_OSBWX.outputs.body.changeType }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":"{{ n_mXmJv.outputs.objects[0].changeType }}"
+						}
 					}
 				],
-				"entityType":"User",
-				"group":"STANDARD"
+				"operator":"AND"
 			},
 			"skip":false,
-			"subTitle":"Standard entities by UnifyApps",
-			"title":"Fetch entities",
-			"type":"ACTION"
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
 		},
 		{
 			"context":{
-				"appName":"utility_by_unifyapps",
-				"resourceVersion":3497,
-				"resourceName":"utility_by_unifyapps_filter_list",
+				"appName":"code_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"code_by_unifyapps_groovy",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_MMhI7-1",
-			"id":"n_f5rTb",
+			"groupId":"n_yPaAX@_MMhI7-1@y",
+			"id":"n_oygIe",
 			"index":4,
 			"inputs":{
-				"filter":{
-					"filters":[
-						{
-							"property":"{{ n_mXmJv.outputs.objects[0].changeType }}",
-							"filter":{
-								"operator":"EQUAL",
-								"value":"{{ n_OSBWX.outputs.body.changeType }}"
-							}
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"filter_records":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"filter_records"
 						}
-					],
-					"operator":"AND"
+					}
 				},
-				"listSource":"{{ n_mXmJv.outputs.objects }}"
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"allrecords":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"allrecords"
+						},
+						"changeType":{
+							"type":"string",
+							"title":"changeType"
+						}
+					}
+				},
+				"code":"List records = allrecords ?: []\nString filter = changeType ?: ''\nList filtered = records.findAll { record ->\n    String ct = record?.changeType ?: ''\n    ct.equalsIgnoreCase(filter)\n}\nreturn [filteredRecords: filtered]",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"changeType":"{{ n_OSBWX.outputs.body.changeType }}"
+				}
 			},
 			"skip":false,
-			"subTitle":"Utility by UnifyApps",
-			"title":"Filter List of Data",
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
 			"type":"ACTION"
 		},
 		{
@@ -260,16 +302,14 @@
 						"items":"{{ n_oygIe.outputs.result.filter_records[0] }}"
 					},
 					"res":{
+						"source":"{{ n_mXmJv.outputs.objects }}",
 						"ua:type":"mappedArray",
 						"items":{
-							"changeType":"{{ n_f5rTb.outputs.filteredList[0].changeType }}",
-							"lastModifiedBy":"{{ n_f5rTb.outputs.filteredList[0].lastModifiedBy }}",
-							"modifiedTime":"{{ n_f5rTb.outputs.filteredList[0].modifiedTime }}",
-							"ownerUserId":"{{ n_f5rTb.outputs.filteredList[0].ownerUserId }}",
-							"username":"{{ n_f5rTb.outputs.filteredList[0].username }}",
-							"version":"{{ n_f5rTb.outputs.filteredList[0].version }}"
-						},
-						"source":"{{ n_f5rTb.outputs.filteredList }}"
+							"changeType":"{{ n_mXmJv.outputs.objects[0].changeType }}",
+							"modifiedTime":"{{ n_mXmJv.outputs.objects[0].modifiedTime }}",
+							"ownerUserId":"{{ n_mXmJv.outputs.objects[0].ownerUserId }}",
+							"username":"{{ n_mXmJv.outputs.objects[0].username }}"
+						}
 					}
 				},
 				"status":200
@@ -294,5 +334,5 @@
 		}
 	},
 	"standard":false,
-	"version":14
+	"version":15
 }
