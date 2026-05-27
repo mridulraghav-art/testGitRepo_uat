@@ -7,46 +7,108 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_7wHAg",
+			"fromNodeId":"n_4OLti",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_17tdx",
+			"toNodeId":"n_NbJYW",
 			"type":"next"
 		}
 	],
 	"id":"6a16cdc69b23c869fa1b40aa",
 	"lastModifiedBy":39,
 	"lcName":"callablecondition_29_21779879147932",
-	"modifiedTime":1779879366834,
+	"modifiedTime":1779879376384,
 	"name":"CallableCondition_29_21779879147932",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2340,
+				"resourceName":"callables_from_automation_streaming"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_7wHAg-1",
-			"id":"_7wHAg",
-			"index":0,
+			"id":"n_4OLti",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output_Number"
+					],
+					"properties":{
+						"output_Number":{
+							"type":"number",
+							"title":"output_Number"
+						}
+					}
+				},
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"{{ n_4OLti.outputs.input_Number }}",
+							"filter":{
+								"operator":"LTE",
+								"value":"3"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input_Number"
+					],
+					"properties":{
+						"input_Number":{
+							"type":"number",
+							"title":"input_Number"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation (Streaming responses)",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2341,
+				"resourceName":"callables_return_to_automation_streaming",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_7wHAg-1",
-			"id":"_17tdx",
-			"index":0,
+			"id":"n_NbJYW",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output_Number":"{{ n_4OLti.outputs.input_Number }}"
+				},
+				"completed":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Add response to automation stream",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -60,5 +122,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
