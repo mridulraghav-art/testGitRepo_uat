@@ -2,9 +2,29 @@
 	"createdTime":1779865814789,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"auth-logout-homepage-url-login97742",
 	"lastModifiedBy":39,
-	"modifiedTime":1779865814789,
+	"modifiedTime":1779865821393,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -19,17 +39,28 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":0,
+				"_pageCount":1,
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
 		},
 		"navigation":{
-			"secondary":[],
-			"defaultPageId":"",
+			"secondary":[
+				{
+					"type":"USER_MENU",
+					"name":"Profile",
+					"id":"userMenu"
+				}
+			],
+			"defaultPageId":"e_6a1698d880830b496b6eedf3",
 			"appearance":{
 				"SM":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_SyfnI",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -58,10 +89,22 @@
 						"padding":{
 							"all":"p-0"
 						}
-					}
+					},
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				},
 				"LG":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_SyfnI",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -96,10 +139,22 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				},
 				"XL":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_SyfnI",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"expandable"
@@ -134,10 +189,22 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				},
 				"MD":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_SyfnI",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -172,10 +239,31 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[
+						{
+							"id":"userMenu",
+							"hiddenInOverflow":false
+						}
+					],
+					"userMenu":[]
 				}
 			},
-			"primary":[]
+			"primary":[
+				{
+					"activeIcon":"Zap",
+					"name":"Homepage",
+					"icon":"Zap",
+					"id":"nav_SyfnI",
+					"type":"PAGE",
+					"pageId":"e_6a1698d880830b496b6eedf3",
+					"slug":"homepage"
+				}
+			]
+		},
+		"interfacePageIdVsSlugMap":{
+			"e_global_auth-logout-homepage-url-login97742":"global-page-of-auth-logout-homepage-url-login97742",
+			"e_6a1698d880830b496b6eedf3":"homepage"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -187,11 +275,23 @@
 		"type":"application",
 		"locale":{
 			"defaultLocale":"en-US"
+		},
+		"entityDetailsMap":{
+			"e_global_auth-logout-homepage-url-login97742":{
+				"slug":"global-page-of-auth-logout-homepage-url-login97742",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_6a1698d880830b496b6eedf3":{
+				"slug":"homepage",
+				"isPublic":false,
+				"type":"PAGE"
+			}
 		}
 	},
 	"standard":false,
 	"tags":[
 		"dnt-application"
 	],
-	"version":0
+	"version":4
 }
