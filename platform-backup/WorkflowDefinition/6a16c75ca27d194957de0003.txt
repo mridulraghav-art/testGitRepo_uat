@@ -6,46 +6,325 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_MMhI7",
+			"fromNodeId":"n_OSBWX",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_lvKp8",
+			"toNodeId":"n_mXmJv",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_mXmJv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_cCDpb",
 			"type":"next"
 		}
 	],
 	"id":"6a16c75ca27d194957de0003",
 	"lastModifiedBy":97900,
 	"lcName":"workflow activity",
-	"modifiedTime":1779877724952,
+	"modifiedTime":1779882729083,
 	"name":"Workflow Activity",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2340,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_MMhI7-1",
-			"id":"_MMhI7",
-			"index":0,
+			"id":"n_OSBWX",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"workflowId":{
+								"type":"string",
+								"title":"workflowId"
+							},
+							"type":{
+								"type":"string",
+								"title":"Type"
+							}
+						},
+						"additionalProperties":false,
+						"required":[]
+					}
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						},
+						"htmlBody":{
+							"type":"string"
+						},
+						"body":{
+							"type":"object",
+							"properties":{
+								"objects":{
+									"type":"array",
+									"items":{
+										"type":"object",
+										"properties":{
+											"assetClass":{
+												"type":"string",
+												"title":"assetClass"
+											},
+											"assetId":{
+												"type":"string",
+												"title":"assetId"
+											},
+											"changeType":{
+												"type":"string",
+												"title":"changeType"
+											},
+											"changes":{
+												"type":"array",
+												"items":{
+													"type":"object",
+													"properties":{
+														"fieldName":{
+															"type":"string",
+															"title":"fieldName"
+														},
+														"newValue":{
+															"type":"string",
+															"title":"newValue"
+														},
+														"newValueDetails":{
+															"type":"object",
+															"properties":{
+																"id":{
+																	"type":"string",
+																	"title":"id"
+																},
+																"lcName":{
+																	"type":"string",
+																	"title":"lcName"
+																},
+																"name":{
+																	"type":"string",
+																	"title":"name"
+																}
+															},
+															"title":"newValueDetails",
+															"additionalProperties":false
+														},
+														"oldValueDetails":{
+															"type":"object",
+															"properties":{
+																"id":{
+																	"type":"string",
+																	"title":"id"
+																},
+																"lcName":{
+																	"type":"string",
+																	"title":"lcName"
+																},
+																"name":{
+																	"type":"string",
+																	"title":"name"
+																}
+															},
+															"title":"oldValueDetails",
+															"additionalProperties":false
+														},
+														"operation":{
+															"type":"string",
+															"title":"operation"
+														},
+														"title":{
+															"type":"string",
+															"title":"title"
+														},
+														"typeDetails":{
+															"type":"object",
+															"properties":{
+																"id":{
+																	"type":"string",
+																	"title":"id"
+																},
+																"lcName":{
+																	"type":"string",
+																	"title":"lcName"
+																},
+																"name":{
+																	"type":"string",
+																	"title":"name"
+																}
+															},
+															"title":"typeDetails",
+															"additionalProperties":false
+														},
+														"oldValue":{
+															"type":"string",
+															"title":"oldValue"
+														}
+													},
+													"additionalProperties":false
+												},
+												"title":"changes"
+											},
+											"createdTime":{
+												"type":"integer",
+												"title":"createdTime"
+											},
+											"deleted":{
+												"type":"boolean",
+												"title":"deleted"
+											},
+											"id":{
+												"type":"string",
+												"title":"id"
+											},
+											"ipAddress":{
+												"type":"string",
+												"title":"ipAddress"
+											},
+											"lastModifiedBy":{
+												"type":"integer",
+												"title":"lastModifiedBy"
+											},
+											"modifiedTime":{
+												"type":"integer",
+												"title":"modifiedTime"
+											},
+											"ownerUserId":{
+												"type":"integer",
+												"title":"ownerUserId"
+											},
+											"standard":{
+												"type":"boolean",
+												"title":"standard"
+											},
+											"username":{
+												"type":"string",
+												"title":"username"
+											},
+											"version":{
+												"type":"integer",
+												"title":"version"
+											},
+											"labelDetails":{
+												"type":"object",
+												"properties":{
+													"changeType":{
+														"type":"string",
+														"title":"changeType"
+													},
+													"assetClass":{
+														"type":"string",
+														"title":"assetClass"
+													}
+												},
+												"title":"labelDetails",
+												"additionalProperties":false
+											},
+											"assetVersion":{
+												"type":"integer",
+												"title":"assetVersion"
+											},
+											"context":{
+												"type":"object",
+												"properties":{
+													"deployedVersion":{
+														"type":"integer",
+														"title":"deployedVersion"
+													}
+												},
+												"title":"context",
+												"additionalProperties":false
+											}
+										},
+										"additionalProperties":false
+									},
+									"title":"objects"
+								},
+								"hasMore":{
+									"type":"boolean",
+									"title":"hasMore"
+								}
+							},
+							"additionalProperties":false
+						},
+						"namespaces":[]
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":5724,
+				"resourceName":"standard_entities_fetch_audit",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_MMhI7-1",
-			"id":"_lvKp8",
-			"index":0,
+			"id":"n_mXmJv",
+			"index":2,
+			"inputs":{
+				"assetGroup":"WORKFLOW_DEFINITION",
+				"assetId":"{{ n_OSBWX.outputs.body.workflowId }}",
+				"assetClass":"WORKFLOW_DEFINITION",
+				"page":{
+					"offset":0,
+					"limit":20
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Get audit records",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2341,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_MMhI7-1",
+			"id":"n_cCDpb",
+			"index":3,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_undefined",
+				"status":200
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":97900,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +335,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":3
 }
