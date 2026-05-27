@@ -37,7 +37,7 @@
 	"id":"6a16c75ca27d194957de0003",
 	"lastModifiedBy":97900,
 	"lcName":"workflow activity",
-	"modifiedTime":1779906160470,
+	"modifiedTime":1779906379991,
 	"name":"Workflow Activity",
 	"nodes":[
 		{
@@ -260,16 +260,16 @@
 						"items":"{{ n_oygIe.outputs.result.filter_records[0] }}"
 					},
 					"res":{
-						"source":"{{ n_mXmJv.outputs.objects }}",
 						"ua:type":"mappedArray",
 						"items":{
-							"changeType":"{{ n_mXmJv.outputs.objects[0].changeType }}",
-							"modifiedTime":"{{ n_mXmJv.outputs.objects[0].modifiedTime }}",
-							"ownerUserId":"{{ n_mXmJv.outputs.objects[0].ownerUserId }}",
-							"username":"{{ n_mXmJv.outputs.objects[0].username }}",
-							"lastModifiedBy":"{{ n_mXmJv.outputs.objects[0].lastModifiedBy }}",
-							"version":"{{ n_mXmJv.outputs.objects[0].version }}"
-						}
+							"changeType":"{{ n_f5rTb.outputs.filteredList[0].changeType }}",
+							"lastModifiedBy":"{{ n_f5rTb.outputs.filteredList[0].lastModifiedBy }}",
+							"modifiedTime":"{{ n_f5rTb.outputs.filteredList[0].modifiedTime }}",
+							"ownerUserId":"{{ n_f5rTb.outputs.filteredList[0].ownerUserId }}",
+							"username":"{{ n_f5rTb.outputs.filteredList[0].username }}",
+							"version":"{{ n_f5rTb.outputs.filteredList[0].version }}"
+						},
+						"source":"{{ n_f5rTb.outputs.filteredList }}"
 					}
 				},
 				"status":200
@@ -294,5 +294,5 @@
 		}
 	},
 	"standard":false,
-	"version":13
+	"version":14
 }
