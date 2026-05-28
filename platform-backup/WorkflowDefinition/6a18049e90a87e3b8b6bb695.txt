@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779958942635,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_d2wPy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Kgaql",
+			"type":"next"
+		}
+	],
+	"id":"6a18049e90a87e3b8b6bb695",
+	"lastModifiedBy":39,
+	"lcName":"sdfs",
+	"modifiedTime":1779958942635,
+	"name":"sdfs",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_d2wPy-1",
+			"id":"_d2wPy",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_d2wPy-1",
+			"id":"_Kgaql",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
