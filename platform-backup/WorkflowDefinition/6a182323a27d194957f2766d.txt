@@ -6,46 +6,71 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_L6c4U",
+			"fromNodeId":"n_bl2bH",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_yHjd8",
+			"toNodeId":"n_Zphqz",
 			"type":"next"
 		}
 	],
 	"id":"6a182323a27d194957f2766d",
 	"lastModifiedBy":39,
 	"lcName":"example",
-	"modifiedTime":1779966755167,
+	"modifiedTime":1779967073740,
 	"name":"example",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_L6c4U-1",
-			"id":"_L6c4U",
-			"index":0,
+			"id":"n_bl2bH",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":2136,
+				"resourceName":"files_by_unifyapps_create_pdf_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_L6c4U-1",
-			"id":"_yHjd8",
-			"index":0,
+			"id":"n_Zphqz",
+			"index":2,
+			"inputs":{
+				"fileName":"hello.pdf",
+				"content":"sdgfhgjhdsghjhgjsdhggfduysyufdygudyufyuds"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Create a PDF file",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +81,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
