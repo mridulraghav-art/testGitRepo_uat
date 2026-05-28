@@ -24,7 +24,7 @@
 	},
 	"id":"sdfcdf",
 	"lastModifiedBy":39,
-	"modifiedTime":1779726351012,
+	"modifiedTime":1779963149127,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -39,7 +39,7 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":1,
+				"_pageCount":2,
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
@@ -202,7 +202,9 @@
 			"primary":[]
 		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a14780ed89ec7156c04232a":"homepage"
+			"e_6a14780ed89ec7156c04232a":"homepage",
+			"e_global_sdfcdf":"global-page-of-sdfcdf",
+			"e_6a18150dd89ec7156c160c7d":"page-2"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -220,6 +222,16 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_sdfcdf":{
+				"slug":"global-page-of-sdfcdf",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_6a18150dd89ec7156c160c7d":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -227,5 +239,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":4
 }
