@@ -7,46 +7,65 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_TfK0o",
+			"fromNodeId":"n_tj3kO",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_hxx6Z",
+			"toNodeId":"n_WPgjE",
 			"type":"next"
 		}
 	],
 	"id":"6a180ae4e43a791d083055c0",
 	"lastModifiedBy":39,
 	"lcName":"workflowlevel-nodelevel_217799605444150",
-	"modifiedTime":1779960553362,
+	"modifiedTime":1779960562854,
 	"name":"workflowLevel-nodelevel_217799605444150",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TfK0o-1",
-			"id":"_TfK0o",
-			"index":0,
+			"id":"n_tj3kO",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TfK0o-1",
-			"id":"_hxx6Z",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
+			"id":"n_WPgjE",
+			"index":2,
+			"skip":true,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Select an action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +80,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
