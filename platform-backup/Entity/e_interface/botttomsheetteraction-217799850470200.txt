@@ -2,9 +2,29 @@
 	"createdTime":1779985056984,
 	"deleted":false,
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"botttomsheetteraction-217799850470200",
 	"lastModifiedBy":39,
-	"modifiedTime":1779985057099,
+	"modifiedTime":1779985067187,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -181,8 +201,12 @@
 			},
 			"primary":[]
 		},
+		"security":{
+			"type":"PUBLIC"
+		},
 		"interfacePageIdVsSlugMap":{
-			"e_6a186aa1d89ec7156c16e7ee":"homepage"
+			"e_6a186aa1d89ec7156c16e7ee":"homepage",
+			"e_global_botttomsheetteraction-217799850470200":"global-page-of-botttomsheetteraction-217799850470200"
 		},
 		"manifest":{
 			"type":"MOBILE",
@@ -224,6 +248,11 @@
 				"slug":"homepage",
 				"isPublic":false,
 				"type":"PAGE"
+			},
+			"e_global_botttomsheetteraction-217799850470200":{
+				"slug":"global-page-of-botttomsheetteraction-217799850470200",
+				"isPublic":false,
+				"type":"PAGE"
 			}
 		}
 	},
@@ -231,5 +260,5 @@
 	"tags":[
 		"dnt-application"
 	],
-	"version":1
+	"version":4
 }
