@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1779986724885,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_C83Oa",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_emKQX",
+			"type":"next"
+		}
+	],
+	"id":"6a1871249b23c869fa36d1d2",
+	"lastModifiedBy":39,
+	"lcName":"dcs",
+	"modifiedTime":1779986724885,
+	"name":"dcs",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_C83Oa-1",
+			"id":"_C83Oa",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_C83Oa-1",
+			"id":"_emKQX",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
