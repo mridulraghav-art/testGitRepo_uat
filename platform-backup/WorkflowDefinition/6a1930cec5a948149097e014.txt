@@ -9,13 +9,6 @@
 			"fromNodeId":"n_sBsuZ",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_cRXlh",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_cRXlh",
-			"priority":0,
-			"skip":false,
 			"toNodeId":"n_HKZ8U",
 			"type":"next"
 		}
@@ -23,7 +16,7 @@
 	"id":"6a1930cec5a948149097e014",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1780037322060,
+	"modifiedTime":1780037418142,
 	"name":"test",
 	"nodes":[
 		{
@@ -53,42 +46,19 @@
 		},
 		{
 			"context":{
-				"appName":"files_by_unifyapps",
-				"resourceVersion":2138,
-				"resourceName":"files_by_unifyapps_upload_file",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_pgmEp-1",
-			"id":"n_cRXlh",
-			"index":2,
-			"inputs":{
-				"fileName":"Sample",
-				"url":"https://filesamples.com/samples/font/bin/fontawesome-webfont.bin",
-				"option":"url"
-			},
-			"skip":false,
-			"subTitle":"Files by UnifyApps",
-			"title":"Upload file",
-			"type":"ACTION"
-		},
-		{
-			"context":{
 				"appName":"utility_by_unifyapps",
 				"resourceVersion":3497,
 				"resourceName":"utility_by_unifyapps_convert_to_pdf",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pgmEp-1",
 			"id":"n_HKZ8U",
-			"index":3,
+			"index":2,
 			"inputs":{
-				"fileDetails":"{{ n_cRXlh.outputs.fileDetails }}",
+				"fileDetails":"https://filesamples.com/samples/font/bin/fontawesome-webfont.bin",
 				"fileType":"AUTO_DETECT"
 			},
 			"skip":false,
@@ -111,5 +81,5 @@
 		}
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
