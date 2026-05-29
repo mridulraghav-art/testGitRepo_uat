@@ -30,7 +30,7 @@
 	"id":"6a19986599c80c25551c2db0",
 	"lastModifiedBy":97900,
 	"lcName":"sync automation",
-	"modifiedTime":1780068805648,
+	"modifiedTime":1780068812410,
 	"name":"Sync Automation",
 	"nodes":[
 		{
@@ -40,7 +40,7 @@
 				"resourceName":"schedule_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_1G8WV-1",
 			"id":"n_nekam",
@@ -48,7 +48,7 @@
 			"inputs":{
 				"cron":"INTERVAL",
 				"sequential":false,
-				"interval":5,
+				"interval":1,
 				"frequency":"MINUTES"
 			},
 			"skip":false,
@@ -67,7 +67,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_1G8WV-1",
 			"id":"n_3QPhr",
@@ -325,7 +325,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_1G8WV-1",
 			"id":"n_7xHGq",
@@ -371,5 +371,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
