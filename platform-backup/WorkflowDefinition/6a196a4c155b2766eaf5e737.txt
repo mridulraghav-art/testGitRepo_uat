@@ -6,46 +6,107 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_TtQNb",
+			"fromNodeId":"n_085JS",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_mYVwa",
+			"toNodeId":"n_B2Zu3",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_B2Zu3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_hi972",
 			"type":"next"
 		}
 	],
 	"id":"6a196a4c155b2766eaf5e737",
 	"lastModifiedBy":39,
 	"lcName":"ferferref",
-	"modifiedTime":1780050508480,
+	"modifiedTime":1780050695841,
 	"name":"ferferref",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TtQNb-1",
-			"id":"_TtQNb",
-			"index":0,
+			"id":"n_085JS",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":3495,
+				"resourceName":"utility_by_unifyapps_to_json_object",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TtQNb-1",
-			"id":"_mYVwa",
-			"index":0,
+			"id":"n_B2Zu3",
+			"index":2,
+			"inputs":{
+				"jsonString":"{\n    \"fileType\": \"pdf\",\n\"name\": \"6a192a806ef8e92fe577ad00-1283cd8a-0612-4f35-bf9c-c2ebd82f208d_file_part_2.pdf\",\n\"size\": 0,\n\"source\": \"workflow_uploads/6a192a806ef8e92fe577ad00-1283cd8a-0612-4f35-bf9c-c2ebd82f208d_file_part_2.pdf\",\n\"sourceType\": \"CLOUD_STORAGE\"\n  }"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Utility by UnifyApps",
+			"title":"Deserialise string to JSON object",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":3498,
+				"resourceName":"utility_by_unifyapps_compress_media",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_TtQNb-1",
+			"id":"n_hi972",
+			"index":3,
+			"inputs":{
+				"imageDPI":150,
+				"fileDetails":"{{ n_B2Zu3.outputs.result }}",
+				"outputQuality":0.8,
+				"bitRate":800000,
+				"removeMetadata":true,
+				"scale":1,
+				"removeRevisions":true,
+				"compressionLevel":9,
+				"contentType":"pdf",
+				"imageQuality":0.7
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Compress media content",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +117,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
