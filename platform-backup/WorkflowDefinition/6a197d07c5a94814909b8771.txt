@@ -6,46 +6,102 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_na9mm",
+			"fromNodeId":"n_NXfbN",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_oO6cn",
+			"toNodeId":"n_l9pCg",
 			"type":"next"
 		}
 	],
 	"id":"6a197d07c5a94814909b8771",
 	"lastModifiedBy":39,
 	"lcName":"fdg",
-	"modifiedTime":1780055303493,
+	"modifiedTime":1780055315663,
 	"name":"fdg",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_na9mm-1",
-			"id":"_na9mm",
-			"index":0,
+			"id":"n_NXfbN",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1648,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_na9mm-1",
-			"id":"_oO6cn",
-			"index":0,
+			"id":"n_l9pCg",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"name":{
+							"type":"string",
+							"title":"Name"
+						}
+					},
+					"required":[
+						"name"
+					]
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"name":{
+							"type":"string",
+							"title":"Name"
+						}
+					},
+					"required":[
+						"name"
+					]
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +112,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
