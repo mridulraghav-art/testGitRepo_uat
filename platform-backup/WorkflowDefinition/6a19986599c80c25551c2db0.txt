@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780062309046,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_1G8WV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_z2Fsr",
+			"type":"next"
+		}
+	],
+	"id":"6a19986599c80c25551c2db0",
+	"lastModifiedBy":97900,
+	"lcName":"sync automation",
+	"modifiedTime":1780062309046,
+	"name":"Sync Automation",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_1G8WV-1",
+			"id":"_1G8WV",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_1G8WV-1",
+			"id":"_z2Fsr",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":97900,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
