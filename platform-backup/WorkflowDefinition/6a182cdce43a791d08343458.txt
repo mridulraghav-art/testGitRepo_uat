@@ -6,46 +6,131 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_A9Pp3",
+			"fromNodeId":"n_ho1tB",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_0ghXJ",
+			"toNodeId":"n_dppbM",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_dppbM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_C5pCr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_C5pCr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_suIAZ",
 			"type":"next"
 		}
 	],
 	"id":"6a182cdce43a791d08343458",
 	"lastModifiedBy":39,
 	"lcName":"ex1",
-	"modifiedTime":1779969244895,
+	"modifiedTime":1780030562806,
 	"name":"ex1",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_A9Pp3-1",
-			"id":"_A9Pp3",
-			"index":0,
+			"id":"n_ho1tB",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"files_by_unifyapps",
+				"resourceVersion":749,
+				"resourceName":"files_by_unifyapps_upload_file",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_A9Pp3-1",
-			"id":"_0ghXJ",
-			"index":0,
+			"id":"n_dppbM",
+			"index":2,
+			"inputs":{
+				"fileName":"test",
+				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845491635/airtravel.csv",
+				"option":"url"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Files by UnifyApps",
+			"title":"Upload file",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":968,
+				"resourceName":"utility_by_unifyapps_convert_to_pdf",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_A9Pp3-1",
+			"id":"n_C5pCr",
+			"index":3,
+			"inputs":{
+				"fileDetails":"{{ n_dppbM.outputs.fileDetails }}",
+				"fileType":"CSV"
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Convert to PDF",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":779,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_A9Pp3-1",
+			"id":"n_suIAZ",
+			"index":4,
+			"inputs":{
+				"result":{
+					"r":"{{ n_C5pCr.outputs.file }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +141,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
