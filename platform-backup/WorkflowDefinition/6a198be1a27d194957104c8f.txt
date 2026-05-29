@@ -5,47 +5,44 @@
 	"createdTime":1780059105234,
 	"deleted":false,
 	"edges":[
-		{
-			"fromNodeId":"_wTvbT",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_goC2A",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a198be1a27d194957104c8f",
 	"lastModifiedBy":39,
 	"lcName":"sd",
-	"modifiedTime":1780059105234,
+	"modifiedTime":1780059109818,
 	"name":"sd",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":58,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wTvbT-1",
-			"id":"_wTvbT",
-			"index":0,
+			"id":"n_UNbEN",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_wTvbT-1",
-			"id":"_goC2A",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +53,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
