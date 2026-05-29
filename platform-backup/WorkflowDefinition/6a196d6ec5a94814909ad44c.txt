@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780051310993,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_Qvh9V",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_VizoI",
+			"type":"next"
+		}
+	],
+	"id":"6a196d6ec5a94814909ad44c",
+	"lastModifiedBy":39,
+	"lcName":"sdf",
+	"modifiedTime":1780051310993,
+	"name":"sdf",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Qvh9V-1",
+			"id":"_Qvh9V",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Qvh9V-1",
+			"id":"_VizoI",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
