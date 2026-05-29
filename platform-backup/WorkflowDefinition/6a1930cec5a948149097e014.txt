@@ -23,7 +23,7 @@
 	"id":"6a1930cec5a948149097e014",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1780036128039,
+	"modifiedTime":1780036691824,
 	"name":"test",
 	"nodes":[
 		{
@@ -33,7 +33,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_pgmEp-1",
 			"id":"n_sBsuZ",
@@ -59,7 +59,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_pgmEp-1",
 			"id":"n_cRXlh",
@@ -89,7 +89,7 @@
 			"index":3,
 			"inputs":{
 				"fileDetails":"{{ n_cRXlh.outputs.fileDetails }}",
-				"fileType":"BIN"
+				"fileType":"AUTO_DETECT"
 			},
 			"skip":false,
 			"subTitle":"Utility by UnifyApps",
@@ -111,5 +111,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
