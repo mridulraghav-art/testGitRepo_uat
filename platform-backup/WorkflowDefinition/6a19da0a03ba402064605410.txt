@@ -7,46 +7,123 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_eLyda",
+			"fromNodeId":"n_ul0FF",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_wta5t",
+			"toNodeId":"n_egyC1",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_egyC1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_8IC5E",
 			"type":"next"
 		}
 	],
 	"id":"6a19da0a03ba402064605410",
 	"lastModifiedBy":39,
 	"lcName":"delaynodedelayuntil_217800791024020",
-	"modifiedTime":1780079120288,
+	"modifiedTime":1780079128814,
 	"name":"delayNodeDelayUntil_217800791024020",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2339,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_eLyda-1",
-			"id":"_eLyda",
-			"index":0,
+			"id":"n_ul0FF",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output_String"
+					],
+					"properties":{
+						"output_String":{
+							"type":"string",
+							"title":"output_String"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input_String"
+					],
+					"properties":{
+						"input_String":{
+							"type":"string",
+							"title":"input_String"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"delay",
+				"resourceVersion":57,
+				"resourceName":"delay_until",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_eLyda-1",
-			"id":"_wta5t",
-			"index":0,
+			"id":"n_egyC1",
+			"index":2,
+			"inputs":{
+				"until":"2026-05-29T18:25:00.000Z"
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Delay",
+			"title":"Schedule delay until",
+			"type":"DELAY"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2340,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_eLyda-1",
+			"id":"n_8IC5E",
+			"index":3,
+			"inputs":{
+				"result":{
+					"output_String":"{{ n_ul0FF.outputs.input_String }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +138,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
