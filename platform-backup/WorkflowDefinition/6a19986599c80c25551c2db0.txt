@@ -9,14 +9,14 @@
 			"fromNodeId":"n_nekam",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_z2Fsr",
+			"toNodeId":"n_NuK0P",
 			"type":"next"
 		}
 	],
 	"id":"6a19986599c80c25551c2db0",
 	"lastModifiedBy":97900,
 	"lcName":"sync automation",
-	"modifiedTime":1780068658326,
+	"modifiedTime":1780068674685,
 	"name":"Sync Automation",
 	"nodes":[
 		{
@@ -26,7 +26,7 @@
 				"resourceName":"schedule_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_1G8WV-1",
 			"id":"n_nekam",
@@ -46,15 +46,19 @@
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"stop"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_1G8WV-1",
-			"id":"_z2Fsr",
+			"id":"n_NuK0P",
 			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":97900,
@@ -71,5 +75,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
