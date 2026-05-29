@@ -9,28 +9,28 @@
 			"fromNodeId":"n_ho1tB",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_dppbM",
+			"toNodeId":"n_5DfG9",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_dppbM",
+			"fromNodeId":"n_5DfG9",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_C5pCr",
+			"toNodeId":"n_31Boj",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_C5pCr",
+			"fromNodeId":"n_31Boj",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_suIAZ",
+			"toNodeId":"n_45u9m",
 			"type":"next"
 		}
 	],
 	"id":"6a182cdce43a791d08343458",
 	"lastModifiedBy":39,
 	"lcName":"ex1",
-	"modifiedTime":1780030562806,
+	"modifiedTime":1780035615110,
 	"name":"ex1",
 	"nodes":[
 		{
@@ -40,7 +40,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_A9Pp3-1",
 			"id":"n_ho1tB",
@@ -69,11 +69,11 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_A9Pp3-1",
-			"id":"n_dppbM",
+			"id":"n_5DfG9",
 			"index":2,
 			"inputs":{
 				"fileName":"test",
-				"url":"https://qa-uploads.unifyapps.com/user-uploads/1/1762845491635/airtravel.csv",
+				"url":"https://arxiv.org/pdf/2407.02987",
 				"option":"url"
 			},
 			"skip":false,
@@ -84,23 +84,22 @@
 		{
 			"context":{
 				"appName":"utility_by_unifyapps",
-				"resourceVersion":968,
-				"resourceName":"utility_by_unifyapps_convert_to_pdf",
+				"resourceVersion":969,
+				"resourceName":"utility_by_unifyapps_create_unifyapps_path_for_file",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_A9Pp3-1",
-			"id":"n_C5pCr",
+			"id":"n_31Boj",
 			"index":3,
 			"inputs":{
-				"fileDetails":"{{ n_dppbM.outputs.fileDetails }}",
-				"fileType":"CSV"
+				"file":"{{ n_5DfG9.outputs.fileDetails }}"
 			},
 			"skip":false,
 			"subTitle":"Utility by UnifyApps",
-			"title":"Convert to PDF",
+			"title":"Create UnifyApps path for file",
 			"type":"ACTION"
 		},
 		{
@@ -114,11 +113,11 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_A9Pp3-1",
-			"id":"n_suIAZ",
+			"id":"n_45u9m",
 			"index":4,
 			"inputs":{
 				"result":{
-					"r":"{{ n_C5pCr.outputs.file }}"
+					"r":"{{ n_31Boj.outputs.path }}"
 				}
 			},
 			"skip":false,
@@ -141,5 +140,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
