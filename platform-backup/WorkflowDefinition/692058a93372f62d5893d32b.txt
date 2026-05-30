@@ -4,14 +4,14 @@
 	],
 	"createdTime":1763805326416,
 	"deleted":false,
-	"deployedVersion":15,
+	"deployedVersion":17,
 	"deploymentState":{
-		"deployedAt":1774523353967,
-		"deployedBy":0,
-		"deployedDefinitionId":"69c513d9cedd590310a10017",
+		"deployedAt":1780170697443,
+		"deployedBy":-1,
+		"deployedDefinitionId":"6a1b3fc9207eea5cea52c7b7",
 		"status":"DEPLOYED",
-		"version":15,
-		"workflowVersion":33
+		"version":17,
+		"workflowVersion":38
 	},
 	"edges":[
 		{
@@ -86,7 +86,7 @@
 	"id":"692058a93372f62d5893d32b",
 	"lastModifiedBy":-1,
 	"lcName":"best practices | check group | pressable",
-	"modifiedTime":1777893354263,
+	"modifiedTime":1780171621451,
 	"name":"Best Practices | Check Group | Pressable",
 	"nodes":[
 		{
@@ -682,25 +682,25 @@
 							}
 						},
 						"_ua_variableDetails":{
+							"type":"array",
 							"title":"Variable Details",
 							"items":{
 								"type":"object",
 								"properties":{
+									"description":{
+										"description":"Description of the variable",
+										"type":"string"
+									},
 									"dataType":{
-										"type":"string",
-										"description":"Data type of the variable"
+										"description":"Data type of the variable",
+										"type":"string"
 									},
 									"name":{
-										"type":"string",
-										"description":"Name of the variable"
-									},
-									"description":{
-										"type":"string",
-										"description":"Description of the variable"
+										"description":"Name of the variable",
+										"type":"string"
 									}
 								}
-							},
-							"type":"array"
+							}
 						}
 					}
 				}
@@ -1394,5 +1394,5 @@
 	"tags":[
 		"BPC"
 	],
-	"version":35
+	"version":40
 }
