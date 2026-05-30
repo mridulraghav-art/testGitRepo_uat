@@ -4,14 +4,14 @@
 	],
 	"createdTime":1766262807489,
 	"deleted":false,
-	"deployedVersion":12,
+	"deployedVersion":15,
 	"deploymentState":{
-		"deployedAt":1772386668925,
-		"deployedBy":0,
-		"deployedDefinitionId":"69a4796c468efa346e3bc036",
+		"deployedAt":1780170702889,
+		"deployedBy":-1,
+		"deployedDefinitionId":"6a1b3fceeeee3a1afe6285cb",
 		"status":"DEPLOYED",
-		"version":12,
-		"workflowVersion":28
+		"version":15,
+		"workflowVersion":35
 	},
 	"edges":[
 		{
@@ -84,9 +84,9 @@
 		]
 	},
 	"id":"6939515f008f706109c48fee",
-	"lastModifiedBy":0,
+	"lastModifiedBy":-1,
 	"lcName":"best practices | check group | tabs",
-	"modifiedTime":1774523359153,
+	"modifiedTime":1780171624303,
 	"name":"Best Practices | Check Group | Tabs",
 	"nodes":[
 		{
@@ -671,17 +671,17 @@
 							"items":{
 								"type":"object",
 								"properties":{
-									"name":{
-										"type":"string",
-										"description":"Name of the variable"
-									},
 									"description":{
-										"type":"string",
-										"description":"Description of the variable"
+										"description":"Description of the variable",
+										"type":"string"
 									},
 									"dataType":{
-										"type":"string",
-										"description":"Data type of the variable"
+										"description":"Data type of the variable",
+										"type":"string"
+									},
+									"name":{
+										"description":"Name of the variable",
+										"type":"string"
 									}
 								}
 							}
@@ -1359,5 +1359,5 @@
 	"tags":[
 		"BPC"
 	],
-	"version":30
+	"version":37
 }
