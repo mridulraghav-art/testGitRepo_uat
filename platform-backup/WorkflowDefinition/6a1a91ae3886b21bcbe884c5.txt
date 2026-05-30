@@ -6,46 +6,102 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_8R8zF",
+			"fromNodeId":"n_OqkM1",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_s4Vcu",
+			"toNodeId":"n_DNJda",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_DNJda",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_nehM7",
 			"type":"next"
 		}
 	],
 	"id":"6a1a91ae3886b21bcbe884c5",
 	"lastModifiedBy":39,
 	"lcName":"jkfaisiu",
-	"modifiedTime":1780126126758,
+	"modifiedTime":1780126146683,
 	"name":"jkfaisiu",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2339,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8R8zF-1",
-			"id":"_8R8zF",
-			"index":0,
+			"id":"n_OqkM1",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":795,
+				"resourceName":"analytics_by_unifyapps_export_sql",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8R8zF-1",
-			"id":"_s4Vcu",
-			"index":0,
+			"id":"n_DNJda",
+			"index":2,
+			"inputs":{
+				"fileName":"CSV_file",
+				"sheetName":"Sheet_0",
+				"query":"SELECT endpointId FROM API_ENDPOINT WHERE collectionId='678e1777c358d949720ebe57';",
+				"keepExactFileName":true,
+				"fileType":"CSV",
+				"group":"PLATFORM"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Export SQL Query Result",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":843,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8R8zF-1",
+			"id":"n_nehM7",
+			"index":3,
+			"inputs":{
+				"result":{
+					"output":"{{ n_DNJda.outputs.file }}",
+					"id":"{{ n_DNJda.outputs.id }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +112,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
