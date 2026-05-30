@@ -4,14 +4,14 @@
 	],
 	"createdTime":1762259200932,
 	"deleted":false,
-	"deployedVersion":16,
+	"deployedVersion":19,
 	"deploymentState":{
-		"deployedAt":1772386669884,
-		"deployedBy":0,
-		"deployedDefinitionId":"69a4796d892c70045155eb30",
+		"deployedAt":1780170703289,
+		"deployedBy":-1,
+		"deployedDefinitionId":"6a1b3fcf02009302fa26480c",
 		"status":"DEPLOYED",
-		"version":16,
-		"workflowVersion":43
+		"version":19,
+		"workflowVersion":50
 	},
 	"edges":[
 		{
@@ -104,9 +104,9 @@
 		]
 	},
 	"id":"68fdcc4622a8224e27f3b498",
-	"lastModifiedBy":0,
+	"lastModifiedBy":-1,
 	"lcName":"best practices | app score",
-	"modifiedTime":1774523359712,
+	"modifiedTime":1780171625640,
 	"name":"Best Practices | App Score",
 	"nodes":[
 		{
@@ -537,25 +537,25 @@
 							}
 						},
 						"_ua_variableDetails":{
+							"type":"array",
 							"title":"Variable Details",
 							"items":{
 								"type":"object",
 								"properties":{
+									"description":{
+										"description":"Description of the variable",
+										"type":"string"
+									},
 									"dataType":{
-										"type":"string",
-										"description":"Data type of the variable"
+										"description":"Data type of the variable",
+										"type":"string"
 									},
 									"name":{
-										"type":"string",
-										"description":"Name of the variable"
-									},
-									"description":{
-										"type":"string",
-										"description":"Description of the variable"
+										"description":"Name of the variable",
+										"type":"string"
 									}
 								}
-							},
-							"type":"array"
+							}
 						}
 					}
 				}
@@ -873,25 +873,25 @@
 							}
 						},
 						"_ua_variableDetails":{
+							"type":"array",
 							"title":"Variable Details",
 							"items":{
 								"type":"object",
 								"properties":{
+									"description":{
+										"description":"Description of the variable",
+										"type":"string"
+									},
 									"dataType":{
-										"type":"string",
-										"description":"Data type of the variable"
+										"description":"Data type of the variable",
+										"type":"string"
 									},
 									"name":{
-										"type":"string",
-										"description":"Name of the variable"
-									},
-									"description":{
-										"type":"string",
-										"description":"Description of the variable"
+										"description":"Name of the variable",
+										"type":"string"
 									}
 								}
-							},
-							"type":"array"
+							}
 						}
 					}
 				}
@@ -1165,5 +1165,5 @@
 	"tags":[
 		"BPC"
 	],
-	"version":45
+	"version":52
 }
