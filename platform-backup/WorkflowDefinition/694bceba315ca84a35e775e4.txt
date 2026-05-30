@@ -4,14 +4,14 @@
 	],
 	"createdTime":1767085139680,
 	"deleted":false,
-	"deployedVersion":12,
+	"deployedVersion":15,
 	"deploymentState":{
-		"deployedAt":1772386662408,
-		"deployedBy":0,
-		"deployedDefinitionId":"69a47966a4d19f6b2eb9b782",
+		"deployedAt":1780170692321,
+		"deployedBy":-1,
+		"deployedDefinitionId":"6a1b3fc4207eea5cea52c63a",
 		"status":"DEPLOYED",
-		"version":12,
-		"workflowVersion":53
+		"version":15,
+		"workflowVersion":60
 	},
 	"edges":[
 		{
@@ -158,9 +158,9 @@
 		]
 	},
 	"id":"694bceba315ca84a35e775e4",
-	"lastModifiedBy":0,
+	"lastModifiedBy":-1,
 	"lcName":"best practice | automation | get score",
-	"modifiedTime":1774523347760,
+	"modifiedTime":1780171617197,
 	"name":"Best Practice | Automation | Get Score",
 	"nodes":[
 		{
@@ -641,17 +641,17 @@
 							"items":{
 								"type":"object",
 								"properties":{
-									"name":{
-										"type":"string",
-										"description":"Name of the variable"
-									},
 									"description":{
-										"type":"string",
-										"description":"Description of the variable"
+										"description":"Description of the variable",
+										"type":"string"
 									},
 									"dataType":{
-										"type":"string",
-										"description":"Data type of the variable"
+										"description":"Data type of the variable",
+										"type":"string"
+									},
+									"name":{
+										"description":"Name of the variable",
+										"type":"string"
 									}
 								}
 							}
@@ -1323,7 +1323,7 @@
 	],
 	"ownerUserId":39,
 	"schemaReferences":[
-		
+		"entity|e_code_snippet|e_694bdd430389e2602d7a513b"
 	],
 	"settings":{
 		"enableNodeLevelLogging":true,
@@ -1336,8 +1336,7 @@
 	},
 	"standard":true,
 	"tags":[
-		"BPC",
-		"Automation"
+		"BPC"
 	],
-	"version":55
+	"version":62
 }
