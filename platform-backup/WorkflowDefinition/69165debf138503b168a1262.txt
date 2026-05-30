@@ -4,14 +4,14 @@
 	],
 	"createdTime":1763805326183,
 	"deleted":false,
-	"deployedVersion":14,
+	"deployedVersion":16,
 	"deploymentState":{
-		"deployedAt":1772386665286,
-		"deployedBy":0,
-		"deployedDefinitionId":"69a479695a603c77df488c3b",
+		"deployedAt":1777893353936,
+		"deployedBy":-1,
+		"deployedDefinitionId":"69f87fe98df1ae3266fac17f",
 		"status":"DEPLOYED",
-		"version":14,
-		"workflowVersion":31
+		"version":16,
+		"workflowVersion":35
 	},
 	"edges":[
 		{
@@ -23,6 +23,13 @@
 		},
 		{
 			"fromNodeId":"n_4hXDW",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_X49fP",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_X49fP",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_4gk0w",
@@ -54,9 +61,9 @@
 		]
 	},
 	"id":"69165debf138503b168a1262",
-	"lastModifiedBy":0,
+	"lastModifiedBy":-1,
 	"lcName":"best practices | check group | app",
-	"modifiedTime":1774523353065,
+	"modifiedTime":1780170696750,
 	"name":"Best Practices | Check Group | App",
 	"nodes":[
 		{
@@ -125,8 +132,7 @@
 							},
 							"title":"checks"
 						}
-					},
-					"dynamic":true
+					}
 				},
 				"callableInterfaceId":"6900b0ef1cd6437e8860e8b2",
 				"setup":{
@@ -636,8 +642,6 @@
 							}
 						},
 						"_ua_variableDetails":{
-							"type":"array",
-							"title":"Variable Details",
 							"items":{
 								"type":"object",
 								"properties":{
@@ -645,16 +649,18 @@
 										"type":"string",
 										"description":"Name of the variable"
 									},
-									"description":{
-										"type":"string",
-										"description":"Description of the variable"
-									},
 									"dataType":{
 										"type":"string",
 										"description":"Data type of the variable"
+									},
+									"description":{
+										"type":"string",
+										"description":"Description of the variable"
 									}
 								}
-							}
+							},
+							"title":"Variable Details",
+							"type":"array"
 						}
 					}
 				}
@@ -662,6 +668,74 @@
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"auth_by_unifyapps",
+				"resourceVersion":3969,
+				"resourceName":"auth_by_unifyapps_fetch_identity_providers",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_uv02c-1",
+			"id":"n_X49fP",
+			"index":3,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"applicationId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ n_Ff9PD.outputs.interfaceRecord.id }}"
+							}
+						},
+						{
+							"filters":[
+								{
+									"property":"type",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"PASSWORD"
+									}
+								},
+								{
+									"property":"type",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"OPEN_ID"
+									}
+								},
+								{
+									"property":"type",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"SAML"
+									}
+								},
+								{
+									"property":"type",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"BIOMETRIC"
+									}
+								}
+							],
+							"operator":"OR"
+						}
+					],
+					"operator":"AND"
+				},
+				"page":{
+					"limit":100
+				}
+			},
+			"skip":false,
+			"subTitle":"Auth by UnifyApps",
+			"title":"Fetch Identity Providers",
 			"type":"ACTION"
 		},
 		{
@@ -679,7 +753,8 @@
 					"root.parameters.dataSources.items.lastModifiedBy",
 					"root.parameters.dataSources.items.modifiedTime",
 					"root.parameters.dataSources.items.ownerUserId",
-					"root.parameters.dataSources.items.properties",
+					"root.parameters.dataSources.items.properties.name",
+					"root.parameters.dataSources.items.properties.connectionType",
 					"root.parameters.dataSources.items.standard",
 					"root.parameters.dataSources.items.version",
 					"root.parameters.interfacePage.createdTime",
@@ -693,14 +768,17 @@
 					"root.parameters.interfacePage.lastModifiedBy",
 					"root.parameters.interfacePage.modifiedTime",
 					"root.parameters.interfacePage.ownerUserId",
-					"root.parameters.interfacePage.properties",
+					"root.parameters.interfacePage.properties.title",
+					"root.parameters.interfacePage.properties.layout",
 					"root.parameters.interfacePage.standard",
 					"root.parameters.interfacePage.version",
 					"root.parameters.globalInterfacePage.id",
-					"root.parameters.globalInterfacePage.properties",
+					"root.parameters.globalInterfacePage.properties.theme",
+					"root.parameters.globalInterfacePage.properties.locale",
 					"root.parameters.globalDataSources.items.id",
 					"root.parameters.globalDataSources.items.properties",
 					"root.parameters.interfaceRecord.id",
+					"root.parameters.idps.items",
 					"root.parameters.interfaceRecord.properties"
 				]
 			},
@@ -715,7 +793,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_uv02c-1",
 			"id":"n_4gk0w",
-			"index":3,
+			"index":4,
 			"inputs":{
 				"output":{
 					"type":"object",
@@ -764,14 +842,8 @@
 					}
 				},
 				"input":{
-					"additionalProperties":false,
 					"type":"object",
-					"required":[],
-					"ua:__linkedVariable__":"n_Ff9PD.outputs",
-					"ua:modal":{
-						"field_type":"STRING",
-						"is_optional":true
-					},
+					"additionalProperties":false,
 					"properties":{
 						"check_id":{
 							"type":"string",
@@ -820,7 +892,18 @@
 									},
 									"properties":{
 										"type":"object",
-										"title":"properties"
+										"properties":{
+											"name":{
+												"type":"string",
+												"title":"name"
+											},
+											"connectionType":{
+												"type":"string",
+												"title":"connectionType"
+											}
+										},
+										"title":"properties",
+										"additionalProperties":false
 									},
 									"standard":{
 										"type":"boolean",
@@ -891,7 +974,18 @@
 								},
 								"properties":{
 									"type":"object",
-									"title":"properties"
+									"properties":{
+										"title":{
+											"type":"string",
+											"title":"title"
+										},
+										"layout":{
+											"type":"string",
+											"title":"layout"
+										}
+									},
+									"title":"properties",
+									"additionalProperties":false
 								},
 								"standard":{
 									"type":"boolean",
@@ -914,9 +1008,21 @@
 								},
 								"properties":{
 									"type":"object",
-									"title":"properties"
+									"properties":{
+										"theme":{
+											"type":"string",
+											"title":"theme"
+										},
+										"locale":{
+											"type":"string",
+											"title":"locale"
+										}
+									},
+									"title":"properties",
+									"additionalProperties":false
 								}
 							},
+							"title":"globalInterfacePage",
 							"additionalProperties":false
 						},
 						"globalDataSources":{
@@ -926,19 +1032,16 @@
 								"properties":{
 									"id":{
 										"type":"string",
-										"title":"Id"
+										"title":"id"
 									},
 									"properties":{
 										"type":"object",
-										"properties":{},
-										"additionalProperties":false,
-										"title":"Properties"
+										"title":"properties"
 									}
 								},
-								"additionalProperties":false,
-								"required":[]
+								"additionalProperties":false
 							},
-							"title":"Global Data Sources"
+							"title":"globalDataSources"
 						},
 						"interfaceRecord":{
 							"type":"object",
@@ -949,21 +1052,51 @@
 								},
 								"properties":{
 									"type":"object",
-									"title":"properties"
+									"properties":{},
+									"title":"properties",
+									"additionalProperties":false,
+									"required":[]
 								}
 							},
+							"title":"interfaceRecord",
 							"additionalProperties":false
+						},
+						"idps":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"idps"
 						}
 					}
 				},
-				"code":"(() => {\n  const makeCheckResult = (checkId, status, targets) => ({\n    check_id: checkId,\n    status,\n    targets: targets || []\n  });\n\n  const runCheckSafe = (checkId, fn) => {\n    try {\n      return fn(checkId);\n    } catch {\n      return makeCheckResult(checkId, \"failed\", []);\n    }\n  };\n\n  // ============================================================\n  // Define all checks (only one mention of ID)\n  // ============================================================\n  const CHECKS = {\n    // ============================================================\n    // CHECK_31 — Set client-specific logos instead of default brand assets\n    // ============================================================\n    CHECK_31: function (args) {\n      var checkId = args.checkId;\n\n      // Get the brand assets from interface metadata\n      var metadata = (interfaceRecord && interfaceRecord.properties && interfaceRecord.properties.metadata) || {};\n      var logos = metadata.logo || {};\n\n      // Define the default logo values (which should be flagged if still in use)\n      var defaultLogos = {\n        small: \"https://assets.unifyapps.com/user-uploads/theme/unify.svg\",\n        large: \"https://assets.unifyapps.com/user-uploads/theme/unify-logo.svg\"\n      };\n\n      var targets = [];\n\n      // Check if logos match the default values\n      if (\n        logos.small === defaultLogos.small &&\n        logos.large === defaultLogos.large\n      ) {\n        targets.push({ targetId: 'app', targetType: 'app' });\n      }\n\n      var status = targets.length ? 'failed' : 'passed';\n      return makeCheckResult(checkId, status, targets);\n    },\n    // ============================================================\n    // CHECK_26 — Limit primary and secondary navigation items\n    // ============================================================\n    CHECK_26: function (args) {\n      var checkId = args.checkId;\n\n      // Loop through the interfaceRecord's navigation structure\n      var navigation = (interfaceRecord && interfaceRecord.properties && interfaceRecord.properties.navigation) || {};\n\n      // Get the primary and secondary items\n      var primaryItems = (navigation.primary || []);\n      var secondaryItems = (navigation.secondary || []);\n\n      // Combine the primary and secondary items\n      var totalItems = primaryItems.length + secondaryItems.length;\n\n      // Check if the total number of items exceeds the allowed limit (10 in this case)\n      var targets = [];\n      if (totalItems > 10) {\n        targets.push({ targetId: 'app', targetType: 'app' });\n      }\n\n      var status = targets.length ? 'failed' : 'passed';\n      return makeCheckResult(checkId, status, targets);\n    },\n    // ============================================================\n    // CHECK_27 — Hide the navigation bar if only one primary navigation item\n    // ============================================================\n    CHECK_27: function (args) {\n      var checkId = args.checkId;\n\n      // Loop through the interfaceRecord's navigation structure\n      var navigation = (interfaceRecord && interfaceRecord.properties && interfaceRecord.properties.navigation) || {};\n\n      // Get the primary navigation items\n      var primaryItems = (navigation.primary || []);\n\n      // Check if there is only one primary navigation item\n      var targets = [];\n      if (primaryItems.length === 1) {\n        targets.push({ targetId: 'navigation', targetType: 'app' });\n      }\n\n      var status = targets.length ? 'failed' : 'passed';\n      return makeCheckResult(checkId, status, targets);\n    }\n  };\n\n  // ============================================================\n  // Execute dynamically from CHECKS map\n  // ============================================================\n  const checks = Object.entries(CHECKS).map(([id, fn]) =>\n    runCheckSafe(id, (checkId) => fn({ checkId }))\n  );\n\n  return { items: checks };\n})();\n",
+				"code":"(() => {\n  const makeCheckResult = (checkId, status, targets) => ({\n    check_id: checkId,\n    status,\n    targets: targets || []\n  });\n\n  const runCheckSafe = (checkId, fn) => {\n    try {\n      return fn(checkId);\n    } catch {\n      return makeCheckResult(checkId, \"failed\", []);\n    }\n  };\n\n  // ============================================================\n  // Define all checks (only one mention of ID)\n  // ============================================================\n  const CHECKS = {\n    // ============================================================\n    // CHECK_31 — Set client-specific logos instead of default brand assets\n    // ============================================================\n    CHECK_31: function (args) {\n      var checkId = args.checkId;\n\n      // Get the brand assets from interface metadata\n      var metadata = (interfaceRecord && interfaceRecord.properties && interfaceRecord.properties.metadata) || {};\n      var logos = metadata.logo || {};\n\n      // Define the default logo values (which should be flagged if still in use)\n      var defaultLogos = {\n        small: \"https://assets.unifyapps.com/user-uploads/theme/unify.svg\",\n        large: \"https://assets.unifyapps.com/user-uploads/theme/unify-logo.svg\"\n      };\n\n      var targets = [];\n\n      // Check if logos match the default values\n      if (\n        logos.small === defaultLogos.small &&\n        logos.large === defaultLogos.large\n      ) {\n        targets.push({ targetId: 'app', targetType: 'app' });\n      }\n\n      var status = targets.length ? 'failed' : 'passed';\n      return makeCheckResult(checkId, status, targets);\n    },\n    // ============================================================\n    // CHECK_26 — Limit primary and secondary navigation items\n    // ============================================================\n    CHECK_26: function (args) {\n      var checkId = args.checkId;\n\n      // Loop through the interfaceRecord's navigation structure\n      var navigation = (interfaceRecord && interfaceRecord.properties && interfaceRecord.properties.navigation) || {};\n\n      // Get the primary and secondary items\n      var primaryItems = (navigation.primary || []);\n      var secondaryItems = (navigation.secondary || []);\n\n      // Combine the primary and secondary items\n      var totalItems = primaryItems.length + secondaryItems.length;\n\n      // Check if the total number of items exceeds the allowed limit (10 in this case)\n      var targets = [];\n      if (totalItems > 10) {\n        targets.push({ targetId: 'app', targetType: 'app' });\n      }\n\n      var status = targets.length ? 'failed' : 'passed';\n      return makeCheckResult(checkId, status, targets);\n    },\n    // ============================================================\n    // CHECK_27 — Hide the navigation bar if only one primary navigation item\n    // ============================================================\n    CHECK_27: function (args) {\n      var checkId = args.checkId;\n\n      // Loop through the interfaceRecord's navigation structure\n      var navigation = (interfaceRecord && interfaceRecord.properties && interfaceRecord.properties.navigation) || {};\n\n      // Get the primary navigation items\n      var primaryItems = (navigation.primary || []);\n\n      // Check if there is only one primary navigation item\n      var targets = [];\n      if (primaryItems.length === 1) {\n        targets.push({ targetId: 'navigation', targetType: 'app' });\n      }\n\n      var status = targets.length ? 'failed' : 'passed';\n      return makeCheckResult(checkId, status, targets);\n    },\n\n    CHECK_95: function (args) {\n      var checkId = args.checkId;\n\n      // Get the security config from interface properties\n      var security = (interfaceRecord && interfaceRecord.properties && interfaceRecord.properties.security) || {};\n\n      // Fail only when the security type is explicitly PUBLIC.\n      // Pass when it is PRIVATE or not present (undefined/missing).\n      var targets = [];\n      if (security.type === 'PUBLIC') {\n        targets.push({ targetId: 'app', targetType: 'app' });\n      }\n\n      var status = targets.length ? 'failed' : 'passed';\n      return makeCheckResult(checkId, status, targets);\n    },\n\n    CHECK_96: function (args) {\n      var checkId = args.checkId;\n\n      // Get the security config from interface properties\n      var security = (interfaceRecord && interfaceRecord.properties && interfaceRecord.properties.security) || {};\n      var cspDetails = security.cspDetails;\n\n      // Fail only when cspDetails is explicitly false.\n      // Pass when it is true or not present (undefined/missing).\n      var targets = [];\n      if (cspDetails === false) {\n        targets.push({ targetId: 'app', targetType: 'app' });\n      }\n\n      var status = targets.length ? 'failed' : 'passed';\n      return makeCheckResult(checkId, status, targets);\n    },\n\n    CHECK_97: function (args) {\n      var checkId = args.checkId;\n\n      // Get the idps list (array of identity provider configs)\n      var idpList = (typeof idps !== 'undefined' && idps) ? idps : [];\n\n      // Look for at least one idp that has configProvider AND is active\n      var hasActiveConfigProviderIdp = false;\n      for (var i = 0; i < idpList.length; i++) {\n        var idp = idpList[i] || {};\n        if (idp.configProvider && idp.active === true) {\n          hasActiveConfigProviderIdp = true;\n          break;\n        }\n      }\n\n      // Fail if none of the idps satisfy both conditions\n      var targets = [];\n      if (!hasActiveConfigProviderIdp) {\n        targets.push({ targetId: 'app', targetType: 'app' });\n      }\n\n      var status = targets.length ? 'failed' : 'passed';\n      return makeCheckResult(checkId, status, targets);\n    },\n  };\n\n  // ============================================================\n  // Execute dynamically from CHECKS map\n  // ============================================================\n  const checks = Object.entries(CHECKS).map(([id, fn]) =>\n    runCheckSafe(id, (checkId) => fn({ checkId }))\n  );\n\n  return { items: checks };\n})();\n",
 				"isAsync":false,
 				"parameters":{
 					"check_id":"{{ n_Ff9PD.outputs.check_id }}",
 					"interfacePage":{
+						"createdTime":"{{ n_Ff9PD.outputs.interfacePage.createdTime }}",
+						"deleted":"{{ n_Ff9PD.outputs.interfacePage.deleted }}",
+						"deploymentState":{
+							"deployedAt":"{{ n_Ff9PD.outputs.interfacePage.deploymentState.deployedAt }}",
+							"deployedBy":"{{ n_Ff9PD.outputs.interfacePage.deploymentState.deployedBy }}",
+							"entityVersion":"{{ n_Ff9PD.outputs.interfacePage.deploymentState.entityVersion }}",
+							"version":"{{ n_Ff9PD.outputs.interfacePage.deploymentState.version }}"
+						},
+						"entityType":"{{ n_Ff9PD.outputs.interfacePage.entityType }}",
 						"id":"{{ n_Ff9PD.outputs.interfacePage.id }}",
+						"lastModifiedBy":"{{ n_Ff9PD.outputs.interfacePage.lastModifiedBy }}",
+						"modifiedTime":"{{ n_Ff9PD.outputs.interfacePage.modifiedTime }}",
+						"ownerUserId":"{{ n_Ff9PD.outputs.interfacePage.ownerUserId }}",
 						"properties":"{{ n_Ff9PD.outputs.interfacePage.properties }}",
+						"standard":"{{ n_Ff9PD.outputs.interfacePage.standard }}",
 						"version":"{{ n_Ff9PD.outputs.interfacePage.version }}"
+					},
+					"globalInterfacePage":{
+						"id":"{{ n_Ff9PD.outputs.globalInterfacePage.id }}"
 					},
 					"interfaceRecord":{
 						"id":"{{ n_Ff9PD.outputs.interfaceRecord.id }}",
@@ -975,8 +1108,30 @@
 						"items":{
 							"id":"{{ n_Ff9PD.outputs.dataSources[0].id }}",
 							"properties":"{{ n_Ff9PD.outputs.dataSources[0].properties }}",
-							"version":"{{ n_Ff9PD.outputs.dataSources[0].version }}"
+							"version":"{{ n_Ff9PD.outputs.dataSources[0].version }}",
+							"createdTime":"{{ n_Ff9PD.outputs.dataSources[0].createdTime }}",
+							"deleted":"{{ n_Ff9PD.outputs.dataSources[0].deleted }}",
+							"deployedEntityVersion":"{{ n_Ff9PD.outputs.dataSources[0].deployedEntityVersion }}",
+							"entityType":"{{ n_Ff9PD.outputs.dataSources[0].entityType }}",
+							"entityVersion":"{{ n_Ff9PD.outputs.dataSources[0].entityVersion }}",
+							"lastModifiedBy":"{{ n_Ff9PD.outputs.dataSources[0].lastModifiedBy }}",
+							"modifiedTime":"{{ n_Ff9PD.outputs.dataSources[0].modifiedTime }}",
+							"ownerUserId":"{{ n_Ff9PD.outputs.dataSources[0].ownerUserId }}",
+							"standard":"{{ n_Ff9PD.outputs.dataSources[0].standard }}"
 						}
+					},
+					"globalDataSources":{
+						"source":"{{ n_Ff9PD.outputs.globalDataSources }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"id":"{{ n_Ff9PD.outputs.globalDataSources[0].id }}",
+							"properties":"{{ n_Ff9PD.outputs.globalDataSources[0].properties }}"
+						}
+					},
+					"idps":{
+						"source":"{{ n_X49fP.outputs.objects }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_X49fP.outputs.objects[0] }}"
 					}
 				}
 			},
@@ -1003,7 +1158,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_uv02c-1",
 			"id":"n_LUkEA",
-			"index":4,
+			"index":5,
 			"inputs":{
 				"insertLocation":"END",
 				"itemsToAdd":{
@@ -1041,7 +1196,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_uv02c-1",
 			"id":"n_VdssN",
-			"index":5,
+			"index":6,
 			"inputs":{
 				"result":{
 					"checks":{
@@ -1085,5 +1240,5 @@
 	"tags":[
 		"BPC"
 	],
-	"version":33
+	"version":38
 }
