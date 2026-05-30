@@ -4,14 +4,14 @@
 	],
 	"createdTime":1762259202209,
 	"deleted":false,
-	"deployedVersion":17,
+	"deployedVersion":19,
 	"deploymentState":{
-		"deployedAt":1774523366295,
-		"deployedBy":0,
-		"deployedDefinitionId":"69c513e697dde611b48ddfa4",
+		"deployedAt":1780170709909,
+		"deployedBy":-1,
+		"deployedDefinitionId":"6a1b3fd59659240f28569bfd",
 		"status":"DEPLOYED",
-		"version":17,
-		"workflowVersion":37
+		"version":19,
+		"workflowVersion":42
 	},
 	"edges":[
 		{
@@ -90,21 +90,6 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_FNTZM",
-			"name":"5",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_FNTZM@5",
-			"type":"branch"
-		},
-		{
-			"fromNodeId":"n_FNTZM@5",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_L1UOy",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"n_s66bs",
 			"priority":0,
 			"skip":false,
@@ -127,13 +112,6 @@
 		},
 		{
 			"fromNodeId":"_A8r7i",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_alH3I",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"_L1UOy",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_alH3I",
@@ -216,21 +194,6 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_bUVgY",
-			"name":"5",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_bUVgY@5",
-			"type":"branch"
-		},
-		{
-			"fromNodeId":"n_bUVgY@5",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_PviaR",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"n_9Pz52",
 			"priority":0,
 			"skip":false,
@@ -259,13 +222,6 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"_PviaR",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_VIY5L",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"n_bUVgY",
 			"name":"default",
 			"priority":0,
@@ -287,7 +243,7 @@
 	"id":"6901258e9688a922b646b1c6",
 	"lastModifiedBy":-1,
 	"lcName":"best practices | overall and category wise score",
-	"modifiedTime":1777893361510,
+	"modifiedTime":1780171630422,
 	"name":"Best Practices | Overall and Category wise Score",
 	"nodes":[
 		{
@@ -331,10 +287,6 @@
 						"checksPassed":{
 							"type":"integer",
 							"title":"Checks Passed"
-						},
-						"issues":{
-							"type":"integer",
-							"title":"Issues"
 						}
 					}
 				},
@@ -427,12 +379,6 @@
 						"id":"4",
 						"inputs":{
 							"name":"Branch 4"
-						}
-					},
-					{
-						"id":"5",
-						"inputs":{
-							"name":"Branch 5"
 						}
 					},
 					{
@@ -639,54 +585,6 @@
 		},
 		{
 			"context":{
-				"appName":"branch_condition",
-				"resourceVersion":0,
-				"resourceName":"branch_condition",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_FNTZM@n_oVMCM@_QqEFM-1@y@5",
-			"id":"n_FNTZM@5",
-			"index":12,
-			"inputs":{
-				"name":"Branch 5"
-			},
-			"skip":false,
-			"title":"",
-			"type":"BRANCH_CONDITION"
-		},
-		{
-			"context":{
-				"appName":"callables",
-				"resourceVersion":1122,
-				"resourceName":"callables_call_automation",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_FNTZM@n_oVMCM@_QqEFM-1@y@5",
-			"id":"_L1UOy",
-			"index":13,
-			"inputs":{
-				"automationId":"68fdcc4622a8224e27f3b498",
-				"runtimeConnections":{},
-				"synchronous":true,
-				"version":"-1",
-				"parameters":{
-					"appId":"{{ n_wPct5.outputs.entityId }}",
-					"category":"issues"
-				}
-			},
-			"skip":false,
-			"subTitle":"Callable",
-			"title":"Call automation",
-			"type":"CALL_WORKFLOW"
-		},
-		{
-			"context":{
 				"appName":"callables",
 				"resourceVersion":1102,
 				"resourceName":"callables_return_to_automation",
@@ -697,14 +595,13 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_oVMCM@_QqEFM-1@y",
 			"id":"n_alH3I",
-			"index":14,
+			"index":12,
 			"inputs":{
 				"result":{
 					"overallScore":"=CEILING.MATH({{ n_s66bs.outputs.AvgScore }})",
 					"security":"{{ _vZMLJ.outputs.AvgScore }}",
 					"performance":"{{ _uIAvq.outputs.AvgScore }}",
-					"usability":"{{ _A8r7i.outputs.AvgScore }}",
-					"issues":"{{ _L1UOy.outputs.AvgScore }}"
+					"usability":"{{ _A8r7i.outputs.AvgScore }}"
 				}
 			},
 			"skip":false,
@@ -722,7 +619,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_oVMCM@_QqEFM-1@n",
 			"id":"n_bUVgY",
-			"index":15,
+			"index":13,
 			"inputs":{
 				"branches":[
 					{
@@ -750,12 +647,6 @@
 						}
 					},
 					{
-						"id":"5",
-						"inputs":{
-							"name":"Branch 5"
-						}
-					},
-					{
 						"id":"default"
 					}
 				]
@@ -777,7 +668,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bUVgY@n_oVMCM@_QqEFM-1@n@1",
 			"id":"n_bUVgY@1",
-			"index":16,
+			"index":14,
 			"inputs":{
 				"name":"Branch 1"
 			},
@@ -797,7 +688,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bUVgY@n_oVMCM@_QqEFM-1@n@1",
 			"id":"n_9Pz52",
-			"index":17,
+			"index":15,
 			"inputs":{
 				"automationId":"68fcad84dede0b5c299e1cc8",
 				"runtimeConnections":{},
@@ -825,7 +716,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bUVgY@n_oVMCM@_QqEFM-1@n@2",
 			"id":"n_bUVgY@2",
-			"index":18,
+			"index":16,
 			"inputs":{
 				"name":"Branch 2"
 			},
@@ -845,7 +736,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bUVgY@n_oVMCM@_QqEFM-1@n@2",
 			"id":"_8H0qe",
-			"index":19,
+			"index":17,
 			"inputs":{
 				"automationId":"68fcad84dede0b5c299e1cc8",
 				"runtimeConnections":{},
@@ -873,7 +764,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bUVgY@n_oVMCM@_QqEFM-1@n@3",
 			"id":"n_bUVgY@3",
-			"index":20,
+			"index":18,
 			"inputs":{
 				"name":"Branch 3"
 			},
@@ -893,7 +784,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bUVgY@n_oVMCM@_QqEFM-1@n@3",
 			"id":"_VCD3H",
-			"index":21,
+			"index":19,
 			"inputs":{
 				"automationId":"68fcad84dede0b5c299e1cc8",
 				"runtimeConnections":{},
@@ -921,7 +812,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bUVgY@n_oVMCM@_QqEFM-1@n@4",
 			"id":"n_bUVgY@4",
-			"index":22,
+			"index":20,
 			"inputs":{
 				"name":"Branch 4"
 			},
@@ -941,7 +832,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bUVgY@n_oVMCM@_QqEFM-1@n@4",
 			"id":"_hxPzm",
-			"index":23,
+			"index":21,
 			"inputs":{
 				"automationId":"68fcad84dede0b5c299e1cc8",
 				"runtimeConnections":{},
@@ -950,54 +841,6 @@
 				"parameters":{
 					"pageId":"{{ n_wPct5.outputs.entityId }}",
 					"category":"security"
-				}
-			},
-			"skip":false,
-			"subTitle":"Callable",
-			"title":"Call automation",
-			"type":"CALL_WORKFLOW"
-		},
-		{
-			"context":{
-				"appName":"branch_condition",
-				"resourceVersion":0,
-				"resourceName":"branch_condition",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_bUVgY@n_oVMCM@_QqEFM-1@n@5",
-			"id":"n_bUVgY@5",
-			"index":24,
-			"inputs":{
-				"name":"Branch 5"
-			},
-			"skip":false,
-			"title":"",
-			"type":"BRANCH_CONDITION"
-		},
-		{
-			"context":{
-				"appName":"callables",
-				"resourceVersion":1122,
-				"resourceName":"callables_call_automation",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_bUVgY@n_oVMCM@_QqEFM-1@n@5",
-			"id":"_PviaR",
-			"index":25,
-			"inputs":{
-				"automationId":"68fcad84dede0b5c299e1cc8",
-				"runtimeConnections":{},
-				"synchronous":true,
-				"version":"-1",
-				"parameters":{
-					"pageId":"{{ n_wPct5.outputs.entityId }}",
-					"category":"issues"
 				}
 			},
 			"skip":false,
@@ -1017,7 +860,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_oVMCM@_QqEFM-1@n",
 			"id":"n_VIY5L",
-			"index":26,
+			"index":22,
 			"inputs":{
 				"result":{
 					"overallScore":"{{ n_9Pz52.outputs.score }}",
@@ -1025,8 +868,7 @@
 					"performance":"{{ _8H0qe.outputs.score }}",
 					"usability":"{{ _VCD3H.outputs.score }}",
 					"totalChecks":"{{ n_9Pz52.outputs.totalChecks }}",
-					"checksPassed":"{{ n_9Pz52.outputs.passedChecks }}",
-					"issues":"{{ _PviaR.outputs.score }}"
+					"checksPassed":"{{ n_9Pz52.outputs.passedChecks }}"
 				}
 			},
 			"skip":false,
@@ -1040,18 +882,17 @@
 		
 	],
 	"settings":{
-		"enableNodeLevelLogging":false,
+		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
-		"enableVariableLogging":false,
+		"enableVariableLogging":true,
 		"route":{
 			"default":false,
-			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
 	"standard":true,
 	"tags":[
-		"BPC"
+		
 	],
-	"version":39
+	"version":44
 }
