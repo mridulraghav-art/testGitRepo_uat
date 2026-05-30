@@ -4,14 +4,14 @@
 	],
 	"createdTime":1767085404010,
 	"deleted":false,
-	"deployedVersion":11,
+	"deployedVersion":13,
 	"deploymentState":{
-		"deployedAt":1774523350684,
-		"deployedBy":0,
-		"deployedDefinitionId":"69c513d6dfe5426d27716db7",
+		"deployedAt":1780170694746,
+		"deployedBy":-1,
+		"deployedDefinitionId":"6a1b3fc602009302fa2645bb",
 		"status":"DEPLOYED",
-		"version":11,
-		"workflowVersion":50
+		"version":13,
+		"workflowVersion":55
 	},
 	"edges":[
 		{
@@ -113,7 +113,7 @@
 	"id":"694d1e0b294cd74928c22575",
 	"lastModifiedBy":-1,
 	"lcName":"best practice | automation | run checks",
-	"modifiedTime":1777893351618,
+	"modifiedTime":1780171619708,
 	"name":"Best Practice | Automation | Run Checks",
 	"nodes":[
 		{
@@ -363,25 +363,25 @@
 							"title":"Runtime Checks"
 						},
 						"_ua_variableDetails":{
+							"type":"array",
 							"title":"Variable Details",
 							"items":{
 								"type":"object",
 								"properties":{
+									"description":{
+										"description":"Description of the variable",
+										"type":"string"
+									},
 									"dataType":{
-										"type":"string",
-										"description":"Data type of the variable"
+										"description":"Data type of the variable",
+										"type":"string"
 									},
 									"name":{
-										"type":"string",
-										"description":"Name of the variable"
-									},
-									"description":{
-										"type":"string",
-										"description":"Description of the variable"
+										"description":"Name of the variable",
+										"type":"string"
 									}
 								}
-							},
-							"type":"array"
+							}
 						}
 					}
 				}
@@ -737,25 +737,25 @@
 							}
 						},
 						"_ua_variableDetails":{
+							"type":"array",
 							"title":"Variable Details",
 							"items":{
 								"type":"object",
 								"properties":{
+									"description":{
+										"description":"Description of the variable",
+										"type":"string"
+									},
 									"dataType":{
-										"type":"string",
-										"description":"Data type of the variable"
+										"description":"Data type of the variable",
+										"type":"string"
 									},
 									"name":{
-										"type":"string",
-										"description":"Name of the variable"
-									},
-									"description":{
-										"type":"string",
-										"description":"Description of the variable"
+										"description":"Name of the variable",
+										"type":"string"
 									}
 								}
-							},
-							"type":"array"
+							}
 						}
 					}
 				}
@@ -953,7 +953,7 @@
 			"inputs":{
 				"repeatMode":"SINGLE",
 				"listSource":"{{ n_I647c.outputs.result.compiledGroups }}",
-				"captureIterations":false
+				"captureIterations":true
 			},
 			"skip":false,
 			"subTitle":"Loop",
@@ -1138,5 +1138,5 @@
 	"tags":[
 		"BPC"
 	],
-	"version":52
+	"version":57
 }
