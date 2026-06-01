@@ -15,7 +15,7 @@
 	},
 	"edges":[
 		{
-			"fromNodeId":"n_QjEiF",
+			"fromNodeId":"n_W94IT",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_DF2ce",
@@ -53,64 +53,41 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1779772623104,
+	"modifiedTime":1780314687744,
 	"name":"furrrr1",
 	"nodes":[
 		{
 			"context":{
-				"appName":"callables",
-				"resourceVersion":1691,
-				"resourceName":"callables_from_automation"
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4312,
+				"resourceName":"storage_by_unifyapps_on_any_change"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
-			"id":"n_QjEiF",
+			"id":"n_W94IT",
 			"index":1,
 			"inputs":{
-				"result":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"xyz",
-						"mno"
-					],
-					"properties":{
-						"xyz":{
-							"type":"string",
-							"title":"Xyz"
-						},
-						"mno":{
-							"type":"string",
-							"title":"Mno"
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"{{ n_W94IT.outputs.object.properties.testCaseType }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"1234"
+							}
 						}
-					}
+					],
+					"operator":"AND"
 				},
-				"setup":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"abc",
-						"pqr"
-					],
-					"properties":{
-						"abc":{
-							"type":"string",
-							"title":"Abc"
-						},
-						"pqr":{
-							"type":"string",
-							"title":"Pqr"
-						}
-					}
-				}
+				"object_type":"e_ai_evaluation_metric"
 			},
 			"skip":false,
-			"subTitle":"Callable",
-			"title":"Trigger via automation",
+			"subTitle":"Storage by UnifyApps",
+			"title":"Changed record",
 			"trigger":{
-				"type":"CALLABLE"
+				"type":"EVENT"
 			},
 			"type":"START"
 		},
@@ -122,7 +99,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_DF2ce",
@@ -400,7 +377,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_WPWIl",
@@ -428,7 +405,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_Hp2fS",
@@ -487,7 +464,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_KTwd4",
@@ -512,7 +489,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_eG2dN",
@@ -543,5 +520,5 @@
 	"tags":[
 		
 	],
-	"version":61
+	"version":62
 }
