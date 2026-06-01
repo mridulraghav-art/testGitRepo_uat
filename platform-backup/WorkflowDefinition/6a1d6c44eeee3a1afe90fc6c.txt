@@ -6,46 +6,59 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_dtiTy",
+			"fromNodeId":"n_jf3yI",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_8bUAP",
+			"toNodeId":"n_F3ima",
 			"type":"next"
 		}
 	],
 	"id":"6a1d6c44eeee3a1afe90fc6c",
 	"lastModifiedBy":39,
 	"lcName":"sjkd",
-	"modifiedTime":1780313156925,
+	"modifiedTime":1780313184451,
 	"name":"sjkd",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_dtiTy-1",
-			"id":"_dtiTy",
-			"index":0,
+			"id":"n_jf3yI",
+			"index":1,
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"stop"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_dtiTy-1",
-			"id":"_8bUAP",
-			"index":0,
+			"id":"n_F3ima",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +69,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
