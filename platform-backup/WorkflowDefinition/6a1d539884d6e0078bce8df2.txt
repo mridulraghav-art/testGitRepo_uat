@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780306840992,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_JBFD8",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_GE50L",
+			"type":"next"
+		}
+	],
+	"id":"6a1d539884d6e0078bce8df2",
+	"lastModifiedBy":97900,
+	"lcName":"chargepoint_workflow",
+	"modifiedTime":1780306840992,
+	"name":"chargepoint_workflow",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_JBFD8-1",
+			"id":"_JBFD8",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_JBFD8-1",
+			"id":"_GE50L",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":97900,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
