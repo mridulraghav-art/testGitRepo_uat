@@ -6,46 +6,155 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_KBrIC",
+			"fromNodeId":"n_Z1zpz",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_eBgwI",
+			"toNodeId":"n_EGR3i",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_EGR3i",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_o9QDB",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_o9QDB",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_rkzyp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_rkzyp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_gOD4P",
 			"type":"next"
 		}
 	],
 	"id":"6a1d2f29c7310f606712cdf2",
 	"lastModifiedBy":39,
 	"lcName":"example",
-	"modifiedTime":1780297513791,
+	"modifiedTime":1780297563917,
 	"name":"example",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2393,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KBrIC-1",
-			"id":"_KBrIC",
-			"index":0,
+			"id":"n_Z1zpz",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":417,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_KBrIC-1",
-			"id":"_eBgwI",
-			"index":0,
+			"id":"n_EGR3i",
+			"index":2,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_Age=22,_pr_Married=true where _pr_Emp_Name='Murali';",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":422,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_KBrIC-1",
+			"id":"n_o9QDB",
+			"index":3,
+			"inputs":{
+				"query":"Select _pr_Age,_pr_Married from ENTITY_dnd_object_update_query_check where _pr_Emp_Name='Murali';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":417,
+				"resourceName":"analytics_by_unifyapps_execute_update",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_KBrIC-1",
+			"id":"n_rkzyp",
+			"index":4,
+			"inputs":{
+				"query":"update ENTITY_dnd_object_update_query_check set _pr_Age=21,_pr_Married=false where _pr_Emp_Name='Murali';",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Update Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":695,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_KBrIC-1",
+			"id":"n_gOD4P",
+			"index":5,
+			"inputs":{
+				"result":{
+					"Result_AfterUpdate":"{{ n_o9QDB.outputs.objects }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +165,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
