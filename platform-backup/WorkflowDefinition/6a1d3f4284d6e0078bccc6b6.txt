@@ -6,47 +6,37 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_GLu5c",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_uGmvD",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a1d3f4284d6e0078bccc6b6",
 	"lastModifiedBy":39,
 	"lcName":"delete workflow - 21780301198194",
-	"modifiedTime":1780301640685,
+	"modifiedTime":1780301644664,
 	"name":"delete workflow - 21780301198194",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_GLu5c-1",
-			"id":"_GLu5c",
-			"index":0,
+			"id":"n_Wxux7",
+			"index":1,
 			"skip":false,
+			"subTitle":"Callable",
 			"title":"Select a trigger event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_GLu5c-1",
-			"id":"_uGmvD",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +51,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
