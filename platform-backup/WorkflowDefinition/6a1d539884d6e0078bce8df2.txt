@@ -1,51 +1,828 @@
 {
 	"appsUsed":[
-		
+		"netsuite",
+		"salesforce"
 	],
 	"createdTime":1780306840992,
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_JBFD8",
+			"fromNodeId":"n_wG37q",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_GE50L",
+			"toNodeId":"n_8WMRX",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_8WMRX",
+			"name":"1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_8WMRX@1",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_8WMRX@1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_KX6nr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_KX6nr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Hi4Fw",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Hi4Fw",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_QSpHp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_QSpHp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_5FtzQ",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_5FtzQ",
+			"name":"error",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_0my0V",
+			"type":"error"
+		},
+		{
+			"fromNodeId":"n_5FtzQ",
+			"name":"success",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_QSpHp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_0my0V",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_QSpHp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_QSpHp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_sGFQo",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_8WMRX",
+			"name":"2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_8WMRX@2",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_8WMRX@2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Ho0QU",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Ho0QU",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_jPcVm",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_jPcVm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_QqQGI",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_QqQGI",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_jPcVm",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_sGFQo",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_3qQzf",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_jPcVm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_3qQzf",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_8WMRX",
+			"name":"default",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_3qQzf",
+			"type":"branch"
 		}
 	],
 	"id":"6a1d539884d6e0078bce8df2",
 	"lastModifiedBy":97900,
 	"lcName":"chargepoint_workflow",
-	"modifiedTime":1780306840992,
+	"modifiedTime":1780306969549,
 	"name":"chargepoint_workflow",
 	"nodes":[
 		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":62,
+				"resourceName":"schedule_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_JBFD8-1",
-			"id":"_JBFD8",
-			"index":0,
+			"id":"n_wG37q",
+			"index":1,
+			"inputs":{
+				"cron":"INTERVAL",
+				"sequential":false,
+				"interval":15,
+				"frequency":"MINUTES"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"branch",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_JBFD8-1",
-			"id":"_GE50L",
-			"index":0,
+			"id":"n_8WMRX",
+			"index":2,
+			"inputs":{
+				"branches":[
+					{
+						"id":"1",
+						"inputs":{
+							"name":"Branch 1",
+							"conditions":{
+								"filters":[
+									{
+										"property":"1",
+										"filter":{
+											"operator":"EQUAL",
+											"value":"1"
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"2",
+						"inputs":{
+							"name":"Branch 2",
+							"conditions":{
+								"filters":[
+									{
+										"property":"1",
+										"filter":{
+											"operator":"EQUAL",
+											"value":"1"
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"default"
+					}
+				]
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Branch",
+			"title":"",
+			"type":"BRANCH"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceVersion":0,
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_8WMRX@_JBFD8-1@1",
+			"id":"n_8WMRX@1",
+			"index":3,
+			"inputs":{
+				"name":"Branch 1",
+				"conditions":{
+					"filters":[
+						{
+							"property":"1",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"1"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1651,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_8WMRX@_JBFD8-1@1",
+			"id":"n_KX6nr",
+			"index":4,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"lastSyncTime":{
+							"type":"string",
+							"title":"Last Sync Time"
+						}
+					},
+					"required":[]
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"lastSyncTime":{
+							"type":"string",
+							"title":"Last Sync Time"
+						}
+					},
+					"required":[]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{}
+				}
+			},
+			"context":{
+				"appName":"salesforce",
+				"resourceVersion":9767,
+				"connectionId":"6a1ab996d66d995ff131c75e",
+				"resourceName":"salesforce_execute_soql",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_8WMRX@_JBFD8-1@1",
+			"id":"n_Hi4Fw",
+			"index":5,
+			"inputs":{
+				"performAsync":false,
+				"objectSourceResourceName":"salesforce_execute_soql_metadata",
+				"query":"SELECT \n  Id,\n  Name,\n  AccountNumber,\n  Type,\n  Description,\n  LastModifiedDate\nFROM Account\nwhere LastModifiedDate > 2023-05-10T00:00:00Z\nORDER BY LastModifiedDate ASC",
+				"response_schema":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"totalSize":{
+							"type":"integer",
+							"title":"totalSize"
+						},
+						"done":{
+							"type":"boolean",
+							"title":"done"
+						},
+						"records":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"attributes":{
+										"type":"object",
+										"properties":{
+											"type":{
+												"type":"string",
+												"title":"type"
+											},
+											"url":{
+												"type":"string",
+												"title":"url"
+											}
+										},
+										"title":"attributes",
+										"additionalProperties":false
+									},
+									"Id":{
+										"type":"string",
+										"title":"Id"
+									},
+									"Name":{
+										"type":"string",
+										"title":"Name"
+									},
+									"Description":{
+										"type":"string",
+										"title":"Description"
+									},
+									"LastModifiedDate":{
+										"type":"string",
+										"title":"LastModifiedDate"
+									},
+									"AccountNumber":{
+										"type":"string",
+										"title":"AccountNumber"
+									},
+									"Type":{
+										"type":"string",
+										"title":"Type"
+									}
+								},
+								"additionalProperties":false
+							},
+							"title":"records"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Salesforce",
+			"title":"Execute SOQL",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":0,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_8WMRX@_JBFD8-1@1",
+			"id":"n_QSpHp",
+			"index":6,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_Hi4Fw.outputs.records }}",
+				"captureIterations":true
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"netsuite",
+				"resourceVersion":15391,
+				"connectionId":"69df8952ef3f8a0236fe3db5",
+				"resourceName":"netsuite_update_account",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"MANUAL",
+			"groupId":"n_QSpHp@n_8WMRX@_JBFD8-1@1@l",
+			"id":"n_5FtzQ",
+			"index":7,
+			"inputs":{
+				"acctNumber":"{{ n_Hi4Fw.outputs.records[0].AccountNumber }}",
+				"acctType":{
+					"id":"{{ n_Hi4Fw.outputs.records[0].Type }}"
+				},
+				"description":"{{ n_Hi4Fw.outputs.records[0].Description }}",
+				"id":"{{ n_Hi4Fw.outputs.records[0].AccountNumber }}",
+				"acctName":"{{ n_Hi4Fw.outputs.records[0].Name }}"
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false,
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":2.0,
+					"captureRetries":true,
+					"count":3,
+					"enabled":true,
+					"initialDelay":100,
+					"maxDelay":500
+				},
+				"stepError":"MANUAL",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"enabled":false
+				}
+			},
+			"skip":true,
+			"subTitle":"Netsuite",
+			"title":"Update Account",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"netsuite",
+				"resourceVersion":15150,
+				"connectionId":"6a1583352f9c355948364a39",
+				"resourceName":"netsuite_create_account",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_5FtzQ@n_QSpHp@n_8WMRX@_JBFD8-1@1@l@error",
+			"id":"n_0my0V",
+			"index":8,
+			"inputs":{
+				"acctNumber":"{{ n_Hi4Fw.outputs.records[0].AccountNumber }}",
+				"acctType":{
+					"id":"{{ n_Hi4Fw.outputs.records[0].Type }}"
+				},
+				"acctName":"{{ n_Hi4Fw.outputs.records[0].Name }}"
+			},
+			"skip":true,
+			"subTitle":"Netsuite",
+			"title":"Create Account",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1651,
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_8WMRX@_JBFD8-1@1",
+			"id":"n_sGFQo",
+			"index":9,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_KX6nr.outputs.lastSyncTime }}",
+						"value":"{{ __RUN__.outputs.StartTime }}"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceVersion":0,
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_8WMRX@_JBFD8-1@2",
+			"id":"n_8WMRX@2",
+			"index":10,
+			"inputs":{
+				"name":"Branch 2",
+				"conditions":{
+					"filters":[
+						{
+							"property":"1",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"1"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"netsuite",
+				"resourceVersion":9981,
+				"connectionId":"69df8952ef3f8a0236fe3db5",
+				"resourceName":"netsuite_execute_query",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_8WMRX@_JBFD8-1@2",
+			"id":"n_Ho0QU",
+			"index":11,
+			"inputs":{
+				"objectSourceResourceName":"netsuite_execute_query_metadata",
+				"query":"SELECT\n    c.id,\n    c.acctNumber,\n    c.acctName,\n    c.acctType,\n    c.description,\nFROM\n    account c\nWHERE\n    c.lastmodifieddate > TO_DATE('05/10/2023', 'MM/DD/YYYY')\n    AND c.isinactive = 'F'\nORDER BY\n    c.lastmodifieddate ASC",
+				"response_schema":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"links":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"rel":{
+										"type":"string",
+										"title":"rel"
+									},
+									"href":{
+										"type":"string",
+										"title":"href"
+									},
+									"method":{
+										"type":"string",
+										"title":"method"
+									}
+								},
+								"additionalProperties":false
+							},
+							"title":"links"
+						},
+						"count":{
+							"type":"integer",
+							"title":"count"
+						},
+						"hasMore":{
+							"type":"boolean",
+							"title":"hasMore"
+						},
+						"items":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"links":{
+										"type":"array",
+										"title":"links"
+									},
+									"acctname":{
+										"type":"string",
+										"title":"acctname"
+									},
+									"acctnumber":{
+										"type":"string",
+										"title":"acctnumber"
+									},
+									"accttype":{
+										"type":"string",
+										"title":"accttype"
+									},
+									"id":{
+										"type":"string",
+										"title":"id"
+									}
+								},
+								"additionalProperties":false
+							},
+							"title":"items"
+						},
+						"offset":{
+							"type":"integer",
+							"title":"offset"
+						},
+						"totalResults":{
+							"type":"integer",
+							"title":"totalResults"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Netsuite",
+			"title":"Execute a suiteql query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":944,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_8WMRX@_JBFD8-1@2",
+			"id":"n_jPcVm",
+			"index":12,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_Ho0QU.outputs.items }}",
+				"captureIterations":true
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"salesforce",
+				"resourceVersion":6484,
+				"connectionId":"6a1ab996d66d995ff131c75e",
+				"resourceName":"salesforce_upsert_record",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_jPcVm@n_8WMRX@_JBFD8-1@2@l",
+			"id":"n_QqQGI",
+			"index":13,
+			"inputs":{
+				"primaryKeys":[
+					"AccountNumber"
+				],
+				"record":{
+					"Type":"{{ n_jPcVm.outputs.item.accttype }}",
+					"Name":"{{ n_jPcVm.outputs.item.acctname }}",
+					"AccountNumber":"{{ n_jPcVm.outputs.item.acctnumber }}"
+				},
+				"objectId":"Account"
+			},
+			"options":{
+				"bulkheadConfig":{
+					"enabled":false,
+					"maxLeaseTimeUnit":"SECONDS",
+					"maxWaitDurationUnit":"SECONDS"
+				},
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false,
+					"usagePolicy":"ALWAYS"
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false,
+					"postHooks":[
+						
+					],
+					"preHooks":[
+						
+					]
+				},
+				"logConfig":{
+					"enabled":false,
+					"logPolicies":[
+						
+					]
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":2.0,
+					"captureRetries":true,
+					"count":3,
+					"enabled":true,
+					"initialDelay":1000,
+					"maxDelay":5000
+				},
+				"stepError":"STOP",
+				"telemetryConfig":{
+					"enableTelemetry":false,
+					"metricConfigs":[
+						
+					]
+				},
+				"timeoutConfig":{
+					"enabled":false
+				}
+			},
+			"skip":true,
+			"subTitle":"Salesforce",
+			"title":"Upsert record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_JBFD8-1",
+			"id":"n_3qQzf",
+			"index":14,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":97900,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +833,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
