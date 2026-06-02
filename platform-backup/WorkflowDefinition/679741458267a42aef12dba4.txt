@@ -1,0 +1,61 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1737965893955,
+	"deleted":false,
+	"edges":[
+		
+	],
+	"id":"679741458267a42aef12dba4",
+	"lastModifiedBy":39,
+	"lcName":"ahdueyjbyl schedule automation",
+	"modifiedTime":1737965893955,
+	"name":"AhDUEYJbYL Schedule Automation",
+	"nodes":[
+		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":46,
+				"resourceName":"schedule_default"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"EWRJL-1",
+			"id":"EWRJL",
+			"index":0,
+			"inputs":{
+				"cron":"INTERVAL",
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"filter":{
+								"value":"",
+								"operator":"EQUAL"
+							},
+							"property":""
+						}
+					],
+					"operator":"AND"
+				},
+				"interval":15,
+				"frequency":"MINUTES"
+			},
+			"skip":false,
+			"title":"New recurring event",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"version":0
+}
