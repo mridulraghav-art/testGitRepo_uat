@@ -1,0 +1,78 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1743854885830,
+	"deleted":false,
+	"edges":[
+		
+	],
+	"id":"67f11d25244deb489e9d2975",
+	"lastModifiedBy":39,
+	"lcName":"aksadnzkfg callable automation",
+	"modifiedTime":1743854885830,
+	"name":"AksADNZkFg Callable Automation",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":72,
+				"resourceName":"callables_from_automation"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"M1ERb-1",
+			"id":"M1ERb",
+			"index":0,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"properties":{
+						"name":{
+							"type":"string",
+							"title":"Name"
+						}
+					},
+					"required":[]
+				},
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"filter":{
+								"value":"",
+								"operator":"EQUAL"
+							},
+							"property":""
+						}
+					],
+					"operator":"AND"
+				},
+				"setup":{
+					"type":"object",
+					"properties":{
+						"name":{
+							"type":"string",
+							"title":"Name"
+						}
+					},
+					"required":[]
+				}
+			},
+			"skip":false,
+			"title":"Trigger via {{moduleDefs.WORKFLOW_DEFINITION.name.toLowerCase()}}",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"version":0
+}
