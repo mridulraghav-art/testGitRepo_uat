@@ -1,0 +1,995 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1718830112106,
+	"deleted":false,
+	"deployedVersion":7,
+	"deploymentState":{
+		"deployedAt":1730964792350,
+		"deployedBy":39,
+		"deployedDefinitionId":"672c6d38cb94b15cf168a83f",
+		"status":"DEPLOYED",
+		"version":7,
+		"workflowVersion":14
+	},
+	"description":"if customer intent for taking loan is travel related run this flow",
+	"edges":[
+		{
+			"fromNodeId":"LtE36",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"Jx0mK",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"Jx0mK",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"wKXPV",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"wKXPV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"pAIY4",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"pAIY4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"Ttc2O",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"Ttc2O",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"Iwaul",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"Iwaul",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"WyoJQ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"WyoJQ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"Y9J59",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"Y9J59",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"blMQp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"blMQp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"NIuyh",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"NIuyh",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"J8L2o",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"J8L2o",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"sKUNo",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"sKUNo",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"01ZU2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"01ZU2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"Zgsd8",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"Zgsd8",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"89iS1",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"Zgsd8",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"GykW8",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"89iS1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"a0JvN",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"GykW8",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"a0JvN",
+			"type":"next"
+		}
+	],
+	"id":"6673442097757920bfd0bba7",
+	"lastModifiedBy":39,
+	"lcName":"[hdfc md demo][hdfc v5] personal loan for travel",
+	"modifiedTime":1730964792351,
+	"name":"[HDFC MD DEMO][HDFC V5] Personal Loan for Travel",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":34,
+				"resourceName":"callables_from_automation"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"LtE36",
+			"index":0,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"properties":{
+						"success":{
+							"type":"string",
+							"title":"Success"
+						}
+					},
+					"required":[]
+				},
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"",
+							"filter":{
+								"operator":"EQUAL",
+								"value":""
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"setup":{
+					"type":"object",
+					"properties":{
+						"caseId":{
+							"type":"string",
+							"title":"Case Id"
+						},
+						"response_handler_automation":{
+							"type":"string",
+							"title":"Response Handler Automation"
+						}
+					},
+					"required":[]
+				}
+			},
+			"skip":false,
+			"title":"Trigger from automation",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":30,
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"Jx0mK",
+			"index":0,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties.phoneNumber",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ LtE36.outputs.caseId }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"object_type":"hdfcCrmLead",
+				"sortBy":[
+					{
+						"field":"cTm",
+						"order":"DESC"
+					}
+				],
+				"page":{
+					"limit":20,
+					"offset":0
+				},
+				"numberOfRecordsToFetch":"SINGLE",
+				"includeTotalCount":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch records",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":36,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"wKXPV",
+			"index":0,
+			"inputs":{
+				"automationId":"66734998cc776d20d0f9aa1d",
+				"synchronous":true,
+				"parameters":{
+					"caseId":"{{ LtE36.outputs.caseId }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":102,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"pAIY4",
+			"index":0,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{
+					"ui:submitButtonOptions":{
+						"norender":true
+					}
+				},
+				"schema":{
+					"type":"object",
+					"properties":{
+						"connectToAgent":{
+							"type":"string",
+							"title":"Connect To Agent",
+							"description":"this slot will capture whether the customer wants to schedule a call with an Agent,(return yes or no, depending on customer intent, capture only if customer specifically mentions)"
+						},
+						"interestedInTravelAddons":{
+							"type":"string",
+							"title":"Interested In Travel Addons",
+							"description":"Capture this slot to determine if the customer is interested in travel-related additional addons. This slot should capture whether the customer is interested in travel-related additional addons or not.  Follow these guidelines:   Interest Response: If the customer expresses interest, return \"yes.\" Disinterest Response: If the customer expresses disinterest (including phrases like \"not interested,\" \"no,\" \"not now,\" etc.), return \"no.\"  Clarify if needed: If the intent is unclear, ask the customer to confirm if they are interested in travel-related addons."
+						},
+						"userRequestedAmountValue":{
+							"type":"number",
+							"title":"User Requested Amount Value",
+							"description":"This slot will capture the actual loan amount the user wants to borrow STRITCTLY FOLLOW THESE INSTRUCTIONS: - STRICTLY IGNORE AMOUNT PRESENT IN OFFER - STRICTLY IGNORE zeros, STRICTLY IGNORE negative numbers, STRICTLY dont return text value in this field. - Extract the loan amount the customer needs in numeric format.  - Recognize shorthand: Convert shorthand notations (e.g., 5L for 500000, 5-6Cr for 60000000) to their numeric equivalents.  - Handle ranges: If a range is provided, return the higher limit (e.g., for 5-6L, return 600000).  - Strictly ignore loan offer amounts: Do not capture amounts that are part of a loan offer which is mentioned in initial Bot message.  - Return only the numeric loan amount the customer needs else ask again."
+						}
+					},
+					"required":[]
+				}
+			},
+			"inputs":{
+				"requiredAmount":"{{ LtE36.outputs.slot.requiredAmount }}",
+				"offerSelect":"{{ LtE36.outputs.slot.offerSelect }}"
+			},
+			"outputSchema":{
+				"type":"SCHEMA",
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"connectToAgent":{
+							"type":"string",
+							"title":"Connect To Agent",
+							"description":"this slot will capture whether the customer wants to schedule a call with an Agent,(return yes or no, depending on customer intent, capture only if customer specifically mentions)"
+						},
+						"interestedInTravelAddons":{
+							"type":"string",
+							"title":"Interested In Travel Addons",
+							"description":"Capture this slot to determine if the customer is interested in travel-related additional addons. This slot should capture whether the customer is interested in travel-related additional addons or not.  Follow these guidelines:   Interest Response: If the customer expresses interest, return \"yes.\" Disinterest Response: If the customer expresses disinterest (including phrases like \"not interested,\" \"no,\" \"not now,\" etc.), return \"no.\"  Clarify if needed: If the intent is unclear, ask the customer to confirm if they are interested in travel-related addons."
+						},
+						"userRequestedAmountValue":{
+							"type":"number",
+							"title":"User Requested Amount Value",
+							"description":"This slot will capture the actual loan amount the user wants to borrow STRITCTLY FOLLOW THESE INSTRUCTIONS: - STRICTLY IGNORE AMOUNT PRESENT IN OFFER - STRICTLY IGNORE zeros, STRICTLY IGNORE negative numbers, STRICTLY dont return text value in this field. - Extract the loan amount the customer needs in numeric format.  - Recognize shorthand: Convert shorthand notations (e.g., 5L for 500000, 5-6Cr for 60000000) to their numeric equivalents.  - Handle ranges: If a range is provided, return the higher limit (e.g., for 5-6L, return 600000).  - Strictly ignore loan offer amounts: Do not capture amounts that are part of a loan offer which is mentioned in initial Bot message.  - Return only the numeric loan amount the customer needs else ask again."
+						}
+					},
+					"required":[]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":36,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"Ttc2O",
+			"index":0,
+			"inputs":{
+				"automationId":"6673df14cc776d20d0f9b308",
+				"synchronous":true,
+				"parameters":{
+					"caseId":"{{ LtE36.outputs.caseId }}",
+					"response_handler_automation":"{{ LtE36.outputs.response_handler_automation }}",
+					"currentBotAutomation":"6673442097757920bfd0bba7",
+					"requiredSlotQuestion":"That's Great!\n\nCould you let me know the total amount you're looking for this trip, including all expenses?",
+					"activeSlots":{
+						"source":"{{ pAIY4.outputs._ua_variableDetails }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"id":"{{ pAIY4.outputs._ua_variableDetails[0].name }}",
+							"type":"{{ pAIY4.outputs._ua_variableDetails[0].dataType }}",
+							"description":"{{ pAIY4.outputs._ua_variableDetails[0].description }}"
+						}
+					},
+					"audioText":"<speak>\n    Sure! <break time=\"200ms\"/> \n    Could you please let me know the total budget you have in mind for this trip, <break time=\"200ms\"/>\n    including all expenses?\n</speak>",
+					"endCall":false,
+					"requiredSlot":"userRequestedAmountValue"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":36,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"Iwaul",
+			"index":0,
+			"inputs":{
+				"automationId":"6673471acc776d20d0f9aa15",
+				"synchronous":true,
+				"parameters":{
+					"endCall":false,
+					"caseId":"{{ LtE36.outputs.caseId }}",
+					"response_handler_automation":"{{ LtE36.outputs.response_handler_automation }}",
+					"text":"Since you're planning to travel, your HDFC Bank Credit Card can help you manage your expenses easily:\n\n1. Book Air Tickets and Hotels and convert these expenses into EMIs at a lower interest rate. \n\n2. Credit Card Rewards on every purchase made with your credit card. These points can be redeemed for exciting offers and benefits. \n\n3. Complimentary Lounge access to airport lounges with your credit card, making your travel more comfortable and enjoyable.",
+					"audioText":"<speak>\n    Since you're planning to travel, <break time=\"200ms\"/>\n    your HDFC Credit Card can help manage your expenses by providing cheaper hotel stay and air tickets, <break time=\"200ms\"/>\n    credit card rewards, <break time=\"200ms\"/>\n    and complimentary lounge access.\n</speak>"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1,
+				"resourceName":"variable_by_unifyapps_find_and_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"WyoJQ",
+			"index":0,
+			"inputs":{
+				"variables":{
+					"source":"{{ Ttc2O.outputs.slots }}",
+					"ua:type":"mappedArray",
+					"items":{
+						"source":"{{ Ttc2O.outputs.slots[0].slot_name }}",
+						"value":"{{ Ttc2O.outputs.slots[0].slot_value }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Find and Update variables with names",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":36,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"Y9J59",
+			"index":0,
+			"inputs":{
+				"automationId":"667344b197757920bfd0bbb6",
+				"synchronous":true,
+				"parameters":{
+					"caseId":"{{ LtE36.outputs.caseId }}",
+					"response_handler_automation":"{{ LtE36.outputs.response_handler_automation }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":103,
+				"resourceName":"variable_by_unifyapps_create_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"blMQp",
+			"index":0,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{
+					"createList":{
+						"ui:title":"",
+						"ua:type":{
+							"ui:widget":"hidden"
+						},
+						"items":{
+							"ui:title":"List items",
+							"ui:description":"Set the initial values in the list, defaults to empty"
+						},
+						"ui:order":[
+							"*",
+							"items"
+						]
+					},
+					"ua:title":{
+						"ui:widget":"hidden"
+					},
+					"ua:list_type":{
+						"ui:widget":"hidden"
+					}
+				},
+				"schema":{
+					"allOf":[
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"OBJECT"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"items":{
+												"type":"object",
+												"properties":{}
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"STRING"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of String"
+											},
+											"items":{
+												"type":"string"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"INTEGER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Integers"
+											},
+											"items":{
+												"type":"integer"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"NUMBER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Numbers"
+											},
+											"items":{
+												"type":"number"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"BOOLEAN"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Booleans"
+											},
+											"items":{
+												"type":"boolean"
+											}
+										}
+									}
+								}
+							}
+						}
+					],
+					"format":"ua:list",
+					"type":"object",
+					"properties":{
+						"ua:title":{
+							"type":"string"
+						},
+						"ua:list_type":{
+							"type":"string",
+							"title":"List Type",
+							"oneOf":[
+								{
+									"const":"OBJECT",
+									"title":"Object"
+								},
+								{
+									"const":"STRING",
+									"title":"String"
+								},
+								{
+									"const":"NUMBER",
+									"title":"Number"
+								},
+								{
+									"const":"INTEGER",
+									"title":"Integer"
+								},
+								{
+									"const":"BOOLEAN",
+									"title":"Boolean"
+								}
+							],
+							"default":"OBJECT"
+						},
+						"createList":{
+							"type":"object",
+							"properties":{
+								"ua:type":{
+									"type":"string",
+									"default":"mappedArray"
+								},
+								"source":{
+									"type":"string",
+									"format":"ua:source",
+									"title":"List Item Source"
+								},
+								"items":{
+									"type":[
+										"object",
+										"string",
+										"number",
+										"boolean",
+										"integer"
+									],
+									"properties":{
+										"id":{
+											"type":"string",
+											"title":"Id"
+										},
+										"title":{
+											"type":"string",
+											"title":"Title"
+										}
+									},
+									"required":[]
+								}
+							}
+						}
+					}
+				}
+			},
+			"inputs":{
+				"createList":{
+					"ua:type":"mappedArray"
+				},
+				"ua:title":"choices",
+				"ua:list_type":"OBJECT"
+			},
+			"outputSchema":{
+				"type":"SCHEMA",
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"items":{
+							"type":"array",
+							"title":"choices",
+							"disableActions":true,
+							"items":{
+								"type":"object",
+								"properties":{
+									"id":{
+										"type":"string",
+										"title":"Id"
+									},
+									"title":{
+										"type":"string",
+										"title":"Title"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":50,
+				"resourceName":"variable_by_unifyapps_add_item_to_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"NIuyh",
+			"index":0,
+			"inputs":{
+				"itemToAdd":{
+					"id":"id_id_01",
+					"title":"Yes, I am Interested"
+				},
+				"insertLocation":"START",
+				"listName":"{{ blMQp.outputs.items[0] }}"
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Add an item to list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":50,
+				"resourceName":"variable_by_unifyapps_add_item_to_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"J8L2o",
+			"index":0,
+			"inputs":{
+				"itemToAdd":{
+					"id":"id_id010223",
+					"title":"Not Interested"
+				},
+				"insertLocation":"END",
+				"listName":"{{ blMQp.outputs.items[0] }}"
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Add an item to list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":36,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"sKUNo",
+			"index":0,
+			"inputs":{
+				"automationId":"6673df14cc776d20d0f9b308",
+				"synchronous":true,
+				"parameters":{
+					"caseId":"{{ LtE36.outputs.caseId }}",
+					"requiredSlot":"interestedInTravelAddons",
+					"requiredSlotQuestion":"Since you're traveling, would you be interested in some travel add-ons to make your trip easier and more secure?",
+					"response_handler_automation":"{{ LtE36.outputs.response_handler_automation }}",
+					"currentBotAutomation":"6673442097757920bfd0bba7",
+					"activeSlots":{
+						"source":"{{ pAIY4.outputs._ua_variableDetails }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"description":"{{ pAIY4.outputs._ua_variableDetails[0].description }}",
+							"id":"{{ pAIY4.outputs._ua_variableDetails[0].name }}",
+							"type":"{{ pAIY4.outputs._ua_variableDetails[0].dataType }}"
+						}
+					},
+					"choices":{
+						"source":"{{ blMQp.outputs.items }}",
+						"ua:type":"mappedArray",
+						"items":{
+							"id":"{{ blMQp.outputs.items[0].id }}",
+							"title":"{{ blMQp.outputs.items[0].title }}"
+						}
+					},
+					"endCall":false,
+					"audioText":"<speak>\n    Would you be interested in some travel add-ons <break time=\"200ms\"/>\n    to make your trip easier and more secure?\n</speak>"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1,
+				"resourceName":"variable_by_unifyapps_find_and_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"01ZU2",
+			"index":0,
+			"inputs":{
+				"variables":{
+					"source":"{{ sKUNo.outputs.slots }}",
+					"ua:type":"mappedArray",
+					"items":{
+						"source":"{{ sKUNo.outputs.slots[0].slot_name }}",
+						"value":"{{ sKUNo.outputs.slots[0].slot_value }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Find and Update variables with names",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceVersion":32,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"Zgsd8",
+			"index":0,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ pAIY4.outputs.interestedInTravelAddons }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":"yes"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":36,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"Zgsd8@LtE36-1@y",
+			"id":"89iS1",
+			"index":0,
+			"inputs":{
+				"automationId":"667343d0cc776d20d0f9aa08",
+				"synchronous":true,
+				"parameters":{
+					"caseId":"{{ LtE36.outputs.caseId }}",
+					"response_handler_automation":"{{ LtE36.outputs.response_handler_automation }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":36,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"Zgsd8@LtE36-1@n",
+			"id":"GykW8",
+			"index":0,
+			"inputs":{
+				"automationId":"6673471acc776d20d0f9aa15",
+				"synchronous":true,
+				"parameters":{
+					"endCall":true,
+					"caseId":"{{ LtE36.outputs.caseId }}",
+					"response_handler_automation":"{{ LtE36.outputs.response_handler_automation }}",
+					"text":"Have a wonderful trip! We're here to assist you if you need anything.",
+					"conversationHistory":"{{ wKXPV.outputs.conversationHistory }}",
+					"audioText":"<speak>\n    Have a wonderful trip! <break time=\"300ms\"/> \n    Thank you.\n</speak>"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":30,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"LtE36-1",
+			"id":"a0JvN",
+			"index":0,
+			"inputs":{
+				"result":{
+					"success":"200"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Return data to automation",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"version":14
+}
