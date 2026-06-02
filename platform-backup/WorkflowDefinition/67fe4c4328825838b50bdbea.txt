@@ -1,0 +1,61 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1744718915932,
+	"deleted":false,
+	"edges":[
+		
+	],
+	"id":"67fe4c4328825838b50bdbea",
+	"lastModifiedBy":39,
+	"lcName":"wnsqoqzkor schedule automation",
+	"modifiedTime":1744718915932,
+	"name":"wnSqOQzKor Schedule Automation",
+	"nodes":[
+		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":78,
+				"resourceName":"schedule_default"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"ygUOj-1",
+			"id":"ygUOj",
+			"index":0,
+			"inputs":{
+				"cron":"INTERVAL",
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"filter":{
+								"value":"",
+								"operator":"EQUAL"
+							},
+							"property":""
+						}
+					],
+					"operator":"AND"
+				},
+				"interval":15,
+				"frequency":"MINUTES"
+			},
+			"skip":false,
+			"title":"New recurring event",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"version":0
+}
