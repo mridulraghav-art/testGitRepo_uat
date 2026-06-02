@@ -1,0 +1,62 @@
+{
+	"appsUsed":[
+		"shopify"
+	],
+	"createdTime":1733932081370,
+	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1733932117526,
+		"deployedBy":39,
+		"deployedDefinitionId":"6759b45572cf1220098d6c5b",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
+	"edges":[
+		
+	],
+	"id":"6759b431b2bfd521462bbd4c",
+	"lastModifiedBy":39,
+	"lcName":"dfgh",
+	"modifiedTime":1733932117527,
+	"name":"dfgh",
+	"nodes":[
+		{
+			"context":{
+				"appName":"shopify",
+				"resourceVersion":8194,
+				"connectionId":"6681a850fc5e8e69b3c43b71",
+				"resourceName":"shopify_on_order_create"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_hHKTG-1",
+			"id":"_jRukI",
+			"index":0,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Shopify",
+			"title":"Order created",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
