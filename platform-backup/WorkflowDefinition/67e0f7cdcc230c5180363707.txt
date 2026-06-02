@@ -1,0 +1,83 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1742796749600,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"Exj6q",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"FxBhR",
+			"type":"next"
+		}
+	],
+	"id":"67e0f7cdcc230c5180363707",
+	"lastModifiedBy":39,
+	"lcName":"ghgh",
+	"modifiedTime":1742796799085,
+	"name":"ghgh",
+	"nodes":[
+		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":69,
+				"resourceName":"webhooks_default"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"Sm1vx-1",
+			"id":"Exj6q",
+			"index":0,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
+			"skip":false,
+			"subTitle":"Webhook",
+			"title":"New event",
+			"trigger":{
+				"type":"WEBHOOK"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":68,
+				"resourceName":"code_by_unifyapps_execute_code_snippets",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"Sm1vx-1",
+			"id":"FxBhR",
+			"index":0,
+			"inputs":{
+				"code_snippet_id":"e_67e0f06c2855453aa28df88e"
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute custom code snippets",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":2
+}
