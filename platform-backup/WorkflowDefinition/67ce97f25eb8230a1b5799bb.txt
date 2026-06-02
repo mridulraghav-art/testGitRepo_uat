@@ -1,0 +1,61 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1741592562108,
+	"deleted":false,
+	"edges":[
+		
+	],
+	"id":"67ce97f25eb8230a1b5799bb",
+	"lastModifiedBy":39,
+	"lcName":"pgswekagta schedule automation",
+	"modifiedTime":1741592562108,
+	"name":"pgSWekAgta Schedule Automation",
+	"nodes":[
+		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":60,
+				"resourceName":"schedule_default"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"P4ZUk-1",
+			"id":"P4ZUk",
+			"index":0,
+			"inputs":{
+				"cron":"INTERVAL",
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"filter":{
+								"value":"",
+								"operator":"EQUAL"
+							},
+							"property":""
+						}
+					],
+					"operator":"AND"
+				},
+				"interval":15,
+				"frequency":"MINUTES"
+			},
+			"skip":false,
+			"title":"New recurring event",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"version":0
+}
