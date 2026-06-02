@@ -1,0 +1,69 @@
+{
+	"appsUsed":[
+		"ibm_db2"
+	],
+	"createdTime":1748952647702,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"9ysdJ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"TRFNq",
+			"type":"next"
+		}
+	],
+	"id":"683ee6476b83b648b42ba9ca",
+	"lastModifiedBy":39,
+	"lcName":"_ajsdhgf",
+	"modifiedTime":1749014123514,
+	"name":"_ajsdhgf",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"9ysdJ-1",
+			"id":"9ysdJ",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"ibm_db2",
+				"resourceVersion":2241,
+				"resourceName":"ibm_db2_execute_sql",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"9ysdJ-1",
+			"id":"TRFNq",
+			"index":0,
+			"skip":false,
+			"subTitle":"IBM DB2",
+			"title":"Execute a SQL statement",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":9
+}
