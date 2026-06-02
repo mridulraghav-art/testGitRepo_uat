@@ -1,0 +1,88 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1737823908660,
+	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1737823939352,
+		"deployedBy":39,
+		"deployedDefinitionId":"679516c38267a42aef113efc",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
+	"edges":[
+		{
+			"fromNodeId":"DigqX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"NCJYc",
+			"type":"next"
+		}
+	],
+	"id":"679516a48267a42aef113ee7",
+	"lastModifiedBy":39,
+	"lcName":"testchecks",
+	"modifiedTime":1737823939381,
+	"name":"testchecks",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":45,
+				"resourceName":"callables_from_automation"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"KLcGg-1",
+			"id":"DigqX",
+			"index":0,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":47,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"KLcGg-1",
+			"id":"NCJYc",
+			"index":0,
+			"inputs":{
+				"result":"{{ DigqX.outputs }}"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
