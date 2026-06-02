@@ -1,0 +1,91 @@
+{
+	"appsUsed":[
+		"gmail"
+	],
+	"createdTime":1736968569333,
+	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1736968570256,
+		"deployedBy":39,
+		"deployedDefinitionId":"678809262d1a4f663e5ed969",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
+	"edges":[
+		{
+			"fromNodeId":"Ql051",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"VB1pb",
+			"type":"next"
+		}
+	],
+	"id":"678809012d1a4f663e5ed937",
+	"lastModifiedBy":39,
+	"lcName":"gmail test",
+	"modifiedTime":1736968570259,
+	"name":"gmail test",
+	"nodes":[
+		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":211,
+				"resourceName":"webhooks_default"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"seJy9-1",
+			"id":"Ql051",
+			"index":0,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
+			"skip":false,
+			"subTitle":"Webhook",
+			"title":"New event",
+			"trigger":{
+				"type":"WEBHOOK"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"resourceVersion":2717,
+				"connectionId":"677823c896a9c707460f46cf",
+				"resourceName":"gmail_send_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"seJy9-1",
+			"id":"VB1pb",
+			"index":0,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Send email",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
