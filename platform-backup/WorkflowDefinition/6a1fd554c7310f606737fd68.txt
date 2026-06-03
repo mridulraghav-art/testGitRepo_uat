@@ -32,7 +32,7 @@
 	"id":"6a1fd554c7310f606737fd68",
 	"lastModifiedBy":39,
 	"lcName":"changesetlocal6jovdrqstv6z",
-	"modifiedTime":1780493689173,
+	"modifiedTime":1780493730133,
 	"name":"changeSetLocal6jOVdrQSTV6z",
 	"nodes":[
 		{
@@ -42,7 +42,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"5stgo-1",
 			"id":"7pKsG",
@@ -108,12 +108,18 @@
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
 				"layout":{},
-				"schema":{}
+				"schema":{
+					"$comment":"changeSetUAT2_xml_TbNxnALuJJcNgczJmntq",
+					"$ref":"#/definitions/entity|e_code_snippet|e_698dfc9c32b83c57b9598650"
+				}
 			},
 			"inputs":{},
 			"outputSchema":{
 				"dynamic":false,
-				"schema":{}
+				"schema":{
+					"$comment":"changeSetUAT2_xml_TbNxnALuJJcNgczJmntq",
+					"$ref":"#/definitions/entity|e_code_snippet|e_698dfc9c32b83c57b9598650"
+				}
 			},
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
@@ -128,7 +134,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"5stgo-1",
 			"id":"mGr1K",
@@ -146,7 +152,7 @@
 	],
 	"ownerUserId":39,
 	"schemaReferences":[
-		
+		"entity|e_code_snippet|e_698dfc9c32b83c57b9598650"
 	],
 	"settings":{
 		"enableNodeLevelLogging":true,
@@ -157,5 +163,5 @@
 	"tags":[
 		
 	],
-	"version":3
+	"version":4
 }
