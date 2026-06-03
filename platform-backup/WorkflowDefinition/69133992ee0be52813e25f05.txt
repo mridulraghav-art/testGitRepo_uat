@@ -4,14 +4,14 @@
 	],
 	"createdTime":1762867602402,
 	"deleted":false,
-	"deployedVersion":3,
+	"deployedVersion":4,
 	"deploymentState":{
-		"deployedAt":1763129239463,
+		"deployedAt":1780474138730,
 		"deployedBy":39,
-		"deployedDefinitionId":"69173797bfa9fb006babc313",
-		"status":"PAUSED",
-		"version":3,
-		"workflowVersion":3
+		"deployedDefinitionId":"6a1fe11a207eea5cea9bc2be",
+		"status":"DEPLOYED",
+		"version":4,
+		"workflowVersion":5
 	},
 	"edges":[
 		{
@@ -62,7 +62,7 @@
 	"id":"69133992ee0be52813e25f05",
 	"lastModifiedBy":39,
 	"lcName":"[do not touch]check alert heartbeat | liva prod",
-	"modifiedTime":1780474137104,
+	"modifiedTime":1780483093481,
 	"name":"[DO NOT TOUCH]Check Alert Heartbeat | Liva Prod",
 	"nodes":[
 		{
@@ -230,7 +230,7 @@
 						"attachmentsBlock":{
 							"color":"#FF0000",
 							"pretext":"CHECK LIVA PROD | ALL ALERT STOPPED",
-							"title":"CHECK LIVA PROD ALL ALERT STOPPED : COUNT {{ qmSYr.outputs.total }} <@U07SR7JEWBC> <@U08RGE5489Y> <@U097BQBSRFS>",
+							"title":"CHECK LIVA PROD ALL ALERT STOPPED : COUNT {{ qmSYr.outputs.total }} <@U07SR7JEWBC> <@U08RGE5489Y> <@U097BQBSRFS> <@U09D1KCF78C>",
 							"text":"```{{ qmSYr.outputs.objects }}```",
 							"mrkdwn_in":[
 								"text",
@@ -283,5 +283,5 @@
 	"tags":[
 		
 	],
-	"version":5
+	"version":6
 }
