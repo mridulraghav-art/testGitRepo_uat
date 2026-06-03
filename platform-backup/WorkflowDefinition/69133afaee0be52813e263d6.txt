@@ -1,0 +1,195 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1762867962523,
+	"deleted":false,
+	"deployedVersion":8,
+	"deploymentState":{
+		"deployedAt":1763129225062,
+		"deployedBy":39,
+		"deployedDefinitionId":"6917378988f9a954840de195",
+		"status":"DEPLOYED",
+		"version":8,
+		"workflowVersion":10
+	},
+	"edges":[
+		{
+			"fromNodeId":"RUBak",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_eObmb",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_eObmb",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"g4pfT",
+			"type":"next"
+		}
+	],
+	"id":"69133afaee0be52813e263d6",
+	"lastModifiedBy":39,
+	"lcName":"[do not touch] alert heartbeat | liva prod",
+	"modifiedTime":1780474274515,
+	"name":"[DO NOT TOUCH] Alert Heartbeat | Liva Prod",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":0,
+				"resourceName":"callables_from_api"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"ullmp-1",
+			"id":"RUBak",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"queryParams":{
+						"type":"object",
+						"properties":{
+							"env":{
+								"type":"string",
+								"title":"Env"
+							},
+							"alertName":{
+								"type":"string",
+								"title":"Alert Name"
+							},
+							"heartbeatTime":{
+								"type":"number",
+								"title":"Heartbeat Time"
+							}
+						},
+						"additionalProperties":false,
+						"required":[]
+					}
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"status":200,
+						"contentType":"application/json",
+						"name":"success",
+						"body":{
+							"type":"object",
+							"properties":{
+								"recorded":{
+									"type":"string",
+									"title":"Recorded"
+								}
+							},
+							"additionalProperties":false,
+							"required":[]
+						}
+					}
+				],
+				"streamingResponse":false
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Trigger using API",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4313,
+				"resourceName":"storage_by_unifyapps_upsert_record",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"ullmp-1",
+			"id":"n_eObmb",
+			"index":2,
+			"inputs":{
+				"writeThroughSessionVariables":false,
+				"object_type":"hearbeat_liva",
+				"skipIfBlank":false,
+				"updateFields":[
+					{
+						"fieldName":"properties.env",
+						"actionType":"SET",
+						"setValue":"{{ RUBak.outputs.queryParams.env }}"
+					},
+					{
+						"fieldName":"properties.alertName",
+						"actionType":"SET",
+						"setValue":"{{ RUBak.outputs.queryParams.alertName }}"
+					},
+					{
+						"fieldName":"properties.heartbeatTime",
+						"actionType":"SET",
+						"setValue":"{{ RUBak.outputs.queryParams.heartbeatTime }}"
+					},
+					{
+						"fieldName":"properties.key",
+						"actionType":"SET",
+						"setValue":"{{ RUBak.outputs.queryParams.env }}_{{ RUBak.outputs.queryParams.alertName }}"
+					}
+				],
+				"id":"{{ RUBak.outputs.queryParams.env }}_{{ RUBak.outputs.queryParams.alertName }}",
+				"skipSchemaValidation":true,
+				"unsetIfNull":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Upsert Record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":0,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"ullmp-1",
+			"id":"g4pfT",
+			"index":3,
+			"inputs":{
+				"responseName":"success",
+				"body":{
+					"recorded":"true"
+				},
+				"status":200
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"headerValueTierMap":{},
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":11
+}
