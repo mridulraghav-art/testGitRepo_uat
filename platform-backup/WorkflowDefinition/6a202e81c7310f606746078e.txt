@@ -6,46 +6,123 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_b3PKC",
+			"fromNodeId":"n_htdPv",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_y7RLi",
+			"toNodeId":"n_2udAc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_2udAc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_jTSOa",
 			"type":"next"
 		}
 	],
 	"id":"6a202e81c7310f606746078e",
 	"lastModifiedBy":39,
 	"lcName":"analyticsbyunifyappslocalpevicdpvts",
-	"modifiedTime":1780493953037,
+	"modifiedTime":1780493971041,
 	"name":"AnalyticsByUnifyAppsLocalpEvICdpvTS",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2393,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_b3PKC-1",
-			"id":"_b3PKC",
-			"index":0,
+			"id":"n_htdPv",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"output"
+						},
+						"metadata":{
+							"type":"integer",
+							"title":"metadata"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"input"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":2126,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_b3PKC-1",
-			"id":"_y7RLi",
-			"index":0,
+			"id":"n_2udAc",
+			"index":2,
+			"inputs":{
+				"query":"SELECT * FROM ENTITY_analytics_node_testcases_imp",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2394,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_b3PKC-1",
+			"id":"n_jTSOa",
+			"index":3,
+			"inputs":{
+				"result":{
+					"output":"{{ n_2udAc.outputs.objects }}",
+					"metadata":"{{ n_2udAc.outputs.metadata }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +133,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
