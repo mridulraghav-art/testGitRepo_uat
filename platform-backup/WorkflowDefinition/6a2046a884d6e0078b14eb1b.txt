@@ -6,46 +6,95 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_HfMCW",
+			"fromNodeId":"n_ck2wa",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_11T5A",
+			"toNodeId":"n_mzqJg",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_mzqJg",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_oRX01",
 			"type":"next"
 		}
 	],
 	"id":"6a2046a884d6e0078b14eb1b",
 	"lastModifiedBy":39,
 	"lcName":"example",
-	"modifiedTime":1780500136371,
+	"modifiedTime":1780500164577,
 	"name":"example",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2393,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_HfMCW-1",
-			"id":"_HfMCW",
-			"index":0,
+			"id":"n_ck2wa",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":24159,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_HfMCW-1",
-			"id":"_11T5A",
-			"index":0,
+			"id":"n_mzqJg",
+			"index":2,
+			"inputs":{
+				"query":"SELECT * FROM ENTITY_analytics_node_testcases_imp",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":25592,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_HfMCW-1",
+			"id":"n_oRX01",
+			"index":3,
+			"inputs":{
+				"result":{}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +105,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
