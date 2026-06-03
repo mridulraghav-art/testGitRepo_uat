@@ -4,14 +4,14 @@
 	],
 	"createdTime":1762867602402,
 	"deleted":false,
-	"deployedVersion":4,
+	"deployedVersion":5,
 	"deploymentState":{
-		"deployedAt":1780474138730,
+		"deployedAt":1780483095627,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a1fe11a207eea5cea9bc2be",
-		"status":"DEPLOYED",
-		"version":4,
-		"workflowVersion":5
+		"deployedDefinitionId":"6a20041798619909d990aedc",
+		"status":"PAUSED",
+		"version":5,
+		"workflowVersion":6
 	},
 	"edges":[
 		{
@@ -62,7 +62,7 @@
 	"id":"69133992ee0be52813e25f05",
 	"lastModifiedBy":39,
 	"lcName":"[do not touch]check alert heartbeat | liva prod",
-	"modifiedTime":1780483093481,
+	"modifiedTime":1780495676452,
 	"name":"[DO NOT TOUCH]Check Alert Heartbeat | Liva Prod",
 	"nodes":[
 		{
@@ -134,7 +134,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"6QunN-1",
 			"id":"qmSYr",
@@ -159,7 +159,8 @@
 					],
 					"operator":"AND"
 				},
-				"object_type":"hearbeat_liva",
+				"shouldSearchInAnalyticsStore":false,
+				"object_type":"liva_prod_heartbeat",
 				"includeRoleMappings":false,
 				"includeCurrentUserPermissions":false,
 				"translationsOption":"DEFAULT",
@@ -216,7 +217,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"aRMXy@6QunN-1@y",
 			"id":"fGGWD",
@@ -283,5 +284,5 @@
 	"tags":[
 		
 	],
-	"version":6
+	"version":7
 }
