@@ -4,14 +4,14 @@
 	],
 	"createdTime":1762867962523,
 	"deleted":false,
-	"deployedVersion":8,
+	"deployedVersion":9,
 	"deploymentState":{
-		"deployedAt":1763129225062,
+		"deployedAt":1780474276241,
 		"deployedBy":39,
-		"deployedDefinitionId":"6917378988f9a954840de195",
+		"deployedDefinitionId":"6a1fe1a4c7310f606738b523",
 		"status":"DEPLOYED",
-		"version":8,
-		"workflowVersion":10
+		"version":9,
+		"workflowVersion":11
 	},
 	"edges":[
 		{
@@ -32,7 +32,7 @@
 	"id":"69133afaee0be52813e263d6",
 	"lastModifiedBy":39,
 	"lcName":"[do not touch] alert heartbeat | liva prod",
-	"modifiedTime":1780474274515,
+	"modifiedTime":1780495697214,
 	"name":"[DO NOT TOUCH] Alert Heartbeat | Liva Prod",
 	"nodes":[
 		{
@@ -114,7 +114,7 @@
 			"index":2,
 			"inputs":{
 				"writeThroughSessionVariables":false,
-				"object_type":"hearbeat_liva",
+				"object_type":"liva_prod_heartbeat",
 				"skipIfBlank":false,
 				"updateFields":[
 					{
@@ -191,5 +191,5 @@
 	"tags":[
 		
 	],
-	"version":11
+	"version":12
 }
