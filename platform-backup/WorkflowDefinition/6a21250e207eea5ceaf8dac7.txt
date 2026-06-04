@@ -19,12 +19,19 @@
 			"skip":false,
 			"toNodeId":"n_icZDz",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_icZDz",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_yBfHX",
+			"type":"next"
 		}
 	],
 	"id":"6a21250e207eea5ceaf8dac7",
 	"lastModifiedBy":39,
 	"lcName":"restoresselectedsaved_217805570654820",
-	"modifiedTime":1780557095563,
+	"modifiedTime":1780557096861,
 	"name":"restoresSelectedSaved_217805570654820",
 	"nodes":[
 		{
@@ -34,7 +41,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_jq260-1",
 			"id":"n_FqEdk",
@@ -106,7 +113,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_jq260-1",
 			"id":"n_icZDz",
@@ -150,6 +157,21 @@
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_jq260-1",
+			"id":"n_yBfHX",
+			"index":4,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -170,5 +192,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":3
+	"version":4
 }
