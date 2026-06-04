@@ -1,52 +1,84 @@
 {
 	"appsUsed":[
-		
+		"slack"
 	],
 	"createdTime":1780574118900,
 	"deleted":false,
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_51FCc",
+			"fromNodeId":"n_QrG7O",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_vfPlz",
+			"toNodeId":"n_dmKIx",
 			"type":"next"
 		}
 	],
 	"id":"6a2167a6c7310f6067e435e4",
 	"lastModifiedBy":39,
 	"lcName":"app node with incomplete action  - 21780574113034",
-	"modifiedTime":1780574122992,
+	"modifiedTime":1780574128340,
 	"name":"App node with incomplete action  - 21780574113034",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_51FCc-1",
-			"id":"_51FCc",
-			"index":0,
+			"id":"n_QrG7O",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"slack",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_51FCc-1",
-			"id":"_vfPlz",
-			"index":0,
+			"id":"n_dmKIx",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Slack",
+			"title":"Select an action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +93,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
