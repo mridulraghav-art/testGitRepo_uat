@@ -7,52 +7,130 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_HcAmD",
+			"fromNodeId":"n_EGTqN",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_OOSnM",
+			"toNodeId":"n_fRmgr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_fRmgr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GuiWD",
 			"type":"next"
 		}
 	],
 	"id":"6a214ca7eeee3a1afe1366b7",
 	"lastModifiedBy":39,
 	"lcName":"delaynodedelayuntil_217805671596610",
-	"modifiedTime":1780567207688,
+	"modifiedTime":1780567231401,
 	"name":"delayNodeDelayUntil_217805671596610",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2397,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_HcAmD-1",
-			"id":"_HcAmD",
-			"index":0,
+			"id":"n_EGTqN",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output_String"
+					],
+					"properties":{
+						"output_String":{
+							"type":"string",
+							"title":"output_String"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input_String"
+					],
+					"properties":{
+						"input_String":{
+							"type":"string",
+							"title":"input_String"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"delay",
+				"resourceVersion":60,
+				"resourceName":"delay_until",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_HcAmD-1",
-			"id":"_OOSnM",
-			"index":0,
+			"id":"n_fRmgr",
+			"index":2,
+			"inputs":{
+				"until":"2026-06-04T10:00:00.000Z"
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Delay",
+			"title":"Schedule delay until",
+			"type":"DELAY"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2398,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_HcAmD-1",
+			"id":"n_GuiWD",
+			"index":3,
+			"inputs":{
+				"result":{
+					"output_String":"{{ n_EGTqN.outputs.input_String }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +138,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":2
 }
