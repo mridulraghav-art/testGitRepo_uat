@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780575383562,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_YAP7G",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_5cr2F",
+			"type":"next"
+		}
+	],
+	"id":"6a216c97c7310f6067ebc969",
+	"lastModifiedBy":39,
+	"lcName":"childautomation-range_of_values_217805749973440",
+	"modifiedTime":1780575383562,
+	"name":"childAutomation-RANGE_OF_VALUES_217805749973440",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YAP7G-1",
+			"id":"_YAP7G",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YAP7G-1",
+			"id":"_5cr2F",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
