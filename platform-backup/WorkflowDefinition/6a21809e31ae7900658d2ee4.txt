@@ -7,52 +7,93 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_rxVLA",
+			"fromNodeId":"n_nyAuG",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_w5kaB",
+			"toNodeId":"n_RYezD",
 			"type":"next"
 		}
 	],
 	"id":"6a21809e31ae7900658d2ee4",
 	"lastModifiedBy":39,
 	"lcName":"test-allallowed_217805801302540",
-	"modifiedTime":1780580510469,
+	"modifiedTime":1780580536585,
 	"name":"test-allAllowed_217805801302540",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_rxVLA-1",
-			"id":"_rxVLA",
-			"index":0,
+			"id":"n_nyAuG",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2404,
+				"resourceName":"callables_schedule_a_callable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_rxVLA-1",
-			"id":"_w5kaB",
-			"index":0,
+			"id":"n_RYezD",
+			"index":2,
+			"inputs":{
+				"automation_id":"6a21808133b0405a76fae944",
+				"schedule_method":{
+					"schedule_type":"CRON_EXPRESSION",
+					"setup_config":{
+						"timezone":"Asia/Kolkata",
+						"expression":"1 1 * 2 2",
+						"start_time":"2026-06-04T13:42:10.543Z",
+						"unit":"MINUTES"
+					}
+				},
+				"runtimeConnections":{},
+				"cancel_existing":true,
+				"version":"-1",
+				"schedule_name":"Schedule Callable Automation",
+				"parameters":{
+					"input_String":"Hello Unify"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Schedule callable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +101,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":2
 }
