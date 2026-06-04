@@ -7,52 +7,111 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_PVlKG",
+			"fromNodeId":"n_3ucqh",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_eLCuI",
+			"toNodeId":"n_FaalK",
 			"type":"next"
 		}
 	],
 	"id":"6a21888333b0405a76fb510a",
 	"lastModifiedBy":39,
 	"lcName":"build-1 21780582178372",
-	"modifiedTime":1780582531205,
+	"modifiedTime":1780582556011,
 	"name":"build-1 21780582178372",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2404,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_PVlKG-1",
-			"id":"_PVlKG",
-			"index":0,
+			"id":"n_3ucqh",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1651,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_PVlKG-1",
-			"id":"_eLCuI",
-			"index":0,
+			"id":"n_FaalK",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"BucketName":{
+							"type":"string",
+							"title":"BucketName"
+						}
+					},
+					"required":[
+						"BucketName"
+					]
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"BucketName":{
+							"type":"string",
+							"title":"BucketName"
+						}
+					},
+					"required":[
+						"BucketName"
+					]
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +119,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":2
 }
