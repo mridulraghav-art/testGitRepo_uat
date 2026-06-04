@@ -1,33 +1,38 @@
 {
 	"appsUsed":[
-		
+		"mailchimp",
+		"shopify"
 	],
 	"createdTime":1780582584374,
 	"deleted":false,
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_oFDZ6",
+			"fromNodeId":"n_YnAMj",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_COH4a",
+			"toNodeId":"n_p1AcB",
 			"type":"next"
 		}
 	],
 	"id":"6a2188b828d6d162e1dab82a",
 	"lastModifiedBy":39,
 	"lcName":"leave 21780582178372",
-	"modifiedTime":1780582584374,
+	"modifiedTime":1780582603235,
 	"name":"Leave 21780582178372",
 	"nodes":[
 		{
+			"context":{
+				"appName":"shopify"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oFDZ6-1",
-			"id":"_oFDZ6",
-			"index":0,
+			"id":"n_YnAMj",
+			"index":1,
 			"skip":false,
+			"subTitle":"Shopify",
 			"title":"Select a trigger event",
 			"trigger":{
 				"type":"EVENT"
@@ -35,24 +40,33 @@
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"mailchimp",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oFDZ6-1",
-			"id":"_COH4a",
-			"index":0,
+			"id":"n_p1AcB",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Mailchimp",
+			"title":"Select an action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +74,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":2
 }
