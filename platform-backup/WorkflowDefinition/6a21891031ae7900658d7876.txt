@@ -6,47 +6,37 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_lizWG",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_CWYDf",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a21891031ae7900658d7876",
 	"lastModifiedBy":39,
 	"lcName":"delete workflow - 21780582178372",
-	"modifiedTime":1780582679556,
+	"modifiedTime":1780582690401,
 	"name":"delete workflow - 21780582178372",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_lizWG-1",
-			"id":"_lizWG",
-			"index":0,
+			"id":"n_bHbwI",
+			"index":1,
 			"skip":false,
+			"subTitle":"Callable",
 			"title":"Select a trigger event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_lizWG-1",
-			"id":"_CWYDf",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +51,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
