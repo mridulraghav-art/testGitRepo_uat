@@ -17,7 +17,7 @@
 	"id":"6a21174998619909d9f9e011",
 	"lastModifiedBy":39,
 	"lcName":"workflow_clone_schema_copy217805534257460",
-	"modifiedTime":1780553545359,
+	"modifiedTime":1780553550784,
 	"name":"workflow_clone_Schema_copy217805534257460",
 	"nodes":[
 		{
@@ -27,7 +27,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_yRPdK-1",
 			"id":"n_h1NUz",
@@ -66,7 +66,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_yRPdK-1",
 			"id":"n_gl7oy",
@@ -79,31 +79,30 @@
 					"additionalProperties":false,
 					"type":"object",
 					"properties":{
-						"inputField":{
+						"input_Field_updated":{
 							"type":"string",
-							"title":"inputField"
+							"title":"input_Field_updated"
 						}
 					},
 					"required":[
-						"inputField"
+						"input_Field_updated"
 					]
 				}
 			},
 			"inputs":{},
 			"outputSchema":{
-				"type":"SCHEMA",
 				"dynamic":false,
 				"schema":{
 					"additionalProperties":false,
 					"type":"object",
 					"properties":{
-						"inputField":{
+						"input_Field_updated":{
 							"type":"string",
-							"title":"inputField"
+							"title":"input_Field_updated"
 						}
 					},
 					"required":[
-						"inputField"
+						"input_Field_updated"
 					]
 				}
 			},
@@ -131,5 +130,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":1
 }
