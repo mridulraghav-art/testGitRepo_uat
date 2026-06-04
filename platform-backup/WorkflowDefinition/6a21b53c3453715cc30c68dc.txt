@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780593980844,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_Kg76U",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_PqUAd",
+			"type":"next"
+		}
+	],
+	"id":"6a21b53c3453715cc30c68dc",
+	"lastModifiedBy":39,
+	"lcName":"new_automation_trigger_with_webhook_217805935679350",
+	"modifiedTime":1780593980844,
+	"name":"New_Automation_trigger_with_Webhook_217805935679350",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Kg76U-1",
+			"id":"_Kg76U",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Kg76U-1",
+			"id":"_PqUAd",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
