@@ -7,46 +7,212 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_X8drm",
+			"fromNodeId":"n_mfZ6Q",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_55Niq",
+			"toNodeId":"n_ZNMGQ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_ZNMGQ",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_rgwsO",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_ZNMGQ",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_rkcQT",
 			"type":"next"
 		}
 	],
 	"id":"6a21874d3453715cc30b6ac6",
 	"lastModifiedBy":39,
 	"lcName":"callable api 21780582166866",
-	"modifiedTime":1780582227705,
+	"modifiedTime":1780582259293,
 	"name":"Callable API 21780582166866",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2403,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_X8drm-1",
-			"id":"_X8drm",
-			"index":0,
+			"id":"n_mfZ6Q",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"success",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						},
+						"htmlBody":{
+							"type":"string"
+						},
+						"body":{
+							"type":"object",
+							"properties":{
+								"output":{
+									"type":"string",
+									"title":"output"
+								}
+							},
+							"additionalProperties":false,
+							"required":[
+								"output"
+							]
+						}
+					},
+					{
+						"name":"Fail",
+						"status":400,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						},
+						"htmlBody":{
+							"type":"string"
+						},
+						"body":{
+							"type":"object",
+							"properties":{
+								"output":{
+									"type":"string",
+									"title":"output"
+								}
+							},
+							"additionalProperties":false,
+							"required":[
+								"output"
+							]
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"if_else",
+				"resourceVersion":66,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_X8drm-1",
-			"id":"_55Niq",
-			"index":0,
+			"id":"n_ZNMGQ",
+			"index":2,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_mfZ6Q.outputs.body.input }}",
+						"filter":{
+							"operator":"STARTS_WITH",
+							"value":"test"
+						}
+					}
+				],
+				"operator":"AND"
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2404,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_ZNMGQ@_X8drm-1@y",
+			"id":"n_rgwsO",
+			"index":3,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_success",
+				"body":{
+					"output":"passed"
+				},
+				"status":200
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2404,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_ZNMGQ@_X8drm-1@n",
+			"id":"n_rkcQT",
+			"index":4,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"400_Fail",
+				"body":{
+					"output":"failed"
+				},
+				"status":400
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +227,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
