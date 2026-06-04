@@ -7,52 +7,80 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_yfJUB",
+			"fromNodeId":"n_1nNv0",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_S3pii",
+			"toNodeId":"n_b0t8H",
 			"type":"next"
 		}
 	],
 	"id":"6a21174398619909d9f9dff0",
 	"lastModifiedBy":39,
 	"lcName":"errorsnackbarrequiredfield_217805534435600",
-	"modifiedTime":1780553539417,
+	"modifiedTime":1780553557037,
 	"name":"errorSnackbarRequiredField_217805534435600",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_yfJUB-1",
-			"id":"_yfJUB",
-			"index":0,
+			"id":"n_1nNv0",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2395,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_yfJUB-1",
-			"id":"_S3pii",
-			"index":0,
+			"id":"n_b0t8H",
+			"index":2,
+			"inputs":{
+				"runtimeConnections":{},
+				"synchronous":true,
+				"version":"-1",
+				"parameters":{}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +88,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":2
 }
