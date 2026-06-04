@@ -1,0 +1,1783 @@
+{
+	"appsUsed":[
+		"oracledb"
+	],
+	"createdTime":1744808191902,
+	"deleted":false,
+	"deployedVersion":4,
+	"deploymentState":{
+		"deployedAt":1744810325405,
+		"deployedBy":39,
+		"deployedDefinitionId":"67ffb15540496563f7dd7fa1",
+		"status":"DEPLOYED",
+		"version":4,
+		"workflowVersion":56
+	},
+	"description":"",
+	"edges":[
+		{
+			"fromNodeId":"tbEvJ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"SFH1a",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"SFH1a",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_oGx0W",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_oGx0W",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Z2GlB",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_Z2GlB",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_J6xkf",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_J6xkf",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Db1gx",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_Db1gx",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"mP7ni",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"mP7ni",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"PrwcF",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"PrwcF",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"8HgdV",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"8HgdV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"f9Mjm",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"f9Mjm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"BG9j6",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"BG9j6",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"xeAsr",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"xeAsr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"6lDl7",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"6lDl7",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"f8V18",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"f8V18",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"ZmsnI",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"ZmsnI",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"U9ysO",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"U9ysO",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"IuvJH",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"IuvJH",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"Kb2EM",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"Kb2EM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"jZSIA",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"jZSIA",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_RxaHn",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_RxaHn",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"HBk74",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"HBk74",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"aZjXg",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"aZjXg",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"6f8pW",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"6f8pW",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_50mXE",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_50mXE",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"aZjXg",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"aZjXg",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"U9ysO",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"U9ysO",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"BG9j6",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"BG9j6",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_3vaXA",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_3vaXA",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"01R9q",
+			"type":"next"
+		}
+	],
+	"id":"67ff68a129140621dd274463",
+	"lastModifiedBy":39,
+	"lcName":"data catalog - oracle (final)",
+	"modifiedTime":1780567593629,
+	"name":"Data Catalog - Oracle (Final)",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":505,
+				"resourceName":"callables_from_automation"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"tbEvJ",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"properties":{
+						"responseCode":{
+							"type":"string",
+							"title":"Response Code"
+						}
+					},
+					"additionalProperties":false,
+					"required":[
+						"responseCode"
+					]
+				},
+				"setup":{
+					"type":"object",
+					"properties":{
+						"dataCatalogId":{
+							"type":"string",
+							"title":"dataCatalogId"
+						},
+						"connectionId":{
+							"type":"string",
+							"title":"connectionId"
+						},
+						"config":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"config"
+						}
+					},
+					"additionalProperties":false,
+					"required":[]
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":105,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"SFH1a",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"connectionId":{
+							"type":"string",
+							"title":"Connection Id"
+						},
+						"connectorType":{
+							"type":"string",
+							"title":"Connector Type"
+						}
+					},
+					"required":[]
+				}
+			},
+			"inputs":{
+				"connectorType":"oracle_db",
+				"connectionId":"{{ tbEvJ.outputs.connectionId }}"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"connectionId":{
+							"type":"string",
+							"title":"Connection Id"
+						},
+						"connectorType":{
+							"type":"string",
+							"title":"Connector Type"
+						}
+					},
+					"required":[]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":4,
+				"resourceName":"variable_by_unifyapps_create_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"_oGx0W",
+			"index":3,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{
+					"createList":{
+						"ui:title":"",
+						"ua:type":{
+							"ui:widget":"hidden"
+						},
+						"items":{
+							"ui:title":"Initial list items",
+							"ui:description":"Set the initial values of the list (defaults to empty)"
+						},
+						"ui:order":[
+							"*",
+							"items"
+						]
+					},
+					"ua:title":{
+						"ui:widget":"hidden"
+					},
+					"ua:list_type":{
+						"ui:widget":"hidden"
+					}
+				},
+				"schema":{
+					"allOf":[
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"OBJECT"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"items":{
+												"type":"object",
+												"properties":{}
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"STRING"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of String"
+											},
+											"items":{
+												"type":"string"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"INTEGER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Integers"
+											},
+											"items":{
+												"type":"integer"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"NUMBER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Numbers"
+											},
+											"items":{
+												"type":"number"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"BOOLEAN"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Booleans"
+											},
+											"items":{
+												"type":"boolean"
+											}
+										}
+									}
+								}
+							}
+						}
+					],
+					"format":"ua:list",
+					"type":"object",
+					"properties":{
+						"ua:title":{
+							"type":"string"
+						},
+						"ua:list_type":{
+							"type":"string",
+							"title":"List Type",
+							"oneOf":[
+								{
+									"const":"OBJECT",
+									"title":"Object"
+								},
+								{
+									"const":"STRING",
+									"title":"String"
+								},
+								{
+									"const":"NUMBER",
+									"title":"Number"
+								},
+								{
+									"const":"INTEGER",
+									"title":"Integer"
+								},
+								{
+									"const":"BOOLEAN",
+									"title":"Boolean"
+								}
+							],
+							"default":"OBJECT"
+						},
+						"createList":{
+							"type":"object",
+							"properties":{
+								"ua:type":{
+									"type":"string",
+									"default":"mappedArray"
+								},
+								"source":{
+									"type":"string",
+									"format":"ua:source",
+									"title":"List Item Source"
+								},
+								"items":{
+									"additionalProperties":false,
+									"type":[
+										"object",
+										"string",
+										"number",
+										"boolean",
+										"integer"
+									],
+									"properties":{}
+								}
+							}
+						}
+					}
+				}
+			},
+			"inputs":{
+				"createList":{
+					"ua:type":"mappedArray",
+					"items":"HR"
+				},
+				"ua:title":"data",
+				"ua:list_type":"STRING"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"items":{
+							"type":"array",
+							"title":"data",
+							"disableActions":true,
+							"items":{
+								"type":"string"
+							}
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":9,
+				"resourceName":"standard_entities_get_connection_details",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"_Z2GlB",
+			"index":4,
+			"inputs":{
+				"connectionIds":"{{ SFH1a.outputs.connectionId }}"
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Get connection details",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":9,
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"_J6xkf",
+			"index":5,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ SFH1a.outputs.connectorType }}",
+						"value":"{{ _Z2GlB.outputs.connectionDetails[0].appName }}"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":2,
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"_Db1gx",
+			"index":6,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_connectorName",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"oracledb"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"shouldSearchInAnalyticsStore":false,
+				"object_type":"pipeline_connector_image",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"page":{
+					"limit":20,
+					"offset":0
+				},
+				"numberOfRecordsToFetch":"SINGLE",
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch records",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"oracledb",
+				"resourceVersion":331,
+				"connectionId":"67b719f839a013481fb61083",
+				"resourceName":"oracledb_fetch_database_metadata",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"mP7ni",
+			"index":7,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Oracle DB",
+			"title":"Fetch Database Metadata",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.sourceDetails.sourceIconUrl",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.parentAssetDetails.parentAssetName",
+					"root.record.parentAssetDetails.parentAssetIconUrl",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.tags.items",
+					"root.record.classifications.items",
+					"root.record.glossary.items",
+					"root.record.parentAssetDetails.parentAssetTypeName",
+					"root.record.parentAssetDetails.parentAssetIds.items"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":247,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"PrwcF",
+			"index":8,
+			"inputs":{
+				"recordId":"{{ SFH1a.outputs.connectorType }}_{{ SFH1a.outputs.connectionId }}_database",
+				"object_type":"e_data_catalog_asset",
+				"record":{
+					"name":"{{ _Z2GlB.outputs.connectionDetails[0].name }}",
+					"description":"Centralized HR solution for managing employee information and internal financial processes.",
+					"assetType":"e_data_catalog_database",
+					"sourceDetails":{
+						"sourceType":"{{ SFH1a.outputs.connectorType }}",
+						"sourceAssetType":"Database",
+						"sourceIconUrl":"{{ _Db1gx.outputs.properties.logoLink }}",
+						"sourceName":"{{ SFH1a.outputs.connectorType }}",
+						"sourceId":"{{ SFH1a.outputs.connectionId }}",
+						"sourceAssetId":"{{ _Z2GlB.outputs.connectionDetails[0].userInput.databaseName }}"
+					},
+					"createdBy":"{{ __RUN__.outputs.userId }}",
+					"editedBy":"{{ __RUN__.outputs.userId }}",
+					"certificate":"Verified",
+					"sharedWith":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"owners":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"parentAssetDetails":{
+						"parentAssetType":"-",
+						"parentAssetId":"-",
+						"parentAssetName":"-",
+						"parentAssetIconUrl":"-"
+					},
+					"assetIconUrl":"{{ _Db1gx.outputs.properties.logoLink }}",
+					"tags":{
+						"items":"{{ _oGx0W.outputs.items[0] }}",
+						"ua:type":"mappedArray",
+						"source":"{{ _oGx0W.outputs.items }}"
+					},
+					"classifications":{
+						"items":"{{ _oGx0W.outputs.items[0] }}",
+						"ua:type":"mappedArray",
+						"source":"{{ _oGx0W.outputs.items }}"
+					},
+					"glossary":{
+						"items":"{{ _oGx0W.outputs.items[0] }}",
+						"ua:type":"mappedArray",
+						"source":"{{ _oGx0W.outputs.items }}"
+					},
+					"dataCatalogId":"{{ tbEvJ.outputs.dataCatalogId }}"
+				},
+				"upsert":true
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update record by id",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.classifications.items",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.tags.items",
+					"root.record.glossary.items",
+					"root.record.certificateNew.items",
+					"root.record.sourceDetails.sourceUrl"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":247,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"8HgdV",
+			"index":9,
+			"inputs":{
+				"recordId":"{{ PrwcF.outputs.object.id }}",
+				"object_type":"e_data_catalog_database",
+				"record":{
+					"sourceDetails":{
+						"sourceType":"{{ PrwcF.outputs.object.properties.sourceDetails.sourceType }}",
+						"sourceName":"{{ PrwcF.outputs.object.properties.sourceDetails.sourceName }}",
+						"sourceId":"{{ PrwcF.outputs.object.properties.sourceDetails.sourceId }}",
+						"sourceAssetType":"{{ PrwcF.outputs.object.properties.sourceDetails.sourceAssetType }}",
+						"sourceAssetId":"{{ PrwcF.outputs.object.properties.sourceDetails.sourceAssetId }}"
+					},
+					"parentAssetDetails":{
+						"parentAssetType":"{{ PrwcF.outputs.object.properties.parentAssetDetails.parentAssetType }}",
+						"parentAssetId":"{{ PrwcF.outputs.object.properties.parentAssetDetails.parentAssetId }}"
+					},
+					"name":"{{ PrwcF.outputs.object.properties.name }}",
+					"owners":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"sharedWith":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"createdBy":"{{ __RUN__.outputs.userId }}",
+					"schemaCount":"{{ mP7ni.outputs.schemaCount }}",
+					"description":"{{ PrwcF.outputs.object.properties.description }}",
+					"classifications":{
+						"items":"{{ _oGx0W.outputs.items[0] }}",
+						"ua:type":"mappedArray",
+						"source":"{{ _oGx0W.outputs.items }}"
+					},
+					"tags":{
+						"items":"{{ _oGx0W.outputs.items[0] }}",
+						"ua:type":"mappedArray",
+						"source":"{{ _oGx0W.outputs.items }}"
+					},
+					"glossary":{
+						"items":"{{ _oGx0W.outputs.items[0] }}",
+						"ua:type":"mappedArray",
+						"source":"{{ _oGx0W.outputs.items }}"
+					},
+					"certificateNew":{
+						"items":"Verified",
+						"ua:type":"mappedArray"
+					},
+					"dataCatalogId":"{{ tbEvJ.outputs.dataCatalogId }}"
+				},
+				"upsert":true
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update record by id",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"oracledb",
+				"resourceVersion":273,
+				"connectionId":"67b719f839a013481fb61083",
+				"resourceName":"oracledb_list_schemas",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"f9Mjm",
+			"index":10,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Oracle DB",
+			"title":"List all schemas",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":78,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"BG9j6",
+			"index":11,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ f9Mjm.outputs.schemas }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each item in the list",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"continue",
+				"resourceVersion":79,
+				"resourceName":"continue",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"BG9j6@hw4d8-1@l",
+			"id":"xeAsr",
+			"index":12,
+			"inputs":{
+				"loop":"BG9j6",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ BG9j6.outputs.item.schema }}",
+							"filter":{
+								"operator":"NOT_EQUAL",
+								"value":"{{ _Z2GlB.outputs.connectionDetails[0].userInput.schemaName }}"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"subTitle":"Continue",
+			"title":"Continue",
+			"type":"CONTINUE"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.sourceDetails.sourceIconUrl",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.parentAssetDetails.parentAssetName",
+					"root.record.parentAssetDetails.parentAssetIconUrl",
+					"root.record.parentAssetDetails.parentAssetTypeName",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.classifications.items",
+					"root.record.glossary.items",
+					"root.record.tags.items",
+					"root.record.parentAssetDetails.parentAssetIds.items"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":247,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"BG9j6@hw4d8-1@l",
+			"id":"6lDl7",
+			"index":13,
+			"inputs":{
+				"recordId":"{{ SFH1a.outputs.connectorType }}_{{ SFH1a.outputs.connectionId }}_schema_{{ BG9j6.outputs.item.schema }}",
+				"object_type":"e_data_catalog_asset",
+				"record":{
+					"parentAssetDetails":{
+						"parentAssetIds":[
+							"{{ PrwcF.outputs.object.id }}"
+						],
+						"parentAssetType":"e_data_catalog_database",
+						"parentAssetName":"{{ PrwcF.outputs.object.properties.name }}",
+						"parentAssetId":"{{ PrwcF.outputs.object.id }}",
+						"parentAssetIconUrl":"{{ PrwcF.outputs.object.properties.assetIconUrl }}",
+						"parentAssetTypeName":"Database"
+					},
+					"assetType":"e_data_catalog_schema",
+					"sourceDetails":{
+						"sourceId":"{{ SFH1a.outputs.connectionId }}",
+						"sourceAssetType":"Schema",
+						"sourceType":"{{ SFH1a.outputs.connectorType }}",
+						"sourceAssetId":"{{ 8HgdV.outputs.object.properties.sourceDetails.sourceAssetId }}",
+						"sourceIconUrl":"{{ _Db1gx.outputs.properties.logoLink }}",
+						"sourceName":"{{ SFH1a.outputs.connectorType }}"
+					},
+					"name":"{{ BG9j6.outputs.item.schema }}",
+					"description":"Primary schema handling essential HR operations and employee financial management.",
+					"certificate":"Verified",
+					"createdBy":"{{ __RUN__.outputs.userId }}",
+					"editedBy":"{{ __RUN__.outputs.userId }}",
+					"assetIconUrl":"{{ PrwcF.outputs.object.properties.assetIconUrl }}",
+					"owners":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"sharedWith":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"tags":{
+						"items":"{{ _oGx0W.outputs.items[0] }}",
+						"ua:type":"mappedArray",
+						"source":"{{ _oGx0W.outputs.items }}"
+					},
+					"classifications":{
+						"items":"{{ _oGx0W.outputs.items[0] }}",
+						"ua:type":"mappedArray",
+						"source":"{{ _oGx0W.outputs.items }}"
+					},
+					"glossary":{
+						"items":"{{ _oGx0W.outputs.items[0] }}",
+						"ua:type":"mappedArray",
+						"source":"{{ _oGx0W.outputs.items }}"
+					},
+					"dataCatalogId":"{{ tbEvJ.outputs.dataCatalogId }}"
+				},
+				"upsert":true
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update record by id",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"oracledb",
+				"resourceVersion":273,
+				"connectionId":"67b719f839a013481fb61083",
+				"resourceName":"oracledb_list_tables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"BG9j6@hw4d8-1@l",
+			"id":"f8V18",
+			"index":14,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Oracle DB",
+			"title":"List tables for a schema",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.tags.items",
+					"root.record.classification.items",
+					"root.record.glossary.items",
+					"root.record.certificate.items",
+					"root.record.description",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.name",
+					"root.record.tags.source",
+					"root.record.tags.ua:type",
+					"root.record.tags.items",
+					"root.record.classification.source",
+					"root.record.classification.ua:type",
+					"root.record.classification.items",
+					"root.record.glossary.source",
+					"root.record.glossary.ua:type",
+					"root.record.glossary.items",
+					"root.record.createdBy",
+					"root.record.dataCatalogId"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":247,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"BG9j6@hw4d8-1@l",
+			"id":"ZmsnI",
+			"index":15,
+			"inputs":{
+				"recordId":"{{ 6lDl7.outputs.object.id }}",
+				"object_type":"e_data_catalog_schema",
+				"record":{
+					"tableCount":"=LEN({{ f8V18.outputs.tables }})",
+					"sourceDetails":{
+						"sourceName":"{{ 6lDl7.outputs.object.properties.sourceDetails.sourceName }}",
+						"sourceId":"{{ 6lDl7.outputs.object.properties.sourceDetails.sourceId }}",
+						"sourceType":"{{ 6lDl7.outputs.object.properties.sourceDetails.sourceType }}",
+						"sourceAssetType":"{{ 6lDl7.outputs.object.properties.sourceDetails.sourceAssetType }}",
+						"sourceAssetId":"{{ 6lDl7.outputs.object.properties.sourceDetails.sourceAssetId }}"
+					},
+					"parentAssetDetails":{
+						"parentAssetId":"{{ 6lDl7.outputs.object.properties.parentAssetDetails.parentAssetId }}",
+						"parentAssetType":"{{ 6lDl7.outputs.object.properties.parentAssetDetails.parentAssetType }}"
+					},
+					"name":"{{ 6lDl7.outputs.object.properties.name }}",
+					"description":"{{ 6lDl7.outputs.object.properties.description }}",
+					"createdBy":"{{ 6lDl7.outputs.object.properties.createdBy }}",
+					"sharedWith":"{{ __RUN__.outputs.userId }}",
+					"owner":"{{ __RUN__.outputs.userId }}",
+					"tags":{
+						"source":"{{ 6lDl7.outputs.object.properties.tags }}",
+						"ua:type":"mappedArray",
+						"items":"{{ 6lDl7.outputs.object.properties.tags[0] }}"
+					},
+					"classification":{
+						"source":"{{ 6lDl7.outputs.object.properties.classifications }}",
+						"ua:type":"mappedArray",
+						"items":"{{ 6lDl7.outputs.object.properties.classifications[0] }}"
+					},
+					"glossary":{
+						"source":"{{ 6lDl7.outputs.object.properties.glossary }}",
+						"ua:type":"mappedArray",
+						"items":"{{ 6lDl7.outputs.object.properties.glossary[0] }}"
+					},
+					"certificate":{
+						"items":"Verified",
+						"ua:type":"mappedArray"
+					},
+					"connectionName":"{{ _Z2GlB.outputs.connectionDetails[0].name }}",
+					"dataCatalogId":"{{ 6lDl7.outputs.object.properties.dataCatalogId }}"
+				},
+				"upsert":true
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update record by id",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":78,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"BG9j6@hw4d8-1@l",
+			"id":"U9ysO",
+			"index":16,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ f8V18.outputs.tables }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each item in the list",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":43,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"U9ysO@BG9j6@hw4d8-1@l@l",
+			"id":"IuvJH",
+			"index":17,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"properties":{
+						"tableName":{
+							"type":"string",
+							"title":"Table Name"
+						},
+						"shortenedTableName":{
+							"type":"string",
+							"title":"shortenedTableName"
+						}
+					},
+					"additionalProperties":false,
+					"required":[
+						"shortenedTableName"
+					]
+				},
+				"input":{
+					"type":"object",
+					"properties":{
+						"fullTableName":{
+							"type":"string",
+							"title":"Full Table Name"
+						}
+					},
+					"additionalProperties":false,
+					"required":[]
+				},
+				"compile_static":false,
+				"code":"return [tableName: fullTableName.split(\"\\\\.\")[1], shortenedTableName: fullTableName.split(\"\\\\.\")[1].replaceAll(\"\\\\s+\", \"\")]",
+				"parameters":{
+					"fullTableName":"{{ U9ysO.outputs.item }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code By UnifyApps",
+			"title":"Execute groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"oracledb",
+				"resourceVersion":9054,
+				"connectionId":"67b719f839a013481fb61083",
+				"resourceName":"oracledb_fetch_table_metadata",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"U9ysO@BG9j6@hw4d8-1@l@l",
+			"id":"Kb2EM",
+			"index":18,
+			"inputs":{
+				"tableName":"{{ IuvJH.outputs.result.tableName }}"
+			},
+			"skip":false,
+			"subTitle":"Oracle DB",
+			"title":"Fetch table metadata",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.sourceDetails.sourceIconUrl",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.parentAssetDetails.parentAssetName",
+					"root.record.parentAssetDetails.parentAssetIconUrl",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.tags.items",
+					"root.record.classifications.items",
+					"root.record.glossary.items",
+					"root.record.parentAssetDetails.parentAssetTypeName",
+					"root.record.parentAssetDetails.parentAssetIds.items"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":247,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"U9ysO@BG9j6@hw4d8-1@l@l",
+			"id":"jZSIA",
+			"index":19,
+			"inputs":{
+				"recordId":"{{ SFH1a.outputs.connectorType }}_{{ SFH1a.outputs.connectionId }}_table_{{ IuvJH.outputs.result.tableName }}",
+				"object_type":"e_data_catalog_asset",
+				"record":{
+					"parentAssetDetails":{
+						"parentAssetIds":[
+							"{{ PrwcF.outputs.object.id }}",
+							"{{ 6lDl7.outputs.object.id }}"
+						],
+						"parentAssetType":"{{ 6lDl7.outputs.object.properties.assetType }}",
+						"parentAssetId":"{{ 6lDl7.outputs.object.id }}",
+						"parentAssetName":"{{ 6lDl7.outputs.object.properties.name }}",
+						"parentAssetIconUrl":"{{ 6lDl7.outputs.object.properties.assetIconUrl }}",
+						"parentAssetTypeName":"Schema"
+					},
+					"name":"{{ IuvJH.outputs.result.tableName }}",
+					"assetType":"e_data_catalog_table",
+					"sourceDetails":{
+						"sourceType":"{{ SFH1a.outputs.connectorType }}",
+						"sourceName":"{{ SFH1a.outputs.connectorType }}",
+						"sourceId":"{{ SFH1a.outputs.connectionId }}",
+						"sourceAssetType":"Table",
+						"sourceAssetId":"{{ SFH1a.outputs.connectionId }}",
+						"sourceIconUrl":"{{ _Db1gx.outputs.properties.logoLink }}"
+					},
+					"owners":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"sharedWith":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"tags":{
+						"ua:type":"mappedArray",
+						"source":"{{ _oGx0W.outputs.items }}",
+						"items":"{{ _oGx0W.outputs.items[0] }}"
+					},
+					"certificate":"{{ 6lDl7.outputs.object.properties.certificate }}",
+					"createdBy":"{{ __RUN__.outputs.userId }}",
+					"editedBy":"{{ __RUN__.outputs.userId }}",
+					"assetIconUrl":"{{ 6lDl7.outputs.object.properties.assetIconUrl }}",
+					"dataCatalogId":"{{ tbEvJ.outputs.dataCatalogId }}"
+				},
+				"upsert":true
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update record by id",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.tags.items",
+					"root.record.classifications.items",
+					"root.record.glossary.items",
+					"root.record.certificateNew.items"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":247,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"U9ysO@BG9j6@hw4d8-1@l@l",
+			"id":"_RxaHn",
+			"index":20,
+			"inputs":{
+				"recordId":"{{ jZSIA.outputs.object.id }}",
+				"object_type":"e_data_catalog_table",
+				"record":{
+					"sourceDetails":{
+						"sourceType":"{{ jZSIA.outputs.object.properties.sourceDetails.sourceType }}",
+						"sourceName":"{{ jZSIA.outputs.object.properties.sourceDetails.sourceName }}",
+						"sourceId":"{{ jZSIA.outputs.object.properties.sourceDetails.sourceId }}",
+						"sourceAssetType":"{{ jZSIA.outputs.object.properties.sourceDetails.sourceAssetType }}",
+						"sourceAssetId":"{{ jZSIA.outputs.object.properties.sourceDetails.sourceAssetId }}"
+					},
+					"parentAssetDetails":{
+						"parentAssetType":"{{ jZSIA.outputs.object.properties.parentAssetDetails.parentAssetType }}",
+						"parentAssetId":"{{ jZSIA.outputs.object.properties.parentAssetDetails.parentAssetId }}"
+					},
+					"recordCount":"{{ Kb2EM.outputs.rowCount }}",
+					"fieldCount":"{{ Kb2EM.outputs.columnCount }}",
+					"certificate":"{{ jZSIA.outputs.object.properties.certificate }}",
+					"name":"{{ jZSIA.outputs.object.properties.name }}",
+					"description":"{{ jZSIA.outputs.object.properties.description }}",
+					"assetType":"{{ jZSIA.outputs.object.properties.assetType }}",
+					"tags":{
+						"source":"{{ _oGx0W.outputs.items }}",
+						"ua:type":"mappedArray",
+						"items":"{{ _oGx0W.outputs.items[0] }}"
+					},
+					"owners":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"sharedWith":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"editedBy":"{{ __RUN__.outputs.userId }}",
+					"createdBy":"{{ __RUN__.outputs.userId }}",
+					"certificateNew":{
+						"items":"Verified",
+						"ua:type":"mappedArray"
+					},
+					"dataCatalogId":"{{ tbEvJ.outputs.dataCatalogId }}"
+				},
+				"upsert":true
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update record by id",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"oracledb",
+				"resourceVersion":8815,
+				"connectionId":"67b719f839a013481fb61083",
+				"resourceName":"oracledb_fetch_columns_information_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"U9ysO@BG9j6@hw4d8-1@l@l",
+			"id":"HBk74",
+			"index":21,
+			"inputs":{
+				"tableName":"{{ IuvJH.outputs.result.tableName }}"
+			},
+			"skip":false,
+			"subTitle":"Oracle DB",
+			"title":"Fetch columns information",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":78,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"U9ysO@BG9j6@hw4d8-1@l@l",
+			"id":"aZjXg",
+			"index":22,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ HBk74.outputs.columns }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each item in the list",
+			"type":"LOOP"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.sourceDetails.sourceIconUrl",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.parentAssetDetails.parentAssetName",
+					"root.record.parentAssetDetails.parentAssetIconUrl",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.tags.items",
+					"root.record.classifications.items",
+					"root.record.glossary.items",
+					"root.record.parentAssetDetails.parentAssetTypeName",
+					"root.record.parentAssetDetails.parentAssetIds.items"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":247,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"aZjXg@U9ysO@BG9j6@hw4d8-1@l@l@l",
+			"id":"6f8pW",
+			"index":23,
+			"inputs":{
+				"recordId":"{{ SFH1a.outputs.connectorType }}_{{ SFH1a.outputs.connectionId }}_field_{{ IuvJH.outputs.result.tableName }}_{{ aZjXg.outputs.item.columnName }}",
+				"object_type":"e_data_catalog_asset",
+				"record":{
+					"parentAssetDetails":{
+						"parentAssetIds":[
+							"{{ PrwcF.outputs.object.id }}",
+							"{{ 6lDl7.outputs.object.id }}",
+							"{{ jZSIA.outputs.object.id }}"
+						],
+						"parentAssetType":"e_data_catalog_table",
+						"parentAssetIconUrl":"{{ jZSIA.outputs.object.properties.parentAssetDetails.parentAssetIconUrl }}",
+						"parentAssetId":"{{ jZSIA.outputs.object.id }}",
+						"parentAssetName":"{{ jZSIA.outputs.object.properties.name }}",
+						"parentAssetTypeName":"Object"
+					},
+					"assetType":"e_data_catalog_field",
+					"sourceDetails":{
+						"sourceType":"{{ SFH1a.outputs.connectorType }}",
+						"sourceName":"{{ SFH1a.outputs.connectorType }}",
+						"sourceId":"{{ SFH1a.outputs.connectionId }}",
+						"sourceAssetType":"Field",
+						"sourceIconUrl":"{{ jZSIA.outputs.object.properties.sourceDetails.sourceIconUrl }}",
+						"sourceAssetId":"{{ SFH1a.outputs.connectionId }}"
+					},
+					"name":"{{ aZjXg.outputs.item.columnName }}",
+					"description":"{{ aZjXg.outputs.item.columnName }}",
+					"tags":{
+						"source":"{{ _oGx0W.outputs.items }}",
+						"ua:type":"mappedArray",
+						"items":"{{ _oGx0W.outputs.items[0] }}"
+					},
+					"owners":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"sharedWith":{
+						"items":"{{ __RUN__.outputs.userId }}",
+						"ua:type":"mappedArray"
+					},
+					"createdBy":"{{ __RUN__.outputs.userId }}",
+					"editedBy":"{{ __RUN__.outputs.userId }}",
+					"certificate":"Verified",
+					"assetIconUrl":"{{ _Db1gx.outputs.properties.logoLink }}",
+					"dataCatalogId":"{{ tbEvJ.outputs.dataCatalogId }}"
+				},
+				"upsert":true
+			},
+			"options":{
+				"businessHoursConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"cacheConfig":{
+					"enabled":false
+				},
+				"circuitBreakerConfig":{
+					"enabled":false
+				},
+				"disableLogging":false,
+				"enabledForReExecution":false,
+				"hookConfig":{
+					"enabled":false
+				},
+				"logConfig":{
+					"enabled":false
+				},
+				"rateLimitConfig":{
+					"enabled":false,
+					"waitForNextWindow":false
+				},
+				"retryConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"enabled":false
+				},
+				"stepError":"STOP",
+				"telemetryConfig":{
+					"enableTelemetry":false
+				}
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update record by id",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.tags.items",
+					"root.record.classifications.items",
+					"root.record.glossary.items",
+					"root.record.foreignKeyDetails.objectId",
+					"root.record.foreignKeyDetails.objectName",
+					"root.record.foreignKeyDetails.fieldId",
+					"root.record.foreignKeyDetails.fieldName",
+					"root.record.name",
+					"root.record.description",
+					"root.record.assetType",
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.owners.source",
+					"root.record.owners.ua:type",
+					"root.record.owners.items",
+					"root.record.sharedWith.source",
+					"root.record.sharedWith.ua:type",
+					"root.record.sharedWith.items",
+					"root.record.certificate",
+					"root.record.createdBy",
+					"root.record.editedBy",
+					"root.record.tags.source",
+					"root.record.tags.ua:type",
+					"root.record.tags.items",
+					"root.record.classifications.source",
+					"root.record.classifications.ua:type",
+					"root.record.classifications.items",
+					"root.record.glossary.source",
+					"root.record.glossary.ua:type",
+					"root.record.glossary.items",
+					"root.record.dataCatalogId"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":247,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"aZjXg@U9ysO@BG9j6@hw4d8-1@l@l@l",
+			"id":"_50mXE",
+			"index":24,
+			"inputs":{
+				"recordId":"{{ 6f8pW.outputs.object.id }}",
+				"object_type":"e_data_catalog_field",
+				"record":{
+					"sourceDetails":{
+						"sourceType":"{{ 6f8pW.outputs.object.properties.sourceDetails.sourceType }}",
+						"sourceName":"{{ 6f8pW.outputs.object.properties.sourceDetails.sourceName }}",
+						"sourceId":"{{ 6f8pW.outputs.object.properties.sourceDetails.sourceId }}",
+						"sourceAssetType":"{{ 6f8pW.outputs.object.properties.sourceDetails.sourceAssetType }}",
+						"sourceAssetId":"{{ 6f8pW.outputs.object.properties.sourceDetails.sourceAssetId }}"
+					},
+					"parentAssetDetails":{
+						"parentAssetType":"{{ 6f8pW.outputs.object.properties.parentAssetDetails.parentAssetType }}",
+						"parentAssetId":"{{ 6f8pW.outputs.object.properties.parentAssetDetails.parentAssetId }}"
+					},
+					"primaryKey":false,
+					"name":"{{ 6f8pW.outputs.object.properties.name }}",
+					"description":"{{ 6f8pW.outputs.object.properties.description }}",
+					"assetType":"{{ 6f8pW.outputs.object.properties.assetType }}",
+					"owners":{
+						"items":"{{ 6f8pW.outputs.object.properties.owners[0] }}",
+						"ua:type":"mappedArray",
+						"source":"{{ 6f8pW.outputs.object.properties.owners }}"
+					},
+					"sharedWith":{
+						"items":"{{ 6f8pW.outputs.object.properties.sharedWith[0] }}",
+						"ua:type":"mappedArray",
+						"source":"{{ 6f8pW.outputs.object.properties.sharedWith }}"
+					},
+					"certificate":"{{ 6f8pW.outputs.object.properties.certificate }}",
+					"tags":{
+						"source":"{{ 6f8pW.outputs.object.properties.tags }}",
+						"ua:type":"mappedArray",
+						"items":"{{ 6f8pW.outputs.object.properties.tags[0] }}"
+					},
+					"classifications":{
+						"source":"{{ 6f8pW.outputs.object.properties.classifications }}",
+						"ua:type":"mappedArray",
+						"items":"{{ 6f8pW.outputs.object.properties.classifications[0] }}"
+					},
+					"glossary":{
+						"source":"{{ 6f8pW.outputs.object.properties.glossary }}",
+						"ua:type":"mappedArray",
+						"items":"{{ 6f8pW.outputs.object.properties.glossary[0] }}"
+					},
+					"editedBy":"{{ 6f8pW.outputs.object.properties.editedBy }}",
+					"createdBy":"{{ 6f8pW.outputs.object.properties.createdBy }}",
+					"fieldType":"{{ aZjXg.outputs.item.dataType }}",
+					"dataType":"{{ aZjXg.outputs.item.dataType }}",
+					"columnOrder":"{{ aZjXg.outputs.item.ordinalPosition }}",
+					"isNullable":"{{ aZjXg.outputs.item.nullable }}",
+					"dataCatalogId":"{{ 6f8pW.outputs.object.properties.dataCatalogId }}"
+				},
+				"upsert":true
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update record by id",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":8,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"_3vaXA",
+			"index":25,
+			"inputs":{
+				"result":{
+					"responseCode":"200"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"hw4d8-1",
+			"id":"01R9q",
+			"index":26,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":39,
+	"runtimeConnectionAppNames":[
+		"oracledb"
+	],
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"headerValueTierMap":{}
+		}
+	},
+	"standard":false,
+	"tags":[
+		"Data Catalog"
+	],
+	"version":58
+}
