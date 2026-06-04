@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780582220285,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_RBlqa",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_v615n",
+			"type":"next"
+		}
+	],
+	"id":"6a21874c33b0405a76fb4728",
+	"lastModifiedBy":39,
+	"lcName":"app node with incomplete action  - 21780582166866",
+	"modifiedTime":1780582220285,
+	"name":"App node with incomplete action  - 21780582166866",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_RBlqa-1",
+			"id":"_RBlqa",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_RBlqa-1",
+			"id":"_v615n",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
