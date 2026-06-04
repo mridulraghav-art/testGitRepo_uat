@@ -6,47 +6,44 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_pctgS",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_hTFEa",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a2117aa207eea5ceaf84a82",
 	"lastModifiedBy":39,
 	"lcName":"restore_version_which_has_version_tag_assigned_to_it_217805534435600",
-	"modifiedTime":1780553647684,
+	"modifiedTime":1780553651159,
 	"name":"Restore_version_which_has_version_tag_assigned_to_it_217805534435600",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pctgS-1",
-			"id":"_pctgS",
-			"index":0,
+			"id":"n_cg4ge",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_pctgS-1",
-			"id":"_hTFEa",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +58,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
