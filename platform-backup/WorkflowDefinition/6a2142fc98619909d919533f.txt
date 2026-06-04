@@ -7,46 +7,86 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_uFte7",
+			"fromNodeId":"n_yO3a9",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_dV5sN",
+			"toNodeId":"n_Fljp5",
 			"type":"next"
 		}
 	],
 	"id":"6a2142fc98619909d919533f",
 	"lastModifiedBy":39,
 	"lcName":"callautomationbatch_217805647082800",
-	"modifiedTime":1780564735849,
+	"modifiedTime":1780564742861,
 	"name":"callAutomationBatch_217805647082800",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_uFte7-1",
-			"id":"_uFte7",
-			"index":0,
+			"id":"n_yO3a9",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2400,
+				"resourceName":"callables_call_automation_batch",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_uFte7-1",
-			"id":"_dV5sN",
-			"index":0,
+			"id":"n_Fljp5",
+			"index":2,
+			"inputs":{
+				"automationId":"6a2142e9207eea5ceafac755",
+				"runtimeConnections":{},
+				"synchronous":true,
+				"triggerWorkflowWithRuntimeType":"DEFAULT",
+				"distributeWorkflowLoad":false,
+				"parametersList":[
+					{
+						"input_String":"Unifyapps0"
+					},
+					{
+						"input_String":"Unifyapps1"
+					},
+					{
+						"input_String":"Unifyapps2"
+					}
+				],
+				"version":"-1"
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +101,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
