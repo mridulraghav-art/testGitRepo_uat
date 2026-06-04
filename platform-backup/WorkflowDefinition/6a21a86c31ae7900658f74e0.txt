@@ -7,46 +7,111 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_GXgks",
+			"fromNodeId":"n_Luryq",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_kQPA6",
+			"toNodeId":"n_AEtC1",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_AEtC1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_QPp0B",
 			"type":"next"
 		}
 	],
 	"id":"6a21a86c31ae7900658f74e0",
 	"lastModifiedBy":39,
 	"lcName":"incorrect_cancelschedule217805906952170",
-	"modifiedTime":1780590704666,
+	"modifiedTime":1780590717798,
 	"name":"incorrect_cancelschedule217805906952170",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_GXgks-1",
-			"id":"_GXgks",
-			"index":0,
+			"id":"n_Luryq",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2405,
+				"resourceName":"callables_schedule_a_callable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_GXgks-1",
-			"id":"_kQPA6",
-			"index":0,
+			"id":"n_AEtC1",
+			"index":2,
+			"inputs":{
+				"automation_id":"693aaee28448744626fa5bfb",
+				"schedule_method":{
+					"schedule_type":"ONE_TIME",
+					"setup_config":{
+						"start_time":"2026-06-04T16:31:50.031Z",
+						"timezone":"Asia/Calcutta",
+						"unit":"MINUTES",
+						"expression":"0 0 * * *"
+					}
+				},
+				"runtimeConnections":{},
+				"cancel_existing":true,
+				"version":"-1",
+				"schedule_name":"Schedule Callable Automation"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Schedule callable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2404,
+				"resourceName":"callables_cancel_scheduled_callable",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_GXgks-1",
+			"id":"n_QPp0B",
+			"index":3,
+			"inputs":{
+				"schedule_name":"randomtext"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Cancel scheduled callable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +126,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
