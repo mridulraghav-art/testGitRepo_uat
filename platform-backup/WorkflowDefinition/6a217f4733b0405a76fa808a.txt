@@ -7,46 +7,123 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_UDSyi",
+			"fromNodeId":"n_QxlIN",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_ChWXP",
+			"toNodeId":"n_6bxDD",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_6bxDD",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_qibrY",
 			"type":"next"
 		}
 	],
 	"id":"6a217f4733b0405a76fa808a",
 	"lastModifiedBy":39,
 	"lcName":"delaynodedelayuntil_217805801183250",
-	"modifiedTime":1780580172482,
+	"modifiedTime":1780580189994,
 	"name":"delayNodeDelayUntil_217805801183250",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2401,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UDSyi-1",
-			"id":"_UDSyi",
-			"index":0,
+			"id":"n_QxlIN",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output_String"
+					],
+					"properties":{
+						"output_String":{
+							"type":"string",
+							"title":"output_String"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input_String"
+					],
+					"properties":{
+						"input_String":{
+							"type":"string",
+							"title":"input_String"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"delay",
+				"resourceVersion":60,
+				"resourceName":"delay_until",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_UDSyi-1",
-			"id":"_ChWXP",
-			"index":0,
+			"id":"n_6bxDD",
+			"index":2,
+			"inputs":{
+				"until":"2026-06-04T13:36:00.000Z"
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Delay",
+			"title":"Schedule delay until",
+			"type":"DELAY"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2402,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_UDSyi-1",
+			"id":"n_qibrY",
+			"index":3,
+			"inputs":{
+				"result":{
+					"output_String":"{{ n_QxlIN.outputs.input_String }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +138,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
