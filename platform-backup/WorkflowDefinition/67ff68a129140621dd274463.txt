@@ -218,7 +218,7 @@
 	"id":"67ff68a129140621dd274463",
 	"lastModifiedBy":39,
 	"lcName":"data catalog - oracle (final)",
-	"modifiedTime":1780568047271,
+	"modifiedTime":1780568067858,
 	"name":"Data Catalog - Oracle (Final)",
 	"nodes":[
 		{
@@ -734,14 +734,18 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"hw4d8-1",
 			"id":"PrwcF",
 			"index":8,
 			"inputs":{
 				"recordId":"{{ SFH1a.outputs.connectorType }}_{{ SFH1a.outputs.connectionId }}_database",
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
 				"object_type":"e_data_catalog_asset",
+				"retryOnFailure":true,
+				"skipIfBlank":false,
 				"record":{
 					"name":"{{ _Z2GlB.outputs.connectionDetails[0].name }}",
 					"description":"Centralized HR solution for managing employee information and internal financial processes.",
@@ -822,14 +826,18 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"hw4d8-1",
 			"id":"8HgdV",
 			"index":9,
 			"inputs":{
 				"recordId":"{{ PrwcF.outputs.object.id }}",
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
 				"object_type":"e_data_catalog_database",
+				"retryOnFailure":true,
+				"skipIfBlank":false,
 				"record":{
 					"sourceDetails":{
 						"sourceType":"{{ PrwcF.outputs.object.properties.sourceDetails.sourceType }}",
@@ -1779,5 +1787,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":62
+	"version":63
 }
