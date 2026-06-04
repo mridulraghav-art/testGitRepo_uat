@@ -6,47 +6,55 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_3wCd3",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_ygc4X",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a216c459659240f28144426",
 	"lastModifiedBy":39,
 	"lcName":"steps&fields_217805749973440",
-	"modifiedTime":1780575306745,
+	"modifiedTime":1780575311795,
 	"name":"Steps&Fields_217805749973440",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_3wCd3-1",
-			"id":"_3wCd3",
-			"index":0,
+			"id":"n_jPqod",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"queryParams":{
+						"type":"object",
+						"additionalProperties":false,
+						"required":[],
+						"properties":{
+							"nodename_value_217805749973440":{
+								"type":"string",
+								"title":"nodename_value_217805749973440"
+							}
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"node_step_217805749973440",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_3wCd3-1",
-			"id":"_ygc4X",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +69,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
