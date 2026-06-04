@@ -7,46 +7,86 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_d4ppb",
+			"fromNodeId":"n_769Oh",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_uLyHO",
+			"toNodeId":"n_0vHdh",
 			"type":"next"
 		}
 	],
 	"id":"6a21811e3ad0e26b1f74d6d4",
 	"lastModifiedBy":39,
 	"lcName":"test-advanced-step_values_217805801302540",
-	"modifiedTime":1780580644985,
+	"modifiedTime":1780580666803,
 	"name":"test-advanced-STEP_VALUES_217805801302540",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_d4ppb-1",
-			"id":"_d4ppb",
-			"index":0,
+			"id":"n_769Oh",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2404,
+				"resourceName":"callables_schedule_a_callable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_d4ppb-1",
-			"id":"_uLyHO",
-			"index":0,
+			"id":"n_0vHdh",
+			"index":2,
+			"inputs":{
+				"automation_id":"6a2180f13ad0e26b1f74d5d1",
+				"schedule_method":{
+					"schedule_type":"CRON_EXPRESSION",
+					"setup_config":{
+						"timezone":"Asia/Kolkata",
+						"expression":"11/4 1/13 1/21 1/2 *",
+						"start_time":"2026-06-04T13:44:20.721Z",
+						"unit":"MINUTES"
+					}
+				},
+				"runtimeConnections":{},
+				"cancel_existing":true,
+				"version":"-1",
+				"schedule_name":"Advanced Schedule Callable Automation - STEP_VALUES",
+				"parameters":{
+					"input_String":"Hello Unify"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Schedule callable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +101,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
