@@ -7,52 +7,145 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_oKewl",
+			"fromNodeId":"n_ZKqEv",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_GdnSk",
+			"toNodeId":"n_IxglH",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IxglH",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_vfOkz",
 			"type":"next"
 		}
 	],
 	"id":"6a216be4eeee3a1afe148670",
 	"lastModifiedBy":39,
 	"lcName":"graphqlhttptorestendpoint_217805749973440",
-	"modifiedTime":1780575204092,
+	"modifiedTime":1780575231834,
 	"name":"graphQLHTTPToRESTEndpoint_217805749973440",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2399,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oKewl-1",
-			"id":"_oKewl",
-			"index":0,
+			"id":"n_ZKqEv",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"success",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						},
+						"htmlBody":{
+							"type":"string"
+						},
+						"body":{
+							"type":"object",
+							"properties":{
+								"response":{
+									"type":"string",
+									"title":"response"
+								}
+							},
+							"additionalProperties":false,
+							"required":[
+								"response"
+							]
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":2070,
+				"resourceName":"custom_http_endpoint_execute_graphql",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oKewl-1",
-			"id":"_GdnSk",
-			"index":0,
+			"id":"n_IxglH",
+			"index":2,
+			"inputs":{
+				"path":"/graphql",
+				"baseUrl":"https://graphql.postman-echo.com",
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"POST",
+				"authType":"CUSTOM",
+				"connectionType":"DIRECT",
+				"sslVerify":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"Execute GraphQL request",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2400,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_oKewl-1",
+			"id":"n_vfOkz",
+			"index":3,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_success",
+				"body":{
+					"response":"{{ n_IxglH.outputs.result }}"
+				},
+				"status":200
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +153,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":2
 }
