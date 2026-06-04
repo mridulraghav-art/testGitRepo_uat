@@ -1,52 +1,88 @@
 {
 	"appsUsed":[
-		
+		"aircall",
+		"amazon_kms"
 	],
 	"createdTime":1780575330038,
 	"deleted":false,
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_pUMqC",
+			"fromNodeId":"n_RMBgG",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_fRl7b",
+			"toNodeId":"n_fKlqM",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_fKlqM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_3jy6k",
 			"type":"next"
 		}
 	],
 	"id":"6a216c62207eea5ceafef341",
 	"lastModifiedBy":39,
 	"lcName":"cutandpastenode_217805749973440",
-	"modifiedTime":1780575335761,
+	"modifiedTime":1780575350412,
 	"name":"cutAndPasteNode_217805749973440",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pUMqC-1",
-			"id":"_pUMqC",
-			"index":0,
+			"id":"n_RMBgG",
+			"index":1,
 			"skip":false,
+			"subTitle":"Callable",
 			"title":"Select a trigger event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"amazon_kms",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pUMqC-1",
-			"id":"_fRl7b",
-			"index":0,
+			"id":"n_fKlqM",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Amazon KMS",
+			"title":"Select an action",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"aircall",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_pUMqC-1",
+			"id":"n_3jy6k",
+			"index":3,
+			"skip":false,
+			"subTitle":"Aircall",
+			"title":"Select an action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +97,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
