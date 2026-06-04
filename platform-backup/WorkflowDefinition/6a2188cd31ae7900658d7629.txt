@@ -1,52 +1,131 @@
 {
 	"appsUsed":[
-		
+		"mailchimp",
+		"shopify"
 	],
 	"createdTime":1780582605454,
 	"deleted":false,
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_vPNMf",
+			"fromNodeId":"n_wl60F",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_b5e0n",
+			"toNodeId":"n_VEQkF",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_VEQkF",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_8A9pY",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_8A9pY",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_8n9NX",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_8A9pY",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_u89wc",
 			"type":"next"
 		}
 	],
 	"id":"6a2188cd31ae7900658d7629",
 	"lastModifiedBy":39,
 	"lcName":"browser close validation 21780582178372",
-	"modifiedTime":1780582611697,
+	"modifiedTime":1780582648698,
 	"name":"browser close validation 21780582178372",
 	"nodes":[
 		{
+			"context":{
+				"appName":"shopify",
+				"resourceVersion":0,
+				"resourceName":"shopify_on_product_variant_create"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_vPNMf-1",
-			"id":"_vPNMf",
-			"index":0,
+			"id":"n_wl60F",
+			"index":1,
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Shopify",
+			"title":"Product variant created (Shopify)",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"mailchimp",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_vPNMf-1",
-			"id":"_b5e0n",
-			"index":0,
+			"id":"n_VEQkF",
+			"index":2,
+			"skip":false,
+			"subTitle":"Mailchimp",
+			"title":"Select an action",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceVersion":66,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_vPNMf-1",
+			"id":"n_8A9pY",
+			"index":3,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_8A9pY@_vPNMf-1@y",
+			"id":"n_8n9NX",
+			"index":4,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_8A9pY@_vPNMf-1@n",
+			"id":"n_u89wc",
+			"index":5,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +140,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
