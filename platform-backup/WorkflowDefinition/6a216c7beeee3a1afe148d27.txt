@@ -22,6 +22,13 @@
 		},
 		{
 			"fromNodeId":"n_3wxO4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_4sYhA",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_4sYhA",
 			"name":"scope-loopback",
 			"priority":0,
 			"skip":false,
@@ -32,7 +39,7 @@
 	"id":"6a216c7beeee3a1afe148d27",
 	"lastModifiedBy":39,
 	"lcName":"defaultscopenodecutandpaste217805749973440",
-	"modifiedTime":1780575394870,
+	"modifiedTime":1780575399876,
 	"name":"defaultScopeNodeCutAndPaste217805749973440",
 	"nodes":[
 		{
@@ -42,7 +49,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_9DWfF-1",
 			"id":"n_4W9Y8",
@@ -68,7 +75,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_9DWfF-1",
 			"id":"n_mrrSw",
@@ -145,6 +152,25 @@
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1651,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION",
+				"scopeNodeId":"n_mrrSw"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_mrrSw@_9DWfF-1@s",
+			"id":"n_4sYhA",
+			"index":4,
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -165,5 +191,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
