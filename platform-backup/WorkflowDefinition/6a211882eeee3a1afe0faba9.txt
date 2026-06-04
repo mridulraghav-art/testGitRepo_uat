@@ -7,52 +7,93 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_dk30b",
+			"fromNodeId":"n_HKToG",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_DXQXN",
+			"toNodeId":"n_bvpLH",
 			"type":"next"
 		}
 	],
 	"id":"6a211882eeee3a1afe0faba9",
 	"lastModifiedBy":39,
 	"lcName":"test-advanced-range_of_values_217805534257460",
-	"modifiedTime":1780553858538,
+	"modifiedTime":1780553883288,
 	"name":"test-advanced-RANGE_OF_VALUES_217805534257460",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_dk30b-1",
-			"id":"_dk30b",
-			"index":0,
+			"id":"n_HKToG",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2395,
+				"resourceName":"callables_schedule_a_callable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_dk30b-1",
-			"id":"_DXQXN",
-			"index":0,
+			"id":"n_bvpLH",
+			"index":2,
+			"inputs":{
+				"automation_id":"6a211865c7310f6067ce04eb",
+				"schedule_method":{
+					"schedule_type":"CRON_EXPRESSION",
+					"setup_config":{
+						"timezone":"Asia/Kolkata",
+						"expression":"1-4 4-5 6-7 1-8 *",
+						"start_time":"2026-06-04T06:17:57.703Z",
+						"unit":"MINUTES"
+					}
+				},
+				"runtimeConnections":{},
+				"cancel_existing":true,
+				"version":"-1",
+				"schedule_name":"Advanced Schedule Callable Automation - RANGE_OF_VALUES",
+				"parameters":{
+					"input_String":"Hello Unify"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Schedule callable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +101,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":2
 }
