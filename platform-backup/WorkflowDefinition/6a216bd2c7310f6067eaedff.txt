@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780575186149,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_FvL9D",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_vkzZA",
+			"type":"next"
+		}
+	],
+	"id":"6a216bd2c7310f6067eaedff",
+	"lastModifiedBy":39,
+	"lcName":"callable_exportwsdlfile_217805749896690",
+	"modifiedTime":1780575186149,
+	"name":"Callable_ExportWSDLfile_217805749896690",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_FvL9D-1",
+			"id":"_FvL9D",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_FvL9D-1",
+			"id":"_vkzZA",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
