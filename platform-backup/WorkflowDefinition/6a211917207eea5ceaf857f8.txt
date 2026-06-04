@@ -7,46 +7,102 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_AT7aI",
+			"fromNodeId":"n_Y4WtN",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_KSPPG",
+			"toNodeId":"n_5uBSc",
 			"type":"next"
 		}
 	],
 	"id":"6a211917207eea5ceaf857f8",
 	"lastModifiedBy":39,
 	"lcName":"test_mapvalue_mapunit217805534257460",
-	"modifiedTime":1780554012111,
+	"modifiedTime":1780554032688,
 	"name":"test_mapvalue_mapunit217805534257460",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_AT7aI-1",
-			"id":"_AT7aI",
-			"index":0,
+			"id":"n_Y4WtN",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input_integer":{
+								"type":"array",
+								"items":{
+									"type":"integer"
+								},
+								"title":"input_integer"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input_integer"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2395,
+				"resourceName":"callables_schedule_a_callable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_AT7aI-1",
-			"id":"_KSPPG",
-			"index":0,
+			"id":"n_5uBSc",
+			"index":2,
+			"inputs":{
+				"automation_id":"6a2118fcc7310f6067ce4d56",
+				"schedule_method":{
+					"schedule_type":"RECURRING",
+					"setup_config":{
+						"start_time":"2026-06-04T06:20:25.788Z",
+						"timezone":"UTC",
+						"interval":1,
+						"unit":"{{ n_Y4WtN.outputs.body.input_integer }}",
+						"daysOfWeek":"{{ n_Y4WtN.outputs.body.input_integer }}",
+						"daysOfMonth":"{{ n_Y4WtN.outputs.body.input_integer }}",
+						"expression":"0 0 * * *"
+					}
+				},
+				"runtimeConnections":{},
+				"cancel_existing":true,
+				"version":"-1",
+				"schedule_name":"Schedule_test_example"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Schedule callable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +117,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
