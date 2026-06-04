@@ -4,6 +4,15 @@
 	],
 	"createdTime":1780564713334,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780564725466,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a2142f59659240f28019659",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"description":"description",
 	"edges":[
 		{
@@ -17,7 +26,7 @@
 	"id":"6a2142e9207eea5ceafac755",
 	"lastModifiedBy":39,
 	"lcName":"child_workflow_217805647082800",
-	"modifiedTime":1780564724088,
+	"modifiedTime":1780564727752,
 	"name":"child_workflow_217805647082800",
 	"nodes":[
 		{
@@ -27,7 +36,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_90yW5-1",
 			"id":"n_1dHW6",
@@ -76,7 +85,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_90yW5-1",
 			"id":"n_2aPK9",
@@ -97,9 +106,9 @@
 		
 	],
 	"settings":{
-		"enableNodeLevelLogging":false,
-		"enableRunLogging":false,
-		"enableVariableLogging":false,
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
 		"route":{
 			"default":false,
 			"headerValueTierMap":{},
@@ -110,5 +119,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
