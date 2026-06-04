@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780593750167,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_0Xd0E",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_35EJD",
+			"type":"next"
+		}
+	],
+	"id":"6a21b45631ae79006590c780",
+	"lastModifiedBy":39,
+	"lcName":"graphqlhttptorestendpoint_217805935815560",
+	"modifiedTime":1780593750167,
+	"name":"graphQLHTTPToRESTEndpoint_217805935815560",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_0Xd0E-1",
+			"id":"_0Xd0E",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_0Xd0E-1",
+			"id":"_35EJD",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
