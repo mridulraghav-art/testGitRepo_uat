@@ -1,58 +1,91 @@
 {
 	"appsUsed":[
-		
+		"slack"
 	],
 	"createdTime":1780593633860,
 	"deleted":false,
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_OWe70",
+			"fromNodeId":"n_ZTnc7",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_7XeA7",
+			"toNodeId":"n_p52p0",
 			"type":"next"
 		}
 	],
 	"id":"6a21b3e13ad0e26b1f7604f0",
 	"lastModifiedBy":39,
 	"lcName":"app node with incomplete action  - 21780593581556",
-	"modifiedTime":1780593633860,
+	"modifiedTime":1780593652914,
 	"name":"App node with incomplete action  - 21780593581556",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_OWe70-1",
-			"id":"_OWe70",
-			"index":0,
+			"id":"n_ZTnc7",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"slack",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_OWe70-1",
-			"id":"_7XeA7",
-			"index":0,
+			"id":"n_p52p0",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Slack",
+			"title":"Select an action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
-		"enableNodeLevelLogging":true,
-		"enableRunLogging":true,
-		"enableVariableLogging":true,
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -60,5 +93,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":0
+	"version":2
 }
