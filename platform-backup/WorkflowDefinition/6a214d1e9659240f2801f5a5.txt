@@ -7,46 +7,137 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_4dlbp",
+			"fromNodeId":"n_HBMa6",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_5mMhZ",
+			"toNodeId":"n_bE60H",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_bE60H",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_halZJ",
 			"type":"next"
 		}
 	],
 	"id":"6a214d1e9659240f2801f5a5",
 	"lastModifiedBy":39,
 	"lcName":"soaphttptosoapendpoint_217805671602780",
-	"modifiedTime":1780567331738,
+	"modifiedTime":1780567363043,
 	"name":"soapHTTPToSOAPEndpoint_217805671602780",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2398,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_4dlbp-1",
-			"id":"_4dlbp",
-			"index":0,
+			"id":"n_HBMa6",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"SOAP",
+				"response":[
+					{
+						"name":"success",
+						"status":200,
+						"body":{
+							"type":"object",
+							"additionalProperties":false,
+							"required":[
+								"response"
+							],
+							"properties":{
+								"response":{
+									"type":"string",
+									"title":"response"
+								}
+							}
+						}
+					}
+				],
+				"soapVersion":"v1.2",
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":2070,
+				"resourceName":"custom_http_endpoint_execute_soap",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_4dlbp-1",
-			"id":"_5mMhZ",
-			"index":0,
+			"id":"n_bE60H",
+			"index":2,
+			"inputs":{
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"POST",
+				"version":"v1.2",
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"path":"/webservicesserver/numberconversion.wso",
+				"baseUrl":"https://www.dataaccess.com",
+				"responseContentType":"application/soap+xml",
+				"authType":"CUSTOM",
+				"requestContentType":"application/soap+xml",
+				"isNestedHeaders":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"Execute SOAP request",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2399,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_4dlbp-1",
+			"id":"n_halZJ",
+			"index":3,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_success",
+				"body":{
+					"response":"{{ n_bE60H.outputs.result }}"
+				},
+				"status":200
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +152,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
