@@ -1,33 +1,38 @@
 {
 	"appsUsed":[
-		
+		"mailchimp",
+		"shopify"
 	],
 	"createdTime":1780582537892,
 	"deleted":false,
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_Hlfu2",
+			"fromNodeId":"n_QqHHb",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_baNMw",
+			"toNodeId":"n_vjykr",
 			"type":"next"
 		}
 	],
 	"id":"6a2188893ad0e26b1f750faf",
 	"lastModifiedBy":39,
 	"lcName":"save & exit 21780582178372",
-	"modifiedTime":1780582544618,
+	"modifiedTime":1780582557326,
 	"name":"Save & Exit 21780582178372",
 	"nodes":[
 		{
+			"context":{
+				"appName":"shopify"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Hlfu2-1",
-			"id":"_Hlfu2",
-			"index":0,
+			"id":"n_QqHHb",
+			"index":1,
 			"skip":false,
+			"subTitle":"Shopify",
 			"title":"Select a trigger event",
 			"trigger":{
 				"type":"EVENT"
@@ -35,18 +40,26 @@
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"mailchimp",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Hlfu2-1",
-			"id":"_baNMw",
-			"index":0,
+			"id":"n_vjykr",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Mailchimp",
+			"title":"Select an action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +74,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
