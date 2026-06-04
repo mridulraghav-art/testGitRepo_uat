@@ -1,52 +1,42 @@
 {
 	"appsUsed":[
-		
+		"shopify"
 	],
 	"createdTime":1780553688660,
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_huavT",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_25vnw",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a2117d8207eea5ceaf84b49",
 	"lastModifiedBy":39,
 	"lcName":"deploy button with error  21780553443560",
-	"modifiedTime":1780553693849,
+	"modifiedTime":1780553697258,
 	"name":"deploy button with error  21780553443560",
 	"nodes":[
 		{
+			"context":{
+				"appName":"shopify"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_huavT-1",
-			"id":"_huavT",
-			"index":0,
+			"id":"n_y0T4d",
+			"index":1,
 			"skip":false,
+			"subTitle":"Shopify",
 			"title":"Select a trigger event",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_huavT-1",
-			"id":"_25vnw",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +51,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
