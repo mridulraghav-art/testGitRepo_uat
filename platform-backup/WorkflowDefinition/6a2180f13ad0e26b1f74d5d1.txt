@@ -7,46 +7,95 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_iYA4J",
+			"fromNodeId":"n_l0TfT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_DBltA",
+			"toNodeId":"n_Naznw",
 			"type":"next"
 		}
 	],
 	"id":"6a2180f13ad0e26b1f74d5d1",
 	"lastModifiedBy":39,
 	"lcName":"childautomation-step_values_217805801302540",
-	"modifiedTime":1780580599125,
+	"modifiedTime":1780580629863,
 	"name":"childAutomation-STEP_VALUES_217805801302540",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2402,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_iYA4J-1",
-			"id":"_iYA4J",
-			"index":0,
+			"id":"n_l0TfT",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output_String"
+					],
+					"properties":{
+						"output_String":{
+							"type":"string",
+							"title":"output_String"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input_String"
+					],
+					"properties":{
+						"input_String":{
+							"type":"string",
+							"title":"input_String"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2403,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_iYA4J-1",
-			"id":"_DBltA",
-			"index":0,
+			"id":"n_Naznw",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output_String":"{{ n_l0TfT.outputs.input_String }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +110,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
