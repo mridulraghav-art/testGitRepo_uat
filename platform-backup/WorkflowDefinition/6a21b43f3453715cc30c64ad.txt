@@ -7,46 +7,113 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_RoExR",
+			"fromNodeId":"n_MXLEe",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_JIUZS",
+			"toNodeId":"n_BDbms",
 			"type":"next"
 		}
 	],
 	"id":"6a21b43f3453715cc30c64ad",
 	"lastModifiedBy":39,
 	"lcName":"setcookies217805935815560",
-	"modifiedTime":1780593733180,
+	"modifiedTime":1780593757568,
 	"name":"setCookies217805935815560",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2404,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_RoExR-1",
-			"id":"_RoExR",
-			"index":0,
+			"id":"n_MXLEe",
+			"index":1,
+			"inputs":{
+				"request":{
+					"body":{
+						"type":"object",
+						"additionalProperties":false,
+						"required":[
+							"input_string"
+						],
+						"properties":{
+							"input_string":{
+								"type":"string",
+								"title":"input_string"
+							}
+						}
+					},
+					"contentType":"application/json"
+				},
+				"endpointType":"SOAP",
+				"response":[
+					{
+						"name":"success",
+						"status":200,
+						"body":{
+							"type":"object",
+							"additionalProperties":false,
+							"required":[
+								"output_string"
+							],
+							"properties":{
+								"output_string":{
+									"type":"string",
+									"title":"output_string"
+								}
+							}
+						}
+					}
+				],
+				"soapVersion":"v1.2",
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2405,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_RoExR-1",
-			"id":"_JIUZS",
-			"index":0,
+			"id":"n_BDbms",
+			"index":2,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_success",
+				"set_cookies":[
+					"cookie1"
+				],
+				"body":{
+					"output_string":"{{ n_MXLEe.outputs.body.input_string }}"
+				},
+				"status":200
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +128,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
