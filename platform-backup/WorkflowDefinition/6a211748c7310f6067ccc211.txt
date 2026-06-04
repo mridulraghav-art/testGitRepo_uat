@@ -7,46 +7,168 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_Ywb2a",
+			"fromNodeId":"n_DPYZ3",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_P78MC",
+			"toNodeId":"n_DJIJO",
 			"type":"next"
 		}
 	],
 	"id":"6a211748c7310f6067ccc211",
 	"lastModifiedBy":39,
 	"lcName":"verifyoutputwithcomplexschema217805534257460",
-	"modifiedTime":1780553549965,
+	"modifiedTime":1780553576702,
 	"name":"verifyOutputWithComplexSchema217805534257460",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2394,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Ywb2a-1",
-			"id":"_Ywb2a",
-			"index":0,
+			"id":"n_DPYZ3",
+			"index":1,
+			"inputs":{
+				"request":{
+					"body":{
+						"type":"object",
+						"additionalProperties":false,
+						"properties":{
+							"string_field":{
+								"type":"string",
+								"title":"string_field"
+							},
+							"number_field":{
+								"type":"integer",
+								"title":"number_field"
+							},
+							"integer_field":{
+								"type":"integer",
+								"title":"integer_field"
+							},
+							"boolean_field":{
+								"type":"boolean",
+								"title":"boolean_field"
+							},
+							"array_string_field":{
+								"type":"array",
+								"items":{
+									"type":"string"
+								},
+								"title":"array_string_field"
+							},
+							"array_number_field":{
+								"type":"array",
+								"items":{
+									"type":"integer"
+								},
+								"title":"array_number_field"
+							},
+							"array_integer_field":{
+								"type":"array",
+								"items":{
+									"type":"integer"
+								},
+								"title":"array_integer_field"
+							},
+							"array_boolean_field":{
+								"type":"array",
+								"items":{
+									"type":"boolean"
+								},
+								"title":"array_boolean_field"
+							},
+							"object_field":{
+								"type":"object",
+								"properties":{
+									"key1":{
+										"type":"string",
+										"title":"key1"
+									},
+									"key2":{
+										"type":"integer",
+										"title":"key2"
+									},
+									"key3":{
+										"type":"boolean",
+										"title":"key3"
+									}
+								},
+								"title":"object_field",
+								"additionalProperties":false
+							}
+						}
+					},
+					"contentType":"application/json"
+				},
+				"endpointType":"SOAP",
+				"response":[
+					{
+						"name":"success",
+						"status":200,
+						"body":{
+							"type":"object",
+							"additionalProperties":false,
+							"required":[
+								"output"
+							],
+							"properties":{
+								"output":{
+									"type":"object",
+									"properties":{},
+									"additionalProperties":false,
+									"title":"output"
+								}
+							}
+						}
+					}
+				],
+				"soapVersion":"v1.2",
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2395,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Ywb2a-1",
-			"id":"_P78MC",
-			"index":0,
+			"id":"n_DJIJO",
+			"index":2,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_success",
+				"body":{
+					"output":"{{ n_DPYZ3.outputs.body }}"
+				},
+				"status":200
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +183,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
