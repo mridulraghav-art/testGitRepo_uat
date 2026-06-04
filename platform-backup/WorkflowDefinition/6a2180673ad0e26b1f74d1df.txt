@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780580455544,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_pyKAJ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_KBk3J",
+			"type":"next"
+		}
+	],
+	"id":"6a2180673ad0e26b1f74d1df",
+	"lastModifiedBy":39,
+	"lcName":"save&validate call - add node - 21780580118325",
+	"modifiedTime":1780580455544,
+	"name":"save&validate call - add node - 21780580118325",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_pyKAJ-1",
+			"id":"_pyKAJ",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_pyKAJ-1",
+			"id":"_KBk3J",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
