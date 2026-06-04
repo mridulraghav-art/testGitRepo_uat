@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780593587481,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_wmGD0",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_xn8BV",
+			"type":"next"
+		}
+	],
+	"id":"6a21b3b3af7ba4594d1c602e",
+	"lastModifiedBy":39,
+	"lcName":"single action node with incomplete input  - 21780593581556",
+	"modifiedTime":1780593587481,
+	"name":"Single action node with incomplete input  - 21780593581556",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_wmGD0-1",
+			"id":"_wmGD0",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_wmGD0-1",
+			"id":"_xn8BV",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
