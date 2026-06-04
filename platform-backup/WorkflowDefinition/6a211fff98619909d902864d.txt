@@ -5,47 +5,44 @@
 	"createdTime":1780555775575,
 	"deleted":false,
 	"edges":[
-		{
-			"fromNodeId":"_N1HjQ",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_36mZ7",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a211fff98619909d902864d",
 	"lastModifiedBy":39,
 	"lcName":"fgvhb",
-	"modifiedTime":1780555775575,
+	"modifiedTime":1780555780547,
 	"name":"fgvhb",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_N1HjQ-1",
-			"id":"_N1HjQ",
-			"index":0,
+			"id":"n_pFnYG",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_N1HjQ-1",
-			"id":"_36mZ7",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +53,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
