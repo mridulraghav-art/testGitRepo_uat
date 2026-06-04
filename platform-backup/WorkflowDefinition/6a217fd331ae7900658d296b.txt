@@ -7,46 +7,146 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_GypHl",
+			"fromNodeId":"n_FOqCM",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_wKVGV",
+			"toNodeId":"n_U5UAq",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_U5UAq",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Kx1Gt",
 			"type":"next"
 		}
 	],
 	"id":"6a217fd331ae7900658d296b",
 	"lastModifiedBy":39,
 	"lcName":"cancleruninprogress_217805801183250",
-	"modifiedTime":1780580313288,
+	"modifiedTime":1780580330835,
 	"name":"cancleRunInProgress_217805801183250",
 	"nodes":[
 		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":62,
+				"resourceName":"schedule_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_GypHl-1",
-			"id":"_GypHl",
-			"index":0,
+			"id":"n_FOqCM",
+			"index":1,
+			"inputs":{
+				"cron":"EXPRESSION",
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"1",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"1"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"expression":"0-59 0-23 * * *",
+				"sequential":false,
+				"timezone":"UTC",
+				"interval":15,
+				"frequency":"MINUTES"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"delay",
+				"resourceVersion":61,
+				"resourceName":"delay_for",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_GypHl-1",
-			"id":"_wKVGV",
-			"index":0,
+			"id":"n_U5UAq",
+			"index":2,
+			"inputs":{
+				"duration":1,
+				"unit":"MINUTES"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Delay",
+			"title":"Set delay duration",
+			"type":"DELAY"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1651,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_GypHl-1",
+			"id":"n_Kx1Gt",
+			"index":3,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"Input":{
+							"type":"integer",
+							"title":"Input"
+						}
+					},
+					"required":[
+						"Input"
+					]
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"Input":{
+							"type":"integer",
+							"title":"Input"
+						}
+					},
+					"required":[
+						"Input"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +161,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
