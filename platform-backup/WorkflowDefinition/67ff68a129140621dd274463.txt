@@ -218,7 +218,7 @@
 	"id":"67ff68a129140621dd274463",
 	"lastModifiedBy":39,
 	"lcName":"data catalog - oracle (final)",
-	"modifiedTime":1780567593629,
+	"modifiedTime":1780567962952,
 	"name":"Data Catalog - Oracle (Final)",
 	"nodes":[
 		{
@@ -649,7 +649,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"hw4d8-1",
 			"id":"_Db1gx",
@@ -661,7 +661,7 @@
 							"property":"properties_connectorName",
 							"filter":{
 								"operator":"EQUAL",
-								"value":"oracledb"
+								"value":"{{ SFH1a.outputs.connectorType }}"
 							}
 						}
 					],
@@ -1779,5 +1779,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":58
+	"version":60
 }
