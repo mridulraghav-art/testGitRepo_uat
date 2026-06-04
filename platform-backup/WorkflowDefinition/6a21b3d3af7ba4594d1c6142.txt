@@ -4,49 +4,112 @@
 	],
 	"createdTime":1780593619672,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780593641555,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a21b3e9af7ba4594d1c61c5",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_AuNfC",
+			"fromNodeId":"n_ANATV",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_gLLAQ",
+			"toNodeId":"n_Gt6E5",
 			"type":"next"
 		}
 	],
 	"id":"6a21b3d3af7ba4594d1c6142",
 	"lastModifiedBy":39,
 	"lcName":"restoresselectedversion_217805935679350",
-	"modifiedTime":1780593625712,
+	"modifiedTime":1780593646350,
 	"name":"restoresSelectedVersion_217805935679350",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2403,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_AuNfC-1",
-			"id":"_AuNfC",
-			"index":0,
+			"id":"n_ANATV",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output_String"
+					],
+					"properties":{
+						"output_String":{
+							"type":"string",
+							"title":"output_String"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input_String",
+						"input_string2"
+					],
+					"properties":{
+						"input_String":{
+							"type":"string",
+							"title":"input_String"
+						},
+						"input_string2":{
+							"type":"string",
+							"title":"Input String 2"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2404,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_AuNfC-1",
-			"id":"_gLLAQ",
-			"index":0,
+			"id":"n_Gt6E5",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output_String":"{{ n_ANATV.outputs.input_String }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +124,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":3
 }
