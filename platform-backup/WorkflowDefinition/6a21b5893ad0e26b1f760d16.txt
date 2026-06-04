@@ -7,46 +7,86 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_meF4T",
+			"fromNodeId":"n_KmlsI",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_kTUQ5",
+			"toNodeId":"n_4A6F7",
 			"type":"next"
 		}
 	],
 	"id":"6a21b5893ad0e26b1f760d16",
 	"lastModifiedBy":39,
 	"lcName":"test-advanced-mixed_values_217805935815560",
-	"modifiedTime":1780594062480,
+	"modifiedTime":1780594082217,
 	"name":"test-advanced-MIXED_VALUES_217805935815560",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_meF4T-1",
-			"id":"_meF4T",
-			"index":0,
+			"id":"n_KmlsI",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2405,
+				"resourceName":"callables_schedule_a_callable",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_meF4T-1",
-			"id":"_kTUQ5",
-			"index":0,
+			"id":"n_4A6F7",
+			"index":2,
+			"inputs":{
+				"automation_id":"6a21b56caf7ba4594d1c67db",
+				"schedule_method":{
+					"schedule_type":"CRON_EXPRESSION",
+					"setup_config":{
+						"timezone":"Asia/Kolkata",
+						"expression":"1 2,3 4-8 3/6 *",
+						"start_time":"2026-06-04T17:27:56.532Z",
+						"unit":"MINUTES"
+					}
+				},
+				"runtimeConnections":{},
+				"cancel_existing":true,
+				"version":"-1",
+				"schedule_name":"Advanced Schedule Callable Automation - MIXED_VALUES",
+				"parameters":{
+					"input_String":"Hello Unify"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Callable",
+			"title":"Schedule callable",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +101,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
