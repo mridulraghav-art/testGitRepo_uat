@@ -13,12 +13,35 @@
 			"skip":false,
 			"toNodeId":"n_9F5SI",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_9F5SI",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Rz1Sb",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Rz1Sb",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_xlKKV",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_Rz1Sb",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_OXsAx",
+			"type":"next"
 		}
 	],
 	"id":"6a21181deeee3a1afe0fa926",
 	"lastModifiedBy":39,
 	"lcName":"save & exit 21780553443560",
-	"modifiedTime":1780553773512,
+	"modifiedTime":1780553783081,
 	"name":"Save & Exit 21780553443560",
 	"nodes":[
 		{
@@ -26,7 +49,7 @@
 				"appName":"shopify"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_3kDIG-1",
 			"id":"n_0nlDo",
@@ -45,7 +68,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_3kDIG-1",
 			"id":"n_9F5SI",
@@ -53,6 +76,47 @@
 			"skip":false,
 			"subTitle":"Mailchimp",
 			"title":"Select an action",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceVersion":66,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_3kDIG-1",
+			"id":"n_Rz1Sb",
+			"index":3,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Rz1Sb@_3kDIG-1@y",
+			"id":"n_xlKKV",
+			"index":4,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Rz1Sb@_3kDIG-1@n",
+			"id":"n_OXsAx",
+			"index":5,
+			"skip":false,
+			"title":"Select an app and action",
 			"type":"ACTION"
 		}
 	],
@@ -74,5 +138,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
