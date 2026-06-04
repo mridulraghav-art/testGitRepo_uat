@@ -4,6 +4,15 @@
 	],
 	"createdTime":1780553563046,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780554700716,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a211bcc84d6e0078b49d781",
+		"status":"PAUSED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_cqgqc",
@@ -16,7 +25,7 @@
 	"id":"6a21175beeee3a1afe0fa301",
 	"lastModifiedBy":39,
 	"lcName":"test webhook",
-	"modifiedTime":1780554643284,
+	"modifiedTime":1780554806112,
 	"name":"test webhook",
 	"nodes":[
 		{
@@ -26,7 +35,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_lAsYz-1",
 			"id":"n_cqgqc",
@@ -133,5 +142,5 @@
 	"tags":[
 		"Publish"
 	],
-	"version":2
+	"version":3
 }
