@@ -7,46 +7,119 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_PDx8d",
+			"fromNodeId":"n_gopJc",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_8zvOV",
+			"toNodeId":"n_qocjc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_qocjc",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_kLUc7",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_qocjc",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_j03Rz",
 			"type":"next"
 		}
 	],
 	"id":"6a21871d33b0405a76fb45f2",
 	"lastModifiedBy":39,
 	"lcName":"single action node with incomplete input  - 21780582166866",
-	"modifiedTime":1780582180723,
+	"modifiedTime":1780582194679,
 	"name":"Single action node with incomplete input  - 21780582166866",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_PDx8d-1",
-			"id":"_PDx8d",
-			"index":0,
+			"id":"n_gopJc",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"if_else",
+				"resourceVersion":66,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_PDx8d-1",
-			"id":"_8zvOV",
-			"index":0,
+			"id":"n_qocjc",
+			"index":2,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_qocjc@_PDx8d-1@y",
+			"id":"n_kLUc7",
+			"index":3,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_qocjc@_PDx8d-1@n",
+			"id":"n_j03Rz",
+			"index":4,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +134,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
