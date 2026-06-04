@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780567283221,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":4,
 	"deploymentState":{
-		"deployedAt":1780567310157,
+		"deployedAt":1780567326759,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a214d0e207eea5ceafb3e37",
+		"deployedDefinitionId":"6a214d1e84d6e0078b7f4c57",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":3
+		"version":4,
+		"workflowVersion":5
 	},
 	"description":"description",
 	"edges":[
@@ -26,7 +26,7 @@
 	"id":"6a214cf3c7310f6067d27b01",
 	"lastModifiedBy":39,
 	"lcName":"restorerecentversion_217805671596610",
-	"modifiedTime":1780567317303,
+	"modifiedTime":1780567333812,
 	"name":"restoreRecentVersion_217805671596610",
 	"nodes":[
 		{
@@ -36,7 +36,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_0kbgo-1",
 			"id":"n_Ta4jr",
@@ -61,7 +61,8 @@
 					"required":[
 						"input_String",
 						"input_string2",
-						"input_string3"
+						"input_string3",
+						"input_string4"
 					],
 					"properties":{
 						"input_String":{
@@ -75,6 +76,10 @@
 						"input_string3":{
 							"type":"string",
 							"title":"input_string3"
+						},
+						"input_string4":{
+							"type":"string",
+							"title":"input_string4"
 						}
 					}
 				}
@@ -95,7 +100,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_0kbgo-1",
 			"id":"n_ss1ff",
@@ -129,5 +134,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":4
+	"version":6
 }
