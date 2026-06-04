@@ -1,52 +1,42 @@
 {
 	"appsUsed":[
-		
+		"shopify"
 	],
 	"createdTime":1780575056829,
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_mMFnH",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_5hY0W",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a216b509659240f2813482a",
 	"lastModifiedBy":39,
 	"lcName":"errorsnackbartriggerevent_217805749896690",
-	"modifiedTime":1780575062579,
+	"modifiedTime":1780575073619,
 	"name":"errorSnackbarTriggerEvent_217805749896690",
 	"nodes":[
 		{
+			"context":{
+				"appName":"shopify"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_mMFnH-1",
-			"id":"_mMFnH",
-			"index":0,
+			"id":"n_wtS8b",
+			"index":1,
 			"skip":false,
+			"subTitle":"Shopify",
 			"title":"Select a trigger event",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_mMFnH-1",
-			"id":"_5hY0W",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +51,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
