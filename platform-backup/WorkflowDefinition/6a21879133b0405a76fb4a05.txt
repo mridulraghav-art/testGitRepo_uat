@@ -7,46 +7,65 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_G4hT9",
+			"fromNodeId":"n_eWlqF",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_oSFbC",
+			"toNodeId":"n_fs73A",
 			"type":"next"
 		}
 	],
 	"id":"6a21879133b0405a76fb4a05",
 	"lastModifiedBy":39,
 	"lcName":"errorsnackbaraction_217805821783720",
-	"modifiedTime":1780582296735,
+	"modifiedTime":1780582311292,
 	"name":"errorSnackbarAction_217805821783720",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_G4hT9-1",
-			"id":"_G4hT9",
-			"index":0,
+			"id":"n_eWlqF",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_G4hT9-1",
-			"id":"_oSFbC",
-			"index":0,
+			"id":"n_fs73A",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Select an action",
+			"type":"CALL_WORKFLOW"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +80,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
