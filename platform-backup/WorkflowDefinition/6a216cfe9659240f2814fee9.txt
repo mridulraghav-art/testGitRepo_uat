@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780575486469,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_7lV3m",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Kz8II",
+			"type":"next"
+		}
+	],
+	"id":"6a216cfe9659240f2814fee9",
+	"lastModifiedBy":39,
+	"lcName":"webhook setup incomplete - 21780574989669",
+	"modifiedTime":1780575486469,
+	"name":"Webhook setup Incomplete - 21780574989669",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_7lV3m-1",
+			"id":"_7lV3m",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_7lV3m-1",
+			"id":"_Kz8II",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
