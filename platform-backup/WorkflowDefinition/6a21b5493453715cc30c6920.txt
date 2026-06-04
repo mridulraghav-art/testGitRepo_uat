@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780593993621,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_jzfbU",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_vtpwB",
+			"type":"next"
+		}
+	],
+	"id":"6a21b5493453715cc30c6920",
+	"lastModifiedBy":39,
+	"lcName":"new_automation_trigger_with_shopify_217805935679350",
+	"modifiedTime":1780593993621,
+	"name":"New_Automation_trigger_with_Shopify_217805935679350",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_jzfbU-1",
+			"id":"_jzfbU",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_jzfbU-1",
+			"id":"_vtpwB",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
