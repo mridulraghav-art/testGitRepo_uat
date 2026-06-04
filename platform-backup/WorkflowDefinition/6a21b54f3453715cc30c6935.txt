@@ -6,47 +6,37 @@
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_94pRJ",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_ree5k",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a21b54f3453715cc30c6935",
 	"lastModifiedBy":39,
 	"lcName":"delete workflow - 21780593567935",
-	"modifiedTime":1780594005361,
+	"modifiedTime":1780594009324,
 	"name":"delete workflow - 21780593567935",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_94pRJ-1",
-			"id":"_94pRJ",
-			"index":0,
+			"id":"n_DIxYS",
+			"index":1,
 			"skip":false,
+			"subTitle":"Callable",
 			"title":"Select a trigger event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_94pRJ-1",
-			"id":"_ree5k",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +51,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
