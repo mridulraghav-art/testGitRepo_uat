@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780554007093,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_AT7aI",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_KSPPG",
+			"type":"next"
+		}
+	],
+	"id":"6a211917207eea5ceaf857f8",
+	"lastModifiedBy":39,
+	"lcName":"test_mapvalue_mapunit217805534257460",
+	"modifiedTime":1780554007093,
+	"name":"test_mapvalue_mapunit217805534257460",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_AT7aI-1",
+			"id":"_AT7aI",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_AT7aI-1",
+			"id":"_KSPPG",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
