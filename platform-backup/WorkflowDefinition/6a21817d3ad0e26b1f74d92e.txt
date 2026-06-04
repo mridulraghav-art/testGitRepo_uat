@@ -17,7 +17,7 @@
 	"id":"6a21817d3ad0e26b1f74d92e",
 	"lastModifiedBy":39,
 	"lcName":"storage_by_updaterecordsbyquery_mandatory217805801302540",
-	"modifiedTime":1780580754983,
+	"modifiedTime":1780580758987,
 	"name":"Storage_by_UpdateRecordsByQuery_Mandatory217805801302540",
 	"nodes":[
 		{
@@ -27,7 +27,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_HCqa8-1",
 			"id":"n_U2bjD",
@@ -59,7 +59,7 @@
 			"id":"n_SauoU",
 			"index":2,
 			"inputs":{
-				"numberOfRecordsToUpdate":"SINGLE",
+				"numberOfRecordsToUpdate":"MULTIPLE",
 				"object_type":"a3wyfon",
 				"skipIfBlank":false,
 				"updateFields":[
@@ -100,5 +100,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
