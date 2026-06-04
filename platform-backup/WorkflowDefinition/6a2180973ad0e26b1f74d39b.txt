@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780580503273,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_fxTxo",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_uFWJQ",
+			"type":"next"
+		}
+	],
+	"id":"6a2180973ad0e26b1f74d39b",
+	"lastModifiedBy":39,
+	"lcName":"delete workflow - 21780580118325",
+	"modifiedTime":1780580503273,
+	"name":"delete workflow - 21780580118325",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_fxTxo-1",
+			"id":"_fxTxo",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_fxTxo-1",
+			"id":"_uFWJQ",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":0
+}
