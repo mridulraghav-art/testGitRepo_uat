@@ -1,0 +1,58 @@
+{
+	"active":true,
+	"cacheResponse":false,
+	"collectionId":"661fafb1387ba159af40e211",
+	"createdTime":1719999681200,
+	"customizeTimeout":false,
+	"deleted":false,
+	"enableCanaryDeployment":false,
+	"enableNodeLevelLogging":true,
+	"enableRunLogging":true,
+	"enableVariableLogging":true,
+	"endpointUrl":"backendautomation/onerrorcontinuestoperror",
+	"fallbackResponse":{
+		"headers":{
+			"executed":"false",
+			"language":"es"
+		},
+		"message":"Gateway Timeout",
+		"response":{
+			"body":{
+				"message":"One of the node in the Workflow might have failed. Please check"
+			}
+		},
+		"statusCode":504
+	},
+	"httpMethod":"PUT",
+	"id":"6621ef86a7508e43c01f50d7",
+	"lastModifiedBy":39,
+	"lcName":"branch_failed_node_multi_level_cont_stop_on_error",
+	"localeBasedFallbackResponse":{
+		"es":{
+			"headers":{
+				"executed":"false",
+				"language":"es"
+			},
+			"message":"Gateway Timeout",
+			"response":{
+				"body":{
+					"message":"Por favor, verifique el flujo de trabajo"
+				}
+			},
+			"statusCode":504
+		}
+	},
+	"modifiedTime":1720004496217,
+	"name":"BRANCH_FAILED_NODE_MULTI_LEVEL_CONT_STOP_ON_ERROR",
+	"ownerUserId":39,
+	"path":"onerrorcontinuestoperror",
+	"resourceIds":[
+		"6621eeae17aac6128e0754ad"
+	],
+	"resourceType":"CALLABLE_WORKFLOW",
+	"standard":false,
+	"supportedHttpMethods":[
+		"PUT"
+	],
+	"version":19
+}
