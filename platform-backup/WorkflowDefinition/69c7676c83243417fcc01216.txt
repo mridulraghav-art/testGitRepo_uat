@@ -529,7 +529,7 @@
 	"id":"69c7676c83243417fcc01216",
 	"lastModifiedBy":39,
 	"lcName":"create interface",
-	"modifiedTime":1780689110530,
+	"modifiedTime":1780689117892,
 	"name":"Create Interface",
 	"nodes":[
 		{
@@ -4687,7 +4687,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_U4ODg@_8wYrj-1@n",
 			"id":"n_ej48P",
@@ -4695,17 +4695,10 @@
 			"inputs":{
 				"filters":[
 					{
+						"property":"{{ n_JA9kt.outputs.properties.locale.defaultLocale }}",
 						"filter":{
 							"operator":"MISSING"
-						},
-						"property":"{{ n_JA9kt.outputs.properties.locale.defaultLocale }}"
-					},
-					{
-						"filter":{
-							"operator":"EQUAL",
-							"value":""
-						},
-						"property":"{{ n_JA9kt.outputs.properties.locale.defaultLocale }}"
+						}
 					}
 				],
 				"operator":"OR"
@@ -5076,5 +5069,5 @@
 	"tags":[
 		"text-to-lowcode"
 	],
-	"version":231
+	"version":232
 }
