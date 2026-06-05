@@ -1,52 +1,44 @@
 {
 	"appsUsed":[
-		
+		"shopify"
 	],
 	"createdTime":1780645552674,
 	"deleted":false,
 	"description":"description",
 	"edges":[
-		{
-			"fromNodeId":"_Qbovg",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_sPTop",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a227eb0af7ba4594d254672",
 	"lastModifiedBy":39,
 	"lcName":"errorsnackbarconnection_217806454575580",
-	"modifiedTime":1780645559000,
+	"modifiedTime":1780645566147,
 	"name":"errorSnackbarConnection_217806454575580",
 	"nodes":[
 		{
+			"context":{
+				"appName":"shopify",
+				"resourceVersion":7026,
+				"resourceName":"shopify_on_order_create"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_Qbovg-1",
-			"id":"_Qbovg",
-			"index":0,
+			"id":"n_gpC5H",
+			"index":1,
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Shopify",
+			"title":"Order created",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_Qbovg-1",
-			"id":"_sPTop",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +53,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
