@@ -7,46 +7,75 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_ApSfE",
+			"fromNodeId":"n_w4VMF",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_39P8A",
+			"toNodeId":"n_xf8iQ",
 			"type":"next"
 		}
 	],
 	"id":"6a227fb928d6d162e1e2f4ed",
 	"lastModifiedBy":39,
 	"lcName":"build-2 21780645457558",
-	"modifiedTime":1780645823024,
+	"modifiedTime":1780645841473,
 	"name":"build-2 21780645457558",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2404,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ApSfE-1",
-			"id":"_ApSfE",
-			"index":0,
+			"id":"n_w4VMF",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4323,
+				"resourceName":"storage_by_unifyapps_create_record",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ApSfE-1",
-			"id":"_39P8A",
-			"index":0,
+			"id":"n_xf8iQ",
+			"index":2,
+			"inputs":{
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"skipIfBlank":false,
+				"useUuid":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Storage by UnifyApps",
+			"title":"Create record",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +90,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
