@@ -4,45 +4,214 @@
 	],
 	"createdTime":1780690147373,
 	"deleted":false,
+	"description":"Receives a callable trigger, initializes a counter variable to 0, loops from index 1 to 10 adding each index to the counter, and returns the final sum.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_StArT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_CrVar",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CrVar",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LoFor",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LoFor",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpVar",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_LoFor",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StOp1",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpVar",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LoFor",
 			"type":"next"
 		}
 	],
 	"id":"6a232ce3b753a72ac73bbc29",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1780690147373,
-	"name":"Untitled workflow",
+	"lcName":"counter loop sum",
+	"modifiedTime":1780690204357,
+	"name":"Counter Loop Sum",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_StArT",
 			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"counter"
+					],
+					"properties":{
+						"counter":{
+							"type":"number",
+							"title":"Counter"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_CrVar",
 			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"counter"
+					],
+					"properties":{
+						"counter":{
+							"type":"number",
+							"title":"Counter",
+							"default":0
+						}
+					}
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"counter"
+					],
+					"properties":{
+						"counter":{
+							"type":"number",
+							"title":"Counter",
+							"default":0
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable",
+			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_LoFor",
+			"index":3,
+			"inputs":{
+				"start":1,
+				"limit":11,
+				"step":1,
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_LoFor@root_id-1@l",
+			"id":"n_UpVar",
+			"index":4,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_CrVar.outputs.counter }}",
+						"value":"={{ n_CrVar.outputs.counter }} + {{ n_LoFor.outputs.value }}"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Update variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StOp1",
+			"index":5,
+			"inputs":{
+				"result":{
+					"counter":"{{ n_CrVar.outputs.counter }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +225,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
