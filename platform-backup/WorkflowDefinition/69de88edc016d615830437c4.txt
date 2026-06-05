@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780672488929,
 	"deleted":false,
-	"deployedVersion":8,
+	"deployedVersion":9,
 	"deploymentState":{
-		"deployedAt":1780680074045,
+		"deployedAt":1780685532789,
 		"deployedBy":-1,
-		"deployedDefinitionId":"6a2305893453715cc3195ac7",
+		"deployedDefinitionId":"6a231adc3453715cc31c1d37",
 		"status":"DEPLOYED",
-		"version":8,
-		"workflowVersion":74
+		"version":9,
+		"workflowVersion":76
 	},
 	"edges":[
 		{
@@ -112,7 +112,6 @@
 		"configs":[
 			{
 				"permissions":[
-					"VIEW_RUNS",
 					"V"
 				],
 				"principalType":"GLOBAL"
@@ -122,7 +121,7 @@
 	"id":"69de88edc016d615830437c4",
 	"lastModifiedBy":-1,
 	"lcName":"agent builder | create connection",
-	"modifiedTime":1780685532641,
+	"modifiedTime":1780685947626,
 	"name":"Agent Builder | Create Connection",
 	"nodes":[
 		{
@@ -144,33 +143,64 @@
 			"index":1,
 			"inputs":{
 				"result":{
-					"type":"object",
 					"additionalProperties":false,
+					"properties":{
+						"connectionId":{
+							"title":"Connection Id",
+							"type":"string"
+						},
+						"connectionName":{
+							"title":"Connection Name",
+							"type":"string"
+						},
+						"isOuath":{
+							"title":"Is Ouath",
+							"type":"boolean"
+						},
+						"oauthUrl":{
+							"title":"Oauth Url",
+							"type":"string"
+						}
+					},
 					"required":[
 						"isOuath"
 					],
-					"properties":{
-						"connectionId":{
-							"type":"string",
-							"title":"Connection Id"
-						},
-						"connectionName":{
-							"type":"string",
-							"title":"Connection Name"
-						},
-						"isOuath":{
-							"type":"boolean",
-							"title":"Is Ouath"
-						},
-						"oauthUrl":{
-							"type":"string",
-							"title":"Oauth Url"
-						}
-					}
+					"type":"object"
 				},
 				"setup":{
-					"type":"object",
 					"additionalProperties":false,
+					"properties":{
+						"appName":{
+							"title":"App Name",
+							"type":"string"
+						},
+						"caseId":{
+							"title":"Case Id",
+							"type":"string"
+						},
+						"displayName":{
+							"title":"Display Name",
+							"type":"string"
+						},
+						"inputData":{
+							"additionalProperties":false,
+							"properties":{},
+							"title":"Input Data",
+							"type":"object"
+						},
+						"messageId":{
+							"title":"Message Id",
+							"type":"string"
+						},
+						"pageUrl":{
+							"title":"Page Url",
+							"type":"string"
+						},
+						"userId":{
+							"title":"User Id",
+							"type":"string"
+						}
+					},
 					"required":[
 						"inputData",
 						"appName",
@@ -180,38 +210,7 @@
 						"pageUrl",
 						"userId"
 					],
-					"properties":{
-						"inputData":{
-							"type":"object",
-							"properties":{},
-							"additionalProperties":false,
-							"title":"Input Data"
-						},
-						"appName":{
-							"type":"string",
-							"title":"App Name"
-						},
-						"messageId":{
-							"type":"string",
-							"title":"Message Id"
-						},
-						"caseId":{
-							"type":"string",
-							"title":"Case Id"
-						},
-						"displayName":{
-							"type":"string",
-							"title":"Display Name"
-						},
-						"pageUrl":{
-							"type":"string",
-							"title":"Page Url"
-						},
-						"userId":{
-							"type":"string",
-							"title":"User Id"
-						}
-					}
+					"type":"object"
 				}
 			},
 			"skip":false,
@@ -239,11 +238,11 @@
 				"triggerInputCondition":{
 					"filters":[
 						{
-							"property":"id",
 							"filter":{
 								"operator":"EQUAL",
 								"value":"{{ n_mkxi7.outputs.caseId }}"
-							}
+							},
+							"property":"id"
 						}
 					],
 					"operator":"AND"
@@ -254,12 +253,12 @@
 				"includeCurrentUserPermissions":false,
 				"translationsOption":"DEFAULT",
 				"page":{
-					"paginateBy":"OFFSET",
-					"limit":20
+					"limit":20,
+					"paginateBy":"OFFSET"
 				},
+				"includeTotalCount":false,
 				"numberOfRecordsToFetch":"SINGLE",
-				"readThroughSessionVariables":false,
-				"includeTotalCount":false
+				"readThroughSessionVariables":false
 			},
 			"skip":false,
 			"subTitle":"Storage",
@@ -281,30 +280,30 @@
 			"index":3,
 			"inputs":{
 				"output":{
-					"type":"object",
 					"additionalProperties":false,
+					"properties":{
+						"agentId":{
+							"title":"Agent Id",
+							"type":"string"
+						}
+					},
 					"required":[
 						"agentId"
 					],
-					"properties":{
-						"agentId":{
-							"type":"string",
-							"title":"Agent Id"
-						}
-					}
+					"type":"object"
 				},
 				"input":{
-					"type":"object",
 					"additionalProperties":false,
+					"properties":{
+						"pageUrl":{
+							"title":"Page Url",
+							"type":"string"
+						}
+					},
 					"required":[
 						"pageUrl"
 					],
-					"properties":{
-						"pageUrl":{
-							"type":"string",
-							"title":"Page Url"
-						}
-					}
+					"type":"object"
 				},
 				"code":"def url = pageUrl   // your input variable\n\ndef uri = new URI(url)\ndef query = uri.getQuery()\n\ndef params = query.split(\"&\").collectEntries { param ->\n    def parts = param.split(\"=\")\n    [(parts[0]): parts.size() > 1 ? parts[1] : \"\"]\n}\n\ndef agentId = params[\"agentId\"]\n\nreturn [\n    agentId: agentId\n]",
 				"compile_static":false,
@@ -382,55 +381,55 @@
 			"index":6,
 			"inputs":{
 				"output":{
-					"type":"object",
 					"additionalProperties":false,
+					"properties":{
+						"inputs":{
+							"title":"Inputs",
+							"type":"string"
+						},
+						"name":{
+							"title":"Name",
+							"type":"string"
+						}
+					},
 					"required":[
 						"inputs",
 						"name"
 					],
-					"properties":{
-						"inputs":{
-							"type":"string",
-							"title":"Inputs"
-						},
-						"name":{
-							"type":"string",
-							"title":"Name"
-						}
-					}
+					"type":"object"
 				},
 				"input":{
-					"type":"object",
 					"additionalProperties":false,
+					"properties":{
+						"agentName":{
+							"title":"Agent Name",
+							"type":"string"
+						},
+						"inputs":{
+							"additionalProperties":false,
+							"properties":{},
+							"title":"Inputs",
+							"type":"object"
+						},
+						"userName":{
+							"title":"User Name",
+							"type":"string"
+						}
+					},
 					"required":[
 						"inputs",
 						"userName",
 						"agentName"
 					],
-					"properties":{
-						"inputs":{
-							"type":"object",
-							"properties":{},
-							"additionalProperties":false,
-							"title":"Inputs"
-						},
-						"userName":{
-							"type":"string",
-							"title":"User Name"
-						},
-						"agentName":{
-							"type":"string",
-							"title":"Agent Name"
-						}
-					}
+					"type":"object"
 				},
 				"code":"def inputs = binding.hasVariable('inputs') ? inputs : [:]\n\n// -------- Helper to capitalize first letter --------\ndef capitalize = { str ->\n    str ? str.substring(0,1).toUpperCase() + str.substring(1).toLowerCase() : str\n}\n\n// -------- Handle userName --------\ndef rawUser = (binding.hasVariable('userName') && userName && userName.toString().trim())\n        ? userName.toString().trim()\n        : \"default\"\n\n// remove email domain if present\ndef userPart = rawUser.contains(\"@\") ? rawUser.split(\"@\")[0] : rawUser\n\n// split by dot or space\ndef nameParts = userPart.split(/[.\\s]+/).findAll { it }\n\n// build normalized username (with space)\ndef normalizedUser\nif (nameParts.size() >= 2) {\n    normalizedUser = capitalize(nameParts[0]) + \" \" + capitalize(nameParts[1])\n} else if (nameParts.size() == 1) {\n    normalizedUser = capitalize(nameParts[0])\n} else {\n    normalizedUser = \"Default\"\n}\n\n// -------- Handle agentName --------\ndef agentNameVal = (binding.hasVariable('agentName') && agentName && agentName.toString().trim())\n        ? capitalize(agentName.toString().trim())\n        : \"Untitled\"\n\n// -------- Final result --------\ndef result = normalizedUser + \" \" + agentNameVal\n\ninputs[\"name\"] = result\n\nreturn [\n    inputs: inputs,\n    name: result\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
+					"agentName":"{{ n_IHWu5.outputs.properties.name }}",
 					"inputs":"{{ n_mkxi7.outputs.inputData }}",
-					"userName":"{{ n_NDCUs.outputs.username }}",
-					"agentName":"{{ n_IHWu5.outputs.properties.name }}"
+					"userName":"{{ n_NDCUs.outputs.username }}"
 				}
 			},
 			"skip":false,
@@ -454,11 +453,11 @@
 			"inputs":{
 				"filters":[
 					{
-						"property":"{{ n_mkxi7.outputs.inputData.authType }}",
 						"filter":{
 							"operator":"CONTAINS",
 							"value":"OAUTH"
-						}
+						},
+						"property":"{{ n_mkxi7.outputs.inputData.authType }}"
 					}
 				],
 				"operator":"AND"
@@ -490,55 +489,55 @@
 					"type":"object",
 					"properties":{
 						"userInputs":{
-							"type":"object",
+							"additionalProperties":false,
 							"properties":{
 								"CONNECTION_INPUT":{
-									"type":"object",
+									"additionalProperties":false,
 									"properties":{
+										"authType":{
+											"title":"authType",
+											"type":"string"
+										},
 										"inputs":{
-											"type":"object",
-											"properties":{},
 											"additionalProperties":false,
+											"properties":{},
+											"required":[],
 											"title":"inputs",
-											"required":[]
+											"type":"object"
 										},
 										"name":{
-											"type":"string",
-											"title":"name"
-										},
-										"authType":{
-											"type":"string",
-											"title":"authType"
+											"title":"name",
+											"type":"string"
 										}
 									},
-									"title":"CONNECTION_INPUT",
-									"additionalProperties":false,
 									"required":[
 										"inputs",
 										"name",
 										"authType"
-									]
+									],
+									"title":"CONNECTION_INPUT",
+									"type":"object"
 								},
 								"appName":{
-									"type":"string",
-									"title":"appName"
-								},
-								"returnTo":{
-									"type":"string",
-									"title":"returnTo"
+									"title":"appName",
+									"type":"string"
 								},
 								"authType":{
-									"type":"string",
-									"title":"Auth Type"
+									"title":"Auth Type",
+									"type":"string"
+								},
+								"returnTo":{
+									"title":"returnTo",
+									"type":"string"
 								}
 							},
-							"title":"userInputs",
-							"additionalProperties":false,
 							"required":[
 								"returnTo",
 								"appName",
 								"authType"
-							]
+							],
+							"title":"userInputs",
+							"type":"object"
 						}
 					}
 				}
@@ -546,13 +545,13 @@
 			"inputs":{
 				"userInputs":{
 					"CONNECTION_INPUT":{
+						"authType":"{{ n_mkxi7.outputs.inputData.authType }}",
 						"inputs":"{{ n_2HT9w.outputs.result.inputs }}",
-						"name":"{{ n_2HT9w.outputs.result.name }}",
-						"authType":"{{ n_mkxi7.outputs.inputData.authType }}"
+						"name":"{{ n_2HT9w.outputs.result.name }}"
 					},
 					"appName":"{{ n_mkxi7.outputs.appName }}",
-					"returnTo":"{{ __ENV__.outputs.base_URL }}api-endpoint/Agent-Builder/Oauth-Success?name={{ n_2HT9w.outputs.result.name }}&messageId={{ n_mkxi7.outputs.messageId }}&caseId={{ n_mkxi7.outputs.caseId }}&displayName={{ n_mkxi7.outputs.displayName }}&appName={{ n_mkxi7.outputs.appName }}&userId={{ n_mkxi7.outputs.userId }}",
-					"authType":"{{ n_mkxi7.outputs.inputData.authType }}"
+					"authType":"{{ n_mkxi7.outputs.inputData.authType }}",
+					"returnTo":"{{ __ENV__.outputs.base_URL }}api-endpoint/Agent-Builder/Oauth-Success?name={{ n_2HT9w.outputs.result.name }}&messageId={{ n_mkxi7.outputs.messageId }}&caseId={{ n_mkxi7.outputs.caseId }}&displayName={{ n_mkxi7.outputs.displayName }}&appName={{ n_mkxi7.outputs.appName }}&userId={{ n_mkxi7.outputs.userId }}"
 				}
 			},
 			"outputSchema":{
@@ -562,55 +561,55 @@
 					"type":"object",
 					"properties":{
 						"userInputs":{
-							"type":"object",
+							"additionalProperties":false,
 							"properties":{
 								"CONNECTION_INPUT":{
-									"type":"object",
+									"additionalProperties":false,
 									"properties":{
+										"authType":{
+											"title":"authType",
+											"type":"string"
+										},
 										"inputs":{
-											"type":"object",
-											"properties":{},
 											"additionalProperties":false,
+											"properties":{},
+											"required":[],
 											"title":"inputs",
-											"required":[]
+											"type":"object"
 										},
 										"name":{
-											"type":"string",
-											"title":"name"
-										},
-										"authType":{
-											"type":"string",
-											"title":"authType"
+											"title":"name",
+											"type":"string"
 										}
 									},
-									"title":"CONNECTION_INPUT",
-									"additionalProperties":false,
 									"required":[
 										"inputs",
 										"name",
 										"authType"
-									]
+									],
+									"title":"CONNECTION_INPUT",
+									"type":"object"
 								},
 								"appName":{
-									"type":"string",
-									"title":"appName"
-								},
-								"returnTo":{
-									"type":"string",
-									"title":"returnTo"
+									"title":"appName",
+									"type":"string"
 								},
 								"authType":{
-									"type":"string",
-									"title":"Auth Type"
+									"title":"Auth Type",
+									"type":"string"
+								},
+								"returnTo":{
+									"title":"returnTo",
+									"type":"string"
 								}
 							},
-							"title":"userInputs",
-							"additionalProperties":false,
 							"required":[
 								"returnTo",
 								"appName",
 								"authType"
-							]
+							],
+							"title":"userInputs",
+							"type":"object"
 						}
 					}
 				}
@@ -667,18 +666,18 @@
 					"type":"object",
 					"properties":{
 						"headers":{
-							"type":"object",
+							"additionalProperties":false,
 							"properties":{
 								"Location":{
-									"type":"string",
-									"title":"Location"
+									"title":"Location",
+									"type":"string"
 								}
 							},
-							"additionalProperties":false,
-							"title":"headers",
 							"required":[
 								"Location"
-							]
+							],
+							"title":"headers",
+							"type":"object"
 						}
 					},
 					"required":[
@@ -698,18 +697,18 @@
 					"type":"object",
 					"properties":{
 						"headers":{
-							"type":"object",
+							"additionalProperties":false,
 							"properties":{
 								"Location":{
-									"type":"string",
-									"title":"Location"
+									"title":"Location",
+									"type":"string"
 								}
 							},
-							"additionalProperties":false,
-							"title":"headers",
 							"required":[
 								"Location"
-							]
+							],
+							"title":"headers",
+							"type":"object"
 						}
 					},
 					"required":[
@@ -830,9 +829,9 @@
 			"tierName":"global"
 		}
 	},
-	"standard":false,
+	"standard":true,
 	"tags":[
 		"text-to-agent"
 	],
-	"version":76
+	"version":78
 }
