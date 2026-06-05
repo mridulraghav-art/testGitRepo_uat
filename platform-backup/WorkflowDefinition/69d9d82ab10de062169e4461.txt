@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780672489614,
 	"deleted":false,
-	"deployedVersion":7,
+	"deployedVersion":8,
 	"deploymentState":{
-		"deployedAt":1780679047530,
+		"deployedAt":1780680074572,
 		"deployedBy":-1,
-		"deployedDefinitionId":"6a23018731ae790065a13726",
+		"deployedDefinitionId":"6a23058a3ad0e26b1f87ccea",
 		"status":"DEPLOYED",
-		"version":7,
-		"workflowVersion":17
+		"version":8,
+		"workflowVersion":19
 	},
 	"edges":[
 		{
@@ -69,6 +69,7 @@
 		"configs":[
 			{
 				"permissions":[
+					"VIEW_RUNS",
 					"V"
 				],
 				"principalType":"GLOBAL"
@@ -78,7 +79,7 @@
 	"id":"69d9d82ab10de062169e4461",
 	"lastModifiedBy":-1,
 	"lcName":"create fetch records tool",
-	"modifiedTime":1780680074503,
+	"modifiedTime":1780685533129,
 	"name":"Create Fetch Records Tool",
 	"nodes":[
 		{
@@ -95,76 +96,76 @@
 			"index":1,
 			"inputs":{
 				"result":{
+					"type":"object",
 					"additionalProperties":false,
-					"properties":{
-						"toolIds":{
-							"items":{
-								"additionalProperties":false,
-								"properties":{
-									"mdmEntityId":{
-										"title":"Mdm Entity Id",
-										"type":"string"
-									},
-									"toolId":{
-										"title":"Tool Id",
-										"type":"string"
-									}
-								},
-								"required":[
-									"mdmEntityId",
-									"toolId"
-								],
-								"type":"object"
-							},
-							"title":"Tool Ids",
-							"type":"array"
-						}
-					},
 					"required":[
 						"toolIds"
 					],
-					"type":"object"
-				},
-				"setup":{
-					"additionalProperties":false,
 					"properties":{
-						"aiAgentId":{
-							"title":"Ai Agent Id",
-							"type":"string"
-						},
-						"toolDetails":{
+						"toolIds":{
+							"type":"array",
 							"items":{
-								"additionalProperties":false,
+								"type":"object",
 								"properties":{
 									"mdmEntityId":{
-										"title":"Mdm Entity Id",
-										"type":"string"
+										"type":"string",
+										"title":"Mdm Entity Id"
 									},
-									"toolDescription":{
-										"title":"Tool Description",
-										"type":"string"
-									},
-									"toolName":{
-										"title":"Tool Name",
-										"type":"string"
+									"toolId":{
+										"type":"string",
+										"title":"Tool Id"
 									}
 								},
+								"additionalProperties":false,
 								"required":[
 									"mdmEntityId",
-									"toolName",
-									"toolDescription"
-								],
-								"type":"object"
+									"toolId"
+								]
 							},
-							"title":"Tool Details",
-							"type":"array"
+							"title":"Tool Ids"
 						}
-					},
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
 					"required":[
 						"aiAgentId",
 						"toolDetails"
 					],
-					"type":"object"
+					"properties":{
+						"aiAgentId":{
+							"type":"string",
+							"title":"Ai Agent Id"
+						},
+						"toolDetails":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"mdmEntityId":{
+										"type":"string",
+										"title":"Mdm Entity Id"
+									},
+									"toolName":{
+										"type":"string",
+										"title":"Tool Name"
+									},
+									"toolDescription":{
+										"type":"string",
+										"title":"Tool Description"
+									}
+								},
+								"additionalProperties":false,
+								"required":[
+									"mdmEntityId",
+									"toolName",
+									"toolDescription"
+								]
+							},
+							"title":"Tool Details"
+						}
+					}
 				}
 			},
 			"skip":false,
@@ -193,18 +194,18 @@
 				"dynamic":false,
 				"layout":{
 					"createList":{
-						"items":{
-							"ui:description":"Set the initial values of the list (defaults to empty)",
-							"ui:title":"Initial list items"
-						},
+						"ui:title":"",
 						"ua:type":{
 							"ui:widget":"hidden"
+						},
+						"items":{
+							"ui:title":"Initial list items",
+							"ui:description":"Set the initial values of the list (defaults to empty)"
 						},
 						"ui:order":[
 							"*",
 							"items"
-						],
-						"ui:title":""
+						]
 					},
 					"ua:title":{
 						"ui:widget":"hidden"
@@ -226,13 +227,13 @@
 							"then":{
 								"properties":{
 									"createList":{
+										"type":"object",
 										"properties":{
 											"items":{
-												"properties":{},
-												"type":"object"
+												"type":"object",
+												"properties":{}
 											}
-										},
-										"type":"object"
+										}
 									}
 								}
 							}
@@ -248,17 +249,17 @@
 							"then":{
 								"properties":{
 									"createList":{
+										"type":"object",
 										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of String"
+											},
 											"items":{
 												"type":"string"
-											},
-											"source":{
-												"format":"ua:source",
-												"title":"List of String",
-												"type":"string"
 											}
-										},
-										"type":"object"
+										}
 									}
 								}
 							}
@@ -274,17 +275,17 @@
 							"then":{
 								"properties":{
 									"createList":{
+										"type":"object",
 										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Integers"
+											},
 											"items":{
 												"type":"integer"
-											},
-											"source":{
-												"format":"ua:source",
-												"title":"List of Integers",
-												"type":"string"
 											}
-										},
-										"type":"object"
+										}
 									}
 								}
 							}
@@ -300,17 +301,17 @@
 							"then":{
 								"properties":{
 									"createList":{
+										"type":"object",
 										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Numbers"
+											},
 											"items":{
 												"type":"number"
-											},
-											"source":{
-												"format":"ua:source",
-												"title":"List of Numbers",
-												"type":"string"
 											}
-										},
-										"type":"object"
+										}
 									}
 								}
 							}
@@ -326,17 +327,17 @@
 							"then":{
 								"properties":{
 									"createList":{
+										"type":"object",
 										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Booleans"
+											},
 											"items":{
 												"type":"boolean"
-											},
-											"source":{
-												"format":"ua:source",
-												"title":"List of Booleans",
-												"type":"string"
 											}
-										},
-										"type":"object"
+										}
 									}
 								}
 							}
@@ -345,46 +346,12 @@
 					"format":"ua:list",
 					"type":"object",
 					"properties":{
-						"createList":{
-							"properties":{
-								"items":{
-									"additionalProperties":false,
-									"properties":{
-										"mdmEntityId":{
-											"title":"Mdm Entity Id",
-											"type":"string"
-										},
-										"toolId":{
-											"title":"Tool Id",
-											"type":"string"
-										}
-									},
-									"required":[
-										"mdmEntityId",
-										"toolId"
-									],
-									"type":[
-										"object",
-										"string",
-										"number",
-										"boolean",
-										"integer"
-									]
-								},
-								"source":{
-									"format":"ua:source",
-									"title":"List Item Source",
-									"type":"string"
-								},
-								"ua:type":{
-									"default":"mappedArray",
-									"type":"string"
-								}
-							},
-							"type":"object"
+						"ua:title":{
+							"type":"string"
 						},
 						"ua:list_type":{
-							"default":"OBJECT",
+							"type":"string",
+							"title":"List Type",
 							"oneOf":[
 								{
 									"const":"OBJECT",
@@ -407,11 +374,45 @@
 									"title":"Boolean"
 								}
 							],
-							"title":"List Type",
-							"type":"string"
+							"default":"OBJECT"
 						},
-						"ua:title":{
-							"type":"string"
+						"createList":{
+							"type":"object",
+							"properties":{
+								"ua:type":{
+									"type":"string",
+									"default":"mappedArray"
+								},
+								"source":{
+									"type":"string",
+									"format":"ua:source",
+									"title":"List Item Source"
+								},
+								"items":{
+									"additionalProperties":false,
+									"type":[
+										"object",
+										"string",
+										"number",
+										"boolean",
+										"integer"
+									],
+									"properties":{
+										"mdmEntityId":{
+											"type":"string",
+											"title":"Mdm Entity Id"
+										},
+										"toolId":{
+											"type":"string",
+											"title":"Tool Id"
+										}
+									},
+									"required":[
+										"mdmEntityId",
+										"toolId"
+									]
+								}
+							}
 						}
 					}
 				}
@@ -429,26 +430,26 @@
 					"type":"object",
 					"properties":{
 						"items":{
+							"type":"array",
+							"title":"List",
 							"disableActions":true,
 							"items":{
+								"type":"object",
 								"properties":{
 									"mdmEntityId":{
-										"title":"Mdm Entity Id",
-										"type":"string"
+										"type":"string",
+										"title":"Mdm Entity Id"
 									},
 									"toolId":{
-										"title":"Tool Id",
-										"type":"string"
+										"type":"string",
+										"title":"Tool Id"
 									}
 								},
 								"required":[
 									"mdmEntityId",
 									"toolId"
-								],
-								"type":"object"
-							},
-							"title":"List",
-							"type":"array"
+								]
+							}
 						}
 					}
 				}
@@ -506,22 +507,22 @@
 					"type":"object",
 					"properties":{
 						"inputs":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{
-								"numberOfRecordsToFetch":{
-									"title":"Number Of Records To Fetch",
-									"type":"string"
-								},
 								"object_type":{
-									"title":"Object Type",
-									"type":"string"
+									"type":"string",
+									"title":"Object Type"
+								},
+								"numberOfRecordsToFetch":{
+									"type":"string",
+									"title":"Number Of Records To Fetch"
 								}
 							},
+							"additionalProperties":false,
 							"required":[
 								"object_type",
 								"numberOfRecordsToFetch"
-							],
-							"type":"object"
+							]
 						}
 					},
 					"required":[
@@ -531,8 +532,8 @@
 			},
 			"inputs":{
 				"inputs":{
-					"numberOfRecordsToFetch":"    MULTIPLE",
-					"object_type":"{{ n_qWJWO.outputs.item.mdmEntityId }}"
+					"object_type":"{{ n_qWJWO.outputs.item.mdmEntityId }}",
+					"numberOfRecordsToFetch":"    MULTIPLE"
 				}
 			},
 			"outputSchema":{
@@ -542,22 +543,22 @@
 					"type":"object",
 					"properties":{
 						"inputs":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{
-								"numberOfRecordsToFetch":{
-									"title":"Number Of Records To Fetch",
-									"type":"string"
-								},
 								"object_type":{
-									"title":"Object Type",
-									"type":"string"
+									"type":"string",
+									"title":"Object Type"
+								},
+								"numberOfRecordsToFetch":{
+									"type":"string",
+									"title":"Number Of Records To Fetch"
 								}
 							},
+							"additionalProperties":false,
 							"required":[
 								"object_type",
 								"numberOfRecordsToFetch"
-							],
-							"type":"object"
+							]
 						}
 					},
 					"required":[
@@ -722,12 +723,12 @@
 			"inputs":{
 				"result":{
 					"toolIds":{
+						"source":"{{ n_aFBUj.outputs.items }}",
+						"ua:type":"mappedArray",
 						"items":{
 							"mdmEntityId":"{{ n_aFBUj.outputs.items[0].mdmEntityId }}",
 							"toolId":"{{ n_aFBUj.outputs.items[0].toolId }}"
-						},
-						"source":"{{ n_aFBUj.outputs.items }}",
-						"ua:type":"mappedArray"
+						}
 					}
 				}
 			},
@@ -750,9 +751,9 @@
 			"tierName":"global"
 		}
 	},
-	"standard":true,
+	"standard":false,
 	"tags":[
 		"text-to-agent"
 	],
-	"version":19
+	"version":21
 }
