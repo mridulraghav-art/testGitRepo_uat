@@ -4,14 +4,30 @@
 	],
 	"createdTime":1780645671084,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780645688503,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a227f373ad0e26b1f7dc03b",
+		"deploymentTag":"FirstVersion",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"description":"description",
 	"edges":[
-		
+		{
+			"fromNodeId":"n_m1Vgx",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_cMNz5",
+			"type":"next"
+		}
 	],
 	"id":"6a227f27af7ba4594d255929",
 	"lastModifiedBy":39,
 	"lcName":"restore_version_which_has_version_tag_assigned_to_it_217806454575580",
-	"modifiedTime":1780645686241,
+	"modifiedTime":1780645701953,
 	"name":"Restore_version_which_has_version_tag_assigned_to_it_217806454575580",
 	"nodes":[
 		{
@@ -21,7 +37,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_tynb8-1",
 			"id":"n_m1Vgx",
@@ -38,6 +54,59 @@
 				"type":"WEBHOOK"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1651,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_tynb8-1",
+			"id":"n_cMNz5",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"check_version_tag":{
+							"type":"string",
+							"title":"check_version_tag"
+						}
+					},
+					"required":[
+						"check_version_tag"
+					]
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"check_version_tag":{
+							"type":"string",
+							"title":"check_version_tag"
+						}
+					},
+					"required":[
+						"check_version_tag"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -58,5 +127,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
