@@ -4,10 +4,26 @@
 	],
 	"createdTime":1780641798078,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780641820469,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a22701c31ae7900659792fc",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"description":"description",
 	"edges":[
 		{
 			"fromNodeId":"n_JYoV1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_dtvsy",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_dtvsy",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_9oZLx",
@@ -17,7 +33,7 @@
 	"id":"6a2270063ad0e26b1f7c9825",
 	"lastModifiedBy":39,
 	"lcName":"child automation with test http api and pass the request 21780641785954",
-	"modifiedTime":1780641818987,
+	"modifiedTime":1780641824215,
 	"name":"Child automation with test http api and pass the request 21780641785954",
 	"nodes":[
 		{
@@ -27,7 +43,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_coXrg-1",
 			"id":"n_JYoV1",
@@ -70,17 +86,40 @@
 		},
 		{
 			"context":{
-				"appName":"callables",
-				"resourceVersion":2404,
-				"resourceName":"callables_return_to_automation",
+				"appName":"test_http",
+				"resourceVersion":2047,
+				"connectionId":"66b0ee649c311126267a17b7",
+				"resourceName":"test_http_post_api",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_coXrg-1",
-			"id":"n_9oZLx",
+			"id":"n_dtvsy",
 			"index":2,
+			"inputs":{
+				"field1":"workflow Continues",
+				"field2":false
+			},
+			"skip":false,
+			"subTitle":"Test HTTP API",
+			"title":"Test HTTP Post API",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2404,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_coXrg-1",
+			"id":"n_9oZLx",
+			"index":3,
 			"inputs":{
 				"result":{
 					"output_String":"{{ n_JYoV1.outputs.input_String }}"
@@ -110,5 +149,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":2
+	"version":3
 }
