@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780674595818,
 	"deleted":false,
-	"deployedVersion":6,
+	"deployedVersion":7,
 	"deploymentState":{
-		"deployedAt":1780679154858,
+		"deployedAt":1780680077443,
 		"deployedBy":-1,
-		"deployedDefinitionId":"6a2301f231ae790065a14348",
+		"deployedDefinitionId":"6a23058d3453715cc3195b7a",
 		"status":"DEPLOYED",
-		"version":6,
-		"workflowVersion":10
+		"version":7,
+		"workflowVersion":12
 	},
 	"edges":[
 		{
@@ -33,6 +33,7 @@
 		"configs":[
 			{
 				"permissions":[
+					"VIEW_RUNS",
 					"V"
 				],
 				"principalType":"GLOBAL"
@@ -42,7 +43,7 @@
 	"id":"69e9f48174e5e47e5da9eb69",
 	"lastModifiedBy":-1,
 	"lcName":"agent builder | sample fetch record tool",
-	"modifiedTime":1780680077380,
+	"modifiedTime":1780685536324,
 	"name":"Agent Builder | Sample Fetch Record Tool",
 	"nodes":[
 		{
@@ -64,46 +65,46 @@
 			"index":1,
 			"inputs":{
 				"result":{
+					"type":"object",
 					"additionalProperties":false,
-					"properties":{
-						"records":{
-							"items":{
-								"additionalProperties":false,
-								"properties":{},
-								"type":"object"
-							},
-							"title":"Records",
-							"type":"array"
-						}
-					},
 					"required":[
 						"records"
 					],
-					"type":"object"
+					"properties":{
+						"records":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Records"
+						}
+					}
 				},
 				"setup":{
+					"type":"object",
 					"additionalProperties":false,
-					"properties":{
-						"filter":{
-							"additionalProperties":false,
-							"properties":{},
-							"title":"Filter",
-							"type":"object"
-						},
-						"numberOfRecords":{
-							"title":"Number Of Records",
-							"type":"number"
-						},
-						"objectId":{
-							"title":"Object Id",
-							"type":"string"
-						}
-					},
 					"required":[
 						"objectId",
 						"filter"
 					],
-					"type":"object"
+					"properties":{
+						"objectId":{
+							"type":"string",
+							"title":"Object Id"
+						},
+						"numberOfRecords":{
+							"type":"number",
+							"title":"Number Of Records"
+						},
+						"filter":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Filter"
+						}
+					}
 				}
 			},
 			"skip":false,
@@ -144,12 +145,12 @@
 				"includeCurrentUserPermissions":false,
 				"translationsOption":"DEFAULT",
 				"page":{
-					"limit":"{{ n_UXfaV.outputs.numberOfRecords }}",
-					"paginateBy":"OFFSET"
+					"paginateBy":"OFFSET",
+					"limit":"{{ n_UXfaV.outputs.numberOfRecords }}"
 				},
-				"includeTotalCount":false,
 				"numberOfRecordsToFetch":"MULTIPLE",
-				"readThroughSessionVariables":false
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
 			},
 			"skip":false,
 			"subTitle":"Storage",
@@ -172,9 +173,9 @@
 			"inputs":{
 				"result":{
 					"records":{
-						"items":"{{ n_NPXti.outputs.objects[0].properties }}",
 						"source":"{{ n_NPXti.outputs.objects }}",
-						"ua:type":"mappedArray"
+						"ua:type":"mappedArray",
+						"items":"{{ n_NPXti.outputs.objects[0].properties }}"
 					}
 				}
 			},
@@ -197,9 +198,9 @@
 			"tierName":"global"
 		}
 	},
-	"standard":true,
+	"standard":false,
 	"tags":[
 		"text-to-agent"
 	],
-	"version":12
+	"version":14
 }
