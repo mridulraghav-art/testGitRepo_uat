@@ -1,0 +1,199 @@
+{
+	"appsUsed":[
+		"gmail"
+	],
+	"createdTime":1780690215079,
+	"deleted":false,
+	"description":"Receives email details (to, subject, message, cc, bcc, email_type) via callable trigger, sends the email using Gmail, and returns the sent message ID, thread ID, and label IDs.",
+	"edges":[
+		{
+			"fromNodeId":"n_StrtA",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GmlSd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GmlSd",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StopR",
+			"type":"next"
+		}
+	],
+	"id":"6a232d0e0d067e7694da1909",
+	"lastModifiedBy":39,
+	"lcName":"send gmail email",
+	"modifiedTime":1780690215079,
+	"name":"Send Gmail Email",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_from_automation"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StrtA",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"id":{
+							"type":"string",
+							"title":"Message ID"
+						},
+						"threadId":{
+							"type":"string",
+							"title":"Thread ID"
+						},
+						"labelIds":{
+							"type":"array",
+							"title":"Label IDs",
+							"items":{
+								"type":"string"
+							}
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"to",
+						"subject",
+						"message"
+					],
+					"properties":{
+						"to":{
+							"type":"array",
+							"title":"To",
+							"items":{
+								"type":"string"
+							}
+						},
+						"subject":{
+							"type":"string",
+							"title":"Subject"
+						},
+						"message":{
+							"type":"string",
+							"title":"Message"
+						},
+						"cc":{
+							"type":"array",
+							"title":"CC",
+							"items":{
+								"type":"string"
+							}
+						},
+						"bcc":{
+							"type":"array",
+							"title":"BCC",
+							"items":{
+								"type":"string"
+							}
+						},
+						"email_type":{
+							"type":"string",
+							"title":"Email Type"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"66ec8472609c0c6a5bd810f9",
+				"resourceName":"gmail_send_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_GmlSd",
+			"index":2,
+			"inputs":{
+				"cc":{
+					"ua:type":"mappedArray",
+					"source":"{{ n_StrtA.outputs.cc }}",
+					"items":"{{ n_StrtA.outputs.cc[0] }}"
+				},
+				"bcc":{
+					"ua:type":"mappedArray",
+					"source":"{{ n_StrtA.outputs.bcc }}",
+					"items":"{{ n_StrtA.outputs.bcc[0] }}"
+				},
+				"email_type":"{{ n_StrtA.outputs.email_type }}",
+				"subject":"{{ n_StrtA.outputs.subject }}",
+				"to":{
+					"ua:type":"mappedArray",
+					"source":"{{ n_StrtA.outputs.to }}",
+					"items":"{{ n_StrtA.outputs.to[0] }}"
+				},
+				"message":"{{ n_StrtA.outputs.message }}"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Send email",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StopR",
+			"index":3,
+			"inputs":{
+				"result":{
+					"id":"{{ n_GmlSd.outputs.id }}",
+					"threadId":"{{ n_GmlSd.outputs.threadId }}",
+					"labelIds":{
+						"ua:type":"mappedArray",
+						"source":"{{ n_GmlSd.outputs.labelIds }}",
+						"items":"{{ n_GmlSd.outputs.labelIds[0] }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"AI Generated"
+	],
+	"version":0
+}
