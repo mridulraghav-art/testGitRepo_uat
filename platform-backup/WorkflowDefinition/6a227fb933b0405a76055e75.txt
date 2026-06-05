@@ -1,0 +1,105 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780645817034,
+	"deleted":false,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"n_1Ter3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_MDBzY",
+			"type":"next"
+		}
+	],
+	"id":"6a227fb933b0405a76055e75",
+	"lastModifiedBy":39,
+	"lcName":"test-allallowed_217806454758940",
+	"modifiedTime":1780645846925,
+	"name":"test-allAllowed_217806454758940",
+	"nodes":[
+		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_MncWx-1",
+			"id":"n_1Ter3",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
+			"skip":false,
+			"subTitle":"Webhook",
+			"title":"New event",
+			"trigger":{
+				"type":"WEBHOOK"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2405,
+				"resourceName":"callables_schedule_a_callable",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_MncWx-1",
+			"id":"n_MDBzY",
+			"index":2,
+			"inputs":{
+				"automation_id":"6a227f943453715cc312c5eb",
+				"schedule_method":{
+					"schedule_type":"CRON_EXPRESSION",
+					"setup_config":{
+						"timezone":"Asia/Kolkata",
+						"expression":"1 1 * 2 2",
+						"start_time":"2026-06-05T07:50:41.242Z",
+						"unit":"MINUTES"
+					}
+				},
+				"runtimeConnections":{},
+				"cancel_existing":true,
+				"version":"-1",
+				"schedule_name":"Schedule Callable Automation",
+				"parameters":{
+					"input_String":"Hello Unify"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Schedule callable",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":false,
+		"enableRunLogging":false,
+		"enableVariableLogging":false,
+		"route":{
+			"default":false,
+			"headerValueTierMap":{},
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"dnt_tag"
+	],
+	"version":2
+}
