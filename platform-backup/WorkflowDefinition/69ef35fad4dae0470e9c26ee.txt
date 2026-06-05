@@ -41,34 +41,12 @@
 			"skip":false,
 			"toNodeId":"n_o7BaZ",
 			"type":"next"
-		},
-		{
-			"fromNodeId":"n_o7BaZ",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_yLxYV",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_yLxYV",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_XbZ3s",
-			"type":"loop"
-		},
-		{
-			"fromNodeId":"n_XbZ3s",
-			"name":"loopback",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_yLxYV",
-			"type":"next"
 		}
 	],
 	"id":"69ef35fad4dae0470e9c26ee",
 	"lastModifiedBy":39,
 	"lcName":"fwefweew",
-	"modifiedTime":1780556441032,
+	"modifiedTime":1780642030628,
 	"name":"fwefweew",
 	"nodes":[
 		{
@@ -175,7 +153,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_qI4NI-1",
 			"id":"n_Z4AEd",
@@ -304,39 +282,6 @@
 			"subTitle":"Analytics by UnifyApps",
 			"title":"Execute Analytics SQL Query",
 			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"pdf_by_unifyapps",
-				"resourceVersion":1989,
-				"resourceName":"pdf_by_unifyapps_for_each_page",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"_qI4NI-1",
-			"id":"n_yLxYV",
-			"index":6,
-			"inputs":{
-				"useCustomHeaders":false,
-				"usePlaywright":false
-			},
-			"skip":false,
-			"subTitle":"PDF by UnifyApps",
-			"title":"Read text from PDF file",
-			"type":"LOOP"
-		},
-		{
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"n_yLxYV@_qI4NI-1@l",
-			"id":"n_XbZ3s",
-			"index":7,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -353,5 +298,5 @@
 		}
 	},
 	"standard":false,
-	"version":21
+	"version":22
 }
