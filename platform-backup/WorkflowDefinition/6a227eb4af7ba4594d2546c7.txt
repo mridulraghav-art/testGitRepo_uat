@@ -7,46 +7,65 @@
 	"description":"description",
 	"edges":[
 		{
-			"fromNodeId":"_eDiva",
+			"fromNodeId":"n_Hfgu0",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_XfPlA",
+			"toNodeId":"n_ZPEzx",
 			"type":"next"
 		}
 	],
 	"id":"6a227eb4af7ba4594d2546c7",
 	"lastModifiedBy":39,
 	"lcName":"errorsnackbaraction_217806454575580",
-	"modifiedTime":1780645562468,
+	"modifiedTime":1780645580058,
 	"name":"errorSnackbarAction_217806454575580",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":61,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_eDiva-1",
-			"id":"_eDiva",
-			"index":0,
+			"id":"n_Hfgu0",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_eDiva-1",
-			"id":"_XfPlA",
-			"index":0,
+			"id":"n_ZPEzx",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Select an action",
+			"type":"CALL_WORKFLOW"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":false,
 		"enableRunLogging":false,
@@ -61,5 +80,5 @@
 	"tags":[
 		"dnt_tag"
 	],
-	"version":1
+	"version":2
 }
