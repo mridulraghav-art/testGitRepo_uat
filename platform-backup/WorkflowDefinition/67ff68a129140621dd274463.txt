@@ -9,7 +9,7 @@
 		"deployedAt":1744810325405,
 		"deployedBy":39,
 		"deployedDefinitionId":"67ffb15540496563f7dd7fa1",
-		"status":"DEPLOYED",
+		"status":"PAUSED",
 		"version":4,
 		"workflowVersion":56
 	},
@@ -218,7 +218,7 @@
 	"id":"67ff68a129140621dd274463",
 	"lastModifiedBy":39,
 	"lcName":"data catalog - oracle (final)",
-	"modifiedTime":1780568067858,
+	"modifiedTime":1780636981242,
 	"name":"Data Catalog - Oracle (Final)",
 	"nodes":[
 		{
@@ -694,13 +694,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"hw4d8-1",
 			"id":"mP7ni",
 			"index":7,
 			"inputs":{},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Oracle DB",
 			"title":"Fetch Database Metadata",
 			"type":"ACTION"
@@ -734,7 +734,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"hw4d8-1",
 			"id":"PrwcF",
@@ -826,7 +826,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"hw4d8-1",
 			"id":"8HgdV",
@@ -1787,5 +1787,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":63
+	"version":64
 }
