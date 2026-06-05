@@ -4,45 +4,119 @@
 	],
 	"createdTime":1780689784333,
 	"deleted":false,
+	"description":"Triggered by an incoming HTTP POST webhook request. Joins a Google Meet meeting using a meeting bot, then immediately stops/leaves the meeting bot session.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_Wbh1K",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_JnMtg",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_JnMtg",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LvMtg",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LvMtg",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpWf",
 			"type":"next"
 		}
 	],
 	"id":"6a232b78b753a72ac73bbbb1",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1780689784333,
-	"name":"Untitled workflow",
+	"lcName":"webhook + meeting bot stop workflow",
+	"modifiedTime":1780689857969,
+	"name":"Webhook + Meeting Bot Stop Workflow",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_Wbh1K",
 			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"meeting_bot_by_unifyapps",
+				"resourceName":"meeting_bot_by_unifyapps_join_meeting",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_JnMtg",
 			"index":2,
+			"inputs":{
+				"botName":"UnifyApps",
+				"autoLeaveMeeting":true,
+				"meetingUrl":"{{ n_Wbh1K.outputs.meetingUrl }}"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Meeting Bot",
+			"title":"Join meeting",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"meeting_bot_by_unifyapps",
+				"resourceName":"meeting_bot_by_unifyapps_leave_meeting",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_LvMtg",
+			"index":3,
+			"inputs":{
+				"meetingUrl":"{{ n_Wbh1K.outputs.meetingUrl }}"
+			},
+			"skip":false,
+			"subTitle":"Meeting Bot",
+			"title":"Leave meeting",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"resourceName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StpWf",
+			"index":4,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +130,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
