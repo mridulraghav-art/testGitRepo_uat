@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780674594434,
 	"deleted":false,
-	"deployedVersion":14,
+	"deployedVersion":16,
 	"deploymentState":{
-		"deployedAt":1780679090652,
+		"deployedAt":1780680076545,
 		"deployedBy":-1,
-		"deployedDefinitionId":"6a2301b2af7ba4594d2b2009",
+		"deployedDefinitionId":"6a23058c31ae790065a1992a",
 		"status":"DEPLOYED",
-		"version":14,
-		"workflowVersion":24
+		"version":16,
+		"workflowVersion":26
 	},
 	"edges":[
 		{
@@ -102,7 +102,7 @@
 	"id":"69d4e806164b0f735db6ea41",
 	"lastModifiedBy":-1,
 	"lcName":"memory | add memories (add from user conversation)",
-	"modifiedTime":1780680076333,
+	"modifiedTime":1780685535103,
 	"name":"Memory | Add Memories (add from user conversation)",
 	"nodes":[
 		{
@@ -119,63 +119,63 @@
 			"index":1,
 			"inputs":{
 				"result":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
 						"status":{
-							"title":"status",
-							"type":"string"
+							"type":"string",
+							"title":"status"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"setup":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
-						"content":{
-							"title":"content",
-							"type":"string"
-						},
-						"memoryProfileId":{
-							"title":"memoryProfileId",
-							"type":"integer"
-						},
 						"memoryTypes":{
+							"type":"array",
 							"items":{
 								"type":"string"
 							},
-							"title":"memoryTypes",
-							"type":"array"
+							"title":"memoryTypes"
 						},
-						"messages":{
-							"items":{
-								"additionalProperties":false,
-								"properties":{
-									"content":{
-										"title":"content",
-										"type":"string"
-									},
-									"role":{
-										"title":"role",
-										"type":"string"
-									}
-								},
-								"type":"object"
-							},
-							"title":"messages",
-							"type":"array"
-						},
-						"modelId":{
-							"title":"Model Id",
-							"type":"string"
+						"memoryProfileId":{
+							"type":"integer",
+							"title":"memoryProfileId"
 						},
 						"user_id":{
-							"title":"user_id",
-							"type":"string"
+							"type":"string",
+							"title":"user_id"
+						},
+						"messages":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"role":{
+										"type":"string",
+										"title":"role"
+									},
+									"content":{
+										"type":"string",
+										"title":"content"
+									}
+								},
+								"additionalProperties":false
+							},
+							"title":"messages"
+						},
+						"content":{
+							"type":"string",
+							"title":"content"
+						},
+						"modelId":{
+							"type":"string",
+							"title":"Model Id"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				}
 			},
 			"skip":false,
@@ -208,8 +208,8 @@
 					"type":"object",
 					"properties":{
 						"mssg":{
-							"title":"Mssg",
-							"type":"string"
+							"type":"string",
+							"title":"Mssg"
 						}
 					},
 					"required":[]
@@ -225,8 +225,8 @@
 					"type":"object",
 					"properties":{
 						"mssg":{
-							"title":"Mssg",
-							"type":"string"
+							"type":"string",
+							"title":"Mssg"
 						}
 					},
 					"required":[]
@@ -256,8 +256,8 @@
 				"object_type":"imported_memory_store",
 				"skipIfBlank":false,
 				"record":{
-					"UserId":"{{ n_H87EL.outputs.user_id }}",
-					"importText":"{{ n_t7rm6.outputs.mssg }}"
+					"importText":"{{ n_t7rm6.outputs.mssg }}",
+					"UserId":"{{ n_H87EL.outputs.user_id }}"
 				}
 			},
 			"skip":false,
@@ -281,17 +281,17 @@
 			"inputs":{
 				"filters":[
 					{
+						"property":"{{ n_H87EL.outputs.body.content }}",
 						"filter":{
 							"operator":"EXISTS"
-						},
-						"property":"{{ n_H87EL.outputs.body.content }}"
+						}
 					},
 					{
+						"property":"=LEN({{ n_H87EL.outputs.body.content }})",
 						"filter":{
 							"operator":"GT",
 							"value":"0"
-						},
-						"property":"=LEN({{ n_H87EL.outputs.body.content }})"
+						}
 					}
 				],
 				"operator":"AND"
@@ -323,79 +323,79 @@
 			"index":5,
 			"inputs":{
 				"output":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
-						"episodicFlag":{
-							"title":"episodicFlag",
-							"type":"boolean"
-						},
 						"messages":{
-							"title":"messages",
-							"type":"string"
+							"type":"string",
+							"title":"messages"
 						},
 						"proceduralFlag":{
-							"title":"proceduralFlag",
-							"type":"boolean"
+							"type":"boolean",
+							"title":"proceduralFlag"
+						},
+						"episodicFlag":{
+							"type":"boolean",
+							"title":"episodicFlag"
 						},
 						"semanticFlag":{
-							"title":"semanticFlag",
-							"type":"boolean"
+							"type":"boolean",
+							"title":"semanticFlag"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"input":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
+						"messages":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"content":{
+										"type":"object",
+										"properties":{},
+										"additionalProperties":false,
+										"title":"content"
+									},
+									"role":{
+										"type":"string",
+										"title":"role"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"messages"
+						},
 						"memoryTypes":{
+							"type":"array",
 							"items":{
 								"type":"string"
 							},
-							"title":"memoryTypes",
-							"type":"array"
-						},
-						"messages":{
-							"items":{
-								"additionalProperties":false,
-								"properties":{
-									"content":{
-										"additionalProperties":false,
-										"properties":{},
-										"title":"content",
-										"type":"object"
-									},
-									"role":{
-										"title":"role",
-										"type":"string"
-									}
-								},
-								"required":[],
-								"type":"object"
-							},
-							"title":"messages",
-							"type":"array"
+							"title":"memoryTypes"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"code":"def messagesOut = []\nmessages.each { item ->\n    if (!item) return\n    def role = item.role\n    def text = item.content?.toString()\n    if (!text || text.trim().isEmpty()) return\n    if (role == \"assistant\") {\n        messagesOut << \"Assistant : \\\"${text}\\\"\"\n    } else if (role == \"user\") {\n        messagesOut << \"User : \\\"${text}\\\"\"\n    }\n}\ndef messagesString = messagesOut.join(\"\\n\")\nif(!binding.hasVariable('memoryTypes')) return [\n    proceduralFlag: false,\n    episodicFlag  : false,\n    semanticFlag  : true,\n    messages  : messagesString\n]\ndef memoryTypesLower = memoryTypes*.toLowerCase()\nreturn [\n    proceduralFlag: memoryTypesLower.contains(\"procedural\"),\n    episodicFlag  : memoryTypesLower.contains(\"episodic\"),\n    semanticFlag  : memoryTypesLower.contains(\"semantic\"),\n    messages  : messagesString ?: \"\"\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
-					"memoryTypes":{
-						"items":"{{ n_H87EL.outputs.memoryTypes[0] }}",
-						"source":"{{ n_H87EL.outputs.memoryTypes }}",
-						"ua:type":"mappedArray"
-					},
 					"messages":{
+						"ua:type":"mappedArray",
 						"items":{
 							"content":"{{ n_H87EL.outputs.messages[0].content }}",
 							"role":"{{ n_H87EL.outputs.messages[0].role }}"
 						},
-						"source":"{{ n_H87EL.outputs.messages }}",
-						"ua:type":"mappedArray"
+						"source":"{{ n_H87EL.outputs.messages }}"
+					},
+					"memoryTypes":{
+						"ua:type":"mappedArray",
+						"source":"{{ n_H87EL.outputs.memoryTypes }}",
+						"items":"{{ n_H87EL.outputs.memoryTypes[0] }}"
 					}
 				}
 			},
@@ -447,17 +447,17 @@
 				"automationId":"69b2c6124df22e00555d2b58",
 				"runtimeConnections":{},
 				"synchronous":true,
+				"version":"-1",
 				"parameters":{
-					"episodicFlag":false,
-					"llmModelId":"{{ __ENV__.outputs.memoryExtractionModel }}",
-					"memoryProfileId":"{{ __ENV__.outputs.globalMemoryProfileId }}",
 					"messages":"{{ n_t7rm6.outputs.mssg }}",
 					"proceduralFlag":false,
-					"scope":"userSpecific",
 					"semanticFlag":true,
-					"userId":"{{ n_H87EL.outputs.user_id }}"
-				},
-				"version":"-1"
+					"episodicFlag":false,
+					"llmModelId":"{{ __ENV__.outputs.memoryExtractionModel }}",
+					"scope":"userSpecific",
+					"userId":"{{ n_H87EL.outputs.user_id }}",
+					"memoryProfileId":"{{ __ENV__.outputs.globalMemoryProfileId }}"
+				}
 			},
 			"skip":false,
 			"subTitle":"UserSpecificMemories",
@@ -480,11 +480,11 @@
 			"inputs":{
 				"filters":[
 					{
+						"property":"=LEN({{ n_gk1T4.outputs.events }})",
 						"filter":{
 							"operator":"GT",
 							"value":"0"
-						},
-						"property":"=LEN({{ n_gk1T4.outputs.events }})"
+						}
 					}
 				],
 				"operator":"AND"
@@ -554,6 +554,9 @@
 			"tierName":"global"
 		}
 	},
-	"standard":true,
-	"version":25
+	"standard":false,
+	"tags":[
+		"text-to-agent"
+	],
+	"version":27
 }
