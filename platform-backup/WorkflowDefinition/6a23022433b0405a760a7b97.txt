@@ -4,13 +4,28 @@
 	],
 	"createdTime":1780679204061,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780682418196,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a230eb131ae790065a24357",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":4
+	},
 	"edges":[
-		
+		{
+			"fromNodeId":"n_cD2aU",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_iMm86",
+			"type":"next"
+		}
 	],
 	"id":"6a23022433b0405a760a7b97",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1780682395529,
+	"modifiedTime":1780682440205,
 	"name":"test",
 	"nodes":[
 		{
@@ -20,7 +35,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_t1HmY-1",
 			"id":"n_cD2aU",
@@ -37,6 +52,28 @@
 				"type":"WEBHOOK"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"meeting_bot_by_unifyapps",
+				"resourceVersion":1928,
+				"resourceName":"meeting_bot_by_unifyapps_join_meeting",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_t1HmY-1",
+			"id":"n_iMm86",
+			"index":2,
+			"inputs":{
+				"botName":"UnifyApps",
+				"autoLeaveMeeting":true
+			},
+			"skip":false,
+			"subTitle":"Meeting bot by UnifyApps",
+			"title":"Join meeting",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -53,5 +90,5 @@
 		}
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
