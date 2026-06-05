@@ -23,7 +23,7 @@
 	"id":"6a23195e28d6d162e1ee3c6f",
 	"lastModifiedBy":39,
 	"lcName":"import",
-	"modifiedTime":1780685476824,
+	"modifiedTime":1780688831987,
 	"name":"import",
 	"nodes":[
 		{
@@ -52,6 +52,11 @@
 			"type":"START"
 		},
 		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{}
+				}
+			},
 			"context":{
 				"appName":"custom_http_endpoint",
 				"resourceVersion":282,
@@ -81,35 +86,14 @@
 				"path":"/internal/platform-feature/101/importFeatureEntities",
 				"baseUrl":"http://internal-global-svc.unifyapps.svc.cluster.local:80",
 				"httpVersion":"HTTP_2",
-				"bodySchema":{
-					"type":"array",
-					"items":{
-						"type":"object",
-						"properties":{
-							"featureName":{
-								"type":"string",
-								"title":"featureName"
-							},
-							"configPath":{
-								"type":"string",
-								"title":"configPath"
-							},
-							"preSyncCheckEnabled":{
-								"type":"boolean",
-								"title":"preSyncCheckEnabled"
-							}
-						},
-						"additionalProperties":false
-					}
-				},
 				"queryParamsList":[
 					{
 						"key":"forceSync",
 						"value":"true"
 					},
 					{
-						"key":"fromRepository",
-						"value":"true"
+						"key":"artifactUrl",
+						"value":"https://s3.ap-south-1.amazonaws.com/prod-aps1.unifyapps.com.cloudstorage.90/change-set-export/90/6a2327b875c5076c6c5c5596?response-content-disposition=attachment%3Bfilename%3D%22resources.zip%22&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCmFwLXNvdXRoLTEiRjBEAiAFUwx%2FKlizpjI%2F7cHHf0FGcCaZ5JgzFsjad4TFl%2FaUBwIgcHaDufzEP8jrYoyVb7Gi32yS40CsFVRT3wHjbVXeKDcqvgUIcRAAGgwwNTgyNjQxOTAxNjciDP9JihOX%2BtXjA1xk7yqbBSoFi6cbb5HppSfvsaqLARQAwcE8mZfSfouvhkgA3usRxuHK3vPgK5BQB15fkzAyAjRTAwzc%2BkkeDOuGAdbVAL1z1WPhRlWfw%2BCuPCsfdjryandPa%2FIZj8WyHyVl8kUf6MYxOAkkFMRVVvv3rL%2F%2F9%2BeFzdut84esrCQEgLy7pHkoXMac2Kux2lw3dyBBUnP6X4lW5TtMWWcWfq0K0OiRKdBqpxv%2BhXeUWwtqVYXccxw0XTEueWpxAfWHYKuznpp4F79BRsuTffEykoCHScpv0xK2rVstGvBk8rKRV0yCLMk8%2BkAYgEJ2zusix%2FhJoA0dOZNatB2bDOHBmJnTyNGslW40Nlv9mkwg4HK0sgC%2FElP0updAlF6G6ajzZbiAjgrvDR6DvpO5xKtZl%2FH%2FgxgDemy2pqB1N7NfNwVVqQFo3B4Ugapo3kKWycfePOMjsHqX4uoB%2F6X56HtxpaKlggZpu38W8UK9dWuWcwNniM3S18JNVD7sGdgutVz2WkAm5QRgHwJjlxlmTTQq4gN5HTtA1hm%2BrnfklR5WhQI1nkTEu6cBT5UZoDTSBpl8bmlvn4Wfk7EHeJ%2FFzR%2BqehDE3iMeBpkuborUN3IH35H7VsRdG4IBmIs6VdYf3ibkZb7F3Vrx0E6KxoCH%2FodxD6qi6uImy4BcvBGnH%2Bv9L9lafrW2ZfO8IWsDhr1WrDtIwQrcStIGdMi8bGiD8GjHGF2cEa%2B%2Fv0BxY%2BRoX0CjDljLgC68YUtYYLK9j4IkN6UJQSEkj8gc%2B2QDr3oSeJ%2Bdqc7C%2BRcI2ViIHOIQENbk%2FASqLlve%2B8EV04me6VzyVCPqvMT4IjJlGwZnhushWkCofYclIYPw1AaGDHYv8Y3M3KW2irU0eKKb393A26SV9KGxqS0wmNqL0QY6sgFmxxAmugTH7hEz26pFoea28d1LtfFNmKaOMIjt%2Bk39gJYHnRYH%2BUTF0aJNNJK0B67UIGVg%2FtGlTd548xWMxmEkpik0Qsy471KvPmuXmZf3PoeXy%2FDq9f%2BmVPSONcoSnjAtEQ58RHdsjx5w3FhxfF1rpvSj0AzO4z%2Bn%2BZTmxiM%2BZBfSmYwwD%2BK15vTIfd%2FOueR2y268IzS0czzJMU4OfE8ZTLneY2BAIqF8Erm0JTb3P%2B9u&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260605T194704Z&X-Amz-SignedHeaders=host&X-Amz-Credential=ASIAQ3EGQ7TL47DIMEQ4%2F20260605%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Expires=3600&X-Amz-Signature=0e7e96c1e41c6d99d38d72ce9171a4b345713d74536f7efe0076661dd542831c"
 					}
 				],
 				"responseContentType":"application/json",
@@ -154,5 +138,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":8
 }
