@@ -4,6 +4,15 @@
 	],
 	"createdTime":1780689784333,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780690533430,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a232e6528d6d162e1f01c95",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"description":"Triggered by an incoming HTTP POST webhook request. Joins a Google Meet meeting using a meeting bot, then immediately stops/leaves the meeting bot session.",
 	"edges":[
 		{
@@ -31,7 +40,7 @@
 	"id":"6a232b78b753a72ac73bbbb1",
 	"lastModifiedBy":39,
 	"lcName":"webhook + meeting bot stop workflow",
-	"modifiedTime":1780690530707,
+	"modifiedTime":1780692061529,
 	"name":"Webhook + Meeting Bot Stop Workflow",
 	"nodes":[
 		{
@@ -66,15 +75,14 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_JnMtg",
 			"index":2,
 			"inputs":{
 				"botName":"UnifyApps",
-				"autoLeaveMeeting":true,
-				"meetingUrl":"{{ n_Wbh1K.outputs.meetingUrl }}"
+				"autoLeaveMeeting":true
 			},
 			"skip":false,
 			"subTitle":"Meeting Bot",
@@ -136,5 +144,5 @@
 	"tags":[
 		"AI Generated"
 	],
-	"version":2
+	"version":3
 }
