@@ -51,7 +51,7 @@
 	"id":"6a23d5593ad0e26b1f92aa73",
 	"lastModifiedBy":39,
 	"lcName":"kafka topics cleanup",
-	"modifiedTime":1780739022274,
+	"modifiedTime":1780739137952,
 	"name":"Kafka Topics Cleanup",
 	"nodes":[
 		{
@@ -193,7 +193,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_tVQIj",
@@ -228,7 +228,7 @@
 						}
 					}
 				},
-				"code":"def pods = inputMap.result.items.collect { it.metadata.name }\nreturn [\"pods\": pods]",
+				"code":"def pods = inputMap.items.collect { it.metadata.name }\nreturn [\"pods\": pods]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
@@ -428,5 +428,5 @@
 		}
 	},
 	"standard":false,
-	"version":7
+	"version":8
 }
