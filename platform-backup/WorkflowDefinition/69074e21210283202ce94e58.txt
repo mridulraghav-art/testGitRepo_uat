@@ -15,37 +15,7 @@
 	},
 	"edges":[
 		{
-			"fromNodeId":"n_fstIs",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_Wg3cs",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_Wg3cs",
-			"name":"yes",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_8xjLk",
-			"type":"if"
-		},
-		{
-			"fromNodeId":"n_Wg3cs",
-			"name":"no",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_XYj39",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_8xjLk",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_DF2ce",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_XYj39",
+			"fromNodeId":"n_QjEiF",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_DF2ce",
@@ -69,13 +39,6 @@
 			"fromNodeId":"n_Hp2fS",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_KTwd4",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_KTwd4",
-			"priority":0,
-			"skip":false,
 			"toNodeId":"n_eG2dN",
 			"type":"next"
 		}
@@ -83,35 +46,22 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1780317450518,
+	"modifiedTime":1780768720239,
 	"name":"furrrr1",
 	"nodes":[
 		{
 			"context":{
 				"appName":"callables",
-				"resourceVersion":2393,
+				"resourceVersion":1691,
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
-			"id":"n_fstIs",
+			"id":"n_QjEiF",
 			"index":1,
-			"inputs":{
-				"triggerInputCondition":{
-					"filters":[
-						{
-							"property":"{{ n_fstIs.outputs }}",
-							"filter":{
-								"operator":"EQUAL",
-								"value":"4321"
-							}
-						}
-					],
-					"operator":"AND"
-				}
-			},
+			"inputs":{},
 			"skip":false,
 			"subTitle":"Callable",
 			"title":"Trigger via automation",
@@ -119,58 +69,6 @@
 				"type":"CALLABLE"
 			},
 			"type":"START"
-		},
-		{
-			"context":{
-				"appName":"if_else",
-				"resourceVersion":66,
-				"resourceName":"if_else_condition",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_QPyDa-1",
-			"id":"n_Wg3cs",
-			"index":2,
-			"inputs":{
-				"filters":[
-					{
-						"property":"{{ n_W94IT.outputs.object.properties.testCaseType }}",
-						"filter":{
-							"operator":"EQUAL",
-							"value":"65432"
-						}
-					}
-				],
-				"operator":"AND"
-			},
-			"skip":false,
-			"subTitle":"Condition",
-			"title":"Condition",
-			"type":"IF_ELSE"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_Wg3cs@_QPyDa-1@y",
-			"id":"n_8xjLk",
-			"index":3,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_Wg3cs@_QPyDa-1@n",
-			"id":"n_XYj39",
-			"index":4,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		},
 		{
 			"context":{
@@ -184,7 +82,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_DF2ce",
-			"index":5,
+			"index":2,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -462,7 +360,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_WPWIl",
-			"index":6,
+			"index":3,
 			"inputs":{
 				"itemToAdd":{
 					"k1":"v2"
@@ -486,11 +384,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_Hp2fS",
-			"index":7,
+			"index":4,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -512,7 +410,7 @@
 				}
 			},
 			"inputs":{
-				"new_obj":"{{ n_WPWIl.outputs.success }}"
+				"new_obj":"{{ n_DF2ce.outputs.items }}"
 			},
 			"outputSchema":{
 				"dynamic":false,
@@ -539,31 +437,6 @@
 		},
 		{
 			"context":{
-				"appName":"storage_by_unifyapps",
-				"resourceVersion":4173,
-				"resourceName":"storage_by_unifyapps_get_records_by_ids",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_QPyDa-1",
-			"id":"n_KTwd4",
-			"index":8,
-			"inputs":{
-				"object_type":"infra_configs",
-				"includeRoleMappings":false,
-				"includeCurrentUserPermissions":false,
-				"translationsOption":"DEFAULT",
-				"readThroughSessionVariables":false
-			},
-			"skip":false,
-			"subTitle":"Storage by UnifyApps",
-			"title":"Get records by IDs",
-			"type":"ACTION"
-		},
-		{
-			"context":{
 				"appName":"callables",
 				"resourceVersion":1692,
 				"resourceName":"callables_return_to_automation",
@@ -574,7 +447,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_eG2dN",
-			"index":9,
+			"index":5,
 			"inputs":{
 				"result":"{{ n_kzSW5.outputs.properties.uniqueId }}"
 			},
@@ -601,5 +474,5 @@
 	"tags":[
 		
 	],
-	"version":64
+	"version":65
 }
