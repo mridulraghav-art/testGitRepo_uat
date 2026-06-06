@@ -16,6 +16,13 @@
 			"fromNodeId":"n_nsZPE",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_mf02R",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_mf02R",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_A4U7f",
 			"type":"next"
 		}
@@ -23,7 +30,7 @@
 	"id":"6a23e8703453715cc32c4a0f",
 	"lastModifiedBy":39,
 	"lcName":"populate models in text-to-*",
-	"modifiedTime":1780738597666,
+	"modifiedTime":1780738993624,
 	"name":"Populate models in text-to-*",
 	"nodes":[
 		{
@@ -33,7 +40,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_gUd5t",
@@ -59,7 +66,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_nsZPE",
@@ -79,10 +86,16 @@
 						"opus4_8ModelId":{
 							"type":"string",
 							"title":"Opus 4.8 Model Id"
+						},
+						"baseUrl":{
+							"type":"string",
+							"title":"Base Url",
+							"description":"Base url of the tenant, for e.g. https://tool.prod-aps1.unifyapps.com/"
 						}
 					},
 					"required":[
-						"opus4_8ModelId"
+						"opus4_8ModelId",
+						"baseUrl"
 					]
 				}
 			},
@@ -100,16 +113,45 @@
 						"opus4_8ModelId":{
 							"type":"string",
 							"title":"Opus 4.8 Model Id"
+						},
+						"baseUrl":{
+							"type":"string",
+							"title":"Base Url",
+							"description":"Base url of the tenant, for e.g. https://tool.prod-aps1.unifyapps.com/"
 						}
 					},
 					"required":[
-						"opus4_8ModelId"
+						"opus4_8ModelId",
+						"baseUrl"
 					]
 				}
 			},
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":0,
+				"resourceName":"standard_entities_update_env_variable",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_l0JkM-1",
+			"id":"n_mf02R",
+			"index":3,
+			"inputs":{
+				"name":"base_URL",
+				"sensitive":false,
+				"value":"{{ n_nsZPE.outputs.baseUrl }}"
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Update Environment Variable",
 			"type":"ACTION"
 		},
 		{
@@ -124,7 +166,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_A4U7f",
-			"index":3,
+			"index":4,
 			"inputs":{
 				"numberOfRecordsToUpdate":"SINGLE",
 				"triggerInputCondition":{
@@ -199,5 +241,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
