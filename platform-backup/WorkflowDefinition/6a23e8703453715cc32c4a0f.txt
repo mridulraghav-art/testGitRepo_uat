@@ -6,46 +6,189 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_l0JkM",
+			"fromNodeId":"n_gUd5t",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_PIqUv",
+			"toNodeId":"n_nsZPE",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_nsZPE",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_A4U7f",
 			"type":"next"
 		}
 	],
 	"id":"6a23e8703453715cc32c4a0f",
 	"lastModifiedBy":39,
 	"lcName":"populate models in text-to-*",
-	"modifiedTime":1780738160924,
+	"modifiedTime":1780738554104,
 	"name":"Populate models in text-to-*",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":62,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
-			"id":"_l0JkM",
-			"index":0,
+			"id":"n_gUd5t",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1652,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
-			"id":"_PIqUv",
-			"index":0,
+			"id":"n_nsZPE",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"sonnet4_6ModelId":{
+							"type":"string",
+							"title":"Sonnet 4.6 Model Id"
+						},
+						"opus4_8ModelId":{
+							"type":"string",
+							"title":"Opus 4.8 Model Id"
+						}
+					},
+					"required":[
+						"opus4_8ModelId"
+					]
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"sonnet4_6ModelId":{
+							"type":"string",
+							"title":"Sonnet 4.6 Model Id"
+						},
+						"opus4_8ModelId":{
+							"type":"string",
+							"title":"Opus 4.8 Model Id"
+						}
+					},
+					"required":[
+						"opus4_8ModelId"
+					]
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4369,
+				"resourceName":"storage_by_unifyapps_update_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_l0JkM-1",
+			"id":"n_A4U7f",
+			"index":3,
+			"inputs":{
+				"numberOfRecordsToUpdate":"SINGLE",
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"tags",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"text-to-lowcode"
+							}
+						},
+						{
+							"property":"tags",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"text-to-agent"
+							}
+						},
+						{
+							"property":"tags",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"text-to-workflow"
+							}
+						}
+					],
+					"operator":"OR"
+				},
+				"object_type":"ai_agent",
+				"skipIfBlank":false,
+				"updateFields":[
+					{
+						"fieldName":"properties.topicExecutionSettings.topicExecutionModel",
+						"actionType":"SET",
+						"setValue":"{{ n_nsZPE.outputs.sonnet4_6ModelId }}"
+					},
+					{
+						"fieldName":"properties.topicExecutionSettings.topicSelectionModel",
+						"actionType":"SET",
+						"setValue":"{{ n_nsZPE.outputs.sonnet4_6ModelId }}"
+					},
+					{
+						"fieldName":"properties.responseGenerationSettings.answerGenerationModel",
+						"actionType":"SET",
+						"setValue":"{{ n_nsZPE.outputs.sonnet4_6ModelId }}"
+					}
+				],
+				"page":{
+					"offset":0,
+					"limit":20
+				},
+				"skipSchemaValidation":true,
+				"unsetIfNull":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update records by query",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +199,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
