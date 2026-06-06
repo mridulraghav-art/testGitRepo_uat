@@ -51,7 +51,7 @@
 	"id":"6a23d5593ad0e26b1f92aa73",
 	"lastModifiedBy":39,
 	"lcName":"kafka topics cleanup",
-	"modifiedTime":1780738966449,
+	"modifiedTime":1780739019648,
 	"name":"Kafka Topics Cleanup",
 	"nodes":[
 		{
@@ -61,7 +61,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_MouuF",
@@ -92,7 +92,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_vNy6t",
@@ -138,7 +138,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_LXVGh",
@@ -193,7 +193,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_tVQIj",
@@ -248,7 +248,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_CrPsG",
@@ -344,9 +344,9 @@
 						"items":"{{ n_CrPsG.outputs.result }}"
 					},
 					"pods":{
-						"source":"{{ n_LXVGh.outputs.result.pods }}",
 						"ua:type":"mappedArray",
-						"items":"{{ n_LXVGh.outputs.result.pods[0] }}"
+						"source":"{{ n_tVQIj.outputs.result.pods }}",
+						"items":"{{ n_tVQIj.outputs.result.pods }}"
 					}
 				}
 			},
@@ -363,7 +363,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_daK8y",
@@ -428,5 +428,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
