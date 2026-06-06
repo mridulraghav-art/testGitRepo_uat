@@ -122,7 +122,7 @@
 	"id":"6a23e8703453715cc32c4a0f",
 	"lastModifiedBy":39,
 	"lcName":"populate models in text-to-*",
-	"modifiedTime":1780745007611,
+	"modifiedTime":1780746842861,
 	"name":"Populate models in text-to-*",
 	"nodes":[
 		{
@@ -132,7 +132,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_gUd5t",
@@ -191,7 +191,11 @@
 					]
 				}
 			},
-			"inputs":{},
+			"inputs":{
+				"sonnet4_6ModelId":"68cd293692f84e12c9d15fd4",
+				"opus4_8ModelId":"68cd293692f84e12c9d15fd4",
+				"baseUrl":"https://uat.unifyapps.com/"
+			},
 			"outputSchema":{
 				"dynamic":false,
 				"schema":{
@@ -231,7 +235,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_KyHqX",
@@ -260,7 +264,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_KyHqX@_l0JkM-1@y",
 			"id":"n_mf02R",
@@ -283,7 +287,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_s9StV",
@@ -312,7 +316,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_s9StV@_l0JkM-1@y",
 			"id":"n_A4U7f",
@@ -384,7 +388,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_bW50Z",
@@ -413,7 +417,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_bW50Z@_l0JkM-1@y",
 			"id":"n_NHvQK",
@@ -466,7 +470,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_bW50Z@_l0JkM-1@y",
 			"id":"n_RWXpI",
@@ -519,7 +523,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_bW50Z@_l0JkM-1@y",
 			"id":"n_IEQeE",
@@ -572,7 +576,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_bW50Z@_l0JkM-1@y",
 			"id":"n_1b6jV",
@@ -647,5 +651,5 @@
 		}
 	},
 	"standard":false,
-	"version":20
+	"version":21
 }
