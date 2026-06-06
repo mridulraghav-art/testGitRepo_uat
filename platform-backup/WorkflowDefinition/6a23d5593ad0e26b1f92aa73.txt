@@ -44,7 +44,7 @@
 	"id":"6a23d5593ad0e26b1f92aa73",
 	"lastModifiedBy":39,
 	"lcName":"kafka topics cleanup",
-	"modifiedTime":1780737320814,
+	"modifiedTime":1780737342555,
 	"name":"Kafka Topics Cleanup",
 	"nodes":[
 		{
@@ -54,7 +54,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_MouuF",
@@ -165,7 +165,7 @@
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
-					"inputMap":"{{ n_5b1TN.outputs.result }}"
+					"inputMap":"{{ n_vNy6t.outputs.result }}"
 				}
 			},
 			"skip":false,
@@ -181,7 +181,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_CrPsG",
@@ -272,9 +272,9 @@
 				"captureStdOutput":false,
 				"parameters":{
 					"kafkaTopics":{
-						"source":"{{ n_D4TV3.outputs.result }}",
 						"ua:type":"mappedArray",
-						"items":"{{ n_D4TV3.outputs.result }}"
+						"source":"{{ n_CrPsG.outputs.result }}",
+						"items":"{{ n_CrPsG.outputs.result }}"
 					},
 					"pods":{
 						"source":"{{ n_LXVGh.outputs.result.pods }}",
@@ -296,7 +296,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_daK8y",
@@ -361,5 +361,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
