@@ -77,12 +77,27 @@
 			"skip":false,
 			"toNodeId":"n_IEQeE",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_7zzwn",
+			"name":"4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_7zzwn@4",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_7zzwn@4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_1b6jV",
+			"type":"next"
 		}
 	],
 	"id":"6a23e8703453715cc32c4a0f",
 	"lastModifiedBy":39,
 	"lcName":"populate models in text-to-*",
-	"modifiedTime":1780743682891,
+	"modifiedTime":1780743741474,
 	"name":"Populate models in text-to-*",
 	"nodes":[
 		{
@@ -296,7 +311,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_7zzwn",
@@ -343,6 +358,24 @@
 						"id":"3",
 						"inputs":{
 							"name":"Branch 3",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_nsZPE.outputs.flag }}",
+										"filter":{
+											"operator":"EQUAL",
+											"value":"1"
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"4",
+						"inputs":{
+							"name":"Branch 4",
 							"conditions":{
 								"filters":[
 									{
@@ -545,7 +578,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_7zzwn@_l0JkM-1@3",
 			"id":"n_7zzwn@3",
@@ -577,7 +610,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_7zzwn@_l0JkM-1@3",
 			"id":"n_IEQeE",
@@ -591,6 +624,91 @@
 							"filter":{
 								"operator":"EQUAL",
 								"value":"e_69e230eaa2d13979bb5046b4"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"object_type":"ai_agent",
+				"skipIfBlank":false,
+				"updateFields":[
+					{
+						"fieldName":"properties.topicExecutionSettings.topicSelectionModel",
+						"actionType":"SET",
+						"setValue":"{{ n_nsZPE.outputs.opus4_8ModelId }}"
+					},
+					{
+						"fieldName":"properties.responseGenerationSettings.answerGenerationModelSettings.modelId",
+						"actionType":"SET",
+						"setValue":"{{ n_nsZPE.outputs.opus4_8ModelId }}"
+					}
+				],
+				"page":{
+					"offset":0,
+					"limit":20
+				},
+				"skipSchemaValidation":true,
+				"unsetIfNull":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update records by query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceVersion":0,
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_7zzwn@_l0JkM-1@4",
+			"id":"n_7zzwn@4",
+			"index":12,
+			"inputs":{
+				"name":"Branch 4",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_nsZPE.outputs.flag }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"1"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4369,
+				"resourceName":"storage_by_unifyapps_update_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_7zzwn@_l0JkM-1@4",
+			"id":"n_1b6jV",
+			"index":13,
+			"inputs":{
+				"numberOfRecordsToUpdate":"SINGLE",
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_multiAgentConfig_associatedAgentConfigs_agentId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"e_69fa32f81dfa014b3968e9c4"
 							}
 						}
 					],
@@ -637,5 +755,5 @@
 		}
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
