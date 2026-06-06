@@ -51,8 +51,15 @@
 			"fromNodeId":"n_IPyTB",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_CrPsG",
+			"toNodeId":"n_lsf9L",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_lsf9L",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CrPsG",
+			"type":"loop"
 		},
 		{
 			"fromNodeId":"n_CrPsG",
@@ -67,12 +74,20 @@
 			"skip":false,
 			"toNodeId":"n_daK8y",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_daK8y",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_lsf9L",
+			"type":"next"
 		}
 	],
 	"id":"6a23d5593ad0e26b1f92aa73",
 	"lastModifiedBy":39,
 	"lcName":"kafka topics cleanup",
-	"modifiedTime":1780750562082,
+	"modifiedTime":1780750877204,
 	"name":"Kafka Topics Cleanup",
 	"nodes":[
 		{
@@ -413,17 +428,40 @@
 		},
 		{
 			"context":{
+				"appName":"loop",
+				"resourceVersion":63,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_LYlMk-1",
+			"id":"n_lsf9L",
+			"index":8,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_IPyTB.outputs.result.kafkaServerIds }}",
+				"captureIterations":true
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
 				"appName":"custom_http_endpoint",
 				"resourceVersion":2088,
 				"resourceName":"custom_http_endpoint_execute",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
-			"groupId":"_LYlMk-1",
+			"groupId":"n_lsf9L@_LYlMk-1@l",
 			"id":"n_CrPsG",
-			"index":8,
+			"index":9,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -431,7 +469,7 @@
 				"httpMethod":"GET",
 				"connectionType":"DIRECT",
 				"sslVerify":false,
-				"path":"/internal/kafka/list-topics/uat-kafka-1",
+				"path":"/internal/kafka/list-topics/{{ n_lsf9L.outputs.item }}",
 				"baseUrl":"http://internal-global-svc.unifyapps.svc.cluster.local:80",
 				"httpVersion":"HTTP_2",
 				"responseContentType":"HEADER_BASED",
@@ -459,11 +497,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
-			"groupId":"_LYlMk-1",
+			"groupId":"n_lsf9L@_LYlMk-1@l",
 			"id":"n_SocIm",
-			"index":9,
+			"index":10,
 			"inputs":{
 				"output":{
 					"type":"object",
@@ -534,11 +572,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
-			"groupId":"_LYlMk-1",
+			"groupId":"n_lsf9L@_LYlMk-1@l",
 			"id":"n_daK8y",
-			"index":10,
+			"index":11,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -599,5 +637,5 @@
 		}
 	},
 	"standard":false,
-	"version":17
+	"version":18
 }
