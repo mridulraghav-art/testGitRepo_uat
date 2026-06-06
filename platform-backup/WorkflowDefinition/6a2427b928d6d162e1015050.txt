@@ -5,47 +5,44 @@
 	"createdTime":1780754361038,
 	"deleted":false,
 	"edges":[
-		{
-			"fromNodeId":"_mviFa",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"_QGkcW",
-			"type":"next"
-		}
+		
 	],
 	"id":"6a2427b928d6d162e1015050",
 	"lastModifiedBy":39,
 	"lcName":"test cs",
-	"modifiedTime":1780754361038,
+	"modifiedTime":1780754368399,
 	"name":"test cs",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":62,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_mviFa-1",
-			"id":"_mviFa",
-			"index":0,
+			"id":"n_XYzMJ",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
-		},
-		{
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"_mviFa-1",
-			"id":"_QGkcW",
-			"index":0,
-			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +53,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
