@@ -44,7 +44,7 @@
 	"id":"6a23d5593ad0e26b1f92aa73",
 	"lastModifiedBy":39,
 	"lcName":"kafka topics cleanup",
-	"modifiedTime":1780737342555,
+	"modifiedTime":1780737403735,
 	"name":"Kafka Topics Cleanup",
 	"nodes":[
 		{
@@ -80,7 +80,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_vNy6t",
@@ -126,7 +126,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_LXVGh",
@@ -221,7 +221,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_SocIm",
@@ -296,7 +296,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_daK8y",
@@ -315,8 +315,8 @@
 				},
 				"connectionType":"DIRECT",
 				"sslVerify":false,
-				"path":"/delete/topics/kafka-1",
-				"baseUrl":"http://internal-global-svc.unifyapps.svc.cluster.local:80/internal/kafka",
+				"path":"/internal/kafka/delete/topics/kafka-1",
+				"baseUrl":"http://internal-global-svc.unifyapps.svc.cluster.local:80",
 				"httpVersion":"HTTP_2",
 				"bodySchema":{
 					"type":"object",
@@ -361,5 +361,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
