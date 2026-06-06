@@ -60,14 +60,14 @@
 			"fromNodeId":"n_7zzwn@2",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_28tCg",
+			"toNodeId":"n_RWXpI",
 			"type":"next"
 		}
 	],
 	"id":"6a23e8703453715cc32c4a0f",
 	"lastModifiedBy":39,
 	"lcName":"populate models in text-to-*",
-	"modifiedTime":1780743483683,
+	"modifiedTime":1780743595548,
 	"name":"Populate models in text-to-*",
 	"nodes":[
 		{
@@ -342,7 +342,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_7zzwn@_l0JkM-1@1",
 			"id":"n_7zzwn@1",
@@ -374,7 +374,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_7zzwn@_l0JkM-1@1",
 			"id":"n_NHvQK",
@@ -427,7 +427,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_7zzwn@_l0JkM-1@2",
 			"id":"n_7zzwn@2",
@@ -452,14 +452,56 @@
 			"type":"BRANCH_CONDITION"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4369,
+				"resourceName":"storage_by_unifyapps_update_records",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_7zzwn@_l0JkM-1@2",
-			"id":"n_28tCg",
+			"id":"n_RWXpI",
 			"index":9,
+			"inputs":{
+				"numberOfRecordsToUpdate":"SINGLE",
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_multiAgentConfig_associatedAgentConfigs_agentId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"e_69b267fdf5802d6128082085"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"object_type":"ai_agent",
+				"skipIfBlank":false,
+				"updateFields":[
+					{
+						"fieldName":"properties.topicExecutionSettings.topicSelectionModel",
+						"actionType":"SET",
+						"setValue":"{{ n_nsZPE.outputs.opus4_8ModelId }}"
+					},
+					{
+						"fieldName":"properties.responseGenerationSettings.answerGenerationModelSettings.modelId",
+						"actionType":"SET",
+						"setValue":"{{ n_nsZPE.outputs.opus4_8ModelId }}"
+					}
+				],
+				"page":{
+					"offset":0,
+					"limit":20
+				},
+				"skipSchemaValidation":true,
+				"unsetIfNull":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update records by query",
 			"type":"ACTION"
 		}
 	],
@@ -477,5 +519,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
