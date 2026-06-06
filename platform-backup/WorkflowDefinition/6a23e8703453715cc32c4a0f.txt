@@ -4,6 +4,15 @@
 	],
 	"createdTime":1780738160924,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780744604533,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a24019b33b0405a761bc8a1",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":13
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_gUd5t",
@@ -105,7 +114,7 @@
 	"id":"6a23e8703453715cc32c4a0f",
 	"lastModifiedBy":39,
 	"lcName":"populate models in text-to-*",
-	"modifiedTime":1780744598406,
+	"modifiedTime":1780744680102,
 	"name":"Populate models in text-to-*",
 	"nodes":[
 		{
@@ -141,7 +150,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_nsZPE",
@@ -214,7 +223,7 @@
 				}
 			},
 			"skip":false,
-			"subTitle":"Variable by UnifyApps",
+			"subTitle":"USER INPUT",
 			"title":"Create variables",
 			"type":"ACTION"
 		},
@@ -226,7 +235,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_mf02R",
@@ -237,7 +246,7 @@
 				"value":"{{ n_nsZPE.outputs.baseUrl }}"
 			},
 			"skip":false,
-			"subTitle":"Standard entities by UnifyApps",
+			"subTitle":"update env var",
 			"title":"Update Environment Variable",
 			"type":"ACTION"
 		},
@@ -753,7 +762,7 @@
 				"appName":"stop"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_7zzwn@_l0JkM-1@default",
 			"id":"n_1gF91",
@@ -778,5 +787,5 @@
 		}
 	},
 	"standard":false,
-	"version":13
+	"version":14
 }
