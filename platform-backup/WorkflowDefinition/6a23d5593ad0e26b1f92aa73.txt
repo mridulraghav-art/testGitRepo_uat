@@ -4,6 +4,15 @@
 	],
 	"createdTime":1780733273901,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780751437062,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a241c4c28d6d162e100c4f6",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":22
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_MouuF",
@@ -94,7 +103,7 @@
 	"id":"6a23d5593ad0e26b1f92aa73",
 	"lastModifiedBy":39,
 	"lcName":"kafka topics cleanup",
-	"modifiedTime":1780751095312,
+	"modifiedTime":1780751973538,
 	"name":"Kafka Topics Cleanup",
 	"nodes":[
 		{
@@ -515,7 +524,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_lsf9L@_LYlMk-1@l",
 			"id":"n_SocIm",
@@ -573,7 +582,7 @@
 					"pods":{
 						"ua:type":"mappedArray",
 						"source":"{{ n_tVQIj.outputs.result.pods }}",
-						"items":"{{ n_tVQIj.outputs.result.pods }}"
+						"items":"{{ n_tVQIj.outputs.result.pods[0] }}"
 					}
 				}
 			},
@@ -670,5 +679,5 @@
 		}
 	},
 	"standard":false,
-	"version":22
+	"version":23
 }
