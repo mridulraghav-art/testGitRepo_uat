@@ -25,11 +25,27 @@
 			"fromNodeId":"n_nsZPE",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_mf02R",
+			"toNodeId":"n_KyHqX",
 			"type":"next"
 		},
 		{
+			"fromNodeId":"n_KyHqX",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_mf02R",
+			"type":"if"
+		},
+		{
 			"fromNodeId":"n_mf02R",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_s9StV",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_KyHqX",
+			"name":"no",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_s9StV",
@@ -106,7 +122,7 @@
 	"id":"6a23e8703453715cc32c4a0f",
 	"lastModifiedBy":39,
 	"lcName":"populate models in text-to-*",
-	"modifiedTime":1780744870071,
+	"modifiedTime":1780744925119,
 	"name":"Populate models in text-to-*",
 	"nodes":[
 		{
@@ -209,17 +225,46 @@
 		},
 		{
 			"context":{
+				"appName":"if_else",
+				"resourceVersion":67,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_l0JkM-1",
+			"id":"n_KyHqX",
+			"index":3,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_nsZPE.outputs.baseUrl }}",
+						"filter":{
+							"operator":"EXISTS"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
 				"appName":"standard_entities",
 				"resourceVersion":0,
 				"resourceName":"standard_entities_update_env_variable",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
-			"groupId":"_l0JkM-1",
+			"groupId":"n_KyHqX@_l0JkM-1@y",
 			"id":"n_mf02R",
-			"index":3,
+			"index":4,
 			"inputs":{
 				"name":"base_URL",
 				"sensitive":false,
@@ -242,7 +287,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_s9StV",
-			"index":4,
+			"index":5,
 			"inputs":{
 				"filters":[
 					{
@@ -271,7 +316,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_s9StV@_l0JkM-1@y",
 			"id":"n_A4U7f",
-			"index":5,
+			"index":6,
 			"inputs":{
 				"numberOfRecordsToUpdate":"SINGLE",
 				"triggerInputCondition":{
@@ -343,7 +388,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_bW50Z",
-			"index":6,
+			"index":7,
 			"inputs":{
 				"filters":[
 					{
@@ -372,7 +417,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bW50Z@_l0JkM-1@y",
 			"id":"n_NHvQK",
-			"index":7,
+			"index":8,
 			"inputs":{
 				"numberOfRecordsToUpdate":"SINGLE",
 				"triggerInputCondition":{
@@ -425,7 +470,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bW50Z@_l0JkM-1@y",
 			"id":"n_RWXpI",
-			"index":8,
+			"index":9,
 			"inputs":{
 				"numberOfRecordsToUpdate":"SINGLE",
 				"triggerInputCondition":{
@@ -478,7 +523,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bW50Z@_l0JkM-1@y",
 			"id":"n_IEQeE",
-			"index":9,
+			"index":10,
 			"inputs":{
 				"numberOfRecordsToUpdate":"SINGLE",
 				"triggerInputCondition":{
@@ -531,7 +576,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_bW50Z@_l0JkM-1@y",
 			"id":"n_1b6jV",
-			"index":10,
+			"index":11,
 			"inputs":{
 				"numberOfRecordsToUpdate":"SINGLE",
 				"triggerInputCondition":{
@@ -581,7 +626,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_Lqmuq",
-			"index":11,
+			"index":12,
 			"skip":false,
 			"subTitle":"Stop",
 			"title":"Stop",
@@ -602,5 +647,5 @@
 		}
 	},
 	"standard":false,
-	"version":18
+	"version":19
 }
