@@ -82,12 +82,19 @@
 			"skip":false,
 			"toNodeId":"n_lsf9L",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_lsf9L",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_bQNQV",
+			"type":"next"
 		}
 	],
 	"id":"6a23d5593ad0e26b1f92aa73",
 	"lastModifiedBy":39,
 	"lcName":"kafka topics cleanup",
-	"modifiedTime":1780750877204,
+	"modifiedTime":1780750886447,
 	"name":"Kafka Topics Cleanup",
 	"nodes":[
 		{
@@ -381,7 +388,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_IPyTB",
@@ -434,7 +441,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_LYlMk-1",
 			"id":"n_lsf9L",
@@ -457,7 +464,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_lsf9L@_LYlMk-1@l",
 			"id":"n_CrPsG",
@@ -497,7 +504,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_lsf9L@_LYlMk-1@l",
 			"id":"n_SocIm",
@@ -572,7 +579,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_lsf9L@_LYlMk-1@l",
 			"id":"n_daK8y",
@@ -621,6 +628,21 @@
 			"subTitle":"Custom HTTP Endpoint",
 			"title":"Execute REST request",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_LYlMk-1",
+			"id":"n_bQNQV",
+			"index":12,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -637,5 +659,5 @@
 		}
 	},
 	"standard":false,
-	"version":18
+	"version":19
 }
