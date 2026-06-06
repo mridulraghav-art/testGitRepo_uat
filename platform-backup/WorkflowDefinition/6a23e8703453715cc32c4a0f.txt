@@ -92,12 +92,20 @@
 			"skip":false,
 			"toNodeId":"n_1b6jV",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_7zzwn",
+			"name":"default",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_1gF91",
+			"type":"branch"
 		}
 	],
 	"id":"6a23e8703453715cc32c4a0f",
 	"lastModifiedBy":39,
 	"lcName":"populate models in text-to-*",
-	"modifiedTime":1780744589201,
+	"modifiedTime":1780744598406,
 	"name":"Populate models in text-to-*",
 	"nodes":[
 		{
@@ -739,6 +747,21 @@
 			"subTitle":"Storage by UnifyApps",
 			"title":"Update records by query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_7zzwn@_l0JkM-1@default",
+			"id":"n_1gF91",
+			"index":14,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -755,5 +778,5 @@
 		}
 	},
 	"standard":false,
-	"version":12
+	"version":13
 }
