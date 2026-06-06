@@ -45,7 +45,7 @@
 			"fromNodeId":"n_7zzwn@1",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_uCfZg",
+			"toNodeId":"n_NHvQK",
 			"type":"next"
 		},
 		{
@@ -67,7 +67,7 @@
 	"id":"6a23e8703453715cc32c4a0f",
 	"lastModifiedBy":39,
 	"lcName":"populate models in text-to-*",
-	"modifiedTime":1780743195547,
+	"modifiedTime":1780743483683,
 	"name":"Populate models in text-to-*",
 	"nodes":[
 		{
@@ -77,7 +77,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_gUd5t",
@@ -103,7 +103,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_nsZPE",
@@ -188,7 +188,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_mf02R",
@@ -211,7 +211,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_l0JkM-1",
 			"id":"n_A4U7f",
@@ -291,13 +291,37 @@
 					{
 						"id":"1",
 						"inputs":{
-							"name":"Branch 1"
+							"name":"Branch 1",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_nsZPE.outputs.flag }}",
+										"filter":{
+											"operator":"EQUAL",
+											"value":"1"
+										}
+									}
+								],
+								"operator":"AND"
+							}
 						}
 					},
 					{
 						"id":"2",
 						"inputs":{
-							"name":"Branch 2"
+							"name":"Branch 2",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_nsZPE.outputs.flag }}",
+										"filter":{
+											"operator":"EQUAL",
+											"value":"1"
+										}
+									}
+								],
+								"operator":"AND"
+							}
 						}
 					},
 					{
@@ -324,21 +348,75 @@
 			"id":"n_7zzwn@1",
 			"index":6,
 			"inputs":{
-				"name":"Branch 1"
+				"name":"Branch 1",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_nsZPE.outputs.flag }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"1"
+							}
+						}
+					],
+					"operator":"AND"
+				}
 			},
 			"skip":false,
 			"title":"",
 			"type":"BRANCH_CONDITION"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4369,
+				"resourceName":"storage_by_unifyapps_update_records",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_7zzwn@_l0JkM-1@1",
-			"id":"n_uCfZg",
+			"id":"n_NHvQK",
 			"index":7,
+			"inputs":{
+				"numberOfRecordsToUpdate":"SINGLE",
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_multiAgentConfig_associatedAgentConfigs_agentId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"e_69b267ec5725553d7a82c3ed"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"object_type":"ai_agent",
+				"skipIfBlank":false,
+				"updateFields":[
+					{
+						"fieldName":"properties.topicExecutionSettings.topicSelectionModel",
+						"actionType":"SET",
+						"setValue":"{{ n_nsZPE.outputs.opus4_8ModelId }}"
+					},
+					{
+						"fieldName":"properties.responseGenerationSettings.answerGenerationModelSettings.modelId",
+						"actionType":"SET",
+						"setValue":"{{ n_nsZPE.outputs.opus4_8ModelId }}"
+					}
+				],
+				"page":{
+					"offset":0,
+					"limit":20
+				},
+				"skipSchemaValidation":true,
+				"unsetIfNull":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update records by query",
 			"type":"ACTION"
 		},
 		{
@@ -355,7 +433,19 @@
 			"id":"n_7zzwn@2",
 			"index":8,
 			"inputs":{
-				"name":"Branch 2"
+				"name":"Branch 2",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_nsZPE.outputs.flag }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"1"
+							}
+						}
+					],
+					"operator":"AND"
+				}
 			},
 			"skip":false,
 			"title":"",
@@ -363,7 +453,7 @@
 		},
 		{
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_7zzwn@_l0JkM-1@2",
 			"id":"n_28tCg",
@@ -387,5 +477,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
