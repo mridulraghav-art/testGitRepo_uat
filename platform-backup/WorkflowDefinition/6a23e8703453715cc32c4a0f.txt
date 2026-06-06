@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780738160924,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_l0JkM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_PIqUv",
+			"type":"next"
+		}
+	],
+	"id":"6a23e8703453715cc32c4a0f",
+	"lastModifiedBy":39,
+	"lcName":"populate models in text-to-*",
+	"modifiedTime":1780738160924,
+	"name":"Populate models in text-to-*",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_l0JkM-1",
+			"id":"_l0JkM",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_l0JkM-1",
+			"id":"_PIqUv",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
