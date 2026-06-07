@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780851454298,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_kkiOm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_WwiD5",
+			"type":"next"
+		}
+	],
+	"id":"6a25a2feaf7ba4594d54a59b",
+	"lastModifiedBy":39,
+	"lcName":"brgdfcx",
+	"modifiedTime":1780851454298,
+	"name":"brgdfcx",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_kkiOm-1",
+			"id":"_kkiOm",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_kkiOm-1",
+			"id":"_WwiD5",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
