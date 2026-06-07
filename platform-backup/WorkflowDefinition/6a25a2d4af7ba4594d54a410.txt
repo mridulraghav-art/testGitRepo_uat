@@ -6,46 +6,95 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_sqMnf",
+			"fromNodeId":"n_BDywX",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_NwHCv",
+			"toNodeId":"n_R1n7v",
 			"type":"next"
 		}
 	],
 	"id":"6a25a2d4af7ba4594d54a410",
 	"lastModifiedBy":39,
 	"lcName":"brgfvcx",
-	"modifiedTime":1780851412008,
+	"modifiedTime":1780851440715,
 	"name":"brgfvcx",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2440,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sqMnf-1",
-			"id":"_sqMnf",
-			"index":0,
+			"id":"n_BDywX",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"gfdv"
+					],
+					"properties":{
+						"gfdv":{
+							"type":"string",
+							"title":"Gfdv"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"hgfcv"
+					],
+					"properties":{
+						"hgfcv":{
+							"type":"string",
+							"title":"Hgfcv"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2441,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sqMnf-1",
-			"id":"_NwHCv",
-			"index":0,
+			"id":"n_R1n7v",
+			"index":2,
+			"inputs":{
+				"result":{
+					"gfdv":"gfdcx"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +105,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
