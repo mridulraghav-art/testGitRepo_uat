@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780834094485,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_tT5CG",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_8HAhs",
+			"type":"next"
+		}
+	],
+	"id":"6a255f2e28d6d162e118e109",
+	"lastModifiedBy":39,
+	"lcName":"update agents",
+	"modifiedTime":1780834094485,
+	"name":"update agents",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_tT5CG-1",
+			"id":"_tT5CG",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_tT5CG-1",
+			"id":"_8HAhs",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
