@@ -1,48 +1,137 @@
 {
 	"appsUsed":[
-		
+		"gmail"
 	],
 	"createdTime":1780831863131,
 	"deleted":false,
+	"description":"Polls Gmail for new incoming emails and automatically sends a reply to the sender in the same thread.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_St4Rt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_Lo0pX",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Lo0pX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_RpLy1",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_Lo0pX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_St0pZ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_RpLy1",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Lo0pX",
 			"type":"next"
 		}
 	],
 	"id":"6a2556767529013ce0749040",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1780831863131,
-	"name":"Untitled workflow",
+	"lcName":"gmail auto-reply",
+	"modifiedTime":1780833943752,
+	"name":"Gmail Auto-Reply",
 	"nodes":[
 		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"685a52a9dba2c40dfc9a2a3e",
+				"resourceName":"gmail_on_new_email_polling"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_St4Rt",
 			"index":1,
+			"inputs":{
+				"intervalType":"minutes",
+				"interval":5,
+				"batchSize":5
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Gmail",
+			"title":"New email",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_Lo0pX",
 			"index":2,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_St4Rt.outputs.batch }}",
+				"captureIterations":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Loop",
+			"title":"For each email",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"685a52a9dba2c40dfc9a2a3e",
+				"resourceName":"gmail_reply_in_thread",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_Lo0pX@root_id-1@l",
+			"id":"n_RpLy1",
+			"index":3,
+			"inputs":{
+				"threadId":"{{ n_Lo0pX.outputs.item.threadId }}",
+				"references":"{{ n_Lo0pX.outputs.item.raw.id }}",
+				"email_type":"text",
+				"subject":"=CONCAT(\"Re: \", {{ n_Lo0pX.outputs.item.subject }})",
+				"to":"{{ n_Lo0pX.outputs.item.from.fromEmail }}",
+				"message":"Thank you for your email. We have received your message and will get back to you shortly.",
+				"in_reply_to":"{{ n_Lo0pX.outputs.item.raw.id }}"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Reply in thread",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"resourceName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_St0pZ",
+			"index":4,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +145,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
