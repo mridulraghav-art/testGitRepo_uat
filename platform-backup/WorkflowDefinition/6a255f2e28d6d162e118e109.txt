@@ -23,7 +23,7 @@
 	"id":"6a255f2e28d6d162e118e109",
 	"lastModifiedBy":39,
 	"lcName":"update agents",
-	"modifiedTime":1780834496785,
+	"modifiedTime":1780834563779,
 	"name":"update agents",
 	"nodes":[
 		{
@@ -33,7 +33,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_tT5CG-1",
 			"id":"n_G9Ub1",
@@ -67,20 +67,6 @@
 			"inputs":{
 				"triggerInputCondition":{
 					"filters":[
-						{
-							"property":"tags",
-							"filter":{
-								"operator":"EQUAL",
-								"value":"text-to-lowcode"
-							}
-						},
-						{
-							"property":"tags",
-							"filter":{
-								"operator":"EQUAL",
-								"value":"text-to-agent"
-							}
-						},
 						{
 							"property":"tags",
 							"filter":{
@@ -252,5 +238,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
