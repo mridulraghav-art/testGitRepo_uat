@@ -11,12 +11,19 @@
 			"skip":false,
 			"toNodeId":"n_faIzZ",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_faIzZ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_REeko",
+			"type":"next"
 		}
 	],
 	"id":"6a255f2e28d6d162e118e109",
 	"lastModifiedBy":39,
 	"lcName":"update agents",
-	"modifiedTime":1780834390480,
+	"modifiedTime":1780834496785,
 	"name":"update agents",
 	"nodes":[
 		{
@@ -26,7 +33,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_tT5CG-1",
 			"id":"n_G9Ub1",
@@ -52,7 +59,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_tT5CG-1",
 			"id":"n_faIzZ",
@@ -101,6 +108,134 @@
 			"subTitle":"Storage by UnifyApps",
 			"title":"Fetch records",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":707,
+				"resourceName":"custom_http_endpoint_execute",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_tT5CG-1",
+			"id":"n_REeko",
+			"index":3,
+			"inputs":{
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"POST",
+				"body":{
+					"failOnMissing":true,
+					"customerId":101,
+					"forceSync":false,
+					"setStandard":false,
+					"featureDependentAssets":{
+						"name":"fix",
+						"assetClassVsAssetDetails":{
+							"ai_agent":{
+								"source":"{{ n_faIzZ.outputs.objects }}",
+								"ua:type":"mappedArray",
+								"items":{
+									"assetClass":"ai_agent",
+									"assetId":"{{ n_faIzZ.outputs.objects[0].id }}"
+								}
+							}
+						}
+					}
+				},
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"path":"/internal/platform-feature/syncOptions",
+				"responseSchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"exportUrl":{
+							"type":"array",
+							"items":{
+								"type":"string"
+							},
+							"title":"exportUrl"
+						},
+						"imageTag":{
+							"type":"string",
+							"title":"imageTag"
+						}
+					}
+				},
+				"baseUrl":"http://internal-global-svc.unifyapps.svc.cluster.local:80",
+				"httpVersion":"HTTP_2",
+				"bodySchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"failOnMissing":{
+							"type":"boolean",
+							"title":"failOnMissing"
+						},
+						"customerId":{
+							"type":"integer",
+							"title":"customerId"
+						},
+						"forceSync":{
+							"type":"boolean",
+							"title":"forceSync"
+						},
+						"setStandard":{
+							"type":"boolean",
+							"title":"setStandard"
+						},
+						"featureDependentAssets":{
+							"type":"object",
+							"properties":{
+								"name":{
+									"type":"string",
+									"title":"name"
+								},
+								"assetClassVsAssetDetails":{
+									"type":"object",
+									"properties":{
+										"ai_agent":{
+											"type":"array",
+											"items":{
+												"type":"object",
+												"properties":{
+													"assetClass":{
+														"type":"string",
+														"title":"assetClass"
+													},
+													"assetId":{
+														"type":"string",
+														"title":"assetId"
+													}
+												},
+												"additionalProperties":false
+											},
+											"title":"ai_agent"
+										}
+									},
+									"additionalProperties":false
+								}
+							},
+							"title":"featureDependentAssets",
+							"additionalProperties":false
+						}
+					}
+				},
+				"responseContentType":"application/json",
+				"followRedirects":"NORMAL",
+				"authType":"CUSTOM",
+				"requestContentType":"application/json",
+				"ignoreTrailingSlashes":false,
+				"certificateType":"CERT_STRING"
+			},
+			"skip":false,
+			"subTitle":"export",
+			"title":"Execute REST request",
+			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
@@ -117,5 +252,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
