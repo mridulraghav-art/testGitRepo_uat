@@ -4,6 +4,15 @@
 	],
 	"createdTime":1780834094485,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780835847467,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a25660731ae790065ccfa05",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":5
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_G9Ub1",
@@ -23,7 +32,7 @@
 	"id":"6a255f2e28d6d162e118e109",
 	"lastModifiedBy":39,
 	"lcName":"update agents",
-	"modifiedTime":1780835845131,
+	"modifiedTime":1780835959594,
 	"name":"update agents",
 	"nodes":[
 		{
@@ -71,7 +80,7 @@
 							"property":"tags",
 							"filter":{
 								"operator":"EQUAL",
-								"value":"text-to-agent"
+								"value":"text-to-lowcode"
 							}
 						}
 					],
@@ -238,5 +247,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
