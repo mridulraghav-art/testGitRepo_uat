@@ -4,6 +4,15 @@
 	],
 	"createdTime":1780671634809,
 	"deleted":false,
+	"deployedVersion":2,
+	"deploymentState":{
+		"deployedAt":1780908234299,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a2680ca3453715cc3564905",
+		"status":"DEPLOYED",
+		"version":2,
+		"workflowVersion":27
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_r9Fwq",
@@ -136,7 +145,7 @@
 	"id":"694c39b3a6b6950499eb28fd",
 	"lastModifiedBy":39,
 	"lcName":"[final] data catalog - microsoft sql server",
-	"modifiedTime":1780906930345,
+	"modifiedTime":1780919957354,
 	"name":"[Final] Data Catalog - Microsoft SQL Server",
 	"nodes":[
 		{
@@ -890,7 +899,6 @@
 			"id":"n_6ol0Q",
 			"index":13,
 			"inputs":{
-				"captureAddedItems":false,
 				"insertLocation":"END",
 				"itemsToAdd":{
 					"ua:type":"mappedArray",
@@ -1218,7 +1226,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_o7TA0-1",
 			"id":"n_F1QMc",
@@ -1290,7 +1298,8 @@
 				"synchronous":true,
 				"version":"-1",
 				"parameters":{
-					"connectionId":"{{ n_r9Fwq.outputs.connectionId }}"
+					"connectionId":"{{ n_r9Fwq.outputs.connectionId }}",
+					"data_catalog_id":"{{ n_r9Fwq.outputs.dataCatalogId }}"
 				}
 			},
 			"skip":false,
@@ -1367,5 +1376,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":26
+	"version":28
 }
