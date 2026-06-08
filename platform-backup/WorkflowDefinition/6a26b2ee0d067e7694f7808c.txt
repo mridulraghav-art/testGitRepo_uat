@@ -28,25 +28,32 @@
 			"type":"loop"
 		},
 		{
-			"fromNodeId":"n_LpEch",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_StpWf",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"n_CrRec",
 			"name":"loopback",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_LpEch",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LpEch",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_rRsip",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_rRsip",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpWf",
+			"type":"next"
 		}
 	],
 	"id":"6a26b2ee0d067e7694f7808c",
 	"lastModifiedBy":39,
 	"lcName":"scheduled storage fetch & loop",
-	"modifiedTime":1780921188617,
+	"modifiedTime":1780921308644,
 	"name":"Scheduled Storage Fetch & Loop",
 	"nodes":[
 		{
@@ -55,13 +62,14 @@
 				"resourceName":"schedule_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_SchdR",
 			"index":1,
 			"inputs":{
 				"cron":"INTERVAL",
+				"sequential":false,
 				"interval":10,
 				"frequency":"MINUTES"
 			},
@@ -81,19 +89,25 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_FtRec",
 			"index":2,
 			"inputs":{
+				"shouldSearchInAnalyticsStore":false,
 				"object_type":"<YOUR_OBJECT_NAME>",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
 				"page":{
 					"paginateBy":"OFFSET",
 					"limit":100,
 					"offset":0
 				},
-				"numberOfRecordsToFetch":"MULTIPLE"
+				"numberOfRecordsToFetch":"MULTIPLE",
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
 			},
 			"skip":false,
 			"subTitle":"Storage",
@@ -130,19 +144,49 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_LpEch@root_id-1@l",
 			"id":"n_CrRec",
 			"index":4,
 			"inputs":{
 				"useRawPayload":true,
+				"writeThroughSessionVariables":false,
 				"rawPayload":"{{ n_LpEch.outputs.item }}",
-				"object_type":"<YOUR_LOG_OBJECT_NAME>"
+				"object_type":"<YOUR_LOG_OBJECT_NAME>",
+				"skipIfBlank":false,
+				"useUuid":false
 			},
 			"skip":false,
 			"subTitle":"Storage",
 			"title":"Create record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4413,
+				"connectionId":"6807432d37c1e42444a5a7b4",
+				"resourceName":"storage_by_unifyapps_get_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_rRsip",
+			"index":5,
+			"inputs":{
+				"object_type":"projecttest",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"id":"1",
+				"readThroughSessionVariables":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch record by ID",
 			"type":"ACTION"
 		},
 		{
@@ -156,7 +200,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_StpWf",
-			"index":5,
+			"index":6,
 			"inputs":{},
 			"skip":false,
 			"subTitle":"Stop",
@@ -164,6 +208,9 @@
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -177,5 +224,5 @@
 	"tags":[
 		"AI Generated"
 	],
-	"version":1
+	"version":2
 }
