@@ -57,7 +57,7 @@
 	"id":"680bb38e89c13d6ab6b7babe",
 	"lastModifiedBy":39,
 	"lcName":"llm cost calculator",
-	"modifiedTime":1780925882938,
+	"modifiedTime":1780925894734,
 	"name":"LLM Cost Calculator",
 	"nodes":[
 		{
@@ -149,7 +149,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"n_uwaNo",
@@ -158,10 +158,10 @@
 				"automationId":"6854195c4a0205327f0f4712",
 				"runtimeConnections":{},
 				"synchronous":true,
+				"version":"-1",
 				"parameters":{
 					"modelId":"{{ BXOwt.outputs.modelId }}"
-				},
-				"version":"-1"
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -414,5 +414,5 @@
 	"tags":[
 		
 	],
-	"version":31
+	"version":32
 }
