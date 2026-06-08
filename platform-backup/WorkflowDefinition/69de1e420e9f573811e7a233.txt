@@ -1,0 +1,481 @@
+{
+	"appsUsed":[
+		"sqlserver"
+	],
+	"createdTime":1780906883430,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"n_dlboR",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_U58NS",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_U58NS",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_U4L0M",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_U4L0M",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_mMdhV",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_mMdhV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_VOXny",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_VOXny",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_jV3jJ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_jV3jJ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_dMUa0",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_dMUa0",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_qqkwQ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_qqkwQ",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_jV3jJ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_jV3jJ",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_U4L0M",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_U4L0M",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_O1zWX",
+			"type":"next"
+		}
+	],
+	"id":"69de1e420e9f573811e7a233",
+	"lastModifiedBy":39,
+	"lcName":"mssql relationship builder",
+	"modifiedTime":1780906883430,
+	"name":"MSSQL Relationship Builder",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":216,
+				"resourceName":"callables_from_automation"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ijsfb-1",
+			"id":"n_dlboR",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"isSuccess"
+					],
+					"properties":{
+						"isSuccess":{
+							"type":"boolean",
+							"title":"Is Success"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"connectionId"
+					],
+					"properties":{
+						"connectionId":{
+							"type":"string",
+							"title":"Connection Id"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{}
+				}
+			},
+			"context":{
+				"appName":"sqlserver",
+				"resourceVersion":348,
+				"connectionId":"6970cbf1a3b5fd76fea7364f",
+				"resourceName":"sqlserver_execute_sql",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ijsfb-1",
+			"id":"n_U58NS",
+			"index":2,
+			"inputs":{
+				"performAsync":false,
+				"objectSourceResourceName":"sqlserver_execute_sql_metadata",
+				"sql":"SELECT \n    Parent_Table,\n    Referenced_Table,\n\n    (\n        SELECT \n            pc.name AS Parent_Column,\n            rc.name AS Referenced_Column,\n\n            CASE \n                WHEN i.is_unique = 1 THEN 'ONE_TO_ONE'\n                ELSE 'MANY_TO_ONE'\n            END AS Relationship_Type\n\n        FROM sys.foreign_keys fk_inner\n\n        JOIN sys.foreign_key_columns fkc\n            ON fk_inner.object_id = fkc.constraint_object_id\n\n        JOIN sys.columns pc\n            ON pc.object_id = fkc.parent_object_id\n            AND pc.column_id = fkc.parent_column_id\n\n        JOIN sys.columns rc\n            ON rc.object_id = fkc.referenced_object_id\n            AND rc.column_id = fkc.referenced_column_id\n\n        LEFT JOIN sys.index_columns ic\n            ON ic.object_id = fkc.parent_object_id\n            AND ic.column_id = fkc.parent_column_id\n\n        LEFT JOIN sys.indexes i\n            ON i.object_id = ic.object_id\n            AND i.index_id = ic.index_id\n\n        WHERE \n            fk_inner.parent_object_id = t.parent_object_id\n            AND fk_inner.referenced_object_id = t.referenced_object_id\n\n        FOR JSON PATH\n    ) AS Relationship_Details\n\nFROM (\n    SELECT DISTINCT\n        fk.parent_object_id,\n        fk.referenced_object_id,\n        OBJECT_NAME(fk.parent_object_id) AS Parent_Table,\n        OBJECT_NAME(fk.referenced_object_id) AS Referenced_Table\n    FROM sys.foreign_keys fk\n) t\n\nORDER BY Parent_Table, Referenced_Table;"
+			},
+			"skip":false,
+			"subTitle":"Microsoft SQL Server",
+			"title":"Execute a SQL statement",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":14,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ijsfb-1",
+			"id":"n_U4L0M",
+			"index":3,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_U58NS.outputs.rows }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":156,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_U4L0M@_ijsfb-1@l",
+			"id":"n_mMdhV",
+			"index":4,
+			"inputs":{
+				"output":{
+					"type":"array",
+					"items":{
+						"type":"object",
+						"properties":{
+							"Parent_Column":{
+								"type":"string",
+								"title":"Parent_Column"
+							},
+							"Referenced_Column":{
+								"type":"string",
+								"title":"Referenced_Column"
+							},
+							"Relationship_Type":{
+								"type":"string",
+								"title":"Relationship_Type"
+							}
+						},
+						"additionalProperties":false
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"inputString"
+					],
+					"properties":{
+						"inputString":{
+							"type":"string",
+							"title":"Input String"
+						}
+					}
+				},
+				"code":"import com.alibaba.fastjson2.JSON\n\ndef input = inputString\n\ndef parentTable = input.Parent_Table\ndef referencedTable = input.Referenced_Table\n\n// Parse Relationship_Details (this is a JSON string)\ndef relationships = JSON.parseArray(input.Relationship_Details)\n\ndef output = relationships.collect { rel ->\n    [\n        Parent_Table      : parentTable,\n        Referenced_Table  : referencedTable,\n        Parent_Column     : rel.Parent_Column,\n        Referenced_Column : rel.Referenced_Column,\n        Relationship_Type : rel.Relationship_Type\n    ]\n}\n\nreturn output",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"inputString":"{{ n_U4L0M.outputs.item }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"mdm_by_unifyapps",
+				"resourceVersion":286,
+				"resourceName":"mdm_by_unifyapps_create_relationship",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_U4L0M@_ijsfb-1@l",
+			"id":"n_VOXny",
+			"index":5,
+			"inputs":{
+				"associatedField":"sqlserver_{{ n_dlboR.outputs.connectionId }}_table_{{ n_U4L0M.outputs.item.Referenced_Table }}",
+				"associatedEntityId":"sqlserver_{{ n_dlboR.outputs.connectionId }}_table_{{ n_U4L0M.outputs.item.Referenced_Table }}",
+				"relationshipType":"MANY_TO_ONE",
+				"modelId":"69de9143666bbb31eca2d4a7",
+				"primaryEntityType":"e_data_catalog_table",
+				"relationshipSource":"EXTERNAL",
+				"primaryEntityId":"sqlserver_{{ n_dlboR.outputs.connectionId }}_table_{{ n_U4L0M.outputs.item.Parent_Table }}",
+				"associatedEntityType":"e_data_catalog_table",
+				"relationshipPurpose":"DATA_FLOW",
+				"primaryField":"sqlserver_{{ n_dlboR.outputs.connectionId }}_table_{{ n_U4L0M.outputs.item.Parent_Table }}",
+				"fieldMappings":{
+					"source":"{{ n_mMdhV.outputs.result }}",
+					"ua:type":"mappedArray",
+					"items":{
+						"primaryField":"{{ n_mMdhV.outputs.result[0].Parent_Column }}",
+						"associatedField":"{{ n_mMdhV.outputs.result[0].Referenced_Column }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"UDM by UnifyApps",
+			"title":"Create entity relationship",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":14,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_U4L0M@_ijsfb-1@l",
+			"id":"n_jV3jJ",
+			"index":6,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_mMdhV.outputs.result }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":406,
+				"resourceName":"storage_by_unifyapps_get_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_jV3jJ@n_U4L0M@_ijsfb-1@l@l",
+			"id":"n_dMUa0",
+			"index":7,
+			"inputs":{
+				"object_type":"e_data_catalog_field",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"id":"{{ n_dlboR.outputs.connectionId }}_sqlserver_field_{{ n_U4L0M.outputs.item.Parent_Table }}_{{ n_jV3jJ.outputs.item.Parent_Column }}",
+				"readThroughSessionVariables":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch record by ID",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.foreignKeyDetails.objectId",
+					"root.record.foreignKeyDetails.objectName",
+					"root.record.foreignKeyDetails.fieldId",
+					"root.record.foreignKeyDetails.fieldName",
+					"root.record.tags.items",
+					"root.record.classifications.items",
+					"root.record.glossary.items"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":406,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_jV3jJ@n_U4L0M@_ijsfb-1@l@l",
+			"id":"n_qqkwQ",
+			"index":8,
+			"inputs":{
+				"recordId":"{{ n_dlboR.outputs.connectionId }}_sqlserver_field_{{ n_U4L0M.outputs.item.Parent_Table }}_{{ n_jV3jJ.outputs.item.Parent_Column }}",
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"object_type":"e_data_catalog_field",
+				"retryOnFailure":true,
+				"skipIfBlank":false,
+				"record":{
+					"name":"{{ n_dMUa0.outputs.properties.name }}",
+					"description":"{{ n_dMUa0.outputs.properties.description }}",
+					"assetType":"{{ n_dMUa0.outputs.properties.assetType }}",
+					"sourceDetails":{
+						"sourceType":"{{ n_dMUa0.outputs.properties.sourceDetails.sourceType }}",
+						"sourceName":"{{ n_dMUa0.outputs.properties.sourceDetails.sourceName }}",
+						"sourceId":"{{ n_dMUa0.outputs.properties.sourceDetails.sourceId }}",
+						"sourceAssetType":"{{ n_dMUa0.outputs.properties.sourceDetails.sourceAssetType }}",
+						"sourceAssetId":"{{ n_dMUa0.outputs.properties.sourceDetails.sourceAssetId }}"
+					},
+					"parentAssetDetails":{
+						"parentAssetType":"{{ n_dMUa0.outputs.properties.parentAssetDetails.parentAssetType }}",
+						"parentAssetId":"{{ n_dMUa0.outputs.properties.parentAssetDetails.parentAssetId }}"
+					},
+					"certificate":"{{ n_dMUa0.outputs.properties.certificate }}",
+					"createdBy":"{{ n_dMUa0.outputs.properties.createdBy }}",
+					"editedBy":"{{ n_dMUa0.outputs.properties.editedBy }}",
+					"primaryKey":"{{ n_dMUa0.outputs.properties.primaryKey }}",
+					"fieldType":"{{ n_dMUa0.outputs.properties.fieldType }}",
+					"foreignKeyDetails":{
+						"objectId":"sqlserver_{{ n_dlboR.outputs.connectionId }}_table_{{ n_U4L0M.outputs.item.Referenced_Table }}",
+						"objectName":"{{ n_U4L0M.outputs.item.Referenced_Table }}",
+						"fieldId":"{{ n_dlboR.outputs.connectionId }}_sqlserver_field_{{ n_U4L0M.outputs.item.Referenced_Table }}_{{ n_jV3jJ.outputs.item.Referenced_Column }}",
+						"fieldName":"{{ n_jV3jJ.outputs.item.Referenced_Column }}"
+					},
+					"dataType":"{{ n_dMUa0.outputs.properties.dataType }}",
+					"columnOrder":"{{ n_dMUa0.outputs.properties.columnOrder }}",
+					"isNullable":"{{ n_dMUa0.outputs.properties.isNullable }}",
+					"isCustom":"{{ n_dMUa0.outputs.properties.isCustom }}",
+					"dataCatalogId":"{{ n_dMUa0.outputs.properties.dataCatalogId }}",
+					"owners":{
+						"source":"{{ n_dMUa0.outputs.properties.owners }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_dMUa0.outputs.properties.owners[0] }}"
+					},
+					"sharedWith":{
+						"source":"{{ n_dMUa0.outputs.properties.sharedWith }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_dMUa0.outputs.properties.sharedWith[0] }}"
+					},
+					"tags":{
+						"source":"{{ n_dMUa0.outputs.properties.tags }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_dMUa0.outputs.properties.tags[0] }}"
+					},
+					"classifications":{
+						"source":"{{ n_dMUa0.outputs.properties.classifications }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_dMUa0.outputs.properties.classifications[0] }}"
+					},
+					"glossary":{
+						"source":"{{ n_dMUa0.outputs.properties.glossary }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_dMUa0.outputs.properties.glossary[0] }}"
+					}
+				},
+				"upsert":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update an existing record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":217,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ijsfb-1",
+			"id":"n_O1zWX",
+			"index":9,
+			"inputs":{
+				"result":{
+					"isSuccess":true
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":39,
+	"runtimeConnectionAppNames":[
+		"sqlserver"
+	],
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"headerValueTierMap":{},
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":17
+}
