@@ -4,14 +4,14 @@
 	],
 	"createdTime":1750257115250,
 	"deleted":false,
-	"deployedVersion":14,
+	"deployedVersion":15,
 	"deploymentState":{
-		"deployedAt":1780927309590,
+		"deployedAt":1780927734827,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a26cb4d28d6d162e16081ec",
+		"deployedDefinitionId":"6a26ccf6af7ba4594d719465",
 		"status":"DEPLOYED",
-		"version":14,
-		"workflowVersion":38
+		"version":15,
+		"workflowVersion":40
 	},
 	"edges":[
 		{
@@ -57,7 +57,7 @@
 	"id":"680bb38e89c13d6ab6b7babe",
 	"lastModifiedBy":39,
 	"lcName":"llm cost calculator",
-	"modifiedTime":1780927733192,
+	"modifiedTime":1780927845275,
 	"name":"LLM Cost Calculator",
 	"nodes":[
 		{
@@ -72,7 +72,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"BXOwt",
@@ -80,6 +80,8 @@
 			"inputs":{
 				"result":{
 					"additionalProperties":false,
+					"required":[],
+					"type":"object",
 					"properties":{
 						"cacheReadCost":{
 							"title":"cacheReadCost",
@@ -101,12 +103,12 @@
 							"title":"totalCost",
 							"type":"number"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"setup":{
 					"additionalProperties":false,
+					"required":[],
+					"type":"object",
 					"properties":{
 						"cacheReadInputTokens":{
 							"title":"Cache Read Input Tokens",
@@ -121,16 +123,14 @@
 							"type":"integer"
 						},
 						"modelId":{
-							"title":"modelId",
-							"type":"string"
+							"type":"string",
+							"title":"modelId"
 						},
 						"outputTokens":{
 							"title":"outputTokens",
 							"type":"integer"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				}
 			},
 			"skip":false,
@@ -176,7 +176,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"BLh1W",
@@ -278,7 +278,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"3qBfx",
@@ -377,7 +377,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"lmqhl",
@@ -415,5 +415,5 @@
 	"tags":[
 		
 	],
-	"version":40
+	"version":41
 }
