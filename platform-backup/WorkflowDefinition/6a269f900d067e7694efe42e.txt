@@ -18,6 +18,13 @@
 			"fromNodeId":"n_2KPnB",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_okvHP",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_okvHP",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_Lo0pX",
 			"type":"next"
 		},
@@ -25,8 +32,15 @@
 			"fromNodeId":"n_Lo0pX",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_SlkMs",
+			"toNodeId":"n_r4qrh",
 			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_r4qrh",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SlkMs",
+			"type":"next"
 		},
 		{
 			"fromNodeId":"n_SlkMs",
@@ -47,7 +61,7 @@
 	"id":"6a269f900d067e7694efe42e",
 	"lastModifiedBy":39,
 	"lcName":"email to slack notifier",
-	"modifiedTime":1780917016761,
+	"modifiedTime":1780917134054,
 	"name":"Email to Slack Notifier",
 	"nodes":[
 		{
@@ -83,7 +97,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_2KPnB",
@@ -99,25 +113,119 @@
 		},
 		{
 			"context":{
-				"appName":"loop",
-				"resourceName":"loop_for_each",
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1653,
+				"resourceName":"variable_by_unifyapps_create_variables",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_okvHP",
+			"index":3,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"num":{
+							"type":"integer",
+							"title":"Num",
+							"default":"0"
+						}
+					},
+					"required":[
+						"num"
+					]
+				}
+			},
+			"inputs":{
+				"num":"0"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"num":{
+							"type":"integer",
+							"title":"Num",
+							"default":"0"
+						}
+					},
+					"required":[
+						"num"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":63,
+				"resourceName":"loop_while",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_Lo0pX",
-			"index":3,
+			"index":4,
 			"inputs":{
-				"repeatMode":"SINGLE",
-				"listSource":"{{ n_St4rT.outputs.batch }}",
+				"condition":{
+					"filters":[
+						{
+							"property":"{{ n_okvHP.outputs.num }}",
+							"filter":{
+								"operator":"GTE",
+								"value":"0"
+							}
+						}
+					],
+					"operator":"AND"
+				},
 				"captureIterations":false
 			},
 			"skip":false,
 			"subTitle":"Loop",
-			"title":"For each email",
+			"title":"While loop",
 			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1653,
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Lo0pX@root_id-1@l",
+			"id":"n_r4qrh",
+			"index":5,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_okvHP.outputs.num }}",
+						"value":"=SUM({{ n_okvHP.outputs.num }},1)"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update variables",
+			"type":"ACTION"
 		},
 		{
 			"context":{
@@ -127,11 +235,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Lo0pX@root_id-1@l",
 			"id":"n_SlkMs",
-			"index":4,
+			"index":6,
 			"inputs":{
 				"link_names":true,
 				"messageType":"text",
@@ -140,7 +248,7 @@
 				"token_type":"bot_token",
 				"mrkdwn":true
 			},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Slack",
 			"title":"Post message",
 			"type":"ACTION"
@@ -156,7 +264,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_St0pZ",
-			"index":5,
+			"index":7,
 			"inputs":{},
 			"skip":false,
 			"subTitle":"Stop",
@@ -180,5 +288,5 @@
 	"tags":[
 		"AI Generated"
 	],
-	"version":2
+	"version":3
 }
