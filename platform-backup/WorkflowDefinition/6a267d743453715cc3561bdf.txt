@@ -6,46 +6,160 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_DQp9q",
+			"fromNodeId":"n_rYjHl",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_GBDfe",
+			"toNodeId":"n_VwtFi",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_VwtFi",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_miJd0",
 			"type":"next"
 		}
 	],
 	"id":"6a267d743453715cc3561bdf",
 	"lastModifiedBy":39,
 	"lcName":"backupmanager_total_runs",
-	"modifiedTime":1780907380188,
+	"modifiedTime":1780907960352,
 	"name":"BackupManager_Total_Runs",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2440,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_DQp9q-1",
-			"id":"_DQp9q",
-			"index":0,
+			"id":"n_rYjHl",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"result":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Result"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"offset":{
+							"type":"number",
+							"title":"Offset"
+						},
+						"PageSize":{
+							"type":"number",
+							"title":"Page Size"
+						},
+						"config_id":{
+							"type":"string",
+							"title":"Config Id"
+						},
+						"date":{
+							"type":"string",
+							"title":"Date"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":2163,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_DQp9q-1",
-			"id":"_GBDfe",
-			"index":0,
+			"id":"n_VwtFi",
+			"index":2,
+			"inputs":{
+				"query":"SELECT\n    DATE_FORMAT(FROM_UNIXTIME(lastSyncTime / 1000), '%H:%i') AS syncTime,\n    lastSyncTime,\n    executionTime/1000 AS ExecutionTime,\n    executionType,\n    COUNT(*) AS totalAsset,\n    SUM(COUNT(*)) OVER() AS TotalAssets,\n    COUNT(*) OVER() AS TotalJobs,\n    CASE\n        WHEN COUNT(*) = SUM(CASE WHEN status = 'SUCCESS' THEN 1 ELSE 0 END)\n            THEN 'Success'\n        WHEN COUNT(*) = SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END)\n            THEN 'Failed'\n        ELSE 'Partial Success'\n    END AS status\nFROM PLATFORM_BACKUP\nWHERE DATE_FORMAT(FROM_UNIXTIME(lastSyncTime / 1000), '%e %b %Y')\n      = '{{ n_rYjHl.outputs.date }}'\n  AND configid = '{{ n_rYjHl.outputs.date }}'\nGROUP BY\n    lastSyncTime ,\n    executionType,\n    executionTime\nORDER BY syncTime\nLIMIT {{ n_rYjHl.outputs.PageSize }} \nOFFSET {{ n_rYjHl.outputs.PageSize }};\n\n",
+				"record":{
+					"date":"{{ n_rYjHl.outputs.date }}",
+					"configId":"{{ n_rYjHl.outputs.config_id }}"
+				},
+				"params":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"date":{
+							"type":"string",
+							"title":"Date"
+						},
+						"configId":{
+							"type":"string",
+							"title":"Config Id"
+						}
+					}
+				},
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2441,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_DQp9q-1",
+			"id":"n_miJd0",
+			"index":3,
+			"inputs":{
+				"result":{
+					"result":{
+						"source":"{{ n_VwtFi.outputs.objects }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_VwtFi.outputs.objects[0] }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +170,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
