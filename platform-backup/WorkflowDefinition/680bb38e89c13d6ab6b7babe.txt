@@ -57,7 +57,7 @@
 	"id":"680bb38e89c13d6ab6b7babe",
 	"lastModifiedBy":39,
 	"lcName":"llm cost calculator",
-	"modifiedTime":1780927106362,
+	"modifiedTime":1780927165162,
 	"name":"LLM Cost Calculator",
 	"nodes":[
 		{
@@ -149,7 +149,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"n_MYFDP",
@@ -176,7 +176,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"BLh1W",
@@ -185,15 +185,16 @@
 				"triggerInputCondition":{
 					"filters":[
 						{
+							"property":"properties_model",
 							"filter":{
 								"operator":"EQUAL",
-								"value":"{{ n_uwaNo.outputs.properties.model }}"
-							},
-							"property":"properties_model"
+								"value":"{{ BXOwt.outputs.modelId }}"
+							}
 						}
 					],
 					"operator":"AND"
 				},
+				"shouldSearchInAnalyticsStore":false,
 				"object_type":"model",
 				"includeRoleMappings":false,
 				"includeCurrentUserPermissions":false,
@@ -202,9 +203,9 @@
 					"limit":20,
 					"paginateBy":"OFFSET"
 				},
-				"includeTotalCount":false,
 				"numberOfRecordsToFetch":"SINGLE",
-				"readThroughSessionVariables":true
+				"readThroughSessionVariables":true,
+				"includeTotalCount":false
 			},
 			"options":{
 				"bulkheadConfig":{
@@ -414,5 +415,5 @@
 	"tags":[
 		
 	],
-	"version":35
+	"version":36
 }
