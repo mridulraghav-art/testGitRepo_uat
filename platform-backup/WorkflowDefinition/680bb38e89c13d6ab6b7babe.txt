@@ -4,14 +4,14 @@
 	],
 	"createdTime":1750257115250,
 	"deleted":false,
-	"deployedVersion":12,
+	"deployedVersion":13,
 	"deploymentState":{
-		"deployedAt":1780927166924,
+		"deployedAt":1780927237735,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a26cabe31ae79006504e957",
+		"deployedDefinitionId":"6a26cb05af7ba4594d718998",
 		"status":"DEPLOYED",
-		"version":12,
-		"workflowVersion":36
+		"version":13,
+		"workflowVersion":37
 	},
 	"edges":[
 		{
@@ -57,7 +57,7 @@
 	"id":"680bb38e89c13d6ab6b7babe",
 	"lastModifiedBy":39,
 	"lcName":"llm cost calculator",
-	"modifiedTime":1780927234642,
+	"modifiedTime":1780927307978,
 	"name":"LLM Cost Calculator",
 	"nodes":[
 		{
@@ -182,6 +182,18 @@
 			"id":"BLh1W",
 			"index":3,
 			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_model",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ n_MYFDP.outputs.properties.model }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
 				"shouldSearchInAnalyticsStore":false,
 				"object_type":"model",
 				"includeRoleMappings":false,
@@ -403,5 +415,5 @@
 	"tags":[
 		
 	],
-	"version":37
+	"version":38
 }
