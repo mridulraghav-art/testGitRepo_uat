@@ -4,25 +4,25 @@
 	],
 	"createdTime":1750257115250,
 	"deleted":false,
-	"deployedVersion":10,
+	"deployedVersion":11,
 	"deploymentState":{
-		"deployedAt":1780925896403,
+		"deployedAt":1780926268091,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a26c5c831ae790065ffcdb7",
+		"deployedDefinitionId":"6a26c73b3ad0e26b1fd580ed",
 		"status":"DEPLOYED",
-		"version":10,
-		"workflowVersion":32
+		"version":11,
+		"workflowVersion":34
 	},
 	"edges":[
 		{
 			"fromNodeId":"BXOwt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_uwaNo",
+			"toNodeId":"n_MYFDP",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_uwaNo",
+			"fromNodeId":"n_MYFDP",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"BLh1W",
@@ -57,7 +57,7 @@
 	"id":"680bb38e89c13d6ab6b7babe",
 	"lastModifiedBy":39,
 	"lcName":"llm cost calculator",
-	"modifiedTime":1780926266423,
+	"modifiedTime":1780927106362,
 	"name":"LLM Cost Calculator",
 	"nodes":[
 		{
@@ -144,7 +144,7 @@
 		{
 			"context":{
 				"appName":"callables",
-				"resourceVersion":458,
+				"resourceVersion":2443,
 				"resourceName":"callables_call_automation",
 				"type":"APPLICATION"
 			},
@@ -152,7 +152,7 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
-			"id":"n_uwaNo",
+			"id":"n_MYFDP",
 			"index":2,
 			"inputs":{
 				"automationId":"6854195c4a0205327f0f4712",
@@ -414,5 +414,5 @@
 	"tags":[
 		
 	],
-	"version":34
+	"version":35
 }
