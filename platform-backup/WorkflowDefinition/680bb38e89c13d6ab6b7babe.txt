@@ -18,11 +18,11 @@
 			"fromNodeId":"BXOwt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_MYFDP",
+			"toNodeId":"n_fiBKp",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_MYFDP",
+			"fromNodeId":"n_fiBKp",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"BLh1W",
@@ -57,7 +57,7 @@
 	"id":"680bb38e89c13d6ab6b7babe",
 	"lastModifiedBy":39,
 	"lcName":"llm cost calculator",
-	"modifiedTime":1780927845275,
+	"modifiedTime":1780927910447,
 	"name":"LLM Cost Calculator",
 	"nodes":[
 		{
@@ -80,8 +80,6 @@
 			"inputs":{
 				"result":{
 					"additionalProperties":false,
-					"required":[],
-					"type":"object",
 					"properties":{
 						"cacheReadCost":{
 							"title":"cacheReadCost",
@@ -103,12 +101,12 @@
 							"title":"totalCost",
 							"type":"number"
 						}
-					}
+					},
+					"required":[],
+					"type":"object"
 				},
 				"setup":{
 					"additionalProperties":false,
-					"required":[],
-					"type":"object",
 					"properties":{
 						"cacheReadInputTokens":{
 							"title":"Cache Read Input Tokens",
@@ -123,14 +121,16 @@
 							"type":"integer"
 						},
 						"modelId":{
-							"type":"string",
-							"title":"modelId"
+							"title":"modelId",
+							"type":"string"
 						},
 						"outputTokens":{
 							"title":"outputTokens",
 							"type":"integer"
 						}
-					}
+					},
+					"required":[],
+					"type":"object"
 				}
 			},
 			"skip":false,
@@ -152,7 +152,7 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
-			"id":"n_MYFDP",
+			"id":"n_fiBKp",
 			"index":2,
 			"inputs":{
 				"automationId":"6854195c4a0205327f0f4712",
@@ -176,7 +176,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"BLh1W",
@@ -278,7 +278,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"3qBfx",
@@ -377,7 +377,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"lmqhl",
@@ -415,5 +415,5 @@
 	"tags":[
 		
 	],
-	"version":41
+	"version":42
 }
