@@ -1,48 +1,137 @@
 {
 	"appsUsed":[
-		
+		"gmail",
+		"slack"
 	],
 	"createdTime":1780916112768,
 	"deleted":false,
+	"description":"Triggers on new emails received in Gmail and sends a Slack notification for each email with the sender, subject, and message snippet.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_St4rT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_Lo0pX",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Lo0pX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SlkMs",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_Lo0pX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_St0pZ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SlkMs",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Lo0pX",
 			"type":"next"
 		}
 	],
 	"id":"6a269f900d067e7694efe42e",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1780916112768,
-	"name":"Untitled workflow",
+	"lcName":"email to slack notifier",
+	"modifiedTime":1780916197419,
+	"name":"Email to Slack Notifier",
 	"nodes":[
 		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"695b947bca769c67b7904088",
+				"resourceName":"gmail_on_new_email_polling"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_St4rT",
 			"index":1,
+			"inputs":{
+				"intervalType":"minutes",
+				"interval":5,
+				"batchSize":5
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Gmail",
+			"title":"New email",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_Lo0pX",
 			"index":2,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_St4rT.outputs.batch }}",
+				"captureIterations":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Loop",
+			"title":"For each email",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"connectionId":"66d345bdffb4ff07d2cae019",
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_Lo0pX@root_id-1@l",
+			"id":"n_SlkMs",
+			"index":3,
+			"inputs":{
+				"link_names":true,
+				"messageType":"text",
+				"channel":"<CHANNEL_ID>",
+				"text":"*New Email Received*\n*From:* {{ n_Lo0pX.outputs.item.from.fromEmail }}\n*Subject:* {{ n_Lo0pX.outputs.item.subject }}\n*Snippet:* {{ n_Lo0pX.outputs.item.raw.snippet }}",
+				"token_type":"bot_token",
+				"mrkdwn":true
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Post message",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"resourceName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_St0pZ",
+			"index":4,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +145,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
