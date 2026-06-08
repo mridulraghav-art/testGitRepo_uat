@@ -46,7 +46,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1780768720239,
+	"modifiedTime":1780920329774,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -61,7 +61,39 @@
 			"groupId":"_QPyDa-1",
 			"id":"n_QjEiF",
 			"index":1,
-			"inputs":{},
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"dfdv",
+						"wqe"
+					],
+					"properties":{
+						"dfdv":{
+							"type":"string",
+							"title":"Dfdv"
+						},
+						"wqe":{
+							"type":"string",
+							"title":"Wqe"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"qwdf"
+					],
+					"properties":{
+						"qwdf":{
+							"type":"string",
+							"title":"Qwdf"
+						}
+					}
+				}
+			},
 			"skip":false,
 			"subTitle":"Callable",
 			"title":"Trigger via automation",
@@ -78,7 +110,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_DF2ce",
@@ -356,7 +388,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_WPWIl",
@@ -443,7 +475,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_eG2dN",
@@ -474,5 +506,5 @@
 	"tags":[
 		
 	],
-	"version":65
+	"version":66
 }
