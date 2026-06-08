@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780933601327,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_UTV8k",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_AqCry",
+			"type":"next"
+		}
+	],
+	"id":"6a26e3e13ad0e26b1fe96fa6",
+	"lastModifiedBy":39,
+	"lcName":"erar",
+	"modifiedTime":1780933601327,
+	"name":"erar",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_UTV8k-1",
+			"id":"_UTV8k",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_UTV8k-1",
+			"id":"_AqCry",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
