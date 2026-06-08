@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780901999861,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_ddUn1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_xQQ1e",
+			"type":"next"
+		}
+	],
+	"id":"6a26686f3453715cc354083e",
+	"lastModifiedBy":39,
+	"lcName":"frefre",
+	"modifiedTime":1780901999861,
+	"name":"frefre",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ddUn1-1",
+			"id":"_ddUn1",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ddUn1-1",
+			"id":"_xQQ1e",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
