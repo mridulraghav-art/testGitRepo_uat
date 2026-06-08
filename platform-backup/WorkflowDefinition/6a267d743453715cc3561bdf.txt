@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780907380188,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_DQp9q",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_GBDfe",
+			"type":"next"
+		}
+	],
+	"id":"6a267d743453715cc3561bdf",
+	"lastModifiedBy":39,
+	"lcName":"backupmanager_total_runs",
+	"modifiedTime":1780907380188,
+	"name":"BackupManager_Total_Runs",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_DQp9q-1",
+			"id":"_DQp9q",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_DQp9q-1",
+			"id":"_GBDfe",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
