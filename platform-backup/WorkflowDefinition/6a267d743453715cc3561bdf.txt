@@ -4,6 +4,15 @@
 	],
 	"createdTime":1780907380188,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780908132131,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a2680633ad0e26b1fbb4e19",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_rYjHl",
@@ -23,7 +32,7 @@
 	"id":"6a267d743453715cc3561bdf",
 	"lastModifiedBy":39,
 	"lcName":"backupmanager_total_runs",
-	"modifiedTime":1780908078963,
+	"modifiedTime":1780909839109,
 	"name":"BackupManager_Total_Runs",
 	"nodes":[
 		{
@@ -33,7 +42,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_DQp9q-1",
 			"id":"n_rYjHl",
@@ -101,7 +110,7 @@
 			"id":"n_VwtFi",
 			"index":2,
 			"inputs":{
-				"query":"SELECT\n    DATE_FORMAT(FROM_UNIXTIME(lastSyncTime / 1000), '%H:%i') AS syncTime,\n    lastSyncTime,\n    executionTime/1000 AS ExecutionTime,\n    executionType,\n    COUNT(*) AS totalAsset,\n    SUM(COUNT(*)) OVER() AS TotalAssets,\n    COUNT(*) OVER() AS TotalJobs,\n    CASE\n        WHEN COUNT(*) = SUM(CASE WHEN status = 'SUCCESS' THEN 1 ELSE 0 END)\n            THEN 'Success'\n        WHEN COUNT(*) = SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END)\n            THEN 'Failed'\n        ELSE 'Partial Success'\n    END AS status\nFROM PLATFORM_BACKUP\nWHERE DATE_FORMAT(FROM_UNIXTIME(lastSyncTime / 1000), '%e %b %Y')\n      = '{{ n_rYjHl.outputs.date }}'\n  AND configid = '{{ n_rYjHl.outputs.config_id }}'\nGROUP BY\n    lastSyncTime ,\n    executionType,\n    executionTime\nORDER BY syncTime\nLIMIT {{ n_rYjHl.outputs.PageSize }} \nOFFSET {{ n_rYjHl.outputs.PageSize }};\n\n",
+				"query":"SELECT\n    DATE_FORMAT(FROM_UNIXTIME(lastSyncTime / 1000), '%H:%i') AS syncTime,\n    lastSyncTime,\n    executionTime/1000 AS ExecutionTime,\n    executionType,\n    COUNT(*) AS totalAsset,\n    SUM(COUNT(*)) OVER() AS TotalAssets,\n    COUNT(*) OVER() AS TotalJobs,\n    CASE\n        WHEN COUNT(*) = SUM(CASE WHEN status = 'SUCCESS' THEN 1 ELSE 0 END)\n            THEN 'Success'\n        WHEN COUNT(*) = SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END)\n            THEN 'Failed'\n        ELSE 'Partial Success'\n    END AS status\nFROM PLATFORM_BACKUP\nWHERE DATE_FORMAT(FROM_UNIXTIME(lastSyncTime / 1000), '%e %b %Y')\n      = '{{ n_rYjHl.outputs.date }}'\n  AND configid = '{{ n_rYjHl.outputs.config_id }}'\nGROUP BY\n    lastSyncTime ,\n    executionType,\n    executionTime\nORDER BY syncTime \nLIMIT {{ n_rYjHl.outputs.PageSize }} \nOFFSET {{ n_rYjHl.outputs.PageSize }};\n\n",
 				"record":{
 					"date":"{{ n_rYjHl.outputs.date }}",
 					"configId":"{{ n_rYjHl.outputs.config_id }}"
@@ -170,5 +179,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
