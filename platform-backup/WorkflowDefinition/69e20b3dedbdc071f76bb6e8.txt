@@ -152,7 +152,7 @@
 	"id":"69e20b3dedbdc071f76bb6e8",
 	"lastModifiedBy":39,
 	"lcName":"edit interface",
-	"modifiedTime":1780931570065,
+	"modifiedTime":1780931582035,
 	"name":"Edit Interface",
 	"nodes":[
 		{
@@ -525,7 +525,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8wYrj-1",
 			"id":"n_W2gg1",
@@ -533,17 +533,10 @@
 			"inputs":{
 				"filters":[
 					{
+						"property":"{{ n_JA9kt.outputs.properties.navigation.defaultPageId }}",
 						"filter":{
 							"operator":"MISSING"
-						},
-						"property":"{{ n_JA9kt.outputs.properties.navigation.defaultPageId }}"
-					},
-					{
-						"filter":{
-							"operator":"EQUAL",
-							"value":""
-						},
-						"property":"{{ n_JA9kt.outputs.properties.navigation.defaultPageId }}"
+						}
 					}
 				],
 				"operator":"OR"
@@ -1047,5 +1040,5 @@
 	"tags":[
 		"text-to-lowcode"
 	],
-	"version":88
+	"version":89
 }
