@@ -11,6 +11,13 @@
 			"fromNodeId":"n_St4rT",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_2KPnB",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_2KPnB",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_Lo0pX",
 			"type":"next"
 		},
@@ -22,25 +29,25 @@
 			"type":"loop"
 		},
 		{
-			"fromNodeId":"n_Lo0pX",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_St0pZ",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"n_SlkMs",
 			"name":"loopback",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_Lo0pX",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Lo0pX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_St0pZ",
+			"type":"next"
 		}
 	],
 	"id":"6a269f900d067e7694efe42e",
 	"lastModifiedBy":39,
 	"lcName":"email to slack notifier",
-	"modifiedTime":1780916197419,
+	"modifiedTime":1780917016761,
 	"name":"Email to Slack Notifier",
 	"nodes":[
 		{
@@ -70,6 +77,28 @@
 		},
 		{
 			"context":{
+				"appName":"delay",
+				"resourceVersion":63,
+				"resourceName":"delay_for",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_2KPnB",
+			"index":2,
+			"inputs":{
+				"duration":5,
+				"unit":"MINUTES"
+			},
+			"skip":false,
+			"subTitle":"Delay",
+			"title":"Set delay duration",
+			"type":"DELAY"
+		},
+		{
+			"context":{
 				"appName":"loop",
 				"resourceName":"loop_for_each",
 				"type":"APPLICATION"
@@ -79,7 +108,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_Lo0pX",
-			"index":2,
+			"index":3,
 			"inputs":{
 				"repeatMode":"SINGLE",
 				"listSource":"{{ n_St4rT.outputs.batch }}",
@@ -102,7 +131,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Lo0pX@root_id-1@l",
 			"id":"n_SlkMs",
-			"index":3,
+			"index":4,
 			"inputs":{
 				"link_names":true,
 				"messageType":"text",
@@ -127,7 +156,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_St0pZ",
-			"index":4,
+			"index":5,
 			"inputs":{},
 			"skip":false,
 			"subTitle":"Stop",
@@ -135,6 +164,9 @@
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -148,5 +180,5 @@
 	"tags":[
 		"AI Generated"
 	],
-	"version":1
+	"version":2
 }
