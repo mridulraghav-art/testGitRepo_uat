@@ -57,7 +57,7 @@
 	"id":"680bb38e89c13d6ab6b7babe",
 	"lastModifiedBy":39,
 	"lcName":"llm cost calculator",
-	"modifiedTime":1780927910447,
+	"modifiedTime":1780927940160,
 	"name":"LLM Cost Calculator",
 	"nodes":[
 		{
@@ -72,7 +72,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"BXOwt",
@@ -149,7 +149,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"n_fiBKp",
@@ -176,7 +176,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"BLh1W",
@@ -188,7 +188,7 @@
 							"property":"properties_model",
 							"filter":{
 								"operator":"EQUAL",
-								"value":"{{ n_MYFDP.outputs.properties.model }}"
+								"value":"{{ n_fiBKp.outputs.properties.model }}"
 							}
 						}
 					],
@@ -415,5 +415,5 @@
 	"tags":[
 		
 	],
-	"version":42
+	"version":43
 }
