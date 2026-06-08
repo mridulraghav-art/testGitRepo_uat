@@ -4,45 +4,163 @@
 	],
 	"createdTime":1780921070973,
 	"deleted":false,
+	"description":"Fires every 10 minutes, fetches all records from a Storage object, then loops over each record and logs/stores it back via a Create Record node.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_SchdR",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_FtRec",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_FtRec",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LpEch",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LpEch",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CrRec",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_LpEch",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpWf",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CrRec",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LpEch",
 			"type":"next"
 		}
 	],
 	"id":"6a26b2ee0d067e7694f7808c",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1780921070973,
-	"name":"Untitled workflow",
+	"lcName":"scheduled storage fetch & loop",
+	"modifiedTime":1780921188617,
+	"name":"Scheduled Storage Fetch & Loop",
 	"nodes":[
 		{
+			"context":{
+				"appName":"schedule",
+				"resourceName":"schedule_default"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_SchdR",
 			"index":1,
+			"inputs":{
+				"cron":"INTERVAL",
+				"interval":10,
+				"frequency":"MINUTES"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"connectionId":"6807432d37c1e42444a5a7b4",
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_FtRec",
 			"index":2,
+			"inputs":{
+				"object_type":"<YOUR_OBJECT_NAME>",
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":100,
+					"offset":0
+				},
+				"numberOfRecordsToFetch":"MULTIPLE"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Storage",
+			"title":"Fetch records",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_LpEch",
+			"index":3,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_FtRec.outputs.objects }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"connectionId":"6807432d37c1e42444a5a7b4",
+				"resourceName":"storage_by_unifyapps_create_record",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_LpEch@root_id-1@l",
+			"id":"n_CrRec",
+			"index":4,
+			"inputs":{
+				"useRawPayload":true,
+				"rawPayload":"{{ n_LpEch.outputs.item }}",
+				"object_type":"<YOUR_LOG_OBJECT_NAME>"
+			},
+			"skip":false,
+			"subTitle":"Storage",
+			"title":"Create record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"resourceName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StpWf",
+			"index":5,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +174,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
