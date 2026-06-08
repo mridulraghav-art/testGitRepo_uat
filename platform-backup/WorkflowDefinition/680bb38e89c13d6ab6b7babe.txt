@@ -4,25 +4,18 @@
 	],
 	"createdTime":1750257115250,
 	"deleted":false,
-	"deployedVersion":19,
+	"deployedVersion":20,
 	"deploymentState":{
-		"deployedAt":1780928996613,
+		"deployedAt":1780929014920,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a26d1e431ae7900650c0dd1",
+		"deployedDefinitionId":"6a26d1f633b0405a76526b8a",
 		"status":"DEPLOYED",
-		"version":19,
-		"workflowVersion":51
+		"version":20,
+		"workflowVersion":52
 	},
 	"edges":[
 		{
 			"fromNodeId":"BXOwt",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_gOPJb",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_gOPJb",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_uwaNo",
@@ -64,7 +57,7 @@
 	"id":"680bb38e89c13d6ab6b7babe",
 	"lastModifiedBy":39,
 	"lcName":"llm cost calculator",
-	"modifiedTime":1780929013271,
+	"modifiedTime":1780929028375,
 	"name":"LLM Cost Calculator",
 	"nodes":[
 		{
@@ -150,38 +143,17 @@
 		},
 		{
 			"context":{
-				"appName":"utility_by_unifyapps",
-				"resourceVersion":0,
-				"resourceName":"utility_by_unifyapps_to_json_string",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":true,
-			"fallbackMode":"STOP",
-			"groupId":"Lccp2-1",
-			"id":"n_gOPJb",
-			"index":2,
-			"inputs":{
-				"object":"{{ BXOwt.outputs.modelId }}"
-			},
-			"skip":false,
-			"subTitle":"Utility by UnifyApps",
-			"title":"Serialise object to JSON string",
-			"type":"ACTION"
-		},
-		{
-			"context":{
 				"appName":"callables",
 				"resourceVersion":458,
 				"resourceName":"callables_call_automation",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"n_uwaNo",
-			"index":3,
+			"index":2,
 			"inputs":{
 				"automationId":"6854195c4a0205327f0f4712",
 				"runtimeConnections":{},
@@ -208,7 +180,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"BLh1W",
-			"index":4,
+			"index":3,
 			"inputs":{
 				"triggerInputCondition":{
 					"filters":[
@@ -309,7 +281,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"3qBfx",
-			"index":5,
+			"index":4,
 			"inputs":{
 				"output":{
 					"additionalProperties":false,
@@ -408,7 +380,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"lmqhl",
-			"index":6,
+			"index":5,
 			"inputs":{
 				"result":{
 					"cacheReadCost":"{{ 3qBfx.outputs.result.cacheReadCost }}",
@@ -442,5 +414,5 @@
 	"tags":[
 		
 	],
-	"version":52
+	"version":53
 }
