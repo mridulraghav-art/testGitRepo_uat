@@ -18,11 +18,11 @@
 			"fromNodeId":"BXOwt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_fiBKp",
+			"toNodeId":"n_uwaNo",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_fiBKp",
+			"fromNodeId":"n_uwaNo",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"BLh1W",
@@ -57,7 +57,7 @@
 	"id":"680bb38e89c13d6ab6b7babe",
 	"lastModifiedBy":39,
 	"lcName":"llm cost calculator",
-	"modifiedTime":1780927940160,
+	"modifiedTime":1780928480835,
 	"name":"LLM Cost Calculator",
 	"nodes":[
 		{
@@ -144,7 +144,7 @@
 		{
 			"context":{
 				"appName":"callables",
-				"resourceVersion":2443,
+				"resourceVersion":458,
 				"resourceName":"callables_call_automation",
 				"type":"APPLICATION"
 			},
@@ -152,16 +152,16 @@
 			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
-			"id":"n_fiBKp",
+			"id":"n_uwaNo",
 			"index":2,
 			"inputs":{
 				"automationId":"6854195c4a0205327f0f4712",
 				"runtimeConnections":{},
 				"synchronous":true,
-				"version":"-1",
 				"parameters":{
 					"modelId":"{{ BXOwt.outputs.modelId }}"
-				}
+				},
+				"version":"-1"
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -176,7 +176,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"Lccp2-1",
 			"id":"BLh1W",
@@ -185,16 +185,15 @@
 				"triggerInputCondition":{
 					"filters":[
 						{
-							"property":"properties_model",
 							"filter":{
 								"operator":"EQUAL",
-								"value":"{{ n_fiBKp.outputs.properties.model }}"
-							}
+								"value":"{{ n_uwaNo.outputs.properties.model }}"
+							},
+							"property":"properties_model"
 						}
 					],
 					"operator":"AND"
 				},
-				"shouldSearchInAnalyticsStore":false,
 				"object_type":"model",
 				"includeRoleMappings":false,
 				"includeCurrentUserPermissions":false,
@@ -203,9 +202,9 @@
 					"limit":20,
 					"paginateBy":"OFFSET"
 				},
+				"includeTotalCount":false,
 				"numberOfRecordsToFetch":"SINGLE",
-				"readThroughSessionVariables":true,
-				"includeTotalCount":false
+				"readThroughSessionVariables":true
 			},
 			"options":{
 				"bulkheadConfig":{
@@ -286,6 +285,8 @@
 			"inputs":{
 				"output":{
 					"additionalProperties":false,
+					"required":[],
+					"type":"object",
 					"properties":{
 						"cacheReadCost":{
 							"title":"Cache Read Cost",
@@ -307,12 +308,12 @@
 							"title":"Total Cost",
 							"type":"number"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"input":{
 					"additionalProperties":false,
+					"required":[],
+					"type":"object",
 					"properties":{
 						"cacheReadInputTokens":{
 							"title":"Cache Read Input Tokens",
@@ -346,9 +347,7 @@
 							"title":"outputTokens",
 							"type":"integer"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"code":"def inputTokens       = binding.hasVariable('inputTokens') ? binding.inputTokens : 0\ndef inputTokenCost    = binding.hasVariable('inputTokenCost') ? binding.inputTokenCost : 0\n\ndef outputTokens      = binding.hasVariable('outputTokens') ? binding.outputTokens : 0\ndef outputTokenCost   = binding.hasVariable('outputTokenCost') ? binding.outputTokenCost : 0\n\ndef cacheReadTokens   = binding.hasVariable('cacheReadInputTokens')\n        ? binding.cacheReadInputTokens\n        : 0\ndef cacheReadCostRate = binding.hasVariable('cacheReadTokenCost')\n        ? binding.cacheReadTokenCost\n        : 0\n\ndef cacheWriteTokens  = binding.hasVariable('cacheWriteInputTokens')\n        ? binding.cacheWriteInputTokens\n        : 0\ndef cacheWriteCostRate= binding.hasVariable('cacheWriteTokenCost')\n        ? binding.cacheWriteTokenCost\n        : 0\n\n// adjust input tokens (remove cached tokens)\ndef effectiveInputTokens = inputTokens - cacheReadTokens - cacheWriteTokens\nif (effectiveInputTokens < 0) {\n    effectiveInputTokens = 0\n}\n\n// Cost calculations (per million tokens)\ndef inputCost      = effectiveInputTokens * inputTokenCost / 1_000_000\ndef outputCost     = outputTokens * outputTokenCost / 1_000_000\ndef cacheReadCost  = cacheReadTokens * cacheReadCostRate / 1_000_000\ndef cacheWriteCost = cacheWriteTokens * cacheWriteCostRate / 1_000_000\n\ndef totalCost = inputCost + outputCost + cacheReadCost + cacheWriteCost\n\nreturn [\n  inputCost      : inputCost,\n  outputCost     : outputCost,\n  cacheReadCost  : cacheReadCost,\n  cacheWriteCost : cacheWriteCost,\n  totalCost      : totalCost\n]",
 				"compile_static":false,
@@ -415,5 +414,5 @@
 	"tags":[
 		
 	],
-	"version":43
+	"version":44
 }
