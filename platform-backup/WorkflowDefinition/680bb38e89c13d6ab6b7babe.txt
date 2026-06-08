@@ -4,14 +4,14 @@
 	],
 	"createdTime":1750257115250,
 	"deleted":false,
-	"deployedVersion":11,
+	"deployedVersion":12,
 	"deploymentState":{
-		"deployedAt":1780926268091,
+		"deployedAt":1780927166924,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a26c73b3ad0e26b1fd580ed",
+		"deployedDefinitionId":"6a26cabe31ae79006504e957",
 		"status":"DEPLOYED",
-		"version":11,
-		"workflowVersion":34
+		"version":12,
+		"workflowVersion":36
 	},
 	"edges":[
 		{
@@ -57,7 +57,7 @@
 	"id":"680bb38e89c13d6ab6b7babe",
 	"lastModifiedBy":39,
 	"lcName":"llm cost calculator",
-	"modifiedTime":1780927165162,
+	"modifiedTime":1780927234642,
 	"name":"LLM Cost Calculator",
 	"nodes":[
 		{
@@ -182,18 +182,6 @@
 			"id":"BLh1W",
 			"index":3,
 			"inputs":{
-				"triggerInputCondition":{
-					"filters":[
-						{
-							"property":"properties_model",
-							"filter":{
-								"operator":"EQUAL",
-								"value":"{{ BXOwt.outputs.modelId }}"
-							}
-						}
-					],
-					"operator":"AND"
-				},
 				"shouldSearchInAnalyticsStore":false,
 				"object_type":"model",
 				"includeRoleMappings":false,
@@ -415,5 +403,5 @@
 	"tags":[
 		
 	],
-	"version":36
+	"version":37
 }
