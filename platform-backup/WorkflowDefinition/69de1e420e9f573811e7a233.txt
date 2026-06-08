@@ -4,6 +4,15 @@
 	],
 	"createdTime":1780906883430,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780906883689,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a267b833453715cc3560400",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":17
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_dlboR",
@@ -81,7 +90,7 @@
 	"id":"69de1e420e9f573811e7a233",
 	"lastModifiedBy":39,
 	"lcName":"mssql relationship builder",
-	"modifiedTime":1780906883430,
+	"modifiedTime":1780919920080,
 	"name":"MSSQL Relationship Builder",
 	"nodes":[
 		{
@@ -91,7 +100,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ijsfb-1",
 			"id":"n_dlboR",
@@ -120,6 +129,10 @@
 						"connectionId":{
 							"type":"string",
 							"title":"Connection Id"
+						},
+						"data_catalog_id":{
+							"type":"string",
+							"title":"Data Catalog Id"
 						}
 					}
 				}
@@ -146,7 +159,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ijsfb-1",
 			"id":"n_U58NS",
@@ -169,7 +182,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ijsfb-1",
 			"id":"n_U4L0M",
@@ -192,7 +205,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_U4L0M@_ijsfb-1@l",
 			"id":"n_mMdhV",
@@ -252,7 +265,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_U4L0M@_ijsfb-1@l",
 			"id":"n_VOXny",
@@ -290,7 +303,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_U4L0M@_ijsfb-1@l",
 			"id":"n_jV3jJ",
@@ -313,7 +326,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_jV3jJ@n_U4L0M@_ijsfb-1@l@l",
 			"id":"n_dMUa0",
@@ -323,7 +336,7 @@
 				"includeRoleMappings":false,
 				"includeCurrentUserPermissions":false,
 				"translationsOption":"DEFAULT",
-				"id":"{{ n_dlboR.outputs.connectionId }}_sqlserver_field_{{ n_U4L0M.outputs.item.Parent_Table }}_{{ n_jV3jJ.outputs.item.Parent_Column }}",
+				"id":"{{ n_dlboR.outputs.data_catalog_id }}_{{ n_dlboR.outputs.connectionId }}_sqlserver_field_{{ n_U4L0M.outputs.item.Parent_Table }}_{{ n_jV3jJ.outputs.item.Parent_Column }}",
 				"readThroughSessionVariables":false
 			},
 			"skip":false,
@@ -359,13 +372,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_jV3jJ@n_U4L0M@_ijsfb-1@l@l",
 			"id":"n_qqkwQ",
 			"index":8,
 			"inputs":{
-				"recordId":"{{ n_dlboR.outputs.connectionId }}_sqlserver_field_{{ n_U4L0M.outputs.item.Parent_Table }}_{{ n_jV3jJ.outputs.item.Parent_Column }}",
+				"recordId":"{{ n_dlboR.outputs.data_catalog_id }}_{{ n_dlboR.outputs.connectionId }}_sqlserver_field_{{ n_U4L0M.outputs.item.Parent_Table }}_{{ n_jV3jJ.outputs.item.Parent_Column }}",
 				"useRawPayload":false,
 				"writeThroughSessionVariables":false,
 				"object_type":"e_data_catalog_field",
@@ -392,9 +405,9 @@
 					"primaryKey":"{{ n_dMUa0.outputs.properties.primaryKey }}",
 					"fieldType":"{{ n_dMUa0.outputs.properties.fieldType }}",
 					"foreignKeyDetails":{
-						"objectId":"sqlserver_{{ n_dlboR.outputs.connectionId }}_table_{{ n_U4L0M.outputs.item.Referenced_Table }}",
+						"objectId":"{{ n_dlboR.outputs.data_catalog_id }}_sqlserver_{{ n_dlboR.outputs.connectionId }}_table_{{ n_U4L0M.outputs.item.Referenced_Table }}",
 						"objectName":"{{ n_U4L0M.outputs.item.Referenced_Table }}",
-						"fieldId":"{{ n_dlboR.outputs.connectionId }}_sqlserver_field_{{ n_U4L0M.outputs.item.Referenced_Table }}_{{ n_jV3jJ.outputs.item.Referenced_Column }}",
+						"fieldId":"{{ n_dlboR.outputs.data_catalog_id }}_{{ n_dlboR.outputs.connectionId }}_sqlserver_field_{{ n_U4L0M.outputs.item.Referenced_Table }}_{{ n_jV3jJ.outputs.item.Referenced_Column }}",
 						"fieldName":"{{ n_jV3jJ.outputs.item.Referenced_Column }}"
 					},
 					"dataType":"{{ n_dMUa0.outputs.properties.dataType }}",
@@ -443,7 +456,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ijsfb-1",
 			"id":"n_O1zWX",
@@ -477,5 +490,5 @@
 		}
 	},
 	"standard":false,
-	"version":17
+	"version":18
 }
