@@ -1,0 +1,1680 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780908233789,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"n_uAEEp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_XEz6T",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_XEz6T",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_n3vqi",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_n3vqi",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_epVT4",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_epVT4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ISmRD",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_ISmRD",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_3ZRop",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_3ZRop",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_2j79t",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_2j79t",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_8PbYk",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_8PbYk",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_5TSNw",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_5TSNw",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_2j79t",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_2j79t",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S5IMU",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S5IMU",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_kcRtD",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_kcRtD",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UIhYv",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UIhYv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_90WXQ",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_90WXQ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_O6GaP",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_O6GaP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_H7IOB",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_H7IOB",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_QZRKy",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_QZRKy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_JqVwE",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_JqVwE",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_1bbNu",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_1bbNu",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_D3Dbs",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_D3Dbs",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_OOfb7",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_OOfb7",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_iUVuW",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_iUVuW",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_JqVwE",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_JqVwE",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UIhYv",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UIhYv",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_n3vqi",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_n3vqi",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_0uGDE",
+			"type":"next"
+		}
+	],
+	"id":"69de74af16c58d06f69554f8",
+	"lastModifiedBy":39,
+	"lcName":"mssql description addition data catalog new using llm",
+	"modifiedTime":1780908233789,
+	"name":"MSSQL Description Addition Data Catalog New Using LLM",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":216,
+				"resourceName":"callables_from_automation"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_T2V8G-1",
+			"id":"n_uAEEp",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"isSuccess"
+					],
+					"properties":{
+						"isSuccess":{
+							"type":"boolean",
+							"title":"Is Success"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"dataCatalogId",
+						"connectionId"
+					],
+					"properties":{
+						"dataCatalogId":{
+							"type":"string",
+							"title":"Data Catalog Id"
+						},
+						"connectionId":{
+							"type":"string",
+							"title":"Connection Id"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":166,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_T2V8G-1",
+			"id":"n_XEz6T",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"cursor":{
+							"type":"string",
+							"title":"Cursor"
+						},
+						"hasMore":{
+							"type":"boolean",
+							"title":"Has More"
+						}
+					},
+					"required":[
+						"cursor",
+						"hasMore"
+					]
+				}
+			},
+			"inputs":{
+				"hasMore":true
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"cursor":{
+							"type":"string",
+							"title":"Cursor"
+						},
+						"hasMore":{
+							"type":"boolean",
+							"title":"Has More"
+						}
+					},
+					"required":[
+						"cursor",
+						"hasMore"
+					]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":14,
+				"resourceName":"loop_while",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_T2V8G-1",
+			"id":"n_n3vqi",
+			"index":3,
+			"inputs":{
+				"condition":{
+					"filters":[
+						{
+							"property":"{{ n_XEz6T.outputs.hasMore }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"True"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"While loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":303,
+				"resourceName":"variable_by_unifyapps_create_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_n3vqi@_T2V8G-1@l",
+			"id":"n_epVT4",
+			"index":4,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{
+					"createList":{
+						"ui:title":"",
+						"ua:type":{
+							"ui:widget":"hidden"
+						},
+						"items":{
+							"ui:title":"Initial list items",
+							"ui:description":"Set the initial values of the list (defaults to empty)"
+						},
+						"ui:order":[
+							"*",
+							"items"
+						]
+					},
+					"ua:title":{
+						"ui:widget":"hidden"
+					},
+					"ua:list_type":{
+						"ui:widget":"hidden"
+					}
+				},
+				"schema":{
+					"allOf":[
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"OBJECT"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"items":{
+												"type":"object",
+												"properties":{}
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"STRING"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of String"
+											},
+											"items":{
+												"type":"string"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"INTEGER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Integers"
+											},
+											"items":{
+												"type":"integer"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"NUMBER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Numbers"
+											},
+											"items":{
+												"type":"number"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"BOOLEAN"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Booleans"
+											},
+											"items":{
+												"type":"boolean"
+											}
+										}
+									}
+								}
+							}
+						}
+					],
+					"format":"ua:list",
+					"type":"object",
+					"properties":{
+						"ua:title":{
+							"type":"string"
+						},
+						"ua:list_type":{
+							"type":"string",
+							"title":"List Type",
+							"oneOf":[
+								{
+									"const":"OBJECT",
+									"title":"Object"
+								},
+								{
+									"const":"STRING",
+									"title":"String"
+								},
+								{
+									"const":"NUMBER",
+									"title":"Number"
+								},
+								{
+									"const":"INTEGER",
+									"title":"Integer"
+								},
+								{
+									"const":"BOOLEAN",
+									"title":"Boolean"
+								}
+							],
+							"default":"OBJECT"
+						},
+						"createList":{
+							"type":"object",
+							"properties":{
+								"ua:type":{
+									"type":"string",
+									"default":"mappedArray"
+								},
+								"source":{
+									"type":"string",
+									"format":"ua:source",
+									"title":"List Item Source"
+								},
+								"items":{
+									"additionalProperties":false,
+									"type":[
+										"object",
+										"string",
+										"number",
+										"boolean",
+										"integer"
+									],
+									"properties":{
+										"table_id":{
+											"type":"string",
+											"title":"Table Id"
+										},
+										"table_name":{
+											"type":"string",
+											"title":"Table Name"
+										},
+										"table_description":{
+											"type":"string",
+											"title":"Table Description"
+										},
+										"fields":{
+											"type":"array",
+											"items":{
+												"type":"object",
+												"properties":{
+													"field_name":{
+														"type":"string",
+														"title":"Field Name"
+													},
+													"field_id":{
+														"type":"string",
+														"title":"Field Id"
+													},
+													"field_description":{
+														"type":"string",
+														"title":"Field Description"
+													},
+													"field_data_type":{
+														"type":"string",
+														"title":"Field Data Type"
+													},
+													"isPrimary":{
+														"type":"boolean",
+														"title":"Is Primary"
+													},
+													"isNullable":{
+														"type":"boolean",
+														"title":"Is Nullable"
+													},
+													"foriegnKeyDetails":{
+														"type":"object",
+														"properties":{
+															"objectId":{
+																"type":"string",
+																"title":"Object Id"
+															},
+															"objectName":{
+																"type":"string",
+																"title":"Object Name"
+															},
+															"fieldId":{
+																"type":"string",
+																"title":"Field Id"
+															},
+															"fieldName":{
+																"type":"string",
+																"title":"Field Name"
+															}
+														},
+														"additionalProperties":false,
+														"title":"Foriegn Key Details",
+														"required":[]
+													}
+												},
+												"additionalProperties":false,
+												"required":[]
+											},
+											"title":"Fields"
+										},
+										"sourceType":{
+											"type":"string",
+											"title":"Source Type"
+										}
+									},
+									"required":[
+										"sourceType"
+									]
+								}
+							}
+						}
+					}
+				}
+			},
+			"inputs":{
+				"createList":{
+					"ua:type":"mappedArray"
+				},
+				"ua:title":"List",
+				"ua:list_type":"OBJECT"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"items":{
+							"type":"array",
+							"title":"List",
+							"disableActions":true,
+							"items":{
+								"type":"object",
+								"properties":{
+									"table_id":{
+										"type":"string",
+										"title":"Table Id"
+									},
+									"table_name":{
+										"type":"string",
+										"title":"Table Name"
+									},
+									"table_description":{
+										"type":"string",
+										"title":"Table Description"
+									},
+									"fields":{
+										"type":"array",
+										"items":{
+											"type":"object",
+											"properties":{
+												"field_name":{
+													"type":"string",
+													"title":"Field Name"
+												},
+												"field_id":{
+													"type":"string",
+													"title":"Field Id"
+												},
+												"field_description":{
+													"type":"string",
+													"title":"Field Description"
+												},
+												"field_data_type":{
+													"type":"string",
+													"title":"Field Data Type"
+												},
+												"isPrimary":{
+													"type":"boolean",
+													"title":"Is Primary"
+												},
+												"isNullable":{
+													"type":"boolean",
+													"title":"Is Nullable"
+												},
+												"foriegnKeyDetails":{
+													"type":"object",
+													"properties":{
+														"objectId":{
+															"type":"string",
+															"title":"Object Id"
+														},
+														"objectName":{
+															"type":"string",
+															"title":"Object Name"
+														},
+														"fieldId":{
+															"type":"string",
+															"title":"Field Id"
+														},
+														"fieldName":{
+															"type":"string",
+															"title":"Field Name"
+														}
+													},
+													"additionalProperties":false,
+													"title":"Foriegn Key Details",
+													"required":[]
+												}
+											},
+											"additionalProperties":false,
+											"required":[]
+										},
+										"title":"Fields"
+									},
+									"sourceType":{
+										"type":"string",
+										"title":"Source Type"
+									}
+								},
+								"required":[
+									"sourceType"
+								]
+							}
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Create list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":986,
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_n3vqi@_T2V8G-1@l",
+			"id":"n_ISmRD",
+			"index":5,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_dataCatalogId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ n_uAEEp.outputs.dataCatalogId }}"
+							}
+						},
+						{
+							"property":"properties_assetType",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"e_data_catalog_table"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"shouldSearchInAnalyticsStore":false,
+				"object_type":"e_data_catalog_asset",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"sortBy":[
+					{
+						"field":"cTm",
+						"order":"ASC"
+					}
+				],
+				"translationsOption":"DEFAULT",
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":15
+				},
+				"numberOfRecordsToFetch":"MULTIPLE",
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
+			},
+			"skip":false,
+			"subTitle":"Fetch Tables",
+			"title":"Fetch records",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":165,
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_n3vqi@_T2V8G-1@l",
+			"id":"n_3ZRop",
+			"index":6,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_XEz6T.outputs.cursor }}",
+						"value":"{{ n_ISmRD.outputs.cursor.next }}"
+					},
+					{
+						"source":"{{ n_XEz6T.outputs.hasMore }}",
+						"value":"{{ n_ISmRD.outputs.hasMore }}"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Update variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":27,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_n3vqi@_T2V8G-1@l",
+			"id":"n_2j79t",
+			"index":7,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_ISmRD.outputs.objects }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":986,
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_2j79t@n_n3vqi@_T2V8G-1@l@l",
+			"id":"n_8PbYk",
+			"index":8,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_dataCatalogId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ n_uAEEp.outputs.dataCatalogId }}"
+							}
+						},
+						{
+							"property":"properties_assetType",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"e_data_catalog_field"
+							}
+						},
+						{
+							"property":"properties_parentAssetDetails_parentAssetId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ n_2j79t.outputs.item.id }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"shouldSearchInAnalyticsStore":false,
+				"object_type":"e_data_catalog_field",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"sortBy":[
+					{
+						"field":"cTm",
+						"order":"ASC"
+					}
+				],
+				"translationsOption":"DEFAULT",
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":2000
+				},
+				"numberOfRecordsToFetch":"MULTIPLE",
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
+			},
+			"skip":false,
+			"subTitle":"Fetch Tables",
+			"title":"Fetch records",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.itemToAdd.fields.items.field_name",
+					"root.itemToAdd.fields.items.field_id",
+					"root.itemToAdd.fields.items.field_description",
+					"root.itemToAdd.fields.items.field_data_type",
+					"root.itemToAdd.fields.items.isPrimary",
+					"root.itemToAdd.fields.items.isNullable",
+					"root.itemToAdd.fields.items.foriegnKeyDetails.objectId",
+					"root.itemToAdd.fields.items.foriegnKeyDetails.objectName",
+					"root.itemToAdd.fields.items.foriegnKeyDetails.fieldId",
+					"root.itemToAdd.fields.items.foriegnKeyDetails.fieldName"
+				]
+			},
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":303,
+				"resourceName":"variable_by_unifyapps_add_item_to_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_2j79t@n_n3vqi@_T2V8G-1@l@l",
+			"id":"n_5TSNw",
+			"index":9,
+			"inputs":{
+				"itemToAdd":{
+					"table_id":"{{ n_2j79t.outputs.item.id }}",
+					"table_name":"{{ n_2j79t.outputs.item.properties.name }}",
+					"table_description":"{{ n_2j79t.outputs.item.properties.description }}",
+					"sourceType":"{{ n_2j79t.outputs.item.properties.sourceDetails.sourceType }}",
+					"fields":{
+						"items":{
+							"field_name":"{{ n_8PbYk.outputs.objects[0].properties.name }}",
+							"field_id":"{{ n_8PbYk.outputs.objects[0].id }}",
+							"field_description":"{{ n_8PbYk.outputs.objects[0].properties.description }}",
+							"field_data_type":"{{ n_8PbYk.outputs.objects[0].properties.fieldType }}",
+							"isNullable":"{{ n_8PbYk.outputs.objects[0].properties.isNullable }}",
+							"isPrimary":"{{ n_8PbYk.outputs.objects[0].properties.primaryKey }}",
+							"foriegnKeyDetails":{
+								"objectId":"{{ n_8PbYk.outputs.objects[0].properties.foreignKeyDetails.objectId }}",
+								"objectName":"{{ n_8PbYk.outputs.objects[0].properties.foreignKeyDetails.objectName }}",
+								"fieldId":"{{ n_8PbYk.outputs.objects[0].properties.foreignKeyDetails.fieldId }}",
+								"fieldName":"{{ n_8PbYk.outputs.objects[0].properties.foreignKeyDetails.fieldName }}"
+							}
+						},
+						"ua:type":"mappedArray",
+						"source":"{{ n_8PbYk.outputs.objects }}"
+					}
+				},
+				"insertLocation":"END",
+				"listName":"{{ n_epVT4.outputs.items[0] }}"
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Add item to list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":218,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_n3vqi@_T2V8G-1@l",
+			"id":"n_S5IMU",
+			"index":10,
+			"inputs":{
+				"automationId":"66dfd76eb70dad256986b784",
+				"runtimeConnections":{},
+				"synchronous":true,
+				"version":"-1",
+				"parameters":{
+					"modelId":"e_69de83975d7c2f0e1b91ca5f",
+					"content":"{{ n_epVT4.outputs.items }}\n\nYou are given a list of table names. For each table:\nGenerate a concise description of the table.\nList all fields in the table and provide a clear description for each field.\nOutput Requirements:\nReturn only a valid JSON array.\nEach element in the array must be an object with the following structure:\ntable_name: string\ntable_description: string\nfields: array of objects, where each object contains:\nfield_name: string\nfield_description: string\nConstraints:\nDo not include any explanations, comments, or extra text outside the JSON.\nEnsure the JSON is properly formatted and valid.\nKeep descriptions concise and meaningful.\nExample Output Format:\n[\n{\n\"table_name\": \"example_table\",\n\"table_description\": \"Stores example data for demonstration purposes.\",\n\"fields\": [\n{\n\"field_name\": \"id\",\n\"field_description\": \"Unique identifier for each record.\"\n},\n{\n\"field_name\": \"name\",\n\"field_description\": \"Name of the entity.\"\n}\n]\n}\n]",
+					"type":"text",
+					"response_format":"text",
+					"maxTokens":"4096",
+					"temperature":"0.1"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":541,
+				"resourceName":"utility_by_unifyapps_to_json_object",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_n3vqi@_T2V8G-1@l",
+			"id":"n_kcRtD",
+			"index":11,
+			"inputs":{
+				"jsonSchema":{
+					"type":"array",
+					"items":{
+						"type":"object",
+						"properties":{
+							"table_name":{
+								"type":"string",
+								"title":"table_name"
+							},
+							"table_description":{
+								"type":"string",
+								"title":"table_description"
+							},
+							"fields":{
+								"type":"array",
+								"items":{
+									"type":"object",
+									"properties":{
+										"field_name":{
+											"type":"string",
+											"title":"field_name"
+										},
+										"field_description":{
+											"type":"string",
+											"title":"field_description"
+										}
+									},
+									"additionalProperties":false
+								},
+								"title":"fields"
+							}
+						},
+						"additionalProperties":false
+					}
+				},
+				"jsonString":"{{ n_S5IMU.outputs.llmResponse }}"
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Deserialise string to JSON object",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":14,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_n3vqi@_T2V8G-1@l",
+			"id":"n_UIhYv",
+			"index":12,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_kcRtD.outputs.result }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":406,
+				"resourceName":"storage_by_unifyapps_get_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_UIhYv@n_n3vqi@_T2V8G-1@l@l",
+			"id":"n_90WXQ",
+			"index":13,
+			"inputs":{
+				"object_type":"e_data_catalog_table",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"id":"sqlserver_{{ n_uAEEp.outputs.connectionId }}_table_{{ n_UIhYv.outputs.item.table_name }}",
+				"readThroughSessionVariables":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch record by ID",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.certificateNew.items",
+					"root.record.tags.items",
+					"root.record.classifications.items",
+					"root.record.glossary.items"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":406,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_UIhYv@n_n3vqi@_T2V8G-1@l@l",
+			"id":"n_O6GaP",
+			"index":14,
+			"inputs":{
+				"recordId":"sqlserver_{{ n_uAEEp.outputs.connectionId }}_table_{{ n_UIhYv.outputs.item.table_name }}",
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"object_type":"e_data_catalog_table",
+				"retryOnFailure":true,
+				"skipIfBlank":false,
+				"record":{
+					"name":"{{ n_90WXQ.outputs.properties.name }}",
+					"description":"{{ n_UIhYv.outputs.item.table_description }}",
+					"assetType":"{{ n_90WXQ.outputs.properties.assetType }}",
+					"sourceDetails":{
+						"sourceType":"{{ n_90WXQ.outputs.properties.sourceDetails.sourceType }}",
+						"sourceName":"{{ n_90WXQ.outputs.properties.sourceDetails.sourceName }}",
+						"sourceId":"{{ n_90WXQ.outputs.properties.sourceDetails.sourceId }}",
+						"sourceAssetType":"{{ n_90WXQ.outputs.properties.sourceDetails.sourceAssetType }}",
+						"sourceAssetId":"{{ n_90WXQ.outputs.properties.sourceDetails.sourceAssetId }}"
+					},
+					"parentAssetDetails":{
+						"parentAssetType":"{{ n_90WXQ.outputs.properties.parentAssetDetails.parentAssetType }}",
+						"parentAssetId":"{{ n_90WXQ.outputs.properties.parentAssetDetails.parentAssetId }}"
+					},
+					"certificate":"{{ n_90WXQ.outputs.properties.certificate }}",
+					"createdBy":"{{ n_90WXQ.outputs.properties.createdBy }}",
+					"editedBy":"{{ n_90WXQ.outputs.properties.editedBy }}",
+					"recordCount":"{{ n_90WXQ.outputs.properties.recordCount }}",
+					"fieldCount":"{{ n_90WXQ.outputs.properties.fieldCount }}",
+					"sizeInMb":"{{ n_90WXQ.outputs.properties.sizeInMb }}",
+					"primaryKey":"{{ n_90WXQ.outputs.properties.primaryKey }}",
+					"isCustom":"{{ n_90WXQ.outputs.properties.isCustom }}",
+					"dataCatalogId":"{{ n_90WXQ.outputs.properties.dataCatalogId }}",
+					"owners":{
+						"source":"{{ n_90WXQ.outputs.properties.owners }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_90WXQ.outputs.properties.owners[0] }}"
+					},
+					"sharedWith":{
+						"source":"{{ n_90WXQ.outputs.properties.sharedWith }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_90WXQ.outputs.properties.sharedWith[0] }}"
+					},
+					"certificateNew":{
+						"source":"{{ n_90WXQ.outputs.properties.certificateNew }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_90WXQ.outputs.properties.certificateNew[0] }}"
+					},
+					"tags":{
+						"source":"{{ n_90WXQ.outputs.properties.tags }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_90WXQ.outputs.properties.tags[0] }}"
+					},
+					"classifications":{
+						"source":"{{ n_90WXQ.outputs.properties.classifications }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_90WXQ.outputs.properties.classifications[0] }}"
+					},
+					"glossary":{
+						"source":"{{ n_90WXQ.outputs.properties.glossary }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_90WXQ.outputs.properties.glossary[0] }}"
+					}
+				},
+				"upsert":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update an existing record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":406,
+				"resourceName":"storage_by_unifyapps_get_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_UIhYv@n_n3vqi@_T2V8G-1@l@l",
+			"id":"n_H7IOB",
+			"index":15,
+			"inputs":{
+				"object_type":"e_data_catalog_asset",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"id":"sqlserver_{{ n_uAEEp.outputs.connectionId }}_table_{{ n_UIhYv.outputs.item.table_name }}",
+				"readThroughSessionVariables":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch record by ID",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.sourceDetails.sourceIconUrl",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.parentAssetDetails.parentAssetName",
+					"root.record.parentAssetDetails.parentAssetIconUrl",
+					"root.record.parentAssetDetails.parentAssetTypeName",
+					"root.record.parentAssetDetails.parentAssetIds.items",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.classifications.items",
+					"root.record.glossary.items",
+					"root.record.tags.items"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":406,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_UIhYv@n_n3vqi@_T2V8G-1@l@l",
+			"id":"n_QZRKy",
+			"index":16,
+			"inputs":{
+				"recordId":"sqlserver_{{ n_uAEEp.outputs.connectionId }}_table_{{ n_UIhYv.outputs.item.table_name }}",
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"object_type":"e_data_catalog_asset",
+				"retryOnFailure":true,
+				"skipIfBlank":false,
+				"record":{
+					"name":"{{ n_H7IOB.outputs.properties.name }}",
+					"description":"{{ n_UIhYv.outputs.item.table_description }}",
+					"assetType":"{{ n_H7IOB.outputs.properties.assetType }}",
+					"sourceDetails":{
+						"sourceType":"{{ n_H7IOB.outputs.properties.sourceDetails.sourceType }}",
+						"sourceName":"{{ n_H7IOB.outputs.properties.sourceDetails.sourceName }}",
+						"sourceId":"{{ n_H7IOB.outputs.properties.sourceDetails.sourceId }}",
+						"sourceAssetType":"{{ n_H7IOB.outputs.properties.sourceDetails.sourceAssetType }}",
+						"sourceAssetId":"{{ n_H7IOB.outputs.properties.sourceDetails.sourceAssetId }}",
+						"sourceIconUrl":"{{ n_H7IOB.outputs.properties.sourceDetails.sourceIconUrl }}"
+					},
+					"parentAssetDetails":{
+						"parentAssetType":"{{ n_H7IOB.outputs.properties.parentAssetDetails.parentAssetType }}",
+						"parentAssetId":"{{ n_H7IOB.outputs.properties.parentAssetDetails.parentAssetId }}",
+						"parentAssetName":"{{ n_H7IOB.outputs.properties.parentAssetDetails.parentAssetName }}",
+						"parentAssetIconUrl":"{{ n_H7IOB.outputs.properties.parentAssetDetails.parentAssetIconUrl }}",
+						"parentAssetTypeName":"{{ n_H7IOB.outputs.properties.parentAssetDetails.parentAssetTypeName }}",
+						"parentAssetIds":{
+							"source":"{{ n_H7IOB.outputs.properties.parentAssetDetails.parentAssetIds }}",
+							"ua:type":"mappedArray",
+							"items":"{{ n_H7IOB.outputs.properties.parentAssetDetails.parentAssetIds[0] }}"
+						}
+					},
+					"certificate":"{{ n_H7IOB.outputs.properties.certificate }}",
+					"createdBy":"{{ n_H7IOB.outputs.properties.createdBy }}",
+					"editedBy":"{{ n_H7IOB.outputs.properties.editedBy }}",
+					"assetIconUrl":"{{ n_H7IOB.outputs.properties.assetIconUrl }}",
+					"dataCatalogId":"{{ n_H7IOB.outputs.properties.dataCatalogId }}",
+					"owners":{
+						"source":"{{ n_H7IOB.outputs.properties.owners }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_H7IOB.outputs.properties.owners[0] }}"
+					},
+					"sharedWith":{
+						"source":"{{ n_H7IOB.outputs.properties.sharedWith }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_H7IOB.outputs.properties.sharedWith[0] }}"
+					},
+					"classifications":{
+						"source":"{{ n_H7IOB.outputs.properties.classifications }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_H7IOB.outputs.properties.classifications[0] }}"
+					},
+					"glossary":{
+						"source":"{{ n_H7IOB.outputs.properties.glossary }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_H7IOB.outputs.properties.glossary[0] }}"
+					},
+					"tags":{
+						"source":"{{ n_H7IOB.outputs.properties.tags }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_H7IOB.outputs.properties.tags[0] }}"
+					}
+				},
+				"upsert":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update an existing record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":14,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_UIhYv@n_n3vqi@_T2V8G-1@l@l",
+			"id":"n_JqVwE",
+			"index":17,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_UIhYv.outputs.item.fields }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":406,
+				"resourceName":"storage_by_unifyapps_get_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_JqVwE@n_UIhYv@n_n3vqi@_T2V8G-1@l@l@l",
+			"id":"n_1bbNu",
+			"index":18,
+			"inputs":{
+				"object_type":"e_data_catalog_field",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"id":"{{ n_uAEEp.outputs.connectionId }}_sqlserver_field_{{ n_UIhYv.outputs.item.table_name }}_{{ n_JqVwE.outputs.item.field_name }}",
+				"readThroughSessionVariables":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch record by ID",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.foreignKeyDetails.objectId",
+					"root.record.foreignKeyDetails.objectName",
+					"root.record.foreignKeyDetails.fieldId",
+					"root.record.foreignKeyDetails.fieldName",
+					"root.record.tags.items",
+					"root.record.classifications.items",
+					"root.record.glossary.items"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":406,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_JqVwE@n_UIhYv@n_n3vqi@_T2V8G-1@l@l@l",
+			"id":"n_D3Dbs",
+			"index":19,
+			"inputs":{
+				"recordId":"{{ n_uAEEp.outputs.connectionId }}_sqlserver_field_{{ n_UIhYv.outputs.item.table_name }}_{{ n_JqVwE.outputs.item.field_name }}",
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"object_type":"e_data_catalog_field",
+				"retryOnFailure":true,
+				"skipIfBlank":false,
+				"record":{
+					"name":"{{ n_1bbNu.outputs.properties.name }}",
+					"description":"{{ n_JqVwE.outputs.item.field_description }}",
+					"assetType":"{{ n_1bbNu.outputs.properties.assetType }}",
+					"sourceDetails":{
+						"sourceType":"{{ n_1bbNu.outputs.properties.sourceDetails.sourceType }}",
+						"sourceName":"{{ n_1bbNu.outputs.properties.sourceDetails.sourceName }}",
+						"sourceId":"{{ n_1bbNu.outputs.properties.sourceDetails.sourceId }}",
+						"sourceAssetType":"{{ n_1bbNu.outputs.properties.sourceDetails.sourceAssetType }}",
+						"sourceAssetId":"{{ n_1bbNu.outputs.properties.sourceDetails.sourceAssetId }}"
+					},
+					"parentAssetDetails":{
+						"parentAssetType":"{{ n_1bbNu.outputs.properties.parentAssetDetails.parentAssetType }}",
+						"parentAssetId":"{{ n_1bbNu.outputs.properties.parentAssetDetails.parentAssetId }}"
+					},
+					"certificate":"{{ n_1bbNu.outputs.properties.certificate }}",
+					"createdBy":"{{ n_1bbNu.outputs.properties.createdBy }}",
+					"editedBy":"{{ n_1bbNu.outputs.properties.editedBy }}",
+					"primaryKey":"{{ n_1bbNu.outputs.properties.primaryKey }}",
+					"fieldType":"{{ n_1bbNu.outputs.properties.fieldType }}",
+					"foreignKeyDetails":{
+						"objectId":"{{ n_1bbNu.outputs.properties.foreignKeyDetails.objectId }}",
+						"objectName":"{{ n_1bbNu.outputs.properties.foreignKeyDetails.objectName }}",
+						"fieldId":"{{ n_1bbNu.outputs.properties.foreignKeyDetails.fieldId }}",
+						"fieldName":"{{ n_1bbNu.outputs.properties.foreignKeyDetails.fieldName }}"
+					},
+					"dataType":"{{ n_1bbNu.outputs.properties.dataType }}",
+					"columnOrder":"{{ n_1bbNu.outputs.properties.columnOrder }}",
+					"isNullable":"{{ n_1bbNu.outputs.properties.isNullable }}",
+					"isCustom":"{{ n_1bbNu.outputs.properties.isCustom }}",
+					"dataCatalogId":"{{ n_1bbNu.outputs.properties.dataCatalogId }}",
+					"owners":{
+						"source":"{{ n_1bbNu.outputs.properties.owners }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_1bbNu.outputs.properties.owners[0] }}"
+					},
+					"sharedWith":{
+						"source":"{{ n_1bbNu.outputs.properties.sharedWith }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_1bbNu.outputs.properties.sharedWith[0] }}"
+					},
+					"tags":{
+						"source":"{{ n_1bbNu.outputs.properties.tags }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_1bbNu.outputs.properties.tags[0] }}"
+					},
+					"classifications":{
+						"source":"{{ n_1bbNu.outputs.properties.classifications }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_1bbNu.outputs.properties.classifications[0] }}"
+					},
+					"glossary":{
+						"source":"{{ n_1bbNu.outputs.properties.glossary }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_1bbNu.outputs.properties.glossary[0] }}"
+					}
+				},
+				"upsert":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update an existing record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":406,
+				"resourceName":"storage_by_unifyapps_get_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_JqVwE@n_UIhYv@n_n3vqi@_T2V8G-1@l@l@l",
+			"id":"n_OOfb7",
+			"index":20,
+			"inputs":{
+				"object_type":"e_data_catalog_asset",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"id":"{{ n_uAEEp.outputs.connectionId }}_sqlserver_field_{{ n_UIhYv.outputs.item.table_name }}_{{ n_JqVwE.outputs.item.field_name }}",
+				"readThroughSessionVariables":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Fetch record by ID",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.sourceDetails.sourceType",
+					"root.record.sourceDetails.sourceName",
+					"root.record.sourceDetails.sourceId",
+					"root.record.sourceDetails.sourceAssetType",
+					"root.record.sourceDetails.sourceAssetId",
+					"root.record.sourceDetails.sourceIconUrl",
+					"root.record.parentAssetDetails.parentAssetType",
+					"root.record.parentAssetDetails.parentAssetId",
+					"root.record.parentAssetDetails.parentAssetName",
+					"root.record.parentAssetDetails.parentAssetIconUrl",
+					"root.record.parentAssetDetails.parentAssetTypeName",
+					"root.record.parentAssetDetails.parentAssetIds.items",
+					"root.record.owners.items",
+					"root.record.sharedWith.items",
+					"root.record.classifications.items",
+					"root.record.glossary.items",
+					"root.record.tags.items"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":406,
+				"resourceName":"storage_by_unifyapps_update_record_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_JqVwE@n_UIhYv@n_n3vqi@_T2V8G-1@l@l@l",
+			"id":"n_iUVuW",
+			"index":21,
+			"inputs":{
+				"recordId":"{{ n_uAEEp.outputs.connectionId }}_sqlserver_field_{{ n_UIhYv.outputs.item.table_name }}_{{ n_JqVwE.outputs.item.field_name }}",
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"object_type":"e_data_catalog_asset",
+				"retryOnFailure":true,
+				"skipIfBlank":false,
+				"record":{
+					"name":"{{ n_OOfb7.outputs.properties.name }}",
+					"description":"{{ n_JqVwE.outputs.item.field_description }}",
+					"assetType":"{{ n_OOfb7.outputs.properties.assetType }}",
+					"sourceDetails":{
+						"sourceType":"{{ n_OOfb7.outputs.properties.sourceDetails.sourceType }}",
+						"sourceName":"{{ n_OOfb7.outputs.properties.sourceDetails.sourceName }}",
+						"sourceId":"{{ n_OOfb7.outputs.properties.sourceDetails.sourceId }}",
+						"sourceAssetType":"{{ n_OOfb7.outputs.properties.sourceDetails.sourceAssetType }}",
+						"sourceAssetId":"{{ n_OOfb7.outputs.properties.sourceDetails.sourceAssetId }}",
+						"sourceIconUrl":"{{ n_OOfb7.outputs.properties.sourceDetails.sourceIconUrl }}"
+					},
+					"parentAssetDetails":{
+						"parentAssetType":"{{ n_OOfb7.outputs.properties.parentAssetDetails.parentAssetType }}",
+						"parentAssetId":"{{ n_OOfb7.outputs.properties.parentAssetDetails.parentAssetId }}",
+						"parentAssetName":"{{ n_OOfb7.outputs.properties.parentAssetDetails.parentAssetName }}",
+						"parentAssetIconUrl":"{{ n_OOfb7.outputs.properties.parentAssetDetails.parentAssetIconUrl }}",
+						"parentAssetTypeName":"{{ n_OOfb7.outputs.properties.parentAssetDetails.parentAssetTypeName }}",
+						"parentAssetIds":{
+							"source":"{{ n_OOfb7.outputs.properties.parentAssetDetails.parentAssetIds }}",
+							"ua:type":"mappedArray",
+							"items":"{{ n_OOfb7.outputs.properties.parentAssetDetails.parentAssetIds[0] }}"
+						}
+					},
+					"certificate":"{{ n_OOfb7.outputs.properties.certificate }}",
+					"createdBy":"{{ n_OOfb7.outputs.properties.createdBy }}",
+					"editedBy":"{{ n_OOfb7.outputs.properties.editedBy }}",
+					"assetIconUrl":"{{ n_OOfb7.outputs.properties.assetIconUrl }}",
+					"dataCatalogId":"{{ n_OOfb7.outputs.properties.dataCatalogId }}",
+					"owners":{
+						"source":"{{ n_OOfb7.outputs.properties.owners }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_OOfb7.outputs.properties.owners[0] }}"
+					},
+					"sharedWith":{
+						"source":"{{ n_OOfb7.outputs.properties.sharedWith }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_OOfb7.outputs.properties.sharedWith[0] }}"
+					},
+					"classifications":{
+						"source":"{{ n_OOfb7.outputs.properties.classifications }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_OOfb7.outputs.properties.classifications[0] }}"
+					},
+					"glossary":{
+						"source":"{{ n_OOfb7.outputs.properties.glossary }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_OOfb7.outputs.properties.glossary[0] }}"
+					},
+					"tags":{
+						"source":"{{ n_OOfb7.outputs.properties.tags }}",
+						"ua:type":"mappedArray",
+						"items":"{{ n_OOfb7.outputs.properties.tags[0] }}"
+					}
+				},
+				"upsert":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Update an existing record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":217,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_T2V8G-1",
+			"id":"n_0uGDE",
+			"index":22,
+			"inputs":{
+				"result":{
+					"isSuccess":true
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":27
+}
