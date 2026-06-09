@@ -15,7 +15,37 @@
 	},
 	"edges":[
 		{
-			"fromNodeId":"n_QjEiF",
+			"fromNodeId":"n_cVEvt",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_XkGDn",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_XkGDn",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_P3PQF",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_XkGDn",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_grbnu",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_P3PQF",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_DF2ce",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_grbnu",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_DF2ce",
@@ -46,61 +76,88 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1780920329774,
+	"modifiedTime":1781009748006,
 	"name":"furrrr1",
 	"nodes":[
 		{
 			"context":{
-				"appName":"callables",
-				"resourceVersion":1691,
-				"resourceName":"callables_from_automation"
+				"appName":"schedule",
+				"resourceVersion":64,
+				"resourceName":"schedule_default"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
-			"id":"n_QjEiF",
+			"id":"n_cVEvt",
 			"index":1,
 			"inputs":{
-				"result":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"dfdv",
-						"wqe"
-					],
-					"properties":{
-						"dfdv":{
-							"type":"string",
-							"title":"Dfdv"
-						},
-						"wqe":{
-							"type":"string",
-							"title":"Wqe"
-						}
-					}
-				},
-				"setup":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"qwdf"
-					],
-					"properties":{
-						"qwdf":{
-							"type":"string",
-							"title":"Qwdf"
-						}
-					}
-				}
+				"cron":"EXPRESSION",
+				"expression":"0 0 * * *",
+				"sequential":false,
+				"timezone":"Asia/Calcutta",
+				"interval":15,
+				"frequency":"MINUTES"
 			},
 			"skip":false,
-			"subTitle":"Callable",
-			"title":"Trigger via automation",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"CALLABLE"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceVersion":68,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_QPyDa-1",
+			"id":"n_XkGDn",
+			"index":2,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_QjEiF.outputs.qwdf }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":"true"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_XkGDn@_QPyDa-1@y",
+			"id":"n_P3PQF",
+			"index":3,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		},
+		{
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_XkGDn@_QPyDa-1@n",
+			"id":"n_grbnu",
+			"index":4,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
 		},
 		{
 			"context":{
@@ -110,11 +167,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_DF2ce",
-			"index":2,
+			"index":5,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -388,11 +445,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_WPWIl",
-			"index":3,
+			"index":6,
 			"inputs":{
 				"itemToAdd":{
 					"k1":"v2"
@@ -416,11 +473,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_Hp2fS",
-			"index":4,
+			"index":7,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -475,11 +532,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_eG2dN",
-			"index":5,
+			"index":8,
 			"inputs":{
 				"result":"{{ n_kzSW5.outputs.properties.uniqueId }}"
 			},
@@ -506,5 +563,5 @@
 	"tags":[
 		
 	],
-	"version":66
+	"version":67
 }
