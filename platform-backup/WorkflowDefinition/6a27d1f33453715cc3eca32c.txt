@@ -6,46 +6,64 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_ijYK1",
+			"fromNodeId":"n_FrdST",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_JYGzI",
+			"toNodeId":"n_jBOpu",
 			"type":"next"
 		}
 	],
 	"id":"6a27d1f33453715cc3eca32c",
 	"lastModifiedBy":39,
 	"lcName":"test",
-	"modifiedTime":1780994547329,
+	"modifiedTime":1780994558349,
 	"name":"test",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":63,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ijYK1-1",
-			"id":"_ijYK1",
-			"index":0,
+			"id":"n_FrdST",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"stop"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ijYK1-1",
-			"id":"_JYGzI",
-			"index":0,
+			"id":"n_jBOpu",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +74,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
