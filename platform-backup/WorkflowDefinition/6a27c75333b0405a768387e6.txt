@@ -54,7 +54,7 @@
 	"id":"6a27c75333b0405a768387e6",
 	"lastModifiedBy":39,
 	"lcName":"example",
-	"modifiedTime":1780991918441,
+	"modifiedTime":1780991955354,
 	"name":"example",
 	"nodes":[
 		{
@@ -119,7 +119,7 @@
 				"scopeNodeId":"n_YnQYT"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_YnQYT@_TiUSw-1@s",
 			"id":"n_MEAYm",
@@ -150,7 +150,7 @@
 				"scopeNodeId":"n_YnQYT"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_MEAYm@n_YnQYT@_TiUSw-1@s@y",
 			"id":"n_O8IdC",
@@ -211,7 +211,7 @@
 			"id":"n_qNTeD",
 			"index":5,
 			"inputs":{
-				"result":"nsdfio"
+				"result":"{{ n_YnQYT.outputs }}"
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -233,5 +233,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
