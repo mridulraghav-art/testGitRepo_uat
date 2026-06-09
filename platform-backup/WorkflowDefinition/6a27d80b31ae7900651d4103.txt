@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780996107938,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1781022130297,
+		"deployedAt":1781022754795,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a283db231ae790065349a3c",
+		"deployedDefinitionId":"6a28402231ae79006534bab4",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":42
+		"version":3,
+		"workflowVersion":43
 	},
 	"edges":[
 		{
@@ -67,7 +67,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to xlsx",
-	"modifiedTime":1781022751671,
+	"modifiedTime":1781023149525,
 	"name":"BM Export Data to XLSX",
 	"nodes":[
 		{
@@ -228,7 +228,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_zqh3z",
@@ -283,7 +283,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_OqykT",
@@ -299,9 +299,9 @@
 				},
 				"receiver":"=SPLITBY({{ __RUN__.outputs.userId }},\",\")",
 				"receiverType":"USER",
-				"module":"automation",
+				"module":"application",
 				"eventType":"workflow_alert",
-				"applicationId":"greif-bom-validator-application",
+				"applicationId":"e-6a1fed651498ba17d919f0f7",
 				"notificationPreviewTime":5,
 				"content":{
 					"templateId":"e_export_entity_template",
@@ -356,5 +356,5 @@
 		}
 	},
 	"standard":false,
-	"version":43
+	"version":44
 }
