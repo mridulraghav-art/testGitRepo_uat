@@ -23,6 +23,13 @@
 			"fromNodeId":"n_cNxc8",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_ZHlXF",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_ZHlXF",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_Y8oS3",
 			"type":"next"
 		},
@@ -117,7 +124,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to csv",
-	"modifiedTime":1781002115233,
+	"modifiedTime":1781003137502,
 	"name":"BM Export Data to CSV",
 	"nodes":[
 		{
@@ -239,6 +246,29 @@
 		},
 		{
 			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":2249,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_ZHlXF",
+			"index":4,
+			"inputs":{
+				"code":"def rawData = {{ n_cNxc8.outputs.objects }}\ndef flatData = rawData.collect { row -> \n    row.columns \n}\nreturn flatData",
+				"compile_static":false,
+				"captureStdOutput":false
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"branch",
 				"type":"APPLICATION"
 			},
@@ -247,7 +277,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_Y8oS3",
-			"index":4,
+			"index":5,
 			"inputs":{
 				"branches":[
 					{
@@ -308,7 +338,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_Y8oS3@1",
-			"index":5,
+			"index":6,
 			"inputs":{
 				"name":"Branch 1",
 				"conditions":{
@@ -336,11 +366,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_DEC7b",
-			"index":6,
+			"index":7,
 			"inputs":{
 				"fileName":"Test.xlsx",
 				"skipHeaderRow":false,
@@ -373,7 +403,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_Rrw7q",
-			"index":7,
+			"index":8,
 			"inputs":{
 				"file":"{{ n_DEC7b.outputs.fileDetails }}",
 				"expiryTime":1
@@ -395,7 +425,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_y3INj",
-			"index":8,
+			"index":9,
 			"inputs":{
 				"cta":{
 					"name":"Download File",
@@ -438,7 +468,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_Y8oS3@2",
-			"index":9,
+			"index":10,
 			"inputs":{
 				"name":"Branch 2",
 				"conditions":{
@@ -470,7 +500,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_CH3Ou",
-			"index":10,
+			"index":11,
 			"inputs":{
 				"fileName":"ItemValidation.csv",
 				"delimiter":",",
@@ -503,7 +533,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_rlUgb",
-			"index":11,
+			"index":12,
 			"inputs":{
 				"file":"{{ n_CH3Ou.outputs.fileDetails }}",
 				"expiryTime":1
@@ -525,7 +555,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_yhyZe",
-			"index":12,
+			"index":13,
 			"inputs":{
 				"cta":{
 					"name":"Download File",
@@ -568,7 +598,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@default",
 			"id":"n_6Kf8j",
-			"index":13,
+			"index":14,
 			"inputs":{
 				"cta":{
 					"type":"url",
@@ -609,7 +639,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_t91AK",
-			"index":14,
+			"index":15,
 			"inputs":{
 				"result":{
 					"response":"Invalid File Type"
@@ -635,5 +665,5 @@
 		}
 	},
 	"standard":false,
-	"version":13
+	"version":14
 }
