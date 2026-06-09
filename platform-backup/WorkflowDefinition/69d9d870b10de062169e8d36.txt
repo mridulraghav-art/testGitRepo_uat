@@ -1,0 +1,243 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780672487703,
+	"deleted":false,
+	"deployedVersion":11,
+	"deploymentState":{
+		"deployedAt":1780831600349,
+		"deployedBy":-1,
+		"deployedDefinitionId":"6a25557028d6d162e1187d66",
+		"status":"DEPLOYED",
+		"version":11,
+		"workflowVersion":21
+	},
+	"edges":[
+		{
+			"fromNodeId":"n_LnsXN",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ujhJX",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_ujhJX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_hbGt6",
+			"type":"next"
+		}
+	],
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"VIEW_RUNS",
+					"V"
+				],
+				"principalType":"GLOBAL"
+			}
+		]
+	},
+	"id":"69d9d870b10de062169e8d36",
+	"lastModifiedBy":-1,
+	"lcName":"create memory profile",
+	"modifiedTime":1781031369504,
+	"name":"Create Memory Profile",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":471,
+				"resourceName":"callables_from_automation"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_hTczm-1",
+			"id":"n_LnsXN",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"status"
+					],
+					"properties":{
+						"status":{
+							"type":"string",
+							"title":"Status"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"aiAgentId"
+					],
+					"properties":{
+						"memoryTypes":{
+							"type":"array",
+							"items":{
+								"type":"string"
+							},
+							"title":"memoryTypes",
+							"help":"Can be a combination of \"semantic\", \"episodic\" and \"procedural\""
+						},
+						"instructions":{
+							"type":"string",
+							"title":"instructions"
+						},
+						"userDefinedGrabbingSchedule":{
+							"type":"object",
+							"properties":{
+								"duration":{
+									"type":"integer",
+									"title":"duration"
+								},
+								"unit":{
+									"type":"string",
+									"title":"unit",
+									"help":"Can be MINUTES, HOURS, DAYS. Keep it default to 1 DAYS"
+								}
+							},
+							"title":"userDefinedGrabbingSchedule",
+							"additionalProperties":false,
+							"required":[]
+						},
+						"llmModelId":{
+							"type":"string",
+							"title":"llmModelId",
+							"help":"The LLM model ID which will be used to refresh memory"
+						},
+						"name":{
+							"type":"string",
+							"title":"name"
+						},
+						"description":{
+							"type":"string",
+							"title":"description"
+						},
+						"embeddingModelId":{
+							"type":"string",
+							"title":"Embedding Model Id",
+							"default":"e_ai_agent_openai_emebedding_3_large",
+							"help":"Can be found using the Fetch Available Models tools "
+						},
+						"aiAgentId":{
+							"type":"string",
+							"title":"Ai Agent Id"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.record.memoryTypes.items",
+					"root.record.accessibleTo.items",
+					"root.record.userDefinedGrabbingSchedule.unit",
+					"root.record.userDefinedGrabbingSchedule.duration",
+					"root.record.storageSettings.isExpirationEnabled",
+					"root.record.storageSettings.retentionPeriod.unit",
+					"root.record.storageSettings.retentionPeriod.duration",
+					"root.record.teamIds.items"
+				]
+			},
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":1035,
+				"resourceName":"storage_by_unifyapps_create_record",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_hTczm-1",
+			"id":"n_ujhJX",
+			"index":2,
+			"inputs":{
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"object_type":"memoryprofile",
+				"skipIfBlank":false,
+				"record":{
+					"name":"{{ n_LnsXN.outputs.name }}",
+					"description":"{{ n_LnsXN.outputs.description }}",
+					"instructions":"{{ n_LnsXN.outputs.instructions }}",
+					"accessibleTo":[
+						"ai_agent/{{ n_LnsXN.outputs.aiAgentId }}"
+					],
+					"scope":"userSpecific",
+					"llmModelId":"{{ n_LnsXN.outputs.llmModelId }}",
+					"enabled":true,
+					"userDefinedGrabbingSchedule":{
+						"unit":"{{ n_LnsXN.outputs.userDefinedGrabbingSchedule.unit }}",
+						"duration":"{{ n_LnsXN.outputs.userDefinedGrabbingSchedule.duration }}"
+					},
+					"state":"draft",
+					"embeddingModelId":"{{ n_LnsXN.outputs.embeddingModelId }}",
+					"storageSettings":{
+						"isExpirationEnabled":true
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Storage",
+			"title":"Create record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":471,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_hTczm-1",
+			"id":"n_hbGt6",
+			"index":3,
+			"inputs":{
+				"result":{
+					"status":"Memory profile created. ID: {{ n_ujhJX.outputs.id }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":-1,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"text-to-agent"
+	],
+	"version":23
+}
