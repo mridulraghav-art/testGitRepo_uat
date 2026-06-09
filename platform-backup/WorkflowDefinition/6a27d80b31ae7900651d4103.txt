@@ -117,7 +117,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to csv",
-	"modifiedTime":1780996651048,
+	"modifiedTime":1780996902789,
 	"name":"BM Export Data to CSV",
 	"nodes":[
 		{
@@ -167,7 +167,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_7ylnq",
@@ -215,7 +215,7 @@
 						}
 					}
 				},
-				"code":"import java.text.SimpleDateFormat\nimport java.util.Date\n\ndef payload = input\n\n// Extract the timezone string passed into the node.\n// We assign it to a new variable to avoid naming conflicts with Groovy's java.util.TimeZone class.\nString targetTzStr = \"GMT\"\nif (input instanceof Map && input.TimeZone) {\n    targetTzStr = input.TimeZone\n} else if (binding.variables.containsKey('TimeZone')) {\n    targetTzStr = binding.variables.TimeZone\n}\n\n// Unwrap standard UnifyApps input mapping\nif (payload instanceof Map && payload.containsKey('input')) {\n    payload = payload.input\n}\n\n// Handle whether the payload is passed as the full object containing \"objects\" or just the array itself\ndef dataList = []\nif (payload instanceof Map && payload.containsKey('objects')) {\n    dataList = payload.objects\n} else if (payload instanceof List) {\n    dataList = payload\n}\n\n// Define the exact headers in the requested order and map them to the source JSON properties\ndef columnMapping = [\n    'Company Code': 'CompanyCD',\n    'Item Id': 'ItemId',\n    'Validation Status': 'ValidationStatus',\n    'Validation Start Time': 'ValidationStartTime',\n    'Validation Reason': 'ValidationReason',\n    'Rule Number': 'RuleNumber',\n    'Rule Category': 'ruleCategory',\n    'Rule Description': 'RuleDesc',\n    'Rule Prompt': 'RulePrompt',\n    'User': 'User'\n]\n\nList<String> headers = columnMapping.keySet().toList()\nList<Map> transformedData = []\n\nif (dataList != null) {\n    transformedData = dataList.collect { item ->\n        // Extract the 'properties' block if this is a UnifyApps standard entity\n        def sourceMap = (item instanceof Map && item.containsKey('properties')) ? item.properties : item\n        \n        // Handle legacy 'columns' wrapper just in case\n        if (sourceMap instanceof Map && sourceMap.containsKey('columns')) {\n            sourceMap = sourceMap.columns\n        }\n\n        // Create a new map to hold the filtered and ordered data\n        def newRow = [:]\n        \n        if (sourceMap instanceof Map) {\n            columnMapping.each { headerName, sourceKey ->\n                def value = sourceMap[sourceKey]\n                \n                // Format the Validation Start Time\n                if (headerName == 'Validation Start Time' && value != null) {\n                    try {\n                        long epochMillis = (value instanceof Number) ? value.longValue() : new BigDecimal(value.toString()).longValue()\n                        \n                        // Use explicit Java SimpleDateFormat\n                        Date date = new Date(epochMillis)\n                        SimpleDateFormat sdf = new SimpleDateFormat(\"dd MMM yyyy, HH:mm\")\n                        \n                        // Set the TimeZone using the dynamically extracted target string\n                        sdf.setTimeZone(java.util.TimeZone.getTimeZone(targetTzStr))\n                        \n                        value = sdf.format(date)\n                    } catch (Exception e) {\n                        // If it fails again, print the error directly in the sheet so we know why\n                        value = \"Error: \" + e.getMessage()\n                    }\n                }\n                \n                newRow[headerName] = value\n            }\n        }\n        return newRow\n    }\n}\n\nreturn [\n    FileHeaders: headers,\n    TransformedData: transformedData\n]",
+				"code":"import java.text.SimpleDateFormat\nimport java.util.Date\n\n// Define the exact headers in the requested order and map them to the source JSON properties\ndef columnMapping = [\n    'Asset Id': 'assetId',\n    'Status': 'status'\n]\n\nList<String> headers = columnMapping.keySet().toList()\n\nreturn [\n    FileHeaders: headers\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
@@ -223,7 +223,7 @@
 					"TimeZone":"{{ n_mC46z.outputs.TimeZone }}"
 				}
 			},
-			"skip":true,
+			"skip":false,
 			"subTitle":"Code by UnifyApps",
 			"title":"Execute Groovy code",
 			"type":"ACTION"
@@ -256,7 +256,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_Y8oS3",
@@ -317,7 +317,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_Y8oS3@1",
@@ -349,7 +349,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_DEC7b",
@@ -364,9 +364,9 @@
 				"append":false,
 				"autoSizeColumns":true,
 				"dynamicHeaders":{
-					"source":"[\"assetId\",\"status\"]",
+					"source":"{{ n_7ylnq.outputs.result.FileHeaders }}",
 					"ua:type":"mappedArray",
-					"items":"[\"assetId\",\"status\"]"
+					"items":"{{ n_7ylnq.outputs.result.FileHeaders[0] }}"
 				}
 			},
 			"skip":false,
@@ -648,5 +648,5 @@
 		}
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
