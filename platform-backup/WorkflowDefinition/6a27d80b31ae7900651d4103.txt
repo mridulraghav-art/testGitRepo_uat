@@ -152,7 +152,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to csv",
-	"modifiedTime":1781020772848,
+	"modifiedTime":1781021030519,
 	"name":"BM Export Data to CSV",
 	"nodes":[
 		{
@@ -264,7 +264,7 @@
 						}
 					}
 				},
-				"query":"SELECT\n    p.assetId,\n    p.status,\n    p.commitUrl,\n    p.shortSha,\n    p.assetClass,\n    p.errorMessage,\n    DATE_FORMAT(\n        FROM_UNIXTIME(p.lastSyncTime / 1000),\n        '%d %b %Y, %H:%i'\n    ) AS lastUpdatedOn,\n    COUNT(*) OVER() AS TotalRecords\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Uy8Gi.outputs.SearchFilter || \"\"}}%'\nORDER BY p.assetId LIMIT 20 OFFSET 1;",
+				"query":"SELECT\n    p.assetId,\n    p.status,\n    p.commitUrl,\n    p.shortSha,\n    p.assetClass,\n    p.errorMessage,\n    DATE_FORMAT(\n        FROM_UNIXTIME(p.lastSyncTime / 1000),\n        '%d %b %Y, %H:%i'\n    ) AS lastUpdatedOn,\n    COUNT(*) OVER() AS TotalRecords\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Uy8Gi.outputs.SearchFilter }}%'\nORDER BY p.assetId;",
 				"group":"ENTITY_REPORTING"
 			},
 			"skip":false,
@@ -814,5 +814,5 @@
 		}
 	},
 	"standard":false,
-	"version":29
+	"version":30
 }
