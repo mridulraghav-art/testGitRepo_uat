@@ -117,7 +117,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to csv",
-	"modifiedTime":1780997060897,
+	"modifiedTime":1781001688501,
 	"name":"BM Export Data to CSV",
 	"nodes":[
 		{
@@ -192,7 +192,7 @@
 						}
 					}
 				},
-				"code":"import java.text.SimpleDateFormat\nimport java.util.Date\n\n// Define the exact headers in the requested order and map them to the source JSON properties\ndef columnMapping = [\n    'Asset Id': 'assetId',\n    'Status': 'status'\n]\n\nList<String> headers = columnMapping.keySet().toList()\n\nreturn [\n    FileHeaders: headers\n]",
+				"code":"import java.text.SimpleDateFormat\nimport java.util.Date\n\n// Define the exact headers in the requested order and map them to the source JSON properties\ndef columnMapping = [\n    'Countttt': 'Countttt'\n]\n\nList<String> headers = columnMapping.keySet().toList()\n\nreturn [\n    FileHeaders: headers\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{}
@@ -216,7 +216,20 @@
 			"id":"n_cNxc8",
 			"index":3,
 			"inputs":{
-				"query":"SELECT\n    p.assetId,\n    p.status,\n    p.commitUrl,\n    p.shortSha,\n    DATE_FORMAT(\n        FROM_UNIXTIME(p.lastSyncTime / 1000),\n        '%d %b %Y, %H:%i'\n    ) AS lastUpdatedOn,\n    COUNT(*) OVER() AS TotalRecords\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Uy8Gi.outputs.SearchFilter }}%'\nORDER BY p.assetId;",
+				"outputSchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"objects":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Object"
+						}
+					}
+				},
+				"query":"\n    SELECT\n        COUNT(*) AS Countttt\n    FROM PLATFORM_BACKUP\n    WHERE status = 'FAILED';",
 				"group":"ENTITY_REPORTING"
 			},
 			"skip":false,
@@ -622,5 +635,5 @@
 		}
 	},
 	"standard":false,
-	"version":9
+	"version":10
 }
