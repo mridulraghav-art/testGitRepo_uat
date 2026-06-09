@@ -6,46 +6,591 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_8JT2w",
+			"fromNodeId":"n_Uy8Gi",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_fZGVk",
+			"toNodeId":"n_7ylnq",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_7ylnq",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Y8oS3",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Y8oS3",
+			"name":"1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Y8oS3@1",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_Y8oS3@1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_DEC7b",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_DEC7b",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Rrw7q",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Rrw7q",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_y3INj",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Y8oS3",
+			"name":"2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Y8oS3@2",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_Y8oS3@2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CH3Ou",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CH3Ou",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_rlUgb",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_rlUgb",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_yhyZe",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Y8oS3",
+			"name":"default",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_6Kf8j",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_y3INj",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_t91AK",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_yhyZe",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_t91AK",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_6Kf8j",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_t91AK",
 			"type":"next"
 		}
 	],
 	"id":"6a27c5213ad0e26b1f13b8b7",
 	"lastModifiedBy":39,
 	"lcName":"export data to csv",
-	"modifiedTime":1780991265070,
+	"modifiedTime":1780991551118,
 	"name":"Export Data to CSV",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2443,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
-			"id":"_8JT2w",
-			"index":0,
+			"id":"n_Uy8Gi",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
-			"id":"_fZGVk",
-			"index":0,
+			"id":"n_7ylnq",
+			"index":2,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"FileHeaders":{
+							"type":"array",
+							"items":{
+								"type":"string"
+							},
+							"title":"FileHeaders"
+						},
+						"TransformedData":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{},
+								"additionalProperties":false
+							},
+							"title":"Transformed Data"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input"
+					],
+					"properties":{
+						"input":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Input"
+						},
+						"TimeZone":{
+							"type":"string",
+							"title":"Time Zone"
+						}
+					}
+				},
+				"code":"import java.text.SimpleDateFormat\nimport java.util.Date\n\ndef payload = input\n\n// Extract the timezone string passed into the node.\n// We assign it to a new variable to avoid naming conflicts with Groovy's java.util.TimeZone class.\nString targetTzStr = \"GMT\"\nif (input instanceof Map && input.TimeZone) {\n    targetTzStr = input.TimeZone\n} else if (binding.variables.containsKey('TimeZone')) {\n    targetTzStr = binding.variables.TimeZone\n}\n\n// Unwrap standard UnifyApps input mapping\nif (payload instanceof Map && payload.containsKey('input')) {\n    payload = payload.input\n}\n\n// Handle whether the payload is passed as the full object containing \"objects\" or just the array itself\ndef dataList = []\nif (payload instanceof Map && payload.containsKey('objects')) {\n    dataList = payload.objects\n} else if (payload instanceof List) {\n    dataList = payload\n}\n\n// Define the exact headers in the requested order and map them to the source JSON properties\ndef columnMapping = [\n    'Company Code': 'CompanyCD',\n    'Item Id': 'ItemId',\n    'Validation Status': 'ValidationStatus',\n    'Validation Start Time': 'ValidationStartTime',\n    'Validation Reason': 'ValidationReason',\n    'Rule Number': 'RuleNumber',\n    'Rule Category': 'ruleCategory',\n    'Rule Description': 'RuleDesc',\n    'Rule Prompt': 'RulePrompt',\n    'User': 'User'\n]\n\nList<String> headers = columnMapping.keySet().toList()\nList<Map> transformedData = []\n\nif (dataList != null) {\n    transformedData = dataList.collect { item ->\n        // Extract the 'properties' block if this is a UnifyApps standard entity\n        def sourceMap = (item instanceof Map && item.containsKey('properties')) ? item.properties : item\n        \n        // Handle legacy 'columns' wrapper just in case\n        if (sourceMap instanceof Map && sourceMap.containsKey('columns')) {\n            sourceMap = sourceMap.columns\n        }\n\n        // Create a new map to hold the filtered and ordered data\n        def newRow = [:]\n        \n        if (sourceMap instanceof Map) {\n            columnMapping.each { headerName, sourceKey ->\n                def value = sourceMap[sourceKey]\n                \n                // Format the Validation Start Time\n                if (headerName == 'Validation Start Time' && value != null) {\n                    try {\n                        long epochMillis = (value instanceof Number) ? value.longValue() : new BigDecimal(value.toString()).longValue()\n                        \n                        // Use explicit Java SimpleDateFormat\n                        Date date = new Date(epochMillis)\n                        SimpleDateFormat sdf = new SimpleDateFormat(\"dd MMM yyyy, HH:mm\")\n                        \n                        // Set the TimeZone using the dynamically extracted target string\n                        sdf.setTimeZone(java.util.TimeZone.getTimeZone(targetTzStr))\n                        \n                        value = sdf.format(date)\n                    } catch (Exception e) {\n                        // If it fails again, print the error directly in the sheet so we know why\n                        value = \"Error: \" + e.getMessage()\n                    }\n                }\n                \n                newRow[headerName] = value\n            }\n        }\n        return newRow\n    }\n}\n\nreturn [\n    FileHeaders: headers,\n    TransformedData: transformedData\n]",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"input":"{{ n_mC46z.outputs.records }}",
+					"TimeZone":"{{ n_mC46z.outputs.TimeZone }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_Y8oS3",
+			"index":3,
+			"inputs":{
+				"branches":[
+					{
+						"id":"1",
+						"inputs":{
+							"name":"Branch 1",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_mC46z.outputs.fileType }}",
+										"filter":{
+											"operator":"EQUAL",
+											"value":"XLSX"
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"2",
+						"inputs":{
+							"name":"Branch 2",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_mC46z.outputs.fileType }}",
+										"filter":{
+											"operator":"EQUAL",
+											"value":"CSV"
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"default"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Branch",
+			"title":"",
+			"type":"BRANCH"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceVersion":0,
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Y8oS3@_8JT2w-1@1",
+			"id":"n_Y8oS3@1",
+			"index":4,
+			"inputs":{
+				"name":"Branch 1",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_mC46z.outputs.fileType }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"XLSX"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"excel_by_unifyapps_list_to_excel_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Y8oS3@_8JT2w-1@1",
+			"id":"n_DEC7b",
+			"index":5,
+			"inputs":{
+				"fileName":"ItemValidation.xlsx",
+				"skipHeaderRow":false,
+				"headerType":"DYNAMIC",
+				"keepExactFileName":false,
+				"dataSource":"{{ n_7ylnq.outputs.result.TransformedData }}",
+				"fileType":"xlsx",
+				"append":false,
+				"autoSizeColumns":true,
+				"dynamicHeaders":{
+					"source":"{{ n_7ylnq.outputs.result.FileHeaders }}",
+					"ua:type":"mappedArray",
+					"items":"{{ n_7ylnq.outputs.result.FileHeaders[0] }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Write data to New Excel file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":1628,
+				"resourceName":"utility_by_unifyapps_generate_public_url",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Y8oS3@_8JT2w-1@1",
+			"id":"n_Rrw7q",
+			"index":6,
+			"inputs":{
+				"file":"{{ n_DEC7b.outputs.fileDetails }}",
+				"expiryTime":1
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Generate public file URL",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"notification_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"notification_by_unifyapps_send_notification",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Y8oS3@_8JT2w-1@1",
+			"id":"n_y3INj",
+			"index":7,
+			"inputs":{
+				"cta":{
+					"name":"Download File",
+					"type":"url",
+					"url":"{{ n_Rrw7q.outputs.url }}",
+					"width":{
+						"custom":"400px"
+					}
+				},
+				"receiver":"=SPLITBY({{ __RUN__.outputs.userId }},\",\")",
+				"receiverType":"USER",
+				"module":"automation",
+				"eventType":"workflow_alert",
+				"applicationId":"greif-bom-validator-application",
+				"notificationPreviewTime":5,
+				"content":{
+					"templateId":"e_export_entity_template",
+					"input_schema":{
+						"fileUrl":"{{ n_Rrw7q.outputs.url }}"
+					}
+				},
+				"tags":[
+					"alerts"
+				]
+			},
+			"skip":false,
+			"subTitle":"Notification by UnifyApps",
+			"title":"Send notification",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceVersion":0,
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Y8oS3@_8JT2w-1@2",
+			"id":"n_Y8oS3@2",
+			"index":8,
+			"inputs":{
+				"name":"Branch 2",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_mC46z.outputs.fileType }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"CSV"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"csv_by_unifyapps",
+				"resourceVersion":7847,
+				"resourceName":"csv_by_unifyapps_list_to_csv_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Y8oS3@_8JT2w-1@2",
+			"id":"n_CH3Ou",
+			"index":9,
+			"inputs":{
+				"fileName":"ItemValidation.csv",
+				"delimiter":",",
+				"skipHeaderRow":false,
+				"headerType":"DYNAMIC",
+				"encoding":"UTF-8",
+				"keepExactFileName":false,
+				"dataSource":"{{ n_7ylnq.outputs.result.TransformedData }}",
+				"fileType":"csv",
+				"dynamicHeaders":{
+					"source":"{{ n_7ylnq.outputs.result.FileHeaders }}",
+					"ua:type":"mappedArray",
+					"items":"{{ n_7ylnq.outputs.result.FileHeaders[0] }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"CSV by UnifyApps",
+			"title":"Write data to CSV file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":1628,
+				"resourceName":"utility_by_unifyapps_generate_public_url",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Y8oS3@_8JT2w-1@2",
+			"id":"n_rlUgb",
+			"index":10,
+			"inputs":{
+				"file":"{{ n_CH3Ou.outputs.fileDetails }}",
+				"expiryTime":1
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Generate public file URL",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"notification_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"notification_by_unifyapps_send_notification",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Y8oS3@_8JT2w-1@2",
+			"id":"n_yhyZe",
+			"index":11,
+			"inputs":{
+				"cta":{
+					"name":"Download File",
+					"type":"url",
+					"url":"{{ n_rlUgb.outputs.url }}",
+					"width":{
+						"custom":"400px"
+					}
+				},
+				"receiver":"=SPLITBY({{ __RUN__.outputs.userId }},\",\")",
+				"receiverType":"USER",
+				"module":"automation",
+				"eventType":"workflow_alert",
+				"applicationId":"greif-bom-validator-application",
+				"notificationPreviewTime":5,
+				"content":{
+					"templateId":"e_export_entity_template",
+					"input_schema":{
+						"fileUrl":"{{ n_rlUgb.outputs.url }}"
+					}
+				},
+				"tags":[
+					"alerts"
+				]
+			},
+			"skip":false,
+			"subTitle":"Notification by UnifyApps",
+			"title":"Send notification",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"notification_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"notification_by_unifyapps_send_notification",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_Y8oS3@_8JT2w-1@default",
+			"id":"n_6Kf8j",
+			"index":12,
+			"inputs":{
+				"cta":{
+					"type":"url",
+					"width":{
+						"custom":"400px"
+					}
+				},
+				"receiver":"=SPLITBY({{ __RUN__.outputs.userId }},\",\")",
+				"receiverType":"USER",
+				"module":"automation",
+				"eventType":"workflow_alert",
+				"applicationId":"greif-bom-validator-application",
+				"notificationPreviewTime":5,
+				"content":{
+					"templateId":"failed_export_notification_template",
+					"input_schema":{
+						"errorMessage":"Invalid file type"
+					}
+				},
+				"tags":[
+					"alerts"
+				]
+			},
+			"skip":false,
+			"subTitle":"Notification by UnifyApps",
+			"title":"Send notification",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":950,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_t91AK",
+			"index":13,
+			"inputs":{
+				"result":{
+					"response":"Invalid File Type"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +601,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
