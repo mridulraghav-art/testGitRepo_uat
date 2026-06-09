@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780991265070,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_8JT2w",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_fZGVk",
+			"type":"next"
+		}
+	],
+	"id":"6a27c5213ad0e26b1f13b8b7",
+	"lastModifiedBy":39,
+	"lcName":"export data to csv",
+	"modifiedTime":1780991265070,
+	"name":"Export Data to CSV",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"_8JT2w",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"_fZGVk",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
