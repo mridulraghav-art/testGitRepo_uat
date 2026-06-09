@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780672485657,
 	"deleted":false,
-	"deployedVersion":7,
+	"deployedVersion":11,
 	"deploymentState":{
-		"deployedAt":1780679067718,
+		"deployedAt":1780831598848,
 		"deployedBy":-1,
-		"deployedDefinitionId":"6a23019b33b0405a760a70fd",
+		"deployedDefinitionId":"6a25556e28d6d162e1187d57",
 		"status":"DEPLOYED",
-		"version":7,
-		"workflowVersion":22
+		"version":11,
+		"workflowVersion":30
 	},
 	"edges":[
 		{
@@ -54,6 +54,7 @@
 		"configs":[
 			{
 				"permissions":[
+					"VIEW_RUNS",
 					"V"
 				],
 				"principalType":"GLOBAL"
@@ -63,7 +64,7 @@
 	"id":"69d929d3be8a17075d9f8c82",
 	"lastModifiedBy":-1,
 	"lcName":"invoke automation builder for tool",
-	"modifiedTime":1780680071337,
+	"modifiedTime":1781031366890,
 	"name":"Invoke Automation Builder for Tool",
 	"nodes":[
 		{
@@ -80,46 +81,21 @@
 			"index":1,
 			"inputs":{
 				"result":{
+					"type":"object",
 					"additionalProperties":false,
-					"properties":{
-						"status":{
-							"title":"Status",
-							"type":"string"
-						}
-					},
 					"required":[
 						"status"
 					],
-					"type":"object"
+					"properties":{
+						"status":{
+							"type":"string",
+							"title":"Status"
+						}
+					}
 				},
 				"setup":{
+					"type":"object",
 					"additionalProperties":false,
-					"properties":{
-						"inputSchema":{
-							"additionalProperties":false,
-							"properties":{},
-							"title":"Input Schema",
-							"type":"object"
-						},
-						"outputSchema":{
-							"additionalProperties":false,
-							"properties":{},
-							"title":"Output Schema",
-							"type":"object"
-						},
-						"requirements":{
-							"title":"Requirements",
-							"type":"string"
-						},
-						"toolId":{
-							"title":"Tool Id",
-							"type":"string"
-						},
-						"toolName":{
-							"title":"Tool Name",
-							"type":"string"
-						}
-					},
 					"required":[
 						"toolId",
 						"requirements",
@@ -127,7 +103,32 @@
 						"outputSchema",
 						"toolName"
 					],
-					"type":"object"
+					"properties":{
+						"toolId":{
+							"type":"string",
+							"title":"Tool Id"
+						},
+						"requirements":{
+							"type":"string",
+							"title":"Requirements"
+						},
+						"inputSchema":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Input Schema"
+						},
+						"outputSchema":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Output Schema"
+						},
+						"toolName":{
+							"type":"string",
+							"title":"Tool Name"
+						}
+					}
 				}
 			},
 			"skip":false,
@@ -156,8 +157,8 @@
 				"triggerWorkflowWithRuntimeType":"IN_MEMORY",
 				"defaultFallbackWorkflowId":"68050ca67df58855654804a0",
 				"parameters":{
-					"aiAgentId":"e_69e8f417a2d13979bb58c0e6",
-					"userQuery":"Here is a callable automation description which will be used as a tool within an AI Agent. Create automation requirements based on this description.\n- automationName: {{ n_4Mpmr.outputs.toolName }}\ntrigger: callable\ninputPayload: {{ n_4Mpmr.outputs.inputSchema }}\nflow: {{ n_4Mpmr.outputs.requirements }}\noutputPayload: {{ n_4Mpmr.outputs.outputSchema }}\n\nDO NOT ASK FOR ANY CLARIFICATIONS. Give me the final automation ID once it is created.\n\n"
+					"userQuery":"Here is a callable automation description which will be used as a tool within an AI Agent. Create automation requirements based on this description.\n- automationName: {{ n_4Mpmr.outputs.toolName }}\ntrigger: callable\ninputPayload: {{ n_4Mpmr.outputs.inputSchema }}\nflow: {{ n_4Mpmr.outputs.requirements }}\noutputPayload: {{ n_4Mpmr.outputs.outputSchema }}\n\nDO NOT ASK FOR ANY CLARIFICATIONS. Give me the final automation ID once it is created.\n\n",
+					"aiAgentId":"e_69e8f417a2d13979bb58c0e6"
 				}
 			},
 			"skip":false,
@@ -190,30 +191,30 @@
 					"type":"object",
 					"properties":{
 						"inputs":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{
 								"automationId":{
-									"title":"automationId",
-									"type":"string"
-								},
-								"parameters":{
-									"title":"parameters",
-									"type":"object"
+									"type":"string",
+									"title":"automationId"
 								},
 								"runtimeConnections":{
-									"title":"runtimeConnections",
-									"type":"object"
-								},
-								"synchronous":{
-									"title":"synchronous",
-									"type":"boolean"
+									"type":"object",
+									"title":"runtimeConnections"
 								},
 								"version":{
-									"title":"version",
-									"type":"string"
+									"type":"string",
+									"title":"version"
+								},
+								"parameters":{
+									"type":"object",
+									"title":"parameters"
+								},
+								"synchronous":{
+									"type":"boolean",
+									"title":"synchronous"
 								}
 							},
-							"type":"object"
+							"additionalProperties":false
 						}
 					},
 					"required":[
@@ -224,8 +225,8 @@
 			"inputs":{
 				"inputs":{
 					"automationId":"=SUBSTITUTE({{ n_aZ7hI.outputs.sessionId }},\"e_\",\"\")",
-					"synchronous":true,
-					"version":"-1"
+					"version":"-1",
+					"synchronous":true
 				}
 			},
 			"outputSchema":{
@@ -235,30 +236,30 @@
 					"type":"object",
 					"properties":{
 						"inputs":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{
 								"automationId":{
-									"title":"automationId",
-									"type":"string"
-								},
-								"parameters":{
-									"title":"parameters",
-									"type":"object"
+									"type":"string",
+									"title":"automationId"
 								},
 								"runtimeConnections":{
-									"title":"runtimeConnections",
-									"type":"object"
-								},
-								"synchronous":{
-									"title":"synchronous",
-									"type":"boolean"
+									"type":"object",
+									"title":"runtimeConnections"
 								},
 								"version":{
-									"title":"version",
-									"type":"string"
+									"type":"string",
+									"title":"version"
+								},
+								"parameters":{
+									"type":"object",
+									"title":"parameters"
+								},
+								"synchronous":{
+									"type":"boolean",
+									"title":"synchronous"
 								}
 							},
-							"type":"object"
+							"additionalProperties":false
 						}
 					},
 					"required":[
@@ -292,8 +293,8 @@
 				"skipPermissionCheck":false,
 				"updateFields":[
 					{
-						"actionType":"SET",
 						"fieldName":"properties.inputs",
+						"actionType":"SET",
 						"setValue":"{{ n_1M27u.outputs.inputs }}"
 					}
 				],
@@ -363,9 +364,9 @@
 			"tierName":"global"
 		}
 	},
-	"standard":true,
+	"standard":false,
 	"tags":[
 		"text-to-agent"
 	],
-	"version":24
+	"version":32
 }
