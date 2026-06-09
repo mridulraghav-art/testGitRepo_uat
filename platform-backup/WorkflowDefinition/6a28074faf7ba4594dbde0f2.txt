@@ -6,46 +6,83 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_NvNCM",
+			"fromNodeId":"n_kb2u8",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_SDGOK",
+			"toNodeId":"n_44R8U",
 			"type":"next"
 		}
 	],
 	"id":"6a28074faf7ba4594dbde0f2",
 	"lastModifiedBy":39,
 	"lcName":"dwedew",
-	"modifiedTime":1781008207477,
+	"modifiedTime":1781008252212,
 	"name":"dwedew",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":63,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_NvNCM-1",
-			"id":"_NvNCM",
-			"index":0,
+			"id":"n_kb2u8",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":3855,
+				"resourceName":"utility_by_unifyapps_export_unifyapps_pages_to_pdf",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_NvNCM-1",
-			"id":"_SDGOK",
-			"index":0,
+			"id":"n_44R8U",
+			"index":2,
+			"inputs":{
+				"pdfPages":[
+					{
+						"url":"https://uat.unifyapps.com/p/0/automations/6a28074faf7ba4594dbde0f2/builder?activeStep=n_44R8U",
+						"externalPage":false
+					}
+				],
+				"exportType":"ZIP",
+				"page":{
+					"format":"a4",
+					"layout":"portrait",
+					"scale":1,
+					"timeout":5000
+				},
+				"useCustomFonts":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Utility by UnifyApps",
+			"title":"Export UnifyApps pages to PDF",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +93,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
