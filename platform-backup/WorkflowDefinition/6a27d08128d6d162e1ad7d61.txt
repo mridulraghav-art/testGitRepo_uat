@@ -6,46 +6,114 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_GrZqb",
+			"fromNodeId":"n_FbItR",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_AkzMh",
+			"toNodeId":"n_OAtf0",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_OAtf0",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_5LH1n",
 			"type":"next"
 		}
 	],
 	"id":"6a27d08128d6d162e1ad7d61",
 	"lastModifiedBy":39,
 	"lcName":"test_enrich",
-	"modifiedTime":1780994177211,
+	"modifiedTime":1780994683758,
 	"name":"TEST_ENRICH",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2445,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_GrZqb-1",
-			"id":"_GrZqb",
-			"index":0,
+			"id":"n_FbItR",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"additional":{
+				"visibleOptionalFields":[
+					"root.records.items.Num2",
+					"root.records.items.SUM",
+					"root.records.items.Num1"
+				]
+			},
+			"context":{
+				"appName":"mdm_by_unifyapps",
+				"resourceVersion":2682,
+				"resourceName":"mdm_by_unifyapps_create_staging_records",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_GrZqb-1",
-			"id":"_AkzMh",
-			"index":0,
+			"id":"n_OAtf0",
+			"index":2,
+			"inputs":{
+				"sourceId":"69f986fb115df15fd3a1991e",
+				"recordEventType":"INSERT",
+				"modelId":"6a27cebfb753a72ac765b50d",
+				"records":[
+					{
+						"Num2":3,
+						"Num1":2
+					},
+					{
+						"Num2":6789,
+						"Num1":268
+					}
+				],
+				"unifiedEntityId":"test_enrich"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Ontology by UnifyApps",
+			"title":"Create Staging Records",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2446,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_GrZqb-1",
+			"id":"n_5LH1n",
+			"index":3,
+			"inputs":{
+				"result":"{{ n_OAtf0.outputs.success }}"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +124,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
