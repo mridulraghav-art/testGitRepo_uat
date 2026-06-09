@@ -152,7 +152,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to csv",
-	"modifiedTime":1781021143980,
+	"modifiedTime":1781021273042,
 	"name":"BM Export Data to CSV",
 	"nodes":[
 		{
@@ -162,7 +162,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_Uy8Gi",
@@ -182,6 +182,16 @@
 						"SearchFilter":{
 							"type":"string",
 							"title":"Search Filter"
+						},
+						"PageSize":{
+							"type":"number",
+							"title":"Page Size",
+							"default":"20"
+						},
+						"Offset":{
+							"type":"number",
+							"title":"Offset",
+							"default":"1"
 						}
 					}
 				}
@@ -207,7 +217,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_7ylnq",
@@ -264,7 +274,7 @@
 						}
 					}
 				},
-				"query":"SELECT\n    p.assetId,\n    p.status,\n    p.commitUrl,\n    p.shortSha,\n    p.assetClass,\n    p.errorMessage,\n    DATE_FORMAT(\n        FROM_UNIXTIME(p.lastSyncTime / 1000),\n        '%d %b %Y, %H:%i'\n    ) AS lastUpdatedOn,\n    COUNT(*) OVER() AS TotalRecords\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Uy8Gi.outputs.SearchFilter }}%'\nORDER BY p.assetId LIMIT 20 OFFSET 1;",
+				"query":"SELECT\n    p.assetId,\n    p.status,\n    p.commitUrl,\n    p.shortSha,\n    p.assetClass,\n    p.errorMessage,\n    DATE_FORMAT(\n        FROM_UNIXTIME(p.lastSyncTime / 1000),\n        '%d %b %Y, %H:%i'\n    ) AS lastUpdatedOn,\n    COUNT(*) OVER() AS TotalRecords\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Uy8Gi.outputs.SearchFilter }}%'\nORDER BY p.assetId LIMIT {{ n_Uy8Gi.outputs.PageSize }} OFFSET {{ n_Uy8Gi.outputs.Offset }};",
 				"group":"ENTITY_REPORTING"
 			},
 			"skip":false,
@@ -280,7 +290,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_ZHlXF",
@@ -303,7 +313,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_zqh3z",
@@ -336,7 +346,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cN32w",
@@ -358,7 +368,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_OqykT",
@@ -401,7 +411,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_6EcYu",
@@ -422,7 +432,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_Y8oS3",
@@ -483,7 +493,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_Y8oS3@1",
@@ -515,7 +525,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_DEC7b",
@@ -548,7 +558,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_Rrw7q",
@@ -570,7 +580,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_y3INj",
@@ -613,7 +623,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_Y8oS3@2",
@@ -645,7 +655,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_CH3Ou",
@@ -678,7 +688,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_rlUgb",
@@ -700,7 +710,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_yhyZe",
@@ -743,7 +753,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@default",
 			"id":"n_6Kf8j",
@@ -784,7 +794,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_t91AK",
@@ -814,5 +824,5 @@
 		}
 	},
 	"standard":false,
-	"version":32
+	"version":33
 }
