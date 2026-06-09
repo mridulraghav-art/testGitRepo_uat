@@ -11,12 +11,19 @@
 			"skip":false,
 			"toNodeId":"n_X5HQM",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_X5HQM",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_bA9LL",
+			"type":"next"
 		}
 	],
 	"id":"6a2858674a1a7a58187f5a42",
 	"lastModifiedBy":39,
 	"lcName":"5trfd",
-	"modifiedTime":1781028984383,
+	"modifiedTime":1781029001067,
 	"name":"5trfd",
 	"nodes":[
 		{
@@ -26,7 +33,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_7gXGu-1",
 			"id":"n_qGrI8",
@@ -48,7 +55,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_7gXGu-1",
 			"id":"n_X5HQM",
@@ -94,6 +101,27 @@
 			"subTitle":"Variable by UnifyApps",
 			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2582,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_7gXGu-1",
+			"id":"n_bA9LL",
+			"index":3,
+			"inputs":{
+				"result":"rfdx"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -110,5 +138,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
