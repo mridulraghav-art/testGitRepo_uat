@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780672487398,
 	"deleted":false,
-	"deployedVersion":9,
+	"deployedVersion":11,
 	"deploymentState":{
-		"deployedAt":1780685531412,
+		"deployedAt":1780831600156,
 		"deployedBy":-1,
-		"deployedDefinitionId":"6a231adb3ad0e26b1f89b920",
+		"deployedDefinitionId":"6a25557031ae790065cbf105",
 		"status":"DEPLOYED",
-		"version":9,
-		"workflowVersion":16
+		"version":11,
+		"workflowVersion":20
 	},
 	"edges":[
 		{
@@ -33,6 +33,7 @@
 		"configs":[
 			{
 				"permissions":[
+					"VIEW_RUNS",
 					"V"
 				],
 				"principalType":"GLOBAL"
@@ -42,7 +43,7 @@
 	"id":"69d9d832b10de062169e4be6",
 	"lastModifiedBy":-1,
 	"lcName":"create new skill",
-	"modifiedTime":1780685945926,
+	"modifiedTime":1781031368988,
 	"name":"Create New Skill",
 	"nodes":[
 		{
@@ -64,45 +65,45 @@
 			"index":1,
 			"inputs":{
 				"result":{
+					"type":"object",
 					"additionalProperties":false,
-					"properties":{
-						"message":{
-							"title":"Message",
-							"type":"string"
-						}
-					},
 					"required":[
 						"message"
 					],
-					"type":"object"
+					"properties":{
+						"message":{
+							"type":"string",
+							"title":"Message"
+						}
+					}
 				},
 				"setup":{
+					"type":"object",
 					"additionalProperties":false,
-					"properties":{
-						"aiAgentId":{
-							"title":"Ai Agent Id",
-							"type":"string"
-						},
-						"description":{
-							"title":"Description",
-							"type":"string"
-						},
-						"instructions":{
-							"title":"Instructions",
-							"type":"string"
-						},
-						"name":{
-							"title":"Name",
-							"type":"string"
-						}
-					},
 					"required":[
 						"name",
 						"description",
 						"instructions",
 						"aiAgentId"
 					],
-					"type":"object"
+					"properties":{
+						"name":{
+							"type":"string",
+							"title":"Name"
+						},
+						"description":{
+							"type":"string",
+							"title":"Description"
+						},
+						"instructions":{
+							"type":"string",
+							"title":"Instructions"
+						},
+						"aiAgentId":{
+							"type":"string",
+							"title":"Ai Agent Id"
+						}
+					}
 				}
 			},
 			"skip":false,
@@ -138,13 +139,13 @@
 				"object_type":"e_skill_ai_agent",
 				"skipIfBlank":false,
 				"record":{
+					"skill":"{{ n_LnsXN.outputs.instructions }}",
 					"accessibleTo":[
 						"ai_agent/{{ n_LnsXN.outputs.aiAgentId }}"
 					],
-					"description":"{{ n_LnsXN.outputs.description }}",
-					"enabled":false,
 					"name":"{{ n_LnsXN.outputs.name }}",
-					"skill":"{{ n_LnsXN.outputs.instructions }}"
+					"description":"{{ n_LnsXN.outputs.description }}",
+					"enabled":false
 				}
 			},
 			"skip":false,
@@ -189,9 +190,9 @@
 			"tierName":"global"
 		}
 	},
-	"standard":true,
+	"standard":false,
 	"tags":[
 		"text-to-agent"
 	],
-	"version":18
+	"version":22
 }
