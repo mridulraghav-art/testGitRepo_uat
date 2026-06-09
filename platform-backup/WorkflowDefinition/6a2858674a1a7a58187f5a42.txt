@@ -6,46 +6,100 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_7gXGu",
+			"fromNodeId":"n_qGrI8",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_MYUa0",
+			"toNodeId":"n_X5HQM",
 			"type":"next"
 		}
 	],
 	"id":"6a2858674a1a7a58187f5a42",
 	"lastModifiedBy":39,
 	"lcName":"5trfd",
-	"modifiedTime":1781028967974,
+	"modifiedTime":1781028984383,
 	"name":"5trfd",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2581,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_7gXGu-1",
-			"id":"_7gXGu",
-			"index":0,
+			"id":"n_qGrI8",
+			"index":1,
+			"inputs":{},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1653,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_7gXGu-1",
-			"id":"_MYUa0",
-			"index":0,
+			"id":"n_X5HQM",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"dsx":{
+							"type":"string",
+							"title":"Dsx"
+						}
+					},
+					"required":[
+						"dsx"
+					]
+				}
+			},
+			"inputs":{
+				"dsx":"gtrfd"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"dsx":{
+							"type":"string",
+							"title":"Dsx"
+						}
+					},
+					"required":[
+						"dsx"
+					]
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +110,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
