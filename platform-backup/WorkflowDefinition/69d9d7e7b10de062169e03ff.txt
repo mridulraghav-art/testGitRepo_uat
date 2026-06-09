@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780674595508,
 	"deleted":false,
-	"deployedVersion":8,
+	"deployedVersion":10,
 	"deploymentState":{
-		"deployedAt":1780685536137,
+		"deployedAt":1780831604949,
 		"deployedBy":-1,
-		"deployedDefinitionId":"6a231ae028d6d162e1eec072",
+		"deployedDefinitionId":"6a255574af7ba4594d4fe3b0",
 		"status":"DEPLOYED",
-		"version":8,
-		"workflowVersion":21
+		"version":10,
+		"workflowVersion":25
 	},
 	"edges":[
 		{
@@ -142,6 +142,7 @@
 		"configs":[
 			{
 				"permissions":[
+					"VIEW_RUNS",
 					"V"
 				],
 				"principalType":"GLOBAL"
@@ -151,7 +152,7 @@
 	"id":"69d9d7e7b10de062169e03ff",
 	"lastModifiedBy":-1,
 	"lcName":"create deployment",
-	"modifiedTime":1780685952278,
+	"modifiedTime":1781031379163,
 	"name":"Create Deployment",
 	"nodes":[
 		{
@@ -173,51 +174,51 @@
 			"index":1,
 			"inputs":{
 				"result":{
+					"type":"object",
 					"additionalProperties":false,
-					"properties":{
-						"deploymentId":{
-							"title":"Deployment Id",
-							"type":"string"
-						},
-						"message":{
-							"title":"Message",
-							"type":"string"
-						}
-					},
 					"required":[
 						"message"
 					],
-					"type":"object"
+					"properties":{
+						"deploymentId":{
+							"type":"string",
+							"title":"Deployment Id"
+						},
+						"message":{
+							"type":"string",
+							"title":"Message"
+						}
+					}
 				},
 				"setup":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
 						"aiAgentId":{
-							"title":"aiAgentId",
-							"type":"string"
-						},
-						"deploymentId":{
-							"title":"Deployment Id",
-							"type":"string"
-						},
-						"deploymentName":{
-							"title":"Deployment Name",
-							"type":"string"
-						},
-						"inputs":{
-							"additionalProperties":false,
-							"properties":{},
-							"title":"Inputs",
-							"type":"object"
+							"type":"string",
+							"title":"aiAgentId"
 						},
 						"type":{
-							"help":"Can be \"COPILOT\", \"SCHEDULE\" OR \"CHANNEL\"",
+							"type":"string",
 							"title":"type",
-							"type":"string"
+							"help":"Can be \"COPILOT\", \"SCHEDULE\" OR \"CHANNEL\""
+						},
+						"deploymentName":{
+							"type":"string",
+							"title":"Deployment Name"
+						},
+						"deploymentId":{
+							"type":"string",
+							"title":"Deployment Id"
+						},
+						"inputs":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Inputs"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				}
 			},
 			"skip":false,
@@ -244,55 +245,55 @@
 					{
 						"id":"1",
 						"inputs":{
+							"name":"Schedule",
 							"conditions":{
 								"filters":[
 									{
+										"property":"{{ n_LnsXN.outputs.type }}",
 										"filter":{
 											"operator":"EQUAL",
 											"value":"SCHEDULE"
-										},
-										"property":"{{ n_LnsXN.outputs.type }}"
+										}
 									}
 								],
 								"operator":"AND"
-							},
-							"name":"Schedule"
+							}
 						}
 					},
 					{
 						"id":"2",
 						"inputs":{
+							"name":"Copilot",
 							"conditions":{
 								"filters":[
 									{
+										"property":"{{ n_LnsXN.outputs.type }}",
 										"filter":{
 											"operator":"EQUAL",
 											"value":"COPILOT"
-										},
-										"property":"{{ n_LnsXN.outputs.type }}"
+										}
 									}
 								],
 								"operator":"AND"
-							},
-							"name":"Copilot"
+							}
 						}
 					},
 					{
 						"id":"3",
 						"inputs":{
+							"name":"Channel",
 							"conditions":{
 								"filters":[
 									{
+										"property":"{{ n_LnsXN.outputs.type }}",
 										"filter":{
 											"operator":"EQUAL",
 											"value":"CHANNEL"
-										},
-										"property":"{{ n_LnsXN.outputs.type }}"
+										}
 									}
 								],
 								"operator":"AND"
-							},
-							"name":"Channel"
+							}
 						}
 					},
 					{
@@ -323,11 +324,11 @@
 				"conditions":{
 					"filters":[
 						{
+							"property":"{{ n_LnsXN.outputs.type }}",
 							"filter":{
 								"operator":"EQUAL",
 								"value":"SCHEDULE"
-							},
-							"property":"{{ n_LnsXN.outputs.type }}"
+							}
 						}
 					],
 					"operator":"AND"
@@ -354,12 +355,12 @@
 				"automationId":"69da2005b9ab2a22047512c0",
 				"runtimeConnections":{},
 				"synchronous":true,
+				"version":"-1",
 				"parameters":{
 					"aiAgentId":"{{ n_LnsXN.outputs.aiAgentId }}",
 					"appName":"schedule",
 					"scheduleInput":"{{ n_LnsXN.outputs.inputs }}"
-				},
-				"version":"-1"
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -444,11 +445,11 @@
 				"automationId":"67fe2db4681aaa178c5489e2",
 				"runtimeConnections":{},
 				"synchronous":true,
+				"version":"-1",
 				"parameters":{
 					"aiAgentId":"{{ n_LnsXN.outputs.aiAgentId }}",
 					"deployOnCopilot":true
-				},
-				"version":"-1"
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -476,13 +477,13 @@
 				"skipPermissionCheck":false,
 				"updateFields":[
 					{
-						"actionType":"ADD_TO_SET",
 						"fieldName":"properties.deployedOn",
+						"actionType":"ADD_TO_SET",
 						"setValue":"schedule"
 					},
 					{
-						"actionType":"ADD_TO_SET",
 						"fieldName":"properties.deployedOn",
+						"actionType":"ADD_TO_SET",
 						"setValue":"copilot"
 					}
 				],
@@ -536,11 +537,11 @@
 				"conditions":{
 					"filters":[
 						{
+							"property":"{{ n_LnsXN.outputs.type }}",
 							"filter":{
 								"operator":"EQUAL",
 								"value":"COPILOT"
-							},
-							"property":"{{ n_LnsXN.outputs.type }}"
+							}
 						}
 					],
 					"operator":"AND"
@@ -567,11 +568,11 @@
 				"automationId":"67fe2db4681aaa178c5489e2",
 				"runtimeConnections":{},
 				"synchronous":true,
+				"version":"-1",
 				"parameters":{
 					"aiAgentId":"{{ n_LnsXN.outputs.aiAgentId }}",
 					"deployOnCopilot":true
-				},
-				"version":"-1"
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -620,11 +621,11 @@
 				"conditions":{
 					"filters":[
 						{
+							"property":"{{ n_LnsXN.outputs.type }}",
 							"filter":{
 								"operator":"EQUAL",
 								"value":"CHANNEL"
-							},
-							"property":"{{ n_LnsXN.outputs.type }}"
+							}
 						}
 					],
 					"operator":"AND"
@@ -649,42 +650,42 @@
 			"index":13,
 			"inputs":{
 				"output":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[
+						"input"
+					],
 					"properties":{
 						"input":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{
 								"appName":{
-									"title":"appName",
-									"type":"string"
+									"type":"string",
+									"title":"appName"
 								},
 								"connectionId":{
-									"title":"connectionId",
-									"type":"string"
+									"type":"string",
+									"title":"connectionId"
 								}
 							},
-							"type":"object"
+							"additionalProperties":false
 						}
-					},
-					"required":[
-						"input"
-					],
-					"type":"object"
+					}
 				},
 				"input":{
+					"type":"object",
 					"additionalProperties":false,
-					"properties":{
-						"input":{
-							"additionalProperties":false,
-							"properties":{},
-							"title":"Input",
-							"type":"object"
-						}
-					},
 					"required":[
 						"input"
 					],
-					"type":"object"
+					"properties":{
+						"input":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Input"
+						}
+					}
 				},
 				"code":"return [\"input\": input]",
 				"compile_static":false,
@@ -715,12 +716,12 @@
 				"automationId":"69da2005b9ab2a22047512c0",
 				"runtimeConnections":{},
 				"synchronous":true,
+				"version":"-1",
 				"parameters":{
 					"aiAgentId":"{{ n_LnsXN.outputs.aiAgentId }}",
-					"appName":"{{ n_JK390.outputs.result.input.appName }}",
-					"connectionId":"{{ n_JK390.outputs.result.input.connectionId }}"
-				},
-				"version":"-1"
+					"connectionId":"{{ n_JK390.outputs.result.input.connectionId }}",
+					"appName":"{{ n_JK390.outputs.result.input.appName }}"
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -806,11 +807,11 @@
 				"automationId":"67fe2db4681aaa178c5489e2",
 				"runtimeConnections":{},
 				"synchronous":true,
+				"version":"-1",
 				"parameters":{
 					"aiAgentId":"{{ n_LnsXN.outputs.aiAgentId }}",
 					"deployOnCopilot":true
-				},
-				"version":"-1"
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -878,9 +879,9 @@
 			"tierName":"global"
 		}
 	},
-	"standard":true,
+	"standard":false,
 	"tags":[
 		"text-to-agent"
 	],
-	"version":23
+	"version":27
 }
