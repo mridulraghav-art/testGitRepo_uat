@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780672484994,
 	"deleted":false,
-	"deployedVersion":10,
+	"deployedVersion":11,
 	"deploymentState":{
-		"deployedAt":1780685943521,
+		"deployedAt":1780831598446,
 		"deployedBy":-1,
-		"deployedDefinitionId":"6a231c773ad0e26b1f89f953",
+		"deployedDefinitionId":"6a25556e3ad0e26b1fa434f3",
 		"status":"DEPLOYED",
-		"version":10,
-		"workflowVersion":82
+		"version":11,
+		"workflowVersion":84
 	},
 	"edges":[
 		{
@@ -167,6 +167,7 @@
 		"configs":[
 			{
 				"permissions":[
+					"VIEW_RUNS",
 					"V"
 				],
 				"principalType":"GLOBAL"
@@ -176,7 +177,7 @@
 	"id":"69e33fbe2242ac4df68235fe",
 	"lastModifiedBy":-1,
 	"lcName":"agent builder | fetch lookup fields",
-	"modifiedTime":1780831598201,
+	"modifiedTime":1781031366068,
 	"name":"Agent Builder | Fetch Lookup Fields",
 	"nodes":[
 		{
@@ -193,55 +194,55 @@
 			"index":1,
 			"inputs":{
 				"result":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
 						"result":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{},
-							"title":"Result",
-							"type":"object"
+							"additionalProperties":false,
+							"title":"Result"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"setup":{
+					"type":"object",
 					"additionalProperties":false,
-					"properties":{
-						"action":{
-							"title":"Action",
-							"type":"string"
-						},
-						"app":{
-							"title":"App",
-							"type":"string"
-						},
-						"connectionId":{
-							"title":"Connection Id",
-							"type":"string"
-						},
-						"fieldKey":{
-							"title":"Field Key",
-							"type":"string"
-						},
-						"inputs":{
-							"additionalProperties":false,
-							"properties":{},
-							"title":"Inputs",
-							"type":"object"
-						},
-						"searchQuery":{
-							"title":"Search Query",
-							"type":"string"
-						}
-					},
 					"required":[
 						"app",
 						"action",
 						"connectionId",
 						"fieldKey"
 					],
-					"type":"object"
+					"properties":{
+						"app":{
+							"type":"string",
+							"title":"App"
+						},
+						"action":{
+							"type":"string",
+							"title":"Action"
+						},
+						"connectionId":{
+							"type":"string",
+							"title":"Connection Id"
+						},
+						"fieldKey":{
+							"type":"string",
+							"title":"Field Key"
+						},
+						"searchQuery":{
+							"type":"string",
+							"title":"Search Query"
+						},
+						"inputs":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Inputs"
+						}
+					}
 				}
 			},
 			"skip":false,
@@ -290,10 +291,10 @@
 			"inputs":{
 				"filters":[
 					{
+						"property":"{{ n_7gJVz.outputs.nodeName }}",
 						"filter":{
 							"operator":"MISSING"
-						},
-						"property":"{{ n_7gJVz.outputs.nodeName }}"
+						}
 					}
 				],
 				"operator":"AND"
@@ -325,18 +326,18 @@
 					"type":"object",
 					"properties":{
 						"response":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{
 								"message":{
-									"title":"Message",
-									"type":"string"
+									"type":"string",
+									"title":"Message"
 								}
 							},
+							"additionalProperties":false,
+							"title":"Response",
 							"required":[
 								"message"
-							],
-							"title":"Response",
-							"type":"object"
+							]
 						}
 					},
 					"required":[
@@ -356,18 +357,18 @@
 					"type":"object",
 					"properties":{
 						"response":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{
 								"message":{
-									"title":"Message",
-									"type":"string"
+									"type":"string",
+									"title":"Message"
 								}
 							},
+							"additionalProperties":false,
+							"title":"Response",
 							"required":[
 								"message"
-							],
-							"title":"Response",
-							"type":"object"
+							]
 						}
 					},
 					"required":[
@@ -423,77 +424,77 @@
 			"index":6,
 			"inputs":{
 				"output":{
+					"type":"object",
 					"additionalProperties":false,
 					"properties":{
 						"lookupFields":{
+							"type":"array",
 							"items":{
-								"additionalProperties":false,
+								"type":"object",
 								"properties":{
-									"dependent_fields":{
-										"items":{
-											"type":"string"
-										},
-										"title":"dependent_fields",
-										"type":"array"
-									},
 									"fieldName":{
-										"title":"fieldName",
-										"type":"string"
-									},
-									"fields":{
-										"items":{
-											"type":"string"
-										},
-										"title":"Fields",
-										"type":"array"
+										"type":"string",
+										"title":"fieldName"
 									},
 									"lookupType":{
-										"title":"lookupType",
-										"type":"string"
-									},
-									"name":{
-										"title":"Name",
-										"type":"string"
-									},
-									"optional_dependent_fields":{
-										"items":{
-											"additionalProperties":false,
-											"properties":{},
-											"type":"object"
-										},
-										"title":"Optional Dependent Fields",
-										"type":"array"
-									},
-									"payload":{
-										"title":"Payload",
-										"type":"string"
+										"type":"string",
+										"title":"lookupType"
 									},
 									"type":{
-										"title":"type",
-										"type":"string"
+										"type":"string",
+										"title":"type"
+									},
+									"dependent_fields":{
+										"type":"array",
+										"items":{
+											"type":"string"
+										},
+										"title":"dependent_fields"
+									},
+									"name":{
+										"type":"string",
+										"title":"Name"
+									},
+									"fields":{
+										"type":"array",
+										"items":{
+											"type":"string"
+										},
+										"title":"Fields"
+									},
+									"optional_dependent_fields":{
+										"type":"array",
+										"items":{
+											"type":"object",
+											"properties":{},
+											"additionalProperties":false
+										},
+										"title":"Optional Dependent Fields"
+									},
+									"payload":{
+										"type":"string",
+										"title":"Payload"
 									}
 								},
-								"required":[],
-								"type":"object"
+								"additionalProperties":false,
+								"required":[]
 							},
-							"title":"lookupFields",
-							"type":"array"
+							"title":"lookupFields"
 						}
-					},
-					"type":"object"
+					}
 				},
 				"input":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
 						"inputSchema":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{},
-							"title":"Input Schema",
-							"type":"object"
+							"additionalProperties":false,
+							"title":"Input Schema"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"code":"if (!binding.hasVariable(\"inputSchema\")) {\n    return [:]\n}\n\n\ndef extractTemplateRefs(value) {\n    def refs = [] as Set\n\n    if (value instanceof Map) {\n        value.each { k, v -> refs.addAll(extractTemplateRefs(v)) }\n    } else if (value instanceof List) {\n        value.each { item -> refs.addAll(extractTemplateRefs(item)) }\n    } else if (value instanceof String) {\n        def matcher = value =~ /\\{\\{\\s*([\\w.]+)\\s*\\}\\}/\n        matcher.each { match -> refs << match[1].toString() }\n    }\n\n    return refs\n}\n\ndef extractLookupFields(Map layoutObj, String currentPath = \"\") {\n    def results = []\n\n    layoutObj.each { key, value ->\n        if (value instanceof Map) {\n            String newPath = currentPath ? \"${currentPath}.${key}\".toString() : key.toString()\n\n            def uiOptions = value[\"ui:options\"]\n            if (uiOptions instanceof Map) {\n                def uaPayload = uiOptions[\"ua:payload\"]\n                if (uaPayload instanceof Map && uaPayload.containsKey(\"lookupType\")) {\n\n                    def dependentFields = (uiOptions[\"ua:dependent_fields\"] ?: []) as List\n\n\n                    def allTemplateRefs = extractTemplateRefs(uaPayload) as Set\n\n                    // ── Optional = refs not already in dependent_fields ───────\n                    def optionalDependentFields = allTemplateRefs\n                        .findAll { ref ->\n                            !dependentFields.any { it.toString() == ref } &&\n                            ref != \"contextData.connectionId\"\n                        }\n                        .collect { it.toString() }\n\n                    results << [\n                        fieldName                : newPath,\n                        lookupType               : uaPayload[\"lookupType\"].toString(),\n                        type                     : uaPayload[\"type\"].toString(),\n                        payload                  : uaPayload,\n                        dependent_fields         : dependentFields,\n                        optional_dependent_fields: optionalDependentFields\n                    ]\n                }\n            }\n\n            results.addAll(extractLookupFields(value, newPath))\n        }\n    }\n\n    return results\n}\n\ndef layout = inputSchema?.layout\nif (!layout) {\n    return [lookupFields: []]\n}\n\nreturn [lookupFields: extractLookupFields(layout)]",
 				"compile_static":false,
@@ -527,63 +528,63 @@
 			"index":7,
 			"inputs":{
 				"output":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
 						"canExecute":{
-							"title":"Can Execute",
-							"type":"boolean"
+							"type":"boolean",
+							"title":"Can Execute"
 						},
 						"data":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{},
-							"title":"Data",
-							"type":"object"
+							"additionalProperties":false,
+							"title":"Data"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"input":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
-						"additionalInputs":{
-							"additionalProperties":false,
-							"properties":{},
-							"title":"Additional Inputs",
-							"type":"object"
-						},
-						"connectionId":{
-							"title":"Connection Id",
-							"type":"string"
-						},
 						"fieldKey":{
-							"title":"Field Key",
-							"type":"string"
+							"type":"string",
+							"title":"Field Key"
 						},
 						"lookupFields":{
+							"type":"array",
 							"items":{
-								"additionalProperties":false,
+								"type":"object",
 								"properties":{},
-								"type":"object"
+								"additionalProperties":false
 							},
-							"title":"Lookup Fields",
-							"type":"array"
+							"title":"Lookup Fields"
+						},
+						"connectionId":{
+							"type":"string",
+							"title":"Connection Id"
+						},
+						"additionalInputs":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Additional Inputs"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"code":"if (!binding.hasVariable(\"fieldKey\") || !binding.hasVariable(\"lookupFields\")) {\n    return [\n        canExecute: false,\n        data: [message: \"Required inputs 'fieldKey' or 'lookupFields' are missing\"]\n    ]\n}\n\ndef safeAdditionalInputs = (binding.hasVariable(\"additionalInputs\") && additionalInputs) ? additionalInputs : [:]\n\n// ── Helper to resolve a field value from additionalInputs ─────────────────────\ndef resolveField(String dep, safeAdditionalInputs) {\n    def keys  = dep.split(\"\\\\.\").toList()\n    def value = safeAdditionalInputs\n    for (String k : keys) {\n        if (value instanceof Map && value.containsKey(k)) {\n            value = value[k]\n        } else {\n            return null\n        }\n    }\n    return (value == null || value.toString().trim().isEmpty()) ? null : value\n}\n\n// ── 1. Find matching field ────────────────────────────────────────────────────\ndef matchedField = lookupFields?.find { it.fieldName?.toString() == fieldKey?.toString() }\n\nif (!matchedField) {\n    return [\n        canExecute: false,\n        data: [\n            message     : \"Invalid fieldKey '${fieldKey}'. No matching field found in lookupFields.\".toString(),\n            lookupFields: lookupFields\n        ]\n    ]\n}\n\n// ── 2. Check required dependent fields ───────────────────────────────────────\ndef dependentFields = matchedField.dependent_fields ?: []\ndef missingFields   = []\n\ndependentFields.each { depField ->\n    String dep = depField.toString()\n\n    if (dep == \"contextData.connectionId\") {\n        if (!binding.hasVariable(\"connectionId\") || !connectionId) {\n            missingFields << dep\n        }\n    } else {\n        if (resolveField(dep, safeAdditionalInputs) == null) {\n            missingFields << dep\n        }\n    }\n}\n\nif (missingFields) {\n    return [\n        canExecute: false,\n        data: [\n            message      : \"Missing required dependent field(s): ${missingFields.join(', ')}\".toString(),\n            missingFields: missingFields,\n            matchedField : matchedField\n        ]\n    ]\n}\n\n// ── 3. Check optional dependent fields ───────────────────────────────────────\ndef optionalDependentFields = matchedField.optional_dependent_fields ?: []\ndef missingOptionalFields   = []\n\noptionalDependentFields.each { depField ->\n    String dep = depField.toString()\n    if (resolveField(dep, safeAdditionalInputs) == null) {\n        missingOptionalFields << dep\n    }\n}\n\n// ── 4. All good ───────────────────────────────────────────────────────────────\ndef responseData = matchedField + [:]\n\nif (missingOptionalFields) {\n    responseData.missingOptionalFields = missingOptionalFields\n    responseData.message = \"Optional dependent field(s) missing: ${missingOptionalFields.join(', ')}. Lookup may return incomplete results.\".toString()\n}\n\nreturn [\n    canExecute: true,\n    data      : responseData\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
-					"additionalInputs":"{{ n_qxoq2.outputs.inputs }}",
-					"connectionId":"{{ n_qxoq2.outputs.connectionId }}",
 					"fieldKey":"{{ n_qxoq2.outputs.fieldKey }}",
+					"connectionId":"{{ n_qxoq2.outputs.connectionId }}",
+					"additionalInputs":"{{ n_qxoq2.outputs.inputs }}",
 					"lookupFields":{
-						"items":"{{ n_JljYx.outputs.result.lookupFields[0] }}",
 						"source":"{{ n_JljYx.outputs.result.lookupFields }}",
-						"ua:type":"mappedArray"
+						"ua:type":"mappedArray",
+						"items":"{{ n_JljYx.outputs.result.lookupFields[0] }}"
 					}
 				}
 			},
@@ -614,29 +615,29 @@
 					"type":"object",
 					"properties":{
 						"final_result":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{
 								"lookupOutput":{
-									"additionalProperties":false,
+									"type":"object",
 									"properties":{},
-									"title":"Lookup Output",
-									"type":"object"
+									"additionalProperties":false,
+									"title":"Lookup Output"
 								},
 								"message":{
-									"title":"Message",
-									"type":"string"
+									"type":"string",
+									"title":"Message"
 								},
 								"missingOptionalFields":{
+									"type":"array",
 									"items":{
 										"type":"string"
 									},
-									"title":"Missing Optional Fields",
-									"type":"array"
+									"title":"Missing Optional Fields"
 								}
 							},
-							"required":[],
+							"additionalProperties":false,
 							"title":"Final Result",
-							"type":"object"
+							"required":[]
 						}
 					},
 					"required":[]
@@ -650,29 +651,29 @@
 					"type":"object",
 					"properties":{
 						"final_result":{
-							"additionalProperties":false,
+							"type":"object",
 							"properties":{
 								"lookupOutput":{
-									"additionalProperties":false,
+									"type":"object",
 									"properties":{},
-									"title":"Lookup Output",
-									"type":"object"
+									"additionalProperties":false,
+									"title":"Lookup Output"
 								},
 								"message":{
-									"title":"Message",
-									"type":"string"
+									"type":"string",
+									"title":"Message"
 								},
 								"missingOptionalFields":{
+									"type":"array",
 									"items":{
 										"type":"string"
 									},
-									"title":"Missing Optional Fields",
-									"type":"array"
+									"title":"Missing Optional Fields"
 								}
 							},
-							"required":[],
+							"additionalProperties":false,
 							"title":"Final Result",
-							"type":"object"
+							"required":[]
 						}
 					},
 					"required":[]
@@ -699,11 +700,11 @@
 			"inputs":{
 				"filters":[
 					{
+						"property":"{{ n_S9ruW.outputs.result.canExecute }}",
 						"filter":{
 							"operator":"EQUAL",
 							"value":"true"
-						},
-						"property":"{{ n_S9ruW.outputs.result.canExecute }}"
+						}
 					}
 				],
 				"operator":"AND"
@@ -728,71 +729,71 @@
 			"index":10,
 			"inputs":{
 				"output":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
-						"filter":{
-							"additionalProperties":false,
-							"properties":{},
-							"title":"Filter",
-							"type":"object"
+						"type":{
+							"type":"string",
+							"title":"type"
 						},
 						"lookupType":{
-							"title":"lookupType",
-							"type":"string"
+							"type":"string",
+							"title":"lookupType"
 						},
-						"message":{
-							"title":"Message",
-							"type":"string"
+						"options":{
+							"type":"object",
+							"title":"options"
+						},
+						"filter":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Filter"
 						},
 						"missingOptionalFields":{
+							"type":"array",
 							"items":{
 								"type":"string"
 							},
-							"title":"Missing Optional Fields",
-							"type":"array"
+							"title":"Missing Optional Fields"
 						},
-						"options":{
-							"title":"options",
-							"type":"object"
-						},
-						"type":{
-							"title":"type",
-							"type":"string"
+						"message":{
+							"type":"string",
+							"title":"Message"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"input":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
-						"additionalInputs":{
-							"additionalProperties":false,
+						"data":{
+							"type":"object",
 							"properties":{},
-							"title":"Additional Inputs",
-							"type":"object"
+							"additionalProperties":false,
+							"title":"Data"
 						},
 						"connectionId":{
-							"title":"Connection Id",
-							"type":"string"
+							"type":"string",
+							"title":"Connection Id"
 						},
-						"data":{
-							"additionalProperties":false,
+						"additionalInputs":{
+							"type":"object",
 							"properties":{},
-							"title":"Data",
-							"type":"object"
+							"additionalProperties":false,
+							"title":"Additional Inputs"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				},
 				"code":"if (!binding.hasVariable(\"data\")) {\n    return [\n        type                 : null,\n        lookupType           : null,\n        options              : null,\n        filter               : null,\n        missingOptionalFields: [],\n        message              : null\n    ]\n}\n\ndef safeAdditionalInputs = (binding.hasVariable(\"additionalInputs\") && additionalInputs) ? additionalInputs : [:]\n\n// ── Resolve any value recursively ─────────────────────────────────────────────\ndef resolveValue(value, connectionId, additionalInputs) {\n    if (value instanceof Map) {\n        def resolved = [:]\n        value.each { k, v ->\n            resolved[k.toString()] = resolveValue(v, connectionId, additionalInputs)\n        }\n        return resolved\n    }\n\n    if (value instanceof List) {\n        return value.collect { item -> resolveValue(item, connectionId, additionalInputs) }\n    }\n\n    String val = value.toString()\n\n    def matcher = val =~ /\\{\\{\\s*([\\w.]+)\\s*\\}\\}/\n    if (matcher.matches()) {\n        String path  = matcher[0][1]\n        def keys     = path.split(\"\\\\.\").toList()\n        def resolved = additionalInputs\n\n        for (String k : keys) {\n            if (resolved instanceof Map && resolved.containsKey(k)) {\n                resolved = resolved[k]\n            } else {\n                resolved = null\n                break\n            }\n        }\n        return resolved\n    }\n\n    return val\n}\n\n// ── Resolve options ───────────────────────────────────────────────────────────\ndef payload        = data.payload\ndef resolvedOptions = null\ndef resolvedFilter  = null\n\nif (payload?.options) {\n    resolvedOptions = [:]\n    payload.options.each { key, value ->\n        if (key.toString() == \"connectionId\") {\n            resolvedOptions[\"connectionId\"] = connectionId.toString()\n        } else {\n            resolvedOptions[key.toString()] = resolveValue(value, connectionId, safeAdditionalInputs)\n        }\n    }\n}\n\nif (payload?.filter) {\n    resolvedFilter = resolveValue(payload.filter, connectionId, safeAdditionalInputs)\n}\n\nreturn [\n    type                 : data.type?.toString(),\n    lookupType           : data.lookupType?.toString(),\n    options              : resolvedOptions ?: [:],\n    filter               : resolvedFilter,\n    missingOptionalFields: data.missingOptionalFields ?: [],\n    message              : data.message ?: \"\"\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
-					"additionalInputs":"{{ n_qxoq2.outputs.inputs }}",
+					"data":"{{ n_S9ruW.outputs.result.data }}",
 					"connectionId":"{{ n_qxoq2.outputs.connectionId }}",
-					"data":"{{ n_S9ruW.outputs.result.data }}"
+					"additionalInputs":"{{ n_qxoq2.outputs.inputs }}"
 				}
 			},
 			"skip":false,
@@ -816,11 +817,11 @@
 			"inputs":{
 				"filters":[
 					{
+						"property":"{{ n_qyvD4.outputs.result.type }}",
 						"filter":{
 							"operator":"EQUAL",
 							"value":"ByQuery"
-						},
-						"property":"{{ n_qyvD4.outputs.result.type }}"
+						}
 					}
 				],
 				"operator":"AND"
@@ -846,11 +847,11 @@
 			"inputs":{
 				"filters":[
 					{
+						"property":"=len({{ n_qyvD4.outputs.result.filter }})",
 						"filter":{
 							"operator":"GT",
 							"value":"8"
-						},
-						"property":"=len({{ n_qyvD4.outputs.result.filter }})"
+						}
 					}
 				],
 				"operator":"AND"
@@ -919,9 +920,9 @@
 							"lookupOutput":"{{ n_YWlDC.outputs.response }}",
 							"message":"{{ n_qyvD4.outputs.result.message }}",
 							"missingOptionalFields":{
-								"items":"{{ n_qyvD4.outputs.result.missingOptionalFields[0] }}",
 								"source":"{{ n_qyvD4.outputs.result.missingOptionalFields }}",
-								"ua:type":"mappedArray"
+								"ua:type":"mappedArray",
+								"items":"{{ n_qyvD4.outputs.result.missingOptionalFields[0] }}"
 							}
 						}
 					}
@@ -981,9 +982,9 @@
 							"lookupOutput":"{{ n_Ws6u0.outputs.response }}",
 							"message":"{{ n_qyvD4.outputs.result.message }}",
 							"missingOptionalFields":{
-								"items":"{{ n_qyvD4.outputs.result.missingOptionalFields[0] }}",
 								"source":"{{ n_qyvD4.outputs.result.missingOptionalFields }}",
-								"ua:type":"mappedArray"
+								"ua:type":"mappedArray",
+								"items":"{{ n_qyvD4.outputs.result.missingOptionalFields[0] }}"
 							}
 						}
 					}
@@ -1054,9 +1055,9 @@
 			"tierName":"global"
 		}
 	},
-	"standard":true,
+	"standard":false,
 	"tags":[
 		"text-to-agent"
 	],
-	"version":84
+	"version":86
 }
