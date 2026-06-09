@@ -117,7 +117,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to csv",
-	"modifiedTime":1780996513108,
+	"modifiedTime":1780996651048,
 	"name":"BM Export Data to CSV",
 	"nodes":[
 		{
@@ -270,7 +270,7 @@
 							"conditions":{
 								"filters":[
 									{
-										"property":"{{ n_mC46z.outputs.fileType }}",
+										"property":"XLSX",
 										"filter":{
 											"operator":"EQUAL",
 											"value":"XLSX"
@@ -317,7 +317,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_Y8oS3@1",
@@ -327,7 +327,7 @@
 				"conditions":{
 					"filters":[
 						{
-							"property":"{{ n_mC46z.outputs.fileType }}",
+							"property":"XLSX",
 							"filter":{
 								"operator":"EQUAL",
 								"value":"XLSX"
@@ -479,7 +479,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_CH3Ou",
@@ -648,5 +648,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
