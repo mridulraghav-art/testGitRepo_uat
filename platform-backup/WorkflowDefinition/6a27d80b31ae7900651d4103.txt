@@ -30,6 +30,34 @@
 			"fromNodeId":"n_ZHlXF",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_zqh3z",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_zqh3z",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_cN32w",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_cN32w",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_OqykT",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_OqykT",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_6EcYu",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_6EcYu",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_Y8oS3",
 			"type":"next"
 		},
@@ -124,7 +152,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to csv",
-	"modifiedTime":1781019564025,
+	"modifiedTime":1781020271436,
 	"name":"BM Export Data to CSV",
 	"nodes":[
 		{
@@ -217,7 +245,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cNxc8",
@@ -236,7 +264,7 @@
 						}
 					}
 				},
-				"query":"\n    SELECT\n        COUNT(*) AS Countttt\n    FROM PLATFORM_BACKUP\n    WHERE status = 'FAILED';",
+				"query":"SELECT\n    p.assetId,\n    p.status,\n    p.commitUrl,\n    p.shortSha,\n    p.assetClass,\n    p.errorMessage,\n    DATE_FORMAT(\n        FROM_UNIXTIME(p.lastSyncTime / 1000),\n        '%d %b %Y, %H:%i'\n    ) AS lastUpdatedOn,\n    COUNT(*) OVER() AS TotalRecords\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Uy8Gi.outputs.SearchFilter || \"\"}}%'\nORDER BY p.assetId;",
 				"group":"ENTITY_REPORTING"
 			},
 			"skip":false,
@@ -269,15 +297,136 @@
 		},
 		{
 			"context":{
+				"appName":"excel_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"excel_by_unifyapps_list_to_excel_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_zqh3z",
+			"index":5,
+			"inputs":{
+				"fileName":"Test.xlsx",
+				"skipHeaderRow":false,
+				"headerType":"DYNAMIC",
+				"keepExactFileName":false,
+				"dataSource":"{{ n_ZHlXF.outputs.result }}",
+				"fileType":"xlsx",
+				"append":false,
+				"autoSizeColumns":true,
+				"dynamicHeaders":{
+					"source":"{{ n_7ylnq.outputs.result.FileHeaders }}",
+					"ua:type":"mappedArray",
+					"items":"{{ n_7ylnq.outputs.result.FileHeaders[0] }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Excel by UnifyApps",
+			"title":"Write data to New Excel file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":1628,
+				"resourceName":"utility_by_unifyapps_generate_public_url",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_cN32w",
+			"index":6,
+			"inputs":{
+				"file":"{{ n_zqh3z.outputs.fileDetails }}",
+				"expiryTime":1
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Generate public file URL",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"notification_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"notification_by_unifyapps_send_notification",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_OqykT",
+			"index":7,
+			"inputs":{
+				"cta":{
+					"name":"Download File",
+					"type":"url",
+					"url":"{{ n_cN32w.outputs.url }}",
+					"width":{
+						"custom":"400px"
+					}
+				},
+				"receiver":"=SPLITBY({{ __RUN__.outputs.userId }},\",\")",
+				"receiverType":"USER",
+				"module":"automation",
+				"eventType":"workflow_alert",
+				"applicationId":"greif-bom-validator-application",
+				"notificationPreviewTime":5,
+				"content":{
+					"templateId":"e_export_entity_template",
+					"input_schema":{
+						"fileUrl":"{{ n_cN32w.outputs.url }}"
+					}
+				},
+				"tags":[
+					"alerts"
+				]
+			},
+			"skip":false,
+			"subTitle":"Notification by UnifyApps",
+			"title":"Send notification",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":950,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_6EcYu",
+			"index":8,
+			"inputs":{
+				"result":{
+					"response":"Invalid File Type"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		},
+		{
+			"context":{
 				"appName":"branch",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_Y8oS3",
-			"index":5,
+			"index":9,
 			"inputs":{
 				"branches":[
 					{
@@ -334,11 +483,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_Y8oS3@1",
-			"index":6,
+			"index":10,
 			"inputs":{
 				"name":"Branch 1",
 				"conditions":{
@@ -366,11 +515,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_DEC7b",
-			"index":7,
+			"index":11,
 			"inputs":{
 				"fileName":"Test.xlsx",
 				"skipHeaderRow":false,
@@ -399,11 +548,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_Rrw7q",
-			"index":8,
+			"index":12,
 			"inputs":{
 				"file":"{{ n_DEC7b.outputs.fileDetails }}",
 				"expiryTime":1
@@ -421,11 +570,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_y3INj",
-			"index":9,
+			"index":13,
 			"inputs":{
 				"cta":{
 					"name":"Download File",
@@ -464,11 +613,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_Y8oS3@2",
-			"index":10,
+			"index":14,
 			"inputs":{
 				"name":"Branch 2",
 				"conditions":{
@@ -496,11 +645,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_CH3Ou",
-			"index":11,
+			"index":15,
 			"inputs":{
 				"fileName":"ItemValidation.csv",
 				"delimiter":",",
@@ -529,11 +678,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_rlUgb",
-			"index":12,
+			"index":16,
 			"inputs":{
 				"file":"{{ n_CH3Ou.outputs.fileDetails }}",
 				"expiryTime":1
@@ -551,11 +700,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_yhyZe",
-			"index":13,
+			"index":17,
 			"inputs":{
 				"cta":{
 					"name":"Download File",
@@ -594,11 +743,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@default",
 			"id":"n_6Kf8j",
-			"index":14,
+			"index":18,
 			"inputs":{
 				"cta":{
 					"type":"url",
@@ -639,7 +788,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_t91AK",
-			"index":15,
+			"index":19,
 			"inputs":{
 				"result":{
 					"response":"Invalid File Type"
@@ -665,5 +814,5 @@
 		}
 	},
 	"standard":false,
-	"version":20
+	"version":21
 }
