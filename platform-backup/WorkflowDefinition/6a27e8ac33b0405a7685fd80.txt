@@ -6,46 +6,87 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_24ZPD",
+			"fromNodeId":"n_NfFWx",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_FOyOt",
+			"toNodeId":"n_nWTkL",
 			"type":"next"
 		}
 	],
 	"id":"6a27e8ac33b0405a7685fd80",
 	"lastModifiedBy":39,
 	"lcName":"rbaclocalclient permission automation8662806006",
-	"modifiedTime":1781000364868,
+	"modifiedTime":1781000370700,
 	"name":"rbacLocalclient permission automation8662806006",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2471,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_24ZPD-1",
-			"id":"_24ZPD",
-			"index":0,
+			"id":"n_NfFWx",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"cool",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						},
+						"htmlBody":{
+							"type":"string"
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2472,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_24ZPD-1",
-			"id":"_FOyOt",
-			"index":0,
+			"id":"n_nWTkL",
+			"index":2,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_cool",
+				"status":200
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +97,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
