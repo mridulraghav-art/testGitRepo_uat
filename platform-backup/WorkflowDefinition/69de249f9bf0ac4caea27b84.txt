@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780672487259,
 	"deleted":false,
-	"deployedVersion":9,
+	"deployedVersion":11,
 	"deploymentState":{
-		"deployedAt":1780685531274,
+		"deployedAt":1780831600065,
 		"deployedBy":-1,
-		"deployedDefinitionId":"6a231adbaf7ba4594d2d7c5a",
+		"deployedDefinitionId":"6a25557028d6d162e1187d63",
 		"status":"DEPLOYED",
-		"version":9,
-		"workflowVersion":15
+		"version":11,
+		"workflowVersion":19
 	},
 	"edges":[
 		{
@@ -33,6 +33,7 @@
 		"configs":[
 			{
 				"permissions":[
+					"VIEW_RUNS",
 					"V"
 				],
 				"principalType":"GLOBAL"
@@ -42,7 +43,7 @@
 	"id":"69de249f9bf0ac4caea27b84",
 	"lastModifiedBy":-1,
 	"lcName":"agent builder | skill search",
-	"modifiedTime":1780685945788,
+	"modifiedTime":1781031368616,
 	"name":"Agent Builder | Skill Search",
 	"nodes":[
 		{
@@ -59,59 +60,59 @@
 			"index":1,
 			"inputs":{
 				"result":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[
+						"skills"
+					],
 					"properties":{
 						"skills":{
+							"type":"array",
 							"items":{
-								"additionalProperties":false,
+								"type":"object",
 								"properties":{
+									"name":{
+										"type":"string",
+										"title":"Name"
+									},
+									"description":{
+										"type":"string",
+										"title":"Description"
+									},
+									"id":{
+										"type":"string",
+										"title":"Id"
+									},
 									"category":{
+										"type":"array",
 										"items":{
 											"type":"string"
 										},
-										"title":"Category",
-										"type":"array"
-									},
-									"description":{
-										"title":"Description",
-										"type":"string"
-									},
-									"id":{
-										"title":"Id",
-										"type":"string"
-									},
-									"name":{
-										"title":"Name",
-										"type":"string"
+										"title":"Category"
 									}
 								},
+								"additionalProperties":false,
 								"required":[
 									"name",
 									"description",
 									"id",
 									"category"
-								],
-								"type":"object"
+								]
 							},
-							"title":"Skills",
-							"type":"array"
+							"title":"Skills"
 						}
-					},
-					"required":[
-						"skills"
-					],
-					"type":"object"
+					}
 				},
 				"setup":{
+					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
 						"searchQuery":{
-							"title":"Search Query",
-							"type":"string"
+							"type":"string",
+							"title":"Search Query"
 						}
-					},
-					"required":[],
-					"type":"object"
+					}
 				}
 			},
 			"skip":false,
@@ -142,12 +143,12 @@
 				"includeCurrentUserPermissions":false,
 				"translationsOption":"DEFAULT",
 				"page":{
-					"limit":200,
-					"paginateBy":"OFFSET"
+					"paginateBy":"OFFSET",
+					"limit":200
 				},
-				"includeTotalCount":false,
 				"numberOfRecordsToFetch":"MULTIPLE",
-				"readThroughSessionVariables":false
+				"readThroughSessionVariables":false,
+				"includeTotalCount":false
 			},
 			"skip":false,
 			"subTitle":"Storage",
@@ -170,18 +171,18 @@
 			"inputs":{
 				"result":{
 					"skills":{
+						"source":"{{ n_hpkAg.outputs.objects }}",
+						"ua:type":"mappedArray",
 						"items":{
-							"category":{
-								"items":"{{ n_hpkAg.outputs.objects[0].properties.category[0] }}",
-								"source":"{{ n_hpkAg.outputs.objects[0].properties.category }}",
-								"ua:type":"mappedArray"
-							},
+							"name":"{{ n_hpkAg.outputs.objects[0].properties.name }}",
 							"description":"{{ n_hpkAg.outputs.objects[0].properties.description }}",
 							"id":"{{ n_hpkAg.outputs.objects[0].id }}",
-							"name":"{{ n_hpkAg.outputs.objects[0].properties.name }}"
-						},
-						"source":"{{ n_hpkAg.outputs.objects }}",
-						"ua:type":"mappedArray"
+							"category":{
+								"source":"{{ n_hpkAg.outputs.objects[0].properties.category }}",
+								"ua:type":"mappedArray",
+								"items":"{{ n_hpkAg.outputs.objects[0].properties.category[0] }}"
+							}
+						}
 					}
 				}
 			},
@@ -204,9 +205,9 @@
 			"tierName":"global"
 		}
 	},
-	"standard":true,
+	"standard":false,
 	"tags":[
 		"text-to-agent"
 	],
-	"version":17
+	"version":21
 }
