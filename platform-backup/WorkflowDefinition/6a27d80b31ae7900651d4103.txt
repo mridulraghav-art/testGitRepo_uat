@@ -124,7 +124,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to csv",
-	"modifiedTime":1781003139909,
+	"modifiedTime":1781019344902,
 	"name":"BM Export Data to CSV",
 	"nodes":[
 		{
@@ -366,7 +366,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_DEC7b",
@@ -376,7 +376,7 @@
 				"skipHeaderRow":false,
 				"headerType":"DYNAMIC",
 				"keepExactFileName":false,
-				"dataSource":"{{ n_cNxc8.outputs.objects }}",
+				"dataSource":"{{ n_ZHlXF.outputs }}",
 				"fileType":"xlsx",
 				"append":false,
 				"autoSizeColumns":true,
@@ -665,5 +665,5 @@
 		}
 	},
 	"standard":false,
-	"version":15
+	"version":16
 }
