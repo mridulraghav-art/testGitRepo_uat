@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780996107938,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1781022107656,
+		"deployedAt":1781022130297,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a283d9b2743931b614dd6fd",
+		"deployedDefinitionId":"6a283db231ae790065349a3c",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":40
+		"version":2,
+		"workflowVersion":42
 	},
 	"edges":[
 		{
@@ -67,7 +67,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to xlsx",
-	"modifiedTime":1781022127209,
+	"modifiedTime":1781022751671,
 	"name":"BM Export Data to XLSX",
 	"nodes":[
 		{
@@ -228,13 +228,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_zqh3z",
 			"index":5,
 			"inputs":{
-				"fileName":"FailedAssets",
+				"fileName":"FailedAssets.xlsx",
 				"skipHeaderRow":false,
 				"headerType":"DYNAMIC",
 				"keepExactFileName":true,
@@ -356,5 +356,5 @@
 		}
 	},
 	"standard":false,
-	"version":42
+	"version":43
 }
