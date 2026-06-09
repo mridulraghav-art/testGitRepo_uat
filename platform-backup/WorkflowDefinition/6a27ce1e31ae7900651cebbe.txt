@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780993566260,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1780993619163,
+		"deployedAt":1780993832898,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a27ce52af7ba4594dbb6197",
+		"deployedDefinitionId":"6a27cf283ad0e26b1f143617",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":1
+		"version":2,
+		"workflowVersion":2
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"6a27ce1e31ae7900651cebbe",
 	"lastModifiedBy":39,
 	"lcName":"dnd_test123",
-	"modifiedTime":1780993830968,
+	"modifiedTime":1780994086229,
 	"name":"DND_Test123",
 	"nodes":[
 		{
@@ -35,7 +35,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_J1TW5-1",
 			"id":"n_cYTxO",
@@ -58,12 +58,17 @@
 					"type":"object",
 					"additionalProperties":false,
 					"required":[
-						"sum"
+						"num1",
+						"num2"
 					],
 					"properties":{
-						"sum":{
+						"num1":{
 							"type":"integer",
-							"title":"Sum"
+							"title":"Num 1"
+						},
+						"num2":{
+							"type":"integer",
+							"title":"num2"
 						}
 					}
 				}
@@ -84,14 +89,14 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_J1TW5-1",
 			"id":"n_oAZgp",
 			"index":2,
 			"inputs":{
 				"result":{
-					"output":"{{ n_cYTxO.outputs.sum }}"
+					"output":"{{ n_cYTxO.outputs.num1 }}+{{ n_cYTxO.outputs.num2 }}"
 				}
 			},
 			"skip":false,
@@ -114,5 +119,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
