@@ -4,6 +4,15 @@
 	],
 	"createdTime":1780994177211,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1780994685815,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a27d27d31ae7900651d0bef",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_FbItR",
@@ -23,7 +32,7 @@
 	"id":"6a27d08128d6d162e1ad7d61",
 	"lastModifiedBy":39,
 	"lcName":"test_enrich",
-	"modifiedTime":1780994683758,
+	"modifiedTime":1780995649976,
 	"name":"TEST_ENRICH",
 	"nodes":[
 		{
@@ -38,7 +47,21 @@
 			"groupId":"_GrZqb-1",
 			"id":"n_FbItR",
 			"index":1,
-			"inputs":{},
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output"
+					],
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"Output"
+						}
+					}
+				}
+			},
 			"skip":false,
 			"subTitle":"Callable",
 			"title":"Trigger via automation",
@@ -62,7 +85,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_GrZqb-1",
 			"id":"n_OAtf0",
@@ -102,7 +125,9 @@
 			"id":"n_5LH1n",
 			"index":3,
 			"inputs":{
-				"result":"{{ n_OAtf0.outputs.success }}"
+				"result":{
+					"output":"{{ n_OAtf0.outputs.success }}"
+				}
 			},
 			"skip":false,
 			"subTitle":"Callable",
@@ -124,5 +149,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
