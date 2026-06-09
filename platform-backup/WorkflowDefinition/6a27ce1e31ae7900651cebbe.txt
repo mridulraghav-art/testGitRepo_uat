@@ -6,46 +6,95 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_J1TW5",
+			"fromNodeId":"n_cYTxO",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_4CuPX",
+			"toNodeId":"n_oAZgp",
 			"type":"next"
 		}
 	],
 	"id":"6a27ce1e31ae7900651cebbe",
 	"lastModifiedBy":39,
 	"lcName":"dnd_test123",
-	"modifiedTime":1780993566260,
+	"modifiedTime":1780993616325,
 	"name":"DND_Test123",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2443,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_J1TW5-1",
-			"id":"_J1TW5",
-			"index":0,
+			"id":"n_cYTxO",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output"
+					],
+					"properties":{
+						"output":{
+							"type":"integer",
+							"title":"Output"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"sum"
+					],
+					"properties":{
+						"sum":{
+							"type":"integer",
+							"title":"Sum"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2444,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_J1TW5-1",
-			"id":"_4CuPX",
-			"index":0,
+			"id":"n_oAZgp",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output":"{{ n_cYTxO.outputs.sum }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +105,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
