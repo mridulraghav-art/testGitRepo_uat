@@ -58,7 +58,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to csv",
-	"modifiedTime":1781021673642,
+	"modifiedTime":1781021963541,
 	"name":"BM Export Data to CSV",
 	"nodes":[
 		{
@@ -68,7 +68,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_Uy8Gi",
@@ -97,7 +97,7 @@
 						"Offset":{
 							"type":"number",
 							"title":"Offset",
-							"default":"1"
+							"default":"0"
 						}
 					}
 				}
@@ -123,7 +123,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_7ylnq",
@@ -161,7 +161,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cNxc8",
@@ -196,7 +196,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_ZHlXF",
@@ -219,7 +219,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_zqh3z",
@@ -228,7 +228,7 @@
 				"fileName":"FailedAssets",
 				"skipHeaderRow":false,
 				"headerType":"DYNAMIC",
-				"keepExactFileName":false,
+				"keepExactFileName":true,
 				"dataSource":"{{ n_ZHlXF.outputs.result }}",
 				"fileType":"xlsx",
 				"append":false,
@@ -252,7 +252,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cN32w",
@@ -274,7 +274,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_OqykT",
@@ -317,7 +317,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_6EcYu",
@@ -347,5 +347,5 @@
 		}
 	},
 	"standard":false,
-	"version":38
+	"version":39
 }
