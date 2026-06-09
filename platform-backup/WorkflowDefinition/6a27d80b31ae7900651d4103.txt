@@ -117,7 +117,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to csv",
-	"modifiedTime":1780997020987,
+	"modifiedTime":1780997060897,
 	"name":"BM Export Data to CSV",
 	"nodes":[
 		{
@@ -127,7 +127,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_Uy8Gi",
@@ -172,7 +172,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_7ylnq",
@@ -195,10 +195,7 @@
 				"code":"import java.text.SimpleDateFormat\nimport java.util.Date\n\n// Define the exact headers in the requested order and map them to the source JSON properties\ndef columnMapping = [\n    'Asset Id': 'assetId',\n    'Status': 'status'\n]\n\nList<String> headers = columnMapping.keySet().toList()\n\nreturn [\n    FileHeaders: headers\n]",
 				"compile_static":false,
 				"captureStdOutput":false,
-				"parameters":{
-					"input":"{{ n_mC46z.outputs.records }}",
-					"TimeZone":"{{ n_mC46z.outputs.TimeZone }}"
-				}
+				"parameters":{}
 			},
 			"skip":false,
 			"subTitle":"Code by UnifyApps",
@@ -213,7 +210,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cNxc8",
@@ -233,7 +230,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_Y8oS3",
@@ -294,7 +291,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_Y8oS3@1",
@@ -326,7 +323,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_DEC7b",
@@ -359,7 +356,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_Rrw7q",
@@ -381,7 +378,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@1",
 			"id":"n_y3INj",
@@ -424,7 +421,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_Y8oS3@2",
@@ -456,7 +453,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_CH3Ou",
@@ -489,7 +486,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_rlUgb",
@@ -511,7 +508,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@2",
 			"id":"n_yhyZe",
@@ -554,7 +551,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Y8oS3@_8JT2w-1@default",
 			"id":"n_6Kf8j",
@@ -595,7 +592,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_t91AK",
@@ -625,5 +622,5 @@
 		}
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
