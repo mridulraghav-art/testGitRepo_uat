@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780993771850,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_HH9V3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_QT60b",
+			"type":"next"
+		}
+	],
+	"id":"6a27ceeb28d6d162e1abfc4a",
+	"lastModifiedBy":39,
+	"lcName":"slack test",
+	"modifiedTime":1780993771850,
+	"name":"slack test",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_HH9V3-1",
+			"id":"_HH9V3",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_HH9V3-1",
+			"id":"_QT60b",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
