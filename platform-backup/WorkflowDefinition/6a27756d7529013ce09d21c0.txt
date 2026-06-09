@@ -4,45 +4,150 @@
 	],
 	"createdTime":1780970861867,
 	"deleted":false,
+	"description":"Receives two numeric inputs via a callable trigger, subtracts number2 from number1 using a Groovy code node, and returns the result.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_StArT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_Cd001",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Cd001",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Sp001",
 			"type":"next"
 		}
 	],
 	"id":"6a27756d7529013ce09d21c0",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1780970861867,
-	"name":"Untitled workflow",
+	"lcName":"subtract two numbers",
+	"modifiedTime":1780970921267,
+	"name":"Subtract Two Numbers",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_StArT",
 			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"result"
+					],
+					"properties":{
+						"result":{
+							"type":"number",
+							"title":"Result"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"number1",
+						"number2"
+					],
+					"properties":{
+						"number1":{
+							"type":"number",
+							"title":"Number 1"
+						},
+						"number2":{
+							"type":"number",
+							"title":"Number 2"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_Cd001",
 			"index":2,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"properties":{
+						"result":{
+							"type":"number",
+							"title":"Result"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"properties":{
+						"number1":{
+							"type":"number",
+							"title":"Number 1"
+						},
+						"number2":{
+							"type":"number",
+							"title":"Number 2"
+						}
+					}
+				},
+				"code":"result = [result: number1 - number2]",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters_loader":{
+					"number1":"{{ n_StArT.outputs.number1 }}",
+					"number2":"{{ n_StArT.outputs.number2 }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code",
+			"title":"Execute Groovy code",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_Sp001",
+			"index":3,
+			"inputs":{
+				"result":{
+					"result":"{{ n_Cd001.outputs.result.result }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +161,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
