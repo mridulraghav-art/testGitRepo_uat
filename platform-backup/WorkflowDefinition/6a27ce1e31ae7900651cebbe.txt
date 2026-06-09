@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1780993566260,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_J1TW5",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_4CuPX",
+			"type":"next"
+		}
+	],
+	"id":"6a27ce1e31ae7900651cebbe",
+	"lastModifiedBy":39,
+	"lcName":"dnd_test123",
+	"modifiedTime":1780993566260,
+	"name":"DND_Test123",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_J1TW5-1",
+			"id":"_J1TW5",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_J1TW5-1",
+			"id":"_4CuPX",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
