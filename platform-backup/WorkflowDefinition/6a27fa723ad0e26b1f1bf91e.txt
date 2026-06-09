@@ -6,46 +6,87 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_EAyeS",
+			"fromNodeId":"n_yW9bv",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_kdc1D",
+			"toNodeId":"n_czzTF",
 			"type":"next"
 		}
 	],
 	"id":"6a27fa723ad0e26b1f1bf91e",
 	"lastModifiedBy":39,
 	"lcName":"rbaclocalcollection permission automation8443977079",
-	"modifiedTime":1781004914202,
+	"modifiedTime":1781004923605,
 	"name":"rbacLocalcollection permission automation8443977079",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2489,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_EAyeS-1",
-			"id":"_EAyeS",
-			"index":0,
+			"id":"n_yW9bv",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"cool",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						},
+						"htmlBody":{
+							"type":"string"
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2490,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_EAyeS-1",
-			"id":"_kdc1D",
-			"index":0,
+			"id":"n_czzTF",
+			"index":2,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_cool",
+				"status":200
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +97,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
