@@ -47,14 +47,14 @@
 			"fromNodeId":"n_YnQYT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_6j2pK",
+			"toNodeId":"n_qNTeD",
 			"type":"next"
 		}
 	],
 	"id":"6a27c75333b0405a768387e6",
 	"lastModifiedBy":39,
 	"lcName":"example",
-	"modifiedTime":1780991894612,
+	"modifiedTime":1780991918441,
 	"name":"example",
 	"nodes":[
 		{
@@ -64,7 +64,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_TiUSw-1",
 			"id":"n_NUZQU",
@@ -86,7 +86,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_TiUSw-1",
 			"id":"n_YnQYT",
@@ -199,17 +199,23 @@
 		},
 		{
 			"context":{
-				"appName":"stop"
+				"appName":"callables",
+				"resourceVersion":2444,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_TiUSw-1",
-			"id":"n_6j2pK",
+			"id":"n_qNTeD",
 			"index":5,
+			"inputs":{
+				"result":"nsdfio"
+			},
 			"skip":false,
-			"subTitle":"Stop",
-			"title":"Stop",
+			"subTitle":"Callable",
+			"title":"Respond to automation",
 			"type":"STOP"
 		}
 	],
@@ -227,5 +233,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
