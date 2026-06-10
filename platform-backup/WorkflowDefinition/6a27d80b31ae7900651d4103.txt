@@ -53,11 +53,11 @@
 			"fromNodeId":"n_eNBFg",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_EpGCK",
+			"toNodeId":"n_MnH7e",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_EpGCK",
+			"fromNodeId":"n_MnH7e",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_cg7T0",
@@ -74,11 +74,18 @@
 			"fromNodeId":"n_cx9Qm",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_8Qfq9",
+			"toNodeId":"n_nhc9U",
 			"type":"loop"
 		},
 		{
-			"fromNodeId":"n_8Qfq9",
+			"fromNodeId":"n_nhc9U",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_oOXYd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_oOXYd",
 			"name":"loopback",
 			"priority":0,
 			"skip":false,
@@ -117,7 +124,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to xlsx",
-	"modifiedTime":1781085901239,
+	"modifiedTime":1781086030632,
 	"name":"BM Export Data to XLSX",
 	"nodes":[
 		{
@@ -344,17 +351,48 @@
 		{
 			"context":{
 				"appName":"csv_by_unifyapps",
+				"resourceVersion":2488,
+				"resourceName":"csv_by_unifyapps_list_to_csv_file",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
-			"id":"n_EpGCK",
+			"id":"n_MnH7e",
 			"index":7,
+			"inputs":{
+				"fileName":"Test.csv",
+				"delimiter":",",
+				"staticHeaders":[
+					{
+						"key":"assetClass",
+						"value":"{{ n_cNxc8.outputs.objects[0].objects.assetClass }}"
+					},
+					{
+						"key":"assetId",
+						"value":"{{ n_cNxc8.outputs.objects[0].objects.assetId }}"
+					},
+					{
+						"key":"errorMessage",
+						"value":"{{ n_cNxc8.outputs.objects[0].objects.errorMessage }}"
+					}
+				],
+				"skipHeaderRow":false,
+				"headerType":"DYNAMIC",
+				"encoding":"UTF-8",
+				"keepExactFileName":true,
+				"dataSource":"{{ n_ZHlXF.outputs.result }}",
+				"fileType":"csv",
+				"dynamicHeaders":{
+					"source":"{{ n_7ylnq.outputs.result.FileHeaders }}",
+					"ua:type":"mappedArray",
+					"items":"{{ n_7ylnq.outputs.result.FileHeaders[0] }}"
+				}
+			},
 			"skip":false,
 			"subTitle":"CSV by UnifyApps",
-			"title":"Select an action",
+			"title":"Write data to CSV file",
 			"type":"ACTION"
 		},
 		{
@@ -404,14 +442,63 @@
 			"type":"LOOP"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":2176,
+				"resourceName":"analytics_by_unifyapps_execute_query",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
-			"id":"n_8Qfq9",
+			"id":"n_nhc9U",
 			"index":10,
+			"inputs":{
+				"outputSchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"objects":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Object"
+						}
+					}
+				},
+				"query":"SELECT\n    p.assetId,\n    p.status,\n    p.commitUrl,\n    p.shortSha,\n    p.assetClass,\n    p.errorMessage,\n    DATE_FORMAT(\n        FROM_UNIXTIME(p.lastSyncTime / 1000),\n        '%d %b %Y, %H:%i'\n    ) AS lastUpdatedOn,\n    COUNT(*) OVER() AS TotalRecords\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Uy8Gi.outputs.SearchFilter }}%'\nORDER BY p.lastSyncTime LIMIT 50 OFFSET {{ n_cx9Qm.outputs.index }};",
+				"group":"ENTITY_REPORTING"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"csv_by_unifyapps",
+				"resourceVersion":2492,
+				"resourceName":"csv_by_unifyapps_append_list_to_csv_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_cx9Qm@_8JT2w-1@l",
+			"id":"n_oOXYd",
+			"index":11,
+			"inputs":{
+				"fileDetails":"{{ n_MnH7e.outputs.fileDetails }}",
+				"delimiter":",",
+				"skipHeaderRow":false,
+				"headerType":"STATIC",
+				"encoding":"UTF-8"
+			},
+			"skip":false,
+			"subTitle":"CSV by UnifyApps",
+			"title":"Append data to CSV file",
 			"type":"ACTION"
 		},
 		{
@@ -426,7 +513,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_xFmMJ",
-			"index":11,
+			"index":12,
 			"inputs":{
 				"fileName":"Test.csv",
 				"delimiter":",",
@@ -473,7 +560,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cN32w",
-			"index":12,
+			"index":13,
 			"inputs":{
 				"file":"{{ n_zqh3z.outputs.fileDetails }}",
 				"expiryTime":1
@@ -495,7 +582,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_OqykT",
-			"index":13,
+			"index":14,
 			"inputs":{
 				"cta":{
 					"name":"Download File",
@@ -538,7 +625,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_6EcYu",
-			"index":14,
+			"index":15,
 			"inputs":{
 				"result":{
 					"response":"Invalid File Type"
@@ -564,5 +651,5 @@
 		}
 	},
 	"standard":false,
-	"version":50
+	"version":51
 }
