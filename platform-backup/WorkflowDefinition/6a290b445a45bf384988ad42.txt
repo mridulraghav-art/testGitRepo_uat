@@ -25,14 +25,36 @@
 			"fromNodeId":"n_5ANtT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_gCkEb",
+			"toNodeId":"n_n9YFX",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_n9YFX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_FPmTb",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_FPmTb",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_n9YFX",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_n9YFX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BVlip",
 			"type":"next"
 		}
 	],
 	"id":"6a290b445a45bf384988ad42",
 	"lastModifiedBy":39,
 	"lcName":"h",
-	"modifiedTime":1781076457905,
+	"modifiedTime":1781076593357,
 	"name":"h",
 	"nodes":[
 		{
@@ -142,6 +164,29 @@
 		},
 		{
 			"context":{
+				"appName":"loop",
+				"resourceVersion":64,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_QiykJ-1",
+			"id":"n_n9YFX",
+			"index":3,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_7FAFQ.outputs.body.rcedxs }}",
+				"captureIterations":true
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
 				"appName":"variable_by_unifyapps",
 				"resourceVersion":1653,
 				"resourceName":"variable_by_unifyapps_update_variables",
@@ -150,17 +195,17 @@
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
-			"groupId":"_QiykJ-1",
-			"id":"n_gCkEb",
-			"index":3,
+			"groupId":"n_n9YFX@_QiykJ-1@l",
+			"id":"n_FPmTb",
+			"index":4,
 			"inputs":{
 				"variables":[
 					{
 						"source":"{{ n_5ANtT.outputs.var }}",
 						"value":{
+							"source":"{{ n_5ANtT.outputs.var }}",
 							"ua:type":"mappedArray",
-							"items":"=sum({{ n_5ANtT.outputs.var }},1)",
-							"source":"{{ n_5ANtT.outputs.var }}"
+							"items":"=sum({{ n_n9YFX.outputs.index }},1)"
 						}
 					}
 				]
@@ -169,6 +214,21 @@
 			"subTitle":"Variable by UnifyApps",
 			"title":"Update variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_QiykJ-1",
+			"id":"n_BVlip",
+			"index":5,
+			"skip":false,
+			"subTitle":"Stop",
+			"title":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -185,5 +245,5 @@
 		}
 	},
 	"standard":false,
-	"version":9
+	"version":10
 }
