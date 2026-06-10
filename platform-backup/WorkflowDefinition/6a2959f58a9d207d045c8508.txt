@@ -11,12 +11,19 @@
 			"skip":false,
 			"toNodeId":"n_DVlZB",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_DVlZB",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_kN82F",
+			"type":"next"
 		}
 	],
 	"id":"6a2959f58a9d207d045c8508",
 	"lastModifiedBy":39,
 	"lcName":"backup manager failure report export",
-	"modifiedTime":1781095097323,
+	"modifiedTime":1781095140023,
 	"name":"Backup Manager Failure Report export",
 	"nodes":[
 		{
@@ -81,6 +88,25 @@
 			"subTitle":"Analytics by UnifyApps",
 			"title":"Export SQL Query Result",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2690,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_sdrEJ-1",
+			"id":"n_kN82F",
+			"index":3,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -97,5 +123,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
