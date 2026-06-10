@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780636796198,
 	"deleted":false,
-	"deployedVersion":4,
+	"deployedVersion":5,
 	"deploymentState":{
-		"deployedAt":1781072797531,
+		"deployedAt":1781073488473,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a29039d5420af2d73b0b804",
+		"deployedDefinitionId":"6a29065033b0405a76a6dbb5",
 		"status":"DEPLOYED",
-		"version":4,
-		"workflowVersion":26
+		"version":5,
+		"workflowVersion":34
 	},
 	"edges":[
 		{
@@ -124,7 +124,7 @@
 	"id":"694a9efb0b833d093340d404",
 	"lastModifiedBy":39,
 	"lcName":"[final] data catalog - oracledb server",
-	"modifiedTime":1781073486587,
+	"modifiedTime":1781092486850,
 	"name":"[Final] Data Catalog - OracleDB Server",
 	"nodes":[
 		{
@@ -1257,7 +1257,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_F1QMc",
@@ -1269,8 +1269,8 @@
 				"version":"-1",
 				"parameters":{
 					"Data Catalog Asset":{
-						"datacatalog_id":"{{ n_j2mlA.outputs.datacatalog_id }}",
-						"connector_id":"{{ n_j2mlA.outputs.connection_id }}",
+						"datacatalog_id":"{{ n_xnDLm.outputs.data_catalog.datacatalog_id }}",
+						"connector_id":"{{ n_xnDLm.outputs.data_catalog.connector_id }}",
 						"connector_type":"{{ n_xnDLm.outputs.data_catalog.connector_type }}",
 						"user_id":"{{ n_xnDLm.outputs.data_catalog.user_id }}",
 						"datacatalog_assets":{
@@ -1302,7 +1302,7 @@
 					}
 				}
 			},
-			"skip":true,
+			"skip":false,
 			"subTitle":"Callable",
 			"title":"Call automation",
 			"type":"CALL_WORKFLOW"
@@ -1352,5 +1352,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":34
+	"version":35
 }
