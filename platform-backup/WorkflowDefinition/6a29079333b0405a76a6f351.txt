@@ -6,7 +6,7 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_gpJ3B",
+			"fromNodeId":"n_I8iJy",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"_jSot1",
@@ -16,20 +16,24 @@
 	"id":"6a29079333b0405a76a6f351",
 	"lastModifiedBy":39,
 	"lcName":"geetest2",
-	"modifiedTime":1781073811249,
+	"modifiedTime":1781077652469,
 	"name":"Geetest2",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_gpJ3B-1",
-			"id":"_gpJ3B",
-			"index":0,
+			"id":"n_I8iJy",
+			"index":1,
 			"skip":false,
+			"subTitle":"Callable",
 			"title":"Select a trigger event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
@@ -39,13 +43,16 @@
 			"fallbackMode":"STOP",
 			"groupId":"_gpJ3B-1",
 			"id":"_jSot1",
-			"index":0,
+			"index":2,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +63,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
