@@ -1,48 +1,580 @@
 {
 	"appsUsed":[
-		
+		"github",
+		"gmail",
+		"slack"
 	],
 	"createdTime":1781089085367,
 	"deleted":false,
+	"description":"Triggers when a new GitHub issue is opened, fetches full issue details, notifies the appropriate Slack channels and email recipients based on whether the issue is a bug, sends DMs to all assignees, adds a comment on the issue, and marks it as notified.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_START",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_GetIs",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GetIs",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CrVar",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CrVar",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfBug",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IfBug",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SlkBg",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_IfBug",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SlkGn",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SlkBg",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GmlEn",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GmlEn",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpVar",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SlkGn",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GmlPr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GmlPr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpVar",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpVar",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LoopA",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LoopA",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SlkDm",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_LoopA",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GhCmt",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SlkDm",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LoopA",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GhCmt",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Delay",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Delay",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GhLbl",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GhLbl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SlkDv",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SlkDv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StopW",
 			"type":"next"
 		}
 	],
 	"id":"6a29433d0d067e7694ff88cb",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781089085367,
-	"name":"Untitled workflow",
+	"lcName":"github issue tracker & notifier",
+	"modifiedTime":1781089226976,
+	"name":"GitHub Issue Tracker & Notifier",
 	"nodes":[
 		{
+			"context":{
+				"appName":"github",
+				"connectionId":"691ff89847139216e1f9c4f0",
+				"resourceName":"github_on_new_issue_polling"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_START",
 			"index":1,
+			"inputs":{
+				"owner":"<YOUR_GITHUB_OWNER>",
+				"repo":"<YOUR_GITHUB_REPO>",
+				"interval":30,
+				"batchSize":100
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"GitHub",
+			"title":"New issue polling",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"github",
+				"connectionId":"691ff89847139216e1f9c4f0",
+				"resourceName":"github_get_issue",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_GetIs",
 			"index":2,
+			"inputs":{
+				"owner":"<YOUR_GITHUB_OWNER>",
+				"issue_number":"{{ n_START.outputs.number }}",
+				"repo":"<YOUR_GITHUB_REPO>"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"GitHub",
+			"title":"Get issue",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_CrVar",
+			"index":3,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"issueTitle",
+						"issueUrl",
+						"labelList",
+						"reporterUsername"
+					],
+					"properties":{
+						"issueTitle":{
+							"type":"string",
+							"title":"Issue Title"
+						},
+						"issueUrl":{
+							"type":"string",
+							"title":"Issue URL"
+						},
+						"labelList":{
+							"type":"string",
+							"title":"Label List"
+						},
+						"reporterUsername":{
+							"type":"string",
+							"title":"Reporter Username"
+						}
+					}
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"issueTitle":{
+							"type":"string",
+							"title":"Issue Title"
+						},
+						"issueUrl":{
+							"type":"string",
+							"title":"Issue URL"
+						},
+						"labelList":{
+							"type":"string",
+							"title":"Label List"
+						},
+						"reporterUsername":{
+							"type":"string",
+							"title":"Reporter Username"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Store issue variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_IfBug",
+			"index":4,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_GetIs.outputs.labels }}",
+						"filter":{
+							"operator":"CONTAINS",
+							"value":"bug"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Is bug label?",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"connectionId":"66d345bdffb4ff07d2cae019",
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfBug@root_id-1@y",
+			"id":"n_SlkBg",
+			"index":5,
+			"inputs":{
+				"messageType":"text",
+				"channel":"<CHANNEL_ID_FOR_bugs>",
+				"text":"🐛 New Bug Reported: {{ n_CrVar.outputs.issueTitle }} by {{ n_CrVar.outputs.reporterUsername }}. URL: {{ n_CrVar.outputs.issueUrl }}"
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Post message",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"68622a29ad572201303293da",
+				"resourceName":"gmail_send_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfBug@root_id-1@y",
+			"id":"n_GmlEn",
+			"index":6,
+			"inputs":{
+				"email_type":"text",
+				"subject":"=CONCAT(\"New Bug: \", {{ n_CrVar.outputs.issueTitle }})",
+				"to":[
+					"engineering@example.com"
+				],
+				"message":"=CONCAT(\"A new bug has been reported on GitHub.\n\nTitle: \", {{ n_CrVar.outputs.issueTitle }}, \"\nReporter: \", {{ n_CrVar.outputs.reporterUsername }}, \"\nURL: \", {{ n_CrVar.outputs.issueUrl }}, \"\nLabels: \", {{ n_CrVar.outputs.labelList }}, \"\n\nDescription:\n\", {{ n_GetIs.outputs.body }})"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Send email",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"connectionId":"66d345bdffb4ff07d2cae019",
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfBug@root_id-1@n",
+			"id":"n_SlkGn",
+			"index":7,
+			"inputs":{
+				"messageType":"text",
+				"channel":"<CHANNEL_ID_FOR_general>",
+				"text":"📋 New Issue: {{ n_CrVar.outputs.issueTitle }} by {{ n_CrVar.outputs.reporterUsername }}. URL: {{ n_CrVar.outputs.issueUrl }}"
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Post message",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"68622a29ad572201303293da",
+				"resourceName":"gmail_send_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfBug@root_id-1@n",
+			"id":"n_GmlPr",
+			"index":8,
+			"inputs":{
+				"email_type":"text",
+				"subject":"=CONCAT(\"New Issue: \", {{ n_CrVar.outputs.issueTitle }})",
+				"to":[
+					"product@example.com"
+				],
+				"message":"=CONCAT(\"A new issue has been created on GitHub.\n\nTitle: \", {{ n_CrVar.outputs.issueTitle }}, \"\nReporter: \", {{ n_CrVar.outputs.reporterUsername }}, \"\nURL: \", {{ n_CrVar.outputs.issueUrl }}, \"\nLabels: \", {{ n_CrVar.outputs.labelList }}, \"\n\nDescription:\n\", {{ n_GetIs.outputs.body }})"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Send email",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_UpVar",
+			"index":9,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_CrVar.outputs.issueTitle }}",
+						"value":"{{ n_GetIs.outputs.title }}"
+					},
+					{
+						"source":"{{ n_CrVar.outputs.issueUrl }}",
+						"value":"{{ n_GetIs.outputs.html_url }}"
+					},
+					{
+						"source":"{{ n_CrVar.outputs.reporterUsername }}",
+						"value":"{{ n_GetIs.outputs.user.login }}"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set notificationSent",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_LoopA",
+			"index":10,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_GetIs.outputs.assignees }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each assignee",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"connectionId":"66d345bdffb4ff07d2cae019",
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_LoopA@root_id-1@l",
+			"id":"n_SlkDm",
+			"index":11,
+			"inputs":{
+				"messageType":"text",
+				"channel":"{{ n_LoopA.outputs.item.login }}",
+				"text":"You have been assigned to issue: {{ n_CrVar.outputs.issueTitle }}. Check it here: {{ n_CrVar.outputs.issueUrl }}"
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Post message",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"github",
+				"connectionId":"691ff89847139216e1f9c4f0",
+				"resourceName":"github_create_issue_comment",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_GhCmt",
+			"index":12,
+			"inputs":{
+				"owner":"<YOUR_GITHUB_OWNER>",
+				"issue_number":"{{ n_GetIs.outputs.number }}",
+				"repo":"<YOUR_GITHUB_REPO>",
+				"body":"✅ Notifications have been sent to all assignees and relevant teams."
+			},
+			"skip":false,
+			"subTitle":"GitHub",
+			"title":"Create comment",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"delay",
+				"resourceName":"delay_for",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_Delay",
+			"index":13,
+			"inputs":{
+				"duration":5,
+				"unit":"SECONDS"
+			},
+			"skip":false,
+			"subTitle":"Delay",
+			"title":"Wait 5 seconds",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"github",
+				"connectionId":"691ff89847139216e1f9c4f0",
+				"resourceName":"github_update_issue",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_GhLbl",
+			"index":14,
+			"inputs":{
+				"owner":"<YOUR_GITHUB_OWNER>",
+				"issue_number":"{{ n_GetIs.outputs.number }}",
+				"repo":"<YOUR_GITHUB_REPO>",
+				"labels":[
+					"notified"
+				]
+			},
+			"skip":false,
+			"subTitle":"GitHub",
+			"title":"Update issue",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"connectionId":"66d345bdffb4ff07d2cae019",
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_SlkDv",
+			"index":15,
+			"inputs":{
+				"messageType":"text",
+				"channel":"<CHANNEL_ID_FOR_dev-ops>",
+				"text":"Issue #{{ n_GetIs.outputs.number }} '{{ n_CrVar.outputs.issueTitle }}' has been fully processed and all notifications sent."
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Post message",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StopW",
+			"index":16,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +588,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
