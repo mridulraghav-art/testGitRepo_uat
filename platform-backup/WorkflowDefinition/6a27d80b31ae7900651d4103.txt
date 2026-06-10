@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780996107938,
 	"deleted":false,
-	"deployedVersion":5,
+	"deployedVersion":6,
 	"deploymentState":{
-		"deployedAt":1781071805417,
+		"deployedAt":1781074526491,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a28ffbd5a45bf38498853d1",
+		"deployedDefinitionId":"6a290a5e33b0405a76a75389",
 		"status":"DEPLOYED",
-		"version":5,
-		"workflowVersion":46
+		"version":6,
+		"workflowVersion":47
 	},
 	"edges":[
 		{
@@ -46,6 +46,13 @@
 			"fromNodeId":"n_zqh3z",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_xFmMJ",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_xFmMJ",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_cN32w",
 			"type":"next"
 		},
@@ -67,7 +74,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to xlsx",
-	"modifiedTime":1781074522911,
+	"modifiedTime":1781083586945,
 	"name":"BM Export Data to XLSX",
 	"nodes":[
 		{
@@ -228,7 +235,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_zqh3z",
@@ -258,6 +265,53 @@
 		},
 		{
 			"context":{
+				"appName":"csv_by_unifyapps",
+				"resourceVersion":2488,
+				"resourceName":"csv_by_unifyapps_list_to_csv_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_xFmMJ",
+			"index":6,
+			"inputs":{
+				"fileName":"Test.csv",
+				"delimiter":",",
+				"staticHeaders":[
+					{
+						"key":"assetClass",
+						"value":"{{ n_cNxc8.outputs.objects[0].objects.assetClass }}"
+					},
+					{
+						"key":"assetId",
+						"value":"{{ n_cNxc8.outputs.objects[0].objects.assetId }}"
+					},
+					{
+						"key":"errorMessage",
+						"value":"{{ n_cNxc8.outputs.objects[0].objects.errorMessage }}"
+					}
+				],
+				"skipHeaderRow":false,
+				"headerType":"DYNAMIC",
+				"encoding":"UTF-8",
+				"keepExactFileName":true,
+				"dataSource":"{{ n_ZHlXF.outputs.result }}",
+				"fileType":"csv",
+				"dynamicHeaders":{
+					"source":"{{ n_7ylnq.outputs.result.FileHeaders }}",
+					"ua:type":"mappedArray",
+					"items":"{{ n_7ylnq.outputs.result.FileHeaders[0] }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"CSV by UnifyApps",
+			"title":"Write data to CSV file",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"utility_by_unifyapps",
 				"resourceVersion":1628,
 				"resourceName":"utility_by_unifyapps_generate_public_url",
@@ -268,7 +322,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cN32w",
-			"index":6,
+			"index":7,
 			"inputs":{
 				"file":"{{ n_zqh3z.outputs.fileDetails }}",
 				"expiryTime":1
@@ -290,7 +344,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_OqykT",
-			"index":7,
+			"index":8,
 			"inputs":{
 				"cta":{
 					"name":"Download File",
@@ -333,7 +387,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_6EcYu",
-			"index":8,
+			"index":9,
 			"inputs":{
 				"result":{
 					"response":"Invalid File Type"
@@ -359,5 +413,5 @@
 		}
 	},
 	"standard":false,
-	"version":47
+	"version":48
 }
