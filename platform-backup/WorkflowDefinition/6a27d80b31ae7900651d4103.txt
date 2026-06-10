@@ -46,6 +46,13 @@
 			"fromNodeId":"n_zqh3z",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_eNBFg",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_eNBFg",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_EpGCK",
 			"type":"next"
 		},
@@ -110,7 +117,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to xlsx",
-	"modifiedTime":1781085103409,
+	"modifiedTime":1781085901239,
 	"name":"BM Export Data to XLSX",
 	"nodes":[
 		{
@@ -301,15 +308,50 @@
 		},
 		{
 			"context":{
-				"appName":"csv_by_unifyapps",
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":2176,
+				"resourceName":"analytics_by_unifyapps_execute_query",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
-			"id":"n_EpGCK",
+			"id":"n_eNBFg",
 			"index":6,
+			"inputs":{
+				"outputSchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"objects":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Object"
+						}
+					}
+				},
+				"query":"SELECT\n    p.assetId,\n    p.status,\n    p.commitUrl,\n    p.shortSha,\n    p.assetClass,\n    p.errorMessage,\n    DATE_FORMAT(\n        FROM_UNIXTIME(p.lastSyncTime / 1000),\n        '%d %b %Y, %H:%i'\n    ) AS lastUpdatedOn,\n    COUNT(*) OVER() AS TotalRecords\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Uy8Gi.outputs.SearchFilter }}%'\nORDER BY p.lastSyncTime LIMIT 50 OFFSET 0;",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Execute Analytics SQL Query",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"csv_by_unifyapps",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_EpGCK",
+			"index":7,
 			"skip":false,
 			"subTitle":"CSV by UnifyApps",
 			"title":"Select an action",
@@ -323,11 +365,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cg7T0",
-			"index":7,
+			"index":8,
 			"inputs":{
 				"query":"SELECT COUNT(*) AS TotalRecords\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Uy8Gi.outputs.Backupid }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Uy8Gi.outputs.SearchFilter }}%';",
 				"group":"ENTITY_REPORTING"
@@ -349,9 +391,10 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cx9Qm",
-			"index":8,
+			"index":9,
 			"inputs":{
 				"start":0,
+				"limit":"Math.ceil({{ n_cg7T0.outputs.objects[0].columns.TotalRecords }}/50)",
 				"step":1,
 				"captureIterations":false
 			},
@@ -362,11 +405,11 @@
 		},
 		{
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
 			"id":"n_8Qfq9",
-			"index":9,
+			"index":10,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
@@ -383,7 +426,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_xFmMJ",
-			"index":10,
+			"index":11,
 			"inputs":{
 				"fileName":"Test.csv",
 				"delimiter":",",
@@ -430,7 +473,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cN32w",
-			"index":11,
+			"index":12,
 			"inputs":{
 				"file":"{{ n_zqh3z.outputs.fileDetails }}",
 				"expiryTime":1
@@ -452,7 +495,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_OqykT",
-			"index":12,
+			"index":13,
 			"inputs":{
 				"cta":{
 					"name":"Download File",
@@ -495,7 +538,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_6EcYu",
-			"index":13,
+			"index":14,
 			"inputs":{
 				"result":{
 					"response":"Invalid File Type"
@@ -521,5 +564,5 @@
 		}
 	},
 	"standard":false,
-	"version":49
+	"version":50
 }
