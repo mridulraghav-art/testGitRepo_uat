@@ -4,14 +4,14 @@
 	],
 	"createdTime":1781094901489,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1781095411501,
+		"deployedAt":1781096408228,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a295bf36162f904951c6a2a",
+		"deployedDefinitionId":"6a295fd8aeb9a560a8248389",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":5
+		"version":3,
+		"workflowVersion":8
 	},
 	"edges":[
 		{
@@ -46,7 +46,7 @@
 	"id":"6a2959f58a9d207d045c8508",
 	"lastModifiedBy":39,
 	"lcName":"backup manager failure report export",
-	"modifiedTime":1781095892170,
+	"modifiedTime":1781097155286,
 	"name":"Backup Manager Failure Report export",
 	"nodes":[
 		{
@@ -94,13 +94,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
 			"id":"n_DVlZB",
 			"index":2,
 			"inputs":{
-				"fileName":"Failure _report",
+				"fileName":"Failure_report.csv",
 				"sheetName":"Sheet_0",
 				"query":"SELECT\n    p.assetClass,\n    p.assetId,\n    p.status,\n    p.errorMessage\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Jx03Q.outputs.BackupId }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Jx03Q.outputs.BackupId }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Jx03Q.outputs.Search_filter }}%'\nORDER BY p.lastSyncTime;",
 				"keepExactFileName":true,
@@ -211,5 +211,5 @@
 		}
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
