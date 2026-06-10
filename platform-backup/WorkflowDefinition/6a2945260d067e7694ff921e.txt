@@ -1,47 +1,129 @@
 {
 	"appsUsed":[
-		
+		"notion"
 	],
 	"createdTime":1781089574963,
 	"deleted":false,
+	"description":"Receives a task title and due date via callable trigger, creates a page in Notion with the provided details, and returns the URL of the created Notion page.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_StaRT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_NtCrP",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_NtCrP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpRT",
 			"type":"next"
 		}
 	],
 	"id":"6a2945260d067e7694ff921e",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781089574963,
-	"name":"Untitled workflow",
+	"lcName":"action item tracker",
+	"modifiedTime":1781089662181,
+	"name":"Action Item Tracker",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_StaRT",
 			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"pageUrl"
+					],
+					"properties":{
+						"pageUrl":{
+							"type":"string",
+							"title":"Page URL"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"taskTitle",
+						"dueDate"
+					],
+					"properties":{
+						"taskTitle":{
+							"type":"string",
+							"title":"Task Title"
+						},
+						"dueDate":{
+							"type":"string",
+							"title":"Due Date"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"notion",
+				"resourceName":"notion_create_page",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_NtCrP",
 			"index":2,
+			"inputs":{
+				"parent":{
+					"database_id":"<YOUR_NOTION_DATABASE_ID>"
+				},
+				"children":[],
+				"title":"{{ n_StaRT.outputs.taskTitle }}",
+				"content":"Due Date: {{ n_StaRT.outputs.dueDate }}"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Notion",
+			"title":"Create page",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StpRT",
+			"index":3,
+			"inputs":{
+				"result":{
+					"pageUrl":"{{ n_NtCrP.outputs.url }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
 			"type":"ACTION"
 		}
 	],
@@ -56,5 +138,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
