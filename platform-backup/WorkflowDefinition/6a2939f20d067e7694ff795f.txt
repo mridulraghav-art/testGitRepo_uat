@@ -4,45 +4,176 @@
 	],
 	"createdTime":1781086707210,
 	"deleted":false,
+	"description":"Receives a list of invoices via callable trigger, identifies overdue unpaid invoices, groups them by vendor, calculates total outstanding amount, and generates alerts for vendors with more than 3 overdue invoices.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_StrtA",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_GrvyB",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GrvyB",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StopC",
 			"type":"next"
 		}
 	],
 	"id":"6a2939f20d067e7694ff795f",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781086707210,
-	"name":"Untitled workflow",
+	"lcName":"vendor payment auditor",
+	"modifiedTime":1781086843608,
+	"name":"Vendor Payment Auditor",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_StrtA",
 			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"groupedInvoiceSummary",
+						"totalOutstandingAmount",
+						"alerts"
+					],
+					"properties":{
+						"groupedInvoiceSummary":{
+							"type":"object",
+							"title":"Grouped Invoice Summary"
+						},
+						"totalOutstandingAmount":{
+							"type":"number",
+							"title":"Total Outstanding Amount"
+						},
+						"alerts":{
+							"type":"array",
+							"title":"Alerts",
+							"items":{
+								"type":"string"
+							}
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"invoices"
+					],
+					"properties":{
+						"invoices":{
+							"type":"array",
+							"title":"Invoices",
+							"items":{
+								"type":"object",
+								"properties":{
+									"invoiceId":{
+										"type":"string"
+									},
+									"vendorName":{
+										"type":"string"
+									},
+									"invoiceAmount":{
+										"type":"number"
+									},
+									"dueDate":{
+										"type":"string"
+									},
+									"paymentStatus":{
+										"type":"string"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_GrvyB",
 			"index":2,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"properties":{
+						"groupedInvoiceSummary":{
+							"type":"object",
+							"title":"Grouped Invoice Summary"
+						},
+						"totalOutstandingAmount":{
+							"type":"number",
+							"title":"Total Outstanding Amount"
+						},
+						"alerts":{
+							"type":"array",
+							"title":"Alerts"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"properties":{
+						"invoices":{
+							"type":"array",
+							"title":"Invoices"
+						}
+					}
+				},
+				"code":"import java.time.LocalDate\nimport java.time.format.DateTimeFormatter\n\nString todayStr = '2026-06-10'\nLocalDate today = LocalDate.parse(todayStr)\nDateTimeFormatter fmt = DateTimeFormatter.ISO_LOCAL_DATE\n\nList invoiceList = invoices ?: []\n\ndouble totalOutstanding = 0.0\nMap groupedByVendor = [:]\nList alerts = []\n\nfor (def invoice : invoiceList) {\n    String status = invoice?.paymentStatus ?: ''\n    String dueDateStr = invoice?.dueDate ?: ''\n    if (status == 'unpaid' && dueDateStr) {\n        LocalDate dueDate = LocalDate.parse(dueDateStr, fmt)\n        if (dueDate.isBefore(today)) {\n            def overdueInvoice = [\n                invoiceId: invoice.invoiceId,\n                vendorName: invoice.vendorName,\n                invoiceAmount: invoice.invoiceAmount,\n                dueDate: invoice.dueDate,\n                paymentStatus: invoice.paymentStatus,\n                overdue: true\n            ]\n            totalOutstanding += (invoice.invoiceAmount ?: 0.0)\n            String vendor = invoice.vendorName ?: 'Unknown'\n            if (!groupedByVendor.containsKey(vendor)) {\n                groupedByVendor[vendor] = []\n            }\n            groupedByVendor[vendor] << overdueInvoice\n        }\n    }\n}\n\nfor (def entry : groupedByVendor.entrySet()) {\n    String vendorName = entry.key\n    List vendorInvoices = entry.value\n    int count = vendorInvoices.size()\n    if (count > 3) {\n        double vendorTotal = vendorInvoices.sum { it.invoiceAmount ?: 0.0 }\n        String alert = \"Alert: Vendor ${vendorName} has ${count} overdue invoices totaling \\$${vendorTotal}. Immediate action required.\"\n        alerts << alert\n    }\n}\n\nreturn [\n    groupedInvoiceSummary: groupedByVendor,\n    totalOutstandingAmount: totalOutstanding,\n    alerts: alerts\n]",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters_loader":{},
+				"parameters":{
+					"invoices":"{{ n_StrtA.outputs.invoices }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code",
+			"title":"Execute Groovy code",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StopC",
+			"index":3,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +187,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
