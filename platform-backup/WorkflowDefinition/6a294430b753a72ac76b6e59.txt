@@ -1,48 +1,431 @@
 {
 	"appsUsed":[
-		
+		"gcalendar",
+		"gmail"
 	],
 	"createdTime":1781089328977,
 	"deleted":false,
+	"description":"Triggers on new Google Calendar events, checks attendee count, sends appropriate Gmail notifications, and generates a Google Meet link by patching the event with conferenceData for events with 2+ attendees.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_START",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_VarCr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_VarCr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_VarUp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_VarUp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfNo",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IfNo",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_MailNo",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_MailNo",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpEnd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IfNo",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfSelf",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IfSelf",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_MailSelf",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_MailSelf",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpEnd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IfSelf",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdEv",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdEv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Loop",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Loop",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_MailAt",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_MailAt",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Loop",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Loop",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpEnd",
 			"type":"next"
 		}
 	],
 	"id":"6a294430b753a72ac76b6e59",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781089328977,
-	"name":"Untitled workflow",
+	"lcName":"google calendar meet link generator",
+	"modifiedTime":1781089545859,
+	"name":"Google Calendar Meet Link Generator",
 	"nodes":[
 		{
+			"context":{
+				"appName":"gcalendar",
+				"connectionId":"696a24bd59b08f501796e5a5",
+				"resourceName":"gcalendar_on_event_changes"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_START",
 			"index":1,
+			"inputs":{
+				"calendarId":"primary"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Google Calendar",
+			"title":"Event changed (Google Calendar)",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_VarCr",
 			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"varAttendeeCount"
+					],
+					"properties":{
+						"varAttendeeCount":{
+							"type":"number",
+							"title":"Attendee Count"
+						}
+					}
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"varAttendeeCount"
+					],
+					"properties":{
+						"varAttendeeCount":{
+							"type":"number",
+							"title":"Attendee Count"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable",
+			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_VarUp",
+			"index":3,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_VarCr.outputs.varAttendeeCount }}",
+						"value":"={{ n_START.outputs.attendees }} == null ? 0 : ARRAY_LENGTH({{ n_START.outputs.attendees }})"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Update variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_IfNo",
+			"index":4,
+			"inputs":{
+				"filters":[
+					{
+						"operator":"OR",
+						"filters":[
+							{
+								"property":"{{ n_VarCr.outputs.varAttendeeCount }}",
+								"filter":{
+									"operator":"EQUAL",
+									"value":0
+								}
+							},
+							{
+								"property":"{{ n_START.outputs.attendees }}",
+								"filter":{
+									"operator":"MISSING"
+								}
+							}
+						]
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"68f0a743bfd9f67130bd4947",
+				"resourceName":"gmail_send_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfNo@root_id-1@y",
+			"id":"n_MailNo",
+			"index":5,
+			"inputs":{
+				"email_type":"text",
+				"subject":"Event Has No Attendees",
+				"to":[
+					"{{ n_START.outputs.organizer.email }}"
+				],
+				"message":"=CONCAT(\"Your event '\", {{ n_START.outputs.summary }}, \"' has no attendees. No Google Meet link will be generated.\")"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Send email",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfNo@root_id-1@n",
+			"id":"n_IfSelf",
+			"index":6,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_VarCr.outputs.varAttendeeCount }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":1
+						}
+					},
+					{
+						"property":"{{ n_START.outputs.attendees[0].email }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":"{{ n_START.outputs.organizer.email }}"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"68f0a743bfd9f67130bd4947",
+				"resourceName":"gmail_send_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfSelf@n_IfNo@root_id-1@n@y",
+			"id":"n_MailSelf",
+			"index":7,
+			"inputs":{
+				"email_type":"text",
+				"subject":"=CONCAT(\"Personal Reminder: \", {{ n_START.outputs.summary }})",
+				"to":[
+					"{{ n_START.outputs.organizer.email }}"
+				],
+				"message":"=CONCAT(\"This event '\", {{ n_START.outputs.summary }}, \"' appears to be a personal reminder. No Google Meet link will be generated.\")"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Send email",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gcalendar",
+				"connectionId":"696a24bd59b08f501796e5a5",
+				"resourceName":"gcalendar_update_event",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfSelf@n_IfNo@root_id-1@n@n",
+			"id":"n_UpdEv",
+			"index":8,
+			"inputs":{
+				"sendUpdates":"none",
+				"eventId":"{{ n_START.outputs.id }}",
+				"calendarId":"primary",
+				"start":"{{ n_START.outputs.start.date }}",
+				"end":"{{ n_START.outputs.end.date }}"
+			},
+			"skip":false,
+			"subTitle":"Google Calendar",
+			"title":"Update event",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfSelf@n_IfNo@root_id-1@n@n",
+			"id":"n_Loop",
+			"index":9,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_START.outputs.attendees }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"68f0a743bfd9f67130bd4947",
+				"resourceName":"gmail_send_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_Loop@n_IfSelf@n_IfNo@root_id-1@n@n@l",
+			"id":"n_MailAt",
+			"index":10,
+			"inputs":{
+				"email_type":"text",
+				"subject":"=CONCAT(\"Google Meet Link for \", {{ n_START.outputs.summary }})",
+				"to":[
+					"{{ n_Loop.outputs.item.email }}"
+				],
+				"message":"=CONCAT(\"You are invited to '\", {{ n_START.outputs.summary }}, \"'. Join via Google Meet: \", {{ n_UpdEv.outputs.hangoutLink }})"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Send email",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StpEnd",
+			"index":11,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +439,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
