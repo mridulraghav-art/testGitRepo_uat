@@ -6,46 +6,106 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_RXvap",
+			"fromNodeId":"n_zUpxy",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_SncHa",
+			"toNodeId":"n_XxgAG",
 			"type":"next"
 		}
 	],
 	"id":"6a29275ca9fa534bb6e52572",
 	"lastModifiedBy":39,
 	"lcName":"ewcredw",
-	"modifiedTime":1781081948534,
+	"modifiedTime":1781082033966,
 	"name":"ewcredw",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2664,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_RXvap-1",
-			"id":"_RXvap",
-			"index":0,
+			"id":"n_zUpxy",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"product",
+						"sum"
+					],
+					"properties":{
+						"product":{
+							"type":"integer",
+							"title":"Product"
+						},
+						"sum":{
+							"type":"integer",
+							"title":"Sum"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"num1",
+						"num2"
+					],
+					"properties":{
+						"num1":{
+							"type":"integer",
+							"title":"Num 1"
+						},
+						"num2":{
+							"type":"integer",
+							"title":"Num 2"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2665,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_RXvap-1",
-			"id":"_SncHa",
-			"index":0,
+			"id":"n_XxgAG",
+			"index":2,
+			"inputs":{
+				"result":{
+					"product":"=PRODUCT({{ n_zUpxy.outputs.num1 }}, {{ n_zUpxy.outputs.num2 }})",
+					"sum":"=SUM({{ n_zUpxy.outputs.num1 }}, {{ n_zUpxy.outputs.num2 }})"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +116,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
