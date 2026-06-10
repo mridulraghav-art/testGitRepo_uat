@@ -54,7 +54,7 @@
 	"id":"6a290b445a45bf384988ad42",
 	"lastModifiedBy":39,
 	"lcName":"h",
-	"modifiedTime":1781076632018,
+	"modifiedTime":1781077576377,
 	"name":"h",
 	"nodes":[
 		{
@@ -64,7 +64,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QiykJ-1",
 			"id":"n_7FAFQ",
@@ -78,7 +78,7 @@
 							"rcedxs":{
 								"type":"array",
 								"items":{
-									"type":"integer"
+									"type":"string"
 								},
 								"title":"Rcedxs"
 							}
@@ -106,7 +106,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QiykJ-1",
 			"id":"n_n9YFX",
@@ -145,7 +145,7 @@
 						"var":{
 							"type":"array",
 							"items":{
-								"type":"integer"
+								"type":"string"
 							},
 							"title":"Var"
 						}
@@ -170,7 +170,7 @@
 						"var":{
 							"type":"array",
 							"items":{
-								"type":"integer"
+								"type":"string"
 							},
 							"title":"Var"
 						}
@@ -193,7 +193,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_n9YFX@_QiykJ-1@l",
 			"id":"n_FPmTb",
@@ -205,7 +205,7 @@
 						"value":{
 							"source":"{{ n_5ANtT.outputs.var }}",
 							"ua:type":"mappedArray",
-							"items":"=sum({{ n_n9YFX.outputs.index }},1)"
+							"items":"=sum({{ n_n9YFX.outputs.item }},1)"
 						}
 					}
 				]
@@ -245,5 +245,5 @@
 		}
 	},
 	"standard":false,
-	"version":11
+	"version":12
 }
