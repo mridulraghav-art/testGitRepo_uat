@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780996107938,
 	"deleted":false,
-	"deployedVersion":6,
+	"deployedVersion":7,
 	"deploymentState":{
-		"deployedAt":1781074526491,
+		"deployedAt":1781089279704,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a290a5e33b0405a76a75389",
+		"deployedDefinitionId":"6a2943ff04735144499cc55b",
 		"status":"DEPLOYED",
-		"version":6,
-		"workflowVersion":47
+		"version":7,
+		"workflowVersion":80
 	},
 	"edges":[
 		{
@@ -51,6 +51,13 @@
 		},
 		{
 			"fromNodeId":"n_eNBFg",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_AyTY5",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_AyTY5",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_MnH7e",
@@ -93,6 +100,13 @@
 		},
 		{
 			"fromNodeId":"n_nhc9U",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_aPVmK",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_aPVmK",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_oOXYd",
@@ -138,7 +152,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to xlsx",
-	"modifiedTime":1781089277387,
+	"modifiedTime":1781090062602,
 	"name":"BM Export Data to XLSX",
 	"nodes":[
 		{
@@ -370,17 +384,40 @@
 		},
 		{
 			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":2249,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_AyTY5",
+			"index":7,
+			"inputs":{
+				"code":"def rawData = {{ n_eNBFg.outputs.objects }}\ndef flatData = rawData.collect { row -> \n    row.columns \n}\nreturn flatData",
+				"compile_static":false,
+				"captureStdOutput":false
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"csv_by_unifyapps",
 				"resourceVersion":2488,
 				"resourceName":"csv_by_unifyapps_list_to_csv_file",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_MnH7e",
-			"index":7,
+			"index":8,
 			"inputs":{
 				"fileName":"Test.csv",
 				"delimiter":",",
@@ -402,7 +439,7 @@
 				"headerType":"DYNAMIC",
 				"encoding":"UTF-8",
 				"keepExactFileName":true,
-				"dataSource":"{{ n_ZHlXF.outputs.result }}",
+				"dataSource":"{{ n_AyTY5.outputs.result }}",
 				"fileType":"csv",
 				"dynamicHeaders":{
 					"source":"{{ n_7ylnq.outputs.result.FileHeaders }}",
@@ -427,7 +464,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cg7T0",
-			"index":8,
+			"index":9,
 			"inputs":{
 				"outputSchema":{
 					"type":"object",
@@ -460,7 +497,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_5ZeFw",
-			"index":9,
+			"index":10,
 			"inputs":{
 				"batchSize":1000,
 				"keepExactFileName":false,
@@ -484,7 +521,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_TsZUP",
-			"index":10,
+			"index":11,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -544,7 +581,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cx9Qm",
-			"index":11,
+			"index":12,
 			"inputs":{
 				"condition":{
 					"filters":[
@@ -577,7 +614,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
 			"id":"n_nhc9U",
-			"index":12,
+			"index":13,
 			"inputs":{
 				"outputSchema":{
 					"type":"object",
@@ -602,24 +639,47 @@
 		},
 		{
 			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":2249,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_cx9Qm@_8JT2w-1@l",
+			"id":"n_aPVmK",
+			"index":14,
+			"inputs":{
+				"code":"def rawData = {{ n_nhc9U.outputs.objects }}\ndef flatData = rawData.collect { row -> \n    row.columns \n}\nreturn flatData",
+				"compile_static":false,
+				"captureStdOutput":false
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"csv_by_unifyapps",
 				"resourceVersion":2492,
 				"resourceName":"csv_by_unifyapps_append_list_to_csv_file",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
 			"id":"n_oOXYd",
-			"index":13,
+			"index":15,
 			"inputs":{
 				"fileDetails":"{{ n_MnH7e.outputs.fileDetails }}",
 				"delimiter":",",
 				"skipHeaderRow":false,
 				"headerType":"DYNAMIC",
 				"encoding":"UTF-8",
-				"dataSource":"{{ n_nhc9U.outputs.objects[0].result }}",
+				"dataSource":"{{ n_nhc9U.outputs.result }}",
 				"dynamicHeaders":{
 					"source":"{{ n_7ylnq.outputs.result.FileHeaders }}",
 					"ua:type":"mappedArray",
@@ -643,7 +703,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
 			"id":"n_KUugT",
-			"index":14,
+			"index":16,
 			"inputs":{
 				"variables":[
 					{
@@ -669,7 +729,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cN32w",
-			"index":15,
+			"index":17,
 			"inputs":{
 				"file":"{{ n_zqh3z.outputs.fileDetails }}",
 				"expiryTime":1
@@ -691,7 +751,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_OqykT",
-			"index":16,
+			"index":18,
 			"inputs":{
 				"cta":{
 					"name":"Download File",
@@ -734,7 +794,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_6EcYu",
-			"index":17,
+			"index":19,
 			"inputs":{
 				"result":{
 					"response":"Invalid File Type"
@@ -760,5 +820,5 @@
 		}
 	},
 	"standard":false,
-	"version":80
+	"version":81
 }
