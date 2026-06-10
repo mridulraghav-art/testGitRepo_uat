@@ -117,7 +117,7 @@
 	"id":"694a9efb0b833d093340d404",
 	"lastModifiedBy":39,
 	"lcName":"[final] data catalog - oracledb server",
-	"modifiedTime":1781069758459,
+	"modifiedTime":1781070199938,
 	"name":"[Final] Data Catalog - OracleDB Server",
 	"nodes":[
 		{
@@ -284,7 +284,7 @@
 			"id":"n_8PT8W",
 			"index":3,
 			"inputs":{
-				"connectionIds":"{{ n_neNcf.outputs.connection_id }}",
+				"connectionIds":"{{ n_ijxyG.outputs.connection_id }}",
 				"includeCredentials":true
 			},
 			"skip":false,
@@ -753,7 +753,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"CONTINUE",
 			"groupId":"n_5k6iR@_oEXuu-1@l",
 			"id":"n_DjbKr",
@@ -805,6 +805,13 @@
 					"backOffFactor":null,
 					"captureRetries":false,
 					"enabled":false
+				},
+				"retryRetryableWorkConfig":{
+					"backOffFactor":null,
+					"captureRetries":false,
+					"count":2147483647,
+					"enabled":false,
+					"initialDelay":5000
 				},
 				"stepError":"CONTINUE",
 				"telemetryConfig":{
@@ -1276,5 +1283,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":19
+	"version":20
 }
