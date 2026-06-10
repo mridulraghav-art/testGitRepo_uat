@@ -124,7 +124,7 @@
 	"id":"694a9efb0b833d093340d404",
 	"lastModifiedBy":39,
 	"lcName":"[final] data catalog - oracledb server",
-	"modifiedTime":1781072839079,
+	"modifiedTime":1781072888325,
 	"name":"[Final] Data Catalog - OracleDB Server",
 	"nodes":[
 		{
@@ -291,7 +291,7 @@
 			"id":"n_YJN2G",
 			"index":3,
 			"inputs":{
-				"connectionIds":"68beb61bd7fae32ebbb40253"
+				"connectionIds":"{{ n_neNcf.outputs.connection_id }}"
 			},
 			"skip":false,
 			"subTitle":"Standard entities by UnifyApps",
@@ -1348,5 +1348,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":27
+	"version":28
 }
