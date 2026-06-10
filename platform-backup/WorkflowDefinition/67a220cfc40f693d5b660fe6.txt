@@ -4,14 +4,14 @@
 	],
 	"createdTime":1741599819952,
 	"deleted":false,
-	"deployedVersion":11,
+	"deployedVersion":12,
 	"deploymentState":{
-		"deployedAt":1780679060903,
+		"deployedAt":1781104136278,
 		"deployedBy":-1,
-		"deployedDefinitionId":"6a23019433b0405a760a703b",
+		"deployedDefinitionId":"6a297e085a45bf38498de6b8",
 		"status":"DEPLOYED",
-		"version":11,
-		"workflowVersion":50
+		"version":12,
+		"workflowVersion":52
 	},
 	"edges":[
 		{
@@ -407,6 +407,7 @@
 		"configs":[
 			{
 				"permissions":[
+					"VIEW_RUNS",
 					"V"
 				],
 				"principalType":"GLOBAL"
@@ -414,9 +415,9 @@
 		]
 	},
 	"id":"67a220cfc40f693d5b660fe6",
-	"lastModifiedBy":-1,
+	"lastModifiedBy":39,
 	"lcName":"fetch global tools",
-	"modifiedTime":1781104135985,
+	"modifiedTime":1781104876528,
 	"name":"Fetch Global Tools",
 	"nodes":[
 		{
@@ -3124,9 +3125,9 @@
 			"tierName":"global"
 		}
 	},
-	"standard":true,
+	"standard":false,
 	"tags":[
 		"AI Agent"
 	],
-	"version":52
+	"version":54
 }
