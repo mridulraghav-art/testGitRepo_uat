@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1781073811249,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_gpJ3B",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_jSot1",
+			"type":"next"
+		}
+	],
+	"id":"6a29079333b0405a76a6f351",
+	"lastModifiedBy":39,
+	"lcName":"geetest2",
+	"modifiedTime":1781073811249,
+	"name":"Geetest2",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_gpJ3B-1",
+			"id":"_gpJ3B",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_gpJ3B-1",
+			"id":"_jSot1",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
