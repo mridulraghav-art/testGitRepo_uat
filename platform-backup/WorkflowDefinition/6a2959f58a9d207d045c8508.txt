@@ -4,6 +4,15 @@
 	],
 	"createdTime":1781094901489,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1781095248616,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a295b508a9d207d045c9b52",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":3
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_Jx03Q",
@@ -23,7 +32,7 @@
 	"id":"6a2959f58a9d207d045c8508",
 	"lastModifiedBy":39,
 	"lcName":"backup manager failure report export",
-	"modifiedTime":1781095141350,
+	"modifiedTime":1781095403352,
 	"name":"Backup Manager Failure Report export",
 	"nodes":[
 		{
@@ -33,7 +42,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
 			"id":"n_Jx03Q",
@@ -71,7 +80,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
 			"id":"n_DVlZB",
@@ -79,7 +88,7 @@
 			"inputs":{
 				"fileName":"Failure _report",
 				"sheetName":"Sheet_0",
-				"query":"SELECT\n    p.assetId,\n    p.status,\n    p.commitUrl,\n    p.shortSha,\n    p.assetClass,\n    p.errorMessage,\n    DATE_FORMAT(\n        FROM_UNIXTIME(p.lastSyncTime / 1000),\n        '%d %b %Y, %H:%i'\n    ) AS lastUpdatedOn,\n    COUNT(*) OVER() AS TotalRecords\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Jx03Q.outputs.BackupId }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Jx03Q.outputs.BackupId }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Jx03Q.outputs.Search_filter }}%'\nORDER BY p.lastSyncTime;",
+				"query":"SELECT\n    p.assetClass,\n    p.assetId,\n    p.status,\n    p.errorMessage\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Jx03Q.outputs.BackupId }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Jx03Q.outputs.BackupId }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Jx03Q.outputs.Search_filter }}%'\nORDER BY p.lastSyncTime;",
 				"keepExactFileName":true,
 				"fileType":"CSV",
 				"group":"PLATFORM"
@@ -123,5 +132,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
