@@ -131,7 +131,7 @@
 	"id":"694a9efb0b833d093340d404",
 	"lastModifiedBy":39,
 	"lcName":"[final] data catalog - oracledb server",
-	"modifiedTime":1781073254686,
+	"modifiedTime":1781073286934,
 	"name":"[Final] Data Catalog - OracleDB Server",
 	"nodes":[
 		{
@@ -292,7 +292,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_5UpBF",
@@ -1360,6 +1360,9 @@
 		}
 	],
 	"ownerUserId":39,
+	"runtimeConnectionAppNames":[
+		"oracledb"
+	],
 	"schemaReferences":[
 		
 	],
@@ -1369,6 +1372,7 @@
 		"enableVariableLogging":true,
 		"route":{
 			"default":false,
+			"headerValueTierMap":{},
 			"tierName":"global"
 		}
 	},
@@ -1376,5 +1380,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":29
+	"version":30
 }
