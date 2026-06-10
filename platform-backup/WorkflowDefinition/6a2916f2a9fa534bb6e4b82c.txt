@@ -4,6 +4,15 @@
 	],
 	"createdTime":1781077746320,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1781077824236,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a29173f5420af2d73b15a2e",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_JTfz6",
@@ -16,7 +25,7 @@
 	"id":"6a2916f2a9fa534bb6e4b82c",
 	"lastModifiedBy":39,
 	"lcName":"mdm123_automation",
-	"modifiedTime":1781077820784,
+	"modifiedTime":1781078513370,
 	"name":"MDM123_Automation",
 	"nodes":[
 		{
@@ -36,12 +45,12 @@
 					"type":"object",
 					"additionalProperties":false,
 					"required":[
-						"output"
+						"output1"
 					],
 					"properties":{
-						"output":{
+						"output1":{
 							"type":"integer",
-							"title":"Output"
+							"title":"Output1"
 						}
 					}
 				},
@@ -80,14 +89,14 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ymnB2-1",
 			"id":"n_9bRRQ",
 			"index":2,
 			"inputs":{
 				"result":{
-					"output":"{{ n_JTfz6.outputs.num1 }}+{{ n_JTfz6.outputs.Num2 }}"
+					"output1":"{{ n_JTfz6.outputs.num1 }}+{{ n_JTfz6.outputs.Num2 }}"
 				}
 			},
 			"skip":false,
@@ -110,5 +119,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
