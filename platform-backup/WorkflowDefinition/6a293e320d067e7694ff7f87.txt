@@ -22,19 +22,20 @@
 			"type":"loop"
 		},
 		{
-			"fromNodeId":"n_LpMai",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_StopW",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"n_IfPdf",
 			"name":"yes",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_SlkMs",
 			"type":"if"
+		},
+		{
+			"fromNodeId":"n_SlkMs",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LpMai",
+			"type":"next"
 		},
 		{
 			"fromNodeId":"n_IfPdf",
@@ -45,18 +46,17 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_SlkMs",
-			"name":"loopback",
+			"fromNodeId":"n_LpMai",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_LpMai",
+			"toNodeId":"n_StopW",
 			"type":"next"
 		}
 	],
 	"id":"6a293e320d067e7694ff7f87",
 	"lastModifiedBy":39,
 	"lcName":"watch gmail for pdf and notify slack",
-	"modifiedTime":1781088056232,
+	"modifiedTime":1781088118132,
 	"name":"Watch Gmail for PDF and Notify Slack",
 	"nodes":[
 		{
@@ -66,13 +66,16 @@
 				"resourceName":"gmail_on_new_email_polling"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_StaRt",
 			"index":1,
 			"inputs":{
 				"intervalType":"minutes",
+				"maxConsumedIdsStorageLimit":50,
+				"fetchAllMails":false,
+				"pageSize":500,
 				"interval":5,
 				"batchSize":5
 			},
@@ -185,6 +188,9 @@
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -198,5 +204,5 @@
 	"tags":[
 		"AI Generated"
 	],
-	"version":1
+	"version":2
 }
