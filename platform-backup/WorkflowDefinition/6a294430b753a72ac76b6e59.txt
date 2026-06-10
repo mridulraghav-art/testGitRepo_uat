@@ -37,13 +37,6 @@
 			"type":"if"
 		},
 		{
-			"fromNodeId":"n_MailNo",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_StpEnd",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"n_IfNo",
 			"name":"no",
 			"priority":0,
@@ -58,13 +51,6 @@
 			"skip":false,
 			"toNodeId":"n_MailSelf",
 			"type":"if"
-		},
-		{
-			"fromNodeId":"n_MailSelf",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_StpEnd",
-			"type":"next"
 		},
 		{
 			"fromNodeId":"n_IfSelf",
@@ -97,6 +83,20 @@
 			"type":"next"
 		},
 		{
+			"fromNodeId":"n_MailNo",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpEnd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_MailSelf",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpEnd",
+			"type":"next"
+		},
+		{
 			"fromNodeId":"n_Loop",
 			"priority":0,
 			"skip":false,
@@ -107,7 +107,7 @@
 	"id":"6a294430b753a72ac76b6e59",
 	"lastModifiedBy":39,
 	"lcName":"google calendar meet link generator",
-	"modifiedTime":1781089545859,
+	"modifiedTime":1781089888489,
 	"name":"Google Calendar Meet Link Generator",
 	"nodes":[
 		{
@@ -217,7 +217,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_IfNo",
@@ -225,7 +225,6 @@
 			"inputs":{
 				"filters":[
 					{
-						"operator":"OR",
 						"filters":[
 							{
 								"property":"{{ n_VarCr.outputs.varAttendeeCount }}",
@@ -240,7 +239,8 @@
 									"operator":"MISSING"
 								}
 							}
-						]
+						],
+						"operator":"OR"
 					}
 				],
 				"operator":"AND"
@@ -429,6 +429,9 @@
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -442,5 +445,5 @@
 	"tags":[
 		"AI Generated"
 	],
-	"version":1
+	"version":2
 }
