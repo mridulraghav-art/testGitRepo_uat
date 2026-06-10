@@ -67,6 +67,13 @@
 			"fromNodeId":"n_cg7T0",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_TsZUP",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_TsZUP",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_cx9Qm",
 			"type":"next"
 		},
@@ -117,7 +124,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to xlsx",
-	"modifiedTime":1781086204077,
+	"modifiedTime":1781086530808,
 	"name":"BM Export Data to XLSX",
 	"nodes":[
 		{
@@ -412,20 +419,71 @@
 		},
 		{
 			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1653,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_TsZUP",
+			"index":9,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"Limit":{
+							"type":"number",
+							"title":"Limit"
+						}
+					},
+					"required":[]
+				}
+			},
+			"inputs":{
+				"Limit":"Math.ceil({{ n_cg7T0.outputs.objects[0].columns.TotalRecords }}/50)"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"properties":{
+						"Limit":{
+							"type":"number",
+							"title":"Limit"
+						}
+					},
+					"required":[]
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"loop",
 				"resourceVersion":58,
 				"resourceName":"loop_for",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cx9Qm",
-			"index":9,
+			"index":10,
 			"inputs":{
 				"start":0,
-				"limit":"Math.ceil({{ n_cg7T0.outputs.objects[0].columns.TotalRecords }}/50)",
+				"limit":"{{ n_TsZUP.outputs.Limit }}",
 				"step":1,
 				"captureIterations":false
 			},
@@ -446,7 +504,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
 			"id":"n_nhc9U",
-			"index":10,
+			"index":11,
 			"inputs":{
 				"outputSchema":{
 					"type":"object",
@@ -477,11 +535,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
 			"id":"n_oOXYd",
-			"index":11,
+			"index":12,
 			"inputs":{
 				"fileDetails":"{{ n_MnH7e.outputs.fileDetails }}",
 				"delimiter":",",
@@ -512,7 +570,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cN32w",
-			"index":12,
+			"index":13,
 			"inputs":{
 				"file":"{{ n_zqh3z.outputs.fileDetails }}",
 				"expiryTime":1
@@ -534,7 +592,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_OqykT",
-			"index":13,
+			"index":14,
 			"inputs":{
 				"cta":{
 					"name":"Download File",
@@ -577,7 +635,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_6EcYu",
-			"index":14,
+			"index":15,
 			"inputs":{
 				"result":{
 					"response":"Invalid File Type"
@@ -603,5 +661,5 @@
 		}
 	},
 	"standard":false,
-	"version":52
+	"version":53
 }
