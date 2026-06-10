@@ -32,7 +32,7 @@
 	"id":"6a290b445a45bf384988ad42",
 	"lastModifiedBy":39,
 	"lcName":"h",
-	"modifiedTime":1781076083273,
+	"modifiedTime":1781076093941,
 	"name":"h",
 	"nodes":[
 		{
@@ -42,7 +42,7 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QiykJ-1",
 			"id":"n_7FAFQ",
@@ -84,7 +84,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QiykJ-1",
 			"id":"n_5ANtT",
@@ -148,7 +148,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QiykJ-1",
 			"id":"n_uze0g",
@@ -159,7 +159,8 @@
 					"items":{
 						"source":"{{ n_5ANtT.outputs.var }}",
 						"value":"=sum({{ n_5ANtT.outputs.var }},1)"
-					}
+					},
+					"source":"{{ n_5ANtT.outputs }}"
 				}
 			},
 			"skip":false,
@@ -182,5 +183,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
