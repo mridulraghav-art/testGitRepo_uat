@@ -4,14 +4,14 @@
 	],
 	"createdTime":1762086433016,
 	"deleted":false,
-	"deployedVersion":8,
+	"deployedVersion":9,
 	"deploymentState":{
-		"deployedAt":1781080691595,
+		"deployedAt":1781081074019,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a29227304735144499b7437",
+		"deployedDefinitionId":"6a2923f133b0405a76a91dc0",
 		"status":"DEPLOYED",
-		"version":8,
-		"workflowVersion":70
+		"version":9,
+		"workflowVersion":72
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1781081069555,
+	"modifiedTime":1781081142655,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -35,7 +35,7 @@
 				"resourceName":"schedule_default"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_cVEvt",
@@ -108,7 +108,7 @@
 			"inputs":{
 				"abd":"=MAX({{ n_cVEvt.outputs.lastJobTime }}, {{ n_cVEvt.outputs.scheduleDay }})",
 				"new_obj":{
-					"max_f":"=MAX(10,\"hello\")"
+					"max_f":"=MAX(10,{{ n_cVEvt.outputs.scheduleDay }})"
 				}
 			},
 			"outputSchema":{
@@ -165,5 +165,5 @@
 	"tags":[
 		
 	],
-	"version":72
+	"version":73
 }
