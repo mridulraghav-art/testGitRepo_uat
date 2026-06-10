@@ -1,48 +1,183 @@
 {
 	"appsUsed":[
-		
+		"gdocs",
+		"openai",
+		"tavily"
 	],
 	"createdTime":1781090445641,
 	"deleted":false,
+	"description":"Receives a company name, searches the web for recent news via Tavily, generates a concise account brief using OpenAI, creates a Google Doc with the summary, and returns the document URL.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_StrtA",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_TvSrh",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_TvSrh",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_AiSum",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_AiSum",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GdCrt",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GdCrt",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StopR",
 			"type":"next"
 		}
 	],
 	"id":"6a29488d7529013ce0a2d149",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781090445641,
-	"name":"Untitled workflow",
+	"lcName":"account brief generator",
+	"modifiedTime":1781090556139,
+	"name":"Account Brief Generator",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_StrtA",
 			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"summaryDocUrl"
+					],
+					"properties":{
+						"summaryDocUrl":{
+							"type":"string",
+							"title":"Summary Doc URL"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"companyName"
+					],
+					"properties":{
+						"companyName":{
+							"type":"string",
+							"title":"Company Name"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"tavily",
+				"connectionId":"69576c0f57151859af08bbdd",
+				"resourceName":"tavily_execute_search_query",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_TvSrh",
 			"index":2,
+			"inputs":{
+				"search_depth":"advanced",
+				"query":"={{ n_StrtA.outputs.companyName }} company overview recent news 2025 2026",
+				"topic":"general",
+				"max_results":5,
+				"include_answer":true
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Tavily",
+			"title":"Search query",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"openai",
+				"resourceName":"openai_send_message",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_AiSum",
+			"index":3,
+			"inputs":{
+				"response_format":"text",
+				"model":"gpt-3.5-turbo",
+				"message":"=CONCAT(\"You are a business analyst. Based on the following web search results about \", {{ n_StrtA.outputs.companyName }}, \", write a concise account brief (3-5 sentences) covering what the company does, recent news or developments, and key highlights.\\n\\nSearch Results:\\n\", {{ n_TvSrh.outputs.answer }})"
+			},
+			"skip":false,
+			"subTitle":"OpenAI",
+			"title":"Send message to OpenAI models",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gdocs",
+				"connectionId":"6841385252796636d28b3e65",
+				"resourceName":"gdocs_create_document",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_GdCrt",
+			"index":4,
+			"inputs":{
+				"title":"=CONCAT(\"Account Brief: \", {{ n_StrtA.outputs.companyName }})",
+				"content":"{{ n_AiSum.outputs.choices[0].message.content }}"
+			},
+			"skip":false,
+			"subTitle":"Google Docs",
+			"title":"Create a document",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StopR",
+			"index":5,
+			"inputs":{
+				"result":{
+					"summaryDocUrl":"=CONCAT(\"https://docs.google.com/document/d/\", {{ n_GdCrt.outputs.id }}, \"/edit\")"
+				}
+			},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +191,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
