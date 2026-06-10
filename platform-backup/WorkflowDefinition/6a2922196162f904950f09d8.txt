@@ -16,7 +16,7 @@
 	"id":"6a2922196162f904950f09d8",
 	"lastModifiedBy":39,
 	"lcName":"mdm_automation_test",
-	"modifiedTime":1781080660216,
+	"modifiedTime":1781080692701,
 	"name":"MDM_Automation_test",
 	"nodes":[
 		{
@@ -92,7 +92,7 @@
 			"inputs":{
 				"result":{
 					"output1":"=SUM({{ n_JTfz6.outputs.num1 }},{{ n_JTfz6.outputs.Num2 }})",
-					"product":"{{ n_JTfz6.outputs.num1 }}*{{ n_JTfz6.outputs.Num2 }}"
+					"product":"=PRODUCT({{ n_JTfz6.outputs.num1 }},{{ n_JTfz6.outputs.Num2 }})"
 				}
 			},
 			"skip":false,
@@ -115,5 +115,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
