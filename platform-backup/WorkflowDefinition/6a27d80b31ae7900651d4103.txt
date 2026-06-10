@@ -131,7 +131,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to xlsx",
-	"modifiedTime":1781088346292,
+	"modifiedTime":1781088391756,
 	"name":"BM Export Data to XLSX",
 	"nodes":[
 		{
@@ -475,6 +475,7 @@
 				}
 			},
 			"inputs":{
+				"offset":0,
 				"totalRec":"{{ n_cg7T0.outputs.objects[0].columns.TotalRecords }}"
 			},
 			"outputSchema":{
@@ -728,5 +729,5 @@
 		}
 	},
 	"standard":false,
-	"version":68
+	"version":69
 }
