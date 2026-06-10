@@ -4,14 +4,14 @@
 	],
 	"createdTime":1762086433016,
 	"deleted":false,
-	"deployedVersion":7,
+	"deployedVersion":8,
 	"deploymentState":{
-		"deployedAt":1779700853951,
+		"deployedAt":1781080691595,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a14147543b26d7040228254",
+		"deployedDefinitionId":"6a29227304735144499b7437",
 		"status":"DEPLOYED",
-		"version":7,
-		"workflowVersion":60
+		"version":8,
+		"workflowVersion":70
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1781080687126,
+	"modifiedTime":1781081002836,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -67,7 +67,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_Hp2fS",
@@ -82,9 +82,17 @@
 					"properties":{
 						"new_obj":{
 							"type":"object",
-							"properties":{},
+							"properties":{
+								"max_f":{
+									"type":"string",
+									"title":"Max F"
+								}
+							},
 							"additionalProperties":false,
-							"title":"New Obj"
+							"title":"New Obj",
+							"required":[
+								"max_f"
+							]
 						}
 					},
 					"required":[
@@ -93,7 +101,9 @@
 				}
 			},
 			"inputs":{
-				"new_obj":"=CONCATENATE(\"hello\",{{ n_cVEvt.outputs.scheduleDay }})"
+				"new_obj":{
+					"max_f":"=MAX(10,\"hello\")"
+				}
 			},
 			"outputSchema":{
 				"dynamic":false,
@@ -103,9 +113,17 @@
 					"properties":{
 						"new_obj":{
 							"type":"object",
-							"properties":{},
+							"properties":{
+								"max_f":{
+									"type":"string",
+									"title":"Max F"
+								}
+							},
 							"additionalProperties":false,
-							"title":"New Obj"
+							"title":"New Obj",
+							"required":[
+								"max_f"
+							]
 						}
 					},
 					"required":[
@@ -136,5 +154,5 @@
 	"tags":[
 		
 	],
-	"version":70
+	"version":71
 }
