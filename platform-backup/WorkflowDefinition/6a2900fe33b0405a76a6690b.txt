@@ -4,14 +4,14 @@
 	],
 	"createdTime":1781072126684,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1781073502906,
+		"deployedAt":1781073660395,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a29065e5a45bf38498886ad",
+		"deployedDefinitionId":"6a2906fc5a45bf3849888cfa",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":4
+		"version":3,
+		"workflowVersion":5
 	},
 	"edges":[
 		{
@@ -25,11 +25,25 @@
 			"fromNodeId":"n_HRSxv",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_jwu0i",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_jwu0i",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_5rr2c",
 			"type":"next"
 		},
 		{
 			"fromNodeId":"n_5rr2c",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ChwRK",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_ChwRK",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_OEKz4",
@@ -53,7 +67,7 @@
 	"id":"6a2900fe33b0405a76a6690b",
 	"lastModifiedBy":39,
 	"lcName":"vars masking",
-	"modifiedTime":1781073652009,
+	"modifiedTime":1781073859123,
 	"name":"vars masking",
 	"nodes":[
 		{
@@ -142,6 +156,263 @@
 		{
 			"context":{
 				"appName":"variable_by_unifyapps",
+				"resourceVersion":1652,
+				"resourceName":"variable_by_unifyapps_create_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_YJIob-1",
+			"id":"n_jwu0i",
+			"index":3,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{
+					"createList":{
+						"ui:title":"",
+						"ua:type":{
+							"ui:widget":"hidden"
+						},
+						"items":{
+							"ui:title":"Initial list items",
+							"ui:description":"Set the initial values of the list (defaults to empty)"
+						},
+						"ui:order":[
+							"*",
+							"items"
+						]
+					},
+					"ua:title":{
+						"ui:widget":"hidden"
+					},
+					"ua:list_type":{
+						"ui:widget":"hidden"
+					}
+				},
+				"schema":{
+					"allOf":[
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"OBJECT"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"items":{
+												"type":"object",
+												"properties":{}
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"STRING"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of String"
+											},
+											"items":{
+												"type":"string"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"INTEGER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Integers"
+											},
+											"items":{
+												"type":"integer"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"NUMBER"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Numbers"
+											},
+											"items":{
+												"type":"number"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"if":{
+								"properties":{
+									"ua:list_type":{
+										"const":"BOOLEAN"
+									}
+								}
+							},
+							"then":{
+								"properties":{
+									"createList":{
+										"type":"object",
+										"properties":{
+											"source":{
+												"type":"string",
+												"format":"ua:source",
+												"title":"List of Booleans"
+											},
+											"items":{
+												"type":"boolean"
+											}
+										}
+									}
+								}
+							}
+						}
+					],
+					"format":"ua:list",
+					"type":"object",
+					"properties":{
+						"ua:title":{
+							"type":"string"
+						},
+						"ua:list_type":{
+							"type":"string",
+							"title":"List Type",
+							"oneOf":[
+								{
+									"const":"OBJECT",
+									"title":"Object"
+								},
+								{
+									"const":"STRING",
+									"title":"String"
+								},
+								{
+									"const":"NUMBER",
+									"title":"Number"
+								},
+								{
+									"const":"INTEGER",
+									"title":"Integer"
+								},
+								{
+									"const":"BOOLEAN",
+									"title":"Boolean"
+								}
+							],
+							"default":"OBJECT"
+						},
+						"createList":{
+							"type":"object",
+							"properties":{
+								"ua:type":{
+									"type":"string",
+									"default":"mappedArray"
+								},
+								"source":{
+									"type":"string",
+									"format":"ua:source",
+									"title":"List Item Source"
+								},
+								"items":{
+									"additionalProperties":false,
+									"type":[
+										"object",
+										"string",
+										"number",
+										"boolean",
+										"integer"
+									],
+									"properties":{}
+								}
+							}
+						}
+					}
+				}
+			},
+			"inputs":{
+				"createList":{
+					"ua:type":"mappedArray",
+					"source":"updates"
+				},
+				"ua:title":"List",
+				"ua:list_type":"STRING"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"items":{
+							"type":"array",
+							"title":"List",
+							"disableActions":true,
+							"items":{
+								"type":"string"
+							}
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
 				"resourceVersion":0,
 				"resourceName":"variable_by_unifyapps_update_variables",
 				"type":"APPLICATION"
@@ -151,7 +422,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_5rr2c",
-			"index":3,
+			"index":4,
 			"inputs":{
 				"variables":[
 					{
@@ -168,16 +439,40 @@
 		{
 			"context":{
 				"appName":"variable_by_unifyapps",
-				"resourceVersion":1653,
-				"resourceName":"variable_by_unifyapps_update_variables",
+				"resourceVersion":1654,
+				"resourceName":"variable_by_unifyapps_add_item_to_list",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
+			"id":"n_ChwRK",
+			"index":5,
+			"inputs":{
+				"itemToAdd":"{{ __ENV__.outputs.ENV_CHECK_SENS }}",
+				"insertLocation":"END",
+				"captureAddedItem":false,
+				"listName":"{{ n_jwu0i.outputs.items[0] }}"
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Add item to list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1653,
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YJIob-1",
 			"id":"n_OEKz4",
-			"index":4,
+			"index":6,
 			"inputs":{
 				"variables":[
 					{
@@ -199,11 +494,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_FUOps",
-			"index":5,
+			"index":7,
 			"inputs":{
 				"variables":[
 					{
@@ -225,11 +520,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_48HqP",
-			"index":6,
+			"index":8,
 			"inputs":{
 				"variables":[
 					{
@@ -258,5 +553,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
