@@ -1,48 +1,170 @@
 {
 	"appsUsed":[
-		
+		"slack"
 	],
 	"createdTime":1781096381359,
 	"deleted":false,
+	"description":"Runs every 5 minutes, fetches the latest 5 records from the 'projecttest' entity sorted by creation date descending, and sends a formatted Slack message to channel #abc for each record.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_St4Rt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_FtRec",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_FtRec",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LpEch",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LpEch",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SlkMs",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_LpEch",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpEd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SlkMs",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LpEch",
 			"type":"next"
 		}
 	],
 	"id":"6a295fbc7529013ce0a325a9",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781096381359,
-	"name":"Untitled workflow",
+	"lcName":"projecttest slack notifier",
+	"modifiedTime":1781096482210,
+	"name":"ProjectTest Slack Notifier",
 	"nodes":[
 		{
+			"context":{
+				"appName":"schedule",
+				"resourceName":"schedule_default"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_St4Rt",
 			"index":1,
+			"inputs":{
+				"cron":"INTERVAL",
+				"interval":5,
+				"frequency":"MINUTES"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Schedule",
+			"title":"Every 5 minutes",
 			"trigger":{
-				"type":"EVENT"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_FtRec",
 			"index":2,
+			"inputs":{
+				"object_type":"projecttest",
+				"sortBy":[
+					{
+						"field":"createdTime",
+						"order":"DESC"
+					}
+				],
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":5,
+					"offset":0
+				},
+				"numberOfRecordsToFetch":"MULTIPLE"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Storage",
+			"title":"Fetch records",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_LpEch",
+			"index":3,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_FtRec.outputs.objects }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each record",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"connectionId":"67e12f639632a22b5639b028",
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_LpEch@root_id-1@l",
+			"id":"n_SlkMs",
+			"index":4,
+			"inputs":{
+				"messageType":"text",
+				"channel":"abc",
+				"text":"{{ n_LpEch.outputs.item }}"
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Post message",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StpEd",
+			"index":5,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +178,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
