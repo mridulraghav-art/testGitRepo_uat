@@ -38,6 +38,13 @@
 			"type":"if"
 		},
 		{
+			"fromNodeId":"n_SlkBg",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GmlEn",
+			"type":"next"
+		},
+		{
 			"fromNodeId":"n_IfBug",
 			"name":"no",
 			"priority":0,
@@ -46,10 +53,10 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_SlkBg",
+			"fromNodeId":"n_SlkGn",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_GmlEn",
+			"toNodeId":"n_GmlPr",
 			"type":"next"
 		},
 		{
@@ -57,13 +64,6 @@
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_UpVar",
-			"type":"next"
-		},
-		{
-			"fromNodeId":"n_SlkGn",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_GmlPr",
 			"type":"next"
 		},
 		{
@@ -88,18 +88,18 @@
 			"type":"loop"
 		},
 		{
-			"fromNodeId":"n_LoopA",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_GhCmt",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"n_SlkDm",
 			"name":"loopback",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_LoopA",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LoopA",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GhCmt",
 			"type":"next"
 		},
 		{
@@ -134,7 +134,7 @@
 	"id":"6a29433d0d067e7694ff88cb",
 	"lastModifiedBy":39,
 	"lcName":"github issue tracker & notifier",
-	"modifiedTime":1781089226976,
+	"modifiedTime":1781089433903,
 	"name":"GitHub Issue Tracker & Notifier",
 	"nodes":[
 		{
@@ -298,15 +298,17 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_IfBug@root_id-1@y",
 			"id":"n_SlkBg",
 			"index":5,
 			"inputs":{
+				"link_names":true,
 				"messageType":"text",
 				"channel":"<CHANNEL_ID_FOR_bugs>",
-				"text":"🐛 New Bug Reported: {{ n_CrVar.outputs.issueTitle }} by {{ n_CrVar.outputs.reporterUsername }}. URL: {{ n_CrVar.outputs.issueUrl }}"
+				"text":"🐛 New Bug Reported: {{ n_CrVar.outputs.issueTitle }} by {{ n_CrVar.outputs.reporterUsername }}. URL: {{ n_CrVar.outputs.issueUrl }}",
+				"mrkdwn":true
 			},
 			"skip":false,
 			"subTitle":"Slack",
@@ -451,15 +453,17 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_LoopA@root_id-1@l",
 			"id":"n_SlkDm",
 			"index":11,
 			"inputs":{
+				"link_names":true,
 				"messageType":"text",
 				"channel":"{{ n_LoopA.outputs.item.login }}",
-				"text":"You have been assigned to issue: {{ n_CrVar.outputs.issueTitle }}. Check it here: {{ n_CrVar.outputs.issueUrl }}"
+				"text":"You have been assigned to issue: {{ n_CrVar.outputs.issueTitle }}. Check it here: {{ n_CrVar.outputs.issueUrl }}",
+				"mrkdwn":true
 			},
 			"skip":false,
 			"subTitle":"Slack",
@@ -545,15 +549,17 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_SlkDv",
 			"index":15,
 			"inputs":{
+				"link_names":true,
 				"messageType":"text",
 				"channel":"<CHANNEL_ID_FOR_dev-ops>",
-				"text":"Issue #{{ n_GetIs.outputs.number }} '{{ n_CrVar.outputs.issueTitle }}' has been fully processed and all notifications sent."
+				"text":"Issue #{{ n_GetIs.outputs.number }} '{{ n_CrVar.outputs.issueTitle }}' has been fully processed and all notifications sent.",
+				"mrkdwn":true
 			},
 			"skip":false,
 			"subTitle":"Slack",
@@ -578,6 +584,9 @@
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -591,5 +600,5 @@
 	"tags":[
 		"AI Generated"
 	],
-	"version":1
+	"version":2
 }
