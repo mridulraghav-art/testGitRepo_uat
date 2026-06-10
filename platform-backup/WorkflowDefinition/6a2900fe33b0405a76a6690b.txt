@@ -18,6 +18,20 @@
 			"fromNodeId":"n_fTIyS",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_6BGrE",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_6BGrE",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IU0oN",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IU0oN",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_HRSxv",
 			"type":"next"
 		},
@@ -96,7 +110,7 @@
 	"id":"6a2900fe33b0405a76a6690b",
 	"lastModifiedBy":39,
 	"lcName":"vars masking",
-	"modifiedTime":1781075659138,
+	"modifiedTime":1781075759638,
 	"name":"vars masking",
 	"nodes":[
 		{
@@ -127,6 +141,62 @@
 		},
 		{
 			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"storage_by_unifyapps_create_record",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_YJIob-1",
+			"id":"n_6BGrE",
+			"index":2,
+			"inputs":{
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"object_type":"var_check_1",
+				"skipIfBlank":false,
+				"record":{
+					"env_var":"{{ __ENV__.outputs.ENV_CHECK_SENS }}"
+				},
+				"useUuid":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Create record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"storage_by_unifyapps_create_record",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_YJIob-1",
+			"id":"n_IU0oN",
+			"index":3,
+			"inputs":{
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"object_type":"var_check_1",
+				"skipIfBlank":false,
+				"record":{
+					"env_var":"{{ __ENV__.outputs.ENV_CHECK_NON_SENS }}"
+				},
+				"useUuid":false
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Create record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"variable_by_unifyapps",
 				"resourceVersion":1653,
 				"resourceName":"variable_by_unifyapps_create_variables",
@@ -137,7 +207,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_HRSxv",
-			"index":2,
+			"index":4,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -190,11 +260,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_jwu0i",
-			"index":3,
+			"index":5,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -451,7 +521,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_5rr2c",
-			"index":4,
+			"index":6,
 			"inputs":{
 				"variables":[
 					{
@@ -473,11 +543,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_ChwRK",
-			"index":5,
+			"index":7,
 			"inputs":{
 				"itemToAdd":"{{ __ENV__.outputs.ENV_CHECK_SENS }}",
 				"insertLocation":"END",
@@ -497,11 +567,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_FUOps",
-			"index":6,
+			"index":8,
 			"inputs":{
 				"variables":[
 					{
@@ -523,11 +593,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_48HqP",
-			"index":7,
+			"index":9,
 			"inputs":{
 				"variables":[
 					{
@@ -549,11 +619,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_OEKz4",
-			"index":8,
+			"index":10,
 			"inputs":{
 				"variables":[
 					{
@@ -575,11 +645,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_i1lY3",
-			"index":9,
+			"index":11,
 			"inputs":{
 				"repeatMode":"SINGLE",
 				"listSource":"{{ n_jwu0i.outputs.items }}",
@@ -598,11 +668,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_i1lY3@_YJIob-1@l",
 			"id":"n_ebwx0",
-			"index":10,
+			"index":12,
 			"inputs":{
 				"itemToAdd":"{{ n_i1lY3.outputs.item }}",
 				"insertLocation":"END",
@@ -622,11 +692,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_N08Zp",
-			"index":11,
+			"index":13,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -882,5 +952,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":14
+	"version":15
 }
