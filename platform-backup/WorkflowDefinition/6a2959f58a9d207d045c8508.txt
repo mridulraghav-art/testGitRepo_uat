@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1781094901489,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_sdrEJ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_8cAnk",
+			"type":"next"
+		}
+	],
+	"id":"6a2959f58a9d207d045c8508",
+	"lastModifiedBy":39,
+	"lcName":"backup manager failure report export",
+	"modifiedTime":1781094901489,
+	"name":"Backup Manager Failure Report export",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_sdrEJ-1",
+			"id":"_sdrEJ",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_sdrEJ-1",
+			"id":"_8cAnk",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
