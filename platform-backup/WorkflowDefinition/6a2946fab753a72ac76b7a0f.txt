@@ -33,7 +33,7 @@
 	"id":"6a2946fab753a72ac76b7a0f",
 	"lastModifiedBy":39,
 	"lcName":"critical ticket escalation",
-	"modifiedTime":1781090210536,
+	"modifiedTime":1781090221857,
 	"name":"Critical Ticket Escalation",
 	"nodes":[
 		{
@@ -43,7 +43,7 @@
 				"resourceName":"zendesk_on_new_ticket"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_StrtZ",
@@ -60,7 +60,9 @@
 							}
 						}
 					]
-				}
+				},
+				"objectSourceResourceName":"zendesk_get_custom_fields_schema",
+				"objectId":"ticket"
 			},
 			"skip":false,
 			"subTitle":"Zendesk",
@@ -137,6 +139,9 @@
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -150,5 +155,5 @@
 	"tags":[
 		"AI Generated"
 	],
-	"version":1
+	"version":2
 }
