@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780636796198,
 	"deleted":false,
-	"deployedVersion":3,
+	"deployedVersion":4,
 	"deploymentState":{
-		"deployedAt":1781072694243,
+		"deployedAt":1781072797531,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a29033645cc8b07a1a31854",
+		"deployedDefinitionId":"6a29039d5420af2d73b0b804",
 		"status":"DEPLOYED",
-		"version":3,
-		"workflowVersion":25
+		"version":4,
+		"workflowVersion":26
 	},
 	"edges":[
 		{
@@ -124,7 +124,7 @@
 	"id":"694a9efb0b833d093340d404",
 	"lastModifiedBy":39,
 	"lcName":"[final] data catalog - oracledb server",
-	"modifiedTime":1781072795215,
+	"modifiedTime":1781072839079,
 	"name":"[Final] Data Catalog - OracleDB Server",
 	"nodes":[
 		{
@@ -291,7 +291,7 @@
 			"id":"n_YJN2G",
 			"index":3,
 			"inputs":{
-				"connectionIds":"{{ n_neNcf.outputs.connection_id }}"
+				"connectionIds":"68beb61bd7fae32ebbb40253"
 			},
 			"skip":false,
 			"subTitle":"Standard entities by UnifyApps",
@@ -1348,5 +1348,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":26
+	"version":27
 }
