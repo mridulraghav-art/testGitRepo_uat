@@ -1,47 +1,193 @@
 {
 	"appsUsed":[
-		
+		"gcalendar"
 	],
 	"createdTime":1781089037701,
 	"deleted":false,
+	"description":"Receives candidate name, interviewer email, and interview date via callable trigger, creates a Google Calendar event with a Google Meet link, and returns the meeting link.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_StrtA",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_CdGrv",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CdGrv",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GCalE",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GCalE",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StopR",
 			"type":"next"
 		}
 	],
 	"id":"6a29430c0d067e7694ff8846",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781089037701,
-	"name":"Untitled workflow",
+	"lcName":"interview scheduler",
+	"modifiedTime":1781089183001,
+	"name":"Interview Scheduler",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_StrtA",
 			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"meetingLink"
+					],
+					"properties":{
+						"meetingLink":{
+							"type":"string",
+							"title":"Meeting Link"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"candidateName",
+						"interviewerEmail",
+						"interviewDate"
+					],
+					"properties":{
+						"candidateName":{
+							"type":"string",
+							"title":"Candidate Name"
+						},
+						"interviewerEmail":{
+							"type":"string",
+							"title":"Interviewer Email"
+						},
+						"interviewDate":{
+							"type":"string",
+							"title":"Interview Date (ISO 8601)"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_CdGrv",
 			"index":2,
+			"inputs":{
+				"code":"import java.time.OffsetDateTime\nimport java.time.format.DateTimeFormatter\n\ndef startStr = params.interviewDate\ndef start = OffsetDateTime.parse(startStr)\ndef end = start.plusHours(1)\ndef formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME\nreturn [endTime: end.format(formatter)]",
+				"outputSchema":{
+					"type":"object",
+					"properties":{
+						"endTime":{
+							"type":"string"
+						}
+					}
+				},
+				"inputSchema":{
+					"type":"object",
+					"properties":{
+						"interviewDate":{
+							"type":"string"
+						}
+					}
+				},
+				"params":{
+					"interviewDate":"{{ n_StrtA.outputs.interviewDate }}"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Code",
+			"title":"Compute end time (+1 hour)",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gcalendar",
+				"connectionId":"685c01634904043186b6e78a",
+				"resourceName":"gcalendar_create_event",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_GCalE",
+			"index":3,
+			"inputs":{
+				"summary":"=CONCAT(\"Interview with \", {{ n_StrtA.outputs.candidateName }})",
+				"sendUpdates":"all",
+				"calendarId":"primary",
+				"attendees":[
+					{
+						"email":"{{ n_StrtA.outputs.interviewerEmail }}"
+					}
+				],
+				"start":"{{ n_StrtA.outputs.interviewDate }}",
+				"conferenceData":{
+					"createRequest":{
+						"requestId":"interview-meet-req-001",
+						"conferenceSolutionKey":{
+							"type":"hangoutsMeet"
+						}
+					}
+				},
+				"end":"{{ n_CdGrv.outputs.result.endTime }}"
+			},
+			"skip":false,
+			"subTitle":"Google Calendar",
+			"title":"Create event",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StopR",
+			"index":4,
+			"inputs":{
+				"result":{
+					"meetingLink":"{{ n_GCalE.outputs.hangoutLink }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
 			"type":"ACTION"
 		}
 	],
@@ -56,5 +202,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
