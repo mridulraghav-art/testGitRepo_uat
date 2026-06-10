@@ -4,6 +4,15 @@
 	],
 	"createdTime":1781074756734,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1781074797430,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a290b6c33b0405a76a7799a",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_7FAFQ",
@@ -23,7 +32,7 @@
 	"id":"6a290b445a45bf384988ad42",
 	"lastModifiedBy":39,
 	"lcName":"h",
-	"modifiedTime":1781074795232,
+	"modifiedTime":1781076055322,
 	"name":"h",
 	"nodes":[
 		{
@@ -38,6 +47,27 @@
 			"groupId":"_QiykJ-1",
 			"id":"n_7FAFQ",
 			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"rcedxs":{
+								"type":"array",
+								"items":{
+									"type":"integer"
+								},
+								"title":"Rcedxs"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"rcedxs"
+						]
+					}
+				}
+			},
 			"skip":false,
 			"subTitle":"Webhook",
 			"title":"New event",
@@ -67,30 +97,42 @@
 					"additionalProperties":false,
 					"type":"object",
 					"properties":{
-						"input":{
-							"type":"string",
-							"title":"Input"
+						"var":{
+							"type":"array",
+							"items":{
+								"type":"integer"
+							},
+							"title":"Var"
 						}
 					},
 					"required":[
-						"input"
+						"var"
 					]
 				}
 			},
-			"inputs":{},
+			"inputs":{
+				"var":{
+					"source":"{{ n_7FAFQ.outputs }}",
+					"ua:type":"mappedArray",
+					"items":"{{ n_7FAFQ.outputs.body.rcedxs }}"
+				}
+			},
 			"outputSchema":{
 				"dynamic":false,
 				"schema":{
 					"additionalProperties":false,
 					"type":"object",
 					"properties":{
-						"input":{
-							"type":"string",
-							"title":"Input"
+						"var":{
+							"type":"array",
+							"items":{
+								"type":"integer"
+							},
+							"title":"Var"
 						}
 					},
 					"required":[
-						"input"
+						"var"
 					]
 				}
 			},
@@ -114,11 +156,10 @@
 			"index":3,
 			"inputs":{
 				"variables":{
-					"source":"{{ n_5ANtT.outputs }}",
 					"ua:type":"mappedArray",
 					"items":{
-						"source":"{{ n_5ANtT.outputs.input }}",
-						"value":"geee"
+						"source":"{{ n_5ANtT.outputs.var }}",
+						"value":"=sum({{ n_5ANtT.outputs.var }},1)"
 					}
 				}
 			},
@@ -142,5 +183,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
