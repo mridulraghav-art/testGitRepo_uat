@@ -4,6 +4,15 @@
 	],
 	"createdTime":1781072126684,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1781072292267,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a2901a44d50067f2587af19",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":2
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_fTIyS",
@@ -18,12 +27,26 @@
 			"skip":false,
 			"toNodeId":"n_5rr2c",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_5rr2c",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_OM5cD",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_OM5cD",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_KB7Gg",
+			"type":"next"
 		}
 	],
 	"id":"6a2900fe33b0405a76a6690b",
 	"lastModifiedBy":39,
 	"lcName":"vars masking",
-	"modifiedTime":1781072235719,
+	"modifiedTime":1781073485186,
 	"name":"vars masking",
 	"nodes":[
 		{
@@ -60,7 +83,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_HRSxv",
@@ -117,7 +140,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_5rr2c",
@@ -133,6 +156,62 @@
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
 			"title":"Update variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1652,
+				"resourceName":"variable_by_unifyapps_find_and_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_YJIob-1",
+			"id":"n_OM5cD",
+			"index":4,
+			"inputs":{
+				"variables":{
+					"items":{
+						"source":"{{ __ENV__.outputs.ENV_CHECK_SENS }}",
+						"value":"updated_check_sens"
+					},
+					"ua:type":"mappedArray",
+					"source":"update sens"
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Find and update variable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1652,
+				"resourceName":"variable_by_unifyapps_find_and_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_YJIob-1",
+			"id":"n_KB7Gg",
+			"index":5,
+			"inputs":{
+				"variables":{
+					"items":{
+						"source":"{{ __ENV__.outputs.ENV_CHECK_NON_SENS }}",
+						"value":"test"
+					},
+					"ua:type":"mappedArray",
+					"source":"tsest non sens"
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Find and update variable",
 			"type":"ACTION"
 		}
 	],
@@ -150,5 +229,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
