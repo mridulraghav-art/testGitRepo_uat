@@ -25,7 +25,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1781081002836,
+	"modifiedTime":1781081069555,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -93,14 +93,20 @@
 							"required":[
 								"max_f"
 							]
+						},
+						"abd":{
+							"type":"string",
+							"title":"Abd"
 						}
 					},
 					"required":[
-						"new_obj"
+						"new_obj",
+						"abd"
 					]
 				}
 			},
 			"inputs":{
+				"abd":"=MAX({{ n_cVEvt.outputs.lastJobTime }}, {{ n_cVEvt.outputs.scheduleDay }})",
 				"new_obj":{
 					"max_f":"=MAX(10,\"hello\")"
 				}
@@ -124,10 +130,15 @@
 							"required":[
 								"max_f"
 							]
+						},
+						"abd":{
+							"type":"string",
+							"title":"Abd"
 						}
 					},
 					"required":[
-						"new_obj"
+						"new_obj",
+						"abd"
 					]
 				}
 			},
@@ -154,5 +165,5 @@
 	"tags":[
 		
 	],
-	"version":71
+	"version":72
 }
