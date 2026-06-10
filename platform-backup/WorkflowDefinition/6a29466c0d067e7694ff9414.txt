@@ -45,13 +45,6 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_SETPURGE",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_STOPFIN",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"n_IF2",
 			"name":"yes",
 			"priority":0,
@@ -96,25 +89,11 @@
 			"type":"loop"
 		},
 		{
-			"fromNodeId":"n_LOOP",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_STOPFIN",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"n_SCOPE",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_GMAIL",
 			"type":"scope"
-		},
-		{
-			"fromNodeId":"n_SCOPE",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_STOREFAIL",
-			"type":"error"
 		},
 		{
 			"fromNodeId":"n_GMAIL",
@@ -125,6 +104,14 @@
 		},
 		{
 			"fromNodeId":"n_SETSENT",
+			"name":"scope-loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SCOPE",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SCOPE",
 			"name":"loopback",
 			"priority":0,
 			"skip":false,
@@ -132,24 +119,24 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_STOREFAIL",
+			"fromNodeId":"n_SETPURGE",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_SETPARTIAL",
+			"toNodeId":"n_STOPFIN",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_SETPARTIAL",
+			"fromNodeId":"n_LOOP",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_CONT",
+			"toNodeId":"n_STOPFIN",
 			"type":"next"
 		}
 	],
 	"id":"6a29466c0d067e7694ff9414",
 	"lastModifiedBy":39,
 	"lcName":"google calendar event cancellation notifier",
-	"modifiedTime":1781090201215,
+	"modifiedTime":1781090742491,
 	"name":"Google Calendar Event Cancellation Notifier",
 	"nodes":[
 		{
@@ -182,7 +169,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_VARS",
@@ -218,7 +205,11 @@
 					}
 				}
 			},
-			"inputs":{},
+			"inputs":{
+				"varNotificationStatus":"",
+				"varMeetLinkStatus":"",
+				"varAttendeeCount":0
+			},
 			"outputSchema":{
 				"dynamic":false,
 				"schema":{
@@ -279,7 +270,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_IF1",
@@ -338,7 +329,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_IF1@root_id-1@n",
 			"id":"n_IF2",
@@ -479,7 +470,8 @@
 				"appName":"gmail",
 				"connectionId":"696a24bd59b08f501796e5a0",
 				"resourceName":"gmail_send_email",
-				"type":"APPLICATION"
+				"type":"APPLICATION",
+				"scopeNodeId":"n_SCOPE"
 			},
 			"debug":false,
 			"dirty":false,
@@ -504,7 +496,8 @@
 			"context":{
 				"appName":"variable_by_unifyapps",
 				"resourceName":"variable_by_unifyapps_update_variables",
-				"type":"APPLICATION"
+				"type":"APPLICATION",
+				"scopeNodeId":"n_SCOPE"
 			},
 			"debug":false,
 			"dirty":false,
@@ -527,77 +520,6 @@
 		},
 		{
 			"context":{
-				"appName":"storage_by_unifyapps",
-				"resourceName":"storage_by_unifyapps_create_record",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"id":"n_STOREFAIL",
-			"index":14,
-			"inputs":{
-				"useRawPayload":false,
-				"writeThroughSessionVariables":false,
-				"object_type":"CancellationFailures",
-				"skipIfBlank":false,
-				"record_loader":{
-					"failedEmail":"{{ n_LOOP.outputs.item.email }}",
-					"eventId":"{{ n_GETEV.outputs.id }}",
-					"eventTitle":"{{ n_GETEV.outputs.summary }}",
-					"timestamp":"=TEXT(NOW(),\"YYYY-MM-DDTHH:mm:ss\")"
-				}
-			},
-			"skip":false,
-			"subTitle":"Storage",
-			"title":"Log cancellation failure",
-			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"variable_by_unifyapps",
-				"resourceName":"variable_by_unifyapps_update_variables",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"id":"n_SETPARTIAL",
-			"index":15,
-			"inputs":{
-				"variables":[
-					{
-						"source":"{{ n_VARS.outputs.varNotificationStatus }}",
-						"value":"Partial - some emails failed"
-					}
-				]
-			},
-			"skip":false,
-			"subTitle":"Variable",
-			"title":"Set status: Partial failure",
-			"type":"ACTION"
-		},
-		{
-			"context":{
-				"appName":"continue",
-				"resourceName":"continue",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"id":"n_CONT",
-			"index":16,
-			"inputs":{
-				"loop":"n_LOOP"
-			},
-			"skip":false,
-			"subTitle":"Continue",
-			"title":"Continue to next attendee",
-			"type":"CONTINUE"
-		},
-		{
-			"context":{
 				"appName":"stop",
 				"type":"APPLICATION"
 			},
@@ -606,7 +528,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"root_id-1",
 			"id":"n_STOPFIN",
-			"index":17,
+			"index":14,
 			"inputs":{},
 			"skip":false,
 			"subTitle":"Stop",
@@ -614,6 +536,9 @@
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -627,5 +552,5 @@
 	"tags":[
 		"AI Generated"
 	],
-	"version":1
+	"version":2
 }
