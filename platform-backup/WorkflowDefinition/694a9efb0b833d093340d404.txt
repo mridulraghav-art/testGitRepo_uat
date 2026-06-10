@@ -138,7 +138,7 @@
 	"id":"694a9efb0b833d093340d404",
 	"lastModifiedBy":39,
 	"lcName":"[final] data catalog - oracledb server",
-	"modifiedTime":1781073347895,
+	"modifiedTime":1781073433539,
 	"name":"[Final] Data Catalog - OracleDB Server",
 	"nodes":[
 		{
@@ -148,7 +148,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_neNcf",
@@ -171,15 +171,15 @@
 					"type":"object",
 					"additionalProperties":false,
 					"required":[
-						"connection_id",
-						"datacatalog_id"
+						"connectionId",
+						"datacatalogId"
 					],
 					"properties":{
-						"connection_id":{
+						"connectionId":{
 							"type":"string",
 							"title":"Connection Id"
 						},
-						"datacatalog_id":{
+						"datacatalogId":{
 							"type":"string",
 							"title":"Datacatalog Id"
 						}
@@ -202,7 +202,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_ijxyG",
@@ -247,7 +247,7 @@
 			},
 			"inputs":{
 				"connection_type":"OracleDB Server",
-				"connection_id":"{{ n_neNcf.outputs.connection_id }}",
+				"connection_id":"{{ n_neNcf.outputs.connectionId }}",
 				"link":"https://assets.unifyapps.com/images/app-icons/oracledbserver.svg"
 			},
 			"outputSchema":{
@@ -331,7 +331,7 @@
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
-					"connectionId":"{{ n_neNcf.outputs.connection_id }}"
+					"connectionId":"{{ n_neNcf.outputs.connectionId }}"
 				}
 			},
 			"skip":false,
@@ -347,13 +347,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_5UpBF",
 			"index":4,
 			"inputs":{
-				"connectionIds":"{{ n_neNcf.outputs.connection_id }}"
+				"connectionIds":"{{ n_neNcf.outputs.connectionId }}"
 			},
 			"skip":false,
 			"subTitle":"Standard entities by UnifyApps",
@@ -368,13 +368,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_YJN2G",
 			"index":5,
 			"inputs":{
-				"connectionIds":"{{ n_neNcf.outputs.connection_id }}"
+				"connectionIds":"{{ n_neNcf.outputs.connectionId }}"
 			},
 			"skip":false,
 			"subTitle":"Standard entities by UnifyApps",
@@ -389,7 +389,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_ErqfZ",
@@ -447,7 +447,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_iwxb4",
@@ -482,7 +482,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_nOSDm",
@@ -506,7 +506,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_hnqG8",
@@ -529,7 +529,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_bos4r",
@@ -876,7 +876,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_5k6iR",
@@ -900,7 +900,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"CONTINUE",
 			"groupId":"n_5k6iR@_oEXuu-1@l",
 			"id":"n_DjbKr",
@@ -985,7 +985,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_5k6iR@_oEXuu-1@l",
 			"id":"n_koLEF",
@@ -1020,7 +1020,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_5k6iR@_oEXuu-1@l",
 			"id":"n_6ol0Q",
@@ -1062,7 +1062,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_xnDLm",
@@ -1183,7 +1183,7 @@
 			},
 			"inputs":{
 				"data_catalog":{
-					"datacatalog_id":"{{ n_neNcf.outputs.datacatalog_id }}",
+					"datacatalog_id":"{{ n_neNcf.outputs.datacatalogId }}",
 					"connector_id":"{{ n_ijxyG.outputs.connection_id }}",
 					"connector_type":"{{ n_ijxyG.outputs.connection_type }}",
 					"user_id":"{{ __USER__.outputs.id }}",
@@ -1340,7 +1340,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_F1QMc",
@@ -1398,7 +1398,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_dV5kw",
@@ -1435,5 +1435,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":31
+	"version":32
 }
