@@ -25,7 +25,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1781080649044,
+	"modifiedTime":1781080687126,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -35,7 +35,7 @@
 				"resourceName":"schedule_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_cVEvt",
@@ -45,8 +45,8 @@
 				"expression":"0 0 * * *",
 				"sequential":false,
 				"timezone":"Asia/Calcutta",
-				"interval":15,
-				"frequency":"MINUTES"
+				"interval":60,
+				"frequency":"SECONDS"
 			},
 			"skip":false,
 			"subTitle":"Schedule",
@@ -67,7 +67,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_Hp2fS",
@@ -136,5 +136,5 @@
 	"tags":[
 		
 	],
-	"version":69
+	"version":70
 }
