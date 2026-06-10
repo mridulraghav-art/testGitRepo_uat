@@ -6,7 +6,64 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_4Cf4t",
+			"fromNodeId":"n_WjM4G",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Dh39s",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Dh39s",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_KWcc2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_KWcc2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_7aBPq",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_7aBPq",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_oRRqF",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_oRRqF",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_4cGHq",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_4cGHq",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_jn4YN",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_jn4YN",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_KWcc2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_KWcc2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CwDZ0",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CwDZ0",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"_EBAKa",
@@ -16,22 +73,252 @@
 	"id":"6a26e428af7ba4594d7f20de",
 	"lastModifiedBy":39,
 	"lcName":"hmm",
-	"modifiedTime":1780933672140,
+	"modifiedTime":1781104868636,
 	"name":"hmm",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":63,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_4Cf4t-1",
-			"id":"_4Cf4t",
-			"index":0,
+			"id":"n_WjM4G",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":896,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_4Cf4t-1",
+			"id":"n_Dh39s",
+			"index":2,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"workflowIds":{
+							"type":"array",
+							"items":{
+								"type":"string"
+							},
+							"title":"Workflow Ids"
+						}
+					}
+				},
+				"code":"return [\"workflowIds\":[\"67a220cfc40f693d5b660fe6\",\"67a221c16371b010adbe2e8e\"]]",
+				"compile_static":false,
+				"captureStdOutput":false
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":41,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_4Cf4t-1",
+			"id":"n_KWcc2",
+			"index":3,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_Dh39s.outputs.result.workflowIds }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":3635,
+				"resourceName":"standard_entities_lookup_entities",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_KWcc2@_4Cf4t-1@l",
+			"id":"n_7aBPq",
+			"index":4,
+			"inputs":{
+				"keys":[
+					"{{ n_KWcc2.outputs.item }}"
+				],
+				"lookupType":"WORKFLOW_DEFINITION",
+				"type":"ByKeys"
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Lookup Request",
+			"type":"ACTION"
+		},
+		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{}
+				},
+				"visibleOptionalFields":[
+					"root.parameters.response.inaccessibleObjects",
+					"root.parameters.response.type",
+					"root.parameters.response.objects"
+				]
+			},
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_KWcc2@_4Cf4t-1@l",
+			"id":"n_oRRqF",
+			"index":5,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"w":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"W"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"workflowId"
+					],
+					"properties":{
+						"response":{
+							"type":"object",
+							"properties":{},
+							"title":"response",
+							"additionalProperties":false,
+							"required":[]
+						},
+						"workflowId":{
+							"type":"string",
+							"title":"Workflow Id"
+						}
+					}
+				},
+				"code":"response.objects.each { id, obj ->\n    obj.standard = false\n}\n\nreturn [\"w\":response.objects[workflowId]]",
+				"compile_static":false,
+				"captureStdOutput":false,
+				"parameters":{
+					"response":"{{ n_7aBPq.outputs.response }}",
+					"workflowId":"{{ n_KWcc2.outputs.item }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code by UnifyApps",
+			"title":"Execute Groovy code",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":3635,
+				"resourceName":"standard_entities_update_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_KWcc2@_4Cf4t-1@l",
+			"id":"n_4cGHq",
+			"index":6,
+			"inputs":{
+				"workflowObject":"{{ n_oRRqF.outputs.result.w }}",
+				"workflowId":"{{ n_KWcc2.outputs.item }}"
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Save automation",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":3635,
+				"resourceName":"standard_entities_deploy_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_KWcc2@_4Cf4t-1@l",
+			"id":"n_jn4YN",
+			"index":7,
+			"inputs":{
+				"workflowId":"{{ n_KWcc2.outputs.item }}"
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Deploy automation",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":0,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_4Cf4t-1",
+			"id":"n_CwDZ0",
+			"index":8,
+			"inputs":{
+				"result":"{{ n_oRRqF.outputs.result }}"
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		},
 		{
 			"debug":false,
@@ -39,13 +326,16 @@
 			"fallbackMode":"STOP",
 			"groupId":"_4Cf4t-1",
 			"id":"_EBAKa",
-			"index":0,
+			"index":9,
 			"skip":false,
 			"title":"Select an app and action",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +346,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
