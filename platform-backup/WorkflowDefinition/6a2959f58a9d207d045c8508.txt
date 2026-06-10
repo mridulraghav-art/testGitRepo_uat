@@ -4,14 +4,14 @@
 	],
 	"createdTime":1781094901489,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1781095248616,
+		"deployedAt":1781095411501,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a295b508a9d207d045c9b52",
+		"deployedDefinitionId":"6a295bf36162f904951c6a2a",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":3
+		"version":2,
+		"workflowVersion":5
 	},
 	"edges":[
 		{
@@ -25,6 +25,20 @@
 			"fromNodeId":"n_DVlZB",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_G2rIH",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_G2rIH",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_OqykT",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_OqykT",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_kN82F",
 			"type":"next"
 		}
@@ -32,7 +46,7 @@
 	"id":"6a2959f58a9d207d045c8508",
 	"lastModifiedBy":39,
 	"lcName":"backup manager failure report export",
-	"modifiedTime":1781095404952,
+	"modifiedTime":1781095849432,
 	"name":"Backup Manager Failure Report export",
 	"nodes":[
 		{
@@ -80,7 +94,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
 			"id":"n_DVlZB",
@@ -100,6 +114,71 @@
 		},
 		{
 			"context":{
+				"appName":"utility_by_unifyapps",
+				"resourceVersion":4041,
+				"resourceName":"utility_by_unifyapps_generate_public_url",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_sdrEJ-1",
+			"id":"n_G2rIH",
+			"index":3,
+			"inputs":{
+				"file":"{{ n_DVlZB.outputs.file }}",
+				"expiryTime":1
+			},
+			"skip":false,
+			"subTitle":"Utility by UnifyApps",
+			"title":"Generate public file URL",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"notification_by_unifyapps",
+				"resourceVersion":0,
+				"resourceName":"notification_by_unifyapps_send_notification",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_sdrEJ-1",
+			"id":"n_OqykT",
+			"index":4,
+			"inputs":{
+				"cta":{
+					"name":"Download File",
+					"type":"url",
+					"url":"{{ n_cN32w.outputs.url }}",
+					"width":{
+						"custom":"400px"
+					}
+				},
+				"receiver":"=SPLITBY({{ __RUN__.outputs.userId }},\",\")",
+				"receiverType":"USER",
+				"module":"application",
+				"eventType":"workflow_alert",
+				"applicationId":"e-6a1fed651498ba17d919f0f7",
+				"notificationPreviewTime":5,
+				"content":{
+					"templateId":"e_export_entity_template",
+					"input_schema":{
+						"fileUrl":"{{ n_G2rIH.outputs.url }}"
+					}
+				},
+				"tags":[
+					"alerts"
+				]
+			},
+			"skip":false,
+			"subTitle":"Notification by UnifyApps",
+			"title":"Send notification",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"callables",
 				"resourceVersion":2690,
 				"resourceName":"callables_return_to_automation",
@@ -110,7 +189,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
 			"id":"n_kN82F",
-			"index":3,
+			"index":5,
 			"inputs":{},
 			"skip":false,
 			"subTitle":"Callable",
@@ -132,5 +211,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
