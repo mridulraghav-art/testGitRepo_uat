@@ -67,6 +67,13 @@
 			"fromNodeId":"n_cg7T0",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_5ZeFw",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_5ZeFw",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_TsZUP",
 			"type":"next"
 		},
@@ -131,7 +138,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to xlsx",
-	"modifiedTime":1781088393209,
+	"modifiedTime":1781089067670,
 	"name":"BM Export Data to XLSX",
 	"nodes":[
 		{
@@ -443,6 +450,30 @@
 		},
 		{
 			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":2416,
+				"resourceName":"analytics_by_unifyapps_export",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_8JT2w-1",
+			"id":"n_5ZeFw",
+			"index":9,
+			"inputs":{
+				"batchSize":1000,
+				"keepExactFileName":false,
+				"fileType":"CSV",
+				"group":"ENTITY_REPORTING"
+			},
+			"skip":false,
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Export Reports",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"variable_by_unifyapps",
 				"resourceVersion":1653,
 				"resourceName":"variable_by_unifyapps_create_variables",
@@ -453,7 +484,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_TsZUP",
-			"index":9,
+			"index":10,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -513,7 +544,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cx9Qm",
-			"index":10,
+			"index":11,
 			"inputs":{
 				"condition":{
 					"filters":[
@@ -546,7 +577,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
 			"id":"n_nhc9U",
-			"index":11,
+			"index":12,
 			"inputs":{
 				"outputSchema":{
 					"type":"object",
@@ -581,7 +612,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
 			"id":"n_oOXYd",
-			"index":12,
+			"index":13,
 			"inputs":{
 				"fileDetails":"{{ n_MnH7e.outputs.fileDetails }}",
 				"delimiter":",",
@@ -608,16 +639,16 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
 			"id":"n_KUugT",
-			"index":13,
+			"index":14,
 			"inputs":{
 				"variables":[
 					{
 						"source":"{{ n_TsZUP.outputs.offset }}",
-						"value":"{{ n_TsZUP.outputs.offset }}+500"
+						"value":"{{{{ n_TsZUP.outputs.offset }}+500}}"
 					}
 				]
 			},
@@ -638,7 +669,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cN32w",
-			"index":14,
+			"index":15,
 			"inputs":{
 				"file":"{{ n_zqh3z.outputs.fileDetails }}",
 				"expiryTime":1
@@ -660,7 +691,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_OqykT",
-			"index":15,
+			"index":16,
 			"inputs":{
 				"cta":{
 					"name":"Download File",
@@ -703,7 +734,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_6EcYu",
-			"index":16,
+			"index":17,
 			"inputs":{
 				"result":{
 					"response":"Invalid File Type"
@@ -729,5 +760,5 @@
 		}
 	},
 	"standard":false,
-	"version":70
+	"version":71
 }
