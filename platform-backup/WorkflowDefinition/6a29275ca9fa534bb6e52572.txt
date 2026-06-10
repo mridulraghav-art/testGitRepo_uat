@@ -4,6 +4,15 @@
 	],
 	"createdTime":1781081948534,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1781082037115,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a2927b404735144499be464",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_zUpxy",
@@ -16,7 +25,7 @@
 	"id":"6a29275ca9fa534bb6e52572",
 	"lastModifiedBy":39,
 	"lcName":"ewcredw",
-	"modifiedTime":1781082033966,
+	"modifiedTime":1781082126431,
 	"name":"ewcredw",
 	"nodes":[
 		{
@@ -36,14 +45,9 @@
 					"type":"object",
 					"additionalProperties":false,
 					"required":[
-						"product",
 						"sum"
 					],
 					"properties":{
-						"product":{
-							"type":"integer",
-							"title":"Product"
-						},
 						"sum":{
 							"type":"integer",
 							"title":"Sum"
@@ -92,7 +96,6 @@
 			"index":2,
 			"inputs":{
 				"result":{
-					"product":"=PRODUCT({{ n_zUpxy.outputs.num1 }}, {{ n_zUpxy.outputs.num2 }})",
 					"sum":"=SUM({{ n_zUpxy.outputs.num1 }}, {{ n_zUpxy.outputs.num2 }})"
 				}
 			},
@@ -116,5 +119,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
