@@ -4,14 +4,14 @@
 	],
 	"createdTime":1781089262218,
 	"deleted":false,
-	"deployedVersion":3,
+	"deployedVersion":4,
 	"deploymentState":{
-		"deployedAt":1781091441127,
+		"deployedAt":1781093478493,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a294c708a9d207d045b7f69",
+		"deployedDefinitionId":"6a2954668a9d207d045c1be5",
 		"status":"DEPLOYED",
-		"version":3,
-		"workflowVersion":4
+		"version":4,
+		"workflowVersion":5
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"6a2943ee5a45bf38498a587d",
 	"lastModifiedBy":39,
 	"lcName":"bm test",
-	"modifiedTime":1781093475650,
+	"modifiedTime":1781095234644,
 	"name":"BM TEST",
 	"nodes":[
 		{
@@ -67,14 +67,12 @@
 			"id":"n_fkoBO",
 			"index":2,
 			"inputs":{
-				"automationId":"6a27d80b31ae7900651d4103",
+				"automationId":"6a2959f58a9d207d045c8508",
 				"runtimeConnections":{},
 				"synchronous":true,
 				"version":"-1",
 				"parameters":{
-					"Backupid":"69b03acef54a113f1c57187d",
-					"PageSize":"20",
-					"Offset":"0"
+					"BackupId":"69b03acef54a113f1c57187d"
 				}
 			},
 			"skip":false,
@@ -97,5 +95,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
