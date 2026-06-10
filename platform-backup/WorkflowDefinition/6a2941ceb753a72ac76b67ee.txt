@@ -1,48 +1,897 @@
 {
 	"appsUsed":[
-		
+		"gmail"
 	],
 	"createdTime":1781088718503,
 	"deleted":false,
+	"description":"Polls Gmail for new emails, inspects attachments, rejects executable or oversized files with appropriate replies, and sends security alerts for executable attachments.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_StaRt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_LpBat",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LpBat",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IniVr",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_LpBat",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpEd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IniVr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfNoA",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IfNoA",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdNA",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_IfNoA",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CodEx",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdNA",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LpBat",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CodEx",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdST",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdST",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfExe",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IfExe",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdRj",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_IfExe",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BrSiz",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdRj",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SndAl",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SndAl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfRej",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_BrSiz",
+			"name":"1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BrSiz@1",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_BrSiz",
+			"name":"2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BrSiz@2",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_BrSiz",
+			"name":"3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BrSiz@3",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_BrSiz",
+			"name":"default",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfRej",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_BrSiz@1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdPr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_BrSiz@2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdCp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_BrSiz@3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdRs",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdPr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfRej",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdCp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfRej",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdRs",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfRej",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IfRej",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_RplSn",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_IfRej",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LpBat",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_RplSn",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LpBat",
 			"type":"next"
 		}
 	],
 	"id":"6a2941ceb753a72ac76b67ee",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781088718503,
-	"name":"Untitled workflow",
+	"lcName":"gmail attachment handler",
+	"modifiedTime":1781088980887,
+	"name":"Gmail Attachment Handler",
 	"nodes":[
 		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"68f0a743bfd9f67130bd4947",
+				"resourceName":"gmail_on_new_email_polling"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_StaRt",
 			"index":1,
+			"inputs":{
+				"intervalType":"minutes",
+				"fetchAllMails":false,
+				"interval":5,
+				"batchSize":10
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Gmail",
+			"title":"New email",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_LpBat",
 			"index":2,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_StaRt.outputs.batch }}",
+				"captureIterations":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Loop",
+			"title":"For each email",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_LpBat@root_id-1@l",
+			"id":"n_IniVr",
+			"index":3,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"varAttachmentSize",
+						"varAttachmentType",
+						"varAction"
+					],
+					"properties":{
+						"varAttachmentSize":{
+							"type":"number",
+							"title":"Attachment Size (MB)",
+							"default":0
+						},
+						"varAttachmentType":{
+							"type":"string",
+							"title":"Attachment Type",
+							"default":""
+						},
+						"varAction":{
+							"type":"string",
+							"title":"Action",
+							"default":""
+						}
+					}
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"varAttachmentSize",
+						"varAttachmentType",
+						"varAction"
+					],
+					"properties":{
+						"varAttachmentSize":{
+							"type":"number",
+							"title":"Attachment Size (MB)",
+							"default":0
+						},
+						"varAttachmentType":{
+							"type":"string",
+							"title":"Attachment Type",
+							"default":""
+						},
+						"varAction":{
+							"type":"string",
+							"title":"Action",
+							"default":""
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Initialize Variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_LpBat@root_id-1@l",
+			"id":"n_IfNoA",
+			"index":4,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_LpBat.outputs.item.raw.attachments }}",
+						"filter":{
+							"operator":"MISSING"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Has No Attachment?",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfNoA@n_LpBat@root_id-1@l@y",
+			"id":"n_UpdNA",
+			"index":5,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_IniVr.outputs.varAction }}",
+						"value":"No Attachment"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set Action: No Attachment",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfNoA@n_LpBat@root_id-1@l@n",
+			"id":"n_CodEx",
+			"index":6,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"properties":{
+						"sizeMB":{
+							"type":"number"
+						},
+						"fileExtension":{
+							"type":"string"
+						},
+						"fileName":{
+							"type":"string"
+						},
+						"senderEmail":{
+							"type":"string"
+						},
+						"threadId":{
+							"type":"string"
+						},
+						"messageId":{
+							"type":"string"
+						}
+					}
+				},
+				"input":{
+					"attachments":"{{ n_LpBat.outputs.item.raw.attachments }}",
+					"senderEmail":"{{ n_LpBat.outputs.item.raw.from }}",
+					"threadId":"{{ n_LpBat.outputs.item.raw.threadId }}",
+					"messageId":"{{ n_LpBat.outputs.item.raw.id }}"
+				},
+				"code":"def attachments = input.attachments\ndef firstAttachment = attachments[0]\ndef sizeBytes = firstAttachment.size ?: 0\ndef sizeMB = sizeBytes / 1048576.0\ndef fileName = firstAttachment.file_name ?: ''\ndef ext = ''\nif (fileName.contains('.')) {\n  ext = '.' + fileName.tokenize('.').last().toLowerCase()\n}\nreturn [sizeMB: sizeMB, fileExtension: ext, fileName: fileName, senderEmail: input.senderEmail, threadId: input.threadId, messageId: input.messageId]"
+			},
+			"skip":false,
+			"subTitle":"Code",
+			"title":"Extract Attachment Info",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfNoA@n_LpBat@root_id-1@l@n",
+			"id":"n_UpdST",
+			"index":7,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_IniVr.outputs.varAttachmentSize }}",
+						"value":"{{ n_CodEx.outputs.result.sizeMB }}"
+					},
+					{
+						"source":"{{ n_IniVr.outputs.varAttachmentType }}",
+						"value":"{{ n_CodEx.outputs.result.fileExtension }}"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set Attachment Size and Type",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfNoA@n_LpBat@root_id-1@l@n",
+			"id":"n_IfExe",
+			"index":8,
+			"inputs":{
+				"filters":[
+					{
+						"operator":"OR",
+						"filters":[
+							{
+								"property":"{{ n_IniVr.outputs.varAttachmentType }}",
+								"filter":{
+									"operator":"EQUAL",
+									"value":".exe"
+								}
+							},
+							{
+								"property":"{{ n_IniVr.outputs.varAttachmentType }}",
+								"filter":{
+									"operator":"EQUAL",
+									"value":".bat"
+								}
+							},
+							{
+								"property":"{{ n_IniVr.outputs.varAttachmentType }}",
+								"filter":{
+									"operator":"EQUAL",
+									"value":".sh"
+								}
+							}
+						]
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Is Executable Attachment?",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfExe@n_IfNoA@n_LpBat@root_id-1@l@n@y",
+			"id":"n_UpdRj",
+			"index":9,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_IniVr.outputs.varAction }}",
+						"value":"Reject"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set Action: Reject (Executable)",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"68f0a743bfd9f67130bd4947",
+				"resourceName":"gmail_send_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfExe@n_IfNoA@n_LpBat@root_id-1@l@n@y",
+			"id":"n_SndAl",
+			"index":10,
+			"inputs":{
+				"email_type":"text",
+				"subject":"Security Alert: Executable Attachment Received",
+				"to":[
+					"ops-team@company.com"
+				],
+				"message":"=CONCAT(\"An email from \", \"{{ n_CodEx.outputs.result.senderEmail }}\", \" contained an executable attachment (\", \"{{ n_CodEx.outputs.result.fileName }}\", \"). The email has been rejected automatically.\")"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Send Security Alert Email",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfExe@n_IfNoA@n_LpBat@root_id-1@l@n@n",
+			"id":"n_BrSiz",
+			"index":11,
+			"inputs":{
+				"branches":[
+					{
+						"id":"1",
+						"inputs":{
+							"name":"Small (< 5 MB)",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_IniVr.outputs.varAttachmentSize }}",
+										"filter":{
+											"operator":"LT",
+											"value":5
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"2",
+						"inputs":{
+							"name":"Medium (5–25 MB)",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_IniVr.outputs.varAttachmentSize }}",
+										"filter":{
+											"operator":"GTE",
+											"value":5
+										}
+									},
+									{
+										"property":"{{ n_IniVr.outputs.varAttachmentSize }}",
+										"filter":{
+											"operator":"LTE",
+											"value":25
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"3",
+						"inputs":{
+							"name":"Large (> 25 MB)",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_IniVr.outputs.varAttachmentSize }}",
+										"filter":{
+											"operator":"GT",
+											"value":25
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"default"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Branch",
+			"title":"",
+			"type":"BRANCH"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrSiz@n_IfExe@n_IfNoA@n_LpBat@root_id-1@l@n@n@1",
+			"id":"n_BrSiz@1",
+			"index":12,
+			"inputs":{
+				"name":"Small (< 5 MB)",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_IniVr.outputs.varAttachmentSize }}",
+							"filter":{
+								"operator":"LT",
+								"value":5
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrSiz@n_IfExe@n_IfNoA@n_LpBat@root_id-1@l@n@n@2",
+			"id":"n_BrSiz@2",
+			"index":13,
+			"inputs":{
+				"name":"Medium (5–25 MB)",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_IniVr.outputs.varAttachmentSize }}",
+							"filter":{
+								"operator":"GTE",
+								"value":5
+							}
+						},
+						{
+							"property":"{{ n_IniVr.outputs.varAttachmentSize }}",
+							"filter":{
+								"operator":"LTE",
+								"value":25
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrSiz@n_IfExe@n_IfNoA@n_LpBat@root_id-1@l@n@n@3",
+			"id":"n_BrSiz@3",
+			"index":14,
+			"inputs":{
+				"name":"Large (> 25 MB)",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_IniVr.outputs.varAttachmentSize }}",
+							"filter":{
+								"operator":"GT",
+								"value":25
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrSiz@n_IfExe@n_IfNoA@n_LpBat@root_id-1@l@n@n@1",
+			"id":"n_UpdPr",
+			"index":15,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_IniVr.outputs.varAction }}",
+						"value":"Process"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set Action: Process",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrSiz@n_IfExe@n_IfNoA@n_LpBat@root_id-1@l@n@n@2",
+			"id":"n_UpdCp",
+			"index":16,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_IniVr.outputs.varAction }}",
+						"value":"Compress then Process"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set Action: Compress then Process",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrSiz@n_IfExe@n_IfNoA@n_LpBat@root_id-1@l@n@n@3",
+			"id":"n_UpdRs",
+			"index":17,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_IniVr.outputs.varAction }}",
+						"value":"Reject"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set Action: Reject (Oversized)",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfNoA@n_LpBat@root_id-1@l@n",
+			"id":"n_IfRej",
+			"index":18,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_IniVr.outputs.varAction }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":"Reject"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Is Action Reject?",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"68f0a743bfd9f67130bd4947",
+				"resourceName":"gmail_reply_in_thread",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfRej@n_IfNoA@n_LpBat@root_id-1@l@n@y",
+			"id":"n_RplSn",
+			"index":19,
+			"inputs":{
+				"threadId":"{{ n_CodEx.outputs.result.threadId }}",
+				"email_type":"text",
+				"subject":"=CONCAT(\"Re: \", \"{{ n_LpBat.outputs.item.raw.subject }}\")",
+				"message_id":"{{ n_CodEx.outputs.result.messageId }}",
+				"to":"{{ n_CodEx.outputs.result.senderEmail }}",
+				"message":"=IF(OR(EQUAL(\"{{ n_IniVr.outputs.varAttachmentType }}\", \".exe\"), EQUAL(\"{{ n_IniVr.outputs.varAttachmentType }}\", \".bat\"), EQUAL(\"{{ n_IniVr.outputs.varAttachmentType }}\", \".sh\")), \"Your email was rejected because it contained an executable file attachment (.exe/.bat/.sh), which is not permitted for security reasons.\", \"Your email was rejected because the attachment exceeds the maximum allowed size of 25MB. Please compress the file or use a file-sharing service.\")"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Reply to Sender (Rejection Notice)",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StpEd",
+			"index":20,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +905,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
