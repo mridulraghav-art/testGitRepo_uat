@@ -4,45 +4,103 @@
 	],
 	"createdTime":1781081684487,
 	"deleted":false,
+	"description":"Receives meeting details via webhook and deploys a bot to join the meeting and start recording/transcription.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_Wbh1K",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_JnMtg",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_JnMtg",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StpXz",
 			"type":"next"
 		}
 	],
 	"id":"6a2926537529013ce0a26b6b",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781081684487,
-	"name":"Untitled workflow",
+	"lcName":"test automation - meeting bot",
+	"modifiedTime":1781081807807,
+	"name":"Test Automation - Meeting Bot",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_Wbh1K",
 			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"meetingUrl":{
+								"type":"string",
+								"title":"Meeting URL"
+							},
+							"meetingId":{
+								"type":"string",
+								"title":"Meeting ID"
+							}
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"meeting_bot_by_unifyapps",
+				"resourceName":"meeting_bot_by_unifyapps_join_meeting",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_JnMtg",
 			"index":2,
+			"inputs":{
+				"botName":"UnifyApps",
+				"autoLeaveMeeting":true,
+				"meetingUrl":"{{ n_Wbh1K.outputs.body.meetingUrl }}"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Meeting Bot",
+			"title":"Join meeting",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StpXz",
+			"index":3,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +114,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
