@@ -32,7 +32,7 @@
 	"id":"6a290b445a45bf384988ad42",
 	"lastModifiedBy":39,
 	"lcName":"h",
-	"modifiedTime":1781076432399,
+	"modifiedTime":1781076457905,
 	"name":"h",
 	"nodes":[
 		{
@@ -158,9 +158,9 @@
 					{
 						"source":"{{ n_5ANtT.outputs.var }}",
 						"value":{
-							"source":"{{ n_5ANtT.outputs }}",
 							"ua:type":"mappedArray",
-							"items":"=sum({{ n_5ANtT.outputs.var }},1)"
+							"items":"=sum({{ n_5ANtT.outputs.var }},1)",
+							"source":"{{ n_5ANtT.outputs.var }}"
 						}
 					}
 				]
@@ -185,5 +185,5 @@
 		}
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
