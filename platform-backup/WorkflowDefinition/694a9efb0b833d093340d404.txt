@@ -25,11 +25,11 @@
 			"fromNodeId":"n_ijxyG",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_8PT8W",
+			"toNodeId":"n_YJN2G",
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_8PT8W",
+			"fromNodeId":"n_YJN2G",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_iwxb4",
@@ -117,7 +117,7 @@
 	"id":"694a9efb0b833d093340d404",
 	"lastModifiedBy":39,
 	"lcName":"[final] data catalog - oracledb server",
-	"modifiedTime":1781070199938,
+	"modifiedTime":1781070358875,
 	"name":"[Final] Data Catalog - OracleDB Server",
 	"nodes":[
 		{
@@ -273,7 +273,7 @@
 		{
 			"context":{
 				"appName":"standard_entities",
-				"resourceVersion":0,
+				"resourceVersion":6601,
 				"resourceName":"standard_entities_get_connection_details",
 				"type":"APPLICATION"
 			},
@@ -281,14 +281,13 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
-			"id":"n_8PT8W",
+			"id":"n_YJN2G",
 			"index":3,
 			"inputs":{
-				"connectionIds":"{{ n_ijxyG.outputs.connection_id }}",
-				"includeCredentials":true
+				"connectionIds":"{{ n_ijxyG.outputs.connection_id }}"
 			},
 			"skip":false,
-			"subTitle":"Standard entities by WurkNow",
+			"subTitle":"Standard entities by UnifyApps",
 			"title":"Get connection details",
 			"type":"ACTION"
 		},
@@ -753,7 +752,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"CONTINUE",
 			"groupId":"n_5k6iR@_oEXuu-1@l",
 			"id":"n_DjbKr",
@@ -1283,5 +1282,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":20
+	"version":21
 }
