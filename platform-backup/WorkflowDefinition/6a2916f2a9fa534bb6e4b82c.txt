@@ -4,14 +4,14 @@
 	],
 	"createdTime":1781077746320,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1781077824236,
+		"deployedAt":1781078515125,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a29173f5420af2d73b15a2e",
+		"deployedDefinitionId":"6a2919f3a9fa534bb6e4cdc5",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":2
+		"version":2,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"6a2916f2a9fa534bb6e4b82c",
 	"lastModifiedBy":39,
 	"lcName":"mdm123_automation",
-	"modifiedTime":1781078513370,
+	"modifiedTime":1781079397713,
 	"name":"MDM123_Automation",
 	"nodes":[
 		{
@@ -35,7 +35,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_ymnB2-1",
 			"id":"n_JTfz6",
@@ -96,7 +96,7 @@
 			"index":2,
 			"inputs":{
 				"result":{
-					"output1":"{{ n_JTfz6.outputs.num1 }}+{{ n_JTfz6.outputs.Num2 }}"
+					"output1":"=SUM({{ n_JTfz6.outputs.num1 }},{{ n_JTfz6.outputs.Num2 }})"
 				}
 			},
 			"skip":false,
@@ -119,5 +119,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
