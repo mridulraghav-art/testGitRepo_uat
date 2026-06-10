@@ -6,46 +6,87 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_sdrEJ",
+			"fromNodeId":"n_Jx03Q",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_8cAnk",
+			"toNodeId":"n_DVlZB",
 			"type":"next"
 		}
 	],
 	"id":"6a2959f58a9d207d045c8508",
 	"lastModifiedBy":39,
 	"lcName":"backup manager failure report export",
-	"modifiedTime":1781094901489,
+	"modifiedTime":1781095097323,
 	"name":"Backup Manager Failure Report export",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2689,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
-			"id":"_sdrEJ",
-			"index":0,
+			"id":"n_Jx03Q",
+			"index":1,
+			"inputs":{
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"BackupId":{
+							"type":"string",
+							"title":"Backup Id"
+						},
+						"Search_filter":{
+							"type":"string",
+							"title":"Search Filter"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"analytics_by_unifyapps",
+				"resourceVersion":2416,
+				"resourceName":"analytics_by_unifyapps_export_sql",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
-			"id":"_8cAnk",
-			"index":0,
+			"id":"n_DVlZB",
+			"index":2,
+			"inputs":{
+				"fileName":"Failure _report",
+				"sheetName":"Sheet_0",
+				"query":"SELECT\n    p.assetId,\n    p.status,\n    p.commitUrl,\n    p.shortSha,\n    p.assetClass,\n    p.errorMessage,\n    DATE_FORMAT(\n        FROM_UNIXTIME(p.lastSyncTime / 1000),\n        '%d %b %Y, %H:%i'\n    ) AS lastUpdatedOn,\n    COUNT(*) OVER() AS TotalRecords\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Jx03Q.outputs.BackupId }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Jx03Q.outputs.BackupId }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Jx03Q.outputs.Search_filter }}%'\nORDER BY p.lastSyncTime;",
+				"keepExactFileName":true,
+				"fileType":"CSV",
+				"group":"PLATFORM"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Analytics by UnifyApps",
+			"title":"Export SQL Query Result",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +97,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
