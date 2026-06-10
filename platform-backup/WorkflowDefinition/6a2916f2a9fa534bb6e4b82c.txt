@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1781077746320,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_ymnB2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Zt7ug",
+			"type":"next"
+		}
+	],
+	"id":"6a2916f2a9fa534bb6e4b82c",
+	"lastModifiedBy":39,
+	"lcName":"mdm123_automation",
+	"modifiedTime":1781077746320,
+	"name":"MDM123_Automation",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ymnB2-1",
+			"id":"_ymnB2",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_ymnB2-1",
+			"id":"_Zt7ug",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
