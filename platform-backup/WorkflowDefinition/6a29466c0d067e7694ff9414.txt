@@ -1,48 +1,616 @@
 {
 	"appsUsed":[
-		
+		"gcalendar",
+		"gmail"
 	],
 	"createdTime":1781089900439,
 	"deleted":false,
+	"description":"Triggers when a Google Calendar event is cancelled or deleted, fetches event details, optionally notes the Meet link status, then loops through attendees to send cancellation emails via Gmail. Logs failures to storage and uses CONTINUE so all attendees are notified.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_START",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_VARS",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_VARS",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GETEV",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GETEV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IF1",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IF1",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SETPURGE",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_IF1",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IF2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SETPURGE",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_STOPFIN",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IF2",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SETINV",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_IF2",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SETNOMEET",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SETINV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SETCOUNT",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SETNOMEET",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SETCOUNT",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SETCOUNT",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LOOP",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LOOP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SCOPE",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_LOOP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_STOPFIN",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SCOPE",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GMAIL",
+			"type":"scope"
+		},
+		{
+			"fromNodeId":"n_SCOPE",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_STOREFAIL",
+			"type":"error"
+		},
+		{
+			"fromNodeId":"n_GMAIL",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SETSENT",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SETSENT",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LOOP",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_STOREFAIL",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SETPARTIAL",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SETPARTIAL",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CONT",
 			"type":"next"
 		}
 	],
 	"id":"6a29466c0d067e7694ff9414",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781089900439,
-	"name":"Untitled workflow",
+	"lcName":"google calendar event cancellation notifier",
+	"modifiedTime":1781090201215,
+	"name":"Google Calendar Event Cancellation Notifier",
 	"nodes":[
 		{
+			"context":{
+				"appName":"gcalendar",
+				"connectionId":"685c01634904043186b6e78a",
+				"resourceName":"gcalendar_on_event_changes"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_START",
 			"index":1,
+			"inputs":{
+				"calendarId":"primary"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Google Calendar",
+			"title":"Event changed (Google Calendar)",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_VARS",
 			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"varAttendeeCount",
+						"varNotificationStatus",
+						"varMeetLinkStatus"
+					],
+					"properties":{
+						"varAttendeeCount":{
+							"type":"number",
+							"title":"Attendee Count",
+							"default":0
+						},
+						"varNotificationStatus":{
+							"type":"string",
+							"title":"Notification Status",
+							"default":""
+						},
+						"varMeetLinkStatus":{
+							"type":"string",
+							"title":"Meet Link Status",
+							"default":""
+						}
+					}
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"varAttendeeCount",
+						"varNotificationStatus",
+						"varMeetLinkStatus"
+					],
+					"properties":{
+						"varAttendeeCount":{
+							"type":"number",
+							"title":"Attendee Count"
+						},
+						"varNotificationStatus":{
+							"type":"string",
+							"title":"Notification Status"
+						},
+						"varMeetLinkStatus":{
+							"type":"string",
+							"title":"Meet Link Status"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable",
+			"title":"Create variables",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gcalendar",
+				"connectionId":"685c01634904043186b6e78a",
+				"resourceName":"gcalendar_get_event_by_id",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_GETEV",
+			"index":3,
+			"inputs":{
+				"eventId":"{{ n_START.outputs.id }}",
+				"calendarId":"primary"
+			},
+			"skip":false,
+			"subTitle":"Google Calendar",
+			"title":"Get event by ID",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_IF1",
+			"index":4,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_GETEV.outputs.attendees }}",
+						"filter":{
+							"operator":"MISSING"
+						}
+					},
+					{
+						"property":"{{ n_GETEV.outputs.id }}",
+						"filter":{
+							"operator":"MISSING"
+						}
+					}
+				],
+				"operator":"OR"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Check if event data is purged or attendees missing",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IF1@root_id-1@y",
+			"id":"n_SETPURGE",
+			"index":5,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_VARS.outputs.varNotificationStatus }}",
+						"value":"Event data purged - no attendees to notify"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set status: Event data purged",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IF1@root_id-1@n",
+			"id":"n_IF2",
+			"index":6,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_GETEV.outputs.hangoutLink }}",
+						"filter":{
+							"operator":"EXISTS"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Check if Meet link is present",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IF2@n_IF1@root_id-1@n@y",
+			"id":"n_SETINV",
+			"index":7,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_VARS.outputs.varMeetLinkStatus }}",
+						"value":"Invalidated"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set Meet link status: Invalidated",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IF2@n_IF1@root_id-1@n@n",
+			"id":"n_SETNOMEET",
+			"index":8,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_VARS.outputs.varMeetLinkStatus }}",
+						"value":"No Meet Link"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set Meet link status: No Meet Link",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IF1@root_id-1@n",
+			"id":"n_SETCOUNT",
+			"index":9,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_VARS.outputs.varAttendeeCount }}",
+						"value":"{{ n_GETEV.outputs.attendees }}"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set attendee count",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IF1@root_id-1@n",
+			"id":"n_LOOP",
+			"index":10,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_GETEV.outputs.attendees }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each attendee",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"scope",
+				"resourceName":"scope_trigger_scope",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_LOOP@n_IF1@root_id-1@n@l",
+			"id":"n_SCOPE",
+			"index":11,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Scope",
+			"title":"Try: Send cancellation email",
+			"type":"SCOPE"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"696a24bd59b08f501796e5a0",
+				"resourceName":"gmail_send_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_SCOPE@n_LOOP@n_IF1@root_id-1@n@l@s",
+			"id":"n_GMAIL",
+			"index":12,
+			"inputs":{
+				"email_type":"html",
+				"subject":"Meeting Cancelled: {{ n_GETEV.outputs.summary }}",
+				"to":[
+					"{{ n_LOOP.outputs.item.email }}"
+				],
+				"message":"<p>Dear Attendee,</p><p>We would like to inform you that the meeting <strong>{{ n_GETEV.outputs.summary }}</strong> scheduled for <strong>{{ n_GETEV.outputs.start.dateTime }}</strong> has been cancelled.</p><p>Organizer: {{ n_GETEV.outputs.organizer.displayName }} ({{ n_GETEV.outputs.organizer.email }})</p><p>We apologize for any inconvenience caused.</p>"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Send cancellation email",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_SCOPE@n_LOOP@n_IF1@root_id-1@n@l@s",
+			"id":"n_SETSENT",
+			"index":13,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_VARS.outputs.varNotificationStatus }}",
+						"value":"Notifications Sent"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set status: Notifications Sent",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceName":"storage_by_unifyapps_create_record",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"id":"n_STOREFAIL",
+			"index":14,
+			"inputs":{
+				"useRawPayload":false,
+				"writeThroughSessionVariables":false,
+				"object_type":"CancellationFailures",
+				"skipIfBlank":false,
+				"record_loader":{
+					"failedEmail":"{{ n_LOOP.outputs.item.email }}",
+					"eventId":"{{ n_GETEV.outputs.id }}",
+					"eventTitle":"{{ n_GETEV.outputs.summary }}",
+					"timestamp":"=TEXT(NOW(),\"YYYY-MM-DDTHH:mm:ss\")"
+				}
+			},
+			"skip":false,
+			"subTitle":"Storage",
+			"title":"Log cancellation failure",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"id":"n_SETPARTIAL",
+			"index":15,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_VARS.outputs.varNotificationStatus }}",
+						"value":"Partial - some emails failed"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set status: Partial failure",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"continue",
+				"resourceName":"continue",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"id":"n_CONT",
+			"index":16,
+			"inputs":{
+				"loop":"n_LOOP"
+			},
+			"skip":false,
+			"subTitle":"Continue",
+			"title":"Continue to next attendee",
+			"type":"CONTINUE"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_STOPFIN",
+			"index":17,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +624,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
