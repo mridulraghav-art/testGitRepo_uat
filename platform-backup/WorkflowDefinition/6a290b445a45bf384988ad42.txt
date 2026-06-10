@@ -32,7 +32,7 @@
 	"id":"6a290b445a45bf384988ad42",
 	"lastModifiedBy":39,
 	"lcName":"h",
-	"modifiedTime":1781076265449,
+	"modifiedTime":1781076391905,
 	"name":"h",
 	"nodes":[
 		{
@@ -148,7 +148,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QiykJ-1",
 			"id":"n_gCkEb",
@@ -157,11 +157,11 @@
 				"variables":[
 					{
 						"source":"{{ n_5ANtT.outputs.var }}",
-						"value":{
-							"ua:type":"mappedArray",
-							"items":"=sum({{ n_5ANtT.outputs.var }},1)",
-							"source":"{{ n_5ANtT.outputs.var }}"
-						}
+						"value":[
+							1,
+							2,
+							3
+						]
 					}
 				]
 			},
@@ -185,5 +185,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
