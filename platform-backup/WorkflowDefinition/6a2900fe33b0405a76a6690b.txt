@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1781072126684,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_YJIob",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_lmtja",
+			"type":"next"
+		}
+	],
+	"id":"6a2900fe33b0405a76a6690b",
+	"lastModifiedBy":39,
+	"lcName":"vars masking",
+	"modifiedTime":1781072126684,
+	"name":"vars masking",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YJIob-1",
+			"id":"_YJIob",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YJIob-1",
+			"id":"_lmtja",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
