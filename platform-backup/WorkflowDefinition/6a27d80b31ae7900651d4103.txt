@@ -138,7 +138,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to xlsx",
-	"modifiedTime":1781087451715,
+	"modifiedTime":1781087531124,
 	"name":"BM Export Data to XLSX",
 	"nodes":[
 		{
@@ -148,7 +148,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_Uy8Gi",
@@ -203,7 +203,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_7ylnq",
@@ -241,7 +241,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cNxc8",
@@ -276,7 +276,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_ZHlXF",
@@ -299,7 +299,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_zqh3z",
@@ -335,7 +335,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_eNBFg",
@@ -351,6 +351,12 @@
 							"properties":{},
 							"additionalProperties":false,
 							"title":"Object"
+						},
+						"result":{
+							"type":"object",
+							"properties":{},
+							"additionalProperties":false,
+							"title":"Result"
 						}
 					}
 				},
@@ -396,7 +402,7 @@
 				"headerType":"DYNAMIC",
 				"encoding":"UTF-8",
 				"keepExactFileName":true,
-				"dataSource":"{{ n_ZHlXF.outputs.result }}",
+				"dataSource":"{{ n_eNBFg.outputs.objects[0].result }}",
 				"fileType":"csv",
 				"dynamicHeaders":{
 					"source":"{{ n_7ylnq.outputs.result.FileHeaders }}",
@@ -404,7 +410,7 @@
 					"items":"{{ n_7ylnq.outputs.result.FileHeaders[0] }}"
 				}
 			},
-			"skip":true,
+			"skip":false,
 			"subTitle":"CSV by UnifyApps",
 			"title":"Write data to CSV file",
 			"type":"ACTION"
@@ -417,7 +423,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cg7T0",
@@ -450,7 +456,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_TsZUP",
@@ -525,7 +531,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cx9Qm",
@@ -593,7 +599,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
 			"id":"n_oOXYd",
@@ -624,7 +630,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_cx9Qm@_8JT2w-1@l",
 			"id":"n_KUugT",
@@ -650,7 +656,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_cN32w",
@@ -672,7 +678,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_OqykT",
@@ -715,7 +721,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_8JT2w-1",
 			"id":"n_6EcYu",
@@ -745,5 +751,5 @@
 		}
 	},
 	"standard":false,
-	"version":58
+	"version":59
 }
