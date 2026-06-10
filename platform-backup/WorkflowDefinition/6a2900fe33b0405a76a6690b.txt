@@ -62,12 +62,34 @@
 			"skip":false,
 			"toNodeId":"n_OEKz4",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_OEKz4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_i1lY3",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_i1lY3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ebwx0",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_ebwx0",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_i1lY3",
+			"type":"next"
 		}
 	],
 	"id":"6a2900fe33b0405a76a6690b",
 	"lastModifiedBy":39,
 	"lcName":"vars masking",
-	"modifiedTime":1781073958723,
+	"modifiedTime":1781074103212,
 	"name":"vars masking",
 	"nodes":[
 		{
@@ -161,7 +183,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_jwu0i",
@@ -520,7 +542,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_YJIob-1",
 			"id":"n_OEKz4",
@@ -536,6 +558,53 @@
 			"skip":false,
 			"subTitle":"Variable by UnifyApps",
 			"title":"Update variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceVersion":64,
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_YJIob-1",
+			"id":"n_i1lY3",
+			"index":9,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ __ENV__.outputs.ENV_CHECK_SENS }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1654,
+				"resourceName":"variable_by_unifyapps_add_item_to_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_i1lY3@_YJIob-1@l",
+			"id":"n_ebwx0",
+			"index":10,
+			"inputs":{
+				"itemToAdd":"{{ n_i1lY3.outputs.item }}",
+				"insertLocation":"END",
+				"captureAddedItem":false,
+				"listName":"{{ n_jwu0i.outputs.items[0] }}"
+			},
+			"skip":false,
+			"subTitle":"Variable by UnifyApps",
+			"title":"Add item to list",
 			"type":"ACTION"
 		}
 	],
@@ -553,5 +622,5 @@
 		}
 	},
 	"standard":false,
-	"version":7
+	"version":8
 }
