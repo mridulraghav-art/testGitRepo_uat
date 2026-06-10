@@ -4,45 +4,1018 @@
 	],
 	"createdTime":1781090795843,
 	"deleted":false,
+	"description":"Runs every Monday at 9:00 AM. Reads TeamMetrics from storage (creating sample data if absent), iterates through each team member to calculate a performance score and tier, accumulates results, then compiles a full summary object.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_StaRt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_FtRec",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_FtRec",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfExs",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IfExs",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BkCrt",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IfExs",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CvgDt",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_BkCrt",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CvgDt",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CvgDt",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CrVar",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CrVar",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CrLst",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CrLst",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Loop1",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Loop1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CalSc",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_Loop1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SumCd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CalSc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdSc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdSc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BrTir",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_BrTir",
+			"name":"1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BrTir@1",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_BrTir",
+			"name":"2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BrTir@2",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_BrTir",
+			"name":"3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_BrTir@3",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_BrTir",
+			"name":"default",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdP",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_BrTir@1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdE",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_BrTir@2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdG",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_BrTir@3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_UpdA",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdE",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_AddIt",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdG",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_AddIt",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdA",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_AddIt",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_UpdP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_AddIt",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_AddIt",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Loop1",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SumCd",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Stop1",
 			"type":"next"
 		}
 	],
 	"id":"6a2949eb0d067e7694ffc031",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781090795843,
-	"name":"Untitled workflow",
+	"lcName":"team performance tracker",
+	"modifiedTime":1781091108469,
+	"name":"Team Performance Tracker",
 	"nodes":[
 		{
+			"context":{
+				"appName":"schedule",
+				"resourceName":"schedule_default"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_StaRt",
 			"index":1,
+			"inputs":{
+				"cron":"INTERVAL",
+				"timezone":"Asia/Kolkata",
+				"interval":1,
+				"daysOfWeek":[
+					"MONDAY"
+				],
+				"frequency":"WEEKS",
+				"triggerAt":"09:00 AM"
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Schedule",
+			"title":"New recurring event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"SCHEDULED"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceName":"storage_by_unifyapps_fetch_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"root_id-1",
+			"id":"n_FtRec",
+			"index":2,
+			"inputs":{
+				"object_type":"TeamMetrics",
+				"page":{
+					"paginateBy":"OFFSET",
+					"limit":100,
+					"offset":0
+				},
+				"numberOfRecordsToFetch":"MULTIPLE"
+			},
+			"skip":false,
+			"subTitle":"Storage",
+			"title":"Fetch records",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
-			"index":2,
+			"groupId":"root_id-1",
+			"id":"n_IfExs",
+			"index":3,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_FtRec.outputs.objects }}",
+						"filter":{
+							"operator":"EXISTS"
+						}
+					}
+				],
+				"operator":"AND"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Condition",
+			"title":"Check if TeamMetrics exists",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceName":"storage_by_unifyapps_bulk_create_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfExs@root_id-1@n",
+			"id":"n_BkCrt",
+			"index":4,
+			"inputs":{
+				"useRawPayload":true,
+				"rawPayload":[
+					{
+						"name":"Alice",
+						"tasksCompleted":18,
+						"tasksOverdue":1,
+						"hoursLogged":42
+					},
+					{
+						"name":"Bob",
+						"tasksCompleted":10,
+						"tasksOverdue":5,
+						"hoursLogged":30
+					},
+					{
+						"name":"Charlie",
+						"tasksCompleted":14,
+						"tasksOverdue":2,
+						"hoursLogged":38
+					},
+					{
+						"name":"Diana",
+						"tasksCompleted":6,
+						"tasksOverdue":8,
+						"hoursLogged":22
+					},
+					{
+						"name":"Eve",
+						"tasksCompleted":20,
+						"tasksOverdue":0,
+						"hoursLogged":45
+					}
+				],
+				"object_type":"TeamMetrics"
+			},
+			"skip":false,
+			"subTitle":"Storage",
+			"title":"Create or update records in bulk",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_CvgDt",
+			"index":5,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"properties":{
+						"members":{
+							"type":"array",
+							"title":"Members"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"properties":{
+						"existingObjects":{
+							"type":"array",
+							"title":"Existing Objects"
+						}
+					}
+				},
+				"code":"def existing = existingObjects ?: []\ndef members = existing.size() > 0 ? existing.collect { rec ->\n  def p = rec.properties ?: rec\n  [name: p.name, tasksCompleted: (p.tasksCompleted ?: 0) as Number, tasksOverdue: (p.tasksOverdue ?: 0) as Number, hoursLogged: (p.hoursLogged ?: 0) as Number]\n} : [\n  [name: 'Alice', tasksCompleted: 18, tasksOverdue: 1, hoursLogged: 42],\n  [name: 'Bob', tasksCompleted: 10, tasksOverdue: 5, hoursLogged: 30],\n  [name: 'Charlie', tasksCompleted: 14, tasksOverdue: 2, hoursLogged: 38],\n  [name: 'Diana', tasksCompleted: 6, tasksOverdue: 8, hoursLogged: 22],\n  [name: 'Eve', tasksCompleted: 20, tasksOverdue: 0, hoursLogged: 45]\n]\nreturn [members: members]",
+				"parameters_loader":{
+					"existingObjects":"{{ n_FtRec.outputs.objects }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code",
+			"title":"Resolve team members data",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_CrVar",
+			"index":6,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"currentScore",
+						"currentTier"
+					],
+					"properties":{
+						"currentScore":{
+							"type":"number",
+							"title":"Current Score"
+						},
+						"currentTier":{
+							"type":"string",
+							"title":"Current Tier"
+						}
+					}
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"currentScore":{
+							"type":"number",
+							"title":"Current Score"
+						},
+						"currentTier":{
+							"type":"string",
+							"title":"Current Tier"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Create variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_create_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_CrLst",
+			"index":7,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"format":"ua:list",
+					"type":"object",
+					"properties":{
+						"ua:title":{
+							"type":"string"
+						},
+						"ua:list_type":{
+							"type":"string",
+							"default":"OBJECT"
+						},
+						"createList":{
+							"type":"object",
+							"properties":{
+								"ua:type":{
+									"type":"string",
+									"default":"mappedArray"
+								},
+								"source":{
+									"type":"string",
+									"format":"ua:source",
+									"title":"List Item Source"
+								},
+								"items":{
+									"type":"object",
+									"additionalProperties":false,
+									"required":[
+										"name",
+										"score",
+										"tier"
+									],
+									"properties":{
+										"name":{
+											"type":"string",
+											"title":"Name"
+										},
+										"score":{
+											"type":"number",
+											"title":"Score"
+										},
+										"tier":{
+											"type":"string",
+											"title":"Tier"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"inputs":{
+				"createList":{
+					"ua:type":"mappedArray"
+				},
+				"ua:title":"Results List",
+				"ua:list_type":"OBJECT"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"items":{
+							"type":"array",
+							"title":"Results List",
+							"items":{
+								"type":"object",
+								"properties":{
+									"name":{
+										"type":"string",
+										"title":"Name"
+									},
+									"score":{
+										"type":"number",
+										"title":"Score"
+									},
+									"tier":{
+										"type":"string",
+										"title":"Tier"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Create list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_Loop1",
+			"index":8,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_CvgDt.outputs.result.members }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each team member",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_Loop1@root_id-1@l",
+			"id":"n_CalSc",
+			"index":9,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"properties":{
+						"score":{
+							"type":"number",
+							"title":"Score"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"properties":{
+						"tasksCompleted":{
+							"type":"number",
+							"title":"Tasks Completed"
+						},
+						"tasksOverdue":{
+							"type":"number",
+							"title":"Tasks Overdue"
+						},
+						"hoursLogged":{
+							"type":"number",
+							"title":"Hours Logged"
+						}
+					}
+				},
+				"code":"def score = (tasksCompleted * 5) - (tasksOverdue * 3) + (hoursLogged * 0.5)\nreturn [score: score]",
+				"parameters_loader":{
+					"tasksCompleted":"{{ n_Loop1.outputs.item.tasksCompleted }}",
+					"tasksOverdue":"{{ n_Loop1.outputs.item.tasksOverdue }}",
+					"hoursLogged":"{{ n_Loop1.outputs.item.hoursLogged }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code",
+			"title":"Calculate performance score",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_Loop1@root_id-1@l",
+			"id":"n_UpdSc",
+			"index":10,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_CrVar.outputs.currentScore }}",
+						"value":"{{ n_CalSc.outputs.result.score }}"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Update score variable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_Loop1@root_id-1@l",
+			"id":"n_BrTir",
+			"index":11,
+			"inputs":{
+				"branches":[
+					{
+						"id":"1",
+						"inputs":{
+							"name":"Excellent",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_CrVar.outputs.currentScore }}",
+										"filter":{
+											"operator":"GTE",
+											"value":90
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"2",
+						"inputs":{
+							"name":"Good",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_CrVar.outputs.currentScore }}",
+										"filter":{
+											"operator":"GTE",
+											"value":70
+										}
+									},
+									{
+										"property":"{{ n_CrVar.outputs.currentScore }}",
+										"filter":{
+											"operator":"LT",
+											"value":90
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"3",
+						"inputs":{
+							"name":"Average",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_CrVar.outputs.currentScore }}",
+										"filter":{
+											"operator":"GTE",
+											"value":50
+										}
+									},
+									{
+										"property":"{{ n_CrVar.outputs.currentScore }}",
+										"filter":{
+											"operator":"LT",
+											"value":70
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"default"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Branch",
+			"title":"",
+			"type":"BRANCH"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrTir@n_Loop1@root_id-1@l@1",
+			"id":"n_BrTir@1",
+			"index":12,
+			"inputs":{
+				"name":"Excellent",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_CrVar.outputs.currentScore }}",
+							"filter":{
+								"operator":"GTE",
+								"value":90
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrTir@n_Loop1@root_id-1@l@2",
+			"id":"n_BrTir@2",
+			"index":13,
+			"inputs":{
+				"name":"Good",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_CrVar.outputs.currentScore }}",
+							"filter":{
+								"operator":"GTE",
+								"value":70
+							}
+						},
+						{
+							"property":"{{ n_CrVar.outputs.currentScore }}",
+							"filter":{
+								"operator":"LT",
+								"value":90
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrTir@n_Loop1@root_id-1@l@3",
+			"id":"n_BrTir@3",
+			"index":14,
+			"inputs":{
+				"name":"Average",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_CrVar.outputs.currentScore }}",
+							"filter":{
+								"operator":"GTE",
+								"value":50
+							}
+						},
+						{
+							"property":"{{ n_CrVar.outputs.currentScore }}",
+							"filter":{
+								"operator":"LT",
+								"value":70
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrTir@n_Loop1@root_id-1@l@1",
+			"id":"n_UpdE",
+			"index":15,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_CrVar.outputs.currentTier }}",
+						"value":"Excellent"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set tier: Excellent",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrTir@n_Loop1@root_id-1@l@2",
+			"id":"n_UpdG",
+			"index":16,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_CrVar.outputs.currentTier }}",
+						"value":"Good"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set tier: Good",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrTir@n_Loop1@root_id-1@l@3",
+			"id":"n_UpdA",
+			"index":17,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_CrVar.outputs.currentTier }}",
+						"value":"Average"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set tier: Average",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_BrTir@n_Loop1@root_id-1@l@default",
+			"id":"n_UpdP",
+			"index":18,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_CrVar.outputs.currentTier }}",
+						"value":"Poor"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set tier: Poor",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_add_item_to_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_Loop1@root_id-1@l",
+			"id":"n_AddIt",
+			"index":19,
+			"inputs":{
+				"itemToAdd":{
+					"name":"{{ n_Loop1.outputs.item.name }}",
+					"score":"{{ n_CrVar.outputs.currentScore }}",
+					"tier":"{{ n_CrVar.outputs.currentTier }}"
+				},
+				"insertLocation":"END",
+				"captureAddedItem":false,
+				"listName":"{{ n_CrLst.outputs.items[0] }}"
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Add member result to list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_groovy",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_SumCd",
+			"index":20,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"properties":{
+						"summary":{
+							"type":"object",
+							"title":"Summary"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"properties":{
+						"members":{
+							"type":"array",
+							"title":"Members"
+						}
+					}
+				},
+				"code":"def memberList = members ?: []\ndef count = memberList.size() ?: 1\ndef totalScore = memberList.sum { (it.score ?: 0) as Double } ?: 0\ndef excellent = 0\ndef good = 0\ndef average = 0\ndef poor = 0\nmemberList.each { m ->\n  def tier = m.tier\n  if (tier == 'Excellent') excellent++\n  else if (tier == 'Good') good++\n  else if (tier == 'Average') average++\n  else poor++\n}\ndef summary = [\n  teamAverageScore: totalScore / count,\n  teamAverageTasksCompleted: 0,\n  teamAverageTasksOverdue: 0,\n  teamAverageHoursLogged: 0,\n  tierCounts: [excellent: excellent, good: good, average: average, poor: poor],\n  members: memberList\n]\nreturn [summary: summary]",
+				"parameters_loader":{
+					"members":"{{ n_CrLst.outputs.items }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code",
+			"title":"Compile team summary",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_Stop1",
+			"index":21,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +1029,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
