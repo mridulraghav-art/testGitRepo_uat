@@ -1,48 +1,187 @@
 {
 	"appsUsed":[
-		
+		"gmail",
+		"slack"
 	],
 	"createdTime":1781087795115,
 	"deleted":false,
+	"description":"Polls Gmail for new emails. For each email, checks if it has at least one PDF attachment. If yes, sends a Slack notification to the general channel with sender and subject details.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_StaRt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_LpMai",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LpMai",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IfPdf",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_LpMai",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StopW",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IfPdf",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SlkMs",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_IfPdf",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LpMai",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SlkMs",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LpMai",
 			"type":"next"
 		}
 	],
 	"id":"6a293e320d067e7694ff7f87",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781087795115,
-	"name":"Untitled workflow",
+	"lcName":"watch gmail for pdf and notify slack",
+	"modifiedTime":1781088056232,
+	"name":"Watch Gmail for PDF and Notify Slack",
 	"nodes":[
 		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"68622a29ad572201303293da",
+				"resourceName":"gmail_on_new_email_polling"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_StaRt",
 			"index":1,
+			"inputs":{
+				"intervalType":"minutes",
+				"interval":5,
+				"batchSize":5
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Gmail",
+			"title":"New email",
 			"trigger":{
 				"type":"EVENT"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_LpMai",
 			"index":2,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_StaRt.outputs.batch }}",
+				"captureIterations":false
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Loop",
+			"title":"For each email",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_LpMai@root_id-1@l",
+			"id":"n_IfPdf",
+			"index":3,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_LpMai.outputs.item.attachmentCount }}",
+						"filter":{
+							"operator":"GTE",
+							"value":1
+						}
+					},
+					{
+						"property":"{{ n_LpMai.outputs.item.allAttachments }}",
+						"filter":{
+							"operator":"CONTAINS",
+							"value":".pdf"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Has PDF attachment?",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"connectionId":"667b99e14460b851b5a1db57",
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IfPdf@n_LpMai@root_id-1@l@y",
+			"id":"n_SlkMs",
+			"index":4,
+			"inputs":{
+				"link_names":true,
+				"messageType":"text",
+				"channel":"general",
+				"text":"=CONCAT(\"📧 New email with PDF received! From: \", \"{{ n_LpMai.outputs.item.from.fromName }}\", \" (\", \"{{ n_LpMai.outputs.item.from.fromEmail }}\", \"), Subject: \", \"{{ n_LpMai.outputs.item.subject }}\", \". This email contains a PDF attachment.\")",
+				"mrkdwn":true
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Post message",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StopW",
+			"index":5,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +195,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
