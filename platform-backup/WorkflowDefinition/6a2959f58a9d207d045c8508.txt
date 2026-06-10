@@ -46,7 +46,7 @@
 	"id":"6a2959f58a9d207d045c8508",
 	"lastModifiedBy":39,
 	"lcName":"backup manager failure report export",
-	"modifiedTime":1781095849432,
+	"modifiedTime":1781095890589,
 	"name":"Backup Manager Failure Report export",
 	"nodes":[
 		{
@@ -120,7 +120,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
 			"id":"n_G2rIH",
@@ -151,7 +151,7 @@
 				"cta":{
 					"name":"Download File",
 					"type":"url",
-					"url":"{{ n_cN32w.outputs.url }}",
+					"url":"{{ n_G2rIH.outputs.url }}",
 					"width":{
 						"custom":"400px"
 					}
@@ -211,5 +211,5 @@
 		}
 	},
 	"standard":false,
-	"version":6
+	"version":7
 }
