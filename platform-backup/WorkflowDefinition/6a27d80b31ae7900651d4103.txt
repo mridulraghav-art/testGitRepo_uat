@@ -138,7 +138,7 @@
 	"id":"6a27d80b31ae7900651d4103",
 	"lastModifiedBy":39,
 	"lcName":"bm export data to xlsx",
-	"modifiedTime":1781089107527,
+	"modifiedTime":1781089142444,
 	"name":"BM Export Data to XLSX",
 	"nodes":[
 		{
@@ -647,7 +647,7 @@
 				"variables":[
 					{
 						"source":"{{ n_TsZUP.outputs.offset }}",
-						"value":"{{{{ n_TsZUP.outputs.offset }}+500}}"
+						"value":"=({{ n_TsZUP.outputs.offset }}+500)"
 					}
 				]
 			},
@@ -759,5 +759,5 @@
 		}
 	},
 	"standard":false,
-	"version":75
+	"version":76
 }
