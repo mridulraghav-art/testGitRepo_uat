@@ -25,6 +25,13 @@
 			"fromNodeId":"n_ijxyG",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_5UpBF",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_5UpBF",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_YJN2G",
 			"type":"next"
 		},
@@ -124,7 +131,7 @@
 	"id":"694a9efb0b833d093340d404",
 	"lastModifiedBy":39,
 	"lcName":"[final] data catalog - oracledb server",
-	"modifiedTime":1781072888325,
+	"modifiedTime":1781073254686,
 	"name":"[Final] Data Catalog - OracleDB Server",
 	"nodes":[
 		{
@@ -288,8 +295,29 @@
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
-			"id":"n_YJN2G",
+			"id":"n_5UpBF",
 			"index":3,
+			"inputs":{
+				"connectionIds":"{{ n_neNcf.outputs.connection_id }}"
+			},
+			"skip":false,
+			"subTitle":"Standard entities by UnifyApps",
+			"title":"Get connection details",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"standard_entities",
+				"resourceVersion":6601,
+				"resourceName":"standard_entities_get_connection_details",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_oEXuu-1",
+			"id":"n_YJN2G",
+			"index":4,
 			"inputs":{
 				"connectionIds":"{{ n_neNcf.outputs.connection_id }}"
 			},
@@ -310,7 +338,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_ErqfZ",
-			"index":4,
+			"index":5,
 			"inputs":{
 				"output":{
 					"type":"object",
@@ -368,7 +396,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_iwxb4",
-			"index":5,
+			"index":6,
 			"inputs":{
 				"variables":[
 					{
@@ -403,7 +431,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_nOSDm",
-			"index":6,
+			"index":7,
 			"inputs":{
 				"performAsync":false,
 				"objectSourceResourceName":"oracledb_execute_sql_metadata",
@@ -427,7 +455,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_hnqG8",
-			"index":7,
+			"index":8,
 			"inputs":{
 				"performAsync":false,
 				"objectSourceResourceName":"oracledb_execute_sql_metadata",
@@ -450,7 +478,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_bos4r",
-			"index":8,
+			"index":9,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -797,7 +825,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_5k6iR",
-			"index":9,
+			"index":10,
 			"inputs":{
 				"repeatMode":"SINGLE",
 				"listSource":"{{ n_hnqG8.outputs.rows }}",
@@ -821,7 +849,7 @@
 			"fallbackMode":"CONTINUE",
 			"groupId":"n_5k6iR@_oEXuu-1@l",
 			"id":"n_DjbKr",
-			"index":10,
+			"index":11,
 			"inputs":{
 				"performAsync":false,
 				"objectSourceResourceName":"oracledb_execute_sql_metadata",
@@ -906,7 +934,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_5k6iR@_oEXuu-1@l",
 			"id":"n_koLEF",
-			"index":11,
+			"index":12,
 			"inputs":{
 				"performAsync":false,
 				"objectSourceResourceName":"oracledb_execute_sql_metadata",
@@ -941,7 +969,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_5k6iR@_oEXuu-1@l",
 			"id":"n_6ol0Q",
-			"index":12,
+			"index":13,
 			"inputs":{
 				"captureAddedItems":false,
 				"insertLocation":"END",
@@ -983,7 +1011,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_xnDLm",
-			"index":13,
+			"index":14,
 			"inputSchema":{
 				"type":"SCHEMA_AND_LAYOUT",
 				"dynamic":false,
@@ -1261,7 +1289,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_F1QMc",
-			"index":14,
+			"index":15,
 			"inputs":{
 				"automationId":"684f983c5e1f71459863d922",
 				"runtimeConnections":{},
@@ -1319,7 +1347,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_dV5kw",
-			"index":15,
+			"index":16,
 			"inputs":{
 				"result":{
 					"response":"200"
@@ -1348,5 +1376,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":28
+	"version":29
 }
