@@ -55,7 +55,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1781189750890,
+	"modifiedTime":1781189859012,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -120,7 +120,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_joipm",
@@ -130,8 +130,8 @@
 					{
 						"property":"{{ n_IrKCJ.outputs.properties.int }}",
 						"filter":{
-							"operator":"GT",
-							"value":"32"
+							"operator":"EQUAL",
+							"value":"{{ n_IrKCJ.outputs.properties.list_of_str }}"
 						}
 					}
 				],
@@ -205,5 +205,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":115
+	"version":116
 }
