@@ -4,14 +4,15 @@
 	],
 	"createdTime":1762086433016,
 	"deleted":false,
-	"deployedVersion":10,
+	"deployedVersion":11,
 	"deploymentState":{
-		"deployedAt":1781081149537,
+		"deployedAt":1781095006073,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a29243d04735144499bd12d",
+		"deployedDefinitionId":"6a295a5d8a9d207d045c8b53",
+		"deploymentTag":"ABCD",
 		"status":"DEPLOYED",
-		"version":10,
-		"workflowVersion":73
+		"version":11,
+		"workflowVersion":76
 	},
 	"edges":[
 		{
@@ -20,12 +21,27 @@
 			"skip":false,
 			"toNodeId":"n_IrKCJ",
 			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IrKCJ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_joipm",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_joipm",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_coSBB",
+			"type":"next"
 		}
 	],
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1781094990622,
+	"modifiedTime":1781159401405,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -59,7 +75,7 @@
 		{
 			"context":{
 				"appName":"storage_by_unifyapps",
-				"resourceVersion":4662,
+				"resourceVersion":4663,
 				"resourceName":"storage_by_unifyapps_get_record_by_id",
 				"type":"APPLICATION"
 			},
@@ -70,16 +86,62 @@
 			"id":"n_IrKCJ",
 			"index":2,
 			"inputs":{
-				"object_type":"projecttest",
+				"object_type":"var_check_1",
 				"includeRoleMappings":false,
 				"includeCurrentUserPermissions":false,
 				"translationsOption":"DEFAULT",
-				"id":"123",
+				"id":"e_6a2a55807529013ce0a59c63",
 				"readThroughSessionVariables":false
 			},
 			"skip":false,
 			"subTitle":"Storage by UnifyApps",
 			"title":"Fetch record by ID",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceVersion":68,
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_QPyDa-1",
+			"id":"n_joipm",
+			"index":3,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_IrKCJ.outputs.properties.boolean }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":"true"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_joipm@_QPyDa-1@n",
+			"id":"n_coSBB",
+			"index":4,
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Select an action",
 			"type":"ACTION"
 		}
 	],
@@ -93,5 +155,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":76
+	"version":77
 }
