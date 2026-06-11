@@ -16,7 +16,7 @@
 	"id":"6a2a84aa3ded0569e1866d69",
 	"lastModifiedBy":39,
 	"lcName":"sdf",
-	"modifiedTime":1781178054169,
+	"modifiedTime":1781180330040,
 	"name":"sdf",
 	"nodes":[
 		{
@@ -35,27 +35,25 @@
 				"result":{
 					"type":"object",
 					"additionalProperties":false,
-					"required":[
-						"output"
-					],
 					"properties":{
 						"output":{
-							"type":"number",
-							"title":"Output"
+							"type":"boolean",
+							"title":"output"
 						}
 					}
 				},
 				"setup":{
 					"type":"object",
 					"additionalProperties":false,
+					"required":[
+						"gh"
+					],
 					"properties":{
-						"Num1":{
-							"type":"number",
-							"title":"Num1"
-						},
-						"Num2":{
-							"type":"number",
-							"title":"Num2"
+						"gh":{
+							"type":"string",
+							"format":"date",
+							"title":"Gh",
+							"disablePast":false
 						}
 					}
 				}
@@ -83,7 +81,7 @@
 			"index":2,
 			"inputs":{
 				"result":{
-					"output":"=SUM({{ n_kt9ff.outputs.Num1 }}+{{ n_kt9ff.outputs.Num2 }})"
+					"output":"true"
 				}
 			},
 			"skip":false,
@@ -106,5 +104,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
