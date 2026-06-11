@@ -1,48 +1,254 @@
 {
 	"appsUsed":[
-		
+		"openai",
+		"slack"
 	],
 	"createdTime":1781209555389,
 	"deleted":false,
+	"description":"Triggered by a webhook carrying a Google Meet link. A bot joins the meeting, records the transcript, summarizes it with OpenAI GPT-4o, and sends the summary to the user via Slack DM.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_Wbh1K",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_JnMt2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_JnMt2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GtRc3",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GtRc3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SlUsr4",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SlUsr4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_OpnDm5",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_OpnDm5",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_AiSum6",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_AiSum6",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_SlMsg7",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_SlMsg7",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Stop8",
 			"type":"next"
 		}
 	],
 	"id":"6a2b19d3b753a72ac77226b0",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781209555389,
-	"name":"Untitled workflow",
+	"lcName":"google meet summarizer bot",
+	"modifiedTime":1781209762039,
+	"name":"Google Meet Summarizer Bot",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_Wbh1K",
 			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"meetLink":{
+								"type":"string"
+							},
+							"meetingTitle":{
+								"type":"string"
+							},
+							"scheduledTime":{
+								"type":"string"
+							}
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"meeting_bot_by_unifyapps",
+				"resourceName":"meeting_bot_by_unifyapps_join_meeting",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_JnMt2",
 			"index":2,
+			"inputs":{
+				"botName":"UnifyApps Summarizer",
+				"autoLeaveMeeting":true,
+				"meetingUrl":"{{ n_Wbh1K.outputs.body.meetLink }}"
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Meeting Bot",
+			"title":"Join meeting",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"meeting_bot_by_unifyapps",
+				"resourceName":"meeting_bot_by_unifyapps_get_recording_till_now",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_GtRc3",
+			"index":3,
+			"inputs":{
+				"finalizeCurrentSegment":true,
+				"meetingUrl":"{{ n_Wbh1K.outputs.body.meetLink }}"
+			},
+			"skip":false,
+			"subTitle":"Meeting Bot",
+			"title":"Get recording till now",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"connectionId":"68d370d851fd1f1d5ac61250",
+				"resourceName":"slack_get_user_info_by_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_SlUsr4",
+			"index":4,
+			"inputs":{
+				"email":"aayushsharma2302@gmail.com"
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Get user info by email",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"connectionId":"68d370d851fd1f1d5ac61250",
+				"resourceName":"slack_open_conversation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_OpnDm5",
+			"index":5,
+			"inputs":{
+				"users":[
+					"{{ n_SlUsr4.outputs.user.id }}"
+				]
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Open MPIM conversation",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"openai",
+				"resourceName":"openai_summarize_text",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_AiSum6",
+			"index":6,
+			"inputs":{
+				"max_words":500,
+				"source_text":"=CONCAT(\"Meeting Title: \", \"{{ n_Wbh1K.outputs.body.meetingTitle }}\", \"\\nScheduled Time: \", \"{{ n_Wbh1K.outputs.body.scheduledTime }}\", \"\\n\\nTranscript:\\n\", \"{{ n_GtRc3.outputs.audioRecordingFile.source }}\")",
+				"model":"gpt-4o-mini"
+			},
+			"skip":false,
+			"subTitle":"OpenAI",
+			"title":"Summarize text",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"slack",
+				"connectionId":"68d370d851fd1f1d5ac61250",
+				"resourceName":"slack_post_message_in_channel",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_SlMsg7",
+			"index":7,
+			"inputs":{
+				"messageType":"text",
+				"channel":"{{ n_OpnDm5.outputs.channel.id }}",
+				"text":"=CONCAT(\"📋 *Meeting Summary*\\n\\n*Title:* \", \"{{ n_Wbh1K.outputs.body.meetingTitle }}\", \"\\n*Date:* \", \"{{ n_Wbh1K.outputs.body.scheduledTime }}\", \"\\n\\n*Summary:*\\n\", \"{{ n_AiSum6.outputs.choices[0].message.content }}\")",
+				"mrkdwn":true
+			},
+			"skip":false,
+			"subTitle":"Slack",
+			"title":"Post message",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_Stop8",
+			"index":8,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +262,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
