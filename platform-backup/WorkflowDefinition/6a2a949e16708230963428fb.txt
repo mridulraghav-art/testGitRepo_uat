@@ -4,6 +4,15 @@
 	],
 	"createdTime":1781175454877,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1781175478442,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a2a94b616708230963429b0",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_JTfz6",
@@ -16,7 +25,7 @@
 	"id":"6a2a949e16708230963428fb",
 	"lastModifiedBy":39,
 	"lcName":"mdm_automation_test (copy)",
-	"modifiedTime":1781175476341,
+	"modifiedTime":1781179604091,
 	"name":"MDM_Automation_test (copy)",
 	"nodes":[
 		{
@@ -47,14 +56,9 @@
 					"type":"object",
 					"additionalProperties":false,
 					"required":[
-						"num1",
 						"Num2"
 					],
 					"properties":{
-						"num1":{
-							"type":"integer",
-							"title":"Num 1"
-						},
 						"Num2":{
 							"type":"integer",
 							"title":"Num 2"
@@ -108,5 +112,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
