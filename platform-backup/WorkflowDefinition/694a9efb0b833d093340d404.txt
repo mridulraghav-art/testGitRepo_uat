@@ -4,14 +4,14 @@
 	],
 	"createdTime":1780636796198,
 	"deleted":false,
-	"deployedVersion":5,
+	"deployedVersion":6,
 	"deploymentState":{
-		"deployedAt":1781073488473,
+		"deployedAt":1781092494965,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a29065033b0405a76a6dbb5",
+		"deployedDefinitionId":"6a29508eaeb9a560a823584e",
 		"status":"DEPLOYED",
-		"version":5,
-		"workflowVersion":34
+		"version":6,
+		"workflowVersion":35
 	},
 	"edges":[
 		{
@@ -124,7 +124,7 @@
 	"id":"694a9efb0b833d093340d404",
 	"lastModifiedBy":39,
 	"lcName":"[final] data catalog - oracledb server",
-	"modifiedTime":1781092486850,
+	"modifiedTime":1781173877715,
 	"name":"[Final] Data Catalog - OracleDB Server",
 	"nodes":[
 		{
@@ -134,7 +134,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_neNcf",
@@ -158,14 +158,14 @@
 					"additionalProperties":false,
 					"required":[
 						"connectionId",
-						"datacatalogId"
+						"dataCatalogId"
 					],
 					"properties":{
 						"connectionId":{
 							"type":"string",
 							"title":"Connection Id"
 						},
-						"datacatalogId":{
+						"dataCatalogId":{
 							"type":"string",
 							"title":"Datacatalog Id"
 						}
@@ -188,7 +188,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_ijxyG",
@@ -285,7 +285,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_YJN2G",
@@ -306,7 +306,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_ErqfZ",
@@ -364,7 +364,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_iwxb4",
@@ -399,7 +399,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_nOSDm",
@@ -423,7 +423,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_hnqG8",
@@ -446,7 +446,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_bos4r",
@@ -793,7 +793,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_5k6iR",
@@ -817,7 +817,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"CONTINUE",
 			"groupId":"n_5k6iR@_oEXuu-1@l",
 			"id":"n_DjbKr",
@@ -902,7 +902,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_5k6iR@_oEXuu-1@l",
 			"id":"n_koLEF",
@@ -937,7 +937,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_5k6iR@_oEXuu-1@l",
 			"id":"n_6ol0Q",
@@ -979,7 +979,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_xnDLm",
@@ -1100,7 +1100,7 @@
 			},
 			"inputs":{
 				"data_catalog":{
-					"datacatalog_id":"{{ n_neNcf.outputs.datacatalogId }}",
+					"datacatalog_id":"{{ n_neNcf.outputs.dataCatalogId }}",
 					"connector_id":"{{ n_ijxyG.outputs.connection_id }}",
 					"connector_type":"{{ n_ijxyG.outputs.connection_type }}",
 					"user_id":"{{ __USER__.outputs.id }}",
@@ -1315,7 +1315,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_oEXuu-1",
 			"id":"n_dV5kw",
@@ -1352,5 +1352,5 @@
 	"tags":[
 		"Data Catalog"
 	],
-	"version":35
+	"version":36
 }
