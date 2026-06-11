@@ -1,6 +1,6 @@
 {
 	"appsUsed":[
-		
+		"as2"
 	],
 	"createdTime":1762086433016,
 	"deleted":false,
@@ -31,6 +31,14 @@
 		},
 		{
 			"fromNodeId":"n_joipm",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_L0ZIx",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_joipm",
 			"name":"no",
 			"priority":0,
 			"skip":false,
@@ -41,7 +49,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1781159436848,
+	"modifiedTime":1781159448527,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -130,17 +138,33 @@
 		},
 		{
 			"context":{
+				"appName":"as2",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_joipm@_QPyDa-1@y",
+			"id":"n_L0ZIx",
+			"index":4,
+			"skip":false,
+			"subTitle":"AS2",
+			"title":"Select an action",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"storage_by_unifyapps",
 				"resourceVersion":4663,
 				"resourceName":"storage_by_unifyapps_get_record_by_id",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_joipm@_QPyDa-1@n",
 			"id":"n_coSBB",
-			"index":4,
+			"index":5,
 			"inputs":{
 				"object_type":"var_check_1",
 				"includeRoleMappings":false,
@@ -165,5 +189,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":78
+	"version":79
 }
