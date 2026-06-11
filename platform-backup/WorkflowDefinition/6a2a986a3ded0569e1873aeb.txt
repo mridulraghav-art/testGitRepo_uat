@@ -6,46 +6,93 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_9rNqD",
+			"fromNodeId":"n_F8Ps6",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Rfh6C",
+			"toNodeId":"n_PeVP8",
 			"type":"next"
 		}
 	],
 	"id":"6a2a986a3ded0569e1873aeb",
 	"lastModifiedBy":39,
 	"lcName":"mdmlocaldbivsmhijf",
-	"modifiedTime":1781176426071,
+	"modifiedTime":1781176437888,
 	"name":"MDMlocalDBIvSmHiJF",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2693,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9rNqD-1",
-			"id":"_9rNqD",
-			"index":0,
+			"id":"n_F8Ps6",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"output":{
+							"type":"integer",
+							"title":"output"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"Num1":{
+							"type":"integer",
+							"title":"Num1"
+						},
+						"Num2":{
+							"type":"integer",
+							"title":"Num2"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2694,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_9rNqD-1",
-			"id":"_Rfh6C",
-			"index":0,
+			"id":"n_PeVP8",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output":"=SUM({{ n_F8Ps6.outputs.Num1 }},{{ n_F8Ps6.outputs.Num2 }})"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +103,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
