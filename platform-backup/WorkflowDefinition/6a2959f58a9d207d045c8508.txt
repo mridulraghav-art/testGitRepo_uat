@@ -4,14 +4,14 @@
 	],
 	"createdTime":1781094901489,
 	"deleted":false,
-	"deployedVersion":3,
+	"deployedVersion":4,
 	"deploymentState":{
-		"deployedAt":1781096408228,
+		"deployedAt":1781097157821,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a295fd8aeb9a560a8248389",
+		"deployedDefinitionId":"6a2962c5a9fa534bb6e8d429",
 		"status":"DEPLOYED",
-		"version":3,
-		"workflowVersion":8
+		"version":4,
+		"workflowVersion":9
 	},
 	"edges":[
 		{
@@ -46,7 +46,7 @@
 	"id":"6a2959f58a9d207d045c8508",
 	"lastModifiedBy":39,
 	"lcName":"backup manager failure report export",
-	"modifiedTime":1781097155286,
+	"modifiedTime":1781164886092,
 	"name":"Backup Manager Failure Report export",
 	"nodes":[
 		{
@@ -56,7 +56,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
 			"id":"n_Jx03Q",
@@ -74,6 +74,14 @@
 						"Search_filter":{
 							"type":"string",
 							"title":"Search Filter"
+						},
+						"Start_Time":{
+							"type":"number",
+							"title":"Start Time"
+						},
+						"End_Time":{
+							"type":"number",
+							"title":"End Time"
 						}
 					}
 				}
@@ -102,7 +110,7 @@
 			"inputs":{
 				"fileName":"Failure_report.csv",
 				"sheetName":"Sheet_0",
-				"query":"SELECT\n    p.assetClass,\n    p.assetId,\n    p.status,\n    p.errorMessage\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Jx03Q.outputs.BackupId }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Jx03Q.outputs.BackupId }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Jx03Q.outputs.Search_filter }}%'\nORDER BY p.lastSyncTime;",
+				"query":"SELECT\n    p.assetClass,\n    p.assetId,\n    p.status,\n    p.errorMessage\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '{{ n_Jx03Q.outputs.BackupId }}'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '{{ n_Jx03Q.outputs.BackupId }}'\n  AND p.status = 'FAILED'\n  AND p.assetId LIKE '%{{ n_Jx03Q.outputs.Search_filter }}%'\n  AND p.lastSyncTime BETWEEN '{{ n_Jx03Q.outputs.Start_Time }}' AND '{{ n_Jx03Q.outputs.End_Time }}'\nORDER BY p.lastSyncTime;",
 				"keepExactFileName":true,
 				"fileType":"CSV",
 				"group":"PLATFORM"
@@ -120,7 +128,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
 			"id":"n_G2rIH",
@@ -142,7 +150,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
 			"id":"n_OqykT",
@@ -185,7 +193,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_sdrEJ-1",
 			"id":"n_kN82F",
@@ -211,5 +219,5 @@
 		}
 	},
 	"standard":false,
-	"version":9
+	"version":10
 }
