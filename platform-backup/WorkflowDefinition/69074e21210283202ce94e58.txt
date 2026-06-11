@@ -41,7 +41,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1781159401405,
+	"modifiedTime":1781159436848,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -80,7 +80,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_IrKCJ",
@@ -106,7 +106,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_joipm",
@@ -131,6 +131,8 @@
 		{
 			"context":{
 				"appName":"storage_by_unifyapps",
+				"resourceVersion":4663,
+				"resourceName":"storage_by_unifyapps_get_record_by_id",
 				"type":"APPLICATION"
 			},
 			"debug":false,
@@ -139,9 +141,17 @@
 			"groupId":"n_joipm@_QPyDa-1@n",
 			"id":"n_coSBB",
 			"index":4,
+			"inputs":{
+				"object_type":"var_check_1",
+				"includeRoleMappings":false,
+				"includeCurrentUserPermissions":false,
+				"translationsOption":"DEFAULT",
+				"id":"{{ n_IrKCJ.outputs.id }}",
+				"readThroughSessionVariables":false
+			},
 			"skip":false,
 			"subTitle":"Storage by UnifyApps",
-			"title":"Select an action",
+			"title":"Fetch record by ID",
 			"type":"ACTION"
 		}
 	],
@@ -155,5 +165,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":77
+	"version":78
 }
