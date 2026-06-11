@@ -4,15 +4,14 @@
 	],
 	"createdTime":1762086433016,
 	"deleted":false,
-	"deployedVersion":11,
+	"deployedVersion":12,
 	"deploymentState":{
-		"deployedAt":1781095006073,
+		"deployedAt":1781159512768,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a295a5d8a9d207d045c8b53",
-		"deploymentTag":"ABCD",
+		"deployedDefinitionId":"6a2a565821f87b7b1ae2114e",
 		"status":"DEPLOYED",
-		"version":11,
-		"workflowVersion":76
+		"version":12,
+		"workflowVersion":83
 	},
 	"edges":[
 		{
@@ -56,7 +55,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1781159510483,
+	"modifiedTime":1781159561231,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -121,7 +120,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_QPyDa-1",
 			"id":"n_joipm",
@@ -132,7 +131,7 @@
 						"property":"{{ n_IrKCJ.outputs.properties.boolean }}",
 						"filter":{
 							"operator":"EQUAL",
-							"value":"true"
+							"value":"True"
 						}
 					}
 				],
@@ -206,5 +205,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":83
+	"version":84
 }
