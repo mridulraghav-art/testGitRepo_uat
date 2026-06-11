@@ -1,48 +1,359 @@
 {
 	"appsUsed":[
-		
+		"gmail"
 	],
 	"createdTime":1781188551717,
 	"deleted":false,
+	"description":"Fetches the last 10 emails from Gmail via a callable trigger, retrieves full message details for each, and returns an array of email objects containing subject, sender, date, and snippet.",
 	"edges":[
 		{
-			"fromNodeId":"_5tHqg",
+			"fromNodeId":"n_StaRt",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_j1d7a",
+			"toNodeId":"n_CrLst",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CrLst",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_LstEm",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_LstEm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Loop1",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_Loop1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_GetMs",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_Loop1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_StopN",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_GetMs",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_AddIt",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_AddIt",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_Loop1",
 			"type":"next"
 		}
 	],
 	"id":"6a2ac7c60d067e7694046830",
 	"lastModifiedBy":39,
-	"lcName":"untitled workflow",
-	"modifiedTime":1781188551717,
-	"name":"Untitled workflow",
+	"lcName":"fetch last 10 emails",
+	"modifiedTime":1781188699638,
+	"name":"Fetch Last 10 Emails",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_5tHqg",
+			"groupId":"root_id-1",
+			"id":"n_StaRt",
 			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"emails":{
+							"type":"array",
+							"title":"Emails",
+							"items":{
+								"type":"object",
+								"properties":{
+									"subject":{
+										"type":"string"
+									},
+									"sender":{
+										"type":"string"
+									},
+									"date":{
+										"type":"string"
+									},
+									"snippet":{
+										"type":"string"
+									}
+								}
+							}
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_create_list",
+				"type":"APPLICATION"
+			},
 			"debug":false,
 			"dirty":false,
 			"fallbackMode":"STOP",
-			"groupId":"_5tHqg-1",
-			"id":"_j1d7a",
+			"groupId":"root_id-1",
+			"id":"n_CrLst",
 			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"format":"ua:list",
+					"type":"object",
+					"properties":{
+						"ua:title":{
+							"type":"string"
+						},
+						"ua:list_type":{
+							"type":"string",
+							"default":"OBJECT"
+						},
+						"createList":{
+							"type":"object",
+							"properties":{
+								"ua:type":{
+									"type":"string",
+									"default":"mappedArray"
+								},
+								"source":{
+									"type":"string",
+									"format":"ua:source",
+									"title":"List Item Source"
+								},
+								"items":{
+									"type":"object",
+									"additionalProperties":false,
+									"required":[
+										"subject",
+										"sender",
+										"date",
+										"snippet"
+									],
+									"properties":{
+										"subject":{
+											"type":"string",
+											"title":"Subject"
+										},
+										"sender":{
+											"type":"string",
+											"title":"Sender"
+										},
+										"date":{
+											"type":"string",
+											"title":"Date"
+										},
+										"snippet":{
+											"type":"string",
+											"title":"Snippet"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"inputs":{
+				"createList":{
+					"ua:type":"mappedArray"
+				},
+				"ua:title":"Emails List",
+				"ua:list_type":"OBJECT"
+			},
+			"outputSchema":{
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"items":{
+							"type":"array",
+							"title":"Emails List",
+							"items":{
+								"type":"object",
+								"properties":{
+									"subject":{
+										"type":"string",
+										"title":"Subject"
+									},
+									"sender":{
+										"type":"string",
+										"title":"Sender"
+									},
+									"date":{
+										"type":"string",
+										"title":"Date"
+									},
+									"snippet":{
+										"type":"string",
+										"title":"Snippet"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable",
+			"title":"Create Emails List",
 			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"685a52a9dba2c40dfc9a2a3e",
+				"resourceName":"gmail_list_emails",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_LstEm",
+			"index":3,
+			"inputs":{
+				"count":10,
+				"includeSpamTrash":false
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"List Emails",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"loop",
+				"resourceName":"loop_for_each",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_Loop1",
+			"index":4,
+			"inputs":{
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_LstEm.outputs.messages }}",
+				"captureIterations":false
+			},
+			"skip":false,
+			"subTitle":"Loop",
+			"title":"For each email",
+			"type":"LOOP"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"685a52a9dba2c40dfc9a2a3e",
+				"resourceName":"gmail_get_message",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_Loop1@root_id-1@l",
+			"id":"n_GetMs",
+			"index":5,
+			"inputs":{
+				"format":"full",
+				"id":"{{ n_Loop1.outputs.item.id }}"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Get message",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_add_item_to_list",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_Loop1@root_id-1@l",
+			"id":"n_AddIt",
+			"index":6,
+			"inputs":{
+				"itemToAdd":{
+					"subject":"{{ n_GetMs.outputs.snippet }}",
+					"sender":"{{ n_GetMs.outputs.payload.headers[0].value }}",
+					"date":"{{ n_GetMs.outputs.internalDate }}",
+					"snippet":"{{ n_GetMs.outputs.snippet }}"
+				},
+				"insertLocation":"END",
+				"captureAddedItem":false,
+				"listName":"{{ n_CrLst.outputs.items[0] }}"
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Add email to list",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_StopN",
+			"index":7,
+			"inputs":{
+				"result":{
+					"emails":{
+						"ua:type":"mappedArray",
+						"source":"{{ n_CrLst.outputs.items }}",
+						"items":"{{ n_CrLst.outputs.items[0] }}"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
@@ -56,5 +367,8 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
 }
