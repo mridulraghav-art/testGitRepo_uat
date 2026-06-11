@@ -4,14 +4,14 @@
 	],
 	"createdTime":1781080601884,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1781080712833,
+		"deployedAt":1781081023212,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a2922886162f904950f0bb6",
+		"deployedDefinitionId":"6a2923bf04735144499bc3ef",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":2
+		"version":2,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"6a2922196162f904950f09d8",
 	"lastModifiedBy":39,
 	"lcName":"mdm_automation_test",
-	"modifiedTime":1781081018418,
+	"modifiedTime":1781174362330,
 	"name":"MDM_Automation_test",
 	"nodes":[
 		{
@@ -51,6 +51,10 @@
 						"output1":{
 							"type":"integer",
 							"title":"Output1"
+						},
+						"product":{
+							"type":"integer",
+							"title":"Product"
 						}
 					}
 				},
@@ -96,7 +100,8 @@
 			"index":2,
 			"inputs":{
 				"result":{
-					"output1":"=SUM({{ n_JTfz6.outputs.num1 }},{{ n_JTfz6.outputs.Num2 }})"
+					"output1":"=SUM({{ n_JTfz6.outputs.num1 }},{{ n_JTfz6.outputs.Num2 }})",
+					"product":"=PRODUCT({{ n_JTfz6.outputs.num1 }},{{ n_JTfz6.outputs.Num2 }})"
 				}
 			},
 			"skip":false,
@@ -119,5 +124,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
