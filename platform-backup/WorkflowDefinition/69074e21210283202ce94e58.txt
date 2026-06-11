@@ -55,7 +55,7 @@
 	"id":"69074e21210283202ce94e58",
 	"lastModifiedBy":39,
 	"lcName":"furrrr1",
-	"modifiedTime":1781160245290,
+	"modifiedTime":1781160308169,
 	"name":"furrrr1",
 	"nodes":[
 		{
@@ -128,10 +128,10 @@
 			"inputs":{
 				"filters":[
 					{
-						"property":"{{ n_IrKCJ.outputs.properties.boolean }}",
+						"property":"True",
 						"filter":{
 							"operator":"EQUAL",
-							"value":"{{ n_IrKCJ.outputs.properties.int }}"
+							"value":"{{ n_IrKCJ.outputs.properties.boolean }}"
 						}
 					}
 				],
@@ -205,5 +205,5 @@
 		"enableVariableLogging":true
 	},
 	"standard":false,
-	"version":94
+	"version":95
 }
