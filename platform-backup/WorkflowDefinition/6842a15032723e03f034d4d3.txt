@@ -1,0 +1,388 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1781173623224,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"wOD4B",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"HT80R",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"HT80R",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_6yZMy",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_6yZMy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_AbRHm",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_AbRHm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_mrK7k",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_mrK7k",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_b6axU",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"_b6axU",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_KwOvg",
+			"type":"next"
+		}
+	],
+	"id":"6842a15032723e03f034d4d3",
+	"lastModifiedBy":39,
+	"lcName":"data catalog deletion handler",
+	"modifiedTime":1781173623224,
+	"name":"Data Catalog Deletion Handler",
+	"nodes":[
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":84,
+				"resourceName":"storage_by_unifyapps_on_delete_record"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"kDIqi-1",
+			"id":"wOD4B",
+			"index":0,
+			"inputs":{
+				"object_type":"e_data_catalog_application"
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Deleted record",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":381,
+				"resourceName":"storage_by_unifyapps_upsert_record",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"kDIqi-1",
+			"id":"HT80R",
+			"index":0,
+			"inputs":{
+				"object_type":"e_data_catalog",
+				"updateFields":[
+					{
+						"fieldName":"properties.appsUsed",
+						"actionType":"REMOVE",
+						"setValue":"{{ wOD4B.outputs.properties.appName }}"
+					}
+				],
+				"id":"{{ wOD4B.outputs.properties.dataCatalogId }}"
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Upsert Record",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4,
+				"resourceName":"storage_by_unifyapps_delete_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"kDIqi-1",
+			"id":"_6yZMy",
+			"index":0,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_dataCatalogId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.dataCatalogId }}"
+							}
+						},
+						{
+							"property":"properties_sourceDetails_sourceName",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.appName }}"
+							}
+						},
+						{
+							"property":"properties_sourceDetails_sourceId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.connectionId }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"object_type":"e_data_catalog_asset",
+				"numberOfRecordsToDelete":"MULTIPLE",
+				"page":{
+					"limit":2000,
+					"offset":0
+				}
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Delete records",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4,
+				"resourceName":"storage_by_unifyapps_delete_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"kDIqi-1",
+			"id":"_AbRHm",
+			"index":0,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_dataCatalogId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.dataCatalogId }}"
+							}
+						},
+						{
+							"property":"properties_sourceDetails_sourceName",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.appName }}"
+							}
+						},
+						{
+							"property":"properties_sourceDetails_sourceId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.connectionId }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"object_type":"e_data_catalog_database",
+				"numberOfRecordsToDelete":"MULTIPLE",
+				"page":{
+					"limit":2000,
+					"offset":0
+				}
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Delete records",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4,
+				"resourceName":"storage_by_unifyapps_delete_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"kDIqi-1",
+			"id":"_mrK7k",
+			"index":0,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_dataCatalogId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.dataCatalogId }}"
+							}
+						},
+						{
+							"property":"properties_sourceDetails_sourceName",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.appName }}"
+							}
+						},
+						{
+							"property":"properties_sourceDetails_sourceId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.connectionId }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"object_type":"e_data_catalog_schema",
+				"numberOfRecordsToDelete":"MULTIPLE",
+				"page":{
+					"limit":2000,
+					"offset":0
+				}
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Delete records",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4,
+				"resourceName":"storage_by_unifyapps_delete_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"kDIqi-1",
+			"id":"_b6axU",
+			"index":0,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_dataCatalogId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.dataCatalogId }}"
+							}
+						},
+						{
+							"property":"properties_sourceDetails_sourceName",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.appName }}"
+							}
+						},
+						{
+							"property":"properties_sourceDetails_sourceId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.connectionId }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"object_type":"e_data_catalog_table",
+				"numberOfRecordsToDelete":"MULTIPLE",
+				"page":{
+					"limit":2000,
+					"offset":0
+				}
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Delete records",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"storage_by_unifyapps",
+				"resourceVersion":4,
+				"resourceName":"storage_by_unifyapps_delete_records",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"kDIqi-1",
+			"id":"_KwOvg",
+			"index":0,
+			"inputs":{
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"properties_dataCatalogId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.dataCatalogId }}"
+							}
+						},
+						{
+							"property":"properties_sourceDetails_sourceName",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.appName }}"
+							}
+						},
+						{
+							"property":"properties_sourceDetails_sourceId",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"{{ wOD4B.outputs.properties.connectionId }}"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"object_type":"e_data_catalog_field",
+				"numberOfRecordsToDelete":"MULTIPLE",
+				"page":{
+					"limit":2000,
+					"offset":0
+				}
+			},
+			"skip":false,
+			"subTitle":"Storage by UnifyApps",
+			"title":"Delete records",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"Data Catalog"
+	],
+	"version":8
+}
