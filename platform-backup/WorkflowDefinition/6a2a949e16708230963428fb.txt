@@ -16,7 +16,7 @@
 	"id":"6a2a949e16708230963428fb",
 	"lastModifiedBy":39,
 	"lcName":"mdm_automation_test (copy)",
-	"modifiedTime":1781175454877,
+	"modifiedTime":1781175476341,
 	"name":"MDM_Automation_test (copy)",
 	"nodes":[
 		{
@@ -26,7 +26,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ymnB2-1",
 			"id":"n_JTfz6",
@@ -35,21 +35,11 @@
 				"result":{
 					"type":"object",
 					"additionalProperties":false,
-					"required":[
-						"output1"
-					],
+					"required":[],
 					"properties":{
-						"output1":{
-							"type":"integer",
-							"title":"Output1"
-						},
-						"product":{
-							"type":"integer",
-							"title":"Product"
-						},
-						"new":{
+						"jkjk":{
 							"type":"string",
-							"title":"New"
+							"title":"Jkjk"
 						}
 					}
 				},
@@ -88,16 +78,14 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ymnB2-1",
 			"id":"n_9bRRQ",
 			"index":2,
 			"inputs":{
 				"result":{
-					"output1":"=SUM({{ n_JTfz6.outputs.num1 }},{{ n_JTfz6.outputs.Num2 }})",
-					"product":"=PRODUCT({{ n_JTfz6.outputs.num1 }},{{ n_JTfz6.outputs.Num2 }})",
-					"new":"temp"
+					"jkjk":"vbnm"
 				}
 			},
 			"skip":false,
@@ -120,5 +108,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
