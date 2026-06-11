@@ -4,14 +4,14 @@
 	],
 	"createdTime":1781175454877,
 	"deleted":false,
-	"deployedVersion":2,
+	"deployedVersion":3,
 	"deploymentState":{
-		"deployedAt":1781179605695,
+		"deployedAt":1781179656826,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a2aa4d521f87b7b1ae56cd9",
+		"deployedDefinitionId":"6a2aa508167082309634b7ff",
 		"status":"DEPLOYED",
-		"version":2,
-		"workflowVersion":2
+		"version":3,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"6a2a949e16708230963428fb",
 	"lastModifiedBy":39,
 	"lcName":"mdm_automation_test (copy)",
-	"modifiedTime":1781179654243,
+	"modifiedTime":1781179712580,
 	"name":"MDM_Automation_test (copy)",
 	"nodes":[
 		{
@@ -56,17 +56,12 @@
 					"type":"object",
 					"additionalProperties":false,
 					"required":[
-						"num1",
-						"Num2"
+						"num1"
 					],
 					"properties":{
 						"num1":{
 							"type":"integer",
 							"title":"Num 1"
-						},
-						"Num2":{
-							"type":"integer",
-							"title":"Num 2"
 						}
 					}
 				}
@@ -87,7 +82,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_ymnB2-1",
 			"id":"n_9bRRQ",
@@ -117,5 +112,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
