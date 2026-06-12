@@ -1,0 +1,2454 @@
+{
+	"appsUsed":[
+		"gcalendar",
+		"gdrive",
+		"gmail",
+		"gsheets",
+		"openai",
+		"serper"
+	],
+	"createdTime":1781280608918,
+	"deleted":false,
+	"description":"Webhook-triggered autonomous email chief of staff. Receives Gmail push notifications, fetches and normalizes emails, classifies intent/urgency via AI (GPT-4o), reads/writes a Google Sheets memory store (Contacts, Projects, Commitments, ActionLog), researches unknown senders via Serper web search, executes context-aware actions (draft replies, schedule meetings, file attachments to Drive, apply labels), tracks commitments, queues high-risk actions for human approval via self-email, and logs every action. DAILY BRIEFING NOTE: A separate scheduled workflow should run daily at 7:30 AM IST to read today's Google Calendar events, open Commitments due within 2 days, and last-24h ActionLog entries, then compose and send a briefing email to the operator. Subject: '☀️ ATLAS Daily Briefing — {date}'.",
+	"edges":[
+		{
+			"fromNodeId":"n_START",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CFGVr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CFGVr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_CFGUp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_CFGUp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IDMPc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IDMPc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_IDMPi",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_IDMPi",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S1Gml",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_IDMPi",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ENDwf",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S1Gml",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S1Nrm",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S1Nrm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S2AIc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S2AIc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S2Prs",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S2Prs",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S3Cnt",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S3Cnt",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S4Unk",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S4Unk",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S4Srp",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_S4Unk",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_RBVar",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S4Srp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S4AIr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S4AIr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_RBVar",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_RBVar",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S4Upn",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_RBVar",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S4Upk",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S4Upn",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S5Ifc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S4Upk",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S5Ifc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S5Ifc",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S5Add",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_S5Ifc",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S5Inc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S5Inc",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S5Upd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S5Add",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6Brn",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S5Upd",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6Brn",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6Brn",
+			"name":"1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6Brn@1",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_S6Brn",
+			"name":"2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6Brn@2",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_S6Brn",
+			"name":"3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6Brn@3",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_S6Brn",
+			"name":"4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6Brn@4",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_S6Brn",
+			"name":"5",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6Brn@5",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_S6Brn",
+			"name":"default",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6FLb",
+			"type":"branch"
+		},
+		{
+			"fromNodeId":"n_S6Brn@1",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6ACl",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6ACl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6AAI",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6AAI",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6ADr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6ADr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S7Ifc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6Brn@2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6BFl",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6BFl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6BUp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6BUp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S7Ifc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6Brn@3",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6CSr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6CSr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6CIf",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6CIf",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6CCr",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_S6CIf",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6CFd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6CCr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6CFd",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6CFd",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6CDl",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6CDl",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6CUp",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6CUp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S7Ifc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6Brn@4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6DAI",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6DAI",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6DDr",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6DDr",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S7Ifc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6Brn@5",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S6ELb",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6ELb",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S7Ifc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S6FLb",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S7Ifc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S7Ifc",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S7Uid",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_S7Ifc",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S8Ifc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S7Uid",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S7Add",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S7Add",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S8Ifc",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S8Ifc",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S8Snd",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_S8Ifc",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S9Uid",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S8Snd",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S9Uid",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S9Uid",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_S9Log",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_S9Log",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_ENDwf",
+			"type":"next"
+		}
+	],
+	"id":"6a2c2f607529013ce0b02862",
+	"lastModifiedBy":39,
+	"lcName":"atlas - autonomous digital chief of staff",
+	"modifiedTime":1781281396572,
+	"name":"ATLAS - Autonomous Digital Chief of Staff",
+	"nodes":[
+		{
+			"context":{
+				"appName":"webhooks",
+				"resourceName":"webhooks_default"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_START",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"emailId":{
+								"type":"string"
+							},
+							"threadId":{
+								"type":"string"
+							},
+							"historyId":{
+								"type":"string"
+							},
+							"emailAddress":{
+								"type":"string"
+							}
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Webhook",
+			"title":"Gmail Push Notification Webhook",
+			"trigger":{
+				"type":"WEBHOOK"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_CFGVr",
+			"index":2,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"OPERATOR_EMAIL",
+						"WORKING_HOURS_START",
+						"WORKING_HOURS_END",
+						"TIMEZONE",
+						"AUTO_LABEL_PREFIX",
+						"MEMORY_SHEET_ID"
+					],
+					"properties":{
+						"OPERATOR_EMAIL":{
+							"type":"string",
+							"title":"Operator Email"
+						},
+						"WORKING_HOURS_START":{
+							"type":"string",
+							"title":"Working Hours Start"
+						},
+						"WORKING_HOURS_END":{
+							"type":"string",
+							"title":"Working Hours End"
+						},
+						"TIMEZONE":{
+							"type":"string",
+							"title":"Timezone"
+						},
+						"AUTO_LABEL_PREFIX":{
+							"type":"string",
+							"title":"Auto Label Prefix"
+						},
+						"MEMORY_SHEET_ID":{
+							"type":"string",
+							"title":"Memory Sheet ID"
+						}
+					}
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"type":"SCHEMA",
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"OPERATOR_EMAIL":{
+							"type":"string",
+							"title":"Operator Email"
+						},
+						"WORKING_HOURS_START":{
+							"type":"string",
+							"title":"Working Hours Start"
+						},
+						"WORKING_HOURS_END":{
+							"type":"string",
+							"title":"Working Hours End"
+						},
+						"TIMEZONE":{
+							"type":"string",
+							"title":"Timezone"
+						},
+						"AUTO_LABEL_PREFIX":{
+							"type":"string",
+							"title":"Auto Label Prefix"
+						},
+						"MEMORY_SHEET_ID":{
+							"type":"string",
+							"title":"Memory Sheet ID"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Config Variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_CFGUp",
+			"index":3,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_CFGVr.outputs.OPERATOR_EMAIL }}",
+						"value":"aayushsharma2302@gmail.com"
+					},
+					{
+						"source":"{{ n_CFGVr.outputs.WORKING_HOURS_START }}",
+						"value":"09:00"
+					},
+					{
+						"source":"{{ n_CFGVr.outputs.WORKING_HOURS_END }}",
+						"value":"18:00"
+					},
+					{
+						"source":"{{ n_CFGVr.outputs.TIMEZONE }}",
+						"value":"Asia/Kolkata"
+					},
+					{
+						"source":"{{ n_CFGVr.outputs.AUTO_LABEL_PREFIX }}",
+						"value":"ATLAS/"
+					},
+					{
+						"source":"{{ n_CFGVr.outputs.MEMORY_SHEET_ID }}",
+						"value":"<MEMORY_SHEET_ID>"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"Set Config Values",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gsheets",
+				"connectionId":"685a5314dba2c40dfc9a2ade",
+				"resourceName":"gsheets_search_rows_batch",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_IDMPc",
+			"index":4,
+			"inputs":{
+				"sheetName":"ActionLog",
+				"searchResultSize":1,
+				"spreadsheetId":"{{ n_CFGVr.outputs.MEMORY_SHEET_ID }}",
+				"record_loader":{
+					"EmailId":"{{ n_START.outputs.body.emailId }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Google Sheets",
+			"title":"S0: Idempotency — Search ActionLog for EmailId",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_IDMPi",
+			"index":5,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_IDMPc.outputs.count }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":0
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Not Yet Processed?",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"685a52a9dba2c40dfc9a2a3e",
+				"resourceName":"gmail_get_message",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S1Gml",
+			"index":6,
+			"inputs":{
+				"format":"full",
+				"id":"{{ n_START.outputs.body.emailId }}"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"S1: Fetch Full Email",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_javascript",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S1Nrm",
+			"index":7,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"emailId":{
+							"type":"string",
+							"title":"Email ID"
+						},
+						"threadId":{
+							"type":"string",
+							"title":"Thread ID"
+						},
+						"sender":{
+							"type":"string",
+							"title":"Sender"
+						},
+						"senderName":{
+							"type":"string",
+							"title":"Sender Name"
+						},
+						"subject":{
+							"type":"string",
+							"title":"Subject"
+						},
+						"body":{
+							"type":"string",
+							"title":"Body"
+						},
+						"date":{
+							"type":"string",
+							"title":"Date"
+						},
+						"hasAttachments":{
+							"type":"boolean",
+							"title":"Has Attachments"
+						},
+						"attachmentNames":{
+							"type":"array",
+							"title":"Attachment Names",
+							"items":{
+								"type":"string"
+							}
+						},
+						"ingestedAt":{
+							"type":"string",
+							"title":"Ingested At"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"gmailId":{
+							"type":"string",
+							"title":"Gmail Message ID"
+						},
+						"gmailThreadId":{
+							"type":"string",
+							"title":"Gmail Thread ID"
+						},
+						"gmailSnippet":{
+							"type":"string",
+							"title":"Gmail Snippet"
+						},
+						"gmailInternalDate":{
+							"type":"string",
+							"title":"Gmail Internal Date"
+						},
+						"gmailPayloadHeaders":{
+							"type":"array",
+							"title":"Gmail Payload Headers",
+							"items":{
+								"type":"object"
+							}
+						},
+						"gmailPayloadParts":{
+							"type":"array",
+							"title":"Gmail Payload Parts",
+							"items":{
+								"type":"object"
+							}
+						},
+						"gmailPayloadBodyData":{
+							"type":"string",
+							"title":"Gmail Payload Body Data"
+						},
+						"webhookThreadId":{
+							"type":"string",
+							"title":"Webhook Thread ID"
+						}
+					}
+				},
+				"code":"function getHeader(headers, name) {\n  const h = (headers || []).find(h => h.name && h.name.toLowerCase() === name.toLowerCase());\n  return h ? h.value : '';\n}\nfunction decodeBase64(str) {\n  try { return atob((str || '').replace(/-/g,'+').replace(/_/g,'/')); } catch(e) { return ''; }\n}\nfunction extractBodyFromParts(parts) {\n  if (!parts || !parts.length) return '';\n  for (const p of parts) {\n    if (p.mimeType === 'text/plain' && p.body && p.body.data) return decodeBase64(p.body.data);\n  }\n  for (const p of parts) {\n    if (p.parts) { const sub = extractBodyFromParts(p.parts); if (sub) return sub; }\n  }\n  return '';\n}\nconst headers = gmailPayloadHeaders || [];\nconst fromHeader = getHeader(headers, 'From');\nconst fromMatch = fromHeader.match(/^(.+?)\\s*<(.+?)>$/);\nconst senderName = fromMatch ? fromMatch[1].trim() : fromHeader;\nconst sender = fromMatch ? fromMatch[2].trim() : fromHeader;\nconst subject = getHeader(headers, 'Subject');\nconst dateStr = getHeader(headers, 'Date');\nconst parts = gmailPayloadParts || [];\nlet bodyText = extractBodyFromParts(parts);\nif (!bodyText && gmailPayloadBodyData) bodyText = decodeBase64(gmailPayloadBodyData);\nbodyText = bodyText.substring(0, 2000);\nconst attachments = parts.filter(p => p.filename && p.filename.length > 0);\nconst attachmentNames = attachments.map(p => p.filename);\nreturn {\n  emailId: gmailId || '',\n  threadId: gmailThreadId || webhookThreadId || '',\n  sender: sender,\n  senderName: senderName,\n  subject: subject,\n  body: bodyText,\n  date: dateStr,\n  hasAttachments: attachments.length > 0,\n  attachmentNames: attachmentNames,\n  ingestedAt: new Date().toISOString()\n};",
+				"parameters_loader":{
+					"gmailId":"{{ n_S1Gml.outputs.id }}",
+					"gmailThreadId":"{{ n_S1Gml.outputs.threadId }}",
+					"gmailSnippet":"{{ n_S1Gml.outputs.snippet }}",
+					"gmailInternalDate":"{{ n_S1Gml.outputs.internalDate }}",
+					"gmailPayloadHeaders":"{{ n_S1Gml.outputs.payload.headers }}",
+					"gmailPayloadParts":"{{ n_S1Gml.outputs.payload.parts }}",
+					"gmailPayloadBodyData":"{{ n_S1Gml.outputs.payload.body.data }}",
+					"webhookThreadId":"{{ n_START.outputs.body.threadId }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code",
+			"title":"S1: Normalize Email Event",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"openai",
+				"resourceName":"openai_create_response",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S2AIc",
+			"index":8,
+			"inputs":{
+				"instructions":"You are ATLAS, an AI executive assistant. Analyze the provided email and return ONLY a valid JSON object with no markdown, no code fences, no extra text.",
+				"input":[
+					{
+						"role":"user",
+						"content":"=CONCAT(\"Analyze this email and return a JSON object with these fields: intent (one of: request, fyi, scheduling, invoice, newsletter, spam, other), urgency (integer 1-5, 5=most urgent), requiredAction (one of: reply, schedule_meeting, file_document, forward, no_action, flag_for_review), entities ({ people: [], dates: [], deadlines: [], dollarAmounts: [], actionItems: [] }), summary (1-sentence summary), isHighRisk (boolean: true if involves money, legal, deletion, or sensitive PII), commitmentDetected (boolean: true if sender or recipient made a promise/deadline), commitmentDetails (string describing commitment or empty string). Email data: Subject: \", \"{{ n_S1Nrm.outputs.result.subject }}\", \" | From: \", \"{{ n_S1Nrm.outputs.result.sender }}\", \" | Body: \", \"{{ n_S1Nrm.outputs.result.body }}\")"
+					}
+				],
+				"temperature":0.2,
+				"model":"gpt-4o",
+				"text":{
+					"format":{
+						"type":"json_object"
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"OpenAI",
+			"title":"S2: AI Triage & Classification",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_javascript",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S2Prs",
+			"index":9,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"intent":{
+							"type":"string",
+							"title":"Intent"
+						},
+						"urgency":{
+							"type":"number",
+							"title":"Urgency"
+						},
+						"requiredAction":{
+							"type":"string",
+							"title":"Required Action"
+						},
+						"summary":{
+							"type":"string",
+							"title":"Summary"
+						},
+						"isHighRisk":{
+							"type":"boolean",
+							"title":"Is High Risk"
+						},
+						"commitmentDetected":{
+							"type":"boolean",
+							"title":"Commitment Detected"
+						},
+						"commitmentDetails":{
+							"type":"string",
+							"title":"Commitment Details"
+						},
+						"hasDollarAmounts":{
+							"type":"boolean",
+							"title":"Has Dollar Amounts"
+						},
+						"entitiesJson":{
+							"type":"string",
+							"title":"Entities JSON"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"aiOutput":{
+							"type":"string",
+							"title":"AI Output"
+						}
+					}
+				},
+				"code":"let parsed;\ntry {\n  parsed = JSON.parse(aiOutput);\n} catch(e) {\n  parsed = { intent: 'other', urgency: 3, requiredAction: 'flag_for_review', entities: { people: [], dates: [], deadlines: [], dollarAmounts: [], actionItems: [] }, summary: 'AI classification failed', isHighRisk: true, commitmentDetected: false, commitmentDetails: '' };\n}\nconst entities = parsed.entities || {};\nconst dollarAmounts = entities.dollarAmounts || [];\nreturn {\n  intent: parsed.intent || 'other',\n  urgency: parsed.urgency || 3,\n  requiredAction: parsed.requiredAction || 'flag_for_review',\n  summary: parsed.summary || '',\n  isHighRisk: parsed.isHighRisk === true,\n  commitmentDetected: parsed.commitmentDetected === true,\n  commitmentDetails: parsed.commitmentDetails || '',\n  hasDollarAmounts: dollarAmounts.length > 0,\n  entitiesJson: JSON.stringify(entities)\n};",
+				"parameters_loader":{
+					"aiOutput":"{{ n_S2AIc.outputs.output[0].content[0].text }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code",
+			"title":"S2: Parse AI Classification",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gsheets",
+				"connectionId":"685a5314dba2c40dfc9a2ade",
+				"resourceName":"gsheets_search_rows_batch",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S3Cnt",
+			"index":10,
+			"inputs":{
+				"sheetName":"Contacts",
+				"searchResultSize":1,
+				"spreadsheetId":"{{ n_CFGVr.outputs.MEMORY_SHEET_ID }}",
+				"record_loader":{
+					"Email":"{{ n_S1Nrm.outputs.result.sender }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Google Sheets",
+			"title":"S3: Search Contacts for Sender",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S4Unk",
+			"index":11,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_S3Cnt.outputs.count }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":0
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"S4: Unknown Sender?",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"serper",
+				"resourceName":"serper_search_text",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S4Unk@n_IDMPi@root_id-1@y@y",
+			"id":"n_S4Srp",
+			"index":12,
+			"inputs":{
+				"q":"=CONCAT(\"{{ n_S1Nrm.outputs.result.senderName }}\", \" \", \"{{ n_S1Nrm.outputs.result.sender }}\", \" company role LinkedIn\")",
+				"language":"en"
+			},
+			"skip":false,
+			"subTitle":"Serper",
+			"title":"S4: Web Search Unknown Sender",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"openai",
+				"resourceName":"openai_create_response",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S4Unk@n_IDMPi@root_id-1@y@y",
+			"id":"n_S4AIr",
+			"index":13,
+			"inputs":{
+				"instructions":"You are ATLAS. Summarize the search results about this person in exactly 2 lines: who they are and why they might be reaching out. Be concise and factual.",
+				"input":[
+					{
+						"role":"user",
+						"content":"=CONCAT(\"Sender: \", \"{{ n_S1Nrm.outputs.result.senderName }}\", \" <\", \"{{ n_S1Nrm.outputs.result.sender }}\", \">. Search results: \", \"{{ n_S4Srp.outputs.organic }}\")"
+					}
+				],
+				"temperature":0.3,
+				"model":"gpt-4o-mini"
+			},
+			"skip":false,
+			"subTitle":"OpenAI",
+			"title":"S4: AI Summarize Sender Research",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_RBVar",
+			"index":14,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"researchBrief",
+						"isNewContact",
+						"contactRowNumber"
+					],
+					"properties":{
+						"researchBrief":{
+							"type":"string",
+							"title":"Research Brief"
+						},
+						"isNewContact":{
+							"type":"boolean",
+							"title":"Is New Contact"
+						},
+						"contactRowNumber":{
+							"type":"number",
+							"title":"Contact Row Number"
+						}
+					}
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"type":"SCHEMA",
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"researchBrief":{
+							"type":"string",
+							"title":"Research Brief"
+						},
+						"isNewContact":{
+							"type":"boolean",
+							"title":"Is New Contact"
+						},
+						"contactRowNumber":{
+							"type":"number",
+							"title":"Contact Row Number"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"S4: Create Research Brief Variable",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S4Upn",
+			"index":15,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_RBVar.outputs.researchBrief }}",
+						"value":"{{ n_S4AIr.outputs.output[0].content[0].text }}"
+					},
+					{
+						"source":"{{ n_RBVar.outputs.isNewContact }}",
+						"value":true
+					},
+					{
+						"source":"{{ n_RBVar.outputs.contactRowNumber }}",
+						"value":0
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"S4: Set Research Brief (Unknown Sender)",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"id":"n_S4Upk",
+			"index":16,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_RBVar.outputs.researchBrief }}",
+						"value":"=CONCAT(\"Known contact. Notes: \", \"{{ n_S3Cnt.outputs.rows[0].Notes }}\")"
+					},
+					{
+						"source":"{{ n_RBVar.outputs.isNewContact }}",
+						"value":false
+					},
+					{
+						"source":"{{ n_RBVar.outputs.contactRowNumber }}",
+						"value":"{{ n_S3Cnt.outputs.rows[0]._rowNumber }}"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"S4: Set Research Brief (Known Sender)",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S5Ifc",
+			"index":17,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_RBVar.outputs.isNewContact }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":true
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"S5: New Contact?",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"gsheets",
+				"connectionId":"685a5314dba2c40dfc9a2ade",
+				"resourceName":"gsheets_add_row",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S5Ifc@n_IDMPi@root_id-1@y@y",
+			"id":"n_S5Add",
+			"index":18,
+			"inputs":{
+				"sheetName":"Contacts",
+				"spreadsheetId":"{{ n_CFGVr.outputs.MEMORY_SHEET_ID }}",
+				"record_loader":{
+					"Email":"{{ n_S1Nrm.outputs.result.sender }}",
+					"Name":"{{ n_S1Nrm.outputs.result.senderName }}",
+					"LastSeen":"{{ n_S1Nrm.outputs.result.ingestedAt }}",
+					"InteractionCount":1,
+					"Notes":"{{ n_RBVar.outputs.researchBrief }}",
+					"VIP":false
+				}
+			},
+			"skip":false,
+			"subTitle":"Google Sheets",
+			"title":"S5: Append New Contact to Contacts Sheet",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_javascript",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S5Ifc@n_IDMPi@root_id-1@y@n",
+			"id":"n_S5Inc",
+			"index":19,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"newCount":{
+							"type":"number",
+							"title":"New Count"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"currentCount":{
+							"type":"string",
+							"title":"Current Count"
+						}
+					}
+				},
+				"code":"const c = parseInt(currentCount, 10) || 0;\nreturn { newCount: c + 1 };",
+				"parameters_loader":{
+					"currentCount":"{{ n_S3Cnt.outputs.rows[0].InteractionCount }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code",
+			"title":"S5: Increment Interaction Count",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gsheets",
+				"connectionId":"685a5314dba2c40dfc9a2ade",
+				"resourceName":"gsheets_update_row",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S5Ifc@n_IDMPi@root_id-1@y@n",
+			"id":"n_S5Upd",
+			"index":20,
+			"inputs":{
+				"RowNumber":"{{ n_RBVar.outputs.contactRowNumber }}",
+				"sheetName":"Contacts",
+				"spreadsheetId":"{{ n_CFGVr.outputs.MEMORY_SHEET_ID }}",
+				"record_loader":{
+					"LastSeen":"{{ n_S1Nrm.outputs.result.ingestedAt }}",
+					"InteractionCount":"{{ n_S5Inc.outputs.result.newCount }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Google Sheets",
+			"title":"S5: Update Existing Contact",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S6Brn",
+			"index":21,
+			"inputs":{
+				"branches":[
+					{
+						"id":"1",
+						"inputs":{
+							"name":"Branch A — Scheduling",
+							"conditions":{
+								"filters":[
+									{
+										"operator":"OR",
+										"filters":[
+											{
+												"property":"{{ n_S2Prs.outputs.result.intent }}",
+												"filter":{
+													"operator":"EQUAL",
+													"value":"scheduling"
+												}
+											},
+											{
+												"property":"{{ n_S2Prs.outputs.result.requiredAction }}",
+												"filter":{
+													"operator":"EQUAL",
+													"value":"schedule_meeting"
+												}
+											}
+										]
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"2",
+						"inputs":{
+							"name":"Branch B — Invoice / Money",
+							"conditions":{
+								"filters":[
+									{
+										"operator":"OR",
+										"filters":[
+											{
+												"property":"{{ n_S2Prs.outputs.result.intent }}",
+												"filter":{
+													"operator":"EQUAL",
+													"value":"invoice"
+												}
+											},
+											{
+												"property":"{{ n_S2Prs.outputs.result.hasDollarAmounts }}",
+												"filter":{
+													"operator":"EQUAL",
+													"value":true
+												}
+											}
+										]
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"3",
+						"inputs":{
+							"name":"Branch C — File Document",
+							"conditions":{
+								"filters":[
+									{
+										"property":"{{ n_S1Nrm.outputs.result.hasAttachments }}",
+										"filter":{
+											"operator":"EQUAL",
+											"value":true
+										}
+									},
+									{
+										"property":"{{ n_S2Prs.outputs.result.requiredAction }}",
+										"filter":{
+											"operator":"EQUAL",
+											"value":"file_document"
+										}
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"4",
+						"inputs":{
+							"name":"Branch D — Reply / Request",
+							"conditions":{
+								"filters":[
+									{
+										"operator":"OR",
+										"filters":[
+											{
+												"property":"{{ n_S2Prs.outputs.result.intent }}",
+												"filter":{
+													"operator":"EQUAL",
+													"value":"request"
+												}
+											},
+											{
+												"property":"{{ n_S2Prs.outputs.result.requiredAction }}",
+												"filter":{
+													"operator":"EQUAL",
+													"value":"reply"
+												}
+											}
+										]
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"5",
+						"inputs":{
+							"name":"Branch E — Newsletter / Spam",
+							"conditions":{
+								"filters":[
+									{
+										"operator":"OR",
+										"filters":[
+											{
+												"property":"{{ n_S2Prs.outputs.result.intent }}",
+												"filter":{
+													"operator":"EQUAL",
+													"value":"newsletter"
+												}
+											},
+											{
+												"property":"{{ n_S2Prs.outputs.result.intent }}",
+												"filter":{
+													"operator":"EQUAL",
+													"value":"spam"
+												}
+											}
+										]
+									}
+								],
+								"operator":"AND"
+							}
+						}
+					},
+					{
+						"id":"default"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Branch",
+			"title":"",
+			"type":"BRANCH"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@1",
+			"id":"n_S6Brn@1",
+			"index":22,
+			"inputs":{
+				"name":"Branch A — Scheduling",
+				"conditions":{
+					"filters":[
+						{
+							"operator":"OR",
+							"filters":[
+								{
+									"property":"{{ n_S2Prs.outputs.result.intent }}",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"scheduling"
+									}
+								},
+								{
+									"property":"{{ n_S2Prs.outputs.result.requiredAction }}",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"schedule_meeting"
+									}
+								}
+							]
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"gcalendar",
+				"connectionId":"685c01634904043186b6e78a",
+				"resourceName":"gcalendar_list_events",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@1",
+			"id":"n_S6ACl",
+			"index":23,
+			"inputs":{
+				"start_time":"{{ n_S1Nrm.outputs.result.ingestedAt }}",
+				"singleEvents":true,
+				"calendarId":"primary",
+				"maxResults":50,
+				"orderBy":"startTime",
+				"timeZone":"Asia/Kolkata"
+			},
+			"skip":false,
+			"subTitle":"Google Calendar",
+			"title":"S6A: List Calendar Events (Next 5 Days)",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"openai",
+				"resourceName":"openai_create_response",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@1",
+			"id":"n_S6AAI",
+			"index":24,
+			"inputs":{
+				"instructions":"You are ATLAS, an AI executive assistant. Draft a polite, professional reply proposing 3 available meeting time slots. Working hours are 9am-6pm IST. Sign off as 'ATLAS (on behalf of Executive)'.",
+				"input":[
+					{
+						"role":"user",
+						"content":"=CONCAT(\"Draft a scheduling reply to \", \"{{ n_S1Nrm.outputs.result.senderName }}\", \" regarding: \", \"{{ n_S1Nrm.outputs.result.subject }}\", \". Existing calendar events: \", \"{{ n_S6ACl.outputs.items }}\", \". Propose 3 open slots in the next 5 business days (9am-6pm IST). Format times clearly.\")"
+					}
+				],
+				"temperature":0.4,
+				"model":"gpt-4o"
+			},
+			"skip":false,
+			"subTitle":"OpenAI",
+			"title":"S6A: AI Draft Scheduling Reply",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"685a52a9dba2c40dfc9a2a3e",
+				"resourceName":"gmail_create_draft",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@1",
+			"id":"n_S6ADr",
+			"index":25,
+			"inputs":{
+				"email_type":"text",
+				"subject":"=CONCAT(\"Re: \", \"{{ n_S1Nrm.outputs.result.subject }}\")",
+				"to":[
+					"{{ n_S1Nrm.outputs.result.sender }}"
+				],
+				"message":"{{ n_S6AAI.outputs.output[0].content[0].text }}"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"S6A: Create Scheduling Draft",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@2",
+			"id":"n_S6Brn@2",
+			"index":26,
+			"inputs":{
+				"name":"Branch B — Invoice / Money",
+				"conditions":{
+					"filters":[
+						{
+							"operator":"OR",
+							"filters":[
+								{
+									"property":"{{ n_S2Prs.outputs.result.intent }}",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"invoice"
+									}
+								},
+								{
+									"property":"{{ n_S2Prs.outputs.result.hasDollarAmounts }}",
+									"filter":{
+										"operator":"EQUAL",
+										"value":true
+									}
+								}
+							]
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@2",
+			"id":"n_S6BFl",
+			"index":27,
+			"inputSchema":{
+				"type":"SCHEMA_AND_LAYOUT",
+				"dynamic":false,
+				"layout":{},
+				"schema":{
+					"additionalProperties":false,
+					"type":"object",
+					"required":[
+						"branchAction",
+						"branchOutcome",
+						"riskLevel"
+					],
+					"properties":{
+						"branchAction":{
+							"type":"string",
+							"title":"Branch Action"
+						},
+						"branchOutcome":{
+							"type":"string",
+							"title":"Branch Outcome"
+						},
+						"riskLevel":{
+							"type":"string",
+							"title":"Risk Level"
+						}
+					}
+				}
+			},
+			"inputs":{},
+			"outputSchema":{
+				"type":"SCHEMA",
+				"dynamic":false,
+				"schema":{
+					"type":"object",
+					"properties":{
+						"branchAction":{
+							"type":"string",
+							"title":"Branch Action"
+						},
+						"branchOutcome":{
+							"type":"string",
+							"title":"Branch Outcome"
+						},
+						"riskLevel":{
+							"type":"string",
+							"title":"Risk Level"
+						}
+					}
+				}
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"S6B: Flag Invoice as High Risk",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceName":"variable_by_unifyapps_update_variables",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@2",
+			"id":"n_S6BUp",
+			"index":28,
+			"inputs":{
+				"variables":[
+					{
+						"source":"{{ n_S6BFl.outputs.branchAction }}",
+						"value":"Invoice/money email flagged as HIGH RISK — queued for human approval. No auto-action taken."
+					},
+					{
+						"source":"{{ n_S6BFl.outputs.branchOutcome }}",
+						"value":"pending_approval"
+					},
+					{
+						"source":"{{ n_S6BFl.outputs.riskLevel }}",
+						"value":"HIGH"
+					}
+				]
+			},
+			"skip":false,
+			"subTitle":"Variable",
+			"title":"S6B: Set Invoice Flag Variables",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@3",
+			"id":"n_S6Brn@3",
+			"index":29,
+			"inputs":{
+				"name":"Branch C — File Document",
+				"conditions":{
+					"filters":[
+						{
+							"property":"{{ n_S1Nrm.outputs.result.hasAttachments }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":true
+							}
+						},
+						{
+							"property":"{{ n_S2Prs.outputs.result.requiredAction }}",
+							"filter":{
+								"operator":"EQUAL",
+								"value":"file_document"
+							}
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"gdrive",
+				"connectionId":"695b947bca769c67b7904089",
+				"resourceName":"gdrive_search_file",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@3",
+			"id":"n_S6CSr",
+			"index":30,
+			"inputs":{
+				"q":"=CONCAT(\"mimeType='application/vnd.google-apps.folder' and name contains '\", \"{{ n_S1Nrm.outputs.result.senderName }}\", \"'\")",
+				"spaces":"drive",
+				"pageSize":1
+			},
+			"skip":false,
+			"subTitle":"Google Drive",
+			"title":"S6C: Search Drive for Sender Folder",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@3",
+			"id":"n_S6CIf",
+			"index":31,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_S6CSr.outputs.files[0].id }}",
+						"filter":{
+							"operator":"MISSING"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"S6C: Folder Not Found?",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"gdrive",
+				"connectionId":"695b947bca769c67b7904089",
+				"resourceName":"gdrive_create_folder",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S6CIf@n_S6Brn@n_IDMPi@root_id-1@y@3@y",
+			"id":"n_S6CCr",
+			"index":32,
+			"inputs":{
+				"folderName":"{{ n_S1Nrm.outputs.result.senderName }}",
+				"folderId":"root"
+			},
+			"skip":false,
+			"subTitle":"Google Drive",
+			"title":"S6C: Create Sender Folder in Drive",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_javascript",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@3",
+			"id":"n_S6CFd",
+			"index":33,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"folderId":{
+							"type":"string",
+							"title":"Folder ID"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"newFolderId":{
+							"type":"string",
+							"title":"New Folder ID"
+						},
+						"existingFolderId":{
+							"type":"string",
+							"title":"Existing Folder ID"
+						}
+					}
+				},
+				"code":"return { folderId: newFolderId || existingFolderId || 'root' };",
+				"parameters_loader":{
+					"newFolderId":"{{ n_S6CCr.outputs.id }}",
+					"existingFolderId":"{{ n_S6CSr.outputs.files[0].id }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code",
+			"title":"S6C: Resolve Target Folder ID",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"685a52a9dba2c40dfc9a2a3e",
+				"resourceName":"gmail_download_attachment",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@3",
+			"id":"n_S6CDl",
+			"index":34,
+			"inputs":{
+				"messageId":"{{ n_S1Nrm.outputs.result.emailId }}",
+				"attachmentId":"{{ n_S1Gml.outputs.payload.parts[0].body.attachmentId }}"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"S6C: Download Attachment from Gmail",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gdrive",
+				"connectionId":"695b947bca769c67b7904089",
+				"resourceName":"gdrive_upload_files",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@3",
+			"id":"n_S6CUp",
+			"index":35,
+			"inputs":{
+				"attachment":{
+					"attachment_option":"use_file_url",
+					"url":"{{ n_S6CDl.outputs.file.source }}",
+					"file_name":"{{ n_S1Gml.outputs.payload.parts[0].filename }}",
+					"parents":"{{ n_S6CFd.outputs.result.folderId }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Google Drive",
+			"title":"S6C: Upload Attachment to Drive",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@4",
+			"id":"n_S6Brn@4",
+			"index":36,
+			"inputs":{
+				"name":"Branch D — Reply / Request",
+				"conditions":{
+					"filters":[
+						{
+							"operator":"OR",
+							"filters":[
+								{
+									"property":"{{ n_S2Prs.outputs.result.intent }}",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"request"
+									}
+								},
+								{
+									"property":"{{ n_S2Prs.outputs.result.requiredAction }}",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"reply"
+									}
+								}
+							]
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"openai",
+				"resourceName":"openai_create_response",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@4",
+			"id":"n_S6DAI",
+			"index":37,
+			"inputs":{
+				"instructions":"You are ATLAS, an AI executive assistant. Draft a professional, concise reply. Tone: helpful and direct. Do not be sycophantic. Sign off as 'ATLAS (on behalf of Executive)'.",
+				"input":[
+					{
+						"role":"user",
+						"content":"=CONCAT(\"Draft a professional reply to this email. Email from: \", \"{{ n_S1Nrm.outputs.result.senderName }}\", \" <\", \"{{ n_S1Nrm.outputs.result.sender }}\", \">. Subject: \", \"{{ n_S1Nrm.outputs.result.subject }}\", \". Body: \", \"{{ n_S1Nrm.outputs.result.body }}\", \". Research brief about sender: \", \"{{ n_RBVar.outputs.researchBrief }}\")"
+					}
+				],
+				"temperature":0.4,
+				"model":"gpt-4o"
+			},
+			"skip":false,
+			"subTitle":"OpenAI",
+			"title":"S6D: AI Draft Contextual Reply",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"685a52a9dba2c40dfc9a2a3e",
+				"resourceName":"gmail_create_draft",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@4",
+			"id":"n_S6DDr",
+			"index":38,
+			"inputs":{
+				"email_type":"text",
+				"subject":"=CONCAT(\"Re: \", \"{{ n_S1Nrm.outputs.result.subject }}\")",
+				"to":[
+					"{{ n_S1Nrm.outputs.result.sender }}"
+				],
+				"message":"{{ n_S6DAI.outputs.output[0].content[0].text }}"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"S6D: Create Reply Draft",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@5",
+			"id":"n_S6Brn@5",
+			"index":39,
+			"inputs":{
+				"name":"Branch E — Newsletter / Spam",
+				"conditions":{
+					"filters":[
+						{
+							"operator":"OR",
+							"filters":[
+								{
+									"property":"{{ n_S2Prs.outputs.result.intent }}",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"newsletter"
+									}
+								},
+								{
+									"property":"{{ n_S2Prs.outputs.result.intent }}",
+									"filter":{
+										"operator":"EQUAL",
+										"value":"spam"
+									}
+								}
+							]
+						}
+					],
+					"operator":"AND"
+				}
+			},
+			"skip":false,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"685a52a9dba2c40dfc9a2a3e",
+				"resourceName":"gmail_add_labels",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@5",
+			"id":"n_S6ELb",
+			"index":40,
+			"inputs":{
+				"labelIds":[
+					"ATLAS/Auto-Filed"
+				],
+				"id":"{{ n_S1Nrm.outputs.result.emailId }}"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"S6E: Apply ATLAS/Auto-Filed Label",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"685a52a9dba2c40dfc9a2a3e",
+				"resourceName":"gmail_add_labels",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S6Brn@n_IDMPi@root_id-1@y@default",
+			"id":"n_S6FLb",
+			"index":41,
+			"inputs":{
+				"labelIds":[
+					"ATLAS/FYI"
+				],
+				"id":"{{ n_S1Nrm.outputs.result.emailId }}"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"S6F: Apply ATLAS/FYI Label (Default)",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S7Ifc",
+			"index":42,
+			"inputs":{
+				"filters":[
+					{
+						"property":"{{ n_S2Prs.outputs.result.commitmentDetected }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":true
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"S7: Commitment Detected?",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_javascript",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_S7Ifc@n_IDMPi@root_id-1@y@y",
+			"id":"n_S7Uid",
+			"index":43,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"commitmentId":{
+							"type":"string",
+							"title":"Commitment ID"
+						},
+						"commitmentType":{
+							"type":"string",
+							"title":"Commitment Type"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"emailBody":{
+							"type":"string",
+							"title":"Email Body"
+						}
+					}
+				},
+				"code":"function uuidv4() {\n  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {\n    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);\n    return v.toString(16);\n  });\n}\nconst body = (emailBody || '').toLowerCase();\nconst gaveKeywords = [\"i will\", \"i'll\", \"i shall\", \"i am going to\"];\nconst isGave = gaveKeywords.some(k => body.includes(k));\nreturn {\n  commitmentId: uuidv4(),\n  commitmentType: isGave ? 'gave' : 'owe'\n};",
+				"parameters_loader":{
+					"emailBody":"{{ n_S1Nrm.outputs.result.body }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code",
+			"title":"S7: Generate Commitment UUID & Type",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gsheets",
+				"connectionId":"685a5314dba2c40dfc9a2ade",
+				"resourceName":"gsheets_add_row",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S7Ifc@n_IDMPi@root_id-1@y@y",
+			"id":"n_S7Add",
+			"index":44,
+			"inputs":{
+				"sheetName":"Commitments",
+				"spreadsheetId":"{{ n_CFGVr.outputs.MEMORY_SHEET_ID }}",
+				"record_loader":{
+					"CommitmentId":"{{ n_S7Uid.outputs.result.commitmentId }}",
+					"Type":"{{ n_S7Uid.outputs.result.commitmentType }}",
+					"Description":"{{ n_S2Prs.outputs.result.commitmentDetails }}",
+					"DueDate":"=\"\"",
+					"Status":"open",
+					"EmailId":"{{ n_S1Nrm.outputs.result.emailId }}",
+					"CreatedAt":"{{ n_S1Nrm.outputs.result.ingestedAt }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Google Sheets",
+			"title":"S7: Append Commitment to Commitments Sheet",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"if_else",
+				"resourceName":"if_else_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S8Ifc",
+			"index":45,
+			"inputs":{
+				"filters":[
+					{
+						"operator":"OR",
+						"filters":[
+							{
+								"property":"{{ n_S2Prs.outputs.result.isHighRisk }}",
+								"filter":{
+									"operator":"EQUAL",
+									"value":true
+								}
+							},
+							{
+								"property":"{{ n_S2Prs.outputs.result.intent }}",
+								"filter":{
+									"operator":"EQUAL",
+									"value":"invoice"
+								}
+							},
+							{
+								"property":"{{ n_S2Prs.outputs.result.requiredAction }}",
+								"filter":{
+									"operator":"EQUAL",
+									"value":"schedule_meeting"
+								}
+							},
+							{
+								"property":"{{ n_S2Prs.outputs.result.requiredAction }}",
+								"filter":{
+									"operator":"EQUAL",
+									"value":"reply"
+								}
+							}
+						]
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"S8: High Risk / Needs Approval?",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"connectionId":"685a52a9dba2c40dfc9a2a3e",
+				"resourceName":"gmail_send_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_S8Ifc@n_IDMPi@root_id-1@y@y",
+			"id":"n_S8Snd",
+			"index":46,
+			"inputs":{
+				"email_type":"text",
+				"subject":"=CONCAT(\"⚡ ATLAS Approval Needed: \", \"{{ n_S1Nrm.outputs.result.subject }}\")",
+				"to":[
+					"aayushsharma2302@gmail.com"
+				],
+				"message":"=CONCAT(\"ATLAS has prepared the following action and needs your approval:\n\n📧 Original Email: From \", \"{{ n_S1Nrm.outputs.result.sender }}\", \" — \", \"{{ n_S1Nrm.outputs.result.subject }}\", \"\n🎯 Classified Intent: \", \"{{ n_S2Prs.outputs.result.intent }}\", \" | Urgency: \", \"{{ n_S2Prs.outputs.result.urgency }}\", \"/5\n📋 Summary: \", \"{{ n_S2Prs.outputs.result.summary }}\", \"\n\n🤖 Proposed Action: ATLAS has created a draft reply/action. Please review in Gmail Drafts.\n\n✅ To approve: Reply APPROVE to this email\n❌ To reject: Reply REJECT to this email\n\n— ATLAS\")"
+			},
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"S8: Send Approval Request to Operator",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"code_by_unifyapps",
+				"resourceName":"code_by_unifyapps_javascript",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S9Uid",
+			"index":47,
+			"inputs":{
+				"output":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"logId":{
+							"type":"string",
+							"title":"Log ID"
+						},
+						"actionDescription":{
+							"type":"string",
+							"title":"Action Description"
+						},
+						"outcome":{
+							"type":"string",
+							"title":"Outcome"
+						}
+					}
+				},
+				"input":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"isHighRisk":{
+							"type":"boolean",
+							"title":"Is High Risk"
+						},
+						"intent":{
+							"type":"string",
+							"title":"Intent"
+						},
+						"requiredAction":{
+							"type":"string",
+							"title":"Required Action"
+						}
+					}
+				},
+				"code":"function uuidv4() {\n  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {\n    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);\n    return v.toString(16);\n  });\n}\nconst actionMap = {\n  scheduling: 'Created scheduling draft reply with 3 proposed time slots',\n  invoice: 'Invoice/money email flagged HIGH RISK — queued for approval',\n  file_document: 'Attachment downloaded and filed to Google Drive folder',\n  request: 'Created contextual reply draft',\n  reply: 'Created contextual reply draft',\n  newsletter: 'Applied ATLAS/Auto-Filed label',\n  spam: 'Applied ATLAS/Auto-Filed label',\n  fyi: 'Applied ATLAS/FYI label',\n  no_action: 'Applied ATLAS/FYI label'\n};\nconst desc = actionMap[intent] || actionMap[requiredAction] || 'Email processed by ATLAS — intent: ' + intent;\nconst outcome = isHighRisk ? 'pending_approval' : 'completed';\nreturn { logId: uuidv4(), actionDescription: desc, outcome: outcome };",
+				"parameters_loader":{
+					"isHighRisk":"{{ n_S2Prs.outputs.result.isHighRisk }}",
+					"intent":"{{ n_S2Prs.outputs.result.intent }}",
+					"requiredAction":"{{ n_S2Prs.outputs.result.requiredAction }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"Code",
+			"title":"S9: Generate ActionLog Entry Data",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gsheets",
+				"connectionId":"685a5314dba2c40dfc9a2ade",
+				"resourceName":"gsheets_add_row",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"CONTINUE",
+			"groupId":"n_IDMPi@root_id-1@y",
+			"id":"n_S9Log",
+			"index":48,
+			"inputs":{
+				"sheetName":"ActionLog",
+				"spreadsheetId":"{{ n_CFGVr.outputs.MEMORY_SHEET_ID }}",
+				"record_loader":{
+					"LogId":"{{ n_S9Uid.outputs.result.logId }}",
+					"EmailId":"{{ n_S1Nrm.outputs.result.emailId }}",
+					"Action":"{{ n_S9Uid.outputs.result.actionDescription }}",
+					"Outcome":"{{ n_S9Uid.outputs.result.outcome }}",
+					"Timestamp":"{{ n_S1Nrm.outputs.result.ingestedAt }}",
+					"HumanApproved":false
+				}
+			},
+			"skip":false,
+			"subTitle":"Google Sheets",
+			"title":"S9: Append to ActionLog Sheet",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"stop",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"root_id-1",
+			"id":"n_ENDwf",
+			"index":49,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Stop",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		"AI Generated"
+	],
+	"version":1
+}
