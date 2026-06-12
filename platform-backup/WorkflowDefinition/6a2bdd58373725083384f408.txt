@@ -70,7 +70,7 @@
 			"fromNodeId":"n_Qo9xp@2",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_jaKi5",
+			"toNodeId":"n_6LKH7",
 			"type":"next"
 		},
 		{
@@ -89,7 +89,7 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_jaKi5",
+			"fromNodeId":"n_6LKH7",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_xzZm0",
@@ -128,7 +128,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781288086139,
+	"modifiedTime":1781288106563,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -138,7 +138,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_naS3o",
@@ -200,7 +200,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_j6yVt",
@@ -228,7 +228,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_j6yVt@_wmkeO-1@y",
 			"id":"n_Qo9xp",
@@ -277,7 +277,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
 			"id":"n_Qo9xp@1",
@@ -309,7 +309,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
 			"id":"n_7eI3U",
@@ -340,7 +340,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
 			"id":"n_eeY7e",
@@ -420,7 +420,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
 			"id":"n_sJVeb",
@@ -479,7 +479,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@2",
 			"id":"n_Qo9xp@2",
@@ -493,17 +493,21 @@
 		},
 		{
 			"context":{
-				"appName":"stop"
+				"appName":"callables",
+				"resourceVersion":2696,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@2",
-			"id":"n_jaKi5",
+			"id":"n_6LKH7",
 			"index":9,
+			"inputs":{},
 			"skip":false,
-			"subTitle":"Stop",
-			"title":"Stop",
+			"subTitle":"Callable",
+			"title":"Respond to automation",
 			"type":"STOP"
 		},
 		{
@@ -525,7 +529,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_xzZm0",
@@ -581,7 +585,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_pm6E9",
@@ -668,7 +672,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_TpViB",
@@ -694,5 +698,5 @@
 		}
 	},
 	"standard":false,
-	"version":12
+	"version":13
 }
