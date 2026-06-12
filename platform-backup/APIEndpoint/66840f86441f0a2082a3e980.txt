@@ -1,0 +1,46 @@
+{
+	"active":true,
+	"cacheResponse":false,
+	"collectionId":"661fafb1387ba159af40e211",
+	"createdTime":1719999681227,
+	"customizeTimeout":false,
+	"deleted":false,
+	"enableCanaryDeployment":false,
+	"enableNodeLevelLogging":true,
+	"enableRunLogging":true,
+	"enableVariableLogging":true,
+	"endpointUrl":"backendautomation/FALLBACK-RESPONSE-403",
+	"fallbackResponse":{
+		"headers":{
+			"executed":"false"
+		},
+		"message":"Forbidden",
+		"response":{
+			"body":{
+				"message":"You do not have permission to access this resource."
+			}
+		},
+		"statusCode":403
+	},
+	"httpMethod":"POST",
+	"id":"66840f86441f0a2082a3e980",
+	"lastModifiedBy":39,
+	"lcName":"fallback_response_403",
+	"localeBasedFallbackResponse":{},
+	"modifiedTime":1719999681227,
+	"name":"FALLBACK_RESPONSE_403",
+	"ownerUserId":39,
+	"path":"FALLBACK-RESPONSE-403",
+	"resourceIds":[
+		"66840e69f9001f2bcfea5c59"
+	],
+	"resourceType":"CALLABLE_WORKFLOW",
+	"resourceVersions":[
+		1
+	],
+	"standard":false,
+	"supportedHttpMethods":[
+		"POST"
+	],
+	"version":6
+}
