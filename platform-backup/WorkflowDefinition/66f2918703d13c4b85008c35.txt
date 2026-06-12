@@ -1,0 +1,66 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1727172999360,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"KijCn",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"iiadw",
+			"type":"next"
+		}
+	],
+	"id":"66f2918703d13c4b85008c35",
+	"lastModifiedBy":3705,
+	"lcName":"edcw",
+	"modifiedTime":1727173005368,
+	"name":"edcw",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":0,
+				"resourceName":"callables_from_automation"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"IMX1d-1",
+			"id":"KijCn",
+			"index":0,
+			"inputs":{},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Trigger from automation",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"IMX1d-1",
+			"id":"iiadw",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":3705,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
