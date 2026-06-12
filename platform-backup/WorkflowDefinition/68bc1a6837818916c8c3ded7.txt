@@ -1,0 +1,106 @@
+{
+	"appsUsed":[
+		"gmail",
+		"opsgenie"
+	],
+	"createdTime":1757157992211,
+	"deleted":true,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"n_kiNoC",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_JIrw2",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_JIrw2",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_A4zrO",
+			"type":"next"
+		}
+	],
+	"id":"68bc1a6837818916c8c3ded7",
+	"lastModifiedBy":39,
+	"lcName":"opsgenie-gmail action check 117571547648320",
+	"modifiedTime":1757158019571,
+	"name":"OpsGenie-Gmail action check 117571547648320",
+	"nodes":[
+		{
+			"context":{
+				"appName":"opsgenie",
+				"resourceVersion":983,
+				"resourceName":"opsgenie_on_new_or_update_alert"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_HROSV-1",
+			"id":"n_kiNoC",
+			"index":1,
+			"skip":false,
+			"subTitle":"OpsGenie",
+			"title":"New / updated alert",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"opsgenie",
+				"resourceVersion":981,
+				"resourceName":"opsgenie_acknowledge_alert",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_HROSV-1",
+			"id":"n_JIrw2",
+			"index":2,
+			"skip":false,
+			"subTitle":"OpsGenie",
+			"title":"Acknowledge alert",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"gmail",
+				"resourceVersion":1150,
+				"resourceName":"gmail_send_email",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_HROSV-1",
+			"id":"n_A4zrO",
+			"index":3,
+			"skip":false,
+			"subTitle":"Gmail",
+			"title":"Send email",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":2
+}
