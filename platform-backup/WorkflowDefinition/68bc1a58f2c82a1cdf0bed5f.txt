@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1757157976320,
+	"deleted":true,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_bx2oH",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_smywO",
+			"type":"next"
+		}
+	],
+	"id":"68bc1a58f2c82a1cdf0bed5f",
+	"lastModifiedBy":39,
+	"lcName":"servicenow fetch attachments - 117571547648320",
+	"modifiedTime":1757157993061,
+	"name":"ServiceNow Fetch attachments - 117571547648320",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_bx2oH-1",
+			"id":"_bx2oH",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_bx2oH-1",
+			"id":"_smywO",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
