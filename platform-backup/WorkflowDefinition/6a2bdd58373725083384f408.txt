@@ -128,7 +128,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781287653641,
+	"modifiedTime":1781288086139,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -315,7 +315,7 @@
 			"id":"n_7eI3U",
 			"index":5,
 			"inputs":{
-				"query":"SELECT\n    p.assetClass AS assetClzName,\n    ARRAY_AGG(p.assetId) AS assetIds\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '6a2c10cffc9ae6541b103138'\n    GROUP BY assetId\n) latest\nON p.assetId = latest.assetId\nAND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '6a2c10cffc9ae6541b103138'\nGROUP BY p.assetClass;",
+				"query":"SELECT\n    p.assetClass AS assetClzName,\n    ARRAY_AGG(p.assetId) AS assetIds\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '6a1ed21449ac2871d6d6cf75'\n    GROUP BY assetId\n) latest\nON p.assetId = latest.assetId\nAND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '6a1ed21449ac2871d6d6cf75'\nGROUP BY p.assetClass;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -325,6 +325,9 @@
 		},
 		{
 			"additional":{
+				"xsdSchemaConfig":{
+					"root":{}
+				},
 				"visibleOptionalFields":[
 					"root.parameters.objects.items.columns.assetClzName",
 					"root.parameters.objects.items.columns.assetIds"
@@ -394,7 +397,7 @@
 						}
 					}
 				},
-				"code":"return input.objects.collect { item ->\n    [\n        assetClzName: item.columns.assetClzName,\n        assetIds: item.columns.assetIds\n                    .replace('[', '')\n                    .replace(']', '')\n                    .replace('\"', '')\n                    .split(',')\n                    .collect { it.trim() }\n    ]\n}",
+				"code":"return input.objects.collect { item ->\n\n    def assetIds = item.columns.assetIds\n        .replace('[', '')\n        .replace(']', '')\n        .replace('\"', '')\n        .split(',')\n        .collect { it.trim() }\n\n    [\n        assetClzName: item.columns.assetClzName,\n        assetIds: assetIds\n    ]\n}",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
@@ -493,7 +496,7 @@
 				"appName":"stop"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@2",
 			"id":"n_jaKi5",
@@ -505,7 +508,7 @@
 		},
 		{
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_j6yVt@_wmkeO-1@n",
 			"id":"n_sz0LT",
@@ -691,5 +694,5 @@
 		}
 	},
 	"standard":false,
-	"version":11
+	"version":12
 }
