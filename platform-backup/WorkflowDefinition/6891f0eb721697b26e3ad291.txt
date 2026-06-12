@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1754394859861,
+	"deleted":true,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_CHWSP",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_lH4I5",
+			"type":"next"
+		}
+	],
+	"id":"6891f0eb721697b26e3ad291",
+	"lastModifiedBy":39,
+	"lcName":"hook-select callable11754387987829",
+	"modifiedTime":1754394878746,
+	"name":"Hook-Select Callable11754387987829",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_CHWSP-1",
+			"id":"_CHWSP",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_CHWSP-1",
+			"id":"_lH4I5",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
