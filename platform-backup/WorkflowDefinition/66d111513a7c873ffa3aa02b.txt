@@ -1,0 +1,61 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1724977489605,
+	"deleted":false,
+	"edges":[
+		
+	],
+	"id":"66d111513a7c873ffa3aa02b",
+	"lastModifiedBy":39,
+	"lcName":"fhliucamul schedule automation",
+	"modifiedTime":1724977489605,
+	"name":"FHLIUcAMUl Schedule Automation",
+	"nodes":[
+		{
+			"context":{
+				"appName":"schedule",
+				"resourceVersion":0,
+				"resourceName":"schedule_default"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"QB9SS-1",
+			"id":"QB9SS",
+			"index":0,
+			"inputs":{
+				"cron":"INTERVAL",
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"filter":{
+								"value":"",
+								"operator":"EQUAL"
+							},
+							"property":""
+						}
+					],
+					"operator":"AND"
+				},
+				"interval":15,
+				"frequency":"MINUTES"
+			},
+			"skip":false,
+			"title":"New recurring event",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"version":0
+}
