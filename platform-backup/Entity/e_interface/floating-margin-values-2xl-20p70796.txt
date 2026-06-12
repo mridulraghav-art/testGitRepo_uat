@@ -1,10 +1,36 @@
 {
 	"createdTime":1779717239330,
 	"deleted":false,
+	"deploymentState":{
+		"deployedAt":1779717266032,
+		"deployedBy":39,
+		"entityVersion":7,
+		"version":1
+	},
 	"entityType":"e_interface",
+	"grants":{
+		"configs":[
+			{
+				"permissions":[
+					"A",
+					"C",
+					"S",
+					"VI",
+					"D",
+					"E",
+					"V",
+					"M_L"
+				],
+				"principalIds":[
+					"39"
+				],
+				"principalType":"USER"
+			}
+		]
+	},
 	"id":"floating-margin-values-2xl-20p70796",
-	"lastModifiedBy":39,
-	"modifiedTime":1779717239330,
+	"lastModifiedBy":-1,
+	"modifiedTime":1780165266835,
 	"ownerUserId":39,
 	"properties":{
 		"standard":false,
@@ -19,17 +45,26 @@
 			},
 			"_counter":{
 				"_mqttTopicCounter":0,
-				"_pageCount":0,
+				"_pageCount":2,
 				"_moduleCount":0,
 				"_templateComponentCount":0
 			}
 		},
 		"navigation":{
 			"secondary":[],
-			"defaultPageId":"",
+			"defaultPageId":"e_6a14547880830b496b680f6b",
 			"appearance":{
 				"SM":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_bjY8S",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_MtTeP",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -58,10 +93,20 @@
 						"padding":{
 							"all":"p-0"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"LG":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_bjY8S",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_MtTeP",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -96,10 +141,20 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"XL":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_bjY8S",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_MtTeP",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"expandable"
@@ -134,10 +189,20 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				},
 				"MD":{
-					"primary":[],
+					"primary":[
+						{
+							"id":"nav_bjY8S",
+							"hiddenInOverflow":false
+						},
+						{
+							"id":"nav_MtTeP",
+							"hiddenInOverflow":false
+						}
+					],
 					"navigationItem":{
 						"selectionVariant":"stroke",
 						"labelVariant":"none"
@@ -172,10 +237,35 @@
 						"gapSecondary":{
 							"y":"gap-y-lg"
 						}
-					}
+					},
+					"secondary":[]
 				}
 			},
-			"primary":[]
+			"primary":[
+				{
+					"activeIcon":"Zap",
+					"name":"Homepage",
+					"icon":"Zap",
+					"id":"nav_bjY8S",
+					"type":"PAGE",
+					"pageId":"e_6a14547880830b496b680f6b",
+					"slug":"homepage"
+				},
+				{
+					"activeIcon":"Zap",
+					"name":"Page 2",
+					"icon":"Zap",
+					"id":"nav_MtTeP",
+					"type":"PAGE",
+					"pageId":"e_6a14547e80830b496b680f6f",
+					"slug":"page-2"
+				}
+			]
+		},
+		"interfacePageIdVsSlugMap":{
+			"e_6a14547e80830b496b680f6f":"page-2",
+			"e_6a14547880830b496b680f6b":"homepage",
+			"e_global_floating-margin-values-2xl-20p70796":"global-page-of-floating-margin-values-2xl-20p70796"
 		},
 		"manifest":{
 			"type":"WEB"
@@ -187,11 +277,28 @@
 		"type":"application",
 		"locale":{
 			"defaultLocale":"en-US"
+		},
+		"entityDetailsMap":{
+			"e_6a14547e80830b496b680f6f":{
+				"slug":"page-2",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_6a14547880830b496b680f6b":{
+				"slug":"homepage",
+				"isPublic":false,
+				"type":"PAGE"
+			},
+			"e_global_floating-margin-values-2xl-20p70796":{
+				"slug":"global-page-of-floating-margin-values-2xl-20p70796",
+				"isPublic":false,
+				"type":"PAGE"
+			}
 		}
 	},
 	"standard":false,
 	"tags":[
 		"dnt-application"
 	],
-	"version":0
+	"version":7
 }
