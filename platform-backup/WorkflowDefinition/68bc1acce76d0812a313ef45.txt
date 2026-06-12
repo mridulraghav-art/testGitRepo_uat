@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1757158092490,
+	"deleted":true,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_h12Ye",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_7r89R",
+			"type":"next"
+		}
+	],
+	"id":"68bc1acce76d0812a313ef45",
+	"lastModifiedBy":39,
+	"lcName":"validateloggingnode_11757154845405",
+	"modifiedTime":1757158121349,
+	"name":"ValidateLoggingNode_11757154845405",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_h12Ye-1",
+			"id":"_h12Ye",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_h12Ye-1",
+			"id":"_7r89R",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
