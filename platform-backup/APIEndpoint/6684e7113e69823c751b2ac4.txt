@@ -1,0 +1,46 @@
+{
+	"active":true,
+	"cacheResponse":false,
+	"collectionId":"661fafb1387ba159af40e211",
+	"createdTime":1719999681399,
+	"customizeTimeout":false,
+	"deleted":false,
+	"enableCanaryDeployment":false,
+	"enableNodeLevelLogging":true,
+	"enableRunLogging":true,
+	"enableVariableLogging":true,
+	"endpointUrl":"backendautomation/name/{path}",
+	"fallbackResponse":{
+		"headers":{
+			"executed":"false"
+		},
+		"message":"Service Unavailable",
+		"response":{
+			"body":{
+				"message":"The service is currently unavailable. Please try again later."
+			}
+		},
+		"statusCode":503
+	},
+	"httpMethod":"GET",
+	"id":"6684e7113e69823c751b2ac4",
+	"lastModifiedBy":39,
+	"lcName":"fallback_response_503",
+	"localeBasedFallbackResponse":{},
+	"modifiedTime":1719999681399,
+	"name":"FALLBACK_RESPONSE_503",
+	"ownerUserId":39,
+	"path":"name/{path}",
+	"resourceIds":[
+		"6684e69239f0db7bb6574096"
+	],
+	"resourceType":"CALLABLE_WORKFLOW",
+	"resourceVersions":[
+		1
+	],
+	"standard":false,
+	"supportedHttpMethods":[
+		"GET"
+	],
+	"version":2
+}
