@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1781243740435,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_dykNL",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_MBzcC",
+			"type":"next"
+		}
+	],
+	"id":"6a2b9f5c3ded0569e19af485",
+	"lastModifiedBy":39,
+	"lcName":"workflowlogs",
+	"modifiedTime":1781243740435,
+	"name":"workflowlogs",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_dykNL-1",
+			"id":"_dykNL",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_dykNL-1",
+			"id":"_MBzcC",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
