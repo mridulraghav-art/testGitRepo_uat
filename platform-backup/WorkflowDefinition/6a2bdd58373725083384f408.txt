@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1781259608578,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_wmkeO",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_j1at3",
+			"type":"next"
+		}
+	],
+	"id":"6a2bdd58373725083384f408",
+	"lastModifiedBy":39,
+	"lcName":"bm re-run asset",
+	"modifiedTime":1781259608578,
+	"name":"BM Re-run asset",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_wmkeO-1",
+			"id":"_wmkeO",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_wmkeO-1",
+			"id":"_j1at3",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
