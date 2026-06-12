@@ -55,7 +55,44 @@
 			"fromNodeId":"n_eeY7e",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_sJVeb",
+			"toNodeId":"n_g8sFb",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_g8sFb",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_EH2Iy",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_EH2Iy",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_U51TX",
+			"type":"loop"
+		},
+		{
+			"fromNodeId":"n_U51TX",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_xSFG4",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_xSFG4",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_EH2Iy",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_EH2Iy",
+			"name":"loopback",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_g8sFb",
 			"type":"next"
 		},
 		{
@@ -82,7 +119,7 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_sJVeb",
+			"fromNodeId":"n_g8sFb",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_xzZm0",
@@ -128,7 +165,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781289026824,
+	"modifiedTime":1781289564182,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -350,7 +387,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
 			"id":"n_eeY7e",
@@ -393,7 +430,7 @@
 						}
 					}
 				},
-				"code":"return input.objects.collect { item ->\n\n    def assetIds = item.columns.assetIds\n        .replace('[', '')\n        .replace(']', '')\n        .replace('\"', '')\n        .split(',')\n        .collect { it.trim() }\n\n    [\n        assetClzName: item.columns.assetClzName,\n        assetIds: assetIds\n    ]\n}",
+				"code":"return objects.collect { item ->\n\n    def assetIds = item.columns.assetIds\n        .replace('[', '')\n        .replace(']', '')\n        .replace('\"', '')\n        .split(',')\n        .collect { it.trim() }\n\n    [\n        assetClzName: item.columns.assetClzName,\n        assetIds: assetIds\n    ]\n}",
 				"compile_static":false,
 				"captureStdOutput":false,
 				"parameters":{
@@ -411,128 +448,50 @@
 		},
 		{
 			"context":{
-				"appName":"variable_by_unifyapps",
-				"resourceVersion":1653,
-				"resourceName":"variable_by_unifyapps_create_variables",
+				"appName":"loop",
+				"resourceVersion":64,
+				"resourceName":"loop_for_each",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
-			"id":"n_sJVeb",
+			"id":"n_g8sFb",
 			"index":7,
-			"inputSchema":{
-				"type":"SCHEMA_AND_LAYOUT",
-				"dynamic":false,
-				"layout":{},
-				"schema":{
-					"additionalProperties":false,
-					"type":"object",
-					"properties":{
-						"offset":{
-							"type":"number",
-							"title":"Offset"
-						},
-						"total_rec":{
-							"type":"number",
-							"title":"Total Rec"
-						}
-					},
-					"required":[]
-				}
-			},
 			"inputs":{
-				"offset":0
-			},
-			"outputSchema":{
-				"dynamic":false,
-				"schema":{
-					"additionalProperties":false,
-					"type":"object",
-					"properties":{
-						"offset":{
-							"type":"number",
-							"title":"Offset"
-						},
-						"total_rec":{
-							"type":"number",
-							"title":"Total Rec"
-						}
-					},
-					"required":[]
-				}
+				"repeatMode":"SINGLE",
+				"listSource":"{{ n_eeY7e.outputs.result }}",
+				"captureIterations":false
 			},
 			"skip":false,
-			"subTitle":"Variable by UnifyApps",
-			"title":"Create variables",
-			"type":"ACTION"
+			"subTitle":"Loop",
+			"title":"For each loop",
+			"type":"LOOP"
 		},
 		{
 			"context":{
-				"appName":"branch_condition",
-				"resourceVersion":0,
-				"resourceName":"branch_condition",
+				"appName":"loop",
+				"resourceVersion":64,
+				"resourceName":"loop_for_each",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
-			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@2",
-			"id":"n_Qo9xp@2",
+			"groupId":"n_g8sFb@n_Qo9xp@n_j6yVt@_wmkeO-1@y@1@l",
+			"id":"n_EH2Iy",
 			"index":8,
 			"inputs":{
-				"name":"Branch 2"
-			},
-			"skip":true,
-			"title":"",
-			"type":"BRANCH_CONDITION"
-		},
-		{
-			"context":{
-				"appName":"callables",
-				"resourceVersion":2696,
-				"resourceName":"callables_return_to_automation",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@2",
-			"id":"n_6LKH7",
-			"index":9,
-			"inputs":{
-				"result":{
-					"result":"done"
-				}
+				"repeatMode":"BATCH",
+				"listSource":"{{ n_g8sFb.outputs.item.assetIds }}",
+				"captureIterations":false,
+				"batchSize":500
 			},
 			"skip":false,
-			"subTitle":"Callable",
-			"title":"Respond to automation",
-			"type":"STOP"
-		},
-		{
-			"context":{
-				"appName":"callables",
-				"resourceVersion":2696,
-				"resourceName":"callables_return_to_automation",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_j6yVt@_wmkeO-1@n",
-			"id":"n_DnKVY",
-			"index":10,
-			"inputs":{
-				"result":{
-					"result":"done"
-				}
-			},
-			"skip":false,
-			"subTitle":"Callable",
-			"title":"Respond to automation",
-			"type":"STOP"
+			"subTitle":"Asset Ids",
+			"title":"For each loop",
+			"type":"LOOP"
 		},
 		{
 			"context":{
@@ -542,11 +501,11 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
-			"groupId":"_wmkeO-1",
-			"id":"n_xzZm0",
-			"index":11,
+			"groupId":"n_EH2Iy@n_g8sFb@n_Qo9xp@n_j6yVt@_wmkeO-1@y@1@l@l",
+			"id":"n_U51TX",
+			"index":9,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -598,11 +557,220 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_EH2Iy@n_g8sFb@n_Qo9xp@n_j6yVt@_wmkeO-1@y@1@l@l",
+			"id":"n_xSFG4",
+			"index":10,
+			"inputs":{
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"POST",
+				"body":{
+					"configId":"{{ n_naS3o.outputs.ConfigId }}",
+					"assets":{
+						"ua:type":"mappedArray",
+						"items":{
+							"assetClzName":"{{ n_naS3o.outputs.assets[0].assetClass }}",
+							"assetIds":{
+								"source":"{{ n_naS3o.outputs.assets[0].assetId }}",
+								"ua:type":"mappedArray",
+								"items":"{{ n_naS3o.outputs.assets[0].assetId[0] }}"
+							}
+						},
+						"source":"{{ n_naS3o.outputs.assets[0] }}"
+					}
+				},
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"path":"/api-endpoint/admin/platform-backup/{{ __RUN__.outputs.customerId }}/retry-failures",
+				"baseUrl":"{{ __ENV__.outputs.base_URL }}",
+				"httpVersion":"HTTP_2",
+				"bodySchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"configId":{
+							"type":"string",
+							"title":"configId"
+						},
+						"assets":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"assetClzName":{
+										"type":"string",
+										"title":"assetClzName"
+									},
+									"assetIds":{
+										"type":"array",
+										"items":{
+											"type":"string"
+										},
+										"title":"assetIds"
+									}
+								},
+								"additionalProperties":false
+							},
+							"title":"assets"
+						}
+					}
+				},
+				"responseContentType":"HEADER_BASED",
+				"followRedirects":"NORMAL",
+				"headersList":[
+					{
+						"key":"x-admin-authorization",
+						"value":"{{ n_U51TX.outputs.result.token }}"
+					}
+				],
+				"authType":"CUSTOM",
+				"requestContentType":"application/json",
+				"ignoreTrailingSlashes":false,
+				"certificateType":"CERT_STRING"
+			},
+			"skip":false,
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"PB | admin api - retry failure ",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"branch_condition",
+				"resourceVersion":0,
+				"resourceName":"branch_condition",
+				"type":"APPLICATION"
+			},
+			"debug":false,
 			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@2",
+			"id":"n_Qo9xp@2",
+			"index":11,
+			"inputs":{
+				"name":"Branch 2"
+			},
+			"skip":true,
+			"title":"",
+			"type":"BRANCH_CONDITION"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2696,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@2",
+			"id":"n_6LKH7",
+			"index":12,
+			"inputs":{
+				"result":{
+					"result":"done"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2696,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"n_j6yVt@_wmkeO-1@n",
+			"id":"n_DnKVY",
+			"index":13,
+			"inputs":{
+				"result":{
+					"result":"done"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":2366,
+				"resourceName":"custom_http_endpoint_execute",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"_wmkeO-1",
+			"id":"n_xzZm0",
+			"index":14,
+			"inputs":{
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"POST",
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"path":"/api-platform-admin-token/refresh/{{ __RUN__.outputs.customerId }}",
+				"responseSchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"token":{
+							"type":"string",
+							"title":"Token"
+						}
+					}
+				},
+				"baseUrl":"http://internal-global-svc.unifyapps.svc.cluster.local:80/internal",
+				"httpVersion":"HTTP_2",
+				"queryParamsList":[
+					{
+						"key":"requestId",
+						"value":"retryFailedBackupAssets"
+					},
+					{
+						"key":"expiryMillis",
+						"value":"86400000"
+					}
+				],
+				"responseContentType":"HEADER_BASED",
+				"followRedirects":"NORMAL",
+				"authType":"CUSTOM",
+				"requestContentType":"application/json",
+				"ignoreTrailingSlashes":false,
+				"certificateType":"CERT_STRING"
+			},
+			"skip":true,
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"Execute REST request",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":2362,
+				"resourceName":"custom_http_endpoint_execute",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_pm6E9",
-			"index":12,
+			"index":15,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -672,7 +840,7 @@
 				"ignoreTrailingSlashes":false,
 				"certificateType":"CERT_STRING"
 			},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Custom HTTP Endpoint",
 			"title":"PB | admin api - retry failure ",
 			"type":"ACTION"
@@ -689,7 +857,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_TpViB",
-			"index":13,
+			"index":16,
 			"inputs":{
 				"result":{
 					"result":"done"
@@ -715,5 +883,5 @@
 		}
 	},
 	"standard":false,
-	"version":23
+	"version":24
 }
