@@ -39,7 +39,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781260423507,
+	"modifiedTime":1781271459879,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -163,7 +163,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_pm6E9",
@@ -175,18 +175,14 @@
 				"httpMethod":"POST",
 				"body":{
 					"configId":"{{ n_naS3o.outputs.ConfigId }}",
-					"assets":{
-						"source":"{{ n_naS3o.outputs.assets }}",
-						"ua:type":"mappedArray",
-						"items":{
-							"assetClzName":"{{ n_naS3o.outputs.assets[0].assetClass }}",
-							"assetIds":{
-								"source":"{{ n_naS3o.outputs.assets[0].assetId }}",
-								"ua:type":"mappedArray",
-								"items":"{{ n_naS3o.outputs.assets[0].assetId[0] }}"
-							}
+					"assets":[
+						{
+							"assetClzName":"WorkflowDefinition",
+							"assetIds":[
+								"687bde3e050a9f7f3786e9b0"
+							]
 						}
-					}
+					]
 				},
 				"connectionType":"DIRECT",
 				"sslVerify":false,
@@ -276,5 +272,5 @@
 		}
 	},
 	"standard":false,
-	"version":8
+	"version":9
 }
