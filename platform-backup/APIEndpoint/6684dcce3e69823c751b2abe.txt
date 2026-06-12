@@ -1,0 +1,46 @@
+{
+	"active":true,
+	"cacheResponse":false,
+	"collectionId":"661fafb1387ba159af40e211",
+	"createdTime":1719999681298,
+	"customizeTimeout":false,
+	"deleted":false,
+	"enableCanaryDeployment":false,
+	"enableNodeLevelLogging":true,
+	"enableRunLogging":true,
+	"enableVariableLogging":true,
+	"endpointUrl":"backendautomation/fallback/{test}",
+	"fallbackResponse":{
+		"headers":{
+			"executed":"false"
+		},
+		"message":"Internal Server Error",
+		"response":{
+			"body":{
+				"message":"The server encountered an internal error and could not complete your request. Please try again later."
+			}
+		},
+		"statusCode":500
+	},
+	"httpMethod":"GET",
+	"id":"6684dcce3e69823c751b2abe",
+	"lastModifiedBy":39,
+	"lcName":"fallback_response_500",
+	"localeBasedFallbackResponse":{},
+	"modifiedTime":1719999681298,
+	"name":"FALLBACK_RESPONSE_500",
+	"ownerUserId":39,
+	"path":"fallback/{test}",
+	"resourceIds":[
+		"6684dc2494404d123d192675"
+	],
+	"resourceType":"CALLABLE_WORKFLOW",
+	"resourceVersions":[
+		1
+	],
+	"standard":false,
+	"supportedHttpMethods":[
+		"GET"
+	],
+	"version":2
+}
