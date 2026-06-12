@@ -6,46 +6,115 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_pQEAY",
+			"fromNodeId":"n_37nww",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_Bql8f",
+			"toNodeId":"n_TLhN6",
 			"type":"next"
 		}
 	],
 	"id":"6a2bd531373725083382d55b",
 	"lastModifiedBy":39,
 	"lcName":"test-api-check",
-	"modifiedTime":1781257521625,
+	"modifiedTime":1781257803459,
 	"name":"test-api-check",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2696,
+				"resourceName":"callables_from_api"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pQEAY-1",
-			"id":"_pQEAY",
-			"index":0,
+			"id":"n_37nww",
+			"index":1,
+			"inputs":{
+				"request":{
+					"queryParams":{
+						"type":"object",
+						"additionalProperties":false,
+						"required":[],
+						"properties":{
+							"name":{
+								"type":"string",
+								"title":"Name"
+							},
+							"Age":{
+								"type":"integer",
+								"title":"Age"
+							}
+						}
+					},
+					"contentType":"application/json"
+				},
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"Data",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						},
+						"htmlBody":{
+							"type":"string"
+						},
+						"body":{
+							"type":"object",
+							"properties":{
+								"output":{
+									"type":"string",
+									"title":"Output"
+								}
+							},
+							"additionalProperties":false,
+							"required":[
+								"output"
+							]
+						}
+					}
+				],
+				"streamingResponse":false
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via API",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2697,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pQEAY-1",
-			"id":"_Bql8f",
-			"index":0,
+			"id":"n_TLhN6",
+			"index":2,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_Data",
+				"status":200
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to API request",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +125,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
