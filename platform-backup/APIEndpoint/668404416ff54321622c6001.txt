@@ -1,0 +1,46 @@
+{
+	"active":true,
+	"cacheResponse":false,
+	"collectionId":"661fafb1387ba159af40e211",
+	"createdTime":1719999681352,
+	"customizeTimeout":false,
+	"deleted":false,
+	"enableCanaryDeployment":false,
+	"enableNodeLevelLogging":true,
+	"enableRunLogging":true,
+	"enableVariableLogging":true,
+	"endpointUrl":"backendautomation/tests/{name}",
+	"fallbackResponse":{
+		"headers":{
+			"executed":"false"
+		},
+		"message":"Bad Request",
+		"response":{
+			"body":{
+				"message":"The request could not be understood by the server due to malformed syntax. Please check your request and try again."
+			}
+		},
+		"statusCode":400
+	},
+	"httpMethod":"POST",
+	"id":"668404416ff54321622c6001",
+	"lastModifiedBy":39,
+	"lcName":"fallback_response_400",
+	"localeBasedFallbackResponse":{},
+	"modifiedTime":1719999681352,
+	"name":"FALLBACK_RESPONSE_400",
+	"ownerUserId":39,
+	"path":"tests/{name}",
+	"resourceIds":[
+		"6683f9e0f9001f2bcfea52af"
+	],
+	"resourceType":"CALLABLE_WORKFLOW",
+	"resourceVersions":[
+		1
+	],
+	"standard":false,
+	"supportedHttpMethods":[
+		"POST"
+	],
+	"version":4
+}
