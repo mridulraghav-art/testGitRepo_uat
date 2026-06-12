@@ -4,14 +4,14 @@
 	],
 	"createdTime":1781257521625,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1781257968938,
+		"deployedAt":1781258414747,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a2bd6f021f87b7b1af86e63",
+		"deployedDefinitionId":"6a2bd8aeaeb9a560a858e523",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":2
+		"version":2,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"6a2bd531373725083382d55b",
 	"lastModifiedBy":39,
 	"lcName":"test-api-check",
-	"modifiedTime":1781258412820,
+	"modifiedTime":1781258439650,
 	"name":"test-api-check",
 	"nodes":[
 		{
@@ -44,7 +44,7 @@
 				"resourceName":"callables_from_api"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_pQEAY-1",
 			"id":"n_37nww",
@@ -61,7 +61,7 @@
 								"title":"Name"
 							},
 							"Age":{
-								"type":"integer",
+								"type":"number",
 								"title":"Age"
 							}
 						}
@@ -146,5 +146,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":4
 }
