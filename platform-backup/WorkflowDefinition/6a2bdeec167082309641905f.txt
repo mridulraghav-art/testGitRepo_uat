@@ -6,46 +6,67 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_mZ1JK",
+			"fromNodeId":"n_GFtoT",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_TooXQ",
+			"toNodeId":"n_vY32o",
 			"type":"next"
 		}
 	],
 	"id":"6a2bdeec167082309641905f",
 	"lastModifiedBy":39,
 	"lcName":"rbac-automation-test-1",
-	"modifiedTime":1781260012694,
+	"modifiedTime":1781260033100,
 	"name":"rbac-automation-test-1",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":63,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_mZ1JK-1",
-			"id":"_mZ1JK",
-			"index":0,
+			"id":"n_GFtoT",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"variable_by_unifyapps",
+				"resourceVersion":1653,
+				"resourceName":"variable_by_unifyapps_create_variables",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_mZ1JK-1",
-			"id":"_TooXQ",
-			"index":0,
+			"id":"n_vY32o",
+			"index":2,
 			"skip":false,
-			"title":"Select an app and action",
+			"subTitle":"Variable by UnifyApps",
+			"title":"Create variables",
 			"type":"ACTION"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +77,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
