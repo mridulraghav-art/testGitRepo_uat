@@ -115,6 +115,20 @@
 			"name":"no",
 			"priority":0,
 			"skip":false,
+			"toNodeId":"n_msoNF",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_msoNF",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_FObfM",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_FObfM",
+			"priority":0,
+			"skip":false,
 			"toNodeId":"n_DnKVY",
 			"type":"next"
 		},
@@ -165,7 +179,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781289769368,
+	"modifiedTime":1781289796519,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -681,6 +695,149 @@
 		},
 		{
 			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":2366,
+				"resourceName":"custom_http_endpoint_execute",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_j6yVt@_wmkeO-1@n",
+			"id":"n_msoNF",
+			"index":13,
+			"inputs":{
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"POST",
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"path":"/api-platform-admin-token/refresh/{{ __RUN__.outputs.customerId }}",
+				"responseSchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"token":{
+							"type":"string",
+							"title":"Token"
+						}
+					}
+				},
+				"baseUrl":"http://internal-global-svc.unifyapps.svc.cluster.local:80/internal",
+				"httpVersion":"HTTP_2",
+				"queryParamsList":[
+					{
+						"key":"requestId",
+						"value":"retryFailedBackupAssets"
+					},
+					{
+						"key":"expiryMillis",
+						"value":"86400000"
+					}
+				],
+				"responseContentType":"HEADER_BASED",
+				"followRedirects":"NORMAL",
+				"authType":"CUSTOM",
+				"requestContentType":"application/json",
+				"ignoreTrailingSlashes":false,
+				"certificateType":"CERT_STRING"
+			},
+			"skip":false,
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"Execute REST request",
+			"type":"ACTION"
+		},
+		{
+			"context":{
+				"appName":"custom_http_endpoint",
+				"resourceVersion":2362,
+				"resourceName":"custom_http_endpoint_execute",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_j6yVt@_wmkeO-1@n",
+			"id":"n_FObfM",
+			"index":14,
+			"inputs":{
+				"isAsync":false,
+				"enableProxy":false,
+				"requestTimeoutInSecs":-1,
+				"httpMethod":"POST",
+				"body":{
+					"configId":"{{ n_naS3o.outputs.ConfigId }}",
+					"assets":{
+						"ua:type":"mappedArray",
+						"items":{
+							"assetClzName":"{{ n_naS3o.outputs.assets[0].assetClass }}",
+							"assetIds":{
+								"source":"{{ n_naS3o.outputs.assets[0].assetId }}",
+								"ua:type":"mappedArray",
+								"items":"{{ n_naS3o.outputs.assets[0].assetId[0] }}"
+							}
+						},
+						"source":"{{ n_naS3o.outputs.assets[0] }}"
+					}
+				},
+				"connectionType":"DIRECT",
+				"sslVerify":false,
+				"path":"/api-endpoint/admin/platform-backup/{{ __RUN__.outputs.customerId }}/retry-failures",
+				"baseUrl":"{{ __ENV__.outputs.base_URL }}",
+				"httpVersion":"HTTP_2",
+				"bodySchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"properties":{
+						"configId":{
+							"type":"string",
+							"title":"configId"
+						},
+						"assets":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"assetClzName":{
+										"type":"string",
+										"title":"assetClzName"
+									},
+									"assetIds":{
+										"type":"array",
+										"items":{
+											"type":"string"
+										},
+										"title":"assetIds"
+									}
+								},
+								"additionalProperties":false
+							},
+							"title":"assets"
+						}
+					}
+				},
+				"responseContentType":"HEADER_BASED",
+				"followRedirects":"NORMAL",
+				"headersList":[
+					{
+						"key":"x-admin-authorization",
+						"value":"{{ n_msoNF.outputs.result.token }}"
+					}
+				],
+				"authType":"CUSTOM",
+				"requestContentType":"application/json",
+				"ignoreTrailingSlashes":false,
+				"certificateType":"CERT_STRING"
+			},
+			"skip":false,
+			"subTitle":"Custom HTTP Endpoint",
+			"title":"PB | admin api - retry failure ",
+			"type":"ACTION"
+		},
+		{
+			"context":{
 				"appName":"callables",
 				"resourceVersion":2696,
 				"resourceName":"callables_return_to_automation",
@@ -691,7 +848,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_j6yVt@_wmkeO-1@n",
 			"id":"n_DnKVY",
-			"index":13,
+			"index":15,
 			"inputs":{
 				"result":{
 					"result":"done"
@@ -714,7 +871,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_xzZm0",
-			"index":14,
+			"index":16,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -770,7 +927,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_pm6E9",
-			"index":15,
+			"index":17,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -857,7 +1014,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_TpViB",
-			"index":16,
+			"index":18,
 			"inputs":{
 				"result":{
 					"result":"done"
@@ -883,5 +1040,5 @@
 		}
 	},
 	"standard":false,
-	"version":26
+	"version":27
 }
