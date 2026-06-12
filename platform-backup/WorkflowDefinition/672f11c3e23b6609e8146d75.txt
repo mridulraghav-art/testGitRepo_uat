@@ -1,0 +1,92 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1731137987278,
+	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1731138064633,
+		"deployedBy":39,
+		"deployedDefinitionId":"672f12103631304c30758182",
+		"status":"PAUSED",
+		"version":1,
+		"workflowVersion":3
+	},
+	"edges":[
+		{
+			"fromNodeId":"_kzDvV",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_IXeyg",
+			"type":"next"
+		}
+	],
+	"id":"672f11c3e23b6609e8146d75",
+	"lastModifiedBy":39,
+	"lcName":"random1223",
+	"modifiedTime":1731138106123,
+	"name":"random1223",
+	"nodes":[
+		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":12,
+				"resourceName":"webhooks_default"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_lDITU-1",
+			"id":"_kzDvV",
+			"index":0,
+			"inputs":{
+				"request":{
+					"contentType":"application/json"
+				}
+			},
+			"skip":false,
+			"subTitle":"Webhook",
+			"title":"New event",
+			"trigger":{
+				"type":"WEBHOOK"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"streams_by_unifyapps",
+				"resourceVersion":3802,
+				"resourceName":"streams_by_unifyapps_publish_event",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_lDITU-1",
+			"id":"_IXeyg",
+			"index":0,
+			"inputs":{
+				"streamId":"e_672e1874ac06ed3c085a83d0",
+				"event":{
+					"hsajkdhfj":"random value"
+				}
+			},
+			"skip":false,
+			"subTitle":"Streams by UnifyApps",
+			"title":"Publish event to stream",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":3
+}
