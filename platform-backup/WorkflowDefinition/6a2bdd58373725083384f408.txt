@@ -30,7 +30,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781259751174,
+	"modifiedTime":1781259803801,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -75,6 +75,17 @@
 				"connectionType":"DIRECT",
 				"sslVerify":false,
 				"path":"/api-platform-admin-token/refresh/{{ __RUN__.outputs.customerId }}",
+				"responseSchema":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[],
+					"properties":{
+						"token":{
+							"type":"string",
+							"title":"Token"
+						}
+					}
+				},
 				"baseUrl":"http://internal-global-svc.unifyapps.svc.cluster.local:80/internal",
 				"httpVersion":"HTTP_2",
 				"queryParamsList":[
@@ -216,5 +227,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
