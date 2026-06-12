@@ -1,0 +1,84 @@
+{
+	"active":true,
+	"cacheResponse":false,
+	"collectionId":"661fafb1387ba159af40e211",
+	"createdTime":1719999681341,
+	"customizeTimeout":false,
+	"deleted":false,
+	"enableCanaryDeployment":false,
+	"enableNodeLevelLogging":true,
+	"enableRunLogging":true,
+	"enableVariableLogging":true,
+	"endpointUrl":"backendautomation/test/{fallback}",
+	"fallbackResponse":{
+		"headers":{
+			"language":"fr",
+			"executed":"true"
+		},
+		"message":"Gateway Timeout",
+		"response":{
+			"body":{
+				"message":"check your workflow"
+			}
+		},
+		"statusCode":504
+	},
+	"httpMethod":"GET",
+	"id":"66839211003d5f0a3fb01824",
+	"lastModifiedBy":39,
+	"lcName":"test_fallback_response_multi_language",
+	"localeBasedFallbackResponse":{
+		"de":{
+			"headers":{
+				"language":"fr",
+				"executed":"true"
+			},
+			"message":"Gateway Timeout",
+			"response":{
+				"body":{
+					"message":"Bitte überprüfen Sie den Arbeitsablauf"
+				}
+			},
+			"statusCode":504
+		},
+		"fr":{
+			"headers":{
+				"language":"fr",
+				"executed":"true"
+			},
+			"message":"Gateway Timeout",
+			"response":{
+				"body":{
+					"message":"Veuillez vérifier le flux de travail"
+				}
+			},
+			"statusCode":504
+		},
+		"es":{
+			"headers":{
+				"language":"fr",
+				"executed":"true"
+			},
+			"message":"Gateway Timeout",
+			"response":{
+				"body":{
+					"message":"Por favor, verifique el flujo de trabajo"
+				}
+			},
+			"statusCode":504
+		}
+	},
+	"modifiedTime":1719999681341,
+	"name":"TEST_FALLBACK_RESPONSE_MULTI_LANGUAGE",
+	"ownerUserId":39,
+	"path":"test/{fallback}",
+	"resourceIds":[
+		"667d5d683798a51d7ac134e5"
+	],
+	"resourceType":"CALLABLE_WORKFLOW",
+	"standard":false,
+	"supportedHttpMethods":[
+		"GET"
+	],
+	"version":10
+}
