@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1757159808578,
+	"deleted":true,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_4AIbg",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Jt2IB",
+			"type":"next"
+		}
+	],
+	"id":"68bc21806ec68e656f68eb9d",
+	"lastModifiedBy":39,
+	"lcName":"testbuttonfreshchat_11757154845405",
+	"modifiedTime":1757159822982,
+	"name":"TestButtonFreshchat_11757154845405",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_4AIbg-1",
+			"id":"_4AIbg",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_4AIbg-1",
+			"id":"_Jt2IB",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
