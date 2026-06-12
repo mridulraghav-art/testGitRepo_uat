@@ -30,7 +30,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781259907451,
+	"modifiedTime":1781260029163,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -40,12 +40,48 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_naS3o",
 			"index":1,
-			"inputs":{},
+			"inputs":{
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"ConfigId"
+					],
+					"properties":{
+						"ConfigId":{
+							"type":"string",
+							"title":"Config Id"
+						},
+						"assets":{
+							"type":"array",
+							"items":{
+								"type":"object",
+								"properties":{
+									"assetClass":{
+										"type":"string",
+										"title":"Asset Class"
+									},
+									"assetId":{
+										"type":"array",
+										"items":{
+											"type":"string"
+										},
+										"title":"Asset Id"
+									}
+								},
+								"additionalProperties":false,
+								"required":[]
+							},
+							"title":"Assets"
+						}
+					}
+				}
+			},
 			"skip":false,
 			"subTitle":"Callable",
 			"title":"Trigger via automation",
@@ -62,7 +98,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_xzZm0",
@@ -129,7 +165,7 @@
 				"requestTimeoutInSecs":-1,
 				"httpMethod":"POST",
 				"body":{
-					"configId":"6a295cf53b5db10ea981a430",
+					"configId":"{{ n_naS3o.outputs.ConfigId }}",
 					"assets":[
 						{
 							"assetClzName":"WorkflowDefinition",
@@ -201,7 +237,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_TpViB",
@@ -227,5 +263,5 @@
 		}
 	},
 	"standard":false,
-	"version":4
+	"version":5
 }
