@@ -128,7 +128,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781288470476,
+	"modifiedTime":1781288498813,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -256,7 +256,7 @@
 										"property":"{{ n_naS3o.outputs.statcard_name }}",
 										"filter":{
 											"operator":"EQUAL",
-											"value":"Total Asserts"
+											"value":"Total Assets"
 										}
 									}
 								],
@@ -288,7 +288,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
 			"id":"n_Qo9xp@1",
@@ -301,7 +301,7 @@
 							"property":"{{ n_naS3o.outputs.statcard_name }}",
 							"filter":{
 								"operator":"EQUAL",
-								"value":"Total Asserts"
+								"value":"Total Assets"
 							}
 						}
 					],
@@ -496,7 +496,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@2",
 			"id":"n_6LKH7",
@@ -703,5 +703,5 @@
 		}
 	},
 	"standard":false,
-	"version":18
+	"version":19
 }
