@@ -1,0 +1,131 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1719784797149,
+	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1719784831085,
+		"deployedBy":39,
+		"deployedDefinitionId":"6681d57fae8d3a4a0d3f1814",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":19
+	},
+	"edges":[
+		{
+			"fromNodeId":"8aHIZ",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"zGPNS",
+			"type":"next"
+		}
+	],
+	"id":"663af942932e404814f85732",
+	"lastModifiedBy":39,
+	"lcName":"callable date trigger conditons",
+	"modifiedTime":1729850934402,
+	"name":"CALLABLE DATE TRIGGER CONDITONS",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":14,
+				"resourceName":"callables_from_automation"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"8aHIZ-1",
+			"id":"8aHIZ",
+			"index":0,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"properties":{
+						"date":{
+							"type":"string",
+							"format":"date",
+							"title":"date"
+						}
+					},
+					"required":[]
+				},
+				"triggerInputCondition":{
+					"filters":[
+						{
+							"property":"{{ 8aHIZ.outputs.date }}",
+							"filter":{
+								"operator":"EXISTS"
+							}
+						},
+						{
+							"property":"{{ 8aHIZ.outputs.date }}",
+							"filter":{
+								"operator":"GTE",
+								"value":"2023-12-19"
+							}
+						},
+						{
+							"property":"{{ 8aHIZ.outputs.date }}",
+							"filter":{
+								"operator":"LTE",
+								"value":"2023-12-21"
+							}
+						}
+					],
+					"operator":"AND"
+				},
+				"setup":{
+					"type":"object",
+					"properties":{
+						"date":{
+							"type":"string",
+							"format":"date",
+							"title":"date"
+						}
+					},
+					"required":[]
+				}
+			},
+			"skip":false,
+			"title":"Trigger from automation",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":10,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"8aHIZ-1",
+			"id":"zGPNS",
+			"index":0,
+			"inputs":{
+				"result":{
+					"date":"{{ 8aHIZ.outputs.date }}"
+				}
+			},
+			"skip":false,
+			"subTitle":"return Date",
+			"title":"Return data to automation",
+			"type":"STOP"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"version":20
+}
