@@ -128,7 +128,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781288106563,
+	"modifiedTime":1781288419019,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -138,7 +138,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_naS3o",
@@ -200,7 +200,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_j6yVt",
@@ -228,7 +228,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_j6yVt@_wmkeO-1@y",
 			"id":"n_Qo9xp",
@@ -277,7 +277,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
 			"id":"n_Qo9xp@1",
@@ -309,7 +309,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
 			"id":"n_7eI3U",
@@ -329,8 +329,7 @@
 					"root":{}
 				},
 				"visibleOptionalFields":[
-					"root.parameters.objects.items.columns.assetClzName",
-					"root.parameters.objects.items.columns.assetIds"
+					"root.parameters.objects.items"
 				]
 			},
 			"context":{
@@ -340,7 +339,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
 			"id":"n_eeY7e",
@@ -369,29 +368,15 @@
 				"input":{
 					"type":"object",
 					"additionalProperties":false,
+					"required":[],
 					"properties":{
 						"objects":{
 							"type":"array",
 							"items":{
 								"type":"object",
-								"properties":{
-									"columns":{
-										"type":"object",
-										"properties":{
-											"assetClzName":{
-												"type":"string",
-												"title":"assetClzName"
-											},
-											"assetIds":{
-												"type":"string",
-												"title":"assetIds"
-											}
-										},
-										"title":"columns",
-										"additionalProperties":false
-									}
-								},
-								"additionalProperties":false
+								"properties":{},
+								"additionalProperties":false,
+								"required":[]
 							},
 							"title":"objects"
 						}
@@ -403,7 +388,8 @@
 				"parameters":{
 					"objects":{
 						"source":"{{ n_7eI3U.outputs.objects }}",
-						"ua:type":"mappedArray"
+						"ua:type":"mappedArray",
+						"items":"{{ n_7eI3U.outputs.objects[0] }}"
 					}
 				}
 			},
@@ -420,7 +406,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
 			"id":"n_sJVeb",
@@ -479,7 +465,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@2",
 			"id":"n_Qo9xp@2",
@@ -487,7 +473,7 @@
 			"inputs":{
 				"name":"Branch 2"
 			},
-			"skip":false,
+			"skip":true,
 			"title":"",
 			"type":"BRANCH_CONDITION"
 		},
@@ -505,7 +491,7 @@
 			"id":"n_6LKH7",
 			"index":9,
 			"inputs":{},
-			"skip":false,
+			"skip":true,
 			"subTitle":"Callable",
 			"title":"Respond to automation",
 			"type":"STOP"
@@ -529,7 +515,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_xzZm0",
@@ -585,7 +571,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_pm6E9",
@@ -672,7 +658,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_TpViB",
@@ -698,5 +684,5 @@
 		}
 	},
 	"standard":false,
-	"version":13
+	"version":14
 }
