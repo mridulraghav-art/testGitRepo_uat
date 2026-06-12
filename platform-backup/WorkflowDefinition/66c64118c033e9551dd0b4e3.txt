@@ -1,0 +1,96 @@
+{
+	"appsUsed":[
+		"whatsapp"
+	],
+	"createdTime":1724268824368,
+	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1724268847985,
+		"deployedBy":39,
+		"deployedDefinitionId":"66c6412fc033e9551dd0b4e4",
+		"status":"PAUSED",
+		"version":1,
+		"workflowVersion":1
+	},
+	"edges":[
+		{
+			"fromNodeId":"oDzTC",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"ruAUW",
+			"type":"next"
+		}
+	],
+	"id":"66c64118c033e9551dd0b4e3",
+	"lastModifiedBy":39,
+	"lcName":"temp 22 aug",
+	"modifiedTime":1724272541299,
+	"name":"temp 22 aug",
+	"nodes":[
+		{
+			"context":{
+				"appName":"whatsapp",
+				"resourceVersion":3660,
+				"connectionId":"66c641074125a573e3a58586",
+				"resourceName":"whatsapp_on_new_message"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"KbnA7-1",
+			"id":"oDzTC",
+			"index":0,
+			"inputs":{
+				"trigger_field":"messages"
+			},
+			"skip":false,
+			"subTitle":"WhatsApp",
+			"title":"New message",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"whatsapp",
+				"resourceVersion":3654,
+				"connectionId":"66c641074125a573e3a58586",
+				"resourceName":"whatsapp_send_simple_text_message",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"KbnA7-1",
+			"id":"ruAUW",
+			"index":0,
+			"inputs":{
+				"recipient_type":"individual",
+				"messaging_product":"whatsapp",
+				"to":"{{ oDzTC.outputs.change.value.messages[0].from }}",
+				"text":{
+					"preview_url":false,
+					"body":"test"
+				},
+				"type":"text"
+			},
+			"skip":false,
+			"subTitle":"WhatsApp",
+			"title":"Send simple text message",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
