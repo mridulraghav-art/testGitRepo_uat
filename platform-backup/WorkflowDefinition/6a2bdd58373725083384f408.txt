@@ -30,7 +30,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781259803801,
+	"modifiedTime":1781259852349,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -40,7 +40,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_naS3o",
@@ -180,7 +180,7 @@
 				"headersList":[
 					{
 						"key":"x-admin-authorization",
-						"value":"{{ n_xzZm0.outputs.result }}"
+						"value":"{{ n_xzZm0.outputs.result.token }}"
 					}
 				],
 				"authType":"CUSTOM",
@@ -201,7 +201,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_TpViB",
@@ -227,5 +227,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
