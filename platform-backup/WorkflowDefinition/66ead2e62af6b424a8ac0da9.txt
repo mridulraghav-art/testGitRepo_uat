@@ -1,0 +1,70 @@
+{
+	"appsUsed":[
+		"hubspot"
+	],
+	"createdTime":1726665446042,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"oBMid",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"8dtza",
+			"type":"next"
+		}
+	],
+	"id":"66ead2e62af6b424a8ac0da9",
+	"lastModifiedBy":3297,
+	"lcName":"hubspot - create record",
+	"modifiedTime":1726665504039,
+	"name":"Hubspot - Create Record",
+	"nodes":[
+		{
+			"context":{
+				"appName":"callables"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"2JJfa-1",
+			"id":"oBMid",
+			"index":0,
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"CALLABLE"
+			},
+			"type":"START"
+		},
+		{
+			"context":{
+				"appName":"hubspot",
+				"resourceVersion":6103,
+				"resourceName":"hubspot_create_contact",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"2JJfa-1",
+			"id":"8dtza",
+			"index":0,
+			"skip":false,
+			"subTitle":"HubSpot",
+			"title":"Create contact",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":3297,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
