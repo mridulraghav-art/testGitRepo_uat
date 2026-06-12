@@ -16,10 +16,19 @@
 	"id":"6a2bd531373725083382d55b",
 	"lastModifiedBy":39,
 	"lcName":"test-api-check",
-	"modifiedTime":1781257803459,
+	"modifiedTime":1781257967154,
 	"name":"test-api-check",
 	"nodes":[
 		{
+			"additional":{
+				"xsdSchemaConfig":{
+					"root":{
+						"response":[
+							{}
+						]
+					}
+				}
+			},
 			"context":{
 				"appName":"callables",
 				"resourceVersion":2696,
@@ -103,6 +112,9 @@
 			"inputs":{
 				"streamingCompleted":true,
 				"responseName":"200_Data",
+				"body":{
+					"output":"cool"
+				},
 				"status":200
 			},
 			"skip":false,
@@ -125,5 +137,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
