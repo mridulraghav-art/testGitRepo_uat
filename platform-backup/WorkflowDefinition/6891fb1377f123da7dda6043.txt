@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1754397459360,
+	"deleted":true,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_dsOT9",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_V5kba",
+			"type":"next"
+		}
+	],
+	"id":"6891fb1377f123da7dda6043",
+	"lastModifiedBy":39,
+	"lcName":"testbuttonzoho invoice_11754395794022",
+	"modifiedTime":1754397465339,
+	"name":"TestButtonZoho Invoice_11754395794022",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_dsOT9-1",
+			"id":"_dsOT9",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_dsOT9-1",
+			"id":"_V5kba",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
