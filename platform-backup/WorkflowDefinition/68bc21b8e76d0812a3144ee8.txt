@@ -1,0 +1,64 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1757159864635,
+	"deleted":true,
+	"description":"description",
+	"edges":[
+		{
+			"fromNodeId":"_Fi4fm",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_1mlOw",
+			"type":"next"
+		}
+	],
+	"id":"68bc21b8e76d0812a3144ee8",
+	"lastModifiedBy":39,
+	"lcName":"autofillhttpapplication_execute rest multipart request_117571547445090",
+	"modifiedTime":1757159890999,
+	"name":"autofillHttpApplication_Execute REST multipart Request_117571547445090",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Fi4fm-1",
+			"id":"_Fi4fm",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_Fi4fm-1",
+			"id":"_1mlOw",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"tags":[
+		
+	],
+	"version":1
+}
