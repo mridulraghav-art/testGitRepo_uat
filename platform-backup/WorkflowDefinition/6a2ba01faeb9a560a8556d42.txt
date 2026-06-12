@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1781243935552,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_jGLfp",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_Swifo",
+			"type":"next"
+		}
+	],
+	"id":"6a2ba01faeb9a560a8556d42",
+	"lastModifiedBy":39,
+	"lcName":"storeworkfloe",
+	"modifiedTime":1781243935552,
+	"name":"storeworkfloe",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_jGLfp-1",
+			"id":"_jGLfp",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_jGLfp-1",
+			"id":"_Swifo",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
