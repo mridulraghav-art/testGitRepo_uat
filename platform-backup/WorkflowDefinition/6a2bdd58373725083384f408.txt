@@ -78,7 +78,7 @@
 			"name":"no",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_sz0LT",
+			"toNodeId":"n_DnKVY",
 			"type":"next"
 		},
 		{
@@ -104,7 +104,7 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_sz0LT",
+			"fromNodeId":"n_DnKVY",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_xzZm0",
@@ -128,7 +128,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781288498813,
+	"modifiedTime":1781288695845,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -239,7 +239,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_j6yVt@_wmkeO-1@y",
 			"id":"n_Qo9xp",
@@ -288,7 +288,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@1",
 			"id":"n_Qo9xp@1",
@@ -512,15 +512,27 @@
 			"type":"STOP"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2696,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_j6yVt@_wmkeO-1@n",
-			"id":"n_sz0LT",
+			"id":"n_DnKVY",
 			"index":10,
-			"skip":true,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"inputs":{
+				"result":{
+					"result":"done"
+				}
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		},
 		{
 			"context":{
@@ -703,5 +715,5 @@
 		}
 	},
 	"standard":false,
-	"version":19
+	"version":20
 }
