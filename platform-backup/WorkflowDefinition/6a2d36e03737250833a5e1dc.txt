@@ -6,46 +6,95 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_hIErd",
+			"fromNodeId":"n_nJpjM",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_LUIaR",
+			"toNodeId":"n_0Upn2",
 			"type":"next"
 		}
 	],
 	"id":"6a2d36e03737250833a5e1dc",
 	"lastModifiedBy":39,
 	"lcName":"test-qa",
-	"modifiedTime":1781348064405,
+	"modifiedTime":1781348378165,
 	"name":"test-qa",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2700,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_hIErd-1",
-			"id":"_hIErd",
-			"index":0,
+			"id":"n_nJpjM",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output"
+					],
+					"properties":{
+						"output":{
+							"type":"string",
+							"title":"Output"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input"
+					],
+					"properties":{
+						"input":{
+							"type":"string",
+							"title":"Input"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2701,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_hIErd-1",
-			"id":"_LUIaR",
-			"index":0,
+			"id":"n_0Upn2",
+			"index":2,
+			"inputs":{
+				"result":{
+					"output":"=CONCATENATE({{ n_nJpjM.outputs.input }}, hello);"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +105,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
