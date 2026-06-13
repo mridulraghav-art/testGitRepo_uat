@@ -4,35 +4,51 @@
 	],
 	"createdTime":1781348064405,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1781348406949,
+		"deployedAt":1781348582022,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a2d3836167082309667bfde",
+		"deployedDefinitionId":"6a2d38e5167082309667c576",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":1
+		"version":2,
+		"workflowVersion":3
 	},
 	"edges":[
 		{
 			"fromNodeId":"n_nJpjM",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"n_0Upn2",
+			"toNodeId":"n_mA7Kk",
+			"type":"next"
+		},
+		{
+			"fromNodeId":"n_mA7Kk",
+			"name":"yes",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_dmb8O",
+			"type":"if"
+		},
+		{
+			"fromNodeId":"n_mA7Kk",
+			"name":"no",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"n_q0nFw",
 			"type":"next"
 		}
 	],
 	"id":"6a2d36e03737250833a5e1dc",
 	"lastModifiedBy":39,
 	"lcName":"test-qa",
-	"modifiedTime":1781348507009,
+	"modifiedTime":1781348921399,
 	"name":"test-qa",
 	"nodes":[
 		{
 			"context":{
 				"appName":"callables",
-				"resourceVersion":2700,
-				"resourceName":"callables_from_automation"
+				"resourceVersion":2701,
+				"resourceName":"callables_from_api"
 			},
 			"debug":false,
 			"dirty":true,
@@ -41,41 +57,76 @@
 			"id":"n_nJpjM",
 			"index":1,
 			"inputs":{
-				"result":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"output"
-					],
-					"properties":{
-						"output":{
-							"type":"string",
-							"title":"Output"
+				"request":{
+					"headers":{
+						"type":"object",
+						"additionalProperties":false,
+						"required":[],
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"Input"
+							}
 						}
-					}
+					},
+					"contentType":"application/json"
 				},
-				"setup":{
-					"type":"object",
-					"additionalProperties":false,
-					"required":[
-						"input",
-						"input2"
-					],
-					"properties":{
-						"input":{
-							"type":"string",
-							"title":"Input"
+				"endpointType":"REST",
+				"response":[
+					{
+						"name":"success",
+						"status":200,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
 						},
-						"input2":{
-							"type":"string",
-							"title":"Input 2"
+						"htmlBody":{
+							"type":"string"
+						},
+						"body":{
+							"type":"object",
+							"properties":{
+								"output":{
+									"type":"string",
+									"title":"Output"
+								}
+							},
+							"additionalProperties":false,
+							"required":[
+								"output"
+							]
+						}
+					},
+					{
+						"name":"Error",
+						"status":400,
+						"contentType":"application/json",
+						"textBody":{
+							"type":"string"
+						},
+						"htmlBody":{
+							"type":"string"
+						},
+						"body":{
+							"type":"object",
+							"properties":{
+								"output":{
+									"type":"string",
+									"title":"Output"
+								}
+							},
+							"additionalProperties":false,
+							"required":[
+								"output"
+							]
 						}
 					}
-				}
+				],
+				"streamingResponse":false
 			},
 			"skip":false,
 			"subTitle":"Callable",
-			"title":"Trigger via automation",
+			"title":"Trigger via API",
 			"trigger":{
 				"type":"CALLABLE"
 			},
@@ -83,25 +134,84 @@
 		},
 		{
 			"context":{
-				"appName":"callables",
-				"resourceVersion":2701,
-				"resourceName":"callables_return_to_automation",
+				"appName":"if_else",
+				"resourceVersion":68,
+				"resourceName":"if_else_condition",
 				"type":"APPLICATION"
 			},
 			"debug":false,
 			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_hIErd-1",
-			"id":"n_0Upn2",
+			"id":"n_mA7Kk",
 			"index":2,
 			"inputs":{
-				"result":{
-					"output":"=CONCATENATE({{ n_nJpjM.outputs.input }}, hello);"
-				}
+				"filters":[
+					{
+						"property":"{{ n_nJpjM.outputs.headers.input }}",
+						"filter":{
+							"operator":"EQUAL",
+							"value":"test"
+						}
+					}
+				],
+				"operator":"AND"
+			},
+			"skip":false,
+			"subTitle":"Condition",
+			"title":"Condition",
+			"type":"IF_ELSE"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2702,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_mA7Kk@_hIErd-1@y",
+			"id":"n_dmb8O",
+			"index":3,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"200_success",
+				"body":{
+					"output":"correct input"
+				},
+				"status":200
 			},
 			"skip":false,
 			"subTitle":"Callable",
-			"title":"Respond to automation",
+			"title":"Respond to API request",
+			"type":"STOP"
+		},
+		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2702,
+				"resourceName":"callables_return_response_to_api",
+				"type":"APPLICATION"
+			},
+			"debug":false,
+			"dirty":true,
+			"fallbackMode":"STOP",
+			"groupId":"n_mA7Kk@_hIErd-1@n",
+			"id":"n_q0nFw",
+			"index":4,
+			"inputs":{
+				"streamingCompleted":true,
+				"responseName":"400_Error",
+				"body":{
+					"output":"input is invalid"
+				},
+				"status":400
+			},
+			"skip":false,
+			"subTitle":"Callable",
+			"title":"Respond to API request",
 			"type":"STOP"
 		}
 	],
@@ -119,5 +229,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":4
 }
