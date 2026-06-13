@@ -303,7 +303,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781326770612,
+	"modifiedTime":1781327115237,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -1163,13 +1163,13 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@3",
 			"id":"n_jGNHL",
 			"index":19,
 			"inputs":{
-				"query":"SELECT\n    latest.assetClass AS assetClzName,\n    ARRAY_AGG(latest.assetId) AS assetIds\nFROM PLATFORM_BACKUP latest\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '6a1ed21449ac2871d6d6cf75'\n    GROUP BY assetId\n) latest_run\n    ON latest.assetId = latest_run.assetId\n   AND latest.lastSyncTime = latest_run.maxSyncTime\nWHERE latest.configId = '6a1ed21449ac2871d6d6cf75'\n  AND latest.status = 'FAILED'\nGROUP BY latest.assetClass;",
+				"query":"SELECT\n    p.assetClass AS assetClzName,\n    ARRAY_AGG(p.assetId) AS assetIds\nFROM PLATFORM_BACKUP p\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '6a1ed21449ac2871d6d6cf75'\n    GROUP BY assetId\n) latest\n    ON p.assetId = latest.assetId\n   AND p.lastSyncTime = latest.maxSyncTime\nWHERE p.configId = '6a1ed21449ac2871d6d6cf75'\n  AND p.assetId NOT IN (\n      SELECT DISTINCT assetId\n      FROM PLATFORM_BACKUP\n      WHERE configId = '6a1ed21449ac2871d6d6cf75'\n        AND status = 'SUCCESS'\n  )\nGROUP BY p.assetClass;",
 				"group":"PLATFORM"
 			},
 			"skip":false,
@@ -1789,5 +1789,5 @@
 		}
 	},
 	"standard":false,
-	"version":32
+	"version":33
 }
