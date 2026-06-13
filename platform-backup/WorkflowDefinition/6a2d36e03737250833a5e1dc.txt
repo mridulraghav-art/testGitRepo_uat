@@ -25,7 +25,7 @@
 	"id":"6a2d36e03737250833a5e1dc",
 	"lastModifiedBy":39,
 	"lcName":"test-qa",
-	"modifiedTime":1781348580126,
+	"modifiedTime":1781348507009,
 	"name":"test-qa",
 	"nodes":[
 		{
@@ -63,7 +63,7 @@
 					],
 					"properties":{
 						"input":{
-							"type":"number",
+							"type":"string",
 							"title":"Input"
 						},
 						"input2":{
@@ -96,7 +96,7 @@
 			"index":2,
 			"inputs":{
 				"result":{
-					"output":"=SUM({{ n_nJpjM.outputs.input }},1)"
+					"output":"=CONCATENATE({{ n_nJpjM.outputs.input }}, hello);"
 				}
 			},
 			"skip":false,
@@ -119,5 +119,5 @@
 		}
 	},
 	"standard":false,
-	"version":3
+	"version":2
 }
