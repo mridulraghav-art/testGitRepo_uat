@@ -53,7 +53,7 @@
 	"id":"6a2da4843ded0569e1c7d613",
 	"lastModifiedBy":39,
 	"lcName":"[do not touch]check alert heartbeat | alpha drive",
-	"modifiedTime":1781376132962,
+	"modifiedTime":1781376323007,
 	"name":"[DO NOT TOUCH]Check Alert Heartbeat | Alpha Drive",
 	"nodes":[
 		{
@@ -125,7 +125,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"6QunN-1",
 			"id":"qmSYr",
@@ -151,7 +151,7 @@
 					"operator":"AND"
 				},
 				"shouldSearchInAnalyticsStore":false,
-				"object_type":"liva_prod_heartbeat",
+				"object_type":"alpha_drive_heartbeat",
 				"includeRoleMappings":false,
 				"includeCurrentUserPermissions":false,
 				"translationsOption":"DEFAULT",
@@ -203,12 +203,12 @@
 			"context":{
 				"appName":"slack",
 				"resourceVersion":4983,
-				"connectionId":"68dd126c8f90155a87785f7c",
+				"connectionId":"6a2da4da7d7ab82cd9613b62",
 				"resourceName":"slack_post_message_in_channel",
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"aRMXy@6QunN-1@y",
 			"id":"fGGWD",
@@ -221,8 +221,8 @@
 						"attachmentsType":"attachmentBlock",
 						"attachmentsBlock":{
 							"color":"#FF0000",
-							"pretext":"CHECK LIVA PROD | ALL ALERT STOPPED",
-							"title":"CHECK LIVA PROD ALL ALERT STOPPED : COUNT {{ qmSYr.outputs.total }} <@U07SR7JEWBC> <@U08RGE5489Y> <@U097BQBSRFS> <@U09D1KCF78C>",
+							"pretext":"CHECK Alpha Drive | ALL ALERT STOPPED",
+							"title":"CHECK Alpha Drive ALL ALERT STOPPED : COUNT {{ qmSYr.outputs.total }} <@U0A6SUFSRS6><@U08RGE5489Y>",
 							"text":"```{{ qmSYr.outputs.objects }}```",
 							"mrkdwn_in":[
 								"text",
@@ -233,7 +233,7 @@
 						}
 					}
 				],
-				"channel":"C09RD3X95RB",
+				"channel":"C0B5WMKKSSJ",
 				"mrkdwn":true
 			},
 			"skip":false,
@@ -275,5 +275,5 @@
 	"tags":[
 		
 	],
-	"version":0
+	"version":1
 }
