@@ -6,46 +6,90 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_HXRsI",
+			"fromNodeId":"n_4yJMW",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_8t9PA",
+			"toNodeId":"n_6lS41",
 			"type":"next"
 		}
 	],
 	"id":"6a2d385321f87b7b1a22e9f3",
 	"lastModifiedBy":39,
 	"lcName":"test-qa-parent",
-	"modifiedTime":1781348435143,
+	"modifiedTime":1781348596335,
 	"name":"test-qa-parent",
 	"nodes":[
 		{
+			"context":{
+				"appName":"webhooks",
+				"resourceVersion":63,
+				"resourceName":"webhooks_default"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_HXRsI-1",
-			"id":"_HXRsI",
-			"index":0,
+			"id":"n_4yJMW",
+			"index":1,
+			"inputs":{
+				"request":{
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"output":{
+								"type":"string",
+								"title":"Output"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"output"
+						]
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Webhook",
+			"title":"New event",
 			"trigger":{
-				"type":"EVENT"
+				"type":"WEBHOOK"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2702,
+				"resourceName":"callables_call_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_HXRsI-1",
-			"id":"_8t9PA",
-			"index":0,
+			"id":"n_6lS41",
+			"index":2,
+			"inputs":{
+				"automationId":"6a2d36e03737250833a5e1dc",
+				"runtimeConnections":{},
+				"synchronous":true,
+				"version":"-1",
+				"parameters":{
+					"input":"hii",
+					"input2":"bsdjc"
+				}
+			},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Call automation",
+			"type":"CALL_WORKFLOW"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +100,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":2
 }
