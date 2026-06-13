@@ -1,0 +1,60 @@
+{
+	"appsUsed":[
+		
+	],
+	"createdTime":1781375678343,
+	"deleted":false,
+	"edges":[
+		{
+			"fromNodeId":"_YaMP4",
+			"priority":0,
+			"skip":false,
+			"toNodeId":"_ZIdGV",
+			"type":"next"
+		}
+	],
+	"id":"6a2da2be3737250833b57fdc",
+	"lastModifiedBy":39,
+	"lcName":"[do not touch] alert heartbeat | alpha drive",
+	"modifiedTime":1781375678343,
+	"name":"[DO NOT TOUCH] Alert Heartbeat | Alpha Drive",
+	"nodes":[
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YaMP4-1",
+			"id":"_YaMP4",
+			"index":0,
+			"skip":false,
+			"title":"Select a trigger event",
+			"trigger":{
+				"type":"EVENT"
+			},
+			"type":"START"
+		},
+		{
+			"debug":false,
+			"dirty":false,
+			"fallbackMode":"STOP",
+			"groupId":"_YaMP4-1",
+			"id":"_ZIdGV",
+			"index":0,
+			"skip":false,
+			"title":"Select an app and action",
+			"type":"ACTION"
+		}
+	],
+	"ownerUserId":39,
+	"settings":{
+		"enableNodeLevelLogging":true,
+		"enableRunLogging":true,
+		"enableVariableLogging":true,
+		"route":{
+			"default":false,
+			"tierName":"global"
+		}
+	},
+	"standard":false,
+	"version":0
+}
