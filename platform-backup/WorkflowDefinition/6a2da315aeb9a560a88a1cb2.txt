@@ -23,7 +23,7 @@
 	"id":"6a2da315aeb9a560a88a1cb2",
 	"lastModifiedBy":39,
 	"lcName":"[do not touch] alert heartbeat | alpha drive",
-	"modifiedTime":1781375765907,
+	"modifiedTime":1781376048362,
 	"name":"[DO NOT TOUCH] Alert Heartbeat | Alpha Drive",
 	"nodes":[
 		{
@@ -98,14 +98,14 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"ullmp-1",
 			"id":"n_eObmb",
 			"index":2,
 			"inputs":{
 				"writeThroughSessionVariables":false,
-				"object_type":"liva_prod_heartbeat",
+				"object_type":"alpha_drive_heartbeat",
 				"skipIfBlank":false,
 				"updateFields":[
 					{
@@ -146,16 +146,14 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"ullmp-1",
 			"id":"g4pfT",
 			"index":3,
 			"inputs":{
+				"streamingCompleted":true,
 				"responseName":"success",
-				"body":{
-					"recorded":"true"
-				},
 				"status":200
 			},
 			"skip":false,
@@ -182,5 +180,5 @@
 	"tags":[
 		
 	],
-	"version":0
+	"version":1
 }
