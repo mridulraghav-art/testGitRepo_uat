@@ -162,13 +162,6 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_p8Gsv",
-			"priority":0,
-			"skip":false,
-			"toNodeId":"n_6LKH7",
-			"type":"next"
-		},
-		{
 			"fromNodeId":"n_Qo9xp",
 			"name":"3",
 			"priority":0,
@@ -264,7 +257,7 @@
 			"type":"next"
 		},
 		{
-			"fromNodeId":"n_6LKH7",
+			"fromNodeId":"n_p8Gsv",
 			"priority":0,
 			"skip":false,
 			"toNodeId":"n_xzZm0",
@@ -310,7 +303,7 @@
 	"id":"6a2bdd58373725083384f408",
 	"lastModifiedBy":39,
 	"lcName":"bm re-run asset",
-	"modifiedTime":1781326762417,
+	"modifiedTime":1781326770612,
 	"name":"BM Re-run asset",
 	"nodes":[
 		{
@@ -421,7 +414,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"n_j6yVt@_wmkeO-1@y",
 			"id":"n_Qo9xp",
@@ -1132,29 +1125,6 @@
 		},
 		{
 			"context":{
-				"appName":"callables",
-				"resourceVersion":2696,
-				"resourceName":"callables_return_to_automation",
-				"type":"APPLICATION"
-			},
-			"debug":false,
-			"dirty":false,
-			"fallbackMode":"STOP",
-			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@2",
-			"id":"n_6LKH7",
-			"index":18,
-			"inputs":{
-				"result":{
-					"result":"done"
-				}
-			},
-			"skip":true,
-			"subTitle":"Callable",
-			"title":"Respond to automation",
-			"type":"STOP"
-		},
-		{
-			"context":{
 				"appName":"branch_condition",
 				"resourceVersion":0,
 				"resourceName":"branch_condition",
@@ -1165,7 +1135,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@3",
 			"id":"n_Qo9xp@3",
-			"index":19,
+			"index":18,
 			"inputs":{
 				"name":"UnSynced",
 				"conditions":{
@@ -1197,7 +1167,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@3",
 			"id":"n_jGNHL",
-			"index":20,
+			"index":19,
 			"inputs":{
 				"query":"SELECT\n    latest.assetClass AS assetClzName,\n    ARRAY_AGG(latest.assetId) AS assetIds\nFROM PLATFORM_BACKUP latest\nINNER JOIN (\n    SELECT\n        assetId,\n        MAX(lastSyncTime) AS maxSyncTime\n    FROM PLATFORM_BACKUP\n    WHERE configId = '6a1ed21449ac2871d6d6cf75'\n    GROUP BY assetId\n) latest_run\n    ON latest.assetId = latest_run.assetId\n   AND latest.lastSyncTime = latest_run.maxSyncTime\nWHERE latest.configId = '6a1ed21449ac2871d6d6cf75'\n  AND latest.status = 'FAILED'\nGROUP BY latest.assetClass;",
 				"group":"PLATFORM"
@@ -1227,7 +1197,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@3",
 			"id":"n_6bQvP",
-			"index":21,
+			"index":20,
 			"inputs":{
 				"output":{
 					"type":"array",
@@ -1294,7 +1264,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_Qo9xp@n_j6yVt@_wmkeO-1@y@3",
 			"id":"n_mn4a5",
-			"index":22,
+			"index":21,
 			"inputs":{
 				"repeatMode":"SINGLE",
 				"listSource":"{{ n_6bQvP.outputs.result }}",
@@ -1317,7 +1287,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_mn4a5@n_Qo9xp@n_j6yVt@_wmkeO-1@y@3@l",
 			"id":"n_7Zb5b",
-			"index":23,
+			"index":22,
 			"inputs":{
 				"repeatMode":"BATCH",
 				"listSource":"{{ n_mn4a5.outputs.item.assetIds }}",
@@ -1341,7 +1311,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_7Zb5b@n_mn4a5@n_Qo9xp@n_j6yVt@_wmkeO-1@y@3@l@l",
 			"id":"n_AzLg9",
-			"index":24,
+			"index":23,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -1397,7 +1367,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_7Zb5b@n_mn4a5@n_Qo9xp@n_j6yVt@_wmkeO-1@y@3@l@l",
 			"id":"n_tazt9",
-			"index":25,
+			"index":24,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -1484,7 +1454,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_j6yVt@_wmkeO-1@n",
 			"id":"n_msoNF",
-			"index":26,
+			"index":25,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -1540,7 +1510,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_j6yVt@_wmkeO-1@n",
 			"id":"n_FObfM",
-			"index":27,
+			"index":26,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -1627,7 +1597,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"n_j6yVt@_wmkeO-1@n",
 			"id":"n_DnKVY",
-			"index":28,
+			"index":27,
 			"inputs":{
 				"result":{
 					"result":"done"
@@ -1650,7 +1620,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_xzZm0",
-			"index":29,
+			"index":28,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -1706,7 +1676,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_pm6E9",
-			"index":30,
+			"index":29,
 			"inputs":{
 				"isAsync":false,
 				"enableProxy":false,
@@ -1793,7 +1763,7 @@
 			"fallbackMode":"STOP",
 			"groupId":"_wmkeO-1",
 			"id":"n_TpViB",
-			"index":31,
+			"index":30,
 			"inputs":{
 				"result":{
 					"result":"done"
@@ -1819,5 +1789,5 @@
 		}
 	},
 	"standard":false,
-	"version":31
+	"version":32
 }
