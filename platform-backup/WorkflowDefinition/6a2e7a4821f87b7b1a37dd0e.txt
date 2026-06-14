@@ -16,7 +16,7 @@
 	"id":"6a2e7a4821f87b7b1a37dd0e",
 	"lastModifiedBy":39,
 	"lcName":"test1-qa-parent",
-	"modifiedTime":1781431156401,
+	"modifiedTime":1781431234868,
 	"name":"test1-qa-parent",
 	"nodes":[
 		{
@@ -26,14 +26,27 @@
 				"resourceName":"webhooks_default"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_h70Ds-1",
 			"id":"n_on8Pa",
 			"index":1,
 			"inputs":{
 				"request":{
-					"contentType":"application/json"
+					"contentType":"application/json",
+					"body":{
+						"type":"object",
+						"properties":{
+							"input":{
+								"type":"string",
+								"title":"Input"
+							}
+						},
+						"additionalProperties":false,
+						"required":[
+							"input"
+						]
+					}
 				}
 			},
 			"skip":false,
@@ -52,7 +65,7 @@
 				"type":"APPLICATION"
 			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_h70Ds-1",
 			"id":"n_pNWkb",
@@ -86,5 +99,5 @@
 		}
 	},
 	"standard":false,
-	"version":5
+	"version":6
 }
