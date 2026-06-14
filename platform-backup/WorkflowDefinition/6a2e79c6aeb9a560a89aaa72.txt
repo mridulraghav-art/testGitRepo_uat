@@ -4,6 +4,15 @@
 	],
 	"createdTime":1781430726797,
 	"deleted":false,
+	"deployedVersion":1,
+	"deploymentState":{
+		"deployedAt":1781430833754,
+		"deployedBy":39,
+		"deployedDefinitionId":"6a2e7a3116708230967f84da",
+		"status":"DEPLOYED",
+		"version":1,
+		"workflowVersion":1
+	},
 	"edges":[
 		{
 			"fromNodeId":"n_LwdNb",
@@ -16,7 +25,7 @@
 	"id":"6a2e79c6aeb9a560a89aaa72",
 	"lastModifiedBy":39,
 	"lcName":"test1-qa",
-	"modifiedTime":1781430816189,
+	"modifiedTime":1781430933046,
 	"name":"test1-qa",
 	"nodes":[
 		{
@@ -26,7 +35,7 @@
 				"resourceName":"callables_from_automation"
 			},
 			"debug":false,
-			"dirty":true,
+			"dirty":false,
 			"fallbackMode":"STOP",
 			"groupId":"_VZDmh-1",
 			"id":"n_LwdNb",
@@ -80,7 +89,11 @@
 			"groupId":"_VZDmh-1",
 			"id":"n_FkVNE",
 			"index":2,
-			"inputs":{},
+			"inputs":{
+				"result":{
+					"output":"=SUM({{ n_LwdNb.outputs.input }}+1);"
+				}
+			},
 			"skip":false,
 			"subTitle":"Callable",
 			"title":"Respond to automation",
@@ -101,5 +114,5 @@
 		}
 	},
 	"standard":false,
-	"version":1
+	"version":2
 }
