@@ -6,46 +6,91 @@
 	"deleted":false,
 	"edges":[
 		{
-			"fromNodeId":"_VZDmh",
+			"fromNodeId":"n_LwdNb",
 			"priority":0,
 			"skip":false,
-			"toNodeId":"_XJsBJ",
+			"toNodeId":"n_FkVNE",
 			"type":"next"
 		}
 	],
 	"id":"6a2e79c6aeb9a560a89aaa72",
 	"lastModifiedBy":39,
 	"lcName":"test1-qa",
-	"modifiedTime":1781430726797,
+	"modifiedTime":1781430816189,
 	"name":"test1-qa",
 	"nodes":[
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2700,
+				"resourceName":"callables_from_automation"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_VZDmh-1",
-			"id":"_VZDmh",
-			"index":0,
+			"id":"n_LwdNb",
+			"index":1,
+			"inputs":{
+				"result":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"output"
+					],
+					"properties":{
+						"output":{
+							"type":"integer",
+							"title":"Output"
+						}
+					}
+				},
+				"setup":{
+					"type":"object",
+					"additionalProperties":false,
+					"required":[
+						"input"
+					],
+					"properties":{
+						"input":{
+							"type":"integer",
+							"title":"Input"
+						}
+					}
+				}
+			},
 			"skip":false,
-			"title":"Select a trigger event",
+			"subTitle":"Callable",
+			"title":"Trigger via automation",
 			"trigger":{
-				"type":"EVENT"
+				"type":"CALLABLE"
 			},
 			"type":"START"
 		},
 		{
+			"context":{
+				"appName":"callables",
+				"resourceVersion":2701,
+				"resourceName":"callables_return_to_automation",
+				"type":"APPLICATION"
+			},
 			"debug":false,
-			"dirty":false,
+			"dirty":true,
 			"fallbackMode":"STOP",
 			"groupId":"_VZDmh-1",
-			"id":"_XJsBJ",
-			"index":0,
+			"id":"n_FkVNE",
+			"index":2,
+			"inputs":{},
 			"skip":false,
-			"title":"Select an app and action",
-			"type":"ACTION"
+			"subTitle":"Callable",
+			"title":"Respond to automation",
+			"type":"STOP"
 		}
 	],
 	"ownerUserId":39,
+	"schemaReferences":[
+		
+	],
 	"settings":{
 		"enableNodeLevelLogging":true,
 		"enableRunLogging":true,
@@ -56,5 +101,5 @@
 		}
 	},
 	"standard":false,
-	"version":0
+	"version":1
 }
