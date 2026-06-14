@@ -4,14 +4,14 @@
 	],
 	"createdTime":1781430726797,
 	"deleted":false,
-	"deployedVersion":1,
+	"deployedVersion":2,
 	"deploymentState":{
-		"deployedAt":1781430833754,
+		"deployedAt":1781431089249,
 		"deployedBy":39,
-		"deployedDefinitionId":"6a2e7a3116708230967f84da",
+		"deployedDefinitionId":"6a2e7b31aeb9a560a89ab22c",
 		"status":"DEPLOYED",
-		"version":1,
-		"workflowVersion":1
+		"version":2,
+		"workflowVersion":2
 	},
 	"edges":[
 		{
@@ -25,7 +25,7 @@
 	"id":"6a2e79c6aeb9a560a89aaa72",
 	"lastModifiedBy":39,
 	"lcName":"test1-qa",
-	"modifiedTime":1781430933046,
+	"modifiedTime":1781431279226,
 	"name":"test1-qa",
 	"nodes":[
 		{
@@ -91,7 +91,7 @@
 			"index":2,
 			"inputs":{
 				"result":{
-					"output":"=SUM({{ n_LwdNb.outputs.input }}+1);"
+					"output":"=SUM({{ n_LwdNb.outputs.input }}+1)"
 				}
 			},
 			"skip":false,
@@ -114,5 +114,5 @@
 		}
 	},
 	"standard":false,
-	"version":2
+	"version":3
 }
